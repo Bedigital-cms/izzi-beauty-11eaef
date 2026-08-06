@@ -1,0 +1,17 @@
+{
+  "forms": {
+    "contact": {
+      "name": "Contact",
+      "submitLabel": "Verstuur bericht",
+      "successMessage": "Bedankt voor je bericht — we nemen snel contact met je op.",
+      "notificationEmail": "info@example.com",
+      "isActive": true,
+      "fields": [
+        { "name": "full_name", "label": "Naam", "fieldType": "text", "required": false, "placeholder": "Je naam" },
+        { "name": "email", "label": "E-mail", "fieldType": "email", "required": true, "placeholder": "je@email.nl" },
+        { "name": "telephone", "label": "Telefoon", "fieldType": "tel", "required": false, "placeholder": "+31 6 ..." },
+        { "name": "query", "label": "Je bericht", "fieldType": "textarea", "required": false, "placeholder": "Waar kunnen we je mee helpen?" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$comment": "Per-site i18n configuration, managed by the BE Digital CMS tenant toggle. Do not edit by hand — change it via the tenant’s “Meertalig” settings so the CMS and the site stay in sync.",
+  "enabled": false,
+  "defaultLocale": "nl",
+  "locales": [
+    "nl"
+  ],
+  "hideDefaultPrefix": false,
+  "domainLocalesEnabled": false,
+  "domainLocales": {}
+}

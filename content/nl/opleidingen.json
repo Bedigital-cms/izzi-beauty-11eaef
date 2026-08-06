@@ -1,0 +1,133 @@
+{
+  "hero": {
+    "eyebrow": "Academy",
+    "title": "PMU Opleidingen & trainingen",
+    "text": "Word een gecertificeerde permanente make-up artiest. Onze opleidingen combineren theorie, live demonstraties en veel hands-on oefening onder begeleiding van ervaren docenten.",
+    "breadcrumb": "Opleidingen"
+  },
+  "intro": {
+    "title": "Leer van gecertificeerde specialisten",
+    "text": "Van beginnersopleiding tot masterclass — bij IZZI Academy leer je alles wat je nodig hebt om zelfstandig en professioneel aan de slag te gaan. Kom je in aanmerking voor UWV-subsidie? Vraag ernaar tijdens je intake."
+  },
+  "groups": [
+    {
+      "heading": "Wenkbrauwen opleidingen",
+      "text": "De meest gevraagde technieken, van Powder Brows tot Combi Brows.",
+      "items": [
+        {
+          "title": "All Round PMU Opleiding",
+          "meta": "Populair",
+          "text": "De complete beginnersopleiding met alle basistechnieken voor wenkbrauwen.",
+          "image": "/media/izzi-beauty-20250729-9f85fc-all-round-pmu-opleiding-amsterdam-en-rotterdam.webp",
+          "url": "/allround-pmu-opleiding",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Ombré Powder Brows",
+          "text": "Leer de poedertechniek voor natuurlijke, gedefinieerde wenkbrauwen.",
+          "image": "/media/izzi-beauty-20250729-53836b-powder-brows.jpg",
+          "url": "/ombre-powder-brows-opleiding",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Combi Brows",
+          "text": "Combineer hairstrokes en shading voor het meest realistische resultaat.",
+          "image": "/media/izzi-beauty-20250729-1dea00-combi-brows-behandeling.jpg",
+          "url": "/combi-brows-beginnersopleiding",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Powder Brows Masterclass",
+          "text": "Verdiep je techniek en til je werk naar professioneel niveau.",
+          "image": "/media/izzi-beauty-20250729-af300e-ombre-powder-brows-masterclass.webp",
+          "url": "/masterclass-ombre-powder-brows",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Powder Brows + Lip Blush",
+          "text": "Twee gewilde technieken in één complete beginnersopleiding.",
+          "image": "/media/izzi-beauty-20250729-abf9e8-lip-blush-pigmentatie.webp",
+          "url": "/ombre-powder-brows-lip-blush-opleiding",
+          "linkLabel": "Meer info"
+        }
+      ]
+    },
+    {
+      "heading": "Lippen opleidingen",
+      "text": "Beheers de Lip Blush techniek van begin tot masterclass.",
+      "items": [
+        {
+          "title": "Lip Blush Beginnersopleiding",
+          "text": "Leer de basis van Lip Blush voor vollere, frissere lippen.",
+          "image": "/media/izzi-beauty-20250729-4e6b92-online-lip-blush-opleiding.webp",
+          "url": "/lip-blush",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Lip Blush Masterclass",
+          "text": "Perfectioneer je techniek en leer geavanceerde kleurtheorie.",
+          "image": "/media/izzi-beauty-20250729-b60f2a-lip-pigmentatie.webp",
+          "url": "/lip-blush-masterclass",
+          "linkLabel": "Meer info"
+        }
+      ]
+    },
+    {
+      "heading": "Extra opleidingen",
+      "text": "Breid je vaardigheden uit met aanvullende technieken.",
+      "items": [
+        {
+          "title": "Faux Freckles",
+          "text": "Leer natuurlijke sproetjes plaatsen voor een speelse look.",
+          "image": "/media/izzi-beauty-20250729-6fc19c-faux-freckles-opleiding.webp",
+          "url": "/faux-freckles-beginners",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Infralash Eyeliner",
+          "text": "Beheers de zachte wimperverdichtingstechniek.",
+          "image": "/media/izzi-beauty-20250729-a2a783-infralash-opleiding.webp",
+          "url": "/infralash-beginners",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Fineline Training",
+          "text": "Leer verfijnde fineline-technieken toepassen.",
+          "image": "/media/izzi-beauty-20250729-a4793d-fineline-tattoo-opleiding.jpg",
+          "url": "/fineline-training",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Brow Lamination Training",
+          "text": "Voeg brow lamination toe aan je behandelaanbod.",
+          "image": "/media/izzi-beauty-20250729-e83d90-brow-lamination-training.webp",
+          "url": "/brow-lamination-training",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Lash Lift Training",
+          "text": "Leer de populaire lash lift behandeling uitvoeren.",
+          "image": "/media/izzi-beauty-20250729-f0e632-lash-lift-training.webp",
+          "url": "/lash-lift-training",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Laser Ontharing Opleiding",
+          "text": "Word specialist in professionele laserontharing.",
+          "image": "/media/izzi-beauty-20250729-d7a1c1-laser-ontharing-opleiding.webp",
+          "url": "/laser-ontharing-opleiding",
+          "linkLabel": "Meer info"
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "script": "Start jouw carrière",
+    "title": "Vraag de opleidingsbrochure aan",
+    "text": "Benieuwd naar data, prijzen en of je in aanmerking komt voor UWV-subsidie? Neem contact met ons op.",
+    "primaryLabel": "Neem contact op",
+    "primaryUrl": "/contact",
+    "secondaryLabel": "Online trainingen",
+    "secondaryUrl": "/online-trainingen"
+  }
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 96" width="440" height="96" role="img" aria-label="IZZI Beauty">
+  <defs>
+    <style>
+      .word { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; }
+    </style>
+  </defs>
+  <!-- monogram mark -->
+  <g transform="translate(8 12)">
+    <rect x="0" y="0" width="72" height="72" rx="8" fill="#1c1a17"/>
+    <text x="36" y="50" text-anchor="middle" class="word" font-size="40" fill="#b8935a">IB</text>
+    <rect x="14" y="60" width="44" height="2" fill="#b8935a" opacity="0.8"/>
+  </g>
+  <!-- wordmark -->
+  <text x="96" y="46" class="word" font-size="38" fill="#1c1a17" letter-spacing="1">IZZI Beauty</text>
+  <text x="97" y="70" font-family="Inter, system-ui, sans-serif" font-size="10.5" letter-spacing="4" fill="#857c70">PERMANENTE MAKE-UP &amp; ACADEMY</text>
+</svg>

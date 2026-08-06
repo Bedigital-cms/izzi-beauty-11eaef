@@ -1,0 +1,1339 @@
+{
+  "amsterdam": {
+    "city": "Amsterdam",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Amsterdam",
+      "title": "Permanente Wenkbrauwen in Amsterdam",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in Amsterdam? Bij IZZI Beauty ben je aan het juiste adres voor Powder Brows, Combi Brows en meer.",
+      "breadcrumb": "Wenkbrauwen Amsterdam"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "IZZI Beauty is dé specialist in permanente make-up in Amsterdam. In onze studio verzorgen we natuurlijke, langhoudende wenkbrauwen die perfect bij jouw gezicht passen.",
+    "body": [
+      {
+        "heading": "Permanente make-up in Amsterdam",
+        "paragraphs": [
+          "Onze Amsterdamse studio is gemakkelijk bereikbaar en volledig ingericht op comfort en hygiëne. Of je nu kiest voor Ombré Powder Brows, Combi Brows of een kleurcorrectie — je bent bij ons in ervaren handen.",
+          "Elke behandeling start met een persoonlijk intakegesprek, zodat we de vorm en kleur perfect op jou afstemmen."
+        ],
+        "checklist": [
+          "Ervaren, gecertificeerde specialisten",
+          "Natuurlijk en langhoudend resultaat",
+          "GGD-gecertificeerd en hygiënisch",
+          "Centraal gelegen in Amsterdam"
+        ]
+      },
+      {
+        "heading": "Onze behandelingen in Amsterdam",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Bekijk al onze behandelingen of maak direct een afspraak."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar is de studio in Amsterdam?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13, goed bereikbaar met openbaar vervoer en de auto."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Amsterdam",
+      "title": "Maak een afspraak in Amsterdam",
+      "text": "Plan je intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "aalsmeer": {
+    "city": "Aalsmeer",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Aalsmeer",
+      "title": "Permanente Wenkbrauwen in Aalsmeer",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Aalsmeer? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Aalsmeer"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Ben je op zoek naar een hoogwaardige wenkbrauwspecialist in de omgeving van Aalsmeer? Bij IZZI Beauty, gevestigd in Amsterdam, bieden wij geavanceerde behandelingen die volledig worden afgestemd op jouw unieke wensen. Of je nu kiest voor subtiele accenten of een gedefinieerde look, ons ervaren team staat klaar om jouw wenkbrauwen perfect te stylen.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Aalsmeer",
+        "paragraphs": [
+          "Met behandelingen zoals Ombré Powder Brows, Brow Lamination en Combi Brows geniet je van perfect gevormde wenkbrauwen die jouw natuurlijke schoonheid versterken en je dagelijks tijd besparen.",
+          "Wist jij dat IZZI Beauty in totaal meer dan 350 5-sterren reviews heeft op Google Reviews en Trustpilot?",
+          "Bij IZZI Beauty combineren we ervaring, vakmanschap en een persoonlijke aanpak om ervoor te zorgen dat je wenkbrauwen jouw uitstraling versterken. Of je nu kiest voor een natuurlijke of juist een opvallende stijl, wij leveren maatwerk voor elk gezicht."
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Aalsmeer",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Aalsmeer",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Aalsmeer met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Aalsmeer",
+      "title": "Maak een afspraak vanuit Aalsmeer",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "alkmaar": {
+    "city": "Alkmaar",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Alkmaar",
+      "title": "Permanente Wenkbrauwen in Alkmaar",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Alkmaar? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Alkmaar"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Ben je op zoek naar een hoogwaardige wenkbrauw behandeling in de buurt van Alkmaar? Bij IZZI Beauty bieden wij de nieuwste technieken om jouw wenkbrauwen perfect te stylen. Van subtiele natuurlijke accenten tot strakke, gedefinieerde brows, onze behandelingen worden volledig afgestemd op jouw wensen.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Alkmaar",
+        "paragraphs": [
+          "Met onze specialisaties in Ombré Powder Brows, Brow Lamination en Combi Brows helpen we je tijd besparen en altijd verzorgd voor de dag te komen.",
+          "Wist jij dat IZZI Beauty in totaal meer dan 350 5-sterren reviews heeft op Google Reviews en Trustpilot?",
+          "Bij IZZI Beauty staat kwaliteit en persoonlijke aandacht centraal. Onze specialisten luisteren naar jouw wensen en passen elke behandeling aan op jouw gezichtsvorm en stijl. Of je nu kiest voor een zachte, natuurlijke uitstraling of juist opvallende wenkbrauwen, wij zorgen voor een resultaat dat bij jou past."
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Alkmaar",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Alkmaar",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Alkmaar met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Alkmaar",
+      "title": "Maak een afspraak vanuit Alkmaar",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "almere": {
+    "city": "Almere",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Almere",
+      "title": "Permanente Wenkbrauwen in Almere",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Almere? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Almere"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Ben je op zoek naar een professionele wenkbrauw behandeling vlakbij Almere? Bij IZZI Beauty bieden wij hoogwaardige behandelingen, zoals Ombré Powder Brows, Combi Brows en Brow Lamination, om jouw wenkbrauwen perfect in model te brengen.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Almere",
+        "paragraphs": [
+          "Dankzij onze expertise en gebruik van de nieuwste technieken hoef je nooit meer tijd te verspillen voor de spiegel. Ontdek onze behandelingen en boek eenvoudig een afspraak!",
+          "Wist jij dat IZZI Beauty in totaal meer dan 350 5-sterren reviews heeft op Google Reviews en Trustpilot?",
+          "Bij IZZI Beauty kun je terecht voor diverse geavanceerde wenkbrauwtechnieken. Wij specialiseren ons in:"
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Almere",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Almere",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Almere met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Almere",
+      "title": "Maak een afspraak vanuit Almere",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "amstelveen": {
+    "city": "Amstelveen",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Amstelveen",
+      "title": "Permanente Wenkbrauwen in Amstelveen",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Amstelveen? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Amstelveen"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Ben je op zoek naar een professionele wenkbrauwspecialist in de omgeving van Amstelveen? Bij IZZI Beauty bieden we hoogwaardige behandelingen aan die volledig worden afgestemd op jouw unieke wensen.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Amstelveen",
+        "paragraphs": [
+          "Of je nu kiest voor subtiele, natuurlijke accenten of juist voor een strakkere en gedefinieerde look, ons ervaren team zorgt ervoor dat jouw wenkbrauwen perfect gestyled zijn.",
+          "Onze behandelingen – zoals Ombré Powder Brows, Brow Lamination en Combi Brows – zijn ideaal voor wie dagelijks tijd wil besparen en toch altijd verzorgd voor de dag wil komen.",
+          "Wist jij dat IZZI Beauty in totaal meer dan 350 5-sterren reviews heeft op Google Reviews en Trustpilot?"
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Amstelveen",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Amstelveen",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Amstelveen met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Amstelveen",
+      "title": "Maak een afspraak vanuit Amstelveen",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "badhoevedorp": {
+    "city": "Badhoevedorp",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Badhoevedorp",
+      "title": "Permanente Wenkbrauwen in Badhoevedorp",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Badhoevedorp? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Badhoevedorp"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Op zoek naar een hoogwaardige wenkbrauwspecialist in Badhoevedorp? Bij IZZI Beauty staan wij klaar om jouw wenkbrauwen naar een hoger niveau te tillen. Of je nu droomt van subtiele accenten of een strakke, gedefinieerde look, onze behandelingen worden volledig afgestemd op jouw wensen en gezichtsvorm.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Badhoevedorp",
+        "paragraphs": [
+          "Met onze behandelingen – zoals Ombré Powder Brows, Brow Lamination, en Combi Brows – geniet je dagelijks van perfect gestylde wenkbrauwen zonder tijd te verspillen aan make-up.",
+          "Wist je dat wij al meer dan 350 5-sterren reviews hebben ontvangen op platforms zoals Google Reviews en Trustpilot? Kom zelf ontdekken waarom zoveel klanten ons aanbevelen!",
+          "Bij IZZI Beauty combineren we vakmanschap met persoonlijke aandacht. Onze ervaren specialisten werken met de nieuwste technieken en materialen van topkwaliteit om een resultaat te leveren dat jouw verwachtingen overtreft."
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Badhoevedorp",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Badhoevedorp",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Badhoevedorp met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Badhoevedorp",
+      "title": "Maak een afspraak vanuit Badhoevedorp",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "den-haag": {
+    "city": "Den Haag",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Den Haag",
+      "title": "Permanente Wenkbrauwen in Den Haag",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Den Haag? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Den Haag"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Ben je op zoek naar een professionele wenkbrauwspecialist in de omgeving van Den Haag? Bij IZZI Beauty bieden wij hoogwaardige behandelingen die volledig zijn afgestemd op jouw unieke wensen. Van subtiele natuurlijke accenten tot strakke, gedefinieerde wenkbrauwen – ons ervaren team staat voor je klaar.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Den Haag",
+        "paragraphs": [
+          "Met behandelingen zoals Ombré Powder Brows, Brow Lamination, en Combi Brows bespaar je elke dag tijd en geniet je van perfect gestylde wenkbrauwen.",
+          "Wist je dat IZZI Beauty in totaal meer dan 350 5-sterren reviews heeft op Google Reviews en Trustpilot?",
+          "Bij IZZI Beauty combineren we jarenlange ervaring met een persoonlijke aanpak om ervoor te zorgen dat je wenkbrauwen jouw uitstraling versterken. Of je nu kiest voor een natuurlijke look of juist opvallende brows, wij leveren maatwerk voor elk gezicht."
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Den Haag",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Den Haag",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Den Haag met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Den Haag",
+      "title": "Maak een afspraak vanuit Den Haag",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "haarlem": {
+    "city": "Haarlem",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Haarlem",
+      "title": "Permanente Wenkbrauwen in Haarlem",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Haarlem? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Haarlem"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Ben je op zoek naar professionele wenkbrauwbehandelingen in de buurt van Haarlem? Bij IZZI Beauty, gevestigd vlakbij Amsterdam, bieden wij de nieuwste technieken om jouw wenkbrauwen tot in de perfectie te stijlen.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Haarlem",
+        "paragraphs": [
+          "Of je nu kiest voor Ombre Powder Brows, Combi Brows of Brow Lamination, ons team van experts zorgt ervoor dat jouw wenkbrauwen perfect aansluiten bij jouw natuurlijke schoonheid.",
+          "Wist jij dat wij in totaal meer dan 350 5-sterren reviews hebben op Google Reviews en Trustpilot?",
+          "Bij IZZI Beauty begrijpen we dat geen wenkbrauw hetzelfde is. Onze specialisten nemen de tijd om een look op maat te creëren die jouw gezichtsvorm en persoonlijke stijl accentueert."
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Haarlem",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Haarlem",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Haarlem met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Haarlem",
+      "title": "Maak een afspraak vanuit Haarlem",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "hilversum": {
+    "city": "Hilversum",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Hilversum",
+      "title": "Permanente Wenkbrauwen in Hilversum",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Hilversum? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Hilversum"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Ben je op zoek naar een professionele wenkbrauwspecialist in de omgeving van Hilversum? Bij IZZI Beauty bieden wij hoogwaardige behandelingen aan die volledig worden afgestemd op jouw unieke wensen en gezichtsvorm.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Hilversum",
+        "paragraphs": [
+          "Met technieken zoals Ombré Powder Brows, Brow Lamination, en Combi Brows helpen wij jou om altijd verzorgd voor de dag te komen, zonder dat je tijd verspilt aan dagelijkse make-up.",
+          "Wist je dat IZZI Beauty meer dan 350 5-sterren reviews heeft op Google Reviews en Trustpilot? Ontdek zelf waarom zoveel klanten uit Hilversum ons aanbevelen!",
+          "Bij IZZI Beauty combineren we jarenlange ervaring met een persoonlijke aanpak. Of je nu kiest voor een natuurlijke look of juist een strakkere, gedefinieerde stijl, ons team zorgt voor een resultaat dat jouw uitstraling versterkt."
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Hilversum",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Hilversum",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Hilversum met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Hilversum",
+      "title": "Maak een afspraak vanuit Hilversum",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "hoofddorp": {
+    "city": "Hoofddorp",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Hoofddorp",
+      "title": "Permanente Wenkbrauwen in Hoofddorp",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Hoofddorp? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Hoofddorp"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Ontdek het geheim achter prachtige, natuurlijke wenkbrauwen in Hoofddorp. Bij IZZI Beauty gaan we verder dan alleen wenkbrauw behandelingen – we creëren een unieke brow experience die volledig is afgestemd op jouw gezichtsvorm, stijl en persoonlijkheid. Van subtiele natuurlijke wenkbrauwen tot een gedefinieerde, gedurfde look: wij brengen jouw natuurlijke schoonheid naar voren.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Hoofddorp",
+        "paragraphs": [
+          "Onze specialisten zijn niet alleen experts in wenkbrauw technieken zoals Ombré Powder Brows, Combi Brows en Brow Lamination, maar ze zorgen er ook voor dat jouw wenkbrauwen perfect passen bij jouw uitstraling. Jouw wenkbrauwen, jouw stijl, jouw uitstraling – dat is waar we voor staan!",
+          "Wacht niet langer! Ontdek onze professionele wenkbrauw behandelingen in Hoofddorp en plan vandaag nog een gratis intakegesprek!",
+          "Hele fijne omgeving, werdt vriendelijk binnengehaald en de behandeling was snel en vrijwel pijnloos. Heel erg bedankt !!"
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Hoofddorp",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Hoofddorp",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Hoofddorp met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Hoofddorp",
+      "title": "Maak een afspraak vanuit Hoofddorp",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "leiden": {
+    "city": "Leiden",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Leiden",
+      "title": "Permanente Wenkbrauwen in Leiden",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Leiden? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Leiden"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Ben je op zoek naar een professionele wenkbrauwspecialist in de buurt van Leiden? Bij IZZI Beauty, gevestigd in Amsterdam, bieden we hoogwaardige behandelingen die volledig worden afgestemd op jouw wensen. Of je nu kiest voor subtiele accenten of een gedefinieerde look, onze specialisten staan klaar om jouw wenkbrauwen naar een hoger niveau te tillen.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Leiden",
+        "paragraphs": [
+          "Met behandelingen zoals Ombré Powder Brows, Brow Lamination, en Combi Brows geniet je van perfect gestylde wenkbrauwen zonder dagelijkse moeite.",
+          "Wist jij dat IZZI Beauty in totaal meer dan 350 5-sterren reviews heeft op Google Reviews en Trustpilot?",
+          "Bij IZZI Beauty draait alles om jouw unieke uitstraling. Ons ervaren team luistert naar jouw wensen en past elke behandeling aan op jouw gezichtsvorm en voorkeuren. Of je nu een natuurlijke look wilt of juist een opvallende stijl, wij zorgen voor een resultaat dat bij je past."
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Leiden",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Leiden",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Leiden met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Leiden",
+      "title": "Maak een afspraak vanuit Leiden",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "rotterdam": {
+    "city": "Rotterdam",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Rotterdam",
+      "title": "Permanente Wenkbrauwen in Rotterdam",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Rotterdam? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Rotterdam"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Wil jij professionele wenkbrauwbehandelingen in de buurt van Rotterdam? Bij IZZI Beauty, gevestigd in Amsterdam, bieden wij een breed scala aan behandelingen om jouw wenkbrauwen perfect te stylen. Of je nu gaat voor een natuurlijke, subtiele look of juist strakke en gedefinieerde brows, onze ervaren specialisten staan voor je klaar.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Rotterdam",
+        "paragraphs": [
+          "Met behandelingen zoals Ombré Powder Brows, Brow Lamination, en Combi Brows geniet je elke dag van perfecte wenkbrauwen zonder moeite.",
+          "Wist jij dat IZZI Beauty in totaal meer dan 350 5-sterren reviews heeft op Google Reviews en Trustpilot?",
+          "Bij IZZI Beauty combineren we de nieuwste technieken met een persoonlijke benadering om de perfecte wenkbrauwen te creëren die aansluiten bij jouw gezichtsvorm en stijl. Of je nu een subtiele verbetering wilt of een volledige transformatie van je brows, onze behandelingen zijn op maat gemaakt voor jou."
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Rotterdam",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Rotterdam",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Rotterdam met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Rotterdam",
+      "title": "Maak een afspraak vanuit Rotterdam",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "utrecht": {
+    "city": "Utrecht",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Utrecht",
+      "title": "Permanente Wenkbrauwen in Utrecht",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Utrecht? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Utrecht"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Ben je op zoek naar een hoogwaardige wenkbrauwbehandeling in Utrecht? Bij IZZI Beauty, gelegen nabij Amsterdam, bieden wij populaire behandelingen zoals Ombré Powder Brows, Combi Brows en Brow Lamination.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Utrecht",
+        "paragraphs": [
+          "Met deze moderne technieken hoef je nooit meer tijd te verspillen aan het bijwerken van je wenkbrauwen. Ontdek hoe onze behandelingen jouw dagelijkse routine vereenvoudigen en je uitstraling verbeteren.",
+          "Wist jij dat IZZI Beauty in totaal meer dan 350 5-sterren reviews heeft op Google Reviews en Trustpilot?",
+          "Bij IZZI Beauty draait alles om jouw unieke stijl en voorkeuren. Onze specialisten luisteren naar jouw wensen en passen elke behandeling aan op jouw gezichtsvorm en uitstraling. Of je nu een subtiele, natuurlijke look wilt of juist opvallende, gedefinieerde wenkbrauwen, wij zorgen voor een resultaat dat bij je past."
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Utrecht",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Utrecht",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Utrecht met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Utrecht",
+      "title": "Maak een afspraak vanuit Utrecht",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "zaandam": {
+    "city": "Zaandam",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Zaandam",
+      "title": "Permanente Wenkbrauwen in Zaandam",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Zaandam? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Zaandam"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Ben jij op zoek naar hoogwaardige wenkbrauwbehandelingen in de buurt van Zaandam? Bij IZZI Beauty staan onze ervaren specialisten klaar om jouw wenkbrauwen een perfecte uitstraling te geven. Of je nu kiest voor subtiele accenten of een gedefinieerde look, wij zorgen ervoor dat je wenkbrauwen er altijd verzorgd uitzien.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Zaandam",
+        "paragraphs": [
+          "Met populaire behandelingen zoals Ombré Powder Brows, Brow Lamination en Combi Brows, geniet je dagelijks van een natuurlijke, gestylde look zonder dat je tijd kwijt bent aan make-up.",
+          "Wist je dat wij al meer dan 350 5-sterren reviews hebben op platforms zoals Google Reviews en Trustpilot? Ervaar zelf waarom zoveel klanten uit Zaandam voor ons kiezen!",
+          "Bij IZZI Beauty bieden wij een combinatie van expertise en een persoonlijke benadering. Onze behandelingen zijn volledig afgestemd op jouw wensen en gezichtsvorm."
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Zaandam",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Zaandam",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Zaandam met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Zaandam",
+      "title": "Maak een afspraak vanuit Zaandam",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "zoetermeer": {
+    "city": "Zoetermeer",
+    "hero": {
+      "eyebrow": "Wenkbrauwen Zoetermeer",
+      "title": "Permanente Wenkbrauwen in Zoetermeer",
+      "text": "Op zoek naar natuurlijke, gedefinieerde wenkbrauwen in de omgeving van Zoetermeer? Bij IZZI Beauty ben je aan het juiste adres voor Ombré Powder Brows, Combi Brows en Brow Lamination.",
+      "breadcrumb": "Wenkbrauwen Zoetermeer"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "intro": "Wil je jouw wenkbrauwen professioneel laten stylen in de omgeving van Zoetermeer? Bij IZZI Beauty bieden wij hoogwaardige brow behandelingen op maat. Van natuurlijke accenten tot strak gedefinieerde wenkbrauwen, wij zorgen ervoor dat jouw brows perfect aansluiten bij jouw gezichtsvorm en wensen.",
+    "body": [
+      {
+        "heading": "Wenkbrauwen behandeling in Zoetermeer",
+        "paragraphs": [
+          "Met behandelingen zoals Ombré Powder Brows, Brow Lamination, en Combi Brows, kun je genieten van prachtig gestylde wenkbrauwen die je elke dag tijd besparen.",
+          "Onze klanten waarderen ons met meer dan 350 5-sterren reviews op Google Reviews en Trustpilot.",
+          "Bij IZZI Beauty staat jouw unieke uitstraling centraal. Onze specialisten combineren vakmanschap en geavanceerde technieken om een look te creëren die jouw gezicht op natuurlijke wijze versterkt."
+        ],
+        "checklist": [
+          "Persoonlijk advies tijdens een gratis intakegesprek",
+          "Geschikt voor elk huidtype",
+          "Natuurlijk en langhoudend resultaat",
+          "Topkwaliteit pigmenten en materialen",
+          "Ervaren, gecertificeerde specialisten",
+          "GGD-gecertificeerd en hygiënisch"
+        ]
+      },
+      {
+        "heading": "Ombré Powder Brows in Zoetermeer",
+        "paragraphs": [
+          "Met Ombré Powder Brows creëer je moeiteloos een zachte, natuurlijke look. Deze semi-permanente make-uptechniek brengt fijne pigmenten aan die het effect van poederige wenkbrauwen nabootsen — ideaal als je tijd wilt besparen op dagelijkse make-up en altijd verzorgde wenkbrauwen wilt.",
+          "De techniek is geschikt voor alle huidtypes, ook voor een rijpere of vette huid, zorgt voor een subtiel verloop met een lichte aanzet en donkere uiteinden, en blijft met de juiste nazorg 1,5 tot 2 jaar mooi."
+        ]
+      },
+      {
+        "heading": "Brow Lamination in Zoetermeer",
+        "paragraphs": [
+          "Heb je last van eigenwijze wenkbrauwharen die moeilijk in model blijven? Met Brow Lamination fixeren wij de wenkbrauwen in de gewenste richting, waardoor ze voller en strakker ogen. Perfect voor het temmen van weerbarstige of krullende haren, met een liftend effect en een vollere look — geschikt voor alle wenkbrauwtypes en volledig pijnloos."
+        ]
+      },
+      {
+        "heading": "Onze behandelingen",
+        "paragraphs": [
+          "Naast wenkbrauwbehandelingen kun je bij ons ook terecht voor Lip Blush, Permanente Eyeliner en Faux Freckles. Wij zijn dé experts in Nederland op het gebied van permanente make-up — neem gerust contact met ons op voor al je vragen."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": [
+        {
+          "q": "Waar vindt de behandeling plaats?",
+          "a": "Onze studio bevindt zich aan het Koningin Wilhelminaplein 13 in Amsterdam, goed bereikbaar vanuit Zoetermeer met openbaar vervoer en de auto. Daarnaast hebben wij een locatie in Den Bosch."
+        },
+        {
+          "q": "Is de behandeling pijnlijk?",
+          "a": "De behandeling is nagenoeg pijnloos en richt geen schade aan in de huid. Veel klanten omschrijven het als een licht krassend gevoel."
+        },
+        {
+          "q": "Hoe lang blijft het resultaat mooi?",
+          "a": "Met de juiste nazorg blijft het resultaat van Ombré Powder Brows 1,5 tot 2 jaar mooi. Daarna is een touch-up aan te raden."
+        },
+        {
+          "q": "Kan ik eerst een intakegesprek inplannen?",
+          "a": "Ja. Elke behandeling start met een gratis en vrijblijvend intakegesprek waarin we jouw wensen en de mogelijkheden bespreken."
+        },
+        {
+          "q": "Kan ik dezelfde week terecht?",
+          "a": "Vaak wel. Neem contact met ons op voor de actuele beschikbaarheid."
+        }
+      ]
+    },
+    "location": {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    "cta": {
+      "script": "Wenkbrauwen in Zoetermeer",
+      "title": "Maak een afspraak vanuit Zoetermeer",
+      "text": "Plan je gratis intakegesprek en ontdek wat wij voor jou kunnen betekenen.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  }
+}

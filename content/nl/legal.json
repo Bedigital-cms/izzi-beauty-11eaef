@@ -1,0 +1,92 @@
+{
+  "algemene-voorwaarden": {
+    "hero": {
+      "eyebrow": "Voorwaarden",
+      "title": "Algemene Voorwaarden",
+      "text": "Onze algemene voorwaarden voor behandelingen bij IZZI Beauty.",
+      "breadcrumb": "Algemene Voorwaarden"
+    },
+    "sections": [
+      {
+        "heading": "1. Afspraken",
+        "paragraphs": [
+          "Afspraken kunnen kosteloos tot 48 uur van tevoren worden geannuleerd of verzet. Bij annulering binnen 48 uur behouden wij ons het recht voor kosten in rekening te brengen."
+        ]
+      },
+      {
+        "heading": "2. Behandelingen",
+        "paragraphs": [
+          "Elke behandeling start met een intakegesprek. Het uiteindelijke resultaat is mede afhankelijk van je huidtype en de nazorg die je zelf uitvoert."
+        ]
+      },
+      {
+        "heading": "3. Betaling",
+        "paragraphs": [
+          "Betaling geschiedt direct na de behandeling, tenzij anders overeengekomen."
+        ]
+      },
+      {
+        "heading": "4. Aansprakelijkheid",
+        "paragraphs": [
+          "IZZI Beauty voert alle behandelingen uit met de grootst mogelijke zorg. Dit is een voorbeeldtekst — vervang deze door je eigen juridische voorwaarden."
+        ]
+      }
+    ]
+  },
+  "privacy-verklaring": {
+    "hero": {
+      "eyebrow": "Privacy",
+      "title": "Privacy Verklaring",
+      "text": "Hoe IZZI Beauty omgaat met jouw persoonsgegevens.",
+      "breadcrumb": "Privacy Verklaring"
+    },
+    "sections": [
+      {
+        "heading": "Welke gegevens verzamelen wij?",
+        "paragraphs": [
+          "Wij verzamelen alleen de gegevens die nodig zijn voor het maken van een afspraak en het uitvoeren van een behandeling, zoals je naam, e-mailadres en telefoonnummer."
+        ]
+      },
+      {
+        "heading": "Waarvoor gebruiken wij je gegevens?",
+        "paragraphs": [
+          "Je gegevens worden uitsluitend gebruikt om contact met je op te nemen en de behandeling correct uit te voeren. Wij delen je gegevens niet met derden."
+        ]
+      },
+      {
+        "heading": "Jouw rechten",
+        "paragraphs": [
+          "Je hebt het recht om je gegevens in te zien, te wijzigen of te laten verwijderen. Neem hiervoor contact met ons op. Dit is een voorbeeldtekst — vervang deze door je eigen privacyverklaring."
+        ]
+      }
+    ]
+  },
+  "opleidingen-voorwaarden": {
+    "hero": {
+      "eyebrow": "Voorwaarden",
+      "title": "Opleidingen Voorwaarden",
+      "text": "De voorwaarden die van toepassing zijn op onze opleidingen en trainingen.",
+      "breadcrumb": "Opleidingen Voorwaarden"
+    },
+    "sections": [
+      {
+        "heading": "Inschrijving",
+        "paragraphs": [
+          "Inschrijving voor een opleiding is definitief na betaling van (een deel van) het cursusgeld. Data worden in overleg vastgesteld."
+        ]
+      },
+      {
+        "heading": "Annulering",
+        "paragraphs": [
+          "Annuleringsvoorwaarden verschillen per opleiding. Neem contact met ons op voor de specifieke voorwaarden."
+        ]
+      },
+      {
+        "heading": "Certificaat",
+        "paragraphs": [
+          "Na een succesvolle afronding ontvang je een certificaat. Dit is een voorbeeldtekst — vervang deze door je eigen opleidingsvoorwaarden."
+        ]
+      }
+    ]
+  }
+}

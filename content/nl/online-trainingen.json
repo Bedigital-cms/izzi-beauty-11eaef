@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "eyebrow": "Online Academy",
+    "title": "Online PMU Trainingen",
+    "text": "Leer permanente make-up in je eigen tempo, waar en wanneer je wilt. Onze online trainingen bevatten stap-voor-stap video's, opdrachten en persoonlijke feedback.",
+    "breadcrumb": "Online Trainingen"
+  },
+  "intro": {
+    "title": "Leer in je eigen tempo",
+    "text": "Ideaal als je flexibel wilt studeren. Je krijgt levenslang toegang tot het lesmateriaal en kunt op elk moment je kennis opfrissen."
+  },
+  "groups": [
+    {
+      "heading": "Wenkbrauwen (online)",
+      "items": [
+        {
+          "title": "Online Ombré Powder Brows",
+          "text": "De complete Powder Brows techniek in stap-voor-stap video's.",
+          "image": "/media/izzi-beauty-20250729-53836b-powder-brows.jpg",
+          "url": "/contact",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Online Combi Brows",
+          "text": "Leer de combinatietechniek volledig online.",
+          "image": "/media/izzi-beauty-20250729-af300e-ombre-powder-brows-masterclass.webp",
+          "url": "/contact",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Online Powder Brows Masterclass",
+          "text": "Verdiep je techniek naar professioneel niveau.",
+          "image": "/media/izzi-beauty-20250729-785ac5-online-powder-brows-masterclass.webp",
+          "url": "/contact",
+          "linkLabel": "Meer info"
+        }
+      ]
+    },
+    {
+      "heading": "Lippen (online)",
+      "items": [
+        {
+          "title": "Online Lip Blush",
+          "text": "De basis van Lip Blush, volledig online te volgen.",
+          "image": "/media/izzi-beauty-20250729-9f85fc-all-round-pmu-opleiding-amsterdam-en-rotterdam.webp",
+          "url": "/contact",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Online Lip Blush Masterclass",
+          "text": "Geavanceerde lip-technieken en kleurtheorie.",
+          "image": "/media/izzi-beauty-20250729-4e6b92-online-lip-blush-opleiding.webp",
+          "url": "/contact",
+          "linkLabel": "Meer info"
+        }
+      ]
+    },
+    {
+      "heading": "Overige online trainingen",
+      "items": [
+        {
+          "title": "Online Faux Freckles",
+          "text": "Leer sproetjes plaatsen in je eigen tempo.",
+          "image": "/media/izzi-beauty-20250729-118930-faux-freckles.webp",
+          "url": "/contact",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Online Kleurcorrectie",
+          "text": "Beheers kleurcorrectie van PMU.",
+          "image": "/media/izzi-beauty-20250729-2094b0-online-opleiding-kleurcorrectie.webp",
+          "url": "/contact",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Online Naaldentraining",
+          "text": "Leer alles over naalden en toepassingen.",
+          "image": "/media/izzi-beauty-20250729-50958e-lash-lift-online-training-izzi-beauty.webp",
+          "url": "/contact",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Online Airbrush Brows",
+          "text": "Leer de Airbrush Brows techniek volledig online, inclusief certificaat.",
+          "image": "/media/izzi-beauty-20250729-4dd5a7-airbrush-brows-online-training.png",
+          "url": "/airbrush-brows-online-training",
+          "linkLabel": "Meer info"
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "script": "Start vandaag nog",
+    "title": "Vragen over onze online trainingen?",
+    "text": "Neem contact met ons op voor meer informatie over de online academy.",
+    "primaryLabel": "Neem contact op",
+    "primaryUrl": "/contact",
+    "secondaryLabel": "Klassikale opleidingen",
+    "secondaryUrl": "/opleidingen"
+  }
+}

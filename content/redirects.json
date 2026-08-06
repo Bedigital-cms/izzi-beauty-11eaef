@@ -1,0 +1,4 @@
+{
+  "$comment": "Geen redirects: elke pagina wordt rechtstreeks op haar eigen slug geserveerd en alle interne links wijzen direct naar die slug. Voeg hier alleen een regel toe als een URL echt verandert en de oude variant nog verkeer krijgt; next.config.ts leest dit bestand en breidt de regels per taal uit (source/destination zijn dus prefix-vrij: schrijf /oud, niet /nl/oud). Let op: de twee geneste FAQ-pagina's verhuisden bewust ZONDER redirect (keuze van de klant) — die oude vlakke URLs geven 404. Ook de blogmigratie had geen redirect nodig: /allround-pmu-opleiding stond op de oude site in ZOWEL de page- als de post-sitemap (één URL) en wordt hier door de opleiding-detailpagina geserveerd, dus die URL blijft gewoon werken.",
+  "redirects": []
+}

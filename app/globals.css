@@ -1,0 +1,1854 @@
+/* ============================================================================
+   IZZI Beauty — Permanente Make-up salon & academy template
+   Design language: modern editorial luxe. Deep charcoal ink, warm champagne/
+   nude base, muted gold accent. Cormorant Garamond display + Inter body +
+   a delicate script accent. Confident whitespace, thin gold rules, soft reveals.
+   Distinct from the rose/blush beauty-salon template — its own premium identity.
+   ============================================================================ */
+
+:root {
+  --ink: #1c1a17;          /* near-black warm charcoal (text, dark sections) */
+  --ink-soft: #3a352f;
+  --gold: #b8935a;         /* muted antique gold accent */
+  --gold-deep: #9a7742;
+  --gold-soft: #e8d9bf;
+  --champagne: #f5efe6;    /* warm light base */
+  --sand: #ece3d5;         /* slightly deeper warm panel */
+  --cream: #fbf8f3;        /* page background */
+  --muted: #857c70;        /* secondary text */
+  --line: #e4dac9;         /* hairline borders */
+  --white: #ffffff;
+  /* Aanbiedingsgroen — bewust BUITEN het goud/champagne-palet. Een korting moet uit de huisstijl
+     springen; een gouden badge op een gouden site leest als decoratie in plaats van als actie.
+     Overgenomen van de oude webshop, waar klanten deze kleur al met "aanbieding" associëren. */
+  --sale: #2ec4a0;         /* de tint van de oude webshop — te licht voor witte tekst (2.2:1) */
+  --sale-deep: #198066;    /* dus dit voor vlakken met witte tekst erop: 4.86:1, haalt WCAG AA */
+  --shadow: 0 30px 70px -40px rgba(40, 32, 20, 0.45);
+  --shadow-sm: 0 18px 40px -30px rgba(40, 32, 20, 0.4);
+  --radius: 4px;           /* sharp, editorial — not the rounded beauty-salon look */
+  --radius-lg: 10px;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --script: 'Marcellus', var(--serif);
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --maxw: 1200px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Guard against any element (wide heading, absolute mega, etc.) causing horizontal scroll on small
+   screens — which would shift the auto-centred header and push the mobile hamburger off-screen.
+   `clip` (not `hidden`) does NOT create a scroll container, so the sticky header keeps working.
+   This lives on <html>, NOT <body>: `overflow: clip` makes the element a clip context that even
+   fixed-position descendants cannot escape, and the mobile drawer is portalled into <body>. On
+   <body> it therefore clipped the drawer's shadow and its off-screen slide; on <html> the fixed
+   drawer is laid out against the viewport and stays unclipped. */
+html { scroll-behavior: smooth; overflow-x: clip; }
+
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* On phones a percentage-only track leaves too little gutter, so fall back to a fixed 18px inset
+   below ~420px (92vw of 360px is only 29px total). */
+.container { width: min(var(--maxw), 92vw); margin: 0 auto; }
+/* Vertical rhythm scales with the viewport — a flat 120px meant ~240px of dead space per section on
+   a 667px-tall phone. */
+.section { padding: clamp(56px, 9vw, 120px) 0; }
+.section-sm { padding: clamp(44px, 6vw, 80px) 0; }
+
+/* ---- Typography ---- */
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.1; color: var(--ink); letter-spacing: -0.01em; }
+/* Fluid floors are deliberately low: at 360px a 2.8rem floor (44.8px) never yields to 6vw, so long
+   Dutch headings overflowed. `min()` lets the vw term win on small screens, with a rem floor that
+   only kicks in once there's width to spend. */
+h1 { font-size: clamp(2rem, 7.5vw, 5rem); font-weight: 500; }
+h2 { font-size: clamp(1.65rem, 5.2vw, 3.4rem); font-weight: 500; }
+/* Long unbroken words (URLs, compound Dutch nouns) must not push the layout sideways. */
+h1, h2, h3, h4 { overflow-wrap: break-word; }
+h3 { font-size: 1.5rem; }
+p { color: var(--ink-soft); }
+
+.script { font-family: var(--script); color: var(--gold-deep); font-weight: 400; font-size: 1.4rem; letter-spacing: 0.01em; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 600;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); display: inline-block; }
+.eyebrow.center::after { content: ''; width: 28px; height: 1px; background: var(--gold); display: inline-block; }
+.lead { font-size: 1.12rem; color: var(--muted); line-height: 1.85; }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 15px 34px; font-family: var(--sans); font-weight: 600; font-size: 0.82rem;
+  letter-spacing: 0.14em; text-transform: uppercase; border-radius: var(--radius);
+  transition: transform .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease, border-color .3s ease;
+  cursor: pointer; border: 1px solid transparent;
+}
+.btn-primary { background: var(--ink); color: var(--champagne); }
+.btn-primary:hover { background: var(--gold-deep); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--gold-deep); }
+.btn-gold { background: var(--gold); color: var(--white); }
+.btn-gold:hover { background: var(--gold-deep); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--gold-deep); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--champagne); transform: translateY(-2px); }
+.btn-light { background: transparent; color: var(--champagne); border-color: rgba(245,239,230,0.4); }
+.btn-light:hover { background: var(--champagne); color: var(--ink); }
+
+/* link with arrow */
+.link-arrow { display: inline-flex; align-items: center; gap: 8px; color: var(--gold-deep); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em; }
+.link-arrow svg { transition: transform .3s ease; }
+.link-arrow:hover svg { transform: translateX(5px); }
+
+/* ============================================================================
+   Header + Mega menu
+   ============================================================================ */
+.header { position: sticky; top: 0; z-index: 100; background: rgba(251,248,243,0.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+/* The header has more to fit than a content page (logo + full mega-menu + language + CTA), so it
+   uses a WIDER track than the 1200px content container — otherwise the nav wraps to two lines.
+   `.header .container` overrides the default container width just for the header. */
+.header .container { width: min(1460px, 95vw); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; }
+/* min-width:0 lets the brand shrink instead of forcing the hamburger off the row on narrow phones. */
+.brand { display: flex; align-items: center; line-height: 1; flex: 0 1 auto; min-width: 0; }
+.brand-name { font-family: var(--serif); font-size: clamp(1.15rem, 5vw, 1.7rem); font-weight: 600; letter-spacing: 0.03em; white-space: nowrap; }
+/* Logo scales with the viewport so it can't claim most of a 320px header row. */
+.brand-logo { height: clamp(32px, 8vw, 44px); width: auto; max-width: min(220px, 46vw); object-fit: contain; }
+
+/* Nav sits centered between logo and CTA on ONE row (the wider header track fits all items).
+   min-width:0 lets it shrink so the CTA block stays put; nowrap keeps it single-line. The side
+   margins guarantee breathing room so the nav never visually touches the logo or the CTA block. */
+/* position: relative → dit is de baan waarbinnen de mega-panelen geklemd worden (zie .mega). */
+.mainnav { position: relative; display: flex; align-items: center; gap: 2px; flex: 1 1 auto; min-width: 0; justify-content: center; flex-wrap: nowrap; margin: 0 clamp(18px, 3vw, 56px); }
+/* GEEN position: relative hier — het mega-paneel moet zich t.o.v. .mainnav positioneren, niet t.o.v.
+   het item; anders is klemmen binnen de nav-baan onmogelijk. */
+.navitem { flex: none; }
+.navitem > a,
+.navitem > .nav-more {
+  display: inline-flex; align-items: center; gap: 5px; padding: 9px 10px; white-space: nowrap;
+  font-size: 0.875rem; letter-spacing: 0.01em; font-weight: 500; color: var(--ink);
+  border-radius: var(--radius); transition: color .2s ease;
+}
+/* The "More" overflow trigger is a <button> — reset its native chrome so it matches the nav links. */
+.navitem > .nav-more { background: none; border: none; cursor: pointer; font-family: inherit; }
+.navitem > a:hover, .navitem > .nav-more:hover { color: var(--gold-deep); }
+.navitem .caret { width: 8px; height: 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform .25s ease; opacity: 0.6; }
+.navitem:hover .caret, .navitem:focus-within .caret { transform: rotate(225deg) translateY(0); }
+
+/* Mega dropdown
+   ------------------------------------------------------------------------------------------------
+   POSITIONERING: het paneel is ~856px breed en hangt onder een nav-item dat overal op de rij kan
+   staan. Puur centreren onder dat item (`left: 50%; translateX(-50%)`) loopt bij de LINKSE items
+   buiten het scherm: bij "Behandelingen" begon het paneel op -196px (gemeten op 1440px), dus de
+   eerste kolomkop en links waren half weggesneden. Zichtbaar wordt dat pas als de nav breed is —
+   met negen items schuift het eerste item ver naar links — en `html { overflow-x: clip }` snijdt het
+   af in plaats van een scrollbalk te geven, dus het gaat stil mis.
+
+   OPLOSSING: `.mainnav` is de positioneringsanker (`position: relative`), en het paneel wordt binnen
+   die baan geklemd met `clamp()`:
+
+     - ondergrens `0`            → nooit links buiten de nav-baan
+     - voorkeur  `<item-center>` → onder het eigen item, zoals bedoeld
+     - bovengrens `100% - breedte` → nooit rechts buiten de nav-baan
+
+   `--mega-anchor` mag per item gezet worden (bv. inline door NavItem) als een paneel per item moet
+   uitlijnen. Standaard staat hij op 50%: alle panelen komen dan gecentreerd onder de nav-baan te
+   staan. Dat is hier BEWUST de default en geen halve oplossing — de panelen zijn 856px breed tegen
+   nav-items van ~100px, dus "onder het eigen item" is bij zo'n breedteverschil toch grotendeels
+   fictie, terwijl een vaste positie voorkomt dat het paneel bij elk ander item verspringt. Zet
+   `--mega-anchor` alleen als een specifiek menu smal is en per item moet meelopen. */
+.mega {
+  position: absolute; top: calc(100% + 6px);
+  /* Geklemd binnen .mainnav; zie de uitleg hierboven. */
+  left: clamp(0px, calc(var(--mega-anchor, 50%) - var(--mega-w) / 2), calc(100% - var(--mega-w)));
+  transform: translateY(8px);
+  --mega-w: min(856px, 92vw);
+  width: var(--mega-w);
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow); padding: 28px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 26px;
+  opacity: 0; visibility: hidden; transition: opacity .22s ease, transform .22s ease; z-index: 120;
+}
+.mega.mega-1col { --mega-w: min(280px, 92vw); grid-template-columns: 1fr; }
+/* Open on hover OR keyboard focus (a11y). */
+.navitem:hover .mega, .navitem:focus-within .mega { opacity: 1; visibility: visible; transform: translateY(0); }
+/* Hover-brug: dekt de 6px tussen item en paneel, zodat de muis er niet doorheen valt en het menu
+   dichtklapt. Het paneel is breed en geklemd, dus deze strook loopt onder het hele paneel door —
+   dat is precies goed: de brug hoeft alleen de verticale kier te dekken. */
+.mega::before { content: ''; position: absolute; top: -6px; left: 0; right: 0; height: 6px; }
+
+/* Overflow "More" mega — it's the LAST nav item, so anchor it to its right edge (not centered) to
+   keep it on-screen. min-width is modest so a plain-links list reads as a tidy dropdown; auto-fit
+   widens it (up to the .mega max-width) when titled columns are present. */
+.mega-more { left: auto; right: 0; transform: translateX(0) translateY(8px); min-width: 240px; padding: 22px 24px; }
+.navitem-more:hover .mega-more, .navitem-more:focus-within .mega-more { transform: translateX(0) translateY(0); }
+.mega-more .mega-col h4 a { color: inherit; }
+.mega-more .mega-col h4 a:hover { color: var(--gold-deep); }
+/* Plain-links column (overflow items without sub-links) — no gold heading, just the links. Nudge it
+   down a touch so it lines up with the first link of any titled column beside it. */
+.mega-col-plain { padding-top: 2px; }
+.mega-col h4 { font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.mega-col a { display: block; padding: 7px 0; font-size: 0.88rem; color: var(--ink-soft); transition: color .18s ease, padding .18s ease; }
+.mega-col a:hover { color: var(--gold-deep); padding-left: 6px; }
+.mega-col a .tag { font-size: 0.6rem; letter-spacing: 0.1em; background: var(--gold-soft); color: var(--gold-deep); padding: 2px 6px; border-radius: 3px; margin-left: 6px; text-transform: uppercase; font-weight: 700; }
+
+.header-cta { display: flex; align-items: center; gap: 10px; flex: none; }
+.header-cta .btn { padding: 11px 18px; font-size: 0.8rem; white-space: nowrap; }
+
+/* Language switcher — matches the IZZI editorial system (sharp radius, gold accent, champagne
+   panels, Inter uppercase). Only rendered when >1 locale is active. */
+.lang-switcher-header { position: relative; }
+.lang-trigger {
+  display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+  background: none; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 9px 10px; font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); line-height: 1;
+  transition: border-color .18s ease, color .18s ease;
+}
+.lang-code { white-space: nowrap; }
+.lang-trigger:hover { border-color: var(--gold); color: var(--gold-deep); }
+.lang-trigger .lang-caret {
+  width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg); margin-left: 1px; margin-top: -3px; opacity: 0.65; transition: transform .18s ease;
+}
+.lang-switcher-header[data-open='true'] .lang-caret { transform: rotate(-135deg); margin-top: 2px; }
+.lang-flag { width: 1.3em; height: 0.92em; border-radius: 2px; box-shadow: 0 0 0 1px var(--line); flex: none; display: block; }
+.lang-name { white-space: nowrap; }
+.lang-menu {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 130; min-width: 210px;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow); padding: 8px; display: flex; flex-direction: column; gap: 2px;
+}
+.lang-option {
+  display: flex; align-items: center; gap: 11px; padding: 10px 12px; border-radius: var(--radius);
+  text-decoration: none; color: var(--ink-soft); font-family: var(--sans); font-size: 0.9rem;
+  white-space: nowrap; transition: color .18s ease, background .18s ease, padding-left .18s ease;
+}
+.lang-option:hover { background: var(--champagne); color: var(--gold-deep); padding-left: 16px; }
+.lang-option.is-current { color: var(--gold-deep); font-weight: 600; }
+.lang-option.is-current::after { content: '✓'; margin-left: auto; color: var(--gold); font-size: 0.9em; }
+/* Mobile: inline column inside the drawer, matching the drawer's link rhythm. */
+.drawer-lang { flex: none; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.lang-switcher-mobile { display: flex; flex-direction: column; gap: 2px; margin-top: 10px; }
+[dir='rtl'] .lang-menu { right: auto; left: 0; }
+[dir='rtl'] .lang-option:hover { padding-left: 12px; padding-right: 16px; }
+[dir='rtl'] .lang-option.is-current::after { margin-left: 0; margin-right: auto; }
+
+/* ---- Mobile menu ---- */
+.mobilenav { display: none; }
+/* 44×44 minimum touch target (WCAG 2.5.8) — the old 10px padding + three 2px bars was only ~31px tall.
+   `flex: none` keeps it from being squeezed by a long brand name. */
+.hamburger {
+  display: inline-flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 10px; margin-right: -10px;
+  width: 44px; height: 44px; flex: none; -webkit-tap-highlight-color: transparent;
+}
+.hamburger span { width: 24px; height: 2px; background: var(--ink); display: block; border-radius: 2px; }
+
+.drawer-overlay { position: fixed; inset: 0; background: rgba(28,26,23,0.5); z-index: 200; }
+.drawer {
+  position: fixed; top: 0; right: 0; height: 100dvh; width: min(360px, 88vw); z-index: 210;
+  background: var(--cream); box-shadow: -20px 0 60px -30px rgba(0,0,0,0.4);
+  display: flex; flex-direction: column;
+  padding: 22px 24px 30px;
+  /* The PANEL itself must not scroll — only .drawer-nav does (see below). If the panel scrolls, the
+     head and the CTA scroll away with it: on a short phone with an accordion expanded the "Book"
+     button ends up below the fold with no visible affordance to reach it. */
+  overflow: hidden;
+  /* 101% (not 100%) hides the box-shadow's left edge, which otherwise showed as a sliver.
+     Transition `transform` ONLY: `visibility` is animatable, so including it (or `transition: all`)
+     paints the panel mid-transition while still translated off-screen — which reads as a drawer that
+     is open on page load and breaks the first tap. Focus of the closed drawer is handled by the
+     `inert` attribute in MobileMenu.tsx, never by CSS.
+     `visibility: hidden` (stepped at the END of the close transition via the delay below) keeps the
+     off-screen panel from contributing horizontal overflow — the clip that used to absorb that now
+     lives on <html>, which must NOT be given a sideways scroll by a parked drawer. */
+  transform: translateX(101%);
+  visibility: hidden;
+  transition: transform .3s ease, visibility 0s linear .3s;
+}
+/* Opening: make it visible immediately (no delay), then slide in. */
+.drawer.is-open { transform: translateX(0); visibility: visible; transition: transform .3s ease, visibility 0s; }
+/* Respect users who ask for less motion — appear/disappear without the slide. Must also cover
+   `.is-open`, which sets its own `transition` and would otherwise out-specify a bare `.drawer`. */
+@media (prefers-reduced-motion: reduce) {
+  .drawer, .drawer.is-open { transition: none; }
+}
+/* flex: none on head/lang/CTA + flex:1 on the nav = a fixed header, a fixed footer, and one
+   scrolling middle. Without these the head could compress and the CTA get pushed off-panel. */
+.drawer-head { flex: none; display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.drawer-title { font-family: var(--serif); font-size: 1.4rem; }
+.drawer-close { background: none; border: none; font-size: 2rem; line-height: 1; cursor: pointer; color: var(--ink); }
+/* The only scrolling region in the drawer. min-height:0 is required — a flex item's default
+   min-height:auto refuses to shrink below its content, so without it the nav would grow past the
+   panel and push the CTA out instead of scrolling. Negative margin + matching padding let the
+   scrolled content run edge to edge while keeping the text aligned with the head above.
+   `overscroll-behavior: contain` stops an over-scroll here from chaining to the page behind. */
+.drawer-nav {
+  display: grid; gap: 2px; flex: 1 1 auto; min-height: 0;
+  overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
+  margin: 0 -24px; padding: 0 24px;
+}
+.drawer-group { padding: 0; border-bottom: 1px solid var(--line); }
+.drawer-link { display: block; font-family: var(--serif); font-size: 1.2rem; padding: 14px 0; color: var(--ink); }
+/* Accordion toggle for a top-level item that has sub-columns. */
+.drawer-acc {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  background: none; border: none; cursor: pointer; padding: 14px 0; text-align: left;
+  font-family: var(--serif); font-size: 1.2rem; color: var(--ink);
+}
+.drawer-acc-caret {
+  width: 9px; height: 9px; flex: none; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg); transition: transform .2s ease; opacity: 0.6; margin-right: 4px;
+}
+.drawer-group.is-open .drawer-acc { color: var(--gold-deep); }
+.drawer-group.is-open .drawer-acc-caret { transform: rotate(-135deg); }
+.drawer-acc-body { padding: 2px 0 12px; }
+.drawer-sub { padding: 2px 0 6px 14px; display: grid; gap: 2px; border-left: 1px solid var(--line); margin-left: 2px; }
+.drawer-sub-head { font-size: 0.64rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); font-weight: 700; margin: 10px 0 4px; }
+.drawer-sublink { display: block; padding: 7px 0; font-size: 0.92rem; color: var(--ink-soft); }
+.drawer-sublink--all { font-weight: 600; color: var(--ink); padding-left: 0; margin-bottom: 4px; }
+.drawer-sublink:hover, .drawer-link:hover, .drawer-acc:hover { color: var(--gold-deep); }
+.drawer-cta { flex: none; margin-top: 22px; width: 100%; }
+
+/* Raised from 1120px: with up to 7 top-level items plus logo, language switcher and CTA, the row was
+   visibly crowded in the 1120–1240px band before the hamburger took over. */
+@media (max-width: 1240px) {
+  .mainnav, .header-cta { display: none; }
+  .mobilenav { display: block; }
+  /* The wide 1460px header track only existed to fit the mega-nav; without it, match the content. */
+  .header .container { width: min(1200px, 92vw); }
+}
+
+/* ---- Phones ---- */
+@media (max-width: 520px) {
+  .header-inner { padding: 12px 0; gap: 12px; }
+  /* Tighter gutter than 92vw, which leaves only ~14px per side at 360px.
+     `.header .container` (specificity 0,2,0) outranks a bare `.container`, so the header track MUST
+     be restated here — otherwise the header keeps its 92vw width while the page below switches to
+     the 18px inset, and the logo/hamburger sit visibly out of line with all page content. */
+  .container, .header .container { width: calc(100% - 36px); }
+  .drawer { width: min(360px, 92vw); padding: 18px 20px 26px; }
+  /* Keep the nav's bleed matched to the drawer's narrower phone padding. */
+  .drawer-nav { margin: 0 -20px; padding: 0 20px; }
+  .drawer-link, .drawer-acc { font-size: 1.08rem; padding: 13px 0; }
+  .drawer-title { font-size: 1.25rem; }
+  /* Give the close button a real touch target too. */
+  .drawer-close { width: 44px; height: 44px; display: grid; place-items: center; margin-right: -8px; }
+}
+
+/* ============================================================================
+   Hero (landing)
+   ============================================================================ */
+.hero { position: relative; overflow: hidden; background: var(--ink); color: var(--champagne); }
+.hero-bg { position: absolute; inset: 0; z-index: 0; }
+.hero-bg img, .hero-bg video { width: 100%; height: 100%; object-fit: cover; opacity: 0.42; }
+.hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, rgba(28,26,23,0.92) 0%, rgba(28,26,23,0.55) 55%, rgba(28,26,23,0.75) 100%); }
+.hero-inner { position: relative; z-index: 2; padding: 130px 0 120px; max-width: 42rem; }
+.hero .eyebrow { color: var(--gold-soft); }
+.hero .eyebrow::before { background: var(--gold-soft); }
+.hero h1 { color: var(--champagne); margin: 22px 0; }
+.hero h1 em { font-style: italic; color: var(--gold); font-family: var(--serif); }
+.hero p { color: rgba(245,239,230,0.82); font-size: 1.15rem; max-width: 34rem; margin-bottom: 36px; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-meta { display: flex; gap: 40px; margin-top: 56px; flex-wrap: wrap; }
+.hero-meta .num { font-family: var(--serif); font-size: 2.2rem; color: var(--gold); line-height: 1; }
+.hero-meta .lbl { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,239,230,0.7); margin-top: 8px; }
+
+/* ---- Section head ---- */
+.section-head { max-width: 44rem; margin-bottom: 60px; }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-head h2 { margin: 16px 0 18px; }
+.section-head p { color: var(--muted); font-size: 1.06rem; }
+
+/* ---- Review strip ---- */
+.reviewstrip { background: var(--sand); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.reviewstrip .container { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 20px 0; flex-wrap: wrap; text-align: center; }
+.stars { color: var(--gold); letter-spacing: 2px; font-size: 1.1rem; }
+.reviewstrip span { font-size: 0.92rem; color: var(--ink-soft); }
+.reviewstrip a { color: var(--gold-deep); font-weight: 600; }
+
+/* ============================================================================
+   Cards / grids (services, trainings, portfolio, reviews)
+   ============================================================================ */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+
+/* Treatment / service card */
+.card {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  overflow: hidden; transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  display: flex; flex-direction: column;
+}
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-sm); border-color: var(--gold-soft); }
+.card-media { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--sand); }
+.card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.card:hover .card-media img { transform: scale(1.05); }
+.card-body { padding: 26px 26px 30px; display: flex; flex-direction: column; flex: 1; }
+.card-body h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.card-meta { display: flex; gap: 14px; color: var(--gold-deep); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.04em; margin-bottom: 12px; }
+.card-body p { color: var(--muted); font-size: 0.94rem; flex: 1; }
+.card-body .link-arrow { margin-top: 18px; }
+
+/* icon feature (no image) */
+.feature { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 34px 30px; transition: transform .3s ease, box-shadow .3s ease; }
+.feature:hover { transform: translateY(-5px); box-shadow: var(--shadow-sm); }
+.feature-icon { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: var(--champagne); color: var(--gold-deep); margin-bottom: 18px; }
+.feature h3 { font-size: 1.25rem; margin-bottom: 8px; }
+.feature p { color: var(--muted); font-size: 0.92rem; }
+
+@media (max-width: 980px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 680px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+/* ============================================================================
+   Split / feature blocks (about, intro)
+   ============================================================================ */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.split.reverse .split-media { order: 2; }
+.split-media { position: relative; }
+.split-media img { border-radius: var(--radius-lg); width: 100%; height: 100%; max-height: 560px; object-fit: cover; box-shadow: var(--shadow); }
+.split-media .badge {
+  position: absolute; bottom: -24px; right: -24px; background: var(--ink); color: var(--champagne);
+  padding: 22px 26px; border-radius: var(--radius-lg); box-shadow: var(--shadow); text-align: center;
+}
+.split-media .badge .num { font-family: var(--serif); font-size: 2rem; color: var(--gold); line-height: 1; }
+.split-media .badge .lbl { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 6px; opacity: 0.85; }
+.split-body h2 { margin: 16px 0 20px; }
+.split-body p { color: var(--ink-soft); margin-bottom: 16px; }
+.checklist { margin: 24px 0 30px; display: grid; gap: 12px; }
+.checklist li { display: flex; gap: 12px; align-items: flex-start; color: var(--ink-soft); font-size: 0.98rem; }
+.checklist li .tick { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--champagne); color: var(--gold-deep); display: grid; place-items: center; margin-top: 2px; }
+@media (max-width: 900px) { .split { grid-template-columns: 1fr; gap: 40px; } .split.reverse .split-media { order: 0; } .split-media .badge { right: 16px; bottom: -20px; } }
+
+/* ============================================================================
+   Stats band
+   ============================================================================ */
+.stats { background: var(--ink); color: var(--champagne); }
+.stats .grid-4 { text-align: center; }
+.stats .stat .num { font-family: var(--serif); font-size: 3rem; color: var(--gold); line-height: 1; }
+.stats .stat .lbl { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,239,230,0.72); margin-top: 10px; }
+
+/* ============================================================================
+   Reviews
+   ============================================================================ */
+.reviews { background: var(--sand); }
+.review-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 34px; height: 100%; }
+.review-card .stars { margin-bottom: 16px; }
+.review-card p { font-family: var(--serif); font-size: 1.28rem; font-style: italic; line-height: 1.5; color: var(--ink); margin-bottom: 22px; }
+.review-card .who { font-weight: 600; font-size: 0.92rem; }
+.review-card .what { color: var(--muted); font-size: 0.82rem; letter-spacing: 0.04em; }
+
+/* Reviews marquee — continuous right-to-left scroll with fade-in/out edges.
+   Full-bleed; the item list is duplicated in markup so translateX(-50%) loops seamlessly. */
+.review-marquee {
+  position: relative;
+  overflow: hidden;
+  /* fade the left+right edges into the section background */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+.review-marquee-track {
+  display: flex;
+  width: max-content;
+  /* speed scales with the number of cards; ~6s per (visible) card feels calm */
+  animation: review-scroll 48s linear infinite;
+}
+.review-marquee:hover .review-marquee-track { animation-play-state: paused; }
+.review-marquee-item {
+  flex: 0 0 auto;
+  width: 420px;
+  max-width: 82vw;
+  padding: 0 13px; /* half of the grid gap on each side */
+  display: flex;
+}
+@keyframes review-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* exactly one copy of the list */
+}
+@media (prefers-reduced-motion: reduce) {
+  /* no auto-scroll: show a static, wrapping, centered row instead */
+  .review-marquee { -webkit-mask-image: none; mask-image: none; }
+  .review-marquee-track { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; row-gap: 26px; }
+  .review-marquee-item[aria-hidden="true"] { display: none; } /* drop the duplicate copy */
+}
+
+/* ============================================================================
+   Locations
+   ============================================================================ */
+.loc-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 34px; }
+.loc-card h3 { font-size: 1.5rem; margin-bottom: 6px; }
+.loc-card .city { color: var(--gold-deep); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; margin-bottom: 16px; }
+.loc-card ul { display: grid; gap: 10px; }
+.loc-card li { display: flex; gap: 12px; color: var(--ink-soft); font-size: 0.95rem; }
+.loc-card li b { color: var(--gold-deep); }
+
+/* ============================================================================
+   CTA band
+   ============================================================================ */
+.cta-band { position: relative; overflow: hidden; background: var(--ink); color: var(--champagne); text-align: center; }
+.cta-band::before { content: ''; position: absolute; top: -30%; left: 50%; transform: translateX(-50%); width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(184,147,90,0.22), transparent 62%); }
+.cta-inner { position: relative; z-index: 1; max-width: 40rem; margin: 0 auto; }
+.cta-inner .script { color: var(--gold); }
+.cta-inner h2 { color: var(--champagne); margin: 12px 0 18px; }
+.cta-inner p { color: rgba(245,239,230,0.82); margin-bottom: 32px; }
+.cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ============================================================================
+   Sub-page hero (interior pages)
+   ============================================================================ */
+.pagehero { background: var(--ink); color: var(--champagne); position: relative; overflow: hidden; }
+.pagehero::after { content: ''; position: absolute; top: -40%; right: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(184,147,90,0.18), transparent 60%); }
+.pagehero-inner { position: relative; z-index: 1; padding: clamp(48px, 8vw, 90px) 0; max-width: 46rem; }
+.pagehero .eyebrow { color: var(--gold-soft); }
+.pagehero .eyebrow::before { background: var(--gold-soft); }
+.pagehero h1 { color: var(--champagne); margin: 18px 0 16px; font-size: clamp(2.4rem, 5vw, 3.8rem); }
+.pagehero p { color: rgba(245,239,230,0.82); font-size: 1.1rem; max-width: 36rem; }
+.breadcrumb { display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.78rem; color: rgba(245,239,230,0.6); letter-spacing: 0.04em; }
+.breadcrumb a:hover { color: var(--gold); }
+
+/* ============================================================================
+   Treatment / training detail layout
+   ============================================================================ */
+.detail-grid { display: grid; grid-template-columns: 1fr 340px; gap: 60px; align-items: start; }
+.prose h2 { margin: 40px 0 16px; }
+.prose h3 { margin: 28px 0 12px; }
+.prose p { margin-bottom: 16px; color: var(--ink-soft); }
+.prose > img { border-radius: var(--radius-lg); margin: 24px 0; box-shadow: var(--shadow-sm); }
+.prose .checklist { margin: 20px 0; }
+.detail-figure img { border-radius: var(--radius-lg); width: 100%; object-fit: cover; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
+.detail-figure .media-ph { margin-bottom: 30px; }
+
+.aside { position: sticky; top: 100px; display: grid; gap: 20px; }
+.aside-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px; }
+.aside-card.dark { background: var(--ink); color: var(--champagne); }
+.aside-card h4 { font-size: 1.2rem; margin-bottom: 14px; }
+.aside-card.dark h4 { color: var(--champagne); }
+.aside-facts li { display: flex; justify-content: space-between; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+.aside-facts li:last-child { border-bottom: none; }
+.aside-facts .k { color: var(--muted); }
+.aside-facts .v { font-weight: 600; color: var(--ink); }
+.aside-card.dark p { color: rgba(245,239,230,0.82); font-size: 0.92rem; margin-bottom: 18px; }
+.aside-card .btn { width: 100%; }
+@media (max-width: 900px) { .detail-grid { grid-template-columns: 1fr; } .aside { position: static; } }
+
+/* pill list (steps, faq) */
+.steps { display: grid; gap: 16px; counter-reset: step; }
+.step { display: flex; gap: 20px; padding: 24px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.step .n { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--champagne); color: var(--gold-deep); font-family: var(--serif); font-size: 1.3rem; display: grid; place-items: center; }
+.step h3 { font-size: 1.2rem; margin-bottom: 6px; }
+.step p { color: var(--muted); font-size: 0.94rem; }
+
+.faq-item { border-bottom: 1px solid var(--line); padding: 24px 0; }
+.faq-item h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.faq-item p { color: var(--muted); }
+
+/* price table */
+.pricelist { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+.price-row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 22px 30px; border-bottom: 1px solid var(--line); }
+.price-row:last-child { border-bottom: none; }
+.price-row .name { font-family: var(--serif); font-size: 1.25rem; }
+.price-row .desc { color: var(--muted); font-size: 0.88rem; margin-top: 4px; }
+.price-row .amount { font-family: var(--serif); font-size: 1.5rem; color: var(--gold-deep); white-space: nowrap; }
+
+/* portfolio gallery — uniform grid of square tiles (works cleanly for both real images and
+   empty-media placeholders; avoids the ragged heights CSS masonry gives to aspect-ratio boxes). */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.gallery img,
+.gallery .media-ph {
+  width: 100%; aspect-ratio: 1/1; object-fit: cover;
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+}
+.gallery .media-ph { box-shadow: none; }
+@media (max-width: 900px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .gallery { grid-template-columns: 1fr; } }
+
+/* ============================================================================
+   Blog index — paginated grid of article cards
+   Shares the card vocabulary (white panel, hairline border, gold accent) with
+   .card, but gives each piece a clearer job: the category badge rides ON the
+   image, the date/read-time sit in a dedicated meta row, and the read action is
+   anchored to the bottom of the card behind a hairline rule so every card ends
+   on the same deliberate gesture instead of a floating text link.
+   ============================================================================ */
+
+.blog-toolbar {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 24px;
+  flex-wrap: wrap; margin-bottom: 40px; padding-bottom: 22px; border-bottom: 1px solid var(--line);
+}
+.blog-toolbar-title { font-family: var(--serif); font-size: 1.6rem; color: var(--ink); }
+.blog-count { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+
+/* ---- Article card ----
+   minmax(0, 1fr) rather than 1fr: a clamped-but-unbreakable excerpt or a long title would otherwise
+   force a track wider than its share and push the grid past the viewport. */
+.blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 30px); }
+
+.blog-card {
+  position: relative; background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-sm); border-color: var(--gold-soft); }
+
+/* Warm panel behind the photo so a broken/404 image leaves the tile intact (no alt glyph). */
+.blog-card-media {
+  position: relative; aspect-ratio: 3/2; overflow: hidden;
+  background: linear-gradient(135deg, var(--champagne) 0%, var(--sand) 100%);
+}
+.blog-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; color: transparent; }
+.blog-card:hover .blog-card-media img { transform: scale(1.06); }
+.blog-card-media .media-ph { position: absolute; inset: 0; aspect-ratio: auto; height: 100%; border-radius: 0; }
+
+.blog-card-body { padding: 24px 26px 0; display: flex; flex-direction: column; flex: 1; }
+.blog-meta {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600; margin-bottom: 12px;
+}
+.blog-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); flex: none; }
+.blog-card-body h3 { font-size: 1.3rem; line-height: 1.25; margin-bottom: 10px; }
+/* Stretched link: the whole card is clickable, while the visible "read" row keeps the
+   affordance. Interactive children sit above it via z-index. */
+.blog-card-body h3 a::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.blog-card-body h3 a { transition: color .2s ease; }
+.blog-card:hover .blog-card-body h3 a { color: var(--gold-deep); }
+.blog-card-body p {
+  color: var(--muted); font-size: 0.92rem; line-height: 1.75; flex: 1; margin-bottom: 20px;
+  /* Keep every card's excerpt to the same three lines so the read row lines up across a row. */
+  display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* Bottom-anchored read action, behind a hairline rule — every card ends the same way. */
+.blog-card-foot {
+  margin-top: auto; padding: 16px 26px 20px; border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.blog-card-foot .link-arrow { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.blog-card:hover .blog-card-foot .link-arrow svg { transform: translateX(5px); }
+.blog-readtime { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; }
+
+@media (max-width: 980px) { .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 680px) {
+  .blog-grid { grid-template-columns: minmax(0, 1fr); }
+  /* Stack the toolbar: space-between left the count orphaned on its own line, far from the title. */
+  .blog-toolbar {
+    flex-direction: column; align-items: flex-start; gap: 8px;
+    margin-bottom: 26px; padding-bottom: 16px;
+  }
+  .blog-toolbar-title { font-size: 1.35rem; }
+  /* Reclaim horizontal space inside the card on small screens. */
+  .blog-card-body { padding: 20px 18px 0; }
+  .blog-card-foot { padding: 14px 18px 18px; }
+  .blog-card-body h3 { font-size: 1.18rem; }
+  /* Hover lift is meaningless on touch and causes a sticky :hover state after a tap. */
+  .blog-card:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .blog-card { animation: rise .6s ease both; }
+}
+
+/* ---- Pagination ----
+   Plain links to /blog and /blog/page/<n>. Sharp square tiles rather than pills, so the
+   control reads as editorial navigation and not as the (now removed) filter chips. */
+.pagination {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  flex-wrap: wrap; margin-top: 60px; padding-top: 32px; border-top: 1px solid var(--line);
+}
+.page-numbers { display: flex; align-items: center; gap: 6px; list-style: none; flex-wrap: wrap; }
+.page-num {
+  display: grid; place-items: center; min-width: 42px; height: 42px; padding: 0 12px;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--white);
+  font-family: var(--sans); font-size: 0.86rem; font-weight: 600; color: var(--ink-soft);
+  transition: border-color .2s ease, color .2s ease, background .2s ease, transform .2s ease;
+}
+.page-num:hover { border-color: var(--gold); color: var(--gold-deep); transform: translateY(-2px); }
+.page-num.is-current {
+  background: var(--ink); border-color: var(--ink); color: var(--champagne); cursor: default;
+}
+.page-num.is-current:hover { transform: none; }
+.page-gap { padding: 0 4px; color: var(--muted); letter-spacing: 0.1em; user-select: none; }
+
+.page-arrow {
+  display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px;
+  border: 1px solid var(--ink); border-radius: var(--radius); background: transparent;
+  font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); white-space: nowrap;
+  transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+}
+.page-arrow:hover { background: var(--ink); color: var(--champagne); transform: translateY(-2px); }
+.page-arrow svg { transition: transform .25s ease; }
+.page-arrow:hover svg { transform: translateX(4px); }
+/* The "previous" glyph is rotated 180°, so nudge it the other way on hover. */
+.page-arrow[rel='prev']:hover svg { transform: rotate(180deg) translateX(4px); }
+/* Endpoints keep their footprint so the row never reflows between pages. */
+.page-arrow.is-disabled {
+  border-color: var(--line); color: var(--muted); opacity: 0.5; pointer-events: none;
+}
+
+@media (max-width: 680px) {
+  .pagination { justify-content: center; gap: 16px; margin-top: 40px; padding-top: 24px; }
+  .page-numbers { order: -1; width: 100%; justify-content: center; }
+  /* min-width:0 lets the two arrows share the row without overflowing at 320px. */
+  .page-arrow { flex: 1 1 0; min-width: 0; justify-content: center; padding: 12px 14px; letter-spacing: 0.08em; }
+}
+@media (max-width: 380px) {
+  /* Below ~380px the two labelled arrows plus their icons no longer fit side by side. */
+  .page-arrow { font-size: 0.72rem; padding: 11px 10px; gap: 6px; }
+  .page-num { min-width: 38px; height: 38px; padding: 0 9px; }
+}
+
+/* ============================================================================
+   Blog post (detail) — editorial article layout
+   Article column + sticky sidebar (table of contents, author, booking CTA), a
+   lead figure that overlaps the dark hero, and a proper action bar at the end
+   instead of a single stray "back" button.
+   ============================================================================ */
+
+.post-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 64px; align-items: start; }
+
+/* The article starts closer to the hero than a normal .section would, and the lead figure
+   lifts a little into the dark band so the two read as one composition. The overlap is
+   deliberately shallow (56px) — the hero's intro paragraph must stay fully visible. */
+.post-section { padding-top: 56px; }
+.post-figure { margin-top: -112px; position: relative; z-index: 2; margin-bottom: 34px; }
+/* The warm panel behind the image. It carries the radius/shadow so the figure keeps its exact
+   footprint even when the <img> fails to load (broken/404 media) — otherwise the alt icon would
+   be left stranded over the dark hero with transparent space beneath it. */
+.post-figure {
+  border-radius: var(--radius-lg); box-shadow: var(--shadow); overflow: hidden;
+  background: linear-gradient(135deg, var(--champagne) 0%, var(--sand) 100%);
+  aspect-ratio: 16/9;
+}
+.post-figure img,
+.post-figure .media-ph {
+  width: 100%; height: 100%; object-fit: cover;
+  /* Hide the broken-image glyph/alt text; the panel behind stands in instead. */
+  color: transparent; position: relative;
+}
+.post-figure .media-ph { border-radius: 0; }
+/* A failed <img> still paints a small "broken image" glyph in the corner, which would sit over
+   the dark hero. Chrome/Safari only apply ::before to a broken image, so use it to mask that
+   corner with the same warm panel. A loaded image never matches, so nothing is covered. */
+.post-figure img::before,
+.blog-card-media img::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--champagne) 0%, var(--sand) 100%);
+}
+
+/* Meta row under the figure: category chip, date, author, read time. */
+.post-meta {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding-bottom: 26px; margin-bottom: 34px; border-bottom: 1px solid var(--line);
+}
+.post-meta-chip {
+  display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 999px;
+  background: var(--champagne); color: var(--gold-deep); border: 1px solid var(--gold-soft);
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+}
+.post-meta-item { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.post-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); flex: none; }
+
+/* Article body — a touch larger than default prose for comfortable long-form reading. */
+.post-body > p:first-of-type { font-size: 1.12rem; line-height: 1.85; color: var(--ink-soft); }
+.post-body p { font-size: 1.02rem; line-height: 1.85; margin-bottom: 18px; }
+.post-body h2 {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin: 46px 0 16px; padding-top: 8px;
+  scroll-margin-top: 110px; /* clears the sticky header when jumped to from the TOC */
+}
+/* Thin gold rule above each section heading — the same accent the eyebrows use. */
+.post-body h2::before {
+  content: ''; display: block; width: 40px; height: 1px; background: var(--gold); margin-bottom: 18px;
+}
+.post-body h2:first-child { margin-top: 0; }
+
+/* ---- Sidebar ----
+   The article column starts high (its figure overlaps the hero), so the sidebar gets its own
+   top offset to line up with the meta row rather than floating beside the image. */
+.post-aside { position: sticky; top: 100px; display: grid; gap: 20px; padding-top: 64px; }
+.post-toc { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 26px 24px; }
+.post-toc h4 {
+  font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-deep); margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line);
+}
+.post-toc ol { list-style: none; counter-reset: toc; display: grid; gap: 2px; }
+.post-toc a {
+  display: flex; gap: 10px; padding: 7px 0; font-size: 0.88rem; color: var(--ink-soft);
+  transition: color .18s ease, padding-left .18s ease;
+}
+.post-toc a::before {
+  counter-increment: toc; content: counter(toc, decimal-leading-zero);
+  color: var(--gold); font-size: 0.72rem; font-weight: 700; flex: none; padding-top: 2px;
+}
+.post-toc a:hover { color: var(--gold-deep); padding-left: 5px; }
+
+/* ---- End-of-article action bar ---- */
+.post-actions {
+  margin-top: 52px; padding-top: 30px; border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+}
+.post-actions .btn { flex: none; }
+
+/* ---- Prev / next article ---- */
+.post-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 34px; }
+.post-nav-card {
+  display: flex; flex-direction: column; gap: 8px; padding: 24px 26px;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.post-nav-card:hover { border-color: var(--gold-soft); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+.post-nav-card .dir {
+  font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); font-weight: 700;
+}
+.post-nav-card .t { font-family: var(--serif); font-size: 1.12rem; line-height: 1.3; color: var(--ink); }
+.post-nav-card.is-next { text-align: right; }
+/* Only one neighbour (first or last post) — let it span the row instead of sitting half-width. */
+.post-nav-card:only-child { grid-column: 1 / -1; }
+
+@media (max-width: 980px) {
+  .post-layout { grid-template-columns: 1fr; gap: 44px; }
+  .post-aside { position: static; }
+}
+@media (max-width: 680px) {
+  .post-figure { margin-top: -60px; }
+  .post-nav { grid-template-columns: 1fr; }
+  .post-nav-card.is-next { text-align: left; }
+  .post-actions { flex-direction: column; align-items: stretch; }
+  .post-actions .btn { width: 100%; }
+}
+
+/* ============================================================================
+   Footer
+   ============================================================================ */
+.footer { background: var(--ink); color: #cfc7ba; padding: 84px 0 30px; }
+.footer-grid { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1fr; gap: 44px; }
+.footer h4 { font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.footer-brand-name { font-family: var(--serif); font-size: 1.9rem; color: var(--champagne); margin-bottom: 16px; }
+.footer-logo { height: 52px; width: auto; max-width: 240px; object-fit: contain; margin-bottom: 18px; }
+.footer p, .footer li { color: #b3aa9c; font-size: 1rem; line-height: 1.95; }
+.footer a { color: #b3aa9c; transition: color .2s ease; }
+.footer a:hover { color: var(--gold); }
+.footer ul { display: grid; gap: 9px; }
+.footer-contact { margin-top: 18px; display: grid; gap: 8px; }
+.footer-contact b { color: var(--champagne); font-weight: 600; display: block; font-size: 0.82rem; letter-spacing: 0.04em; }
+.footer-socials { display: flex; gap: 12px; margin-top: 22px; }
+.footer-socials a { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: rgba(245,239,230,0.07); color: var(--champagne); transition: background .25s ease, color .25s ease; }
+.footer-socials a:hover { background: var(--gold); color: var(--ink); }
+.footer-bottom { border-top: 1px solid rgba(245,239,230,0.12); margin-top: 56px; padding-top: 26px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.82rem; color: #8f8577; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 34px; } }
+@media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+
+/* ---- reveal-on-load niceties ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .card, .feature, .review-card, .loc-card { animation: rise .6s ease both; }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── Contact section (homepage) — left: info, right: form ─────────────────── */
+.contact-section { background: var(--cream); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start; }
+.contact-info h2 { margin: 10px 0 14px; }
+.contact-info > p { color: var(--muted); max-width: 42ch; margin-bottom: 28px; }
+.contact-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; }
+.contact-list li { display: flex; flex-direction: column; gap: 3px; }
+.contact-list-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-deep); font-weight: 700; }
+.contact-list a { color: var(--ink); text-decoration: none; }
+.contact-list a:hover { color: var(--gold-deep); }
+
+/* Form styling — premium: airy white card, refined inputs, gold gradient CTA */
+.contact-form {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 44px 42px;
+  box-shadow: 0 30px 70px -40px rgba(40, 30, 15, 0.35), 0 2px 8px rgba(40, 30, 15, 0.04);
+}
+.form { display: flex; flex-direction: column; gap: 22px; }
+.form-field { display: flex; flex-direction: column; gap: 9px; }
+.form-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-soft); font-family: var(--sans);
+}
+/*
+ * Tekstvelden in een formulier.
+ *
+ * ⚠️ `:not([type='radio']):not([type='checkbox'])` is geen netheid maar een bugfix. Deze regel gaf
+ * ELKE input `width: 100%` en `padding: 14px 16px` — ook een radio. In het afrekenen betekende dat
+ * een keuzerondje dat de hele regel breed werd: het bolletje kwam midden in de rij te staan en duwde
+ * de naam van de verzendmethode, de levertijd en de prijs naar rechts. Het zag eruit als een kapotte
+ * lay-out terwijl de opmaak van `.ship-option` gewoon klopte.
+ *
+ * Een radio of checkbox heeft zijn eigen, door de browser bepaalde maat; die hoort een
+ * formulierstijl niet over te schrijven.
+ */
+.form input:not([type='radio']):not([type='checkbox']), .form textarea, .form select {
+  width: 100%; box-sizing: border-box; padding: 14px 16px;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--cream); color: var(--ink); font-family: var(--sans); font-size: 0.95rem;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+}
+.form input::placeholder, .form textarea::placeholder { color: var(--muted); opacity: 0.7; }
+/* Zelfde uitzondering als hierboven: een rand en een gouden gloed om een keuzerondje horen niet. */
+.form input:not([type='radio']):not([type='checkbox']):hover, .form textarea:hover, .form select:hover {
+  border-color: var(--gold-soft);
+}
+.form input:not([type='radio']):not([type='checkbox']):focus, .form textarea:focus, .form select:focus {
+  outline: none; border-color: var(--gold); background: var(--white);
+  box-shadow: 0 0 0 4px var(--gold-soft);
+}
+/* Een keuzerondje krijgt wél een zichtbare focus-ring — anders is toetsenbordnavigatie onmogelijk. */
+.form input[type='radio']:focus-visible, .form input[type='checkbox']:focus-visible {
+  outline: 2px solid var(--gold); outline-offset: 2px;
+}
+
+/*
+ * Wachtwoordveld met een oogje om het even leesbaar te maken.
+ *
+ * ── Waarom het oogje IN het veld staat en niet ernaast ────────────────────────────────────────────
+ * De knop staat absoluut gepositioneerd over het veld heen, en het veld krijgt rechts extra padding
+ * zodat de tekst niet onder het oogje doorloopt. Stond de knop ernaast in een flexrij, dan werd het
+ * invoervak smaller dan alle andere velden in hetzelfde formulier — zichtbaar scheef, juist op een
+ * inlogpagina waar er maar twee velden zijn.
+ *
+ * `--pw-eye-space` is de ruimte die het oogje inneemt; hij staat hier als variabele zodat de padding
+ * van het veld en de breedte van de knop niet los van elkaar kunnen gaan lopen.
+ */
+.password-field { --pw-eye-space: 48px; position: relative; display: flex; }
+.form .password-field input { padding-right: var(--pw-eye-space); }
+.password-toggle {
+  position: absolute; top: 0; right: 0; bottom: 0; width: var(--pw-eye-space);
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 0; background: none; padding: 0; cursor: pointer;
+  color: var(--muted); transition: color 0.18s;
+}
+.password-toggle:hover { color: var(--gold); }
+.password-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: var(--radius); }
+.password-toggle svg { width: 20px; height: 20px; display: block; }
+.form textarea { min-height: 130px; resize: vertical; line-height: 1.6; }
+.form button[type="submit"] {
+  align-self: flex-start; margin-top: 8px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+  color: var(--white); border: none; padding: 15px 40px; border-radius: 999px;
+  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.03em; font-family: var(--sans);
+  cursor: pointer; box-shadow: 0 10px 24px -12px var(--gold-deep);
+  transition: transform 0.18s, box-shadow 0.18s, filter 0.18s;
+}
+.form button[type="submit"]:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -12px var(--gold-deep); filter: brightness(1.04); }
+.form button[type="submit"]:active { transform: translateY(0); }
+.form button[type="submit"]:disabled { opacity: 0.55; cursor: default; transform: none; box-shadow: none; }
+/* Confirmation shown after a successful submit — a soft, centered card with a gold check badge.
+   Auto-clears after a few seconds (see Form.tsx), so it reads as a graceful acknowledgement. */
+.form-success {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: 18px; padding: 48px 32px;
+  background: linear-gradient(160deg, var(--cream) 0%, var(--champagne) 100%);
+  border: 1px solid var(--gold-soft); border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px -34px rgba(154, 119, 66, 0.5);
+  animation: form-success-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.form-success-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 60px; height: 60px; border-radius: 999px;
+  color: #fff; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+  box-shadow: 0 10px 22px -10px var(--gold-deep);
+  animation: form-success-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.12s both;
+}
+.form-success-icon svg { stroke-dasharray: 26; stroke-dashoffset: 26;
+  animation: form-success-draw 0.5s ease 0.3s forwards; }
+.form-success-text {
+  margin: 0; font-family: var(--serif); font-size: 1.3rem; font-weight: 600;
+  color: var(--ink); letter-spacing: -0.01em;
+}
+@keyframes form-success-in { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: none } }
+@keyframes form-success-pop { 0% { opacity: 0; transform: scale(0.5) } 100% { opacity: 1; transform: scale(1) } }
+@keyframes form-success-draw { to { stroke-dashoffset: 0 } }
+@media (prefers-reduced-motion: reduce) {
+  .form-success, .form-success-icon, .form-success-icon svg { animation: none; }
+  .form-success-icon svg { stroke-dashoffset: 0; }
+}
+.form-error { color: #c0392b; font-size: 0.82rem; font-weight: 600; }
+
+@media (max-width: 860px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ---------- Empty-media placeholder (shown until a client uploads via the CMS) ----------
+   A clean, on-brand blank box instead of a broken <img>. Same footprint the real image
+   will take, so layouts read correctly during onboarding. */
+.media-ph {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px; width: 100%; height: 100%;
+  background:
+    linear-gradient(135deg, var(--champagne) 0%, var(--sand) 100%);
+  border: 1px dashed var(--line);
+  color: var(--muted);
+  text-align: center;
+  border-radius: inherit;
+}
+.media-ph-icon { color: var(--gold); opacity: 0.7; }
+.media-ph-label {
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+  color: var(--muted);
+}
+/* Shapes so the placeholder matches whatever section holds it. Each shape sets its own
+   aspect-ratio and keeps height auto, so the box is driven by width × ratio (never a
+   collapsed 0-height, never over-tall). */
+.media-ph--card { aspect-ratio: 4/3; }
+.media-ph--wide { aspect-ratio: 16/9; border-radius: var(--radius-lg); }
+.media-ph--portrait { aspect-ratio: 3/4; border-radius: var(--radius-lg); }
+.media-ph--square { aspect-ratio: 1/1; border-radius: var(--radius-lg); }
+/* free: fills its parent, which already defines the box (e.g. .card-media has aspect-ratio 4/3). */
+.media-ph--free { border-radius: var(--radius-lg); }
+/* Only .card-media gives its child a fixed frame (position/aspect-ratio), so the free
+   placeholder should fill it 100%. .detail-figure / .split-media have NO intrinsic height —
+   there the placeholder must keep its own aspect-ratio, so we do NOT reset it. */
+.card-media .media-ph { position: absolute; inset: 0; aspect-ratio: auto; height: 100%; }
+
+/* ============================================================================================
+   WEBSHOP
+   Toegevoegd door de e-commerce-module. Alleen zichtbaar bij tenants met
+   NEXT_PUBLIC_COMMERCE_ENABLED=1.
+
+   Gebruikt UITSLUITEND de bestaande custom properties (--ink, --gold, --champagne, --line,
+   --radius, --serif, --sans) â€” geen nieuwe tokens, geen framework. Zo ziet de winkel eruit als de
+   rest van de site in plaats van als een aangeplakte module.
+
+   Bewust Ã©Ã©n afgebakend blok aan het eind van het bestand: bij een template-update doet
+   updateFromTemplate.ts een drie-weg merge op globals.css, en een aaneengesloten toevoeging geeft
+   veel minder conflicten dan wijzigingen die door het hele bestand verspreid staan.
+   ============================================================================================ */
+
+/* Hulpklasse voor schermlezers (o.a. gebruikt door de winkelwagen-badge). */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.container--narrow { max-width: 780px; }
+
+/* ---------- winkelwagen-badge in de header ---------- */
+/* Vaste afmeting: het aantal komt pas nÃ¡ hydratie binnen (zie CartProvider.tsx). Zonder vaste maat
+   zou de header op dat moment verschuiven. */
+.cart-badge {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; color: var(--ink); text-decoration: none; border-radius: 50%;
+  transition: background-color .2s ease;
+}
+.cart-badge:hover { background: var(--sand); }
+.cart-badge-count {
+  position: absolute; top: 2px; right: 2px; min-width: 18px; height: 18px; padding: 0 4px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--sans); font-size: .68rem; font-weight: 700; line-height: 1;
+  color: #fff; background: var(--gold-deep); border-radius: 9px;
+}
+
+/* ---------- winkel: filters en sorteren ---------- */
+.shop-intro { max-width: 60ch; margin-bottom: 2rem; }
+.shop-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem; }
+.shop-filter {
+  padding: .45rem .95rem; font-family: var(--sans); font-size: .85rem; color: var(--ink-soft);
+  text-decoration: none; border: 1px solid var(--line); border-radius: 999px;
+  transition: all .2s ease;
+}
+.shop-filter:hover { border-color: var(--gold); color: var(--gold-deep); }
+.shop-filter--active { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+/* Aantal links, sorteeropties rechts. `gap` vangt het inklappen op bij smalle schermen op. */
+.shop-toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: .75rem 1.5rem;
+  padding-bottom: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--line);
+}
+.shop-toolbar-count {
+  font-family: var(--sans); font-size: .75rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--muted); margin: 0;
+}
+
+/* De sorteeropties zijn pillen, net als .shop-filter — één visuele taal voor "kies iets". */
+.shop-sorts { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.shop-sorts-label {
+  font-family: var(--sans); font-size: .8rem; color: var(--muted); margin-right: .25rem;
+}
+.shop-sort {
+  padding: .4rem .85rem; font-family: var(--sans); font-size: .82rem; line-height: 1;
+  color: var(--ink-soft); text-decoration: none; white-space: nowrap;
+  background: var(--white); border: 1px solid var(--line); border-radius: 999px;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+.shop-sort:hover { color: var(--gold-deep); border-color: var(--gold); }
+.shop-sort--active {
+  color: var(--white); background: var(--gold-deep); border-color: var(--gold-deep);
+}
+.shop-sort--active:hover { color: var(--white); }
+
+@media (max-width: 640px) {
+  /* Op mobiel horizontaal scrollen in plaats van over vier regels afbreken. */
+  .shop-sorts {
+    flex-wrap: nowrap; overflow-x: auto; width: 100%;
+    padding-bottom: .35rem; scrollbar-width: none;
+  }
+  .shop-sorts::-webkit-scrollbar { display: none; }
+}
+
+.shop-pagination { display: flex; gap: .4rem; justify-content: center; margin-top: 3rem; }
+.shop-page {
+  min-width: 38px; padding: .5rem; text-align: center; font-family: var(--sans);
+  font-size: .9rem; color: var(--ink-soft); text-decoration: none;
+  border: 1px solid var(--line); border-radius: var(--radius);
+}
+.shop-page--active { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+/* ---------- productkaart ---------- */
+.product-card { position: relative; }
+
+/* De kaart is geen <a> meer (er staat een knop in), dus de link ligt als overlay over de kaart.
+   `.card-body` is de positioneringscontext; de overlay reikt met negatieve offsets tot over de
+   afbeelding, zodat de héle kaart klikbaar blijft. */
+.product-card .card-body { position: relative; }
+.product-card .card-link {
+  position: absolute; inset: -100% 0 0 0; z-index: 1;
+  border-radius: var(--radius-lg);
+}
+/* De hover-lift en zoom hingen aan `.card:hover`; die werken nog, maar de focusring van de
+   overlay-link moet zichtbaar zijn op de kaart in plaats van op een onzichtbaar vlak. */
+.product-card .card-link:focus-visible {
+  outline: 2px solid var(--gold-deep); outline-offset: -3px;
+}
+/* Titel, tekst en prijs boven de overlay houden, anders is er geen tekstselectie mogelijk. */
+.product-card .card-body > :not(.card-link) { position: relative; z-index: 2; }
+
+/* ── Typografische hiërarchie op de kaart ──────────────────────────────────────────────────────
+   `.card` is gemaakt voor behandelingskaarten: één titel van 1.4rem met een korte regel eronder.
+   Op een productkaart staan er vier dingen onder elkaar (titel, omschrijving, prijs, knop) en dan
+   valt die verhouding uit elkaar — titel en omschrijving krijgen bijna hetzelfde gewicht en de
+   kaart wordt één grijze massa. Een webshop leest van boven naar beneden met afnemend belang:
+   productnaam eerst, omschrijving als ondersteuning, prijs als het antwoord. */
+.product-card .card-body { padding: 20px 22px 24px; }
+.product-card .card-body h3 {
+  font-size: 1.25rem; line-height: 1.3; margin-bottom: 7px;
+  /* Twee regels titel, dan afkappen: anders duwt één lange productnaam de hele rij scheef. */
+  display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* Duidelijk kleiner dan de titel. Stond die verhouding te dicht bij elkaar, dan leest de kaart als
+   één grijze massa in plaats van "naam eerst, uitleg daarna". */
+.product-card .card-body p {
+  font-size: .82rem; line-height: 1.5; color: var(--muted); flex: none;
+  /* Twee regels is genoeg context; de rest staat op de detailpagina. */
+  display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* De knop onderaan de kaart. `margin-top: auto` duwt hem naar de onderrand, zodat knoppen in een
+   rooster op één lijn staan ook als de omschrijvingen verschillend lang zijn. */
+.product-card-btn {
+  margin-top: 16px; width: 100%; justify-content: center; font-size: .78rem;
+  padding: .68rem 1rem; letter-spacing: .1em;
+}
+.product-card-btn:disabled {
+  background: transparent; color: var(--muted); border-color: var(--line);
+  cursor: not-allowed; transform: none; box-shadow: none;
+}
+
+/* Melding wanneer "in winkelwagen" op een kaart mislukt. Zonder deze regel faalde de knop stil —
+   de bezoeker klikte opnieuw en dacht dat de webshop niet werkte. Zie QuickAdd.tsx. */
+.product-card-error {
+  margin: 8px 0 0; text-align: center; line-height: 1.35;
+}
+.product-card-btn--added { background: var(--gold-deep); }
+/* De prijs duwt de knop naar de onderrand. Bewust de prijs en niet de omschrijving: die is nu op
+   twee regels afgekapt (`flex: none`), dus zonder dit zouden kaarten met een korte omschrijving een
+   hoger geplaatste knop krijgen dan hun buren. De prijs staat er altijd — ook als "—". */
+.product-card .product-price { margin-bottom: auto; }
+
+/* Ronde aanbiedingsbadge linksboven, zoals op de oude site. Een cirkel in plaats van een rechthoek:
+   die leest als een sticker en valt op tegen een productfoto zonder de foto te overstemmen. */
+.product-badge {
+  position: absolute; top: .75rem; left: .75rem; z-index: 2;
+  display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%;
+  font-family: var(--sans); font-size: .8rem; font-weight: 700; line-height: 1;
+  color: var(--white); background: var(--sale-deep);
+  box-shadow: 0 4px 12px -4px rgba(0,0,0,.35);
+}
+/* "Uitverkocht" is geen aanbieding: rechthoekig, gedempt en rechtsboven — bewust een ander
+   visueel type, zodat de twee badges nooit met elkaar te verwarren zijn. */
+.product-badge--muted {
+  width: auto; height: auto; border-radius: var(--radius); left: auto; right: .75rem;
+  padding: .35rem .7rem; font-size: .72rem; background: var(--muted); box-shadow: none;
+}
+
+.product-price {
+  margin-top: .6rem; font-family: var(--sans);
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: .5rem;
+}
+.product-price-from { font-size: .8rem; color: var(--muted); }
+/* Van-prijs eerst en doorgestreept, dan de nieuwe prijs groter ernaast — de leesvolgorde van de
+   oude site: je ziet wat het wás voordat je ziet wat het nú is. */
+.product-price-was {
+  order: -1; margin: 0; font-size: .95rem; color: var(--muted); text-decoration: line-through;
+}
+.product-price-now { font-size: 1.15rem; font-weight: 700; color: var(--ink); }
+.product-price-empty { color: var(--muted); }
+
+/* ---------- productdetail ---------- */
+.product-detail .product-breadcrumb {
+  margin-bottom: 1.5rem; font-family: var(--sans); font-size: .85rem; color: var(--muted);
+}
+.product-detail .product-breadcrumb a { color: var(--gold-deep); text-decoration: none; }
+/* Afbeelding iets breder dan de kolom met de koopbeslissing: de foto verkoopt, de tekstkolom hoeft
+   alleen leesbaar te zijn. Bewust NIET `.split` (1fr 1fr, verticaal gecentreerd) — daar zweefde de
+   korte tekstkolom halverwege een hoge foto. */
+.product-layout {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 3.5rem; align-items: start;
+}
+
+.pgallery-main {
+  border-radius: var(--radius-lg); overflow: hidden; background: var(--sand);
+  aspect-ratio: 1; display: grid; place-items: center;
+}
+/* `contain`, niet `cover`: een staande productfoto mag niet bijgesneden worden op de pagina waar
+   de bezoeker het product juist goed wil bekijken. */
+.pgallery-main img { width: 100%; height: 100%; object-fit: contain; }
+.pgallery-main .media-ph { width: 100%; height: 100%; aspect-ratio: auto; }
+
+/* `auto-fill` in plaats van een vast aantal kolommen: bij twee afbeeldingen twee thumbs naast
+   elkaar, bij tien netjes doorlopend op meerdere regels. Vaste `repeat(4, 1fr)` maakte twee thumbs
+   onnodig groot en verstopte alles na de vierde. */
+.pgallery-thumbs {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: .5rem; margin-top: .6rem;
+}
+.pgallery-thumb {
+  position: relative; aspect-ratio: 1; overflow: hidden; padding: 0; cursor: pointer;
+  background: var(--sand); border: 1px solid var(--line); border-radius: var(--radius);
+  transition: border-color .2s ease, opacity .2s ease;
+}
+.pgallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.pgallery-thumb .media-ph { position: absolute; inset: 0; aspect-ratio: auto; height: 100%; }
+.pgallery-thumb:hover { border-color: var(--gold); }
+.pgallery-thumb--active { border-color: var(--gold-deep); border-width: 2px; }
+.pgallery-thumb:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 2px; }
+
+/* De koopkolom. Kleinere koptekst dan een gewone pagina-h1: hier concurreert de titel met de
+   productfoto, en een titel van 3.5rem duwde prijs en knop onder de vouw. */
+.product-info h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; margin-bottom: .6rem; }
+.product-lead {
+  font-family: var(--sans); font-size: .95rem; line-height: 1.6; color: var(--ink-soft);
+  margin-bottom: .25rem;
+}
+.product-tax-note {
+  margin-top: 1rem; font-family: var(--sans); font-size: .8rem; color: var(--muted);
+}
+.product-categories { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+.product-categories a {
+  font-family: var(--sans); font-size: .8rem; color: var(--ink-soft); text-decoration: none;
+  padding: .3rem .7rem; border: 1px solid var(--line); border-radius: 999px;
+}
+.product-unavailable { font-family: var(--sans); color: var(--muted); }
+
+/* ---------- volledige omschrijving (HTML uit het CMS) ----------
+   Onder de twee kolommen, met een scheidingslijn. De breedte is beperkt: over de volle 1200px
+   worden regels te lang om prettig te lezen. `.prose` dekt h2/h3/p al; hier staat wat de
+   CMS-editor daarnaast kan uitspugen — h1, lijsten, links, blockquote, tabellen. */
+.product-body {
+  max-width: 74ch; margin: 3.5rem 0 0;
+  padding-top: 2.5rem; border-top: 1px solid var(--line);
+}
+.product-body h1 { font-size: 1.9rem; margin: 0 0 1rem; }
+.product-body h2:first-child, .product-body h3:first-child, .product-body h1:first-child {
+  margin-top: 0;
+}
+.product-body ul, .product-body ol { margin: 0 0 1rem 1.35rem; color: var(--ink-soft); }
+.product-body ul { list-style: disc; }
+.product-body ol { list-style: decimal; }
+.product-body li { margin-bottom: .4rem; }
+.product-body a { color: var(--gold-deep); text-decoration: underline; }
+.product-body strong { font-weight: 700; color: var(--ink); }
+.product-body blockquote {
+  margin: 1.5rem 0; padding-left: 1.25rem; border-left: 2px solid var(--gold-soft);
+  font-style: italic; color: var(--ink-soft);
+}
+.product-body img { border-radius: var(--radius); margin: 1.5rem 0; }
+/* Een brede tabel mag de pagina niet horizontaal laten scrollen. */
+.product-body table { display: block; overflow-x: auto; width: 100%; border-collapse: collapse; }
+.product-body th, .product-body td {
+  padding: .5rem .75rem; border: 1px solid var(--line); text-align: left; font-size: .92rem;
+}
+
+/* ---------- variantkiezer + in winkelwagen ---------- */
+.atc { margin-top: 1.75rem; }
+.variant-group { margin-bottom: 1.25rem; }
+.variant-options { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
+.variant-option {
+  display: flex; flex-direction: column; gap: .15rem; align-items: flex-start;
+  padding: .6rem .9rem; font-family: var(--sans); font-size: .875rem; text-align: left;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  cursor: pointer; transition: all .2s ease;
+}
+.variant-option:hover:not(:disabled) { border-color: var(--gold); }
+.variant-option--active { border-color: var(--ink); background: var(--cream); }
+.variant-option--soldout { opacity: .45; cursor: not-allowed; }
+.variant-option-title { font-weight: 600; color: var(--ink); }
+.variant-option-price { color: var(--muted); font-size: .8rem; }
+.variant-option-note { font-size: .72rem; color: var(--muted); }
+
+/* Zelfde leesvolgorde als op de kaart: eerst de doorgestreepte van-prijs, dan de huidige prijs. */
+.atc-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: .6rem; margin-bottom: 1rem; }
+.atc-price-now { font-family: var(--serif); font-size: 1.9rem; color: var(--ink); }
+.atc-price-was { order: -1; font-size: 1.1rem; color: var(--muted); text-decoration: line-through; }
+.atc-row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+.atc-row .btn { flex: 1 1 200px; }
+/* Zonder varianten staat de knop los van `.atc-row` en heeft hij zelf een breedte nodig. */
+.atc > .atc-btn { width: 100%; }
+.atc-btn:disabled {
+  background: transparent; color: var(--muted); border-color: var(--line);
+  cursor: not-allowed; transform: none; box-shadow: none;
+}
+.atc-cart-link {
+  display: inline-block; margin-top: .85rem; font-family: var(--sans); font-size: .88rem;
+  font-weight: 600; color: var(--gold-deep); text-decoration: none;
+}
+.atc-cart-link:hover { text-decoration: underline; }
+.atc-stock {
+  margin-top: .75rem; font-family: var(--sans); font-size: .8rem; color: var(--gold-deep);
+}
+
+/* ---------- hoeveelheid ---------- */
+.qty {
+  display: inline-flex; align-items: center;
+  border: 1px solid var(--line); border-radius: var(--radius);
+}
+.qty-btn {
+  width: 38px; height: 42px; font-size: 1.1rem; color: var(--ink-soft);
+  background: none; border: 0; cursor: pointer;
+}
+.qty-btn:disabled { opacity: .35; cursor: not-allowed; }
+.qty-input {
+  width: 48px; height: 42px; text-align: center; font-family: var(--sans); font-size: .9rem;
+  border: 0; border-left: 1px solid var(--line); border-right: 1px solid var(--line);
+  -moz-appearance: textfield; appearance: textfield;
+}
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.qty-value {
+  min-width: 44px; height: 42px; display: inline-flex; align-items: center;
+  justify-content: center; font-family: var(--sans); font-size: .9rem;
+  border-left: 1px solid var(--line); border-right: 1px solid var(--line);
+}
+
+/* ---------- winkelwagen ---------- */
+.cart { display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: start; }
+.cart-notices {
+  grid-column: 1 / -1; padding: 1rem 1.25rem; margin-bottom: .5rem;
+  font-family: var(--sans); font-size: .875rem; line-height: 1.6;
+  background: var(--champagne); border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+}
+.cart-notices p { margin: 0; }
+.cart-notices p + p { margin-top: .4rem; }
+
+.cart-line {
+  display: grid; grid-template-columns: 92px 1fr auto; gap: 1.25rem; align-items: start;
+  padding: 1.25rem 0; border-bottom: 1px solid var(--line);
+}
+.cart-line-media { display: block; border-radius: var(--radius); overflow: hidden; }
+.cart-line-body { display: flex; flex-direction: column; gap: .2rem; font-family: var(--sans); }
+.cart-line-title { font-size: .95rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+.cart-line-variant { font-size: .82rem; color: var(--muted); }
+.cart-line-unit { font-size: .8rem; color: var(--muted); }
+.cart-line-actions { display: flex; align-items: center; gap: 1rem; margin-top: .5rem; }
+.cart-line-remove {
+  font-family: var(--sans); font-size: .8rem; color: var(--muted); text-decoration: underline;
+  background: none; border: 0; cursor: pointer; padding: 0;
+}
+.cart-line-remove:hover { color: var(--ink); }
+.cart-line-total {
+  font-family: var(--sans); font-size: .95rem; font-weight: 600; white-space: nowrap;
+}
+
+/* ---------- overzicht / totalen ---------- */
+.summary {
+  padding: 1.5rem; font-family: var(--sans);
+  background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius-lg);
+}
+.summary h2 { margin: 0 0 1rem; font-family: var(--serif); font-size: 1.25rem; }
+.summary-lines { list-style: none; padding: 0; margin: 0 0 1rem; font-size: .85rem; }
+.summary-lines li {
+  display: flex; justify-content: space-between; gap: 1rem; padding: .3rem 0;
+  color: var(--ink-soft);
+}
+.summary-row {
+  display: flex; justify-content: space-between; gap: 1rem; padding: .35rem 0; font-size: .9rem;
+}
+.summary-row--muted { color: var(--muted); font-size: .82rem; }
+.summary-row--discount { color: var(--gold-deep); }
+.summary-row--total {
+  margin-top: .6rem; padding-top: .8rem; font-size: 1.05rem; font-weight: 700;
+  border-top: 1px solid var(--line);
+}
+.summary-cta { display: block; width: 100%; margin: 1.25rem 0 .75rem; text-align: center; }
+.summary .link-arrow { display: block; text-align: center; font-size: .85rem; }
+
+.discount-row { display: flex; gap: .5rem; margin-bottom: 1.25rem; }
+.discount-row input {
+  flex: 1; min-width: 0; padding: .6rem .75rem; font-family: var(--sans); font-size: .875rem;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--white);
+}
+.discount-row .btn { flex: 0 0 auto; padding: .6rem 1rem; }
+
+/* ---------- afrekenen ---------- */
+.checkout-grid { display: grid; grid-template-columns: 1fr 360px; gap: 3rem; align-items: start; }
+.checkout-step { border: 0; padding: 0; margin: 0 0 2rem; }
+.checkout-step legend {
+  padding: 0; margin-bottom: 1rem; font-family: var(--serif); font-size: 1.2rem; color: var(--ink);
+}
+.address-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+/* Straat, huisnummer en toevoeging apart: PostNL en DHL vragen die los aan. */
+.address-grid--street { grid-template-columns: 1fr 90px 90px; }
+.address-grid--city { grid-template-columns: 130px 1fr 160px; }
+.checkout-summary { position: sticky; top: 100px; }
+.checkout-secure { margin: .75rem 0 0; text-align: center; font-size: .78rem; color: var(--muted); }
+
+.ship-options { display: flex; flex-direction: column; gap: .6rem; }
+/*
+ * Het keuzerondje van een verzendoptie.
+ *
+ * `flex: none` staat er omdat `.ship-option` een flexrij is: zonder dat mag de browser het rondje
+ * krimpen of laten groeien, en dan verschuift de hele regel. `accent-color` maakt het rondje goud in
+ * plaats van browserblauw — de enige regel die nodig is om het bij de huisstijl te laten passen.
+ */
+.ship-option input[type='radio'] {
+  flex: none; width: 18px; height: 18px; margin: 0; accent-color: var(--gold);
+}
+.ship-option {
+  display: flex; align-items: center; gap: .9rem; padding: .9rem 1rem; cursor: pointer;
+  font-family: var(--sans); background: var(--white);
+  border: 1px solid var(--line); border-radius: var(--radius); transition: border-color .2s ease;
+}
+.ship-option:hover { border-color: var(--gold); }
+.ship-option--active { border-color: var(--ink); background: var(--cream); }
+.ship-option-body { flex: 1; display: flex; flex-direction: column; gap: .15rem; }
+.ship-option-name { font-size: .9rem; font-weight: 600; color: var(--ink); }
+.ship-option-desc, .ship-option-days { font-size: .8rem; color: var(--muted); }
+.ship-option-price { font-size: .9rem; font-weight: 600; white-space: nowrap; }
+
+/* ---------- betaalstatus (bedankpagina) ---------- */
+.payment-status {
+  padding: 2.5rem; text-align: center; font-family: var(--sans);
+  background: var(--cream); border-radius: var(--radius-lg);
+}
+.payment-status-title {
+  margin: 0 0 .5rem; font-family: var(--serif); font-size: 1.6rem; color: var(--ink);
+}
+.payment-status p { margin: 0 0 .5rem; color: var(--ink-soft); }
+.payment-status .btn { margin-top: 1.25rem; }
+.payment-status--success { background: #f0f7f2; }
+.payment-status--failed { background: #fdf2f2; }
+.payment-status-order { margin-top: 1rem; font-size: .9rem; }
+.payment-status-note { margin-top: 1rem; font-size: .82rem; color: var(--muted); }
+.payment-spinner {
+  display: inline-block; width: 22px; height: 22px; margin-top: 1rem;
+  border: 2px solid var(--line); border-top-color: var(--gold); border-radius: 50%;
+  animation: bd-spin .8s linear infinite;
+}
+@keyframes bd-spin { to { transform: rotate(360deg); } }
+
+/* ---------- bestelling bekijken ---------- */
+.order-header { margin-bottom: 2rem; }
+.order-header h1 { margin-bottom: .35rem; }
+.order-meta { font-family: var(--sans); font-size: .875rem; color: var(--muted); }
+.order-status {
+  display: inline-block; margin-top: .75rem; padding: .35rem .8rem;
+  font-family: var(--sans); font-size: .78rem; font-weight: 600; border-radius: 999px;
+}
+.order-status--success { background: #e7f4ec; color: #1c6b3a; }
+.order-status--pending { background: var(--champagne); color: var(--gold-deep); }
+.order-status--warning { background: #fbeaea; color: #9a2b2b; }
+.order-status--neutral { background: var(--sand); color: var(--ink-soft); }
+
+.timeline { list-style: none; display: flex; gap: 0; padding: 0; margin: 2rem 0; }
+.timeline-item {
+  flex: 1; position: relative; padding-top: 26px; text-align: center;
+  font-family: var(--sans); font-size: .82rem; color: var(--muted);
+}
+.timeline-item::before {
+  content: ''; position: absolute; top: 8px; left: 0; right: 0; height: 2px;
+  background: var(--line);
+}
+.timeline-item:first-child::before { left: 50%; }
+.timeline-item:last-child::before { right: 50%; }
+.timeline-item--done::before { background: var(--gold); }
+.timeline-dot {
+  position: absolute; top: 2px; left: 50%; transform: translateX(-50%);
+  width: 14px; height: 14px; background: var(--white);
+  border: 2px solid var(--line); border-radius: 50%;
+}
+.timeline-item--done .timeline-dot { background: var(--gold); border-color: var(--gold); }
+.timeline-item--current .timeline-label { color: var(--ink); font-weight: 600; }
+
+/*
+ * Eindtoestand: geannuleerd, verlopen of terugbetaald.
+ *
+ * Dezelfde rode tint als `.order-status--warning` hierboven, want het is dezelfde boodschap. Zonder
+ * eigen kleur zou zo'n stap er hetzelfde uitzien als een afgeronde stap — een gouden bolletje bij
+ * "Geannuleerd" leest als goed nieuws.
+ *
+ * Ná de `--done`- en `--current`-regels: een eindstap is altijd óók `--done` (het is gebeurd) en de
+ * laatste, dus `--current`. Bij gelijke specificiteit wint de regel die later staat.
+ */
+.timeline-item--ended::before,
+.timeline-item--ended .timeline-dot { background: #9a2b2b; border-color: #9a2b2b; }
+.timeline-item--ended .timeline-label { color: #9a2b2b; font-weight: 600; }
+
+/*
+ * Onder de tijdlijn stapelen — eerder dan de rest van de mobiele opmaak (640px).
+ *
+ * De tijdlijn heeft vijf stappen (zes bij een terugbetaling), en "Wordt klaargemaakt" naast "Deels
+ * terugbetaald" in een zesde van de breedte wordt een kolom losse letters. Daarom een eigen grens: dit
+ * gaat over hoeveel stappen er náást elkaar passen, niet over de schermbreedte van de hele pagina.
+ */
+@media (max-width: 860px) {
+  .timeline { flex-direction: column; gap: .75rem; }
+  .timeline-item { padding-top: 0; padding-left: 28px; text-align: left; }
+  .timeline-item::before { display: none; }
+  .timeline-dot { top: 3px; left: 0; transform: none; }
+}
+
+.order-tracking {
+  padding: 1rem 1.25rem; margin-bottom: 2rem; font-family: var(--sans); font-size: .9rem;
+  background: var(--champagne); border-radius: var(--radius);
+}
+.order-lines { margin-bottom: 2rem; }
+.order-summary { margin-bottom: 2rem; }
+.order-address h2 { font-family: var(--serif); font-size: 1.15rem; margin-bottom: .5rem; }
+.order-address p {
+  font-family: var(--sans); font-size: .9rem; line-height: 1.7; color: var(--ink-soft);
+}
+
+/* ---------- winkelindeling: zijbalk + hoofdkolom ---------- */
+/* De zijbalk staat op élke winkelpagina op dezelfde plek, zodat een categoriewissel geen omweg via
+   /shop is. 260px is breed genoeg voor de langste categorienaam ("Online PMU Opleidingen") zonder
+   dat hij afbreekt. */
+.shop-layout {
+  display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 3rem; align-items: start;
+}
+.shop-main { min-width: 0; }
+
+.shop-sidebar { position: sticky; top: 100px; display: grid; gap: 2.5rem; }
+.shop-widget-title {
+  font-family: var(--sans); font-size: .78rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--ink); margin-bottom: .9rem; padding-bottom: .75rem;
+  border-bottom: 2px solid var(--gold);
+}
+.shop-catlist { list-style: none; margin: 0; padding: 0; }
+.shop-catlist li + li { margin-top: .1rem; }
+.shop-catlink {
+  display: block; padding: .5rem 0; font-family: var(--sans); font-size: .92rem;
+  color: var(--gold-deep); text-decoration: none; transition: color .2s ease;
+}
+.shop-catlink:hover { color: var(--ink); }
+.shop-catlink--active { color: var(--ink); font-weight: 600; }
+/* Subcategorieën springen in, zodat de hiërarchie zichtbaar is zonder extra opmaak. */
+.shop-catlist--sub { padding-left: .9rem; border-left: 1px solid var(--line); margin: .1rem 0 .4rem; }
+.shop-catlist--sub .shop-catlink { padding: .35rem 0; font-size: .86rem; }
+
+.shop-widget-image { display: block; width: 100%; max-width: 190px; height: auto; }
+.shop-widget-text {
+  font-family: var(--sans); font-size: .88rem; color: var(--ink-soft); line-height: 1.6;
+}
+.shop-widget-link {
+  display: inline-block; margin-top: .6rem; font-family: var(--sans); font-size: .85rem;
+  color: var(--gold-deep); text-decoration: none; border-bottom: 1px solid var(--gold);
+}
+
+/* ---------- categorietegel ---------- */
+/* Dezelfde .card-basis als een productkaart; alleen de titel is gecentreerd en in kapitalen, zoals
+   op de oude site. Geen prijsregel, dus de body mag compacter. */
+.category-card .card-body { text-align: center; padding-top: 1.1rem; }
+.category-card .card-body h3 {
+  font-family: var(--sans); font-size: .95rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; margin: 0;
+}
+.category-card .card-body p {
+  margin-top: .5rem; font-size: .85rem; color: var(--muted);
+}
+
+.shop-breadcrumb {
+  margin-bottom: 1.5rem; font-family: var(--sans); font-size: .85rem; color: var(--muted);
+}
+.shop-breadcrumb a { color: var(--gold-deep); text-decoration: none; }
+
+/* ---------- lege staat ---------- */
+.empty-state {
+  padding: 3.5rem 1.5rem; text-align: center; font-family: var(--sans);
+  background: var(--cream); border-radius: var(--radius-lg);
+}
+.empty-state h2 { font-family: var(--serif); font-size: 1.5rem; margin-bottom: .5rem; }
+.empty-state p { color: var(--muted); margin-bottom: 1.5rem; }
+
+/* ---------- klantaccount: inloggen, registreren en de accountpagina's ----------
+   Toegevoegd bij de klant-authenticatie. Zelfde afspraak als de rest van dit blok: alleen bestaande
+   custom properties, en aan het EIND van het webshop-blok zodat een template-update weinig conflicten
+   geeft. */
+
+/* Account- en winkelwagen-icoon in de header hebben dezelfde vorm; de badge voegt er alleen een
+   bubbel aan toe. Vandaar dezelfde maat en hover in plaats van een tweede set regels. */
+.account-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; color: var(--ink); text-decoration: none; border-radius: 50%;
+  transition: background-color .2s ease;
+}
+.account-link:hover { background: var(--sand); }
+
+/* De lade (mobiel) heeft geen iconenrij, dus daar staan account en winkelwagen als gewone links. */
+.drawer-shop { display: flex; flex-direction: column; }
+
+/* ---------- knop met alleen een rand ----------
+   Naast .btn-gold voor secundaire acties (annuleren, uitloggen, "inloggen" naast een gastformulier):
+   die mogen niet even zwaar wegen als de hoofdactie op dezelfde pagina. */
+.btn-outline {
+  background: transparent; color: var(--ink); border: 1px solid var(--line);
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold-deep); background: var(--white); }
+
+/* Tekstknop in een lijst (wijzigen/verwijderen bij een adres). Een knop en geen link, want het is een
+   actie op deze pagina — maar hij hoort er niet als knop uit te zien tussen de adresgegevens. */
+.link-button {
+  padding: 0; font-family: var(--sans); font-size: .82rem; color: var(--gold-deep);
+  background: none; border: 0; cursor: pointer; text-decoration: underline;
+}
+.link-button:hover { color: var(--ink); }
+.link-button:disabled { opacity: .5; cursor: default; }
+.link-button--danger { color: #c0392b; }
+.link-button--danger:hover { color: #8f2a1f; }
+
+/* ---------- formulierdetails die het account erbij nodig heeft ---------- */
+.form-hint { font-family: var(--sans); font-size: .78rem; color: var(--muted); }
+/* Checkbox met label ernaast. Een checkbox houdt zijn eigen maat (zie de uitzondering bij
+   `.form input` hierboven), dus hier alleen de uitlijning. */
+.form-check {
+  display: flex; align-items: flex-start; gap: .6rem;
+  font-family: var(--sans); font-size: .88rem; color: var(--ink-soft); cursor: pointer;
+}
+.form-check input[type='checkbox'] {
+  flex: none; width: 18px; height: 18px; margin-top: 1px; accent-color: var(--gold);
+}
+.form-saved { font-family: var(--sans); font-size: .85rem; font-weight: 600; color: var(--sale-deep); }
+.form-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+/* In een formulier is de submit-knop standaard `align-self: flex-start`; in een actierij hoort hij
+   gewoon in de rij mee te lopen. */
+.form-actions button[type='submit'] { margin-top: 0; align-self: auto; }
+
+/* ---------- inlog-/registratiekaart ---------- */
+.auth-card {
+  max-width: 480px; margin: 0 auto; padding: 2.25rem;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+/* In het afrekenen staat dit blok al in een kader: dan geen tweede kader eromheen. */
+.auth-card--compact {
+  max-width: none; margin: 1rem 0 0; padding: 1.25rem 0 0;
+  background: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; box-shadow: none;
+}
+.auth-title { font-family: var(--serif); font-size: 1.5rem; margin: 0; }
+.auth-intro { font-family: var(--sans); font-size: .9rem; color: var(--muted); margin: -.6rem 0 0; }
+.auth-submit { width: 100%; justify-content: center; }
+.auth-links {
+  display: flex; flex-direction: column; gap: .5rem;
+  font-family: var(--sans); font-size: .85rem; color: var(--muted);
+}
+.auth-links a { color: var(--gold-deep); text-decoration: none; }
+.auth-links a:hover { text-decoration: underline; }
+.auth-done {
+  font-family: var(--sans); font-size: .95rem; line-height: 1.6; color: var(--ink-soft);
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- codeveld (de 6 cijfers uit de e-mail) ----------
+   Groot, gespatieerd en gecentreerd: dit is één keer overtypen, en de cijfers moeten los van elkaar
+   leesbaar zijn. `max-width` houdt het veld bij de inhoud in plaats van over de volle breedte — een
+   invoerveld van 480px voor zes cijfers ziet eruit alsof er meer verwacht wordt. */
+.code-input {
+  max-width: 260px; text-align: center;
+  font-family: var(--sans); font-size: 1.6rem; font-weight: 700; letter-spacing: .32em;
+  /* De letter-spacing zet ook rechts van het laatste cijfer ruimte; die compenseren we, anders
+     staat de tekst optisch links van het midden. */
+  text-indent: .32em;
+}
+
+/* Het hele veld (label, vak, uitleg) in het midden van de kaart.
+   `.form-field` is een flex-kolom die zijn kinderen standaard oprekt; een `max-width` op het vak alleen
+   zou het dus links laten plakken. `align-items: center` centreert het vak, en omdat label en uitleg
+   dan smaller dan de kaart zijn, hoort de tekst er ook gecentreerd bij — anders staan drie elementen
+   op drie verschillende lijnen. */
+.form-field--code { align-items: center; text-align: center; }
+
+/* ---------- accountpagina's: zijmenu + inhoud ---------- */
+.account-layout {
+  display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 3rem; align-items: start;
+}
+.account-nav {
+  position: sticky; top: 100px;
+  padding: 1.5rem; font-family: var(--sans);
+  background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius-lg);
+}
+.account-nav-user { display: flex; flex-direction: column; gap: .15rem; margin-bottom: 1.25rem; }
+.account-nav-user span {
+  font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+}
+.account-nav-user strong { font-size: .88rem; color: var(--ink); word-break: break-word; }
+.account-nav ul { list-style: none; margin: 0 0 1.25rem; padding: 0; }
+.account-nav-link {
+  display: block; padding: .55rem 0; font-size: .92rem; color: var(--gold-deep); text-decoration: none;
+  transition: color .2s ease;
+}
+.account-nav-link:hover { color: var(--ink); }
+.account-nav-link--active { color: var(--ink); font-weight: 600; }
+.account-logout { width: 100%; justify-content: center; }
+
+.account-main { min-width: 0; display: grid; gap: 2.5rem; }
+.account-block { display: grid; gap: 1rem; justify-items: start; }
+.account-block h2 { font-family: var(--serif); font-size: 1.3rem; margin: 0; }
+.account-summary { font-family: var(--sans); font-size: .92rem; color: var(--ink-soft); margin: 0; }
+.account-empty { font-family: var(--sans); font-size: .92rem; color: var(--muted); margin: 0; }
+.account-note { font-family: var(--sans); font-size: .85rem; }
+.account-note a { color: var(--gold-deep); }
+
+/* ---------- bestelgeschiedenis ---------- */
+.order-history { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem; }
+.order-history-item {
+  padding: 1.25rem 1.5rem; font-family: var(--sans);
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg);
+}
+.order-history-head {
+  display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: .75rem;
+}
+.order-history-number {
+  display: block; font-size: 1rem; font-weight: 700; color: var(--ink); text-decoration: none;
+}
+.order-history-number:hover { color: var(--gold-deep); }
+.order-history-date { font-size: .82rem; color: var(--muted); }
+/* De twee badges (bestelstatus en betaalstatus) staan naast elkaar en mogen op smalle schermen
+   onder elkaar vallen zonder de rij te rekken. */
+.order-history-badges { display: flex; flex-wrap: wrap; gap: .4rem; }
+.order-history-badges .order-status { margin-top: 0; }
+.order-history-lines {
+  list-style: none; margin: 1rem 0 0; padding: 0; font-size: .85rem; color: var(--ink-soft);
+}
+.order-history-lines li { padding: .15rem 0; }
+.order-history-foot {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem;
+  margin-top: 1rem; padding-top: .85rem; border-top: 1px solid var(--line);
+}
+.order-history-total { font-size: 1rem; font-weight: 700; }
+.order-history-tracking { margin-top: .75rem; font-size: .82rem; color: var(--muted); }
+.order-history-tracking a { color: var(--gold-deep); }
+
+/* ---------- filters boven de bestellijst ----------
+   Een gewoon GET-formulier (zie OrderFilters.tsx), dus de velden zijn de gewone `.form`-velden — maar
+   op één rij en compacter, want dit is een werkbalk en geen invulformulier. */
+.order-filters {
+  padding: 1.25rem 1.5rem; margin-bottom: 1.5rem;
+  background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius-lg);
+}
+/* `auto-fit` met een minimum: op een breed scherm staan de vijf velden op één rij, op een telefoon
+   vallen ze netjes onder elkaar zonder een aparte media query. */
+.order-filters-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;
+}
+.order-filters .form-field { gap: 6px; }
+.order-filters input,
+.order-filters select {
+  width: 100%; box-sizing: border-box; padding: .6rem .7rem;
+  font-family: var(--sans); font-size: .9rem; color: var(--ink);
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.order-filters input:focus,
+.order-filters select:focus {
+  outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-soft);
+}
+.order-filters-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+/* De knoppen van dit formulier zijn `.btn`, niet de gouden gradient van `.form button[type=submit]`:
+   filteren is geen hoofdactie op deze pagina en hoort niet zwaarder te wegen dan de bestellingen zelf. */
+.order-filters-actions .btn { padding: .6rem 1.2rem; font-size: .8rem; }
+
+/* Twee links onder een bestelling (factuur + bekijken) naast elkaar. */
+.order-history-links { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; }
+
+/* Knoppenrij onderaan de besteldetailpagina. */
+.order-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 1.5rem; }
+
+/* ---------- adresboek ---------- */
+.addressbook { display: grid; gap: 1.5rem; justify-items: start; }
+.address-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; width: 100%; }
+.address-list:empty { display: none; }
+.address-card {
+  width: 100%; padding: 1.25rem 1.5rem; font-family: var(--sans);
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg);
+}
+.address-card-label {
+  display: block; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--gold-deep); margin-bottom: .5rem;
+}
+.address-card-body { font-size: .9rem; line-height: 1.7; color: var(--ink-soft); margin: 0; }
+.address-card-actions { display: flex; gap: 1rem; margin-top: .85rem; }
+.address-form { gap: 16px; }
+
+/* ---------- afrekenen: ingelogd of als gast ----------
+   Een kader boven het formulier. Het gastpad blijft altijd zichtbaar eronder: inloggen is een aanbod,
+   geen drempel (zie de toelichting in CheckoutForm.tsx). */
+.checkout-identity {
+  padding: 1.25rem 1.5rem; margin-bottom: 2rem; font-family: var(--sans);
+  background: var(--champagne); border-left: 3px solid var(--gold); border-radius: var(--radius);
+}
+.checkout-identity p { margin: 0; font-size: .9rem; color: var(--ink-soft); }
+.checkout-identity-head {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.checkout-identity-guest { margin-top: .6rem; font-size: .82rem; color: var(--muted); }
+.checkout-identity--known { background: var(--cream); border-left-color: var(--sale-deep); }
+
+/* Opgeslagen adressen bij het afrekenen: dezelfde keuzeblokken als de verzendmethoden, zodat
+   "kies iets" er op deze pagina overal hetzelfde uitziet. */
+.saved-addresses { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1.5rem; }
+
+@media (max-width: 900px) {
+  /* Zijmenu boven de inhoud; sticky moet dan uit, anders hangt het over de bestellingen heen. */
+  .account-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .account-nav { position: static; }
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .cart, .checkout-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .checkout-summary { position: static; }
+  /* Eén kolom. Deze regel is verplicht sinds `.product-layout` niet meer op `.split` leunt: zonder
+     dit blijft de productpagina op een telefoon tweekoloms staan. */
+  .product-layout { grid-template-columns: 1fr; gap: 2rem; }
+  /* Zijbalk boven het rooster: op deze breedte is 260px naast een rooster te krap voor beide.
+     `sticky` moet dan uit, anders blijft de categorielijst over de producten heen hangen. */
+  .shop-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .shop-sidebar { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+}
+@media (max-width: 560px) {
+  .shop-sidebar { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .address-grid, .address-grid--street, .address-grid--city { grid-template-columns: 1fr 1fr; }
+  .cart-line { grid-template-columns: 72px 1fr; }
+  .cart-line-total { grid-column: 2; text-align: right; }
+  /* De tijdlijn stapelt al vanaf 860px — zie de eigen media query daarboven. */
+  .atc-row .btn { flex: 1 1 100%; }
+}

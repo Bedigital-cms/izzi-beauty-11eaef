@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "eyebrow": "Contact",
+    "title": "Neem contact op",
+    "text": "Heb je een vraag of wil je een afspraak maken? Vul het formulier in of bezoek een van onze studio's. We helpen je graag verder.",
+    "breadcrumb": "Contact"
+  },
+  "intro": {
+    "title": "We horen graag van je",
+    "text": "Vul het contactformulier in en we nemen zo snel mogelijk contact met je op. Voor een afspraak kun je ook langskomen bij een van onze locaties."
+  },
+  "locations": [
+    {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    {
+      "name": "IZZI Beauty Den Bosch",
+      "city": "'s-Hertogenbosch",
+      "address": "Zilverenberg 37a",
+      "postcode": "5234 GL 's-Hertogenbosch",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Ma–Za · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Zilverenberg+37a+Den+Bosch"
+    }
+  ],
+  "bookingLabel": "Afspraak maken",
+  "bookingUrl": "/contact",
+  "cta": {
+    "title": "Liever direct langskomen?",
+    "text": "Onze studio's zijn geopend van maandag tot en met zaterdag. Loop gerust binnen voor een vrijblijvend gesprek.",
+    "primaryLabel": "Bel ons",
+    "primaryUrl": "tel:+31611768881"
+  }
+}

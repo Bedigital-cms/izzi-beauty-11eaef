@@ -1,0 +1,159 @@
+{
+  "hero": {
+    "eyebrow": "Behandelingen",
+    "title": "Permanente make-up behandelingen",
+    "text": "Van natuurlijke Powder Brows en Combi Brows tot Lip Blush, Permanente Eyeliner en Faux Freckles — ontdek al onze PMU-behandelingen, uitgevoerd door gecertificeerde specialisten.",
+    "breadcrumb": "Behandelingen"
+  },
+  "intro": {
+    "title": "Welke behandeling past bij jou?",
+    "text": "Elke behandeling start met een persoonlijk intakegesprek. Zo bepalen we samen de vorm, kleur en techniek die het beste bij jouw wensen en gezicht passen."
+  },
+  "groups": [
+    {
+      "heading": "Wenkbrauwen",
+      "text": "Vollere, gedefinieerde wenkbrauwen die er natuurlijk uitzien — jarenlang.",
+      "items": [
+        {
+          "title": "Ombré Powder Brows",
+          "text": "Zacht vervaagde, poederachtige wenkbrauwen met een natuurlijk make-up effect.",
+          "image": "/media/izzi-beauty-20250729-53836b-powder-brows.jpg",
+          "url": "/powder-brows",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Touch-up Powder Brows",
+          "text": "Fris je bestaande Powder Brows op en houd de kleur mooi egaal.",
+          "image": "/media/izzi-beauty-20250729-785ac5-online-powder-brows-masterclass.webp",
+          "url": "/touch-up-powder-brows",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Combi Brows",
+          "text": "De combinatie van hairstrokes en shading voor het meest realistische resultaat.",
+          "image": "/media/izzi-beauty-20250729-1dea00-combi-brows-behandeling.jpg",
+          "url": "/combi-brows-behandeling",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Brow Lamination",
+          "text": "Getemde, opgekamde wenkbrauwen zonder pigment — voor een vollere look.",
+          "image": "/media/izzi-beauty-20250729-299c83-pmu-kleurcorrectie.webp",
+          "url": "/brow-lamination-behandeling",
+          "linkLabel": "Meer info"
+        }
+      ]
+    },
+    {
+      "heading": "Lippen",
+      "text": "Meer kleur, definitie en volume voor een frisse, natuurlijke uitstraling.",
+      "items": [
+        {
+          "title": "Lip Blush",
+          "text": "Subtiele kleur en definitie voor vollere, frissere lippen.",
+          "image": "/media/izzi-beauty-20250729-b60f2a-lip-pigmentatie.webp",
+          "url": "/lip-blush",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Lip Enlightenment",
+          "text": "Verhelder en egaliseer de lipkleur voor een natuurlijk resultaat.",
+          "image": "/media/izzi-beauty-20250729-abf9e8-lip-blush-pigmentatie.webp",
+          "url": "/lip-enlightenment",
+          "linkLabel": "Meer info"
+        }
+      ]
+    },
+    {
+      "heading": "Sproetjes & overig",
+      "text": "Van speelse faux freckles tot permanente eyeliner.",
+      "items": [
+        {
+          "title": "Faux Freckles",
+          "text": "Natuurlijke sproetjes op maat, perfect geplaatst voor een speelse look.",
+          "image": "/media/izzi-beauty-20250729-11138b-permanente-eyeliner.jpg",
+          "url": "/faux-freckles-behandeling",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Permanente Moedervlek",
+          "text": "Een subtiele, natuurlijke schoonheidsvlek precies waar jij hem wilt.",
+          "image": "/media/izzi-beauty-20250729-16d157-faux-freckles-resultaat.webp",
+          "url": "/permanente-make-up-moedervlek",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Permanente Eyeliner",
+          "text": "Definieer je ogen met een strakke, langhoudende eyeliner.",
+          "image": "/media/izzi-beauty-20250729-11138b-permanente-eyeliner.jpg",
+          "url": "/permanente-make-up-eyeliner",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Infralash Eyeliner",
+          "text": "Een zachte, natuurlijke wimperverdichting tussen de wimperlijn.",
+          "image": "/media/izzi-beauty-20250729-16d157-faux-freckles-resultaat.webp",
+          "url": "/infralash-eyeliner",
+          "linkLabel": "Meer info"
+        }
+      ]
+    },
+    {
+      "heading": "Corrigeren & verwijderen",
+      "text": "Oude of mislukte PMU corrigeren of laten verwijderen.",
+      "items": [
+        {
+          "title": "Kleurcorrectie PMU",
+          "text": "Corrigeer een verkleurde of verkeerde pigmentkleur van eerdere PMU.",
+          "image": "/media/izzi-beauty-20250729-f38728-kleurcorrectie-pmu.webp",
+          "url": "/kleurcorrectie",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Cover oude PMU",
+          "text": "Verwerk oude permanente make-up in een fris, natuurlijk nieuw resultaat.",
+          "image": "/media/izzi-beauty-20250729-98c909-cover-oude-permanente-make-up.webp",
+          "url": "/cover-oude-permanente-make-up",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Micro Haar Pigmentatie",
+          "text": "Creëer de illusie van een vollere haardos of haarlijn.",
+          "image": "/media/izzi-beauty-20250729-3a0267-micro-haar-pigmentatie.jpg",
+          "url": "/micro-haar-pigmentatie",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Permanente Make Up Laseren",
+          "text": "Oude of ongewenste PMU veilig en effectief laten verwijderen met onze YAG-laser.",
+          "image": "/media/izzi-beauty-20250729-f462e2-permanente-make-up-laseren.jpg",
+          "url": "/permanente-make-up-laseren",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Tattoo Verwijderen",
+          "text": "Oude of ongewenste tattoos snel en effectief laten verwijderen met onze YAG-laser in Rotterdam en Amsterdam.",
+          "image": "/media/izzi-beauty-20250729-0a64be-tattoo-verwijderen-sessies.webp",
+          "url": "/tattoo-verwijderen-rotterdam-amsterdam",
+          "linkLabel": "Meer info"
+        },
+        {
+          "title": "Laserontharen",
+          "text": "Langdurig af van ongewenste haargroei met professionele lasertechniek.",
+          "image": "/media/izzi-beauty-20250729-eb6241-laser-ontharing-behandeling.webp",
+          "url": "/laser-ontharing",
+          "linkLabel": "Meer info"
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "script": "Klaar voor de volgende stap?",
+    "title": "Maak vrijblijvend een afspraak",
+    "text": "Tijdens een persoonlijk intakegesprek bespreken we jouw wensen en adviseren we de beste behandeling.",
+    "primaryLabel": "Afspraak maken",
+    "primaryUrl": "/contact",
+    "secondaryLabel": "Bekijk de prijzen",
+    "secondaryUrl": "/prijzen"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "eyebrow": "Prijzen",
+    "title": "Tarieven behandelingen & opleidingen",
+    "text": "Een overzicht van onze tarieven. Elke behandeling start met een persoonlijk intakegesprek; touch-ups binnen de aangegeven periode zijn inbegrepen.",
+    "breadcrumb": "Prijzen"
+  },
+  "groups": [
+    {
+      "heading": "Wenkbrauwen",
+      "items": [
+        {
+          "name": "Ombré Powder Brows",
+          "desc": "Inclusief touch-up na 6–8 weken",
+          "amount": "€ 395"
+        },
+        {
+          "name": "Combi Brows",
+          "desc": "Inclusief touch-up na 6–8 weken",
+          "amount": "€ 425"
+        },
+        {
+          "name": "Touch-up (binnen 12 maanden)",
+          "desc": "Kleur opfrissen",
+          "amount": "€ 150"
+        },
+        {
+          "name": "Brow Lamination",
+          "desc": "",
+          "amount": "€ 65"
+        }
+      ]
+    },
+    {
+      "heading": "Lippen",
+      "items": [
+        {
+          "name": "Lip Blush",
+          "desc": "Inclusief touch-up na 6–8 weken",
+          "amount": "€ 425"
+        },
+        {
+          "name": "Lip Enlightenment",
+          "desc": "",
+          "amount": "€ 375"
+        }
+      ]
+    },
+    {
+      "heading": "Overige behandelingen",
+      "items": [
+        {
+          "name": "Faux Freckles",
+          "desc": "",
+          "amount": "€ 195"
+        },
+        {
+          "name": "Permanente Eyeliner",
+          "desc": "",
+          "amount": "€ 325"
+        },
+        {
+          "name": "Kleurcorrectie PMU",
+          "desc": "Op aanvraag, na intake",
+          "amount": "vanaf € 150"
+        }
+      ]
+    }
+  ],
+  "note": "Alle prijzen zijn inclusief btw. Prijzen voor opleidingen zijn op aanvraag beschikbaar — neem contact met ons op voor een persoonlijk advies en de mogelijkheden voor UWV-subsidie.",
+  "cta": {
+    "script": "Benieuwd naar de mogelijkheden?",
+    "title": "Maak een afspraak",
+    "text": "Tijdens je intake bespreken we jouw wensen en geven we een persoonlijk advies en prijsopgave.",
+    "primaryLabel": "Afspraak maken",
+    "primaryUrl": "/contact",
+    "secondaryLabel": "Bekijk behandelingen",
+    "secondaryUrl": "/behandelingen"
+  }
+}
