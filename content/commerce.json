@@ -1,0 +1,7 @@
+{
+  "$comment": "Commerce-configuratie van deze site, beheerd door de BE Digital CMS tenant-toggle. Niet met de hand aanpassen — wijzig het via Tenants → Commerce, zodat CMS en site synchroon blijven. LET OP: producten, prijzen en voorraad staan NIET in dit bestand; die komen live uit de CMS-API.",
+  "enabled": true,
+  "currency": "EUR",
+  "pricesIncludeTax": true,
+  "basePath": "winkel"
+}
