@@ -458,3 +458,33 @@ export type BlogIndexContent = {
   hero: { eyebrow: string; title: string; text: string; breadcrumb: string }
   cta: CtaBlock
 }
+
+/* ---------- integrations (content/integrations.json) ---------- */
+
+/** Where a script is injected. `head` = in <head> (trackers that must run early);
+ *  `body-end` = just before </body> (widgets — the default, keeps them off the critical path). */
+export type ScriptPosition = 'head' | 'body-end'
+
+/** A configured instance of a KNOWN integration. The site owns the snippet; the CMS only stores
+ *  `settings`, so an editor can never paste broken markup. `id` selects the provider definition in
+ *  lib/integrations.ts — an unknown id is ignored (forward-compatible with newer CMS versions). */
+export type IntegrationProvider = {
+  id: string
+  enabled: boolean
+  settings: Record<string, string>
+}
+
+/** Free-form script — the superadmin-only escape hatch for integrations that have no provider yet.
+ *  `code` is injected verbatim, so it is exactly as trusted as the person who typed it. */
+export type CustomScript = {
+  /** Human label, shown in the CMS list only — never rendered on the site. */
+  name: string
+  code: string
+  position: ScriptPosition
+  enabled: boolean
+}
+
+export type IntegrationsContent = {
+  providers: IntegrationProvider[]
+  customScripts: CustomScript[]
+}

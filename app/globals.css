@@ -272,13 +272,30 @@ p { color: var(--ink-soft); }
      `inert` attribute in MobileMenu.tsx, never by CSS.
      `visibility: hidden` (stepped at the END of the close transition via the delay below) keeps the
      off-screen panel from contributing horizontal overflow — the clip that used to absorb that now
-     lives on <html>, which must NOT be given a sideways scroll by a parked drawer. */
+     lives on <html>, which must NOT be given a sideways scroll by a parked drawer.
+
+     ⚠️ `visibility: hidden` and `html { overflow-x: clip }` hide the parked panel and stop the page
+     scrolling sideways, but they do NOT keep it out of the LAYOUT box: a drawer translated 101% to
+     the right still widens the layout viewport (on a 369px phone the page reports 712px). Everything
+     with `position: fixed` anchors to that widened box, so a floating WhatsApp button or booking
+     widget pinned to `right`/`bottom` lands hundreds of pixels off-screen — invisible on mobile.
+     `display: none` while closed removes it from layout entirely; it is swapped back to `flex` by
+     `.is-open` before the slide-in, so the animation still runs. */
+  display: none;
   transform: translateX(101%);
   visibility: hidden;
-  transition: transform .3s ease, visibility 0s linear .3s;
+  /* allow-discrete keeps `display` animatable, so the panel stays laid out for the .3s slide-OUT
+     and only then flips to none — without it, closing would snap instead of slide. */
+  transition: transform .3s ease, visibility 0s linear .3s, display .3s allow-discrete;
 }
 /* Opening: make it visible immediately (no delay), then slide in. */
-.drawer.is-open { transform: translateX(0); visibility: visible; transition: transform .3s ease, visibility 0s; }
+/* `display` is not animatable, so the slide-in is driven by @starting-style: the panel is laid out
+   (flex) and painted at translateX(101%) on its first frame, then transitions to 0. */
+.drawer.is-open {
+  display: flex; transform: translateX(0); visibility: visible;
+  transition: transform .3s ease, visibility 0s;
+}
+@starting-style { .drawer.is-open { transform: translateX(101%); } }
 /* Respect users who ask for less motion — appear/disappear without the slide. Must also cover
    `.is-open`, which sets its own `transition` and would otherwise out-specify a bare `.drawer`. */
 @media (prefers-reduced-motion: reduce) {

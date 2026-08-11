@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 
+import Integrations from '@/components/Integrations'
 import { getSite } from '@/content/site'
 import { activeLocales, defaultLocale, domainLocaleMode, domainLocaleMap, hideDefaultPrefix } from '@/lib/i18n'
 import { isActiveLocale } from '@/lib/i18n'
@@ -66,8 +67,12 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="stylesheet" href={FONTS} />
+        <Integrations position="head" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Integrations position="body-end" />
+      </body>
     </html>
   )
 }
