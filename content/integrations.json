@@ -8,6 +8,18 @@
         "phone": "748937937498343",
         "position": "right"
       }
+    },
+    {
+      "id": "salonized",
+      "enabled": true,
+      "settings": {
+        "size": "normal",
+        "color": "#5438c2",
+        "company": "PrfWgEYr3WZagmd43yvLqWpL",
+        "language": "nl",
+        "position": "right",
+        "trackingId": "UA-177261363-3"
+      }
     }
   ],
   "customScripts": []
