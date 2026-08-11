@@ -4,7 +4,10 @@
     {
       "id": "whatsapp",
       "enabled": true,
-      "settings": {}
+      "settings": {
+        "phone": "748937937498343",
+        "position": "right"
+      }
     }
   ],
   "customScripts": []
