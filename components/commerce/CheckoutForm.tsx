@@ -38,6 +38,7 @@ import * as React from 'react'
 import { useRouter } from 'next/navigation'
 
 import { formatMoneySafe, deliveryEstimate, taxIsIncluded } from '@/lib/commerce/format'
+import { in3Allowed, in3UnavailableReason, type In3Limits } from '@/lib/commerce/in3'
 import type { Address, Cart, Customer, CustomerAddress, ShippingMethod } from '@/lib/commerce/types'
 import type { ShopUIStrings } from '@/lib/types'
 
@@ -91,6 +92,7 @@ export function CheckoutForm({
   ui,
   customer = null,
   addresses = [],
+  in3Limits = null,
 }: {
   initialCart: Cart
   methods: ShippingMethod[]
@@ -99,9 +101,77 @@ export function CheckoutForm({
   customer?: Customer | null
   /** Adresboek van de ingelogde klant. Leeg bij een gast. */
   addresses?: CustomerAddress[]
+  /**
+   * De bedragen waarbinnen iDEAL in3 mag, uit het CMS. `null` = in3 staat uit of de configuratie
+   * was niet op te halen; in beide gevallen tonen we geen keuze en bepaalt Mollie het menu.
+   */
+  in3Limits?: In3Limits
 }) {
   const router = useRouter()
   const [cart, setCart] = React.useState(initialCart)
+
+  /**
+   * Bevat deze winkelwagen ALLEEN dingen die niet bezorgd worden — een opleiding, een e-book?
+   *
+   * Zo ja, dan slaan we het bezorgadres én de verzendmethode over: een cursist die € 1.495 voor een
+   * driedaagse opleiding betaalt, hoort geen straatnaam en postcode in te vullen voor iets waar
+   * niets van bezorgd wordt.
+   *
+   * ⚠️ `every`, niet `some`. Zit er één fysiek artikel bij, dan moet er wél bezorgd worden en is het
+   * adres gewoon nodig — ook al staat er een opleiding naast in de wagen.
+   *
+   * ⚠️ De vergelijking is `=== false`, niet `!l.requiresShipping`. Een CMS van vóór dit veld stuurt
+   * het niet mee; dat leest als `undefined` en betekent "wél bezorgen", precies zoals het toen was.
+   * Het CMS doet dezelfde `!== false`-toets in `cart/cartService.ts`.
+   */
+  const coursesOnly = cart.lines.every((l) => l.requiresShipping === false)
+  /**
+   * Mag deze bestelling gespreid betaald worden met iDEAL in3?
+   *
+   * Het totaal beweegt nog tijdens het invullen — een andere verzendmethode verandert het bedrag —
+   * dus dit wordt bij elke wijziging opnieuw bepaald en niet één keer bij het openen.
+   */
+  const in3Available = in3Allowed(in3Limits, cart.totalCents)
+  const in3Reason = in3UnavailableReason(in3Limits, cart.totalCents)
+
+  /**
+   * De gekozen betaalmethode. Leeg = geen voorkeur, dan toont Mollie zijn eigen menu.
+   *
+   * Alleen in3 is hier een echte keuze: die moet de site kunnen verbergen als het bedrag buiten de
+   * grenzen valt. De overige methoden laten we bewust aan Mollie — dat menu kent de klant al en het
+   * blijft vanzelf kloppen als er in het CMS een methode bijkomt.
+   */
+  const [payMethod, setPayMethod] = React.useState<'' | 'in3'>('')
+
+  /*
+   * Stond in3 aan en valt het bedrag er daarna buiten (andere verzendmethode, gewijzigde prijs),
+   * dan vervalt de keuze. Zonder dit zou een niet meer toegestane methode meegestuurd worden en
+   * haalt Mollie hem er alsnog stil uit — precies wat deze hele controle moet voorkomen.
+   */
+  React.useEffect(() => {
+    if (!in3Available) setPayMethod('')
+  }, [in3Available])
+
+  /**
+   * Moet de bezoeker een adres invullen?
+   *
+   * Bij een cursus valt er niets te bezorgen, dus vraagt dit formulier normaal geen straat of
+   * postcode — zie `coursesOnly` hierboven. Dat blijft zo, met één uitzondering: iDEAL in3.
+   *
+   * in3 is geen betaalmethode maar een KREDIET. Mollie eist daarom een volledig factuuradres en
+   * weigert de betaling zonder:
+   *
+   *     POST /v2/payments  { method: "in3" }  →  422
+   *     "A billing address is required"        field: billingAddress
+   *
+   * Dat is geen instelling die aan of uit kan; het is een voorwaarde van de kredietverstrekker, die
+   * moet weten aan wie hij leent. Zonder deze velden mislukte het afrekenen met een algemene
+   * foutmelding, terwijl de cursist niets verkeerd had gedaan.
+   *
+   * Vandaar: de adresvelden verschijnen pas als de bezoeker gespreid betalen KIEST.
+   */
+  const needsAddress = !coursesOnly || payMethod === 'in3'
+
   const [status, setStatus] = React.useState<Status>('idle')
   const [message, setMessage] = React.useState('')
   const [shippingMethods, setShippingMethods] = React.useState(methods)
@@ -189,11 +259,41 @@ export function CheckoutForm({
       method: 'PATCH',
       headers: { 'content-type': 'application/json' },
       credentials: 'same-origin',
-      body: JSON.stringify({
-        email,
-        shippingAddress: address,
-        shippingMethodId: selectedMethod || null,
-      }),
+      body: JSON.stringify(
+        coursesOnly
+          ? {
+              email,
+              /*
+               * Geen straat, postcode, plaats of verzendmethode: die velden staan niet op het
+               * scherm, dus zou hier een leeg adres heen gaan en bewaart het CMS dat als
+               * bezorgadres — terwijl "geen adres" juist de bedoeling is.
+               *
+               * Naam en telefoon gaan wél mee: het formulier vraagt ze bij een cursus expliciet en
+               * het CMS neemt ze over in `customerSnapshot`.
+               */
+              /*
+               * Bij in3 gaat het VOLLEDIGE adres mee, ook al wordt er niets bezorgd: Mollie eist een
+               * factuuradres voor gespreid betalen en weigert de betaling zonder
+               * (422 "A billing address is required"). Het CMS bouwt daar zijn `billingAddress` uit
+               * op — zie `billingAddressFor()` in de checkout-route.
+               */
+              shippingAddress:
+                payMethod === 'in3'
+                  ? address
+                  : {
+                      ...EMPTY_ADDRESS,
+                      firstName: address.firstName,
+                      lastName: address.lastName,
+                      phone: address.phone,
+                      company: address.company,
+                    },
+            }
+          : {
+              email,
+              shippingAddress: address,
+              shippingMethodId: selectedMethod || null,
+            },
+      ),
     })
     const body = (await res.json().catch(() => null)) as { ok?: boolean; data?: { cart?: Cart } } | null
     return body?.ok ? (body.data?.cart ?? null) : null
@@ -285,7 +385,14 @@ export function CheckoutForm({
 
     // Ingelogd en gevraagd om te bewaren? Dan nu, vóór de doorverwijzing naar Mollie — daarna komt de
     // bezoeker niet meer op deze pagina terug.
-    if (customer && saveAddressToAccount && !selectedAddressId) await storeAddressInAccount()
+    /*
+     * Alleen bewaren als er ook echt een adres is ingevuld. Bij een cursus zonder in3 staan de
+     * adresvelden niet op het scherm, en dan zou hier een leeg adres naar het adresboek gaan — het
+     * CMS antwoordt daar terecht met "Vul straat, huisnummer, postcode en plaats in.".
+     */
+    if (customer && needsAddress && saveAddressToAccount && !selectedAddressId) {
+      await storeAddressInAccount()
+    }
 
     // Dan afrekenen, met het bedrag dat de bezoeker NU ziet als controle.
     const res = await fetch('/api/commerce/checkout', {
@@ -294,6 +401,14 @@ export function CheckoutForm({
       credentials: 'same-origin',
       body: JSON.stringify({
         expectedTotalCents: saved.totalCents,
+        /*
+         * De betaalmethode gaat alleen mee als hij op dít moment nog is toegestaan. `saved` is het
+         * totaal zoals het CMS het net teruggaf; is dat tijdens het invullen buiten de in3-grenzen
+         * geschoven, dan sturen we hem niet mee en krijgt de klant het gewone menu. Het CMS toetst
+         * dit nog een keer — dit voorkomt alleen een verzoek waarvan we hier al weten dat het niet
+         * klopt.
+         */
+        method: payMethod && in3Allowed(in3Limits, saved.totalCents) ? payMethod : null,
         customerNote: String(new FormData(form).get('customerNote') ?? ''),
         idempotencyKey,
       }),
@@ -404,10 +519,78 @@ export function CheckoutForm({
                 value={email}
               />
             </div>
+
+            {/*
+              Naam en telefoon staan hier ALLEEN bij een winkelwagen zonder bezorging.
+
+              Bij een gewone bestelling vraagt het adresblok hieronder ze al. Bij een opleiding
+              bestaat dat blok niet, en dan zou de inschrijving zonder naam binnenkomen: op de
+              deelnemerslijst staat dan een e-mailadres zonder mens erachter, en zonder
+              telefoonnummer is een cursist niet te bereiken als de cursusdag verschuift.
+              Telefoon is daarom verplicht, niet optioneel.
+            */}
+            {coursesOnly && (
+              <>
+                <div className="form-row">
+                  <div className="form-field">
+                    <label className="form-label" htmlFor="firstName">
+                      {ui.firstName}
+                    </label>
+                    <input
+                      autoComplete="given-name"
+                      id="firstName"
+                      name="firstName"
+                      onChange={setField('firstName')}
+                      required
+                      type="text"
+                      value={address.firstName}
+                    />
+                  </div>
+                  <div className="form-field">
+                    <label className="form-label" htmlFor="lastName">
+                      {ui.lastName}
+                    </label>
+                    <input
+                      autoComplete="family-name"
+                      id="lastName"
+                      name="lastName"
+                      onChange={setField('lastName')}
+                      required
+                      type="text"
+                      value={address.lastName}
+                    />
+                  </div>
+                </div>
+                <div className="form-field">
+                  <label className="form-label" htmlFor="phone">
+                    {ui.phone}
+                  </label>
+                  <input
+                    autoComplete="tel"
+                    id="phone"
+                    name="phone"
+                    onChange={setField('phone')}
+                    required
+                    type="tel"
+                    value={address.phone}
+                  />
+                </div>
+              </>
+            )}
           </fieldset>
 
+          {/* Niets te bezorgen, dus geen bezorgadres — tenzij in3 om een factuuradres vraagt.
+              Zie `needsAddress` bovenaan. */}
+          {needsAddress && (
           <fieldset className="checkout-step">
-            <legend>{ui.shippingAddress}</legend>
+            <legend>{coursesOnly ? 'Factuuradres' : ui.shippingAddress}</legend>
+            {coursesOnly && (
+              <p className="form-hint" style={{ marginTop: -4 }}>
+                Gespreid betalen loopt via een kredietaanbieder. Die moet weten aan wie hij leent,
+                dus vraagt iDEAL in3 om een factuuradres. Kies “In één keer betalen” als je dit
+                liever niet invult.
+              </p>
+            )}
 
             {/* Opgeslagen adressen van een ingelogde klant: kiezen vult de velden hieronder. */}
             {addresses.length > 0 && (
@@ -609,7 +792,10 @@ export function CheckoutForm({
               </label>
             )}
           </fieldset>
+          )}
 
+          {/* Niets te bezorgen, dus ook niets te kiezen. Zie `coursesOnly` bovenaan. */}
+          {!coursesOnly && (
           <fieldset className="checkout-step">
             <legend>{ui.shippingMethod}</legend>
             {shippingMethods.length === 0 ? (
@@ -645,6 +831,75 @@ export function CheckoutForm({
               </div>
             )}
           </fieldset>
+          )}
+
+          {/*
+            Betaalmethode — alleen zichtbaar als iDEAL in3 voor deze webshop aanstaat.
+
+            Er staat hier bewust GEEN volledige lijst. iDEAL, creditcard en de rest kiest de klant
+            zo meteen bij Mollie, op een scherm dat hij herkent en dat vanzelf klopt als er in het
+            CMS iets bijkomt. in3 is de uitzondering die hier wél thuishoort: Mollie haalt die optie
+            stilzwijgend uit het menu als het bedrag buiten de afgesproken grenzen valt, en dan
+            staat de cursist voor een betaalpagina zonder de optie waar hij op rekende.
+          */}
+          {in3Limits && (
+            <fieldset className="checkout-step">
+              <legend>{ui.paymentMethod}</legend>
+              {in3Available ? (
+                <div className="ship-options">
+                  <label className={`ship-option${payMethod === '' ? ' ship-option--active' : ''}`}>
+                    <input
+                      checked={payMethod === ''}
+                      name="paymentMethod"
+                      onChange={() => setPayMethod('')}
+                      type="radio"
+                      value=""
+                    />
+                    <span className="ship-option-body">
+                      <span className="ship-option-name">In één keer betalen</span>
+                      <span className="ship-option-desc">
+                        iDEAL, creditcard of een andere methode — je kiest bij de volgende stap.
+                      </span>
+                    </span>
+                  </label>
+                  <label className={`ship-option${payMethod === 'in3' ? ' ship-option--active' : ''}`}>
+                    <input
+                      checked={payMethod === 'in3'}
+                      name="paymentMethod"
+                      onChange={() => setPayMethod('in3')}
+                      type="radio"
+                      value="in3"
+                    />
+                    <span className="ship-option-body">
+                      <span className="ship-option-name">Gespreid betalen met iDEAL in3</span>
+                      <span className="ship-option-desc">
+                        Betaal in drie termijnen. Je betaalt het eerste deel nu; in3 verzorgt de rest.
+                      </span>
+                    </span>
+                  </label>
+                </div>
+              ) : (
+                /*
+                  in3 staat aan, maar niet voor dit bedrag. Dat is precies het geval waarin Mollie
+                  niets zou zeggen — juist bij de dure opleidingen, waar gespreid betalen het meest
+                  gevraagd wordt. Dus staat het er hier wél, met het bedrag erbij.
+                */
+                <p className="form-hint">
+                  {in3Reason === 'above-max' ? (
+                    <>
+                      Gespreid betalen met iDEAL in3 kan tot {money(in3Limits.maxCents)}. Deze
+                      inschrijving ligt daarboven. Neem contact met ons op voor een betalingsregeling.
+                    </>
+                  ) : (
+                    <>
+                      Gespreid betalen met iDEAL in3 kan vanaf {money(in3Limits.minCents)}. Deze
+                      inschrijving ligt daaronder.
+                    </>
+                  )}
+                </p>
+              )}
+            </fieldset>
+          )}
 
           <div className="form-field">
             <label className="form-label" htmlFor="customerNote">
@@ -683,10 +938,14 @@ export function CheckoutForm({
               <span>−{money(cart.discountCents)}</span>
             </div>
           )}
-          <div className="summary-row">
-            <span>{ui.shipping}</span>
-            <span>{selectedMethod ? money(cart.shippingCents) : ui.shippingCalculated}</span>
-          </div>
+          {/* Geen verzendregel als er niets verzonden wordt: "Verzendkosten € 0,00" belooft een
+              stap die dit afrekenen juist overslaat. */}
+          {!coursesOnly && (
+            <div className="summary-row">
+              <span>{ui.shipping}</span>
+              <span>{selectedMethod ? money(cart.shippingCents) : ui.shippingCalculated}</span>
+            </div>
+          )}
           {!taxIncluded && taxRow}
           <div className="summary-row summary-row--total">
             <span>{ui.total}</span>
@@ -700,7 +959,14 @@ export function CheckoutForm({
             </p>
           )}
 
-          <button className="btn btn-gold summary-cta" disabled={busy || !selectedMethod} type="submit">
+          {/* De verzendmethode is alleen een voorwaarde als er ÍETS te verzenden is. Bij een
+              winkelwagen met alleen opleidingen staat die keuze niet op het scherm, dus zou deze
+              knop voor altijd uit blijven staan. */}
+          <button
+            className="btn btn-gold summary-cta"
+            disabled={busy || (!coursesOnly && !selectedMethod)}
+            type="submit"
+          >
             {/*
               Niet "Bezig…": tussen deze klik en de betaalpagina van Mollie zit een serververzoek dat de
               bestelling aanmaakt. Staat er niet dát hij doorgestuurd wordt, dan klikt een bezoeker

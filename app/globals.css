@@ -18,6 +18,13 @@
   --muted: #857c70;        /* secondary text */
   --line: #e4dac9;         /* hairline borders */
   --white: #ffffff;
+  /* IZZI-merkgroen — de kleur die de klant voor élke call-to-action vroeg (#21D19F).
+     Bewust een eigen token en niet `--gold`: het goud blijft de sfeer van de site, dit is de
+     actiekleur. */
+  --brand: #21D19F;
+  /* Tekstkleur ÓP een groen vlak. Niet wit: #21D19F draagt witte tekst op 1,97:1 en zakt daarmee
+     ver onder de WCAG AA-grens van 4,5:1. Met de donkere inkt is het 8,83:1. */
+  --brand-ink: #1c1a17;
   /* Aanbiedingsgroen — bewust BUITEN het goud/champagne-palet. Een korting moet uit de huisstijl
      springen; een gouden badge op een gouden site leest als decoratie in plaats van als actie.
      Overgenomen van de oude webshop, waar klanten deze kleur al met "aanbieding" associëren. */
@@ -98,8 +105,11 @@ p { color: var(--ink-soft); }
 }
 .btn-primary { background: var(--ink); color: var(--champagne); }
 .btn-primary:hover { background: var(--gold-deep); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--gold-deep); }
-.btn-gold { background: var(--gold); color: var(--white); }
-.btn-gold:hover { background: var(--gold-deep); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--gold-deep); }
+/* De primaire call-to-action draagt het merkgroen (#21D19F), zoals de klant vroeg. De klassenaam
+   blijft `.btn-gold`: hij staat op tientallen plaatsen in de content en in de componenten, en
+   hernoemen zou een grote diff opleveren zonder dat er iets aan verandert. */
+.btn-gold { background: var(--brand); color: var(--brand-ink); }
+.btn-gold:hover { background: color-mix(in srgb, var(--brand) 86%, #000); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--brand); }
 .btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
 .btn-ghost:hover { background: var(--ink); color: var(--champagne); transform: translateY(-2px); }
 .btn-light { background: transparent; color: var(--champagne); border-color: rgba(245,239,230,0.4); }
@@ -543,7 +553,11 @@ p { color: var(--ink-soft); }
 .prose p { margin-bottom: 16px; color: var(--ink-soft); }
 .prose > img { border-radius: var(--radius-lg); margin: 24px 0; box-shadow: var(--shadow-sm); }
 .prose .checklist { margin: 20px 0; }
-.detail-figure img { border-radius: var(--radius-lg); width: 100%; object-fit: cover; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
+/* `max-height` houdt het beeld binnen één schermhoogte, zodat de introtekst meteen zichtbaar is.
+   De opdracht (punt 7) vraagt expliciet om geen beeld dat het hele eerste scherm vult en de tekst
+   onder de vouw duwt. `cover` voorkomt dat het bijsnijden het beeld vervormt. */
+.detail-figure img { border-radius: var(--radius-lg); width: 100%; max-height: 340px; object-fit: cover; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
+@media (max-width: 720px) { .detail-figure img { max-height: 260px; } }
 .detail-figure .media-ph { margin-bottom: 30px; }
 
 .aside { position: sticky; top: 100px; display: grid; gap: 20px; }
@@ -1869,3 +1883,118 @@ p { color: var(--ink-soft); }
   /* De tijdlijn stapelt al vanaf 860px — zie de eigen media query daarboven. */
   .atc-row .btn { flex: 1 1 100%; }
 }
+
+/* ---------- Beeld boven een informatiepagina (Ons team, GGD, Werkwijze) ----------
+
+   Waarom dit NIET `.detail-figure` mag zijn: die snijdt met `object-fit: cover` op een vaste
+   `max-height` van 340px. Bij een liggende behandelfoto valt dat niet op, maar de beelden op deze
+   pagina's zijn VIERKANT — een teamportret, een keurmerklogo. Een vierkant beeld door een band van
+   340px persen snijdt precies het midden eruit: bij Ons team verdwijnt het hoofd, bij
+   GGD-gecertificeerd blijft er van het logo een strook over.
+
+   Hier dus geen hoogtelimiet maar een BREEDTEgrens met `contain`: het beeld blijft heel, ongeacht
+   de verhouding. */
+.info-figure { display: flex; justify-content: center; margin-bottom: 30px; }
+.info-figure img,
+.info-figure .media-ph {
+  width: 100%; max-width: 420px; height: auto; max-height: none;
+  object-fit: contain; border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm); margin-bottom: 0;
+}
+
+/* ---------- Teamblok ----------
+   `object-position: top` en niet het midden: de teamfoto's zijn vierkant (1080x1080) en worden hier
+   tot 3/4 bijgesneden. Centrerend snijden haalt een kwart weg rond het MIDDEN — bij een portret is
+   dat de bovenkant van het hoofd. Vanaf de bovenrand snijden houdt het gezicht heel. */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px; }
+.team-card img, .team-card .media-ph {
+  border-radius: var(--radius-lg); width: 100%; aspect-ratio: 3/4;
+  object-fit: cover; object-position: top; margin-bottom: 14px;
+}
+.team-card h3 { font-size: 1.05rem; margin: 0 0 2px; }
+.team-card p { font-family: var(--sans); font-size: .84rem; color: var(--muted); margin: 0; }
+
+/* ---------- Video's ----------
+   De iframe krijgt zijn hoogte van de 16:9-verhouding van de wrapper, niet van een vaste
+   pixelmaat: anders staat er op een telefoon een kader met zwarte balken. */
+.video-embed { position: relative; aspect-ratio: 16/9; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--ink); }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* Eén kolom, geen raster: twee 16:9-kaders naast elkaar worden op een laptop te klein om iets in
+   te zien, en er staat een titel onder die gelezen moet worden. */
+.video-list { display: grid; gap: 40px; }
+.video-item { margin: 0; }
+.video-item figcaption { margin-top: 14px; }
+.video-item figcaption h3 { font-size: 1.05rem; margin: 0 0 4px; }
+.video-item figcaption p { font-family: var(--sans); font-size: .88rem; color: var(--muted); margin: 0; }
+
+/* ---------- Kennisbank: onderwerpen ----------
+   Chips en geen lijst: het zijn er dertien, en dertien regels onder elkaar duwen de artikelen zelf
+   onder de vouw — precies wat de bezoeker kwam halen. */
+.kb-categories { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+.kb-category {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 16px; border-radius: 999px;
+  font-family: var(--sans); font-size: .86rem; font-weight: 600;
+  background: var(--white); color: var(--ink);
+  border: 1px solid color-mix(in srgb, var(--brand) 35%, var(--line));
+  text-decoration: none; transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.kb-category:hover,
+.kb-category--active { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
+.kb-count { font-size: .76rem; opacity: .65; }
+@media (prefers-reduced-motion: reduce) { .kb-category { transition: none; } }
+
+/* ---------- Voorbeeldband boven een concept-artikel ----------
+   Opvallend, want dit is het enige wat een concept van een live pagina onderscheidt zodra de link
+   is doorgestuurd. */
+.preview-band {
+  background: var(--ink); color: var(--white);
+  font-family: var(--sans); font-size: .84rem; font-weight: 600;
+  text-align: center; padding: 10px 16px;
+}
+
+/* Tweede knop in het aside-blok: staat onder de inschrijfknop, met lucht ertussen. */
+.aside-cta-secondary { margin-top: 10px; }
+
+/* ---------- Voordeelband onder de hero van een opleiding ----------
+   In het merkgroen, want dit is precies waar de klant die kleur voor vroeg: UWV-subsidie en
+   gespreid betalen moeten opvallen. Een lichte tint als vlak met donkere tekst erop — vol groen
+   over de volle breedte wordt een muur, en witte tekst haalt er de contrastgrens niet op. */
+.highlight-band {
+  background: color-mix(in srgb, var(--brand) 12%, var(--cream));
+  border-block: 1px solid color-mix(in srgb, var(--brand) 30%, transparent);
+  padding: 14px 0;
+}
+.highlight-row { display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: center; }
+.highlight {
+  display: flex; align-items: flex-start; gap: 9px;
+  font-family: var(--sans); font-size: .86rem; color: var(--ink);
+}
+.highlight b { font-weight: 700; }
+.highlight-text { color: var(--ink-soft); }
+.highlight-text::before { content: ' — '; color: var(--muted); }
+/* Het vinkje in vol groen: klein genoeg om niet te schreeuwen, sterk genoeg om te herkennen. */
+.highlight-tick {
+  display: grid; place-items: center; flex: none;
+  width: 20px; height: 20px; border-radius: 999px; margin-top: 1px;
+  background: var(--brand); color: var(--brand-ink);
+}
+@media (max-width: 640px) {
+  .highlight-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+/* ---------- Verwante pagina's onder een artikel ----------
+   Chips in dezelfde vorm als de kennisbank-onderwerpen, zodat het als één systeem leest. */
+.kb-related { margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); }
+.kb-related h3 { font-size: 1.15rem; margin-bottom: 14px; }
+.kb-related-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.kb-related-link {
+  padding: 7px 16px; border-radius: 999px;
+  font-family: var(--sans); font-size: .86rem; font-weight: 600;
+  background: var(--white); color: var(--ink);
+  border: 1px solid color-mix(in srgb, var(--brand) 35%, var(--line));
+  text-decoration: none; transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.kb-related-link:hover { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
+@media (prefers-reduced-motion: reduce) { .kb-related-link { transition: none; } }

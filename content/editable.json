@@ -1,24 +1,134 @@
 {
   "$comment": "Bestanden die in de BE Digital CMS Content Editor verschijnen. Voor elk bestand rendert het dashboard een volledig recursief formulier — elk veld, elke sectie en elke lijst is bewerkbaar, inclusief alle afbeelding-/mediavelden (paden zoals \"/media/...\"). `path` is de publieke pagina die dit bestand aanstuurt (voor de 'Bekijk pagina'-link). `itemBase` is het route-voorvoegsel voor losse pagina's: met vlakke URLs (geen categorie-segment) is dit leeg, zodat sleutel `x` naar `/x` verwijst. Voeg hier nieuwe content-bestanden toe zodra er pagina's bijkomen.",
   "files": [
-    { "file": "home.json", "label": "Home", "path": "/" },
-    { "file": "site.json", "label": "Site (logo / navigatie / footer / locaties)", "path": "/" },
-    { "file": "behandelingen.json", "label": "Behandelingen (overzicht)", "path": "/behandelingen" },
-    { "file": "services.json", "label": "Behandelingen (detailpagina's)", "path": "/behandelingen", "itemsArePages": true, "itemBase": "" },
-    { "file": "opleidingen.json", "label": "Opleidingen (overzicht)", "path": "/opleidingen" },
-    { "file": "trainings-detail.json", "label": "Opleidingen (detailpagina's)", "path": "/opleidingen", "itemsArePages": true, "itemBase": "" },
-    { "file": "online-trainingen.json", "label": "Online Trainingen", "path": "/online-trainingen" },
-    { "file": "prijzen.json", "label": "Prijzen", "path": "/prijzen" },
-    { "file": "over.json", "label": "Over IZZI", "path": "/over-izzi" },
-    { "file": "portfolio.json", "label": "Portfolio", "path": "/portfolio" },
-    { "file": "contact.json", "label": "Contact", "path": "/contact" },
-    { "file": "info.json", "label": "Info-pagina's (FAQ / Werken bij / UWV / GGD)", "path": "/veelgestelde-vragen" },
-    { "file": "info.json", "label": "FAQ Permanente Make Up Lippen", "path": "/permanente-make-up-lippen-veelgestelde-vragen" },
-    { "file": "info.json", "label": "FAQ Permanente Make Up Sproetjes", "path": "/permanente-make-up-sproetjes-veelgestelde-vragen" },
-    { "file": "info.json", "label": "FAQ Permanente Make Up Eyeliner", "path": "/permanente-make-up-eyeliner-veelgestelde-vragen" },
-    { "file": "legal.json", "label": "Juridische pagina's (voorwaarden / privacy)", "path": "/algemene-voorwaarden" },
-    { "file": "locaties.json", "label": "Locatiepagina's (SEO per stad)", "path": "/", "itemsArePages": true, "itemBase": "" },
-    { "file": "blog.json", "label": "Blog (index + artikelen)", "path": "/blog", "itemsArePages": true, "itemBase": "" },
-    { "file": "shop.json", "label": "Webshop (teksten & labels)", "path": "/winkel" }
+    {
+      "file": "home.json",
+      "label": "Home",
+      "path": "/"
+    },
+    {
+      "file": "site.json",
+      "label": "Site (logo / navigatie / footer / locaties)",
+      "path": "/"
+    },
+    {
+      "file": "behandelingen.json",
+      "label": "Behandelingen (overzicht)",
+      "path": "/behandelingen"
+    },
+    {
+      "file": "services.json",
+      "label": "Behandelingen (detailpagina's)",
+      "path": "/behandelingen",
+      "itemsArePages": true,
+      "itemBase": ""
+    },
+    {
+      "file": "opleidingen.json",
+      "label": "Opleidingen (overzicht)",
+      "path": "/opleidingen"
+    },
+    {
+      "file": "trainings-detail.json",
+      "label": "Opleidingen (detailpagina's)",
+      "path": "/opleidingen",
+      "itemsArePages": true,
+      "itemBase": ""
+    },
+    {
+      "file": "online-trainingen.json",
+      "label": "Online Trainingen",
+      "path": "/online-trainingen"
+    },
+    {
+      "file": "prijzen.json",
+      "label": "Prijzen",
+      "path": "/prijzen"
+    },
+    {
+      "file": "over.json",
+      "label": "Over IZZI",
+      "path": "/over-izzi"
+    },
+    {
+      "file": "portfolio.json",
+      "label": "Portfolio",
+      "path": "/portfolio"
+    },
+    {
+      "file": "contact.json",
+      "label": "Contact",
+      "path": "/contact"
+    },
+    {
+      "file": "info.json",
+      "label": "Info-pagina's (FAQ / Werken bij / UWV / GGD)",
+      "path": "/veelgestelde-vragen"
+    },
+    {
+      "file": "info.json",
+      "label": "FAQ Permanente Make Up Lippen",
+      "path": "/permanente-make-up-lippen-veelgestelde-vragen"
+    },
+    {
+      "file": "info.json",
+      "label": "FAQ Permanente Make Up Sproetjes",
+      "path": "/permanente-make-up-sproetjes-veelgestelde-vragen"
+    },
+    {
+      "file": "info.json",
+      "label": "FAQ Permanente Make Up Eyeliner",
+      "path": "/permanente-make-up-eyeliner-veelgestelde-vragen"
+    },
+    {
+      "file": "legal.json",
+      "label": "Juridische pagina's (voorwaarden / privacy)",
+      "path": "/algemene-voorwaarden"
+    },
+    {
+      "file": "locaties.json",
+      "label": "Locatiepagina's (SEO per stad)",
+      "path": "/",
+      "itemsArePages": true,
+      "itemBase": ""
+    },
+    {
+      "file": "blog.json",
+      "label": "Blog (index + artikelen)",
+      "path": "/blog",
+      "itemsArePages": true,
+      "itemsKey": "posts",
+      "itemBase": ""
+    },
+    {
+      "file": "shop.json",
+      "label": "Webshop (teksten & labels)",
+      "path": "/winkel"
+    },
+    {
+      "file": "info.json",
+      "label": "Ons team",
+      "path": "/ons-team"
+    },
+    {
+      "file": "info.json",
+      "label": "Werkwijze",
+      "path": "/werkwijze"
+    },
+    {
+      "file": "info.json",
+      "label": "Video's",
+      "path": "/videos"
+    },
+    {
+      "file": "site.json",
+      "label": "Onze locaties (studio's + adressen)",
+      "path": "/onze-locaties"
+    },
+    {
+      "file": "blog.json",
+      "label": "Kennisbank (overzicht + categorieën)",
+      "path": "/kennisbank"
+    }
   ]
 }

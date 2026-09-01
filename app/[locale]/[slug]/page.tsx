@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 
 import { Shell } from '@/components/Shell'
 import { BlogPostPage, DetailPage, LocationPage, PageHero } from '@/components/sections'
-import { getBlogIndex, getPosts, getPostSlugs } from '@/content/blog'
+import { getBlogIndex, getPosts, getPostSlugs, getPublishedPosts } from '@/content/blog'
 import { getLocaties, getLocatieSlugs } from '@/content/locaties'
 import { getServices, getServiceSlugs } from '@/content/services'
 import { getTrainingsDetail, getTrainingSlugs } from '@/content/trainings-detail'
@@ -71,7 +71,12 @@ function resolvePage(locale: string, slug: string): Resolved | null {
   if (trn) return { kind: 'detail', data: trn }
   const loc = getLocaties(locale)[slug]
   if (loc) return { kind: 'location', data: loc }
-  const post = getPosts(locale)[slug]
+  /*
+   * `getPublishedPosts`, niet `getPosts`: een concept hoort hier een 404 te geven en niet stilletjes
+   * te verschijnen omdat iemand de URL kent. Wie het wél moet kunnen lezen, gebruikt
+   * `/preview/<slug>`.
+   */
+  const post = getPublishedPosts(locale)[slug]
   if (post) return { kind: 'post', data: post }
   return null
 }

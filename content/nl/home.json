@@ -1,6 +1,6 @@
 {
   "hero": {
-    "eyebrow": "Permanente Make-up · Amsterdam & Den Bosch",
+    "eyebrow": "Permanente Make-up · Amsterdam & Rotterdam",
     "titleLead": "Wakker worden met",
     "titleEm": "perfecte",
     "titleTail": "wenkbrauwen",
@@ -39,7 +39,7 @@
       "GGD-gecertificeerde en gediplomeerde specialisten",
       "Veilige, dermatologisch geteste pigmenten",
       "Natuurlijk resultaat, afgestemd op jouw gezicht",
-      "Twee moderne salons: Amsterdam & Den Bosch"
+      "Twee moderne salons: Amsterdam & Rotterdam"
     ],
     "image": "/media/izzi-beauty-20250729-9b97be-izzi-beauty-isabella-levels-pmu-expert.webp",
     "badgeNum": "12+",
@@ -179,12 +179,12 @@
   "locationsSection": {
     "eyebrow": "Onze locaties",
     "title": "Bezoek IZZI Beauty",
-    "text": "Je bent welkom in onze moderne salons in Amsterdam en Den Bosch — beide volledig ingericht en GGD-gecertificeerd."
+    "text": "Je bent welkom in onze moderne salons in Amsterdam en Rotterdam — beide volledig ingericht en GGD-gecertificeerd."
   },
   "cta": {
     "script": "Klaar voor jouw transformatie?",
     "title": "Boek vandaag nog je afspraak",
-    "text": "Kies voor natuurlijke permanente make-up bij de #1 salon van Nederland. Onze specialisten staan voor je klaar in Amsterdam en Den Bosch.",
+    "text": "Kies voor natuurlijke permanente make-up bij de #1 salon van Nederland. Onze specialisten staan voor je klaar in Amsterdam en Rotterdam.",
     "primaryLabel": "Afspraak maken",
     "primaryUrl": "/contact",
     "secondaryLabel": "Bekijk de prijzen",
@@ -203,8 +203,8 @@
         "hours": "Ma–Za · 09:00 – 18:00"
       },
       {
-        "name": "IZZI Beauty Den Bosch",
-        "address": "Zilverenberg 37a",
+        "name": "IZZI Beauty Rotterdam",
+        "address": "Nog niet bekend",
         "hours": "Ma–Za · 09:00 – 18:00"
       }
     ]

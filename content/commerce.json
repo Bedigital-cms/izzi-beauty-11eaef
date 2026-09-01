@@ -3,5 +3,6 @@
   "enabled": true,
   "currency": "EUR",
   "pricesIncludeTax": true,
+  "mode": "courses",
   "basePath": "winkel"
 }

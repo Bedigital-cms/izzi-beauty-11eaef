@@ -208,10 +208,19 @@ export function CartView({
             <span>−{money(cart.discountCents)}</span>
           </div>
         )}
-        <div className="summary-row">
-          <span>{ui.shipping}</span>
-          <span>{cart.shippingMethodId ? money(cart.shippingCents) : ui.shippingCalculated}</span>
-        </div>
+        {/*
+          Geen verzendregel bij een winkelwagen met alleen opleidingen.
+
+          Zelfde toets als in CheckoutForm: `every` en `=== false`, zodat één fysiek artikel de
+          regel terugbrengt en een CMS van vóór dit veld ongemoeid blijft. Zonder dit beloofde de
+          winkelwagen een verzendstap die het afrekenen daarna overslaat.
+        */}
+        {!cart.lines.every((l) => l.requiresShipping === false) && (
+          <div className="summary-row">
+            <span>{ui.shipping}</span>
+            <span>{cart.shippingMethodId ? money(cart.shippingCents) : ui.shippingCalculated}</span>
+          </div>
+        )}
         {!taxIncluded && taxRow}
         <div className="summary-row summary-row--total">
           <span>{ui.total}</span>

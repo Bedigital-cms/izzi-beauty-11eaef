@@ -7,6 +7,7 @@ import { AccountLink } from './commerce/AccountLink'
 import { CartBadge } from './commerce/CartBadge'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { LocaleLink } from './LocaleLink'
+import { externalLinkProps } from '@/lib/href'
 import { MobileMenu } from './MobileMenu'
 
 /**
@@ -53,7 +54,7 @@ function NavItem({ item }: { item: NavItemType }) {
   const hasMega = cols.length > 0
   return (
     <div className="navitem">
-      <LocaleLink href={item.url}>
+      <LocaleLink href={item.url} {...externalLinkProps(item.url, item.target)}>
         {item.label}
         {hasMega && <span className="caret" aria-hidden="true" />}
       </LocaleLink>
@@ -63,7 +64,7 @@ function NavItem({ item }: { item: NavItemType }) {
             <div className="mega-col" key={col.heading}>
               <h4>{col.heading}</h4>
               {(col.links ?? []).map((l) => (
-                <LocaleLink key={l.label} href={l.url}>
+                <LocaleLink key={l.label} href={l.url} {...externalLinkProps(l.url, l.target)}>
                   {l.label}
                   {l.tag && <span className="tag">{l.tag}</span>}
                 </LocaleLink>
@@ -130,9 +131,9 @@ export function Header({
                   .filter((item) => sublinksOf(item).length > 0)
                   .map((item) => (
                     <div className="mega-col" key={item.label}>
-                      <h4><LocaleLink href={item.url}>{item.label}</LocaleLink></h4>
+                      <h4><LocaleLink href={item.url} {...externalLinkProps(item.url, item.target)}>{item.label}</LocaleLink></h4>
                       {sublinksOf(item).map((l) => (
-                        <LocaleLink key={l.label} href={l.url}>
+                        <LocaleLink key={l.label} href={l.url} {...externalLinkProps(l.url, l.target)}>
                           {l.label}
                           {l.tag && <span className="tag">{l.tag}</span>}
                         </LocaleLink>

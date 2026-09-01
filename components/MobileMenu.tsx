@@ -8,6 +8,7 @@ import type { NavItem } from '@/lib/types'
 
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { LocaleLink } from './LocaleLink'
+import { externalLinkProps } from '@/lib/href'
 
 /**
  * Mobile navigation: a hamburger button that opens a full-height drawer with the nav tree.
@@ -111,7 +112,7 @@ export function MobileMenu({
             if (!hasColumns) {
               return (
                 <div className="drawer-group" key={item.label}>
-                  <LocaleLink className="drawer-link" href={item.url} onClick={close}>{item.label}</LocaleLink>
+                  <LocaleLink className="drawer-link" href={item.url} onClick={close} {...externalLinkProps(item.url, item.target)}>{item.label}</LocaleLink>
                 </div>
               )
             }
@@ -138,7 +139,7 @@ export function MobileMenu({
                       <div className="drawer-sub" key={col.heading}>
                         <span className="drawer-sub-head">{col.heading}</span>
                         {col.links.map((l) => (
-                          <LocaleLink key={l.label} className="drawer-sublink" href={l.url} onClick={close}>{l.label}</LocaleLink>
+                          <LocaleLink key={l.label} className="drawer-sublink" href={l.url} onClick={close} {...externalLinkProps(l.url, l.target)}>{l.label}</LocaleLink>
                         ))}
                       </div>
                     ))}

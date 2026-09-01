@@ -2,7 +2,7 @@
   "site": {
     "brandName": "IZZI Beauty",
     "tagline": "Permanente Make-up & Academy",
-    "logo": "/media/20260806-zo4egr-izzi-logo.png",
+    "logo": "/media/izzi-beauty-20250729-391d57-izzi-logo-transparant.png",
     "bookingUrl": "/contact",
     "ctaLabel": "Afspraak maken",
     "ctaUrl": "/contact",
@@ -52,6 +52,14 @@
               {
                 "label": "Lip Blush",
                 "url": "/lip-blush"
+              },
+              {
+                "label": "Ombré Lips",
+                "url": "/ombre-lips"
+              },
+              {
+                "label": "Lip Liner",
+                "url": "/lip-liner"
               },
               {
                 "label": "Lip Enlightenment",
@@ -116,6 +124,10 @@
             ]
           }
         ]
+      },
+      {
+        "label": "Prijzen",
+        "url": "/prijzen"
       },
       {
         "label": "Opleidingen",
@@ -385,31 +397,89 @@
       },
       {
         "label": "Laserontharen",
-        "url": "/laser-ontharing"
+        "url": "https://izziclinic.nl",
+        "target": "_blank"
       },
       {
-        "label": "Prijzen",
-        "url": "/prijzen"
-      },
-      {
-        "label": "Over IZZI",
-        "url": "/over-izzi"
-      },
-      {
-        "label": "Portfolio",
-        "url": "/portfolio"
+        "label": "Kennisbank",
+        "url": "/kennisbank"
       },
       {
         "label": "Webshop",
-        "url": "/winkel"
+        "url": "https://laliqa.com",
+        "target": "_blank"
       },
       {
-        "label": "Contact",
-        "url": "/contact"
+        "label": "Over IZZI",
+        "url": "/over-izzi",
+        "columns": [
+          {
+            "heading": "Over IZZI",
+            "url": "/over-izzi",
+            "links": [
+              {
+                "label": "Over IZZI",
+                "url": "/over-izzi"
+              },
+              {
+                "label": "Ons team",
+                "url": "/ons-team"
+              },
+              {
+                "label": "Werkwijze",
+                "url": "/werkwijze"
+              },
+              {
+                "label": "Onze locaties",
+                "url": "/onze-locaties"
+              }
+            ]
+          },
+          {
+            "heading": "Bekijken",
+            "url": "/portfolio",
+            "links": [
+              {
+                "label": "Portfolio",
+                "url": "/portfolio"
+              },
+              {
+                "label": "Video's",
+                "url": "/videos"
+              },
+              {
+                "label": "Veelgestelde vragen",
+                "url": "/veelgestelde-vragen"
+              }
+            ]
+          },
+          {
+            "heading": "Meer",
+            "url": "/contact",
+            "links": [
+              {
+                "label": "Contact",
+                "url": "/contact"
+              },
+              {
+                "label": "GGD-gecertificeerd",
+                "url": "/ggd-gecertificeerd"
+              },
+              {
+                "label": "Werken bij IZZI",
+                "url": "/werken-bij-izzi-beauty"
+              },
+              {
+                "label": "UWV-subsidie",
+                "url": "/uwv-subsidie"
+              }
+            ]
+          }
+        ]
       }
     ],
     "footer": {
-      "logo": "/media/20260806-0hf2h8-izzi-logo-light.png",
+      "logo": "/media/izzi-beauty-20250729-0fd200-izzi-logo-light.png",
       "about": "IZZI Beauty is dé specialist in permanente make-up: van natuurlijke, volle Powder Brows tot Lip Blush en Infralash Eyeliner. Daarnaast leiden wij in onze academy nieuwe PMU-artiesten op tot echte professionals.",
       "email": "info@example.com",
       "phone": "+31 6 11 76 88 81",
@@ -424,13 +494,13 @@
           "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
         },
         {
-          "name": "IZZI Beauty Den Bosch",
-          "city": "'s-Hertogenbosch",
-          "address": "Zilverenberg 37a",
-          "postcode": "5234 GL 's-Hertogenbosch",
+          "name": "IZZI Beauty Rotterdam",
+          "city": "Rotterdam",
+          "address": "Nog niet bekend",
+          "postcode": "Rotterdam",
           "phone": "+31 6 11 76 88 81",
           "hours": "Ma–Za · 09:00 – 18:00",
-          "mapUrl": "https://maps.google.com/?q=Zilverenberg+37a+Den+Bosch"
+          "mapUrl": "https://maps.google.com/?q=Rotterdam"
         }
       ],
       "columns": [

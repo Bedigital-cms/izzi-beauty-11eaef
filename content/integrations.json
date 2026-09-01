@@ -2,23 +2,23 @@
   "$comment": "Externe integraties (widgets/trackers) van deze site, beheerd door de BE Digital CMS. Niet met de hand aanpassen — wijzig het via Tenants → Integraties, zodat CMS en site synchroon blijven. `providers` zijn de bekende koppelingen: de site bouwt zelf de juiste snippet, de klant vult alleen de instellingen in. `customScripts` is de escape-hatch voor eenmalige/onbekende code en is ALLEEN voor superadmins — vrije scripts draaien met volledige rechten op de pagina.",
   "providers": [
     {
-      "id": "whatsapp",
-      "enabled": true,
-      "settings": {
-        "phone": "+31 6 11 76 88 81",
-        "position": "right"
-      }
-    },
-    {
       "id": "salonized",
       "enabled": true,
       "settings": {
         "size": "normal",
-        "color": "#b8935a",
+        "color": "#ff0040",
         "company": "PrfWgEYr3WZagmd43yvLqWpL",
         "language": "nl",
         "position": "right",
         "trackingId": "UA-177261363-3"
+      }
+    },
+    {
+      "id": "whatsapp",
+      "enabled": true,
+      "settings": {
+        "phone": "31612345678",
+        "position": "right"
       }
     }
   ],

@@ -19,6 +19,27 @@ export function isInternalPath(url: string): boolean {
   return url.startsWith('/') && !url.startsWith('//')
 }
 
+/**
+ * De attributen die een link naar een ander domein nodig heeft.
+ *
+ * De klant vroeg om de webshop (laliqa.com) en laserontharen (izziclinic.nl) in een NIEUW tabblad,
+ * met de IZZI-site open in het oude — zie de opdracht, punt 9. Dat is `target="_blank"`.
+ *
+ * `rel="noreferrer"` hoort daar altijd bij en is geen stijlkeuze: een pagina die met `_blank` wordt
+ * geopend krijgt via `window.opener` toegang tot de openende pagina en kan die laten navigeren.
+ * `noreferrer` verbreekt die verwijzing (en dekt meteen `noopener` af in oudere browsers).
+ *
+ * `target` komt uit de content, zodat een redacteur het per link kan zetten zonder code. Staat er
+ * niets, dan bepaalt het adres het: een externe URL opent in een nieuw tabblad, een interne niet.
+ */
+export function externalLinkProps(
+  url: string,
+  target?: string,
+): { target?: string; rel?: string } {
+  const blank = target === '_blank' || (!target && !!url && !isInternalPath(url) && !url.startsWith('#'))
+  return blank ? { target: '_blank', rel: 'noreferrer' } : {}
+}
+
 /** Whether a path already begins with a "/<supported-locale>" segment. */
 function hasLocalePrefix(url: string): boolean {
   const seg = url.split('/')[1] // "/nl/x" -> "nl"

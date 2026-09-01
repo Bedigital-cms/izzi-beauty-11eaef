@@ -2,9 +2,10 @@
  *  Content Editor (and the AI agent) can edit every field through a recursive form. */
 
 /* ---------- shared ---------- */
-export type NavChild = { label: string; url: string; tag?: string }
+/** `target: "_blank"` opent de link in een nieuw tabblad — zie `externalLinkProps` in lib/href.ts. */
+export type NavChild = { label: string; url: string; tag?: string; target?: string }
 export type NavColumn = { heading: string; url?: string; links: NavChild[] }
-export type NavItem = { label: string; url: string; columns?: NavColumn[] }
+export type NavItem = { label: string; url: string; columns?: NavColumn[]; target?: string }
 export type SocialLink = { label: string; url: string; icon: string }
 export type Location = { name: string; city: string; address: string; postcode: string; phone: string; hours: string; mapUrl: string }
 export type FooterLink = { label: string; url: string }
@@ -100,6 +101,32 @@ export type DetailContent = {
   hero: { eyebrow: string; title: string; text: string; breadcrumb: string }
   image: string
   intro: string
+  /**
+   * YouTube-video bij deze behandeling, tussen de uitleg en de veelgestelde vragen.
+   *
+   * Elke vorm waarin YouTube een link uitdeelt mag; `VideoEmbed` haalt het id er zelf uit. Leeg of
+   * afwezig → geen kader, zodat een pagina zonder video er niet met een gat op staat.
+   */
+  videoUrl?: string
+  /**
+   * De slug van het webshopproduct waar deze opleiding bij hoort.
+   *
+   * Is hij gevuld ÉN staat de webshop aan, dan wordt de knop "Inschrijven" en gaat hij naar
+   * `/product/<handle>`, waar de bezoeker een cursusdatum kiest en afrekent. Zonder handle blijft
+   * het de contactknop, zodat er nooit een dode inschrijflink op de pagina staat.
+   *
+   * ⚠️ Moet teken voor teken gelijk zijn aan de slug van het product in het CMS. Een verschil geeft
+   * een 404 bij het klikken, zonder build-fout — alleen doorklikken vindt dat.
+   */
+  productHandle?: string
+  /**
+   * De band direct onder de hero: de twee of drie dingen die een bezoeker meteen moet zien.
+   *
+   * De brief vraagt UWV-subsidie en gespreid betalen "prominent bovenaan elke relevante
+   * opleidingspagina" — niet pas in de zijbalk of bij het afrekenen. Dit blok is precies dat.
+   * Leeg of afwezig → geen band, zodat een pagina zonder deze voordelen er niet leeg op staat.
+   */
+  highlights?: { label: string; text: string }[]
   body: { heading: string; paragraphs: string[]; checklist?: string[] }[]
   steps?: { title: string; items: Step[] }
   faq?: { title: string; items: Faq[] }
@@ -417,10 +444,23 @@ export type LegalContent = {
 export type LegalCollection = Record<string, LegalContent>
 
 /* ---------- info page (Werken Bij, UWV Subsidie, GGD, FAQ hub) — flexible content page ---------- */
+/** Eén teamlid met foto — gedeeld door de teampagina en de behandelpagina's. */
+export type TeamMember = { name: string; role: string; image: string }
+
 export type InfoContent = {
   hero: { eyebrow: string; title: string; text: string; breadcrumb: string }
   image?: string
   body?: { heading: string; paragraphs: string[]; checklist?: string[] }[]
+  /** Specialisten met foto — gebruikt door de teampagina. Leeg of afwezig → geen teamblok. */
+  team?: TeamMember[]
+  /**
+   * YouTube-video's op een informatiepagina — gebruikt door de videopagina.
+   *
+   * `url` mag elke vorm zijn waarin YouTube een video uitdeelt (watch, youtu.be, /embed, /shorts);
+   * `VideoEmbed` haalt het id er zelf uit en rendert niets als hij het niet herkent. Leeg of
+   * afwezig → geen videoblok, zodat een pagina zonder video's er niet met een lege kop op staat.
+   */
+  videos?: { url: string; title: string; description?: string }[]
   faq?: { title: string; items: Faq[] }
   cta: CtaBlock
 }
@@ -447,6 +487,15 @@ export type BlogPost = {
   author: string
   date: string
   category?: string
+  /**
+   * `draft` houdt het artikel van de site af: het staat nergens in een overzicht, niet in de
+   * kennisbank, niet in de sitemap, en de detailpagina geeft een 404. Alleen `/preview/<slug>`
+   * toont het, zodat IZZI het kan nalezen vóór publicatie.
+   *
+   * Afwezig of iets anders telt als gepubliceerd — zo blijven de bestaande 50 artikelen staan
+   * zonder dat er iets aan hoeft.
+   */
+  status?: 'draft' | 'published'
   /** SEO <title>, overgenomen van de oorspronkelijke WordPress-post. Valt terug op `title`. */
   seoTitle?: string
   /** SEO meta-description, overgenomen van de oorspronkelijke post. Valt terug op `excerpt`. */

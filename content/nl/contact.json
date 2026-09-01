@@ -20,13 +20,13 @@
       "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
     },
     {
-      "name": "IZZI Beauty Den Bosch",
-      "city": "'s-Hertogenbosch",
-      "address": "Zilverenberg 37a",
-      "postcode": "5234 GL 's-Hertogenbosch",
+      "name": "IZZI Beauty Rotterdam",
+      "city": "Rotterdam",
+      "address": "Nog niet bekend",
+      "postcode": "Rotterdam",
       "phone": "+31 6 11 76 88 81",
       "hours": "Ma–Za · 09:00 – 18:00",
-      "mapUrl": "https://maps.google.com/?q=Zilverenberg+37a+Den+Bosch"
+      "mapUrl": "https://maps.google.com/?q=Rotterdam"
     }
   ],
   "bookingLabel": "Afspraak maken",

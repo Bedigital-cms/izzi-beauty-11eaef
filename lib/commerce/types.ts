@@ -45,6 +45,17 @@ export type Product = {
   variants: Variant[]
   inStock: boolean
   taxRateBasisPoints: number | null
+  /**
+   * Moet dit product bezorgd worden?
+   *
+   * Komt van `requiresShipping` op het product in het CMS. Een opleiding staat op `false`: er valt
+   * niets te versturen, dus vraagt het afrekenen geen adres.
+   *
+   * ⚠️ Optioneel, en overal met `=== false` toetsen. Een CMS van vóór dit veld stuurt het niet mee;
+   * `undefined` betekent dan "wél bezorgen" — hetzelfde als het CMS zelf doet met `!== false` in
+   * `modules/commerce/api/serialize.ts`.
+   */
+  requiresShipping?: boolean
   seo: { title: string; description: string }
 }
 
@@ -64,6 +75,22 @@ export type ShopConfig = {
   currency: string
   pricesIncludeTax: boolean
   taxRates: Array<{ id: string | number; name: string; rateBasisPoints: number; isDefault: boolean }>
+  /**
+   * De betaalmethoden die deze webshop aanbiedt, zoals ze in het CMS zijn aangevinkt.
+   *
+   * Leeg als er nog geen actieve Mollie-koppeling is. Dan toont de site géén keuze en laat hij
+   * Mollie zelf het betaalmenu bepalen — beter dan een knop die op een foutmelding uitkomt.
+   */
+  paymentMethods?: string[]
+  /**
+   * De bedragen waarbinnen iDEAL in3 werkt, in centen. `null` als in3 niet aanstaat.
+   *
+   * ⚠️ Hier MOET op gefilterd worden. Buiten dit bereik haalt Mollie in3 stilzwijgend uit het
+   * betaalmenu: de cursist kiest gespreid betalen en komt op een pagina waar die optie niet
+   * bestaat, zonder dat er ergens staat waarom. Met deze grenzen kan de site de optie weglaten
+   * mét uitleg — zie `in3Allowed()` in `lib/commerce/in3.ts`.
+   */
+  in3?: { minCents: number; maxCents: number } | null
   environment: 'live' | 'test'
   keyType: 'publishable' | 'secret'
 }
@@ -81,6 +108,12 @@ export type CartLine = {
   lineTaxCents: number
   available: number
   image: CommerceImage | null
+  /**
+   * Moet deze regel bezorgd worden? Zie de toelichting bij `Product.requiresShipping`.
+   *
+   * Het CMS zet dit per winkelwagenregel in `modules/commerce/cart/cartService.ts`.
+   */
+  requiresShipping?: boolean
 }
 
 /** Meldingen bij het herberekenen: wat er is aangepast of weggevallen. Aan de klant tonen. */

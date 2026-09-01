@@ -28,14 +28,18 @@ categorie-segment. Dus `/lip-blush` (niet `/behandelingen/lip-blush`), `/microbl
 - **⭐ SLUGS MOETEN GLOBAAL UNIEK ZIJN.** Omdat alles onder één vlakke namespace valt, mag dezelfde
   slug niet in twee collecties voorkomen (bv. een behandeling én een opleiding `lip-blush`), en mag
   een slug niet gelijk zijn aan een vaste routenaam (`behandelingen`, `opleidingen`, `blog`,
-  `contact`, `prijzen`, `over-izzi`, `portfolio`, en de webshop-namen `shop`, `cart`, `checkout`,
-  `account`, `order` — die laatste vijf zijn ALTIJD bezet, ook bij tenants zonder webshop). Een
+  `kennisbank`, `contact`, `prijzen`, `over-izzi`, `portfolio`, `ons-team`, `werkwijze`,
+  `onze-locaties`, `videos`, `preview`, en de webshop-namen `winkel`, `winkelwagen`, `afrekenen`,
+  `account`, `order`, `product`, `product-categorie` — die laatste zijn ALTIJD bezet, ook bij
+  tenants zonder webshop). Een
   build-time guard in `[slug]/page.tsx` faalt
   met een duidelijke melding als er een botsing is — hernoem er dan één (en zet een redirect van de
   oude URL). Verzin bij twijfel een onderscheidende slug (bv. een opleiding → `lip-blush-opleiding`).
-- **Redirects:** `content/redirects.json` is momenteel **leeg** (`"redirects": []`) — elke pagina wordt
-  rechtstreeks op haar eigen pad geserveerd en alle interne links wijzen direct daarheen. Voeg hier
-  alleen een regel toe als een URL écht verandert én de oude variant nog verkeer krijgt.
+- **Redirects:** `content/redirects.json` bevat **30 regels**: de stadspagina's staan op een korte
+  slug (`/haarlem`), terwijl de oude WordPress-site keyword-slugs gebruikte
+  (`/wenkbrauwen-haarlem`, `/permanente-make-up-almere`). Zonder die 301's gaf elke bestaande
+  Google-positie een 404. Voeg hier alleen een regel toe als een URL écht verandert én de oude
+  variant nog verkeer krijgt.
 
 ### ⚠️ Uitzondering: twee GENESTE FAQ-URLs (spiegel van de oude site)
 
@@ -80,7 +84,7 @@ kent de server maar één bron van waarheid voor geld en voorraad, en dat is de 
 |---|---|
 | Een `products`-array met `price`/`stock` in een JSON-bestand zetten | Uitleggen dat producten in het CMS worden beheerd onder **Webshop → Producten** |
 | Producten toevoegen aan `content/<locale>/shop.json` | Alleen de kop- en labelteksten daar aanpassen (zie hieronder) |
-| Een eigen `/producten`- of `/webshop`-route maken | De bestaande `/shop`-routes gebruiken; die zijn er al |
+| Een eigen `/producten`- of `/webshop`-route maken | De bestaande `/winkel`-routes gebruiken; die zijn er al |
 | Prijzen in `services`/`trainings` gebruiken als productprijs | Die prijzen zijn behandelprijzen (tekst), geen afrekenbare bedragen |
 | `lib/commerce/*` of `app/api/commerce/*` aanpassen | Afblijven — dat is de beveiligde laag naar het CMS |
 
@@ -95,18 +99,18 @@ jou. Zeg dat, en verwijs naar Webshop → Producten. Maak niets aan.
 - `sidebarWidgets` in `shop.json` — de blokken onder de categorielijst in de zijbalk van de winkel
   (titel, tekst, een afbeeldingspad in `/media`, een link). Alleen redactioneel; **nooit** producten of
   prijzen. Een lege lijst betekent: alleen de categorieën.
-- Nav-links naar `/shop` in `site.json` toevoegen of weghalen.
+- Nav-links naar `/winkel` in `site.json` toevoegen of weghalen.
 - De commerce-CSS in `app/globals.css` (één gemarkeerd blok onderaan) bijschaven.
 
 **Structuur, voor als je iets moet nazoeken:**
 
 | Pad | Wat |
 |---|---|
-| `app/[locale]/shop/page.tsx` | Winkelingang: **categorietegels** + zijbalk. Valt terug op een productrooster als de webshop nog geen categorieën heeft |
-| `app/[locale]/shop/categorie/[slug]/page.tsx` | De producten van één categorie (sorteren/pagineren) |
-| `app/[locale]/shop/[handle]/page.tsx` | Productdetail |
+| `app/[locale]/winkel/page.tsx` | Winkelingang: **categorietegels** + zijbalk. Valt terug op een productrooster als de webshop nog geen categorieën heeft |
+| `app/[locale]/product-categorie/[slug]/page.tsx` | De producten van één categorie (sorteren/pagineren) |
+| `app/[locale]/product/[handle]/page.tsx` | Productdetail |
 | `components/commerce/ShopSidebar.tsx` | Categorielijst + redactionele blokken (`sidebarWidgets` uit `shop.json`) |
-| `app/[locale]/cart`, `checkout`, `checkout/bedankt` | Winkelwagen en afrekenen |
+| `app/[locale]/winkelwagen`, `afrekenen`, `afrekenen/bedankt` | Winkelwagen en afrekenen |
 | `app/[locale]/order/[orderNumber]` | Bestelling volgen (gast) |
 | `app/api/commerce/*` | Proxy naar het CMS. De browser praat **nooit** direct met het CMS: de geheime sleutel blijft server-side. |
 | `lib/commerce/client.ts` | Alle API-aanroepen. **Gooit nooit** — geeft `{ok:false,error}` terug. |
@@ -123,7 +127,7 @@ jou. Zeg dat, en verwijs naar Webshop → Producten. Maak niets aan.
    hele pagina dynamisch en dan is de site niet meer statisch. De badge is met opzet een client-component
    die na hydratie zelf zijn aantal ophaalt.
 
-**Webshop uit?** `NEXT_PUBLIC_COMMERCE_ENABLED` staat dan op `0` en `/shop`, `/cart`, `/checkout` en
+**Webshop uit?** `NEXT_PUBLIC_COMMERCE_ENABLED` staat dan op `0` en `/winkel`, `/winkelwagen`, `/afrekenen` en
 `/order` geven 404. De bestandsstructuur blijft wel staan (die hoort bij het template) — verwijder de
 routes niet. De vijf segmenten blijven ook dan gereserveerd, zodat er nooit een contentpagina op `/shop`
 staat die later de webshop in de weg zit.
@@ -162,6 +166,13 @@ Deze site is **i18n-ready**. Houd je hieraan:
 | `/online-trainingen` | hub/overzicht | `content/<locale>/online-trainingen.json` | `HubPage` |
 | `/<slug>` | SEO-locatie/stad (collectie) | `content/<locale>/locaties.json` | `app/[locale]/[slug]` → `LocationPage` |
 | `/blog` | index, pagina 1 | `content/<locale>/blog.json` (`index`) | `app/[locale]/blog/page.tsx` |
+| `/kennisbank` | kennisbank: artikelen per onderwerp | `content/<locale>/blog.json` | `app/[locale]/kennisbank/page.tsx` |
+| `/kennisbank/<categorie>` | één onderwerp | idem, gefilterd op `category` | `app/[locale]/kennisbank/[category]/page.tsx` |
+| `/preview/<slug>` | voorbeeld van een artikel, **ook een concept** | `content/<locale>/blog.json` (`posts`) | `app/[locale]/preview/[slug]/page.tsx` |
+| `/ons-team` | teampagina | `content/<locale>/info.json` (`ons-team`) | `InfoPage` |
+| `/werkwijze` | werkwijze | `content/<locale>/info.json` (`werkwijze`) | `InfoPage` |
+| `/videos` | video's | `content/<locale>/info.json` (`videos`) | `InfoPage` |
+| `/onze-locaties` | salons + verzorgingsgebied | `site.json` + `locaties.json` | `app/[locale]/onze-locaties/page.tsx` → `HubPage` |
 | `/blog/page/<n>` | index, pagina 2+ | idem | `app/[locale]/blog/page/[page]/page.tsx` |
 | `/<slug>` | blog-artikel (collectie) | `content/<locale>/blog.json` (`posts`) | `app/[locale]/[slug]` |
 | `/prijzen` | prijzen | `content/<locale>/prijzen.json` | `PriceList` |
@@ -249,10 +260,72 @@ alle collecties + geen vaste routenaam) — anders faalt de build-guard.
   `online-trainingen-veelgestelde-vragen` → `/online-trainingen-veelgestelde-vragen/veelgestelde-vragen-opleidingen-wenkbrauwen`).
   Kijk dus altijd in `app/[locale]/**` welk route-bestand een key rendert vóór je een link zet.
 
+## ⭐ Velden die er sinds de cursusmodus bij zijn gekomen
+
+Deze staan in de content-JSON en zijn dus door jou te bewerken, maar drie ervan gaan STIL kapot als
+je ze verkeerd zet. Lees dit voor je een opleiding of artikel aanraakt.
+
+### `productHandle` (opleiding) — koppelt de pagina aan het webshopproduct
+
+In `trainings-detail.json`. Staat hij gevuld ÉN staat de webshop aan, dan wordt de knop
+"Inschrijven" en gaat hij naar `/product/<handle>`.
+
+    cursuspagina                     productHandle                    productslug in het CMS
+    /lip-blush-beginnersopleiding →  opleiding-lip-blush-beginners  = opleiding-lip-blush-beginners
+
+⚠️ **Moet teken voor teken gelijk zijn aan de productslug in de CMS-database.** Klopt hij niet, dan
+geeft de knop een **404** — zonder build-fout en zonder waarschuwing. Alleen doorklikken vindt dat.
+
+⚠️ **Verzin er nooit een.** Je kunt de database niet zien, dus je kunt niet controleren of het
+product bestaat. Laat het veld met rust; het CMS zet het.
+
+Elke handle begint met `opleiding-`. Dat voorkomt dat een productslug botst met een contentslug —
+bij een botsing serveert Next de statische pagina en is de productpagina permanent onbereikbaar.
+
+Geen handle = de pagina houdt zijn "Neem contact op"-knop. Dat is de juiste keuze voor maatwerk
+zonder vaste prijs of datum.
+
+### `status: "draft"` (blogartikel) — houdt een artikel van de site af
+
+In `blog.json`, per post. `draft` betekent: nergens zichtbaar — niet in een overzicht, niet in de
+kennisbank, niet in de sitemap, en `/<slug>` geeft een 404. Alleen `/preview/<slug>` toont hem.
+
+Afwezig of iets anders telt als gepubliceerd, dus bestaande artikelen blijven staan.
+
+Alles loopt via `getPublishedPosts()` in `content/blog.ts`. Gebruik `getPosts()` alleen waar je de
+status zélf afhandelt (de detailroute en de previewroute doen dat).
+
+### `highlights` (opleiding) — de band onder de hero
+
+Twee of drie regels die bovenaan een opleidingspagina staan: UWV-subsidie, gespreid betalen,
+CRKBO-erkend.
+
+⚠️ **Alleen invullen wat de pagina zelf al beweert.** Elke regel is afgeleid van `aside.facts` van
+diezelfde pagina — UWV alleen als de facts het noemen, gespreid betalen alleen als de prijsregel
+termijnen noemt. Zet er nooit iets in dat de rest van de pagina niet zegt.
+
+### `videoUrl` (behandeling/opleiding) — YouTube-video in de pagina
+
+Elke vorm waarin YouTube een link uitdeelt mag (watch, youtu.be, /embed, /shorts). `VideoEmbed`
+haalt het id er zelf uit en rendert **niets** bij een onbruikbare link. Leeg laten als je geen
+geverifieerde video hebt.
+
+`InfoContent` heeft daarnaast een `videos`-array (meerdere video's met titel), gebruikt door
+`/videos`.
+
+### `requiresShipping` — NIET in content
+
+Dit komt uit de CMS-database, per product. Bij een opleiding staat hij op `false` en slaat het
+afrekenen het bezorgadres over. Je kunt en hoeft hier niets aan te doen; hij staat hier alleen zodat
+je hem herkent in `lib/commerce/types.ts`.
+
+---
+
 ## Herbruikbare renderers (in `components/sections.tsx`)
 
 `HubPage`, `DetailPage`, `LocationPage`, `InfoPage`, `LegalPage`, `PageHero`, `CardGrid`,
-`PriceList`, `Steps`, `FaqList`, `Gallery`, `ReviewGrid`, `ReviewMarquee`, `CtaBand`, `BlogGrid`.
+`PriceList`, `Steps`, `FaqList`, `Gallery`, `ReviewGrid`, `ReviewMarquee`, `CtaBand`, `BlogGrid`,
+`VideoEmbed` (in `components/VideoEmbed.tsx`).
 Nieuwe pagina van een bestaand type heeft doorgaans GEEN nieuwe renderer nodig — alleen nieuwe data.
 Interne links in renderers gebruiken `<LocaleLink>` (niet `<Link>`), zodat de taalprefix klopt.
 
@@ -260,7 +333,9 @@ Interne links in renderers gebruiken `<LocaleLink>` (niet `<Link>`), zodat de ta
 
 Alle content-types staan in `lib/types.ts` (o.a. `HomeContent`, `SiteContent`, `HubContent`,
 `DetailContent`, `DetailCollection`, `LocationPageContent`, `BlogPost`, `PrijzenContent`,
-`OverContent`, `PortfolioContent`, `ContactContent`, `InfoContent`, `LegalContent`). Types zijn
+`OverContent`, `PortfolioContent`, `ContactContent`, `InfoContent`, `LegalContent`, `TeamMember`).
+`DetailContent` heeft er sinds de cursusmodus `productHandle`, `highlights` en `videoUrl` bij;
+`InfoContent` heeft `team` en `videos`; `BlogPost` heeft `status`. Types zijn
 taal-neutraal (elke taal heeft dezelfde vorm). Kopieer de vorm; verzin geen nieuwe velden tenzij nodig.
 
 ## Media
@@ -282,6 +357,15 @@ Editor verschijnen. `file` is enkel de basisnaam (`home.json`). De collecties me
 (`services.json`, `trainings-detail.json`, `locaties.json`) staan er al in met `"itemsArePages": true`
 en **`"itemBase": ""`** (leeg = vlakke URLs, dus key `x` → `/x`). Voeg een regel toe alléén voor een
 écht nieuw content-bestand (nieuw paginatype), niet voor een nieuwe key in een bestaande collectie.
+
+⚠️ **`itemsKey` bij een genest bestand.** Die drie collecties ZÍJN zelf de map, dus daar hoeft niets.
+`blog.json` niet: de artikelen zitten onder een `posts`-sleutel. Zonder `"itemsKey": "posts"` leest
+de editor het hoogste niveau en biedt hij `index` en `posts` aan als de twee "pagina's" — de vijftig
+artikelen blijven dan onbereikbaar. Staat er een wrapper omheen, zet dan altijd `itemsKey`.
+
+Eén bestand mag **meerdere regels** hebben, met een ander label en pad. Zo staat `blog.json` er twee
+keer in: als "Blog (index + artikelen)" en als "Kennisbank (overzicht + categorieën)", en `info.json`
+zeven keer — één per pagina die het rendert. Zo vindt een redacteur een pagina op haar eigen naam.
 Zet er GEEN systeembestanden in (`forms.json`, `redirects.json`, `i18n.json`).
 
 `shop.json` staat er wél in (label "Webshop (teksten & labels)") omdat de klant zijn eigen webshopkoppen
@@ -294,7 +378,9 @@ architectuur verhindert.
 Zie de universele conventies in de system-prompt: `content/forms.json` (+ `<Form slug="…"/>`) en
 `content/redirects.json` — beide **plat in `content/`, taal-neutraal**. Niet zelf een submit-handler
 of `next.config` redirect schrijven. Redirect-`source`/`destination` zijn prefix-vrij (mogen meerdere
-segmenten hebben); de site verzorgt de taalprefix per taal. `redirects.json` staat nu op `[]`: er zijn
-géén redirects. Toen de twee FAQ-pagina's naar hun geneste pad verhuisden is er **bewust geen redirect**
-van de oude vlakke URL gezet (keuze van de klant) — die oude URLs geven 404. Voeg dus niet op eigen
-initiatief redirects toe; doe dat alleen als de klant het vraagt.
+segmenten hebben); de site verzorgt de taalprefix per taal. `redirects.json` bevat **30 regels**: de
+oude keyword-URLs van de stadspagina's wijzen naar de korte slug (zie het hoofdstuk over vlakke URLs).
+
+Twee dingen die er bewust NIET in staan: toen de twee FAQ-pagina's naar hun geneste pad verhuisden is
+er **geen redirect** gezet (keuze van de klant) — die oude vlakke URLs geven 404. Voeg dus niet op
+eigen initiatief redirects toe; doe dat alleen als de klant het vraagt.

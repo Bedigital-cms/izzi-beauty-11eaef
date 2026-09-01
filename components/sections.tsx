@@ -13,9 +13,13 @@ import type {
   Step,
 } from '@/lib/types'
 
+import { getCategoryLinks } from '@/content/blog'
+import { commerceEnabled } from '@/lib/commerce/config'
+
 import { Icon } from './icons'
 import { LocaleLink } from './LocaleLink'
 import { Media } from './Media'
+import { VideoEmbed } from './VideoEmbed'
 
 /** Star row (filled ★ up to `n`). */
 export function Stars({ n = 5 }: { n?: number }) {
@@ -41,8 +45,14 @@ export function ArrowLink({ url, label = 'Lees meer' }: { url: string; label?: s
 export function CardGrid({ items }: { items: LinkCard[] }) {
   return (
     <div className="grid-3">
-      {items.map((c) => (
-        <article className="card" key={c.title}>
+      {/*
+        Sleutel op `url` en niet op `title`: een titel is inhoud en mag best twee keer voorkomen
+        (twee vestigingen met dezelfde naam, twee behandelingen die hetzelfde heten), terwijl de
+        URL per kaart uniek is — het is immers de pagina waar hij heen wijst. De index erbij houdt
+        het ook heel als een lijst ooit twee keer naar dezelfde pagina verwijst.
+      */}
+      {items.map((c, i) => (
+        <article className="card" key={`${c.url}-${i}`}>
           <div className="card-media">
             <Media src={c.image} alt={c.title} shape="free" label={c.title} />
           </div>
@@ -278,9 +288,31 @@ export function HubPage({ data }: { data: HubContent }) {
  * body sections, optional steps + FAQ, and a sticky aside with facts + a booking CTA.
  */
 export function DetailPage({ data }: { data: DetailContent }) {
+  // Inschrijven kan alleen als er een product aan hangt ÉN de webshop van deze tenant aan staat —
+  // anders wijst de knop naar /product/<handle>, en dat is een 404 zolang de shop uit is.
+  const bookable = !!data.productHandle && commerceEnabled()
+  const highlights = data.highlights ?? []
   return (
     <>
       <PageHero {...data.hero} />
+      {/* Direct onder de hero, vóór de lopende tekst: UWV-subsidie en gespreid betalen zijn voor
+          een cursist vaak de reden dát de opleiding haalbaar is. In de zijbalk of pas bij het
+          afrekenen komen ze te laat — zie de opdracht, punt 6 en 14. */}
+      {highlights.length > 0 && (
+        <div className="highlight-band">
+          <div className="container highlight-row">
+            {highlights.map((h) => (
+              <div className="highlight" key={h.label}>
+                <span className="highlight-tick" aria-hidden="true"><Icon name="check" size={13} /></span>
+                <span>
+                  <b>{h.label}</b>
+                  <span className="highlight-text">{h.text}</span>
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
       <section className="section">
         <div className="container">
           <div className="detail-grid">
@@ -312,6 +344,13 @@ export function DetailPage({ data }: { data: DetailContent }) {
                   <Steps title={data.steps.title} items={data.steps.items} />
                 </div>
               )}
+              {/* De video staat tussen de uitleg en de vragen: wie tot hier leest wil zien hoe het
+                  gaat, en wie alleen een vraag heeft scrollt er langs. */}
+              {data.videoUrl && (
+                <div style={{ marginTop: 44 }}>
+                  <VideoEmbed title={data.hero.title} url={data.videoUrl} />
+                </div>
+              )}
               {data.faq && data.faq.items.length > 0 && (
                 <div style={{ marginTop: 44 }}>
                   <FaqList title={data.faq.title} items={data.faq.items} />
@@ -334,7 +373,22 @@ export function DetailPage({ data }: { data: DetailContent }) {
               <div className="aside-card dark">
                 <h4>{data.aside.ctaTitle}</h4>
                 <p>{data.aside.ctaText}</p>
-                <LocaleLink className="btn btn-gold" href={data.aside.ctaUrl}>{data.aside.ctaLabel}</LocaleLink>
+                {/* Is deze opleiding aan een webshopproduct gekoppeld, dan gaat de knop naar de
+                    productpagina: daar kiest de bezoeker cursusdatum en locatie (de varianten) en
+                    rekent hij af. Zonder koppeling — of met de webshop uit — blijft het de
+                    contactknop, zodat er nooit een dode inschrijflink op de pagina staat. */}
+                {bookable ? (
+                  <>
+                    <LocaleLink className="btn btn-gold" href={`/product/${data.productHandle}`}>
+                      Inschrijven
+                    </LocaleLink>
+                    <LocaleLink className="btn btn-light aside-cta-secondary" href={data.aside.ctaUrl}>
+                      {data.aside.ctaLabel}
+                    </LocaleLink>
+                  </>
+                ) : (
+                  <LocaleLink className="btn btn-gold" href={data.aside.ctaUrl}>{data.aside.ctaLabel}</LocaleLink>
+                )}
               </div>
             </aside>
           </div>
@@ -376,9 +430,12 @@ export function InfoPage({ data }: { data: InfoContent }) {
       <PageHero {...data.hero} />
       <section className="section">
         <div className="container" style={{ maxWidth: 820 }}>
+          {/* `info-figure`, niet `detail-figure`: de beelden op deze pagina's zijn VIERKANT (een
+              teamportret, een keurmerklogo) en `detail-figure` snijdt met `object-fit: cover` een
+              band van 340px uit het midden — precies waar bij een portret het hoofd zit. */}
           {data.image !== undefined && (
-            <div className="detail-figure" style={{ marginBottom: 30 }}>
-              <Media src={data.image} alt={data.hero.title} shape="wide" label={data.hero.title} />
+            <div className="info-figure">
+              <Media src={data.image} alt={data.hero.title} shape="square" label={data.hero.title} />
             </div>
           )}
           <div className="prose">
@@ -401,6 +458,35 @@ export function InfoPage({ data }: { data: InfoContent }) {
               </div>
             ))}
           </div>
+          {/* Teamfoto's onder de tekst: de bio's staan hierboven al per persoon, dus dit blok zet
+              er de gezichten bij in plaats van de namen te herhalen. */}
+          {data.team && data.team.length > 0 && (
+            <div className="team-grid" style={{ marginTop: 44 }}>
+              {data.team.map((m) => (
+                <div className="team-card" key={m.name}>
+                  <Media src={m.image} alt={m.name} shape="portrait" label={m.name} />
+                  <h3>{m.name}</h3>
+                  <p>{m.role}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          {/* De video's zelf, niet alleen een link naar het kanaal: wie op "Video's" klikt, komt
+              kijken. `VideoEmbed` rendert niets bij een onbruikbare URL, dus een verkeerd geplakte
+              link levert hier geen leeg kader op. */}
+          {data.videos && data.videos.length > 0 && (
+            <div className="video-list" style={{ marginTop: 44 }}>
+              {data.videos.map((v) => (
+                <figure className="video-item" key={v.url}>
+                  <VideoEmbed title={v.title} url={v.url} />
+                  <figcaption>
+                    <h3>{v.title}</h3>
+                    {v.description && <p>{v.description}</p>}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
           {data.faq && data.faq.items.length > 0 && (
             <div style={{ marginTop: 44 }}>
               <FaqList title={data.faq.title} items={data.faq.items} />
@@ -690,6 +776,8 @@ export function BlogPostPage({
   const words = post.body.reduce((a, b) => a + b.paragraphs.join(' ').split(/\s+/).length, 0)
   const mins = Math.max(1, Math.round(words / 200))
 
+  const related = getCategoryLinks(post.category ?? '')
+
   return (
     <>
       <section className="section post-section">
@@ -721,6 +809,22 @@ export function BlogPostPage({
                   </div>
                 ))}
               </div>
+
+              {/* Van lezen naar doen: wie een artikel over nazorg uitleest, is met een behandeling
+                  bezig. De weg daarheen hoort op de pagina te staan, niet alleen in het menu.
+                  Zie CATEGORY_LINKS in content/blog.ts — elke URL daar is gecontroleerd. */}
+              {related.length > 0 && (
+                <div className="kb-related">
+                  <h3>Meer over dit onderwerp</h3>
+                  <div className="kb-related-links">
+                    {related.map((r) => (
+                      <LocaleLink className="kb-related-link" href={r.url} key={r.url}>
+                        {r.label}
+                      </LocaleLink>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div className="post-actions">
                 <LocaleLink className="btn btn-ghost" href="/blog">Terug naar de blog</LocaleLink>

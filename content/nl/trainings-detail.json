@@ -8,6 +8,17 @@
     },
     "image": "/media/izzi-beauty-20250729-4e6b92-online-lip-blush-opleiding.webp",
     "intro": "De Lip Blush beginnersopleiding duurt 6 dagen. Je leert de belangrijkste lip blushing technieken zoals Soft Lips, Full Lips en Ombré Lips, en begrijpt hoe je lip mapping en shaping toepast om symmetrische en natuurlijke resultaten te creëren. Je ontvangt een uitgebreide kleurenleer en pigmentenleer, zodat je altijd de perfecte tint kunt kiezen voor elke klant.",
+    "productHandle": "opleiding-lip-blush-beginners",
+    "highlights": [
+      {
+        "label": "UWV-subsidie",
+        "text": "Mogelijk voor deze opleiding"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
+      }
+    ],
     "body": [
       {
         "heading": "Wat leer je tijdens deze opleiding?",
@@ -225,6 +236,13 @@
     },
     "image": "/media/izzi-beauty-20250729-b60f2a-lip-pigmentatie.webp",
     "intro": "Lip pigmentatie is momenteel een van de snelst groeiende en meest gevraagde behandelingen in de wereld van permanente make-up. Tijdelijk van €3.000 voor slechts €1.500. Onze Lip Blush Masterclass is speciaal ontworpen om ervaren PMU professionals te helpen hun vaardigheden verder te verfijnen.",
+    "productHandle": "opleiding-lip-blush-masterclass",
+    "highlights": [
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      }
+    ],
     "body": [
       {
         "heading": "Voor wie is deze masterclass?",
@@ -408,6 +426,13 @@
     },
     "image": "/media/izzi-beauty-20250729-1dea00-combi-brows-behandeling.jpg",
     "intro": "Combi brows is een unieke techniek die het beste van twee werelden combineert: de haarstroken techniek (natuurlijke haartjes) en ombré powder brows. Deze techniek zorgt voor een natuurlijk resultaat met subtiele schaduw en fijne haartjes — ideaal om schaars behaarde plekken op te vullen of voor vollere wenkbrauwen.",
+    "productHandle": "opleiding-combi-brows-beginners",
+    "highlights": [
+      {
+        "label": "UWV-subsidie",
+        "text": "Mogelijk voor deze opleiding"
+      }
+    ],
     "body": [
       {
         "heading": "Waarom kiezen voor IZZI Beauty?",
@@ -627,6 +652,7 @@
     },
     "image": "/media/izzi-beauty-20250729-af300e-ombre-powder-brows-masterclass.webp",
     "intro": "Wil jij jouw carrière als PMU-artiest een boost geven en uitblinken in de nieuwste technieken? Met de exclusieve Masterclass Ombré Powder Brows van IZZI Beauty leer je alles wat je nodig hebt om de perfecte soft ombré brows te creëren. Tijdelijk voor slechts €1.500,- (btw-vrij) — je bespaart €1.000,- op de originele prijs van €2.500,-.",
+    "productHandle": "opleiding-masterclass-ombre-powder-brows",
     "body": [
       {
         "heading": "Waarom kiezen voor de Powder Brows Masterclass?",
@@ -834,6 +860,13 @@
     },
     "image": "/media/izzi-beauty-20250729-abf9e8-lip-blush-pigmentatie.webp",
     "intro": "Powder Brows is een semi-permanente make up techniek die zorgt voor zachte, poederachtige wenkbrauwen: pigment wordt in de bovenste huidlaag aangebracht voor zacht gevulde brows die geen dagelijks onderhoud nodig hebben. Lip Blush accentueert de natuurlijke kleur en vorm van de lippen — ideaal voor meer symmetrie, een voller ogend resultaat of een frisse kleuropfrissing.",
+    "productHandle": "opleiding-ombre-powder-brows-lip-blush",
+    "highlights": [
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
+      }
+    ],
     "body": [
       {
         "heading": "Wat leer je in deze combi opleiding?",
@@ -915,7 +948,7 @@
           "Duur: 20 uur online voorbereiding en 24 uur op locatie (4 dagen, 09:30 – 15:30), plus 20 uur huiswerk met begeleiding op afstand. De totale studietijd komt op 64 uur.",
           "Vooropleiding: er is geen vooropleiding nodig voor deze cursus en er zijn ook geen diploma's vereist voor het volgen. De opleiding is ontworpen voor complete beginners.",
           "Certificering: na succesvolle afronding en het behalen van het examen ontvang je een officieel certificaat.",
-          "Locaties: de opleiding wordt gegeven in Amsterdam en Den Bosch."
+          "Locaties: de opleiding wordt gegeven in Amsterdam en Rotterdam."
         ]
       }
     ],
@@ -965,7 +998,7 @@
         },
         {
           "q": "Waar vindt de opleiding plaats?",
-          "a": "De opleiding wordt gegeven op onze locaties in Amsterdam en Den Bosch. Neem contact op voor de beschikbare data."
+          "a": "De opleiding wordt gegeven op onze locaties in Amsterdam en Rotterdam. Neem contact op voor de beschikbare data."
         },
         {
           "q": "Hoe helpt deze opleiding mij bij het opstarten van een salon?",
@@ -1220,6 +1253,21 @@
     },
     "image": "/media/izzi-beauty-20250729-53836b-powder-brows.jpg",
     "intro": "IZZI Beauty is een erkend opleidingsinstituut, CRKBO geregistreerd en wij werken samen met het UWV. In zes dagen — van online voorbereiding tot een intensieve terugkomdag — leer je alles van kleurtheorie en wenkbrauw mapping tot pigmenttechnieken op latex én echte modellen.",
+    "productHandle": "opleiding-ombre-powder-brows",
+    "highlights": [
+      {
+        "label": "UWV-subsidie",
+        "text": "Mogelijk voor deze opleiding"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
+      },
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      }
+    ],
     "body": [
       {
         "heading": "Waarom kiezen voor de Powder Brows Opleiding bij IZZI Beauty?",
@@ -1449,6 +1497,13 @@
     },
     "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp",
     "intro": "Tijdens de All Round PMU Opleiding leg je een brede basis in permanente make-up. Je leert werken met verschillende technieken, huidtypes en kleuren, zodat je na afronding zelfstandig en professioneel aan de slag kunt.",
+    "productHandle": "opleiding-allround-pmu",
+    "highlights": [
+      {
+        "label": "UWV-subsidie",
+        "text": "Mogelijk voor deze opleiding"
+      }
+    ],
     "body": [
       {
         "heading": "Wat leer je?",
@@ -1553,6 +1608,13 @@
     },
     "image": "/media/izzi-beauty-20250729-6fc19c-faux-freckles-opleiding.webp",
     "intro": "Wil jij de kunst van Faux Freckles en sproetjes (ook wel beautymarks genoemd) onder de knie krijgen en jouw klanten een trendy, natuurlijke look bieden? Onze intensieve Faux Freckles Beginnersopleiding bereidt je volledig voor om als professionele PMU-specialist aan de slag te gaan en je eigen salon te starten.",
+    "productHandle": "opleiding-faux-freckles-beginners",
+    "highlights": [
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      }
+    ],
     "body": [
       {
         "heading": "Wat kun je verwachten van de opleiding?",
@@ -1739,6 +1801,13 @@
     },
     "image": "/media/izzi-beauty-20250729-a2a783-infralash-opleiding.webp",
     "intro": "Wil jij jouw klanten een verfijnde en natuurlijke uitstraling bieden met subtiele eyeliners? Onze intensieve Infralash / Deepliner Opleiding bereidt je volledig voor om met vertrouwen deze populaire behandeling aan te bieden in jouw eigen salon. Perfect voor iedereen die wil starten in de wereld van permanente make-up of zijn of haar aanbod wil uitbreiden.",
+    "productHandle": "opleiding-infralash-beginners",
+    "highlights": [
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      }
+    ],
     "body": [
       {
         "heading": "Wat kun je verwachten van de opleiding?",
@@ -1807,7 +1876,7 @@
         "paragraphs": [
           "Tijdsinvestering: 5 uur online voorbereiding, 6 uur praktijkdag op locatie en 3 uur zelfstandig oefenen waarbij je 3 modellen behandelt in je eigen salon. De totale studietijd komt op 14 uur.",
           "Toelatingseisen: je hebt géén vooropleiding of diploma nodig om te starten. Deze opleiding is geschikt voor zowel beginners als professionals die hun vaardigheden willen uitbreiden. PMU-styliste is in Nederland een vrij beroep zonder wettelijke vereisten.",
-          "Voorwaarden en data: de opleiding valt onder de Algemene Voorwaarden van IZZI Beauty BV, inclusief de Privacyverklaring en klachtenprocedure. De Infralash Beginnersopleiding wordt ongeveer maandelijks georganiseerd op onze locaties in Amsterdam en Den Bosch. Is je gewenste datum vol? Neem dan contact op voor een alternatief."
+          "Voorwaarden en data: de opleiding valt onder de Algemene Voorwaarden van IZZI Beauty BV, inclusief de Privacyverklaring en klachtenprocedure. De Infralash Beginnersopleiding wordt ongeveer maandelijks georganiseerd op onze locaties in Amsterdam en Rotterdam. Is je gewenste datum vol? Neem dan contact op voor een alternatief."
         ]
       }
     ],
@@ -1890,7 +1959,7 @@
         },
         {
           "k": "Locaties",
-          "v": "Amsterdam & Den Bosch"
+          "v": "Amsterdam & Rotterdam"
         }
       ],
       "ctaTitle": "Start met Infralash",
@@ -1917,6 +1986,13 @@
     },
     "image": "/media/izzi-beauty-20250729-a4793d-fineline-tattoo-opleiding.jpg",
     "intro": "Wil jij je aanbod uitbreiden of starten met fineline tattoos? Deze basisopleiding geeft je alles wat je nodig hebt om met vertrouwen aan de slag te gaan. De opleiding is geschikt voor zowel beginners als ervaren PMU-specialisten en er is geen vooropleiding vereist.",
+    "productHandle": "opleiding-fineline-training",
+    "highlights": [
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      }
+    ],
     "body": [
       {
         "heading": "Wat maakt deze opleiding uniek?",
@@ -1996,7 +2072,7 @@
         "paragraphs": [
           "Tijdsinvestering: 5 uur online voorbereiding, twee aaneengesloten praktijkdagen op locatie van 09:30 tot 15:30 (12 uur in totaal), en huiswerk waarbij je 5 modellen behandelt in je eigen salon (10 uur). Je stuurt foto's in voor feedback van de trainer en krijgt ondersteuning via WhatsApp. De totale studietijd komt op 46 uur.",
           "Vooropleiding: er is geen vooropleiding vereist. De opleiding is geschikt voor iedereen, van beginner tot ervaren PMU-specialist.",
-          "Voorwaarden: deelnemers nemen de Algemene Voorwaarden, de Privacyverklaring en de klachtenprocedure van IZZI Beauty door. PMU is een vrij beroep zonder wettelijke vereisten. De opleiding wordt meerdere keren per jaar georganiseerd op onze locaties in Amsterdam en Den Bosch."
+          "Voorwaarden: deelnemers nemen de Algemene Voorwaarden, de Privacyverklaring en de klachtenprocedure van IZZI Beauty door. PMU is een vrij beroep zonder wettelijke vereisten. De opleiding wordt meerdere keren per jaar georganiseerd op onze locaties in Amsterdam en Rotterdam."
         ]
       }
     ],
@@ -2114,6 +2190,13 @@
     },
     "image": "/media/izzi-beauty-20250729-f3999d-fineline-masterclass.webp",
     "intro": "Ontwikkel geavanceerde fineline-tattoovaardigheden onder begeleiding van de ervaren masters Linda Goldman en Isabella Levels. Deze intensieve masterclass is bedoeld voor PMU-specialisten die de basis van fineline al beheersen en hun expertise willen uitbreiden.",
+    "productHandle": "opleiding-fineline-masterclass",
+    "highlights": [
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      }
+    ],
     "body": [
       {
         "heading": "Waar ligt de focus van deze masterclass?",
@@ -2179,7 +2262,7 @@
         "paragraphs": [
           "Tijdsinvestering: 5 uur online voorbereiding, één praktijkdag op locatie van 6 uur, en huiswerk waarbij je 5 modellen behandelt (10 uur). De totale studietijd komt op 21 uur.",
           "Vooropleiding: je hebt een afgeronde basisopleiding fineline nodig, intern of extern gevolgd. Je stuurt vóór de masterclass een foto van je certificaat ter bevestiging.",
-          "Voorwaarden: alle opleidingen vallen onder de Algemene Voorwaarden, de Privacyverklaring en de klachtenprocedure van IZZI Beauty BV. PMU-styliste is een vrij beroep zonder wettelijke licentievereisten. De masterclass vindt plaats op onze locaties in Amsterdam en Den Bosch."
+          "Voorwaarden: alle opleidingen vallen onder de Algemene Voorwaarden, de Privacyverklaring en de klachtenprocedure van IZZI Beauty BV. PMU-styliste is een vrij beroep zonder wettelijke licentievereisten. De masterclass vindt plaats op onze locaties in Amsterdam en Rotterdam."
         ]
       }
     ],
@@ -2285,6 +2368,13 @@
     },
     "image": "/media/izzi-beauty-20250729-08f95d-inkless-stretch-mark-removal-opleiding.jpg",
     "intro": "Wil jij succesvol worden in het behandelen van striae (stretch marks) en littekens? Bij IZZI Beauty bieden wij een complete opleiding tot specialist in de populaire inkless stretch mark en scar removal behandeling. Deze behandeling is een waardevolle aanvulling in jouw salon voor het op natuurlijke wijze verminderen van striae en littekens. Er zijn géén diploma's of voorkennis vereist voor het volgen van deze opleiding.",
+    "productHandle": "opleiding-inkless-stretch-mark-removal",
+    "highlights": [
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      }
+    ],
     "body": [
       {
         "heading": "Waarom kiezen voor de Inkless Stretch Mark & Scar Removal Opleiding bij IZZI Beauty?",
@@ -2377,7 +2467,7 @@
           "Duur van de opleiding: 10 uur online voorbereiding met lesmateriaal in de IZZI Online Academy, 2 dagen intensieve training op locatie (09:30 – 15:30), en extra huiswerk waarbij je 5 modellen behandelt in je eigen salon met een totale tijdsbesteding van 20 uur. De totale studietijd komt op 52 uur.",
           "Vooropleiding: voor deelname is geen vooropleiding nodig. De beginnersopleiding is toegankelijk voor iedereen die PMU-specialist wil worden.",
           "Voorwaarden: er zijn geen speciale vereisten; PMU-styliste is een vrij beroep zonder verplichte overheidseisen. Voor alle opleidingen en behandelingen gelden de Algemene Voorwaarden van Opleiding IZZI Beauty BV, inclusief onze Privacy Verklaring en klachtenprocedure.",
-          "Beschikbaarheid: de beginnersopleiding Inkless Stretch Mark wordt bijna elke maand aangeboden in Amsterdam en periodiek in Den Bosch. Neem contact op voor de actuele data en beschikbare plekken."
+          "Beschikbaarheid: de beginnersopleiding Inkless Stretch Mark wordt bijna elke maand aangeboden in Amsterdam en periodiek in Rotterdam. Neem contact op voor de actuele data en beschikbare plekken."
         ]
       }
     ],
@@ -2411,7 +2501,7 @@
         },
         {
           "q": "Waar vindt de opleiding plaats?",
-          "a": "De opleiding wordt gegeven op onze locatie in Amsterdam en periodiek in Den Bosch. Neem contact met ons op als je voorkeur hebt voor een andere locatie — het is mogelijk een privé opleiding op locatie te boeken."
+          "a": "De opleiding wordt gegeven op onze locatie in Amsterdam en periodiek in Rotterdam. Neem contact met ons op als je voorkeur hebt voor een andere locatie — het is mogelijk een privé opleiding op locatie te boeken."
         },
         {
           "q": "Hoeveel praktijkervaring krijg ik tijdens de opleiding?",
@@ -2495,6 +2585,13 @@
     },
     "image": "/media/izzi-beauty-20250729-bf8f78-saline-removal-opleiding.webp",
     "intro": "Wil jij je onderscheiden in het veilig verwijderen van oude permanente make-up en fineline tattoos? Bij IZZI Beauty bieden wij een complete opleiding tot specialist in de populaire Saline Removal techniek — een onmisbare skill in de beautywereld. Deze behandeling is een waardevolle aanvulling in jouw salon om ongewenste pigmenten op een natuurlijke manier te verwijderen. Er zijn géén diploma's of voorkennis vereist om deel te nemen aan deze opleiding.",
+    "productHandle": "opleiding-saline-removal",
+    "highlights": [
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      }
+    ],
     "body": [
       {
         "heading": "Waarom kiezen voor de Saline Removal Opleiding bij IZZI Beauty?",
@@ -2584,7 +2681,7 @@
           "Duur van de opleiding: 5 uur online voorbereiding met lesmateriaal in de IZZI Online Academy, 1 dag intensieve training op locatie (09:30 – 15:30, 6 uur), en extra huiswerk waarbij je 5 modellen behandelt in je eigen salon met een totale tijdsbesteding van 20 uur. De totale studietijd komt op 31 uur.",
           "Vooropleiding: voor deelname is geen vooropleiding nodig. De beginnersopleiding is toegankelijk voor iedereen die PMU-specialist wil worden.",
           "Voorwaarden: er zijn geen speciale vereisten; PMU-styliste is een vrij beroep zonder verplichte overheidseisen. Voor alle opleidingen en behandelingen gelden de Algemene Voorwaarden van Opleiding IZZI Beauty BV, inclusief onze Privacy Verklaring en klachtenprocedure.",
-          "Beschikbaarheid: deze opleiding wordt momenteel enkel privé gegeven, zowel in Amsterdam als in Den Bosch. Meld je aan via het aanmeldformulier of neem contact op, dan nemen wij zo spoedig mogelijk contact met je op voor een gewenste datum."
+          "Beschikbaarheid: deze opleiding wordt momenteel enkel privé gegeven, zowel in Amsterdam als in Rotterdam. Meld je aan via het aanmeldformulier of neem contact op, dan nemen wij zo spoedig mogelijk contact met je op voor een gewenste datum."
         ]
       }
     ],
@@ -2618,7 +2715,7 @@
         },
         {
           "q": "Waar vindt de opleiding plaats?",
-          "a": "Deze opleiding wordt momenteel enkel privé gegeven, op onze locaties in Amsterdam en Den Bosch. Meld je aan via het formulier of neem contact op voor een gewenste datum."
+          "a": "Deze opleiding wordt momenteel enkel privé gegeven, op onze locaties in Amsterdam en Rotterdam. Meld je aan via het formulier of neem contact op voor een gewenste datum."
         },
         {
           "q": "Hoeveel praktijkervaring krijg ik tijdens de opleiding?",
@@ -2702,6 +2799,13 @@
     },
     "image": "/media/izzi-beauty-20250729-f0e632-lash-lift-training.webp",
     "intro": "Een lash lift, ook wel bekend als een wimperlifting of lash lamination, is een populaire cosmetische behandeling die tot doel heeft de natuurlijke wimpers te accentueren en te verbeteren zonder het gebruik van extensions. Het is een innovatieve methode die de wimpers lift en krult vanaf de wortel, waardoor ze een meer open en volumineuze uitstraling krijgen.",
+    "productHandle": "opleiding-lash-lift-training",
+    "highlights": [
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      }
+    ],
     "body": [
       {
         "heading": "Over de Lash Lift Training",
@@ -2886,6 +2990,13 @@
     },
     "image": "/media/izzi-beauty-20250729-e83d90-brow-lamination-training.webp",
     "intro": "Een brow lamination, ook wel bekend als een brow lift of wenkbrauwlift, is een populaire cosmetische behandeling die tot doel heeft de natuurlijke wenkbrauwharen te accentueren en te verbeteren zonder het gebruik van extensions. Het is een innovatieve methode die de wenkbrauwen lift en vormt, waardoor ze een meer open en volumineuze uitstraling krijgen.",
+    "productHandle": "opleiding-brow-lamination-training",
+    "highlights": [
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      }
+    ],
     "body": [
       {
         "heading": "Over de Brow Lamination Training",
@@ -3069,6 +3180,13 @@
     },
     "image": "/media/izzi-beauty-20250729-d7a1c1-laser-ontharing-opleiding.webp",
     "intro": "Wil jij je onderscheiden met één van de meest gevraagde behandelingen in de beautybranche? Bij IZZI Beauty bieden wij een complete opleiding tot specialist in Laser Ontharing — dé behandeling die razendsnel groeit in populariteit en een vaste waarde is in moderne salons. Deze behandeling is een waardevolle aanvulling in jouw salon om klanten langdurig van ongewenste haargroei af te helpen. Er zijn géén diploma's of voorkennis vereist om deel te nemen aan deze opleiding.",
+    "productHandle": "opleiding-laser-ontharing",
+    "highlights": [
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      }
+    ],
     "body": [
       {
         "heading": "Waarom kiezen voor de Laser Ontharing Training bij IZZI Beauty?",
@@ -3136,7 +3254,7 @@
           "Duur van de opleiding: 3 uur online voorbereiding met lesmateriaal in de IZZI Online Academy, 1 dag intensieve training op locatie (09:30 – 15:30, 6 uur), en extra huiswerk waarbij je 5 modellen behandelt in je eigen salon met een totale tijdsbesteding van 20 uur. De totale studietijd komt op 29 uur.",
           "Vooropleiding: voor deelname is geen vooropleiding nodig. De beginnersopleiding is toegankelijk voor iedereen die specialist wil worden.",
           "Voorwaarden: er zijn geen speciale vereisten; het is een vrij beroep zonder verplichte overheidseisen. Voor alle opleidingen en behandelingen gelden de Algemene Voorwaarden van Opleiding IZZI Beauty BV, inclusief onze Privacy Verklaring en klachtenprocedure.",
-          "Beschikbaarheid: deze opleiding wordt momenteel enkel privé gegeven, zowel in Amsterdam als in Den Bosch. Meld je aan via het aanmeldformulier of neem contact op, dan nemen wij zo spoedig mogelijk contact met je op voor een gewenste datum."
+          "Beschikbaarheid: deze opleiding wordt momenteel enkel privé gegeven, zowel in Amsterdam als in Rotterdam. Meld je aan via het aanmeldformulier of neem contact op, dan nemen wij zo spoedig mogelijk contact met je op voor een gewenste datum."
         ]
       }
     ],
@@ -3170,7 +3288,7 @@
         },
         {
           "q": "Waar vindt de opleiding plaats?",
-          "a": "Deze opleiding wordt momenteel enkel privé gegeven, op onze locaties in Amsterdam en Den Bosch. Meld je aan via het formulier of neem contact op voor een gewenste datum."
+          "a": "Deze opleiding wordt momenteel enkel privé gegeven, op onze locaties in Amsterdam en Rotterdam. Meld je aan via het formulier of neem contact op voor een gewenste datum."
         },
         {
           "q": "Hoe groot zijn de groepen?",
@@ -3254,6 +3372,7 @@
     },
     "image": "/media/izzi-beauty-20250729-4dd5a7-airbrush-brows-online-training.png",
     "intro": "Wij leren je alles wat je moet weten over de nieuwe techniek Airbrush Brows: welke producten je nodig hebt en een stap-voor-stap handleiding. Alle productlinks zijn toegevoegd in de training. Je ziet een volledige video waarin we Airbrush Brows stap voor stap op twee modellen aanbrengen. De training is beschikbaar in meerdere talen en je ontvangt een certificaat van deelname.",
+    "productHandle": "opleiding-airbrush-brows-online",
     "body": [
       {
         "heading": "Wat leer je in deze online training?",

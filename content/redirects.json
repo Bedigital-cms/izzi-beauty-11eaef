@@ -1,4 +1,155 @@
 {
-  "$comment": "Geen redirects: elke pagina wordt rechtstreeks op haar eigen slug geserveerd en alle interne links wijzen direct naar die slug. Voeg hier alleen een regel toe als een URL echt verandert en de oude variant nog verkeer krijgt; next.config.ts leest dit bestand en breidt de regels per taal uit (source/destination zijn dus prefix-vrij: schrijf /oud, niet /nl/oud). Let op: de twee geneste FAQ-pagina's verhuisden bewust ZONDER redirect (keuze van de klant) — die oude vlakke URLs geven 404. Ook de blogmigratie had geen redirect nodig: /allround-pmu-opleiding stond op de oude site in ZOWEL de page- als de post-sitemap (één URL) en wordt hier door de opleiding-detailpagina geserveerd, dus die URL blijft gewoon werken.",
-  "redirects": []
+  "$comment": "De stadspagina's staan op een korte slug (/haarlem), terwijl de oude WordPress-site ze op een trefwoordslug had (/wenkbrauwen-haarlem, /permanente-make-up-almere). Zonder deze regels geeft elke bestaande Google-positie en elke externe link na de livegang een 404. 301 (permanent), zodat zoekmachines de waarde overdragen naar de nieuwe URL. next.config.ts leest dit bestand en breidt de regels per taal uit, dus source/destination zijn prefix-vrij: schrijf /oud, niet /nl/oud. Let op: de twee geneste FAQ-pagina's verhuisden bewust ZONDER redirect (keuze van de klant) — die oude vlakke URLs geven 404.",
+  "redirects": [
+    {
+      "source": "/wenkbrauwen-aalsmeer",
+      "destination": "/aalsmeer",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-aalsmeer",
+      "destination": "/aalsmeer",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-alkmaar",
+      "destination": "/alkmaar",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-alkmaar",
+      "destination": "/alkmaar",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-almere",
+      "destination": "/almere",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-almere",
+      "destination": "/almere",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-amstelveen",
+      "destination": "/amstelveen",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-amstelveen",
+      "destination": "/amstelveen",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-badhoevedorp",
+      "destination": "/badhoevedorp",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-badhoevedorp",
+      "destination": "/badhoevedorp",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-den-haag",
+      "destination": "/den-haag",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-den-haag",
+      "destination": "/den-haag",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-haarlem",
+      "destination": "/haarlem",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-haarlem",
+      "destination": "/haarlem",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-hilversum",
+      "destination": "/hilversum",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-hilversum",
+      "destination": "/hilversum",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-hoofddorp",
+      "destination": "/hoofddorp",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-hoofddorp",
+      "destination": "/hoofddorp",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-leiden",
+      "destination": "/leiden",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-leiden",
+      "destination": "/leiden",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-utrecht",
+      "destination": "/utrecht",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-utrecht",
+      "destination": "/utrecht",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-zaandam",
+      "destination": "/zaandam",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-zaandam",
+      "destination": "/zaandam",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-zoetermeer",
+      "destination": "/zoetermeer",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-zoetermeer",
+      "destination": "/zoetermeer",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-amsterdam",
+      "destination": "/amsterdam",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-amsterdam",
+      "destination": "/amsterdam",
+      "permanent": true
+    },
+    {
+      "source": "/wenkbrauwen-rotterdam",
+      "destination": "/rotterdam",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-rotterdam",
+      "destination": "/rotterdam",
+      "permanent": true
+    }
+  ]
 }

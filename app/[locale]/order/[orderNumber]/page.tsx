@@ -86,8 +86,20 @@ const timelineSteps = (order: {
   deliveredAt: null | string
   fulfillmentStatus: string
   paidAt: null | string
+  shippingMethod?: unknown
   status: string
 }): TimelineStep[] => {
+  /*
+   * Een opleiding wordt niet verzonden en niet afgeleverd.
+   *
+   * "Wordt klaargemaakt → Verzonden → Afgeleverd" laat een cursist wachten op een pakket dat nooit
+   * komt. De inschrijving kent maar drie momenten: aangemeld, betaald, ingeschreven.
+   *
+   * Herkend aan `shippingMethod === null`. Een bestelling bewaart geen vlag per regel, maar wél of
+   * er een verzendmethode aan hing — en die is er bij een cursus per definitie niet, omdat het
+   * afrekenen die stap overslaat (zie `coursesOnly` in CheckoutForm).
+   */
+  const isCourseOrder = order.shippingMethod === null || order.shippingMethod === undefined
   const delivered = Boolean(order.deliveredAt) || order.status === 'delivered'
   const shipped = delivered || order.fulfillmentStatus === 'fulfilled' || order.status === 'fulfilled'
   const preparing =
@@ -112,13 +124,20 @@ const timelineSteps = (order: {
     ]
   }
 
-  const steps: TimelineStep[] = [
-    placed,
-    { done: paid, key: 'paid', label: orderStatusLabel('paid') },
-    { done: preparing, key: 'processing', label: orderStatusLabel('processing') },
-    { done: shipped, key: 'fulfilled', label: orderStatusLabel('fulfilled') },
-    { done: delivered, key: 'delivered', label: orderStatusLabel('delivered') },
-  ]
+  const steps: TimelineStep[] = isCourseOrder
+    ? [
+        { done: true, key: 'placed', label: 'Aangemeld' },
+        { done: paid, key: 'paid', label: 'Betaald' },
+        // Betaald = plek vast. Dat is voor een cursist het eindpunt; er volgt geen levering meer.
+        { done: paid, key: 'enrolled', label: 'Ingeschreven' },
+      ]
+    : [
+        placed,
+        { done: paid, key: 'paid', label: orderStatusLabel('paid') },
+        { done: preparing, key: 'processing', label: orderStatusLabel('processing') },
+        { done: shipped, key: 'fulfilled', label: orderStatusLabel('fulfilled') },
+        { done: delivered, key: 'delivered', label: orderStatusLabel('delivered') },
+      ]
 
   if (order.status === 'refunded' || order.status === 'partially_refunded') {
     steps.push({

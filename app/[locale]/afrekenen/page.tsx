@@ -6,7 +6,7 @@ import { PageHero } from '@/components/sections'
 import { Shell } from '@/components/Shell'
 import { getShop } from '@/content/shop'
 import { getAccountSession, getAddresses } from '@/lib/commerce/account'
-import { getCart, getShippingMethods } from '@/lib/commerce/client'
+import { getCart, getShippingMethods, getShopConfig } from '@/lib/commerce/client'
 import { commerceEnabled } from '@/lib/commerce/config'
 import { readCartToken } from '@/lib/commerce/session'
 
@@ -51,6 +51,16 @@ export default async function CheckoutPage({ params }: { params: Promise<{ local
   })
 
   /*
+   * De webshopconfiguratie, hier alleen nodig voor de in3-grenzen.
+   *
+   * Mislukt deze aanroep, dan gaat het afrekenen gewoon door zonder betaalkeuze: Mollie bepaalt dan
+   * zelf het menu, precies zoals vóór deze stap. Een onbereikbare configuratie hoort geen afrekenen
+   * te blokkeren — er valt zonder die grenzen alleen niets uit te leggen.
+   */
+  const configResult = await getShopConfig()
+  const in3Limits = configResult.ok ? (configResult.data.in3 ?? null) : null
+
+  /*
    * Is er iemand ingelogd? Dan komen zijn adressen mee, zodat het formulier ze meteen kan invullen.
    * Zonder sessie blijft dit `null` en een lege lijst: afrekenen als gast verandert hierdoor niets — er
    * wordt nergens naar een account gevraagd.
@@ -66,6 +76,7 @@ export default async function CheckoutPage({ params }: { params: Promise<{ local
           <CheckoutForm
             addresses={addresses}
             customer={session?.customer ?? null}
+            in3Limits={in3Limits}
             initialCart={cart}
             methods={methodsResult.ok ? methodsResult.data.methods : []}
             ui={shop.ui}

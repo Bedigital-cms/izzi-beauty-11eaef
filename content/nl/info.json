@@ -529,20 +529,35 @@
     "image": "/media/izzi-beauty-20250729-c7cc4d-crkbo-erkend.webp",
     "body": [
       {
-        "heading": "Veilig en hygiënisch",
+        "heading": "Veilig en hygiënisch werken",
         "paragraphs": [
-          "Permanente make-up valt onder de vergunningsplicht. Wij voldoen aan alle eisen van de GGD op het gebied van hygiëne, sterilisatie en veiligheid."
-        ],
-        "checklist": [
-          "GGD-vergunning aanwezig",
-          "Steriele, wegwerpbare materialen",
-          "Werken volgens hygiëneprotocol"
+          "Bij IZZI Beauty ben je verzekerd van veilige en hygiënische permanente make-up (PMU) behandelingen.",
+          "Bij IZZI Beauty staat jouw gezondheid en veiligheid altijd voorop bij iedere permanente make-up (PMU) behandeling. In Nederland gelden strenge regels voor cosmetische tatoeages en permanente make-up."
+        ]
+      },
+      {
+        "heading": "De Hygiënerichtlijn voor Permanente Make-up",
+        "paragraphs": [
+          "Deze regels zijn gebaseerd op de Hygiënerichtlijn voor Permanente Make-up, opgesteld door het Landelijk Centrum Hygiëne en Veiligheid in opdracht van het Ministerie van Volksgezondheid, Welzijn en Sport. PMU-specialisten zijn wettelijk verplicht om deze richtlijnen na te leven, zodat elke behandeling veilig en hygiënisch wordt uitgevoerd."
+        ]
+      },
+      {
+        "heading": "Waarom een GGD-vergunning verplicht is",
+        "paragraphs": [
+          "Om PMU behandelingen te mogen uitvoeren, moeten specialisten in het bezit zijn van een GGD-vergunning. Deze vergunning wordt alleen verstrekt na een grondige inspectie door de GGD (Gemeentelijke Gezondheidsdienst) om te bevestigen dat de hygiëne- en veiligheidsvoorschriften worden nageleefd. Zonder deze vergunning is het verboden om permanente make-up aan te brengen."
+        ]
+      },
+      {
+        "heading": "Zelf een studio controleren",
+        "paragraphs": [
+          "Bij IZZI Beauty werken we volgens alle hygiënerichtlijnen en zijn we trots op onze GGD-vergunning. Dit betekent dat je bij ons in veilige en professionele handen bent. Je kunt de GGD-certificering van PMU-studio’s controleren via de officiële GGD-database. In deze database staan alle gecertificeerde bedrijven vermeld, inclusief de geldigheidsduur van hun vergunning.",
+          "Staat een bedrijf niet in deze lijst? Dan heeft het geen geldige vergunning. Controleer altijd deze database voordat je een afspraak maakt, want het is van groot belang om alleen gecertificeerde professionals te bezoeken."
         ]
       },
       {
         "heading": "Jouw veiligheid voorop",
         "paragraphs": [
-          "Je gezondheid en veiligheid staan bij ons altijd op de eerste plaats. Heb je vragen over onze werkwijze? Stel ze gerust."
+          "Kies voor IZZI Beauty voor hoogwaardige PMU-behandelingen in een gecertificeerde, hygiënische en professionele omgeving. Jouw veiligheid en tevredenheid zijn onze hoogste prioriteit."
         ]
       }
     ],
@@ -551,6 +566,158 @@
       "text": "Neem gerust contact met ons op voor meer informatie.",
       "primaryLabel": "Neem contact op",
       "primaryUrl": "/contact"
+    }
+  },
+  "ons-team": {
+    "hero": {
+      "eyebrow": "Over IZZI",
+      "title": "Ons team",
+      "text": "De specialisten achter IZZI Beauty. Met jarenlange ervaring en een tomeloze passie voor het vak staan wij dagelijks voor je klaar.",
+      "breadcrumb": "Ons team"
+    },
+    "image": "/media/izzi-beauty-20250729-973431-over-izzi-beauty.jpg",
+    "body": [
+      {
+        "heading": "De mensen achter IZZI",
+        "paragraphs": [
+          "Met jarenlange ervaring en een tomeloze passie voor het vak staat ons team dagelijks klaar om jou het beste resultaat te geven."
+        ]
+      },
+      {
+        "heading": "Isabella — Eigenaar en expert in PMU",
+        "paragraphs": [
+          "Ik ben al meer dan 10 jaar een expert op het gebied van PMU. Ik ben IZZI gestart om mensen te verblijden met prachtige PMU op een gezonde manier. Naast dat ik graag behandelingen uitvoer geef ik ook bijna dagelijks opleiding aan beginnende en ervaren PMU stylisten."
+        ]
+      },
+      {
+        "heading": "Carla — Expert PMU en laserbehandelingen",
+        "paragraphs": [
+          "Ik werk nu drie jaar full time bij IZZI, waarbij ik naast de behandelingen ook opleidingen geef en Isabella ondersteun tijdens de examens. Ik behoud klantcontact bij IZZI en werk mee aan innovaties binnen het team en aanbod."
+        ]
+      },
+      {
+        "heading": "Leoni — Expert PMU en laserbehandelingen",
+        "paragraphs": [
+          "Al meer dan 2 jaar mag ik klanten blij maken met mooie wenkbrauwen en lippen. Daarnaast ben ik al meer dan 4 jaar expert op het gebied van laser ontharing. Ik onderhoud graag het klantcontact bij IZZI en ondersteun ik Isabella tijdens opleidingen."
+        ]
+      }
+    ],
+    "team": [
+      {
+        "name": "Isabella",
+        "role": "Eigenaar en expert in PMU",
+        "image": "/media/izzi-beauty-20250729-58e555-isabella-izzi-beauty.jpg"
+      },
+      {
+        "name": "Carla",
+        "role": "Expert PMU en laserbehandelingen",
+        "image": "/media/izzi-beauty-20250729-a8b5f2-carla-izzi-beauty.png"
+      },
+      {
+        "name": "Leoni",
+        "role": "Expert PMU en laserbehandelingen",
+        "image": "/media/izzi-beauty-20250729-749f5d-leoni-izzi-beauty.jpg"
+      }
+    ],
+    "cta": {
+      "script": "Klaar voor de volgende stap?",
+      "title": "Maak vrijblijvend een afspraak",
+      "text": "Tijdens een persoonlijk intakegesprek bespreken we jouw wensen en adviseren we de beste behandeling.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "werkwijze": {
+    "hero": {
+      "eyebrow": "Over IZZI",
+      "title": "Werkwijze",
+      "text": "Van intake tot nazorg: zo verloopt een behandeling bij IZZI Beauty.",
+      "breadcrumb": "Werkwijze"
+    },
+    "image": "",
+    "body": [
+      {
+        "heading": "Persoonlijke intake",
+        "paragraphs": [
+          "Elke behandeling start met een uitgebreid, persoonlijk intakegesprek. We bespreken je wensen, bekijken je huid en gezichtsvorm, en adviseren welke techniek en kleur het beste bij je passen."
+        ]
+      },
+      {
+        "heading": "De behandeling",
+        "paragraphs": [
+          "We werken subtiel en op maat, zodat het resultaat altijd natuurlijk oogt. Voor de behandeling gebruiken we een verdovende crème, waardoor je er weinig van merkt."
+        ]
+      },
+      {
+        "heading": "Nazorg en touch-up",
+        "paragraphs": [
+          "Na de behandeling krijg je een duidelijke nazorginstructie mee. Hoe nauwkeuriger je die volgt, hoe mooier en langer het resultaat blijft. Na ongeveer zes weken volgt de touch-up, waarin we het eindresultaat perfectioneren."
+        ]
+      },
+      {
+        "heading": "Waarom we altijd met een intake beginnen",
+        "paragraphs": [
+          "Permanente make-up is maatwerk: huidtype, gezichtsvorm en wat je zelf mooi vindt bepalen samen het resultaat. Daarom nemen we vooraf de tijd, in plaats van meteen te starten."
+        ]
+      }
+    ],
+    "cta": {
+      "script": "Klaar voor de volgende stap?",
+      "title": "Maak vrijblijvend een afspraak",
+      "text": "Tijdens een persoonlijk intakegesprek bespreken we jouw wensen en adviseren we de beste behandeling.",
+      "primaryLabel": "Afspraak maken",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Bekijk behandelingen",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "videos": {
+    "hero": {
+      "eyebrow": "Over IZZI",
+      "title": "Video's",
+      "text": "Bekijk onze behandelingen en opleidingen in beeld.",
+      "breadcrumb": "Video's"
+    },
+    "image": "",
+    "body": [
+      {
+        "heading": "IZZI Beauty in beeld",
+        "paragraphs": [
+          "Op ons YouTube-kanaal delen we behandelingen, technieken en een kijkje achter de schermen van de academy. Je ziet er hoe een behandeling van begin tot eind verloopt — handig als je wilt weten wat je kunt verwachten."
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=0ICi4wXGTLA",
+        "title": "Ombré Powder Brows — behandeling en opleiding",
+        "description": "Van intake tot eindresultaat: hoe een Ombré Powder Brows behandeling verloopt."
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qH4HNvkwOL8",
+        "title": "Powder Brows behandeling — IZZI Beauty Amsterdam",
+        "description": "Een complete Powder Brows behandeling in onze studio in Amsterdam."
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4rpPdFZRhFA",
+        "title": "Lip Blush — de complete behandeling",
+        "description": "Lippen met meer kleur en definitie, stap voor stap in beeld."
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=cHSkrlx_PE0",
+        "title": "Combi Brows behandeling",
+        "description": "Haartjestechniek en powder brows gecombineerd in één behandeling."
+      }
+    ],
+    "cta": {
+      "title": "Bekijk ons YouTube-kanaal",
+      "text": "Behandelingen, technieken en een kijkje achter de schermen van de academy.",
+      "primaryLabel": "Naar YouTube",
+      "primaryUrl": "https://www.youtube.com/channel/UCwiq7tGj8OxDpj7Hq9hYypw",
+      "secondaryLabel": "Bekijk het portfolio",
+      "secondaryUrl": "/portfolio"
     }
   }
 }
