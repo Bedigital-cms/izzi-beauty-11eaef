@@ -22,6 +22,9 @@
      Bewust een eigen token en niet `--gold`: het goud blijft de sfeer van de site, dit is de
      actiekleur. */
   --brand: #21D19F;
+  /* Leesbaar groen voor tekst en randen op een lichte ondergrond. #21D19F haalt als tekstkleur
+     maar 1.86:1 op --cream; dit haalt 5.66:1 en blijft herkenbaar hetzelfde groen. */
+  --brand-deep: #16705a;
   /* Tekstkleur ÓP een groen vlak. Niet wit: #21D19F draagt witte tekst op 1,97:1 en zakt daarmee
      ver onder de WCAG AA-grens van 4,5:1. Met de donkere inkt is het 8,83:1. */
   --brand-ink: #1c1a17;
@@ -103,17 +106,21 @@ p { color: var(--ink-soft); }
   transition: transform .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease, border-color .3s ease;
   cursor: pointer; border: 1px solid transparent;
 }
-.btn-primary { background: var(--ink); color: var(--champagne); }
-.btn-primary:hover { background: var(--gold-deep); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--gold-deep); }
-/* De primaire call-to-action draagt het merkgroen (#21D19F), zoals de klant vroeg. De klassenaam
-   blijft `.btn-gold`: hij staat op tientallen plaatsen in de content en in de componenten, en
-   hernoemen zou een grote diff opleveren zonder dat er iets aan verandert. */
+/* ---------- Knoppen: allemaal in het merkgroen (opdracht §8) ----------
+   Drie situaties, drie tinten van hetzelfde groen:
+   - gevuld  : vlak in --brand met donkere tekst (8.83:1). Wit op groen haalt 1.97:1 en kan dus niet.
+   - rand op licht : tekst en rand in --brand-deep, want --brand als tekstkleur haalt 1.86:1 op cream.
+   - rand op donker: tekst en rand in --brand zelf; op --ink is dat 8.83:1.
+   De klassenamen blijven zoals ze zijn — `.btn-gold` staat op tientallen plaatsen in de
+   componenten, en hernoemen geeft een grote diff zonder dat er iets aan verandert. */
+.btn-primary { background: var(--brand); color: var(--brand-ink); }
+.btn-primary:hover { background: color-mix(in srgb, var(--brand) 86%, #000); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--brand); }
 .btn-gold { background: var(--brand); color: var(--brand-ink); }
 .btn-gold:hover { background: color-mix(in srgb, var(--brand) 86%, #000); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--brand); }
-.btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
-.btn-ghost:hover { background: var(--ink); color: var(--champagne); transform: translateY(-2px); }
-.btn-light { background: transparent; color: var(--champagne); border-color: rgba(245,239,230,0.4); }
-.btn-light:hover { background: var(--champagne); color: var(--ink); }
+.btn-ghost { background: transparent; color: var(--brand-deep); border-color: var(--brand-deep); }
+.btn-ghost:hover { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); transform: translateY(-2px); }
+.btn-light { background: transparent; color: var(--brand); border-color: color-mix(in srgb, var(--brand) 55%, transparent); }
+.btn-light:hover { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
 
 /* link with arrow */
 .link-arrow { display: inline-flex; align-items: center; gap: 8px; color: var(--gold-deep); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em; }
@@ -1197,7 +1204,9 @@ p { color: var(--ink-soft); }
 .product-card-error {
   margin: 8px 0 0; text-align: center; line-height: 1.35;
 }
-.product-card-btn--added { background: var(--gold-deep); }
+/* Bevestiging na toevoegen: het diepe groen met lichte tekst (5.25:1). Dieper dan de knop zelf,
+   zodat "toegevoegd" zichtbaar iets anders is dan "toevoegen" — maar wel hetzelfde groen. */
+.product-card-btn--added { background: var(--brand-deep); color: var(--champagne); }
 /* De prijs duwt de knop naar de onderrand. Bewust de prijs en niet de omschrijving: die is nu op
    twee regels afgekapt (`flex: none`), dus zonder dit zouden kaarten met een korte omschrijving een
    hoger geplaatste knop krijgen dan hun buren. De prijs staat er altijd — ook als "—". */
@@ -1649,10 +1658,13 @@ p { color: var(--ink-soft); }
 /* ---------- knop met alleen een rand ----------
    Naast .btn-gold voor secundaire acties (annuleren, uitloggen, "inloggen" naast een gastformulier):
    die mogen niet even zwaar wegen als de hoofdactie op dezelfde pagina. */
+/* Secundaire actie naast een hoofdknop (annuleren, uitloggen, filter wissen). Groen als accent,
+   maar bewust niet gevuld: een gevulde groene annuleerknop zou net zo hard roepen als de knop
+   ernaast waar hij het alternatief van is. */
 .btn-outline {
-  background: transparent; color: var(--ink); border: 1px solid var(--line);
+  background: transparent; color: var(--brand-deep); border: 1px solid var(--line);
 }
-.btn-outline:hover { border-color: var(--gold); color: var(--gold-deep); background: var(--white); }
+.btn-outline:hover { border-color: var(--brand); color: var(--brand-deep); background: var(--white); }
 
 /* Tekstknop in een lijst (wijzigen/verwijderen bij een adres). Een knop en geen link, want het is een
    actie op deze pagina — maar hij hoort er niet als knop uit te zien tussen de adresgegevens. */
