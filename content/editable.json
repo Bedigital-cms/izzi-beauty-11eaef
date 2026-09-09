@@ -121,6 +121,11 @@
       "path": "/videos"
     },
     {
+      "file": "info.json",
+      "label": "Ervaringen",
+      "path": "/ervaringen"
+    },
+    {
       "file": "site.json",
       "label": "Onze locaties (studio's + adressen)",
       "path": "/onze-locaties"

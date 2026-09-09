@@ -487,6 +487,14 @@ export function InfoPage({ data }: { data: InfoContent }) {
               ))}
             </div>
           )}
+          {/* Reviews onder de tekst: eerst waar de pagina over gaat, dan het bewijs. Hergebruikt
+              ReviewGrid, die al in de codebase stond maar nergens gebruikt werd. */}
+          {data.reviews && data.reviews.items.length > 0 && (
+            <div style={{ marginTop: 44 }}>
+              {data.reviews.title && <h2 style={{ marginBottom: 20 }}>{data.reviews.title}</h2>}
+              <ReviewGrid items={data.reviews.items} />
+            </div>
+          )}
           {data.faq && data.faq.items.length > 0 && (
             <div style={{ marginTop: 44 }}>
               <FaqList title={data.faq.title} items={data.faq.items} />

@@ -60,6 +60,7 @@ const RESERVED = new Set([
   // aanmaakt, krijgt geen build-fout maar een pagina die stil onbereikbaar blijft — Next kiest de
   // statische map en de [slug]-route komt er nooit aan toe. Geen enkele bestaande slug botst
   // ermee, dus dit is een pure aanvulling.
+  'ervaringen',
   'kennisbank',
   'ons-team',
   'onze-locaties',
