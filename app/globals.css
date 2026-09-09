@@ -544,6 +544,41 @@ p { color: var(--ink-soft); }
 .breadcrumb { display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.78rem; color: rgba(245,239,230,0.6); letter-spacing: 0.04em; }
 .breadcrumb a:hover { color: var(--gold); }
 
+/* ---------- Behandelpagina: de foto achter de kop (opdracht §7) ----------
+   De foto stond op volle breedte bóven de intro, waardoor de lopende tekst op 1280x800 pas op
+   993px begon — ruim onder de vouw. Nu staat hij achter de kop, met een sluier eroverheen.
+
+   De sluier is berekend op het slechtste geval, een spierwitte foto. Champagne tekst op --ink
+   met 80% dekking over wit geeft 8.0:1; onder 65% zakt het door de norm van 4.5:1 heen. Vandaar
+   dat de dekking pas ná 68% van de breedte afneemt: het tekstblok is 46rem breed binnen een
+   container van 1200px, dus het reikt op het krapste desktopformaat tot ongeveer 65%. Rechts
+   daarvan mag de foto ademen.
+
+   Onder 900px loopt de tekst over de volle breedte, dus daar is de sluier overal even sterk. */
+.pagehero--image .pagehero-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0;
+}
+.pagehero--image::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    100deg,
+    rgba(28, 26, 23, 0.94) 0%,
+    rgba(28, 26, 23, 0.88) 45%,
+    rgba(28, 26, 23, 0.80) 68%,
+    rgba(28, 26, 23, 0.34) 100%
+  );
+}
+/* De gouden gloed van de gewone hero eronderuit: over een foto wordt dat troebel in plaats van
+   sfeervol. */
+.pagehero--image::after { display: none; }
+.pagehero--image .pagehero-inner { z-index: 2; }
+@media (max-width: 900px) {
+  .pagehero--image::before {
+    background: linear-gradient(to bottom, rgba(28, 26, 23, 0.90), rgba(28, 26, 23, 0.84));
+  }
+}
+
 /* ============================================================================
    Treatment / training detail layout
    ============================================================================ */
@@ -559,19 +594,7 @@ p { color: var(--ink-soft); }
 .detail-figure img { border-radius: var(--radius-lg); width: 100%; max-height: 340px; object-fit: cover; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
 @media (max-width: 720px) { .detail-figure img { max-height: 260px; } }
 .detail-figure .media-ph { margin-bottom: 30px; }
-/* Behandelpagina's (opdracht §7): de intro staat naast een kleinere foto in plaats van eronder,
-   zodat de lopende tekst meteen leesbaar is en niet onder een beeldvullende foto verdwijnt.
-   Onder 900px klapt dit naar één kolom — de tekst staat in de DOM vóór de foto, dus op een
-   telefoon leest de bezoeker eerst de intro. Zelfde breekpunt als .detail-grid hieronder, zodat
-   de zijbalk en dit blok tegelijk inklappen. */
-.detail-intro { display: grid; grid-template-columns: 1fr minmax(0, 280px); gap: 32px; align-items: start; margin-bottom: 30px; }
-.detail-intro .lead { margin-bottom: 0; }
-.detail-figure--compact img { max-height: 220px; margin-bottom: 0; }
-.detail-figure--compact .media-ph { margin-bottom: 0; }
-@media (max-width: 900px) {
-  .detail-intro { grid-template-columns: 1fr; gap: 22px; }
-  .detail-figure--compact img { max-height: 240px; }
-}
+
 
 .aside { position: sticky; top: 100px; display: grid; gap: 20px; }
 .aside-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px; }
