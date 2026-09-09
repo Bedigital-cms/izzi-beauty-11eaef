@@ -28,6 +28,13 @@
   /* Tekstkleur ÓP een groen vlak. Niet wit: #21D19F draagt witte tekst op 1,97:1 en zakt daarmee
      ver onder de WCAG AA-grens van 4,5:1. Met de donkere inkt is het 8,83:1. */
   --brand-ink: #1c1a17;
+  /* Tekstkleur op een groen knopvlak. Wit op #21D19F haalt 1.97:1 waar de norm 4.5:1 is — dit is
+     een uitdrukkelijke keuze van de klant, gemaakt nadat het contrast was voorgelegd. Niet
+     "stilletjes herstellen": overleg het eerst. Voor leesbaar wit op groen moet het vlak naar
+     ongeveer #147d5f (5.09:1).
+     De donkere --brand-ink blijft gelden voor de kleine groene elementen (het vinkje in de
+     voordeelband, de kennisbank-chips); die zijn te klein om wit op groen nog te kunnen lezen. */
+  --btn-on-brand: #ffffff;
   /* Aanbiedingsgroen — bewust BUITEN het goud/champagne-palet. Een korting moet uit de huisstijl
      springen; een gouden badge op een gouden site leest als decoratie in plaats van als actie.
      Overgenomen van de oude webshop, waar klanten deze kleur al met "aanbieding" associëren. */
@@ -113,14 +120,14 @@ p { color: var(--ink-soft); }
    - rand op donker: tekst en rand in --brand zelf; op --ink is dat 8.83:1.
    De klassenamen blijven zoals ze zijn — `.btn-gold` staat op tientallen plaatsen in de
    componenten, en hernoemen geeft een grote diff zonder dat er iets aan verandert. */
-.btn-primary { background: var(--brand); color: var(--brand-ink); }
+.btn-primary { background: var(--brand); color: var(--btn-on-brand); }
 .btn-primary:hover { background: color-mix(in srgb, var(--brand) 86%, #000); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--brand); }
-.btn-gold { background: var(--brand); color: var(--brand-ink); }
+.btn-gold { background: var(--brand); color: var(--btn-on-brand); }
 .btn-gold:hover { background: color-mix(in srgb, var(--brand) 86%, #000); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--brand); }
 .btn-ghost { background: transparent; color: var(--brand-deep); border-color: var(--brand-deep); }
-.btn-ghost:hover { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); transform: translateY(-2px); }
+.btn-ghost:hover { background: var(--brand); color: var(--btn-on-brand); border-color: var(--brand); transform: translateY(-2px); }
 .btn-light { background: transparent; color: var(--brand); border-color: color-mix(in srgb, var(--brand) 55%, transparent); }
-.btn-light:hover { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
+.btn-light:hover { background: var(--brand); color: var(--btn-on-brand); border-color: var(--brand); }
 
 /* link with arrow */
 .link-arrow { display: inline-flex; align-items: center; gap: 8px; color: var(--gold-deep); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em; }
