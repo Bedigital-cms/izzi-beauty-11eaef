@@ -461,6 +461,12 @@ export type InfoContent = {
    * afwezig → geen videoblok, zodat een pagina zonder video's er niet met een lege kop op staat.
    */
   videos?: { url: string; title: string; description?: string }[]
+  /**
+   * Klantreviews op een informatiepagina — gebruikt door de ervaringenpagina. Leeg of afwezig →
+   * geen blok, zodat een pagina zonder reviews er niet met een lege kop op staat. Zelfde patroon
+   * als `team` en `videos` hierboven.
+   */
+  reviews?: { title?: string; items: Review[] }
   faq?: { title: string; items: Faq[] }
   cta: CtaBlock
 }
