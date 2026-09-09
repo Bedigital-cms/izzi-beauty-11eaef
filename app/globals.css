@@ -177,16 +177,42 @@ p { color: var(--ink-soft); }
    nav-items van ~100px, dus "onder het eigen item" is bij zo'n breedteverschil toch grotendeels
    fictie, terwijl een vaste positie voorkomt dat het paneel bij elk ander item verspringt. Zet
    `--mega-anchor` alleen als een specifiek menu smal is en per item moet meelopen. */
+/* De breedte volgt het AANTAL kolommen; hij stond eerder vast op 856px, en dat is op de pixel
+   precies vier kolommen (4x180 + 3x26 + 2x28 = 854). Een vijfde kolom viel daardoor stilzwijgend
+   naar een tweede rij, onder de eerste kolom — zonder foutmelding, dus dat werd pas opgemerkt toen
+   iemand het menu opendeed. Het menu Opleidingen heeft vijf kolommen en stond er zo bij.
+
+   `repeat(var(--mega-cols), ...)` in plaats van `auto-fit`: nu krimpen de kolommen als de ruimte op
+   is, in plaats van door te breken naar een volgende rij. Eén rij blijft dus altijd één rij.
+   `--mega-cols` komt uit Header.tsx, die het aantal kolommen telt. Zonder die waarde valt hij terug
+   op 4, de oude situatie. */
 .mega {
   position: absolute; top: calc(100% + 6px);
   /* Geklemd binnen .mainnav; zie de uitleg hierboven. */
   left: clamp(0px, calc(var(--mega-anchor, 50%) - var(--mega-w) / 2), calc(100% - var(--mega-w)));
   transform: translateY(8px);
-  --mega-w: min(856px, 92vw);
+  --mega-cols: 4;
+  --mega-colw: 180px;
+  --mega-gap: 26px;
+  --mega-pad: 28px;
+  /* GEEN `100%` als bovengrens hier, hoe verleidelijk ook: 100% is de breedte van .mainnav, en die
+     is smaller dan het paneel zelf (823px tegen 854px op een 1241px-scherm). Dat maakte alle
+     menu's smaller dan ze waren. Het paneel mág breder zijn dan de nav-baan; de `left`-clamp
+     hieronder vangt op dat het niet links wegloopt.
+
+     Grens ligt dus bij 92vw. Gemeten op het smalste desktopformaat (1241px; daaronder neemt het
+     mobiele menu het over) past het paneel tot en met VIJF kolommen binnen beeld: 1060px breed,
+     rechterrand op 1206px. Bij zes kolommen klemt 92vw op 1142px en komt de rechterrand op 1288px
+     — dan steekt het paneel dus buiten het scherm. Net als MAX_TOP_NAV in Header.tsx is vijf een
+     grens die je tegen het ontwerp aanhoudt en niet stilzwijgend oprekt. */
+  --mega-w: min(
+    calc(var(--mega-cols) * var(--mega-colw) + (var(--mega-cols) - 1) * var(--mega-gap) + 2 * var(--mega-pad)),
+    92vw
+  );
   width: var(--mega-w);
   background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg);
-  box-shadow: var(--shadow); padding: 28px;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 26px;
+  box-shadow: var(--shadow); padding: var(--mega-pad);
+  display: grid; grid-template-columns: repeat(var(--mega-cols), minmax(0, 1fr)); gap: var(--mega-gap);
   opacity: 0; visibility: hidden; transition: opacity .22s ease, transform .22s ease; z-index: 120;
 }
 .mega.mega-1col { --mega-w: min(280px, 92vw); grid-template-columns: 1fr; }
