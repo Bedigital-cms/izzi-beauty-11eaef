@@ -580,9 +580,28 @@ p { color: var(--ink-soft); }
 .step h3 { font-size: 1.2rem; margin-bottom: 6px; }
 .step p { color: var(--muted); font-size: 0.94rem; }
 
-.faq-item { border-bottom: 1px solid var(--line); padding: 24px 0; }
-.faq-item h3 { font-size: 1.2rem; margin-bottom: 8px; }
-.faq-item p { color: var(--muted); }
+.faq-item { border-bottom: 1px solid var(--line); }
+/* De <summary> is de klikbare vraagregel. list-style/::-webkit-details-marker weg: we tekenen
+   het chevron zelf, gelijk aan .drawer-acc-caret in het mobiele menu. */
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  cursor: pointer; list-style: none; padding: 24px 0;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q:hover h3 { color: var(--gold-deep); }
+.faq-q:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 2px; border-radius: var(--radius); }
+.faq-item h3 { font-size: 1.2rem; margin-bottom: 0; transition: color .2s ease; }
+.faq-caret {
+  width: 9px; height: 9px; flex: none; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg); transition: transform .2s ease; opacity: 0.6; margin-right: 4px;
+}
+.faq-item[open] .faq-caret { transform: rotate(-135deg); }
+.faq-item[open] h3 { color: var(--gold-deep); }
+/* Padding onderaan hoort bij het antwoord, niet bij de vraagregel: dicht blijft de rij zo strak. */
+.faq-item p { color: var(--muted); padding-bottom: 24px; margin-top: -4px; }
+@media (prefers-reduced-motion: reduce) {
+  .faq-caret, .faq-item h3 { transition: none; }
+}
 
 /* price table */
 .pricelist { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }

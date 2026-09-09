@@ -194,16 +194,28 @@ export function Steps({ title, items }: { title: string; items: Step[] }) {
   )
 }
 
-/** FAQ accordion-style list (rendered open — no JS needed, SEO-friendly). */
+/**
+ * FAQ-accordeon: dicht bij het openen, alleen de vraag zichtbaar (opdracht §11).
+ *
+ * Native <details>/<summary>, geen JS en geen client-component: de site moet statisch blijven
+ * (zie CLAUDE.md), en de antwoorden staan zo nog steeds volledig in de HTML — Google leest ze,
+ * ctrl-F vindt ze, en toetsenbordbediening krijg je gratis van de browser.
+ *
+ * De <h3> blijft binnen de <summary> staan: de spec staat heading content daar toe, en het houdt
+ * de koppenstructuur voor SEO intact.
+ */
 export function FaqList({ title, items }: { title: string; items: Faq[] }) {
   return (
     <div>
       {title && <h2 style={{ marginBottom: 12 }}>{title}</h2>}
       {items.map((f) => (
-        <div className="faq-item" key={f.q}>
-          <h3>{f.q}</h3>
+        <details className="faq-item" key={f.q}>
+          <summary className="faq-q">
+            <h3>{f.q}</h3>
+            <span className="faq-caret" aria-hidden="true" />
+          </summary>
           <p>{f.a}</p>
-        </div>
+        </details>
       ))}
     </div>
   )
