@@ -1,3 +1,5 @@
+import type { CSSProperties } from 'react'
+
 import { switcherLocales } from '@/lib/i18n'
 import type { NavItem as NavItemType, SiteContent } from '@/lib/types'
 
@@ -45,6 +47,15 @@ const MORE_LABEL: Record<string, string> = {
   'zh-CN': '更多', 'zh-TW': '更多', ja: 'もっと見る', ko: '더 보기',
 }
 
+/**
+ * Het aantal kolommen dat de mega moet leggen, als CSS-variabele.
+ *
+ * De mega stond vast op vier kolommen breed; een vijfde viel stilzwijgend naar een tweede rij,
+ * onder de eerste kolom. Door het aantal hier door te geven volgt de breedte de inhoud en blijft
+ * het altijd één rij. Zie `.mega` in globals.css.
+ */
+const megaCols = (n: number) => ({ '--mega-cols': Math.max(1, n) }) as CSSProperties
+
 /** All sub-links of a nav item, flattened across its columns (safe when a column omits `links`). */
 const sublinksOf = (item: NavItemType) => (item.columns ?? []).flatMap((c) => c.links ?? [])
 
@@ -52,14 +63,21 @@ const sublinksOf = (item: NavItemType) => (item.columns ?? []).flatMap((c) => c.
 function NavItem({ item }: { item: NavItemType }) {
   const cols = item.columns ?? []
   const hasMega = cols.length > 0
+  /**
+   * Een paneel van één kolom (bv. de dropdown onder "Over IZZI") hoort onder zijn EIGEN item te
+   * hangen, niet gecentreerd onder de hele nav-balk. Dat centreren is bewust de standaard voor de
+   * brede panelen — 856px onder een item van ~100px valt toch niet onder dat item uit te lijnen —
+   * maar bij een smal paneel wordt het juist scheef. Zie de uitleg bij `.mega` in globals.css.
+   */
+  const smalMenu = cols.length === 1
   return (
-    <div className="navitem">
+    <div className={`navitem${smalMenu ? ' navitem--smalmenu' : ''}`}>
       <LocaleLink href={item.url} {...externalLinkProps(item.url, item.target)}>
         {item.label}
         {hasMega && <span className="caret" aria-hidden="true" />}
       </LocaleLink>
       {hasMega && (
-        <div className={`mega${cols.length === 1 ? ' mega-1col' : ''}`}>
+        <div className={`mega${cols.length === 1 ? ' mega-1col' : ''}`} style={megaCols(cols.length)}>
           {cols.map((col) => (
             <div className="mega-col" key={col.heading}>
               <h4>{col.heading}</h4>
@@ -122,7 +140,15 @@ export function Header({
                 {moreLabel}
                 <span className="caret" aria-hidden="true" />
               </button>
-              <div className="mega mega-more">
+              {/* Kolommen hier: elk overloop-item met sublinks wordt een kolom, plus één kolom voor
+                  alle losse links samen. Zelfde telling als de opbouw hieronder. */}
+              <div
+                className="mega mega-more"
+                style={megaCols(
+                  overflow.filter((item) => sublinksOf(item).length > 0).length +
+                    (overflow.some((item) => sublinksOf(item).length === 0) ? 1 : 0),
+                )}
+              >
                 {/* Match the normal mega structure: an overflow item that HAS real sub-links becomes a
                     titled column (heading + nested link list, exactly like Behandelingen/Opleidingen).
                     Everything else — plain links AND items whose columns carry no links — is grouped
