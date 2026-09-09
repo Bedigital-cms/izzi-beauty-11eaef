@@ -212,6 +212,38 @@ p { color: var(--ink-soft); }
 .mega-col a:hover { color: var(--gold-deep); padding-left: 6px; }
 .mega-col a .tag { font-size: 0.6rem; letter-spacing: 0.1em; background: var(--gold-soft); color: var(--gold-deep); padding: 2px 6px; border-radius: 3px; margin-left: 6px; text-transform: uppercase; font-weight: 700; }
 
+/* ---------- UWV-subsidie licht uitgelicht in het menu ----------
+   Opdracht §8: "gebruik hetzelfde groen voor labels en elementen rondom de UWV-subsidie". In het
+   menu staat deze link in drie kolommen; hij is voor een cursist vaak de reden dát een opleiding
+   haalbaar is, dus hij mag opvallen tussen de andere regels.
+
+   Een lichtgroen vlak met donkere tekst, geen groene letters: #21D19F haalt als tekstkleur 1.97:1
+   op het witte menupaneel en is daar onleesbaar. Dit is dezelfde behandeling als .highlight-band
+   op de opleidingspagina's, dus de UWV-subsidie ziet er overal op de site hetzelfde uit.
+
+   Gekoppeld aan de slug en niet aan het label: labels zijn vertaalbaar en door de klant te
+   wijzigen in het CMS, de URL veel minder. Verandert de slug ooit, dan valt alleen de kleur weg —
+   het menu blijft gewoon werken. */
+.mega-col a[href$="/uwv-subsidie"],
+.drawer-sublink[href$="/uwv-subsidie"] {
+  background: color-mix(in srgb, var(--brand) 16%, var(--white));
+  color: var(--ink);
+  font-weight: 600;
+  border-radius: var(--radius);
+  padding-inline: 10px;
+}
+/* De hover-verschuiving van .mega-col a blijft 6px, zodat deze regel zich net zo gedraagt als de
+   rest van de kolom in plaats van te blijven staan. */
+.mega-col a[href$="/uwv-subsidie"]:hover {
+  background: color-mix(in srgb, var(--brand) 30%, var(--white));
+  color: var(--ink);
+  padding-left: 16px;
+}
+.drawer-sublink[href$="/uwv-subsidie"]:hover {
+  background: color-mix(in srgb, var(--brand) 30%, var(--white));
+  color: var(--ink);
+}
+
 .header-cta { display: flex; align-items: center; gap: 10px; flex: none; }
 .header-cta .btn { padding: 11px 18px; font-size: 0.8rem; white-space: nowrap; }
 
