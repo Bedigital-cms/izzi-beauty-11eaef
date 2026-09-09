@@ -159,9 +159,34 @@ export function CtaBand({ cta }: { cta: CtaBlock }) {
 }
 
 /** Interior-page hero (breadcrumb + title + intro), dark band. */
-export function PageHero({ eyebrow, title, text, breadcrumb }: { eyebrow: string; title: string; text: string; breadcrumb: string }) {
+export function PageHero({
+  eyebrow,
+  title,
+  text,
+  breadcrumb,
+  /**
+   * Optionele foto ACHTER de kop (opdracht §7). Er ligt een gradient overheen; die is berekend op
+   * het slechtste geval — een spierwitte foto — zodat de tekst er nooit op wegvalt. Zie
+   * `.pagehero--image` in globals.css.
+   *
+   * De foto is decoratief: hij staat leeg in `alt` en is verborgen voor schermlezers, want de
+   * <h1> eronder zegt al waar de pagina over gaat. Een tweede omschrijving zou alleen ruis zijn.
+   */
+  image,
+}: {
+  eyebrow: string
+  title: string
+  text: string
+  breadcrumb: string
+  image?: string
+}) {
+  const heeftFoto = !!(image ?? '').trim()
   return (
-    <section className="pagehero">
+    <section className={`pagehero${heeftFoto ? ' pagehero--image' : ''}`}>
+      {heeftFoto && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img className="pagehero-bg" src={image} alt="" aria-hidden="true" />
+      )}
       <div className="container">
         <div className="pagehero-inner">
           <div className="breadcrumb"><LocaleLink href="/">Home</LocaleLink><span>/</span><span>{breadcrumb}</span></div>
@@ -287,14 +312,25 @@ export function HubPage({ data }: { data: HubContent }) {
  * Generic treatment/training detail page. Driven by DetailContent: hero, lead image, prose
  * body sections, optional steps + FAQ, and a sticky aside with facts + a booking CTA.
  */
-export function DetailPage({ data }: { data: DetailContent }) {
+export function DetailPage({
+  data,
+  /**
+   * Bij een behandeling staat de foto ACHTER de kop in de hero; opleidingen houden de volle foto
+   * boven de tekst. Op /lip-blush begon de lopende tekst anders pas op 993px (gemeten op
+   * 1280x800) — ruim onder de vouw, precies de klacht uit de opdracht (§7). Opleidingen blijven
+   * zoals ze zijn, want dat ontwerp is goedgekeurd (§6).
+   */
+  variant = 'opleiding',
+}: { data: DetailContent; variant?: 'behandeling' | 'opleiding' }) {
   // Inschrijven kan alleen als er een product aan hangt ÉN de webshop van deze tenant aan staat —
   // anders wijst de knop naar /product/<handle>, en dat is een 404 zolang de shop uit is.
   const bookable = !!data.productHandle && commerceEnabled()
   const highlights = data.highlights ?? []
   return (
     <>
-      <PageHero {...data.hero} />
+      {/* Bij een behandeling staat de foto ACHTER de kop (§7: "de afbeelding mag in de header worden
+          verwerkt"). Opleidingen houden hun goedgekeurde opmaak met de foto boven de tekst (§6). */}
+      <PageHero {...data.hero} image={variant === 'behandeling' ? data.image : undefined} />
       {/* Direct onder de hero, vóór de lopende tekst: UWV-subsidie en gespreid betalen zijn voor
           een cursist vaak de reden dát de opleiding haalbaar is. In de zijbalk of pas bij het
           afrekenen komen ze te laat — zie de opdracht, punt 6 en 14. */}
@@ -317,10 +353,18 @@ export function DetailPage({ data }: { data: DetailContent }) {
         <div className="container">
           <div className="detail-grid">
             <div className="prose">
-              <div className="detail-figure">
-                <Media src={data.image} alt={data.hero.title} shape="wide" label={data.hero.title} />
-              </div>
-              {data.intro && <p className="lead" style={{ marginBottom: 8 }}>{data.intro}</p>}
+              {variant === 'behandeling' ? (
+                /* Geen losse foto meer hier: die staat nu in de hero. De intro is daarmee het
+                   eerste wat de bezoeker leest, wat §7 juist vraagt. */
+                data.intro && <p className="lead" style={{ marginBottom: 30 }}>{data.intro}</p>
+              ) : (
+                <>
+                  <div className="detail-figure">
+                    <Media src={data.image} alt={data.hero.title} shape="wide" label={data.hero.title} />
+                  </div>
+                  {data.intro && <p className="lead" style={{ marginBottom: 8 }}>{data.intro}</p>}
+                </>
+              )}
               {data.body.map((b) => (
                 <div key={b.heading}>
                   <h2>{b.heading}</h2>
