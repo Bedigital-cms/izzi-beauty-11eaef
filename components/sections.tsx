@@ -287,7 +287,16 @@ export function HubPage({ data }: { data: HubContent }) {
  * Generic treatment/training detail page. Driven by DetailContent: hero, lead image, prose
  * body sections, optional steps + FAQ, and a sticky aside with facts + a booking CTA.
  */
-export function DetailPage({ data }: { data: DetailContent }) {
+export function DetailPage({
+  data,
+  /**
+   * Behandelpagina's zetten de intro NAAST een kleinere foto; opleidingen houden de volle foto
+   * boven de tekst. Op /lip-blush begon de intro anders pas op 993px (gemeten op 1280x800) — ruim
+   * onder de vouw, precies de klacht uit de opdracht (§7). Met dit blok is dat 623px. Opleidingen
+   * blijven zoals ze zijn, want dat ontwerp is goedgekeurd (§6).
+   */
+  variant = 'opleiding',
+}: { data: DetailContent; variant?: 'behandeling' | 'opleiding' }) {
   // Inschrijven kan alleen als er een product aan hangt ÉN de webshop van deze tenant aan staat —
   // anders wijst de knop naar /product/<handle>, en dat is een 404 zolang de shop uit is.
   const bookable = !!data.productHandle && commerceEnabled()
@@ -317,10 +326,21 @@ export function DetailPage({ data }: { data: DetailContent }) {
         <div className="container">
           <div className="detail-grid">
             <div className="prose">
-              <div className="detail-figure">
-                <Media src={data.image} alt={data.hero.title} shape="wide" label={data.hero.title} />
-              </div>
-              {data.intro && <p className="lead" style={{ marginBottom: 8 }}>{data.intro}</p>}
+              {variant === 'behandeling' ? (
+                <div className="detail-intro">
+                  {data.intro && <p className="lead">{data.intro}</p>}
+                  <div className="detail-figure detail-figure--compact">
+                    <Media src={data.image} alt={data.hero.title} shape="wide" label={data.hero.title} />
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div className="detail-figure">
+                    <Media src={data.image} alt={data.hero.title} shape="wide" label={data.hero.title} />
+                  </div>
+                  {data.intro && <p className="lead" style={{ marginBottom: 8 }}>{data.intro}</p>}
+                </>
+              )}
               {data.body.map((b) => (
                 <div key={b.heading}>
                   <h2>{b.heading}</h2>

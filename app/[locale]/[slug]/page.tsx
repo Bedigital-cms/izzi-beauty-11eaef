@@ -59,16 +59,18 @@ const RESERVED = new Set([
 ])
 
 type Resolved =
-  | { kind: 'detail'; data: ReturnType<typeof getServices>[string] }
+  /** `variant` bepaalt alleen de opmaak van de detailpagina: een behandeling zet de intro naast
+   *  een kleinere foto (§7), een opleiding houdt de goedgekeurde volgorde (§6). */
+  | { kind: 'detail'; variant: 'behandeling' | 'opleiding'; data: ReturnType<typeof getServices>[string] }
   | { kind: 'location'; data: ReturnType<typeof getLocaties>[string] }
   | { kind: 'post'; data: ReturnType<typeof getPosts>[string] }
 
 /** Find which collection owns `slug` (first match wins; slugs are guaranteed unique by the guard). */
 function resolvePage(locale: string, slug: string): Resolved | null {
   const svc = getServices(locale)[slug]
-  if (svc) return { kind: 'detail', data: svc }
+  if (svc) return { kind: 'detail', variant: 'behandeling', data: svc }
   const trn = getTrainingsDetail(locale)[slug]
-  if (trn) return { kind: 'detail', data: trn }
+  if (trn) return { kind: 'detail', variant: 'opleiding', data: trn }
   const loc = getLocaties(locale)[slug]
   if (loc) return { kind: 'location', data: loc }
   /*
@@ -149,7 +151,7 @@ export default async function FlatDetailPage({
   if (page.kind === 'detail') {
     return (
       <Shell locale={locale}>
-        <DetailPage data={page.data} />
+        <DetailPage data={page.data} variant={page.variant} />
       </Shell>
     )
   }

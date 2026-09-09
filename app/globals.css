@@ -559,6 +559,19 @@ p { color: var(--ink-soft); }
 .detail-figure img { border-radius: var(--radius-lg); width: 100%; max-height: 340px; object-fit: cover; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
 @media (max-width: 720px) { .detail-figure img { max-height: 260px; } }
 .detail-figure .media-ph { margin-bottom: 30px; }
+/* Behandelpagina's (opdracht §7): de intro staat naast een kleinere foto in plaats van eronder,
+   zodat de lopende tekst meteen leesbaar is en niet onder een beeldvullende foto verdwijnt.
+   Onder 900px klapt dit naar één kolom — de tekst staat in de DOM vóór de foto, dus op een
+   telefoon leest de bezoeker eerst de intro. Zelfde breekpunt als .detail-grid hieronder, zodat
+   de zijbalk en dit blok tegelijk inklappen. */
+.detail-intro { display: grid; grid-template-columns: 1fr minmax(0, 280px); gap: 32px; align-items: start; margin-bottom: 30px; }
+.detail-intro .lead { margin-bottom: 0; }
+.detail-figure--compact img { max-height: 220px; margin-bottom: 0; }
+.detail-figure--compact .media-ph { margin-bottom: 0; }
+@media (max-width: 900px) {
+  .detail-intro { grid-template-columns: 1fr; gap: 22px; }
+  .detail-figure--compact img { max-height: 240px; }
+}
 
 .aside { position: sticky; top: 100px; display: grid; gap: 20px; }
 .aside-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px; }
