@@ -55,6 +55,17 @@ const RESERVED = new Set([
   'uwv-subsidie',
   'ggd-gecertificeerd',
   'werken-bij-izzi-beauty',
+  // Deze zes hadden wél een vaste route maar stonden niet in deze lijst. Daardoor deed de guard
+  // voor precies deze namen niets: een redacteur die in het CMS een pagina met slug `werkwijze`
+  // aanmaakt, krijgt geen build-fout maar een pagina die stil onbereikbaar blijft — Next kiest de
+  // statische map en de [slug]-route komt er nooit aan toe. Geen enkele bestaande slug botst
+  // ermee, dus dit is een pure aanvulling.
+  'kennisbank',
+  'ons-team',
+  'onze-locaties',
+  'preview',
+  'videos',
+  'werkwijze',
   'media',
 ])
 
