@@ -63,8 +63,15 @@ const sublinksOf = (item: NavItemType) => (item.columns ?? []).flatMap((c) => c.
 function NavItem({ item }: { item: NavItemType }) {
   const cols = item.columns ?? []
   const hasMega = cols.length > 0
+  /**
+   * Een paneel van één kolom (bv. de dropdown onder "Over IZZI") hoort onder zijn EIGEN item te
+   * hangen, niet gecentreerd onder de hele nav-balk. Dat centreren is bewust de standaard voor de
+   * brede panelen — 856px onder een item van ~100px valt toch niet onder dat item uit te lijnen —
+   * maar bij een smal paneel wordt het juist scheef. Zie de uitleg bij `.mega` in globals.css.
+   */
+  const smalMenu = cols.length === 1
   return (
-    <div className="navitem">
+    <div className={`navitem${smalMenu ? ' navitem--smalmenu' : ''}`}>
       <LocaleLink href={item.url} {...externalLinkProps(item.url, item.target)}>
         {item.label}
         {hasMega && <span className="caret" aria-hidden="true" />}

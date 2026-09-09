@@ -143,6 +143,12 @@ p { color: var(--ink-soft); }
 /* GEEN position: relative hier — het mega-paneel moet zich t.o.v. .mainnav positioneren, niet t.o.v.
    het item; anders is klemmen binnen de nav-baan onmogelijk. */
 .navitem { flex: none; }
+/* Uitzondering op de regel hierboven: bij een paneel van ÉÉN kolom is het item wél het anker.
+   Zo'n dropdown is ~280px breed en hoort onder zijn eigen menu-item te hangen; gecentreerd onder
+   de hele balk staat hij zichtbaar scheef. De clamp() bij `.mega` blijft gewoon werken: met het
+   item als anker wordt de bovengrens `100% - breedte` negatief, dus valt hij terug op de
+   ondergrens 0 — het paneel lijnt links uit met het item. Precies wat een dropdown hoort te doen. */
+.navitem--smalmenu { position: relative; }
 .navitem > a,
 .navitem > .nav-more {
   display: inline-flex; align-items: center; gap: 5px; padding: 9px 10px; white-space: nowrap;
