@@ -1,0 +1,16 @@
+{
+  "name": "IZZI Beauty",
+  "install": "pnpm install --frozen-lockfile",
+  "terminals": [
+    {
+      "name": "izzi-dev",
+      "command": "pnpm dev --port 3001"
+    }
+  ],
+  "ports": [
+    {
+      "name": "web server",
+      "port": 3001
+    }
+  ]
+}
