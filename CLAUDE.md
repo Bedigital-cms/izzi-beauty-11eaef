@@ -84,7 +84,7 @@ pnpm dev --port 3001
 
 Open **`http://izzi-beauty.localhost:3001`**, niet `localhost:3001` — het CMS herleidt de tenant uit de
 Origin-host, dus op bare `localhost` mislukken formulierinzendingen. Media en formulieren komen uit het
-productie-CMS (`app.bedigital.ai`); dat werkt out of the box.
+productie-CMS (`cms.bedigital.ai`); dat werkt out of the box.
 
 De webshop staat in de repo-env uit (`NEXT_PUBLIC_COMMERCE_ENABLED=0`), dus `/shop`, `/cart`,
 `/checkout` en `/order` geven lokaal een 404. Verwacht gedrag.

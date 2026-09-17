@@ -18,7 +18,7 @@ generiek is, breng je apart ook in het template — dat gaat niet automatisch.
 
 - **GitHub**: lid van de org `Bedigital-cms` met write-rechten op `izzi-beauty-11eaef` (Barry nodigt uit).
 - **Vercel**: het project van deze tenant, om builds, logs en preview-URL's te zien.
-- **CMS** (`https://app.bedigital.ai`): handig maar niet strikt nodig — daar zit de content-editor,
+- **CMS** (`https://cms.bedigital.ai`): handig maar niet strikt nodig — daar zit de content-editor,
   de media en de webshopdata.
 
 ## 3. Lokaal draaien
@@ -32,7 +32,7 @@ pnpm dev --port 3001
 
 Node ≥ 20.9 (`package.json` → `engines`), pnpm als package manager.
 
-`.env` **staat bewust in de repo** en wijst naar het productie-CMS (`app.bedigital.ai`) voor media en
+`.env` **staat bewust in de repo** en wijst naar het productie-CMS (`cms.bedigital.ai`) voor media en
 formulieren. Je hoeft dus niets in te vullen; media laadt meteen. Er staan geen secrets in — de
 storefront-sleutel (`COMMERCE_API_KEY`) staat alleen op Vercel en hoort nooit in git.
 
