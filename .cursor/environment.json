@@ -1,0 +1,21 @@
+{
+  "name": "IZZI Beauty — BE Digital customer website",
+  "install": "bash .cursor/install.sh",
+  "terminals": [
+    {
+      "name": "izzi-web",
+      "command": "pnpm dev --port 3001",
+      "description": "IZZI Beauty website dev server — open http://izzi-beauty.localhost:3001"
+    }
+  ],
+  "ports": [
+    {
+      "name": "web server",
+      "port": 3001
+    }
+  ],
+  "repositoryDependencies": [
+    "github.com/Bedigital-cms/Be-digital-cms",
+    "github.com/BEBarry/bedigital-architecture"
+  ]
+}
