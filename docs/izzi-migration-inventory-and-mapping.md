@@ -108,6 +108,24 @@ Meetresultaat vanaf deze runtime: `/media/<file>` (route `app/media/[filename]/r
 | Starterspakket/groepsgegevens | Tegenstrijdige aantallen op oude site | Bevestigen |
 | Rotterdam-adres | home.json "Nog niet bekend"; bronkandidaat Weena 95/3013 CH | Klant bevestigen; niets verzonnen live |
 | WhatsApp-nummer | `31612345678` (placeholder) vs `+31 6 11 76 88 81` | Via CMS Integraties + WhatsApp-geschiktheid bevestigen |
+| All Round startpakket-waarde | oude pagina noemt €4.000 én €4.500 (zelfde pagina) | Niet stil gekozen; op de nieuwe pagina zonder euro-waarde, "via offerte" |
+| All Round machinewaarde | oude pagina noemt €1.000 én €470 | Idem; geen bedrag op de pagina |
+| All Round prijs | actie €9.000 / termijnen €9.900 (+ 2025-data, Den Bosch) | Volatiel → niet in editorial JSON; "Prijs op aanvraag", data/locatie via offerte/CMS |
+
+### 8. Sectie-voor-sectie contentpariteit — status
+Methode: oude pagina opgehaald (passieve GET), sectie/feit-vergelijking met de huidige JSON, stabiele content gemigreerd, volatiele/conflicterende waarden neutraal of geflagd.
+
+| Pagina | Type | Oud opgehaald | Vergeleken | Actie in deze PR |
+| --- | --- | --- | --- | --- |
+| `allround-pmu-opleiding` | opleiding | ✅ | ✅ | **Verrijkt**: programma (4 online + 4 praktijk), inclusief/startpakket, algemene info, CRKBO/UWV, 7 echte FAQ; conflicten geflagd, prijs neutraal |
+| `ombre-powder-brows-opleiding` | opleiding | ✅ | ✅ | Al rijk gemigreerd (programma/startpakket/machine/prijs/trainers/10 FAQ) — geen gap; prijs bevestigen |
+| `lip-blush-beginnersopleiding` | opleiding | ✅ | ✅ | Al rijk gemigreerd — geen gap; prijs bevestigen |
+| `powder-brows` | behandeling | ✅ | ✅ | Correct (behandeling, geen opleiding-mixup), video + FAQ, geen `productHandle` (boekt via Salonized/contact) — OK |
+| `lip-blush` | behandeling | ✅ | ✅ | Correct (behandeling), video + 5 FAQ — OK |
+| Overige opleidingen (Combi, Infralash, Faux Freckles, masterclasses, Fineline, Saline, Inkless, Lash Lift, Brow Lamination, Laser Ontharing) | opleiding | ⏳ | ⏳ | Zelfde methode; nog te doen (bevestig prijs/data/plaatsen via CMS) |
+| Overige behandelingen (Combi, Infralash, Faux Freckles, Kleurcorrectie, Brow Lamination, removal) | behandeling | ⏳ | ⏳ | Nog te doen; prijs/nazorg/medisch → bron behouden of klantreview |
+
+Belangrijk: **actuele prijs, aanbieding, opleidingsdatum, aantal plaatsen en betaaltermijnen** blijven server-/CMS-/klantbevestigde data — niet als tweede catalogus in editorial JSON. Medische/nazorgteksten van de oude site zijn **niet** zelfstandig als medische waarheid gemoderniseerd (bron behouden / klantreview).
 
 ## 7. Productmapping-skelet (§8) — in te vullen met echte handles/LearnDash
 Voor elk van: Ombre Powder Brows, Combi Brows, Powder Brows Touch-up, Powder Brows Masterclass, Soft Ombre, Lip Blush, Lip Blush Masterclass, Royal Lips, Ombre Lips Masterclass, Faux Freckles, Kleurcorrectie, Naaldentraining, Lash Lift, Brow Lift, Airbrush Brows, GGD-stappenplan, Inkless Stretch Mark:
