@@ -72,7 +72,7 @@ Statuscode: alle regels gebruiken `permanent: true` = **HTTP 308** (Next-native)
 | `isabella-levels` | `/ons-team` (of teamdetail) | Persoonspagina; teamdetailroute bestaat niet |
 
 ### 3c. NIET redirecten (transient/utility/campagne)
-`afspraak-maken`, `bedankt-boeking`, `contact-bedankt`, `bedankt-voor-je-aanmelding`, `terugbetalen_retournering`, `__trashed`, `zomeractie-rotterdam` (verlopen actie), `my-account`/`mijn-account`, `shop`/`shop-2`/`webshop`/`winkel`/`winkelwagen` (commerce → Laliqa/CMS, aparte sprint).
+`afspraak-maken`, `bedankt-boeking`, `contact-bedankt`, `bedankt-voor-je-aanmelding`, `terugbetalen_retournering`, `__trashed`, `zomeractie-rotterdam` (verlopen actie), `my-account`/`mijn-account`, `shop`/`shop-2`/`webshop`/`winkel`/`winkelwagen` (commerce → Laliqa/CMS; commerce-fase van deze release).
 
 ### 3d. Geneste FAQ-URL's (oud → nieuw, bewuste keuze)
 Oude `pmu-opleiding-*/…-veelgestelde-vragen` paden ↔ de twee bewust-geneste FAQ-routes (zie `ai-guide.md`). Klant koos eerder **geen** redirect voor deze; bevestigen of dat zo blijft.

@@ -91,15 +91,15 @@ Legenda: **OPEN** · **IMPLEMENTED_IN_PR** (code/content op de branch) · **VERI
 | --- | --- |
 | Scanbare programma's + eerstvolgende-opleidingen-overzicht met filters | OPEN (afh. echte slotdata/commerce) |
 | Brochure-voorbeeld (1, template-akkoord eerst) | OPEN |
-| Regressietests | IMPLEMENTED_IN_PR + VERIFIED (`pnpm test`, 8 checks) |
+| Regressietests | IMPLEMENTED_IN_PR + VERIFIED (`pnpm test`: harde checks + expliciet gerapporteerde OPEN-items; telling niet hardcoded in docs) |
 | typecheck/lint/build | VERIFIED (exit 0; 1 pre-existing lint-warning in next.config.ts) |
 | Preview-QA met geladen media @360/390/768/1280/1440 | PARTIAL/BLOCKED_ACCESS: layout getest headless; media niet laadbaar in runtime |
 
 ## Samengevat P0/P1 die merge blokkeren
-- **P0** Media/logo's laden niet (CMS TLS-reset) — §5 kan niet worden afgetekend.
-- **P0** Commerce/checkout/online-cursus-toegang niet getest (commerce uit, geen sandbox/LearnDash).
-- **P1** `/nl/`-geprefixte legacy-redirects → 404 (platform-plumbing fix nodig).
+- **P0** Media/logo's laden niet vanaf deze runtime (verbindingsfout naar CMS); echte bezoekersoorzaak NIET vastgesteld — §5 kan pas worden afgetekend op een omgeving die het CMS bereikt.
+- **P0** Commerce/checkout/online-cursus-toegang niet getest (commerce uit, geen sandbox/LearnDash) — onderdeel van deze release, runtime-aftekening later in deze PR zodra toegang er is.
+- ~~**P1** `/nl/`-geprefixte legacy-redirects → 404~~ → **OPGELOST + geverifieerd** (fix in `next.config.ts`, in deze PR).
 - **P1** Contrastbesluit CTA-groen (klant).
-- **P1** Juridische teksten, geverifieerde reviews, Rotterdam-gegevens, prijzen, WhatsApp-nummer (klant).
+- **P1** Juridische teksten, geverifieerde reviews, Rotterdam-openingstijden, prijzen, WhatsApp-nummer (klant).
 
 PR blijft **draft** zolang deze P0/P1's open zijn.

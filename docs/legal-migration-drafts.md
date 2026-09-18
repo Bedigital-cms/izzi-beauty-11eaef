@@ -1,6 +1,11 @@
-# Juridische migratie — REVIEWCONCEPTEN (niet juridisch gevalideerd)
+# Juridische migratie-inventaris & samenvatting (niet juridisch gevalideerd)
 
-> ⚠️ **Status: migratieconcept voor review.** De teksten hieronder zijn **verbatim overgenomen van de oude productiesite** `izzi-beauty.com` (opgehaald 2026-09-18) als migratiebron. Ze zijn **niet** door een jurist gevalideerd, **niet** live op de nieuwe site gezet en mogen **niet** ongewijzigd als juridisch geldende voorwaarden worden gepubliceerd. `content/nl/legal.json` bevat nog de verkorte voorbeeldteksten; die vervangen we pas na goedkeuring door de klant/jurist. Er zijn **geen** nieuwe juridische bepalingen verzonnen en gevonden conflicten zijn **niet** stil opgelost — ze staan in §"Verschillen & conflicten".
+> ⚠️ **Status: migratie-inventaris/samenvatting voor review — GEEN verbatim brontekst.** De onderdelen hieronder zijn **samenvattingen** van de oude juridische pagina's van `izzi-beauty.com` (opgehaald 2026-09-18, passieve GET), bedoeld als migratie-inventaris. Dit document bevat **niet** de volledige, teken-voor-teken brontekst (de ophaal is een markdown-conversie, niet gegarandeerd verbatim), en die volledige tekst staat **niet** in de PR-diff of branchhistorie. Voor publicatie moet de klant/jurist de **originele** brondocumenten aanleveren.
+>
+> - oude tekst = migratiebron (samengevat), **niet** juridisch gevalideerd;
+> - **niet** live gezet: `content/nl/legal.json` houdt nog zijn verkorte voorbeeldteksten tot goedkeuring;
+> - conflicten worden **niet** stil opgelost (zie §"Verschillen & conflicten");
+> - **geen** nieuwe juridische bepalingen verzonnen.
 
 Bron: `/nl/algemene-voorwaarden/`, `/nl/privacy-verklaring/`, `/nl/opleidingen-voorwaarden/` (ophaaldatum 2026-09-18, passieve GET).
 
@@ -16,17 +21,17 @@ Bron: `/nl/algemene-voorwaarden/`, `/nl/privacy-verklaring/`, `/nl/opleidingen-v
 
 ---
 
-## Concept A — Algemene Voorwaarden (bron: `/nl/algemene-voorwaarden/`)
-> Verbatim migratiebron; nog te reviewen. Bevat 15 artikelen: 1. Algemeen (incl. contact/KVK) · 2. Afspraken (incl. Touch-up 6–8 wkn, €50) · 3. Betaling · 4. Persoonsgegevens & privacy · 5. Geheimhouding (incl. ID-foto bij termijnen) · 6. Aansprakelijkheid · 7. Beschadiging en diefstal (camera's) · 8. Klachten (Zorg voor ZZP; geen restitutie) · 9. Behoorlijk gedrag (geen kinderen <16) · 10. Annuleren behandeling (25% aanbetaling niet-restitueerbaar, 1 jaar geldig) · 11. Opleidingen (aanmelding, niet-restitueerbare aanbetaling, termijnen, terugkomdag €100) · Online Trainingen (geen herroeping na toegang) · 12. Beeldmateriaal · 13. Verzending webshop (PostNL, PMU-machine retour binnen 14 dgn) · 14. Behandelvoorwaarden (14 punten: oude PMU melden, zwangerschap, botox/fillers, derde behandeling €75, laseren = garantieverval, …) · 15. Aansprakelijkheid (7 punten).
+## Samenvatting A — Algemene Voorwaarden (bron: `/nl/algemene-voorwaarden/`)
+> Samenvatting van de artikelstructuur (niet de volledige tekst). 15 artikelen: 1. Algemeen (incl. contact/KVK) · 2. Afspraken (incl. Touch-up 6–8 wkn, €50) · 3. Betaling · 4. Persoonsgegevens & privacy · 5. Geheimhouding (incl. ID-foto bij termijnen) · 6. Aansprakelijkheid · 7. Beschadiging en diefstal (camera's) · 8. Klachten (Zorg voor ZZP; geen restitutie) · 9. Behoorlijk gedrag (geen kinderen <16) · 10. Annuleren behandeling (25% aanbetaling niet-restitueerbaar, 1 jaar geldig) · 11. Opleidingen (aanmelding, niet-restitueerbare aanbetaling, termijnen, terugkomdag €100) · Online Trainingen (geen herroeping na toegang) · 12. Beeldmateriaal · 13. Verzending webshop (PostNL, PMU-machine retour binnen 14 dgn) · 14. Behandelvoorwaarden (14 punten: oude PMU melden, zwangerschap, botox/fillers, derde behandeling €75, laseren = garantieverval, …) · 15. Aansprakelijkheid (7 punten).
 >
-> Volledige tekst staat in de PR-diff/branchhistorie van dit reviewconcept; kernpunten hierboven. Voor publicatie: jurist-review + afstemmen op de nieuwe leveranciers/flow (zie conflicten 3–4–7–8).
+> Voor publicatie: originele brontekst opvragen bij klant/jurist + jurist-review + afstemmen op de nieuwe leveranciers/flow (zie conflicten 3–4–7–8).
 
-## Concept B — Privacyverklaring (bron: `/nl/privacy-verklaring/`)
+## Samenvatting B — Privacyverklaring (bron: `/nl/privacy-verklaring/`)
 > IZZI Beauty BV, *"Koningin Wilhelminaplein 1, 1062 HG Amsterdam"* (zie adresconflict #1). 8 secties: 1. Persoonsgegevens (naam, telefoon, e-mail) · 2. Doel/grondslag (betaling, nieuwsbrief, contact) · 3. Bewaartermijn · 4. Delen met derden · 5. Cookies · 6. Inzage/aanpassen/verwijderen (kopie ID met BSN afgeplakt; reactie <4 wkn; AP-klacht) · 7. Beveiliging · 8. Cookietoestemming via **CookieFirst** (Digital Data Solutions BV) + serverlogbestanden.
 >
 > Aandacht: CookieFirst-CMP is nog niet zichtbaar in de nieuwe integratieconfig (alleen Salonized + WhatsApp actief) — cookie-/consenttekst moet matchen met wat er daadwerkelijk draait (zie tracking-item in de checklist).
 
-## Concept C — Opleidingen Voorwaarden (bron: `/nl/opleidingen-voorwaarden/`)
+## Samenvatting C — Opleidingen Voorwaarden (bron: `/nl/opleidingen-voorwaarden/`)
 > *"Opleidingen IZZI Beauty BV en IZZI Beauty Den Bosch BV per 1 januari 2021"* (zie Den Bosch-conflict #2). 15 artikelen: 1. Algemeen · 2. Inspanningen · 3. Inschrijving · 4. Betaling cursusgeld (termijnen zonder extra kosten) · 5. Annulering (14 dgn herroeping; daarna 50%; startpakket/online = geen herroeping; privé 30 dgn/50–100%; model te laat €250) · 6. Persoonsgegevens & privacy · 7. Geheimhouding · 8. Aansprakelijkheid · 9. Auteurs-/eigendomsrecht · 10. Lessen/examens (2 gratis herkansingen, daarna €250) · 11. Beschadiging & diefstal · 12. Klachten (**Tutti Colori Nail Bar Rotterdam** als deskundige) · 13. Einde cursusovereenkomst · 14. Behoorlijk gedrag · 15. Recht (NL; KvK Amsterdam & Den Bosch).
 >
 > Voor publicatie: entiteit/adres Den Bosch (conflict #2), termijn-/in3-afstemming (conflict #4) en actuele bedragen (conflict #8) door klant/jurist bevestigen.

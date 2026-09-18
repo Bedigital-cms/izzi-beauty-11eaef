@@ -170,6 +170,23 @@ if (i18nCfg.enabled === false && !/prefixPath\(defaultLocale, r\.source\)/.test(
   fail('single-locale prefix-redirect-fix ontbreekt in next.config.ts (buildRedirects !enabled-tak)');
 } else pass('geprefixte legacy-redirect-fix aanwezig in next.config.ts');
 
+// ---------- 14. Documentatie-consistentie (voorkomt stale/onbewezen claims) ----------
+const legalDoc = fs.readFileSync(path.join(ROOT, 'docs/legal-migration-drafts.md'), 'utf8');
+if (/verbatim overgenomen/i.test(legalDoc) || /volledige tekst staat in de pr-diff/i.test(legalDoc)) {
+  fail('legal-migration-drafts.md claimt onterecht verbatim/volledige tekst (alleen samenvattingen aanwezig)');
+} else pass('legal-doc claimt geen verbatim/volledige tekst');
+
+const docFiles = fs.readdirSync(path.join(ROOT, 'docs')).filter((f) => f.endsWith('.md')).map((f) => path.join(ROOT, 'docs', f));
+// Geen onbewezen "Vercel bereikt/haalt het CMS wél"-bewering.
+const vercelClaim = docFiles.filter((f) => /die het cms w[ée]l bereikt/i.test(fs.readFileSync(f, 'utf8')));
+if (vercelClaim.length) fail(`onbewezen 'Vercel bereikt het CMS wél'-claim in: ${vercelClaim.map((f) => path.relative(ROOT, f)).join(', ')}`);
+else pass('geen onbewezen Vercel-bereikt-CMS claim in docs');
+
+// Prefix-redirect mag niet meer als OPEN platform-blokkade in de checklist staan.
+const mc = fs.readFileSync(path.join(ROOT, 'docs/izzi-finalization-masterchecklist.md'), 'utf8');
+if (/platform-plumbing fix nodig/i.test(mc)) fail('masterchecklist noemt prefix-redirect nog als openstaande platform-fix');
+else pass('masterchecklist: prefix-redirect niet meer als open platform-fix');
+
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];
 // Juridische voorbeeldteksten (BLOCKED_CUSTOMER — geen goedgekeurde tekst).
