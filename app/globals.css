@@ -1117,6 +1117,9 @@ p { color: var(--ink-soft); }
 .form button[type="submit"]:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -12px var(--brand); background: color-mix(in srgb, var(--brand) 86%, #000); }
 .form button[type="submit"]:active { transform: translateY(0); }
 .form button[type="submit"]:disabled { opacity: 0.55; cursor: default; transform: none; box-shadow: none; }
+/* Toegankelijke veldfout: rode rand op het foute veld + inline melding (role="alert"). */
+.form-field--error input, .form-field--error textarea, .form-field--error select { border-color: #c0392b; }
+.form-field-error { display: block; margin-top: 6px; color: #c0392b; font-size: 0.82rem; }
 /* Confirmation shown after a successful submit — a soft, centered card with a gold check badge.
    Auto-clears after a few seconds (see Form.tsx), so it reads as a graceful acknowledgement. */
 .form-success {

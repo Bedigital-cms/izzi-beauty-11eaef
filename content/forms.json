@@ -7,10 +7,206 @@
       "notificationEmail": "info@izzi-beauty.com",
       "isActive": true,
       "fields": [
-        { "name": "full_name", "label": "Naam", "fieldType": "text", "required": false, "placeholder": "Je naam" },
-        { "name": "email", "label": "E-mail", "fieldType": "email", "required": true, "placeholder": "je@email.nl" },
-        { "name": "telephone", "label": "Telefoon", "fieldType": "tel", "required": false, "placeholder": "+31 6 ..." },
-        { "name": "query", "label": "Je bericht", "fieldType": "textarea", "required": false, "placeholder": "Waar kunnen we je mee helpen?" }
+        {
+          "name": "full_name",
+          "label": "Naam",
+          "fieldType": "text",
+          "required": false,
+          "placeholder": "Je naam"
+        },
+        {
+          "name": "email",
+          "label": "E-mail",
+          "fieldType": "email",
+          "required": true,
+          "placeholder": "je@email.nl"
+        },
+        {
+          "name": "telephone",
+          "label": "Telefoon",
+          "fieldType": "tel",
+          "required": false,
+          "placeholder": "+31 6 ..."
+        },
+        {
+          "name": "query",
+          "label": "Je bericht",
+          "fieldType": "textarea",
+          "required": false,
+          "placeholder": "Waar kunnen we je mee helpen?"
+        }
+      ]
+    },
+    "uwv": {
+      "name": "UWV-subsidie aanvraag",
+      "submitLabel": "Vraag UWV-subsidie aan",
+      "successMessage": "Bedankt! We nemen contact met je op over de UWV-subsidiemogelijkheden.",
+      "notificationEmail": "info@izzi-beauty.com",
+      "isActive": true,
+      "fields": [
+        {
+          "name": "full_name",
+          "label": "Naam",
+          "fieldType": "text",
+          "required": true,
+          "placeholder": "Je naam"
+        },
+        {
+          "name": "email",
+          "label": "E-mail",
+          "fieldType": "email",
+          "required": true,
+          "placeholder": "je@email.nl"
+        },
+        {
+          "name": "telephone",
+          "label": "Telefoon",
+          "fieldType": "tel",
+          "required": true,
+          "placeholder": "+31 6 ..."
+        },
+        {
+          "name": "opleiding",
+          "label": "Welke opleiding",
+          "fieldType": "select",
+          "required": false,
+          "placeholder": "Kies een opleiding",
+          "options": [
+            {
+              "label": "All Round PMU",
+              "value": "all-round"
+            },
+            {
+              "label": "Wenkbrauwen",
+              "value": "wenkbrauwen"
+            },
+            {
+              "label": "Lippen",
+              "value": "lippen"
+            },
+            {
+              "label": "Nog niet zeker",
+              "value": "onbekend"
+            }
+          ]
+        },
+        {
+          "name": "query",
+          "label": "Je vraag",
+          "fieldType": "textarea",
+          "required": false,
+          "placeholder": "Waar kunnen we je mee helpen rond UWV-subsidie?"
+        }
+      ]
+    },
+    "opleiding-interesse": {
+      "name": "Interesse opleiding",
+      "submitLabel": "Verstuur interesse",
+      "successMessage": "Bedankt voor je interesse — we sturen je snel meer informatie.",
+      "notificationEmail": "info@izzi-beauty.com",
+      "isActive": true,
+      "fields": [
+        {
+          "name": "full_name",
+          "label": "Naam",
+          "fieldType": "text",
+          "required": true,
+          "placeholder": "Je naam"
+        },
+        {
+          "name": "email",
+          "label": "E-mail",
+          "fieldType": "email",
+          "required": true,
+          "placeholder": "je@email.nl"
+        },
+        {
+          "name": "telephone",
+          "label": "Telefoon",
+          "fieldType": "tel",
+          "required": false,
+          "placeholder": "+31 6 ..."
+        },
+        {
+          "name": "opleiding",
+          "label": "Opleiding",
+          "fieldType": "select",
+          "required": true,
+          "placeholder": "Kies een opleiding",
+          "options": [
+            {
+              "label": "All Round PMU",
+              "value": "all-round"
+            },
+            {
+              "label": "Wenkbrauwen (Powder/Combi Brows)",
+              "value": "wenkbrauwen"
+            },
+            {
+              "label": "Lippen (Lip Blush)",
+              "value": "lippen"
+            },
+            {
+              "label": "Online training",
+              "value": "online"
+            },
+            {
+              "label": "Anders / weet ik nog niet",
+              "value": "anders"
+            }
+          ]
+        },
+        {
+          "name": "query",
+          "label": "Je vraag",
+          "fieldType": "textarea",
+          "required": false,
+          "placeholder": "Heb je een vraag over de opleiding?"
+        }
+      ]
+    },
+    "vacature": {
+      "name": "Sollicitatie",
+      "submitLabel": "Solliciteer",
+      "successMessage": "Bedankt voor je sollicitatie — we nemen zo snel mogelijk contact met je op.",
+      "notificationEmail": "info@izzi-beauty.com",
+      "isActive": true,
+      "fields": [
+        {
+          "name": "full_name",
+          "label": "Naam",
+          "fieldType": "text",
+          "required": true,
+          "placeholder": "Je naam"
+        },
+        {
+          "name": "email",
+          "label": "E-mail",
+          "fieldType": "email",
+          "required": true,
+          "placeholder": "je@email.nl"
+        },
+        {
+          "name": "telephone",
+          "label": "Telefoon",
+          "fieldType": "tel",
+          "required": true,
+          "placeholder": "+31 6 ..."
+        },
+        {
+          "name": "position",
+          "label": "Functie",
+          "fieldType": "text",
+          "required": false,
+          "placeholder": "Waar solliciteer je op?"
+        },
+        {
+          "name": "query",
+          "label": "Motivatie",
+          "fieldType": "textarea",
+          "required": true,
+          "placeholder": "Vertel kort iets over jezelf en waarom je bij IZZI wilt werken."
+        }
       ]
     }
   }

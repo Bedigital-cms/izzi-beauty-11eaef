@@ -16,6 +16,7 @@ import type {
 import { getCategoryLinks } from '@/content/blog'
 import { commerceEnabled } from '@/lib/commerce/config'
 
+import Form from './Form'
 import { Icon } from './icons'
 import { LocaleLink } from './LocaleLink'
 import { Media } from './Media'
@@ -317,6 +318,14 @@ export function HubPage({ data }: { data: HubContent }) {
           </div>
         </div>
       </section>
+      {/* Optioneel interesseformulier onderaan de hub (bv. opleidingsinteresse). */}
+      {data.formSlug && (
+        <section className="section" style={{ paddingTop: 0 }}>
+          <div className="container" style={{ maxWidth: 820 }}>
+            <Form slug={data.formSlug} />
+          </div>
+        </section>
+      )}
       <CtaBand cta={data.cta} />
     </>
   )
@@ -556,6 +565,12 @@ export function InfoPage({ data }: { data: InfoContent }) {
           {data.faq && data.faq.items.length > 0 && (
             <div style={{ marginTop: 44 }}>
               <FaqList title={data.faq.title} items={data.faq.items} />
+            </div>
+          )}
+          {/* Optioneel formulier onderaan de pagina (bv. UWV-aanvraag of sollicitatie). */}
+          {data.formSlug && (
+            <div style={{ marginTop: 44 }}>
+              <Form slug={data.formSlug} />
             </div>
           )}
         </div>

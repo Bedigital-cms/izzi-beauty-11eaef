@@ -92,6 +92,8 @@ export type HubContent = {
   hero: { eyebrow: string; title: string; text: string; breadcrumb: string }
   intro?: { title: string; text: string }
   groups: { heading: string; text?: string; items: LinkCard[] }[]
+  /** Optioneel formulier onderaan de hub (slug uit content/forms.json), bv. "opleiding-interesse". */
+  formSlug?: string
   cta: CtaBlock
 }
 
@@ -468,6 +470,9 @@ export type InfoContent = {
    */
   reviews?: { title?: string; items: Review[] }
   faq?: { title: string; items: Faq[] }
+  /** Optioneel formulier onderaan de pagina (slug uit content/forms.json), bv. "uwv" of "vacature".
+   *  Afwezig → geen formulier. */
+  formSlug?: string
   cta: CtaBlock
 }
 export type InfoCollection = Record<string, InfoContent>

@@ -488,7 +488,8 @@
       "text": "Stuur je motivatie en cv via het contactformulier. We nemen snel contact met je op.",
       "primaryLabel": "Solliciteer nu",
       "primaryUrl": "/contact"
-    }
+    },
+    "formSlug": "vacature"
   },
   "uwv-subsidie": {
     "hero": {
@@ -517,7 +518,8 @@
       "text": "We helpen je graag met de aanvraag en beantwoorden al je vragen.",
       "primaryLabel": "Neem contact op",
       "primaryUrl": "/contact"
-    }
+    },
+    "formSlug": "uwv"
   },
   "ggd-gecertificeerd": {
     "hero": {
