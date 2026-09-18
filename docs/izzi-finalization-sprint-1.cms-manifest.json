@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "1.0",
+  "site": "izzi-beauty-11eaef",
+  "sourceSprint": "izzi-finalization-sprint-1",
+  "sourcePullRequest": "https://github.com/Bedigital-cms/izzi-beauty-11eaef/pull/12",
+  "targetContentArea": "content/nl/site.json (navigation + footer); content/nl/info.json (experiences page)",
+  "ownershipNote": "Deze wijzigingen raken CMS-eigen content (content/**/*.json). Ze zijn in de code-PR BEWUST NIET direct geedit. Dit bestand is een expliciete overdracht voor de volgende CMS/Content Editor-stap, zodat die de wijzigingen zonder interpretatie uit de PR kan halen. Locale: nl (enige actieve taal). URL's zijn prefix-vrij en vlak; de site zet zelf de /nl-prefix. Externe URL's krijgen geen locale-prefix.",
+  "readme": "Voer changes[] uit op het genoemde contentbestand via het ondersteunde CMS-/change-request-mechanisme. Verzin geen teksten, adressen of reviews. Items met status 'decision_required' of 'pending_customer_confirmation' NIET uitvoeren tot bevestiging.",
+  "changes": [
+    {
+      "id": "nav-order",
+      "type": "navigation.reorder_and_retarget",
+      "contentFile": "content/nl/site.json",
+      "path": "site.nav",
+      "description": "Zet de top-level navigatie in exact deze volgorde en bestemmingen. Portfolio en Contact zijn niet langer top-level items (zie change over-izzi-dropdown). Kennisbank wordt toegevoegd (ontbreekt nu volledig in de nav).",
+      "desiredTopLevelOrder": [
+        { "position": 1, "label": "Behandelingen", "url": "/behandelingen", "external": false, "hasMegaMenu": true, "note": "Mega-menu ongewijzigd (behalve de broken-link-verwijdering, zie change remove-carbon-laser-peeling)." },
+        { "position": 2, "label": "Prijzen", "url": "/prijzen", "external": false, "hasMegaMenu": false },
+        { "position": 3, "label": "Opleidingen", "url": "/opleidingen", "external": false, "hasMegaMenu": true, "note": "Mega-menu aangepast, zie change opleidingen-merge-extra." },
+        { "position": 4, "label": "Online Trainingen", "url": "/online-trainingen", "external": false, "hasMegaMenu": true },
+        { "position": 5, "label": "Kennisbank", "url": "/kennisbank", "external": false, "hasMegaMenu": false, "note": "NIEUW top-level item; ontbreekt momenteel in site.nav." },
+        { "position": 6, "label": "Webshop", "url": "https://laliqa.com", "external": true, "target": "_blank", "rel": "noreferrer", "note": "Was intern /winkel. Nu externe webshop. Geen locale-prefix; opent in nieuw tabblad (regelt lib/href.ts al)." },
+        { "position": 7, "label": "Over IZZI", "url": "/over-izzi", "external": false, "hasMegaMenu": true, "note": "Wordt een dropdown; zie change over-izzi-dropdown. Top-level item blijft naar /over-izzi linken." },
+        { "position": 8, "label": "Laserontharen", "url": "https://izziclinic.nl", "external": true, "target": "_blank", "rel": "noreferrer", "note": "Was intern /laser-ontharing (die behandelpagina blijft bestaan, maar wordt niet meer vanuit de top-nav gelinkt). Nu externe IZZI Clinic-site." }
+      ]
+    },
+    {
+      "id": "over-izzi-dropdown",
+      "type": "navigation.set_dropdown",
+      "contentFile": "content/nl/site.json",
+      "path": "site.nav[label='Over IZZI'].columns",
+      "description": "Geef 'Over IZZI' een dropdown van EEN kolom met onderstaande links (in deze volgorde). De Header rendert een enkele kolom als smal dropdown-paneel (mega-1col). Portfolio en Contact verhuizen hierheen vanuit het top-level menu.",
+      "desiredColumns": [
+        {
+          "heading": "Over IZZI",
+          "url": "/over-izzi",
+          "links": [
+            { "label": "Contact", "url": "/contact" },
+            { "label": "Portfolio", "url": "/portfolio" },
+            { "label": "Onze locaties", "url": "/onze-locaties" },
+            { "label": "Ons team", "url": "/ons-team" },
+            { "label": "Onze werkwijze", "url": "/werkwijze" },
+            { "label": "Video's", "url": "/videos" },
+            { "label": "Veelgestelde vragen", "url": "/veelgestelde-vragen" },
+            { "label": "Ervaringen", "url": "/ervaringen" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opleidingen-merge-extra",
+      "type": "navigation.merge_columns",
+      "contentFile": "content/nl/site.json",
+      "path": "site.nav[label='Opleidingen'].columns",
+      "description": "Voeg de links van de losse kolom 'Extra' toe aan de kolom 'Extra Opleidingen' en verwijder daarna de kolom 'Extra'. Alle geldige bestaande links behouden; dedupliceer op url (deze vijf komen nog niet voor in 'Extra Opleidingen').",
+      "mergeSourceColumn": "Extra",
+      "mergeTargetColumn": "Extra Opleidingen",
+      "linksToMoveIntoTarget": [
+        { "label": "Inkless Stretch Mark & Scar Removal", "url": "/inkless-stretch-mark-removal" },
+        { "label": "Saline Removal", "url": "/saline-removal" },
+        { "label": "Lash Lift Training", "url": "/lash-lift-training" },
+        { "label": "Brow Lamination Training", "url": "/brow-lamination-training" },
+        { "label": "Laser Ontharing Opleiding", "url": "/laser-ontharing-opleiding" }
+      ],
+      "removeColumnAfter": "Extra",
+      "preserveAllValidLinks": true
+    },
+    {
+      "id": "remove-carbon-laser-peeling",
+      "type": "navigation.remove_link",
+      "contentFile": "content/nl/site.json",
+      "path": "site.nav[label='Behandelingen'].columns[heading='Overige Behandelingen'].links",
+      "description": "Verwijder de kapotte nav-link 'Carbon Laser Peeling'. Er is geen route en geen content-sleutel voor /carbon-laser-peeling. Geen behandelpagina verzinnen.",
+      "removeLink": { "label": "Carbon Laser Peeling", "url": "/carbon-laser-peeling" },
+      "reason": "no_content_page_exists"
+    },
+    {
+      "id": "footer-email",
+      "type": "footer.set_field",
+      "contentFile": "content/nl/site.json",
+      "path": "site.footer.email",
+      "description": "Vervang het placeholder-e-mailadres door het juiste adres.",
+      "currentValue": "info@example.com",
+      "desiredValue": "info@izzi-beauty.com"
+    },
+    {
+      "id": "footer-remove-den-bosch",
+      "type": "footer.remove_location",
+      "contentFile": "content/nl/site.json",
+      "path": "site.footer.locations",
+      "description": "Verwijder Den Bosch als actieve IZZI-locatie. Amsterdam behouden. Rotterdam nog niet toevoegen (zie manualConfirmations).",
+      "removeLocation": { "name": "IZZI Beauty Den Bosch", "city": "'s-Hertogenbosch" },
+      "keepLocations": [ { "name": "IZZI Beauty Amsterdam", "city": "Amsterdam" } ]
+    },
+    {
+      "id": "footer-blogs-to-kennisbank",
+      "type": "footer.rename_and_retarget_link",
+      "contentFile": "content/nl/site.json",
+      "path": "site.footer.columns[heading='Informatie'].links",
+      "description": "Hernoem de footer-link 'Blogs' naar 'Kennisbank' en wijs hem naar /kennisbank.",
+      "currentLink": { "label": "Blogs", "url": "/blog" },
+      "desiredLink": { "label": "Kennisbank", "url": "/kennisbank" }
+    },
+    {
+      "id": "experiences-content",
+      "type": "content.create_key",
+      "contentFile": "content/nl/info.json",
+      "path": "ervaringen",
+      "status": "pending_cms_entry",
+      "description": "De route app/[locale]/ervaringen bestaat al maar geeft 404 tot deze content-sleutel is aangemaakt. Maak in info.json de sleutel 'ervaringen' aan (gerenderd door InfoPage), met een hero en een reviews-blok. Verzin GEEN reviews.",
+      "requiredFields": {
+        "hero": { "eyebrow": "string", "title": "string", "text": "string", "breadcrumb": "string" },
+        "reviews": {
+          "title": "string (optioneel)",
+          "items": [ { "stars": "number (1-5)", "quote": "string", "who": "string", "what": "string" } ]
+        }
+      },
+      "reuseSource": {
+        "note": "Er staan al 3 echte reviews in home.json die als startpunt herbruikt kunnen worden; klant claimt 350+ Google/Trustpilot-reviews die via het CMS aangevuld moeten worden.",
+        "contentFile": "content/nl/home.json",
+        "path": "reviewsSection.items",
+        "count": 3,
+        "itemShape": { "stars": "number", "quote": "string", "who": "string", "what": "string" }
+      },
+      "doNotFabricate": true
+    },
+    {
+      "id": "redirect-blog-to-kennisbank",
+      "type": "redirect.decision",
+      "status": "decision_required",
+      "mechanism": "content/redirects.json (gelezen door next.config.ts als native Next-redirect; source-match is EXACT, geen wildcard)",
+      "proposedRule": { "source": "/blog", "destination": "/kennisbank", "permanent": true },
+      "description": "Een permanente 301 van de blog-index naar de kennisbank. Nog NIET uitvoeren: dit is een SEO-/contentbeslissing.",
+      "considerationsBeforeExecution": [
+        "Pagineringsroutes /blog/page/2, /blog/page/3, /blog/page/4, /blog/page/5 worden NIET gedekt door een exact /blog-source; zonder extra regels blijven die als losse index-pagina's bestaan (inconsistente paginering).",
+        "Sitemap-impact: /blog (en pagineringspagina's) moeten uit de sitemap of meeverhuizen.",
+        "Blogartikelen zelf staan op vlakke URL's (/nl/<slug>), NIET onder /blog, en worden door deze redirect niet geraakt.",
+        "/kennisbank toont dezelfde 50 artikelen maar per categorie (andere presentatie dan de chronologische blog-index)."
+      ]
+    }
+  ],
+  "manualConfirmations": [
+    { "id": "rotterdam-address", "field": "footer.locations[Rotterdam].address", "status": "pending_customer_confirmation", "reason": "Rotterdam-adres niet eenduidig in de projectdata; niet verzinnen." },
+    { "id": "rotterdam-postcode", "field": "footer.locations[Rotterdam].postcode", "status": "pending_customer_confirmation", "reason": "Rotterdam-postcode niet eenduidig in de projectdata; niet verzinnen." },
+    { "id": "rotterdam-phone", "field": "footer.locations[Rotterdam].phone", "status": "pending_customer_confirmation", "reason": "Rotterdam-telefoonnummer niet eenduidig in de projectdata; niet verzinnen." },
+    { "id": "blog-index-strategy", "relatedChange": "redirect-blog-to-kennisbank", "status": "decision_required", "reason": "Beslissing nodig of de blog-index volledig vervangen wordt door /kennisbank, inclusief pagineringsroutes en sitemap." }
+  ],
+  "deferred": [
+    "commerce/checkout",
+    "mollie",
+    "ideal_in3",
+    "forms",
+    "learndash",
+    "local_fullstack_cms_postgres",
+    "production_dns",
+    "uitvoering van dit manifest in het CMS (dit bestand beschrijft alleen de gewenste eindtoestand)"
+  ]
+}
