@@ -1100,15 +1100,21 @@ p { color: var(--ink-soft); }
 .password-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: var(--radius); }
 .password-toggle svg { width: 20px; height: 20px; display: block; }
 .form textarea { min-height: 130px; resize: vertical; line-height: 1.6; }
+/* Formulier-submit draagt hetzelfde merkgroen als de andere CTA's (opdracht §8): de gouden
+   gradient was hier blijven staan na de eerdere knoppenwijziging. Zelfde vulling/tekst als
+   .btn-gold zodat er geen losse gouden CTA meer op de site staat.
+   LET OP (contrast): wit op #21D19F haalt 1.97:1 (WCAG AA vraagt 4.5:1). Dit is dezelfde
+   openstaande keuze als bij .btn-gold — zie --btn-on-brand — en moet site-breed beslist worden
+   (donkere tekst OF donkerder groen met wit). Bewust NIET hier stil afwijkend opgelost. */
 .form button[type="submit"] {
   align-self: flex-start; margin-top: 8px;
-  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
-  color: var(--white); border: none; padding: 15px 40px; border-radius: 999px;
+  background: var(--brand);
+  color: var(--btn-on-brand); border: none; padding: 15px 40px; border-radius: 999px;
   font-weight: 700; font-size: 0.9rem; letter-spacing: 0.03em; font-family: var(--sans);
-  cursor: pointer; box-shadow: 0 10px 24px -12px var(--gold-deep);
+  cursor: pointer; box-shadow: 0 10px 24px -12px var(--brand);
   transition: transform 0.18s, box-shadow 0.18s, filter 0.18s;
 }
-.form button[type="submit"]:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -12px var(--gold-deep); filter: brightness(1.04); }
+.form button[type="submit"]:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -12px var(--brand); background: color-mix(in srgb, var(--brand) 86%, #000); }
 .form button[type="submit"]:active { transform: translateY(0); }
 .form button[type="submit"]:disabled { opacity: 0.55; cursor: default; transform: none; box-shadow: none; }
 /* Confirmation shown after a successful submit — a soft, centered card with a gold check badge.
