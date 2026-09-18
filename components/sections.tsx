@@ -123,8 +123,10 @@ export function LocationCards({ items }: { items: Location[] }) {
           <h3>{l.name}</h3>
           <ul>
             <li><Icon name="pin" size={18} /><span>{l.address}, {l.postcode}</span></li>
-            <li><Icon name="phone" size={18} /><span>{l.phone}</span></li>
-            <li><Icon name="clock" size={18} /><span>{l.hours}</span></li>
+            {l.phone && <li><Icon name="phone" size={18} /><span>{l.phone}</span></li>}
+            {/* Openingstijden alleen tonen als ze bekend zijn — geen lege klok-regel bij een
+                vestiging waarvan de tijden nog niet bevestigd zijn (geen verzonnen tijden). */}
+            {l.hours && <li><Icon name="clock" size={18} /><span>{l.hours}</span></li>}
           </ul>
           <div style={{ marginTop: 22 }}>
             <a className="link-arrow" href={l.mapUrl} target="_blank" rel="noreferrer">
