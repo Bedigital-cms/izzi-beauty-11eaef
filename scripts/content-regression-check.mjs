@@ -108,12 +108,88 @@ const submitRule = css.match(/\.form button\[type="submit"\]\s*\{[^}]*\}/);
 if (submitRule && /linear-gradient\(.*var\(--gold\)/.test(submitRule[0])) fail('.form submit-knop gebruikt nog de gouden gradient');
 else pass('.form submit-knop niet meer goud');
 
+// ---------- 8. Placeholders in ALLE publieke content (contact + juridisch) ----------
+function walkJson(dir) {
+  const out = [];
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) out.push(...walkJson(p));
+    else if (e.name.endsWith('.json')) out.push(p);
+  }
+  return out;
+}
+const contentFiles = walkJson(path.join(ROOT, 'content'));
+// 8a. HARD: geen placeholder-e-mail in enige content.
+const emailHits = contentFiles.filter((f) => /example\.com/i.test(fs.readFileSync(f, 'utf8')));
+if (emailHits.length) fail(`placeholder e-mail in: ${emailHits.map((f) => path.relative(ROOT, f)).join(', ')}`);
+else pass('geen example.com in enige content/**');
+
+// ---------- 9. Route-mappen zonder renderbare pagina ----------
+function hasPage(dir) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (e.isFile() && /^page\.(t|j)sx?$/.test(e.name)) return true;
+    if (e.isDirectory() && hasPage(path.join(dir, e.name))) return true;
+  }
+  return false;
+}
+const localeDir = path.join(ROOT, 'app/[locale]');
+const deadRoutes = fs.readdirSync(localeDir, { withFileTypes: true })
+  .filter((d) => d.isDirectory())
+  .filter((d) => !hasPage(path.join(localeDir, d.name)))
+  .map((d) => d.name);
+if (deadRoutes.length) fail(`route-map(pen) zonder page.tsx: ${deadRoutes.join(', ')}`);
+else pass('elke route-map heeft een renderbare page.tsx');
+
+// ---------- 10. Draft-artikelen niet publiek gelinkt ----------
+const posts = rd('content/nl/blog.json').posts || {};
+const draftSlugs = new Set(Object.entries(posts).filter(([, p]) => p.status === 'draft').map(([s]) => s));
+const draftLinked = internalUrls.filter((u) => u && draftSlugs.has(u.replace(/^\//, '')));
+if (draftLinked.length) fail(`draft-artikel publiek gelinkt in nav/footer: ${draftLinked.join(', ')}`);
+else pass('geen draft-artikel in nav/footer gelinkt');
+
+// ---------- 11. Kolomsamenvoeging: alle 'Extra' links behouden in 'Extra Opleidingen' ----------
+const extraOplCol = (opl?.columns || []).find((c) => c.heading === 'Extra Opleidingen');
+const mustHave = ['/inkless-stretch-mark-removal', '/saline-removal', '/lash-lift-training', '/brow-lamination-training', '/laser-ontharing-opleiding'];
+const missingMerged = mustHave.filter((u) => !(extraOplCol?.links || []).some((l) => l.url === u));
+if (missingMerged.length) fail(`samengevoegde 'Extra'-links ontbreken in 'Extra Opleidingen': ${missingMerged.join(', ')}`);
+else pass('alle Extra-links behouden na samenvoeging');
+
+// ---------- 12. Redirect-bestemmingen resolven ----------
+const redirectRules = rd('content/redirects.json').redirects || [];
+const badDest = redirectRules.filter((r) => {
+  const d = (r.destination || '').replace(/^\//, '');
+  return d && !routable.has(d) && !nested.includes(d) && d !== '';
+});
+if (badDest.length) fail(`redirect-bestemming(en) zonder route/content: ${badDest.map((r) => r.destination).join(', ')}`);
+else pass('alle redirect-bestemmingen resolven');
+
+// ---------- 13. Geprefixte legacy-redirect-fix aanwezig in next.config.ts ----------
+const nextCfg = fs.readFileSync(path.join(ROOT, 'next.config.ts'), 'utf8');
+const i18nCfg = rd('content/i18n.json');
+if (i18nCfg.enabled === false && !/prefixPath\(defaultLocale, r\.source\)/.test(nextCfg)) {
+  fail('single-locale prefix-redirect-fix ontbreekt in next.config.ts (buildRedirects !enabled-tak)');
+} else pass('geprefixte legacy-redirect-fix aanwezig in next.config.ts');
+
+// ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
+const warnings = [];
+// Juridische voorbeeldteksten (BLOCKED_CUSTOMER — geen goedgekeurde tekst).
+const legalRaw = fs.readFileSync(path.join(ROOT, 'content/nl/legal.json'), 'utf8');
+if (/voorbeeldtekst|vervang deze/i.test(legalRaw)) warnings.push('legal.json bevat nog voorbeeld-/placeholdertekst (BLOCKED_CUSTOMER: goedgekeurde juridische tekst nodig)');
+// Online-hub CTA's naar generieke bestemming (BLOCKED: product/LearnDash-koppeling).
+const online = rd('content/nl/online-trainingen.json');
+const genericOnline = (online.groups || []).flatMap((g) => g.items || []).filter((i) => i.url === '/contact' || i.url === '/online-trainingen');
+if (genericOnline.length) warnings.push(`${genericOnline.length} online-hubkaart(en) wijzen nog naar /contact of /online-trainingen (BLOCKED: echte cursuspagina + product/LearnDash-koppeling nodig)`);
+
 // ---------- Rapport ----------
-console.log(`\nIZZI content-regressietests: ${ok.length} checks OK, ${failures.length} fout(en).`);
+console.log(`\nIZZI content-regressietests: ${ok.length} checks OK, ${failures.length} fout(en), ${warnings.length} open (geblokkeerd).`);
 for (const m of ok) console.log('  \u2713 ' + m);
+if (warnings.length) {
+  console.log('\nOPEN (bekend, geblokkeerd — NIET als PASS geteld):');
+  for (const m of warnings) console.log('  \u26a0 ' + m);
+}
 if (failures.length) {
   console.error('\nREGRESSIES GEVONDEN:');
   for (const m of failures) console.error('  \u2717 ' + m);
   process.exit(1);
 }
-console.log('\nAlle content-regressietests geslaagd.');
+console.log('\nAlle harde content-regressietests geslaagd.');

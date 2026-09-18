@@ -5,9 +5,11 @@ Status per item van de geconsolideerde implementatie-PR ([#12](https://github.co
 Legenda: **OPEN** · **IMPLEMENTED_IN_PR** (code/content op de branch) · **VERIFIED** (runtime getest op de PR-preview/lokaal) · **BLOCKED_ACCESS** (omgeving/toegang) · **BLOCKED_CUSTOMER** (klantbesluit/-data nodig) · **BLOCKED_PLATFORM** (wijziging in gedeelde plumbing/CMS/architecture nodig).
 
 > Kernblokkades in deze runtime (bewijs in [runbook](./izzi-deployment-runbook.md)):
-> 1. **`cms.bedigital.ai` TLS reset** (`SSL_ERROR_SYSCALL` / `net::ERR_CONNECTION_CLOSED`) — DNS+TCP ok, TLS geweigerd vanaf deze VM. Alle CMS-media (logo's, foto's) laden NIET; media-QA (§5) en CMS-publish/sync zijn geblokkeerd.
-> 2. **Referentierepo's** `Be-digital-cms` en `bedigital-architecture` zijn niet uitgecheckt en niet kloonbaar (parent van `/workspace` niet-schrijfbaar). Site Contract/CMS-implementatie niet direct verifieerbaar.
+> 1. **Media (P0):** *vastgesteld* = verbindingsfout vanuit déze runtime (`cms.bedigital.ai` weigert TLS: `SSL_ERROR_SYSCALL` / `net::ERR_CONNECTION_CLOSED`; DNS+TCP ok). *Niet vastgesteld* = de uiteindelijke oorzaak van ontbrekende beelden bij bezoekers (opslag, records, tenantmapping en import zijn NIET fout bewezen). *Nog te testen* = de volledige keten + daadwerkelijke bestanden op een omgeving die het CMS bereikt (bv. Vercel-preview — niet geverifieerd).
+> 2. **Referentierepo's** `Bedigital-cms/Be-digital-cms` en `BEBarry/bedigital-architecture` → **404 "Repository not found"** voor het geauthenticeerde token (`gh api repos/...` en `git ls-remote`). Classificatie: **ontbrekende repository-permissie of onjuiste repo-naam** — géén padprobleem (`/tmp`+`$HOME` zijn schrijfbaar) en géén netwerkfout (publieke IZZI-repo resolveert wél). Site Contract/CMS niet leesbaar; minimaal nodig: leesrechten voor dit token op beide repo's (of de juiste namen).
 > 3. **Commerce staat uit** (`NEXT_PUBLIC_COMMERCE_ENABLED=0`), geen sandbox-PSP/LearnDash — checkout/betaal/toegang-flows niet end-to-end testbaar.
+
+> **Sinds de vorige oplevering geïmplementeerd + geverifieerd:** single-locale prefix-redirectfix (`next.config.ts`) → `/nl/<oud>` 308 i.p.v. 404; 15 inhoudelijk geverifieerde legacy-redirects; Rotterdam-bronadres (Weena 95, 3013 CH); toegankelijke formulier-validatie + UWV/opleidingsinteresse/vacature-formulieren; juridische migratieconcepten; uitgebreide regressietests (14 hard, 2 open). Detail hieronder.
 
 ## §1 Werkwijze & autorisatie
 | Item | Status |
@@ -15,8 +17,8 @@ Legenda: **OPEN** · **IMPLEMENTED_IN_PR** (code/content op de branch) · **VERI
 | Docs gelezen (CLAUDE/HANDOVER/ai-guide/MEDIA/README + PR + contentmodel) | VERIFIED |
 | Werk in PR #12, logische commits, geen merge, geen push naar main | VERIFIED |
 | Redactionele content op branch bewerken (geautoriseerd) | IMPLEMENTED_IN_PR |
-| CMS-lees/schrijf/publish-pad verifiëren vóór wijzigen | BLOCKED_ACCESS (CMS onbereikbaar) |
-| Referentierepo's leesbaar? | BLOCKED_ACCESS |
+| CMS-lees/schrijf/publish-pad verifiëren vóór wijzigen | BLOCKED_ACCESS (CMS onbereikbaar; sync-runbook nu als BLOCKED gemarkeerd i.p.v. onbewezen publish-stap) |
+| Referentierepo's leesbaar? | BLOCKED_ACCESS — **404 "Repository not found"** voor dit token (permissie/naam), géén pad-/netwerkfout (bewezen: `/tmp`+`$HOME` schrijfbaar, IZZI-repo resolveert) |
 
 ## §3 Aangetoonde problemen
 | # | Probleem | Status |
@@ -32,20 +34,20 @@ Legenda: **OPEN** · **IMPLEMENTED_IN_PR** (code/content op de branch) · **VERI
 | 9 | Preview-media faalt | **BLOCKED_ACCESS**: hoofdoorzaak vastgesteld = `cms.bedigital.ai` TLS-reset vanaf runtime (niet de oude R2/import). Zie runbook |
 | 10 | Nieuwe tarieven vs homepageprijzen verschillen | **BLOCKED_CUSTOMER**: prijzen zijn de actuele bron in de boekingswidget/`prijzen.json`; conflict gelogd, niet verzonnen |
 | 11 | Ervaringenmanifest niet schema-volledig (InfoPage gebruikt ook `data.cta`) | **Erkend**: `/ervaringen`-vulling vereist `hero` + `cta` + geverifieerde `reviews` → BLOCKED_CUSTOMER (geen verzonnen reviews); menulink bewust nog niet geplaatst |
-| 12 | Enkel `nl`, zichtbare prefix; geprefixte legacy-redirects | **BLOCKED_PLATFORM + VERIFIED (bug)**: `/nl/wenkbrauwen-haarlem` → **404** (bare `/wenkbrauwen-haarlem` → 308 `/haarlem`). `buildRedirects()` in `next.config.ts` (plumbing) expandeert bij één taal niet naar de geprefixte default-locale. Exacte patch in runbook |
+| 12 | Enkel `nl`, zichtbare prefix; geprefixte legacy-redirects | **IMPLEMENTED_IN_PR + VERIFIED** (met expliciete autorisatie voor `next.config.ts` in de IZZI-repo): `buildRedirects()` emit nu ook de geprefixte regel bij één taal. Getest: `/nl/wenkbrauwen-haarlem` → **308** `/nl/haarlem` (was 404); trailing slash + querystring behouden; kale vorm 1 hop; bestaande pagina's 200; geen loop/dubbele prefix; andere taal-/domeinmodi ongewijzigd |
 
 ## §5 Media & logo's (EERSTE technische prioriteit)
 | Item | Status |
 | --- | --- |
-| Keten site `/media` → CMS-endpoint → opslag → bytes | **BLOCKED_ACCESS**: `/media/..` → 302 → `cms.bedigital.ai` → TLS-reset. Geen bytes. `naturalWidth=0` op alle CMS-beelden (incl. header/footer-logo) |
-| Bewijs dat álle beelden laden (naturalWidth>0) | BLOCKED_ACCESS (kan pas na CMS-bereikbaarheid/preview) |
+| Keten site `/media` → CMS-endpoint → opslag → bytes | **BLOCKED_ACCESS (deels onderzocht)**: lokaal `/media/..` → 302 → `cms.bedigital.ai` → TLS-reset vanaf deze runtime → geen bytes, `naturalWidth=0`. Dit is een *verbindingsfout vanuit deze runtime*, GEEN bewijs dat opslag/records/tenantmapping/import fout zijn. Direct CMS-endpoint + opslagrespons + PR-preview nog te testen op een omgeving die het CMS bereikt |
+| Bewijs dat álle beelden laden (naturalWidth>0, juiste crop/onderwerp) | BLOCKED_ACCESS (kan pas als het CMS bereikbaar is; Vercel-preview niet geverifieerd) |
 
 ## §6 Bedrijfsdata, navigatie & knoppen
 | Item | Status |
 | --- | --- |
 | E-mail → info@izzi-beauty.com (site/home/forms) | IMPLEMENTED_IN_PR + VERIFIED |
 | Amsterdam behouden; Den Bosch niet actief | IMPLEMENTED_IN_PR (footer) + VERIFIED |
-| Rotterdam adres/postcode/telefoon/openingstijden | **BLOCKED_CUSTOMER**: bronkandidaat Weena 95 / 3013 CH niet bevestigd; home.json toont eerlijk "Nog niet bekend" — geen verzonnen data live gezet |
+| Rotterdam adres/postcode/telefoon | **IMPLEMENTED_IN_PR** (bron = publieke contactpagina): Weena 95, 3013 CH toegevoegd aan footer + home contactSection; gedeeld nummer +31 6 11 76 88 81. **Openingstijden Rotterdam** nog **BLOCKED_CUSTOMER** (niet verzonnen; LocationCards toont de klok-regel alleen als bekend). Actuele bevestiging Rotterdam-adres/nummer gewenst |
 | Telefoon/structured data/kaartlinks controle | OPEN (afh. Rotterdam-bevestiging + media) |
 | Hoofdmenu exacte volgorde + externe bestemmingen | IMPLEMENTED_IN_PR + VERIFIED (DOM: externe links zonder locale-prefix, `target=_blank rel=noreferrer`) |
 | Over IZZI dropdown | IMPLEMENTED_IN_PR + VERIFIED (Ervaringen bewust uitgesteld) |
@@ -78,10 +80,10 @@ Legenda: **OPEN** · **IMPLEMENTED_IN_PR** (code/content op de branch) · **VERI
 ## §9 Formulieren, tracking, SEO
 | Item | Status |
 | --- | --- |
-| Contact/UWV/opleiding/vacature-flows compleet | PARTIAL: alleen `contact`-form gedefinieerd in `forms.json`; overige flows OPEN |
-| Echte formulierontvangst testen (testmailbox) | BLOCKED_ACCESS (CMS-submit-endpoint onbereikbaar; dev-submit is geen acceptatietest) |
+| Contact/UWV/opleiding/vacature-flows compleet | **IMPLEMENTED_IN_PR + VERIFIED (client)**: `uwv`, `opleiding-interesse`, `vacature` toegevoegd aan `forms.json` en gekoppeld (uwv-subsidie, werken-bij-izzi-beauty, opleidingen-hub). Toegankelijke client-validatie (verplicht + e-mail, aria-invalid + role=alert, focus, invoerbehoud, dubbelklik-blokkering) headless getest |
+| Echte formulierontvangst testen (testmailbox) | BLOCKED_ACCESS (CMS-submit-endpoint onbereikbaar; dev-submit/mock is geen acceptatietest — alleen backendverwerking/tenantcontrole/ontvangst blijft open) |
 | GTM/CMP/GA4/Ads/Meta config | BLOCKED_ACCESS: alleen Salonized + WhatsApp in `integrations.json`; providers via CMS Integraties. Geen losse trackers toegevoegd |
-| Legacy-URL-mapping + statuscodes | **IMPLEMENTED_IN_PR (analyse) + VERIFIED (steekproef)**: 301 legacy-URL's geïnventariseerd; 94 resolven, 18 hebben redirect, **53 missen**. `permanent:true` = **308** (geen 301). Zie mapping-doc |
+| Legacy-URL-mapping + statuscodes | **IMPLEMENTED_IN_PR + VERIFIED**: 301 legacy-URL's geïnventariseerd; **15 inhoudelijk geverifieerde** redirects toegevoegd (onderwerp op oude site gecontroleerd; geen blanket naar home/contact/hub). `/lash-lift` (behandeling→alleen opleiding) en `/isabella-levels` (persoonspagina) bewust NIET geredirect → conflict/beslissing. `permanent:true` = **308** (geen 301). Zie mapping-doc |
 | Kennisbank hoofdingang zonder artikelverlies + /blog/page/N | OPEN/BLOCKED_CUSTOMER (redirectstrategie-beslissing; zie manifest) |
 
 ## §10 Verbeteringen & eindvalidatie

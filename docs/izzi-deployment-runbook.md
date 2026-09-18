@@ -10,17 +10,25 @@ Geen secrets of persoonsgegevens in dit bestand of in Git. Dry-run vóór elke m
 | LearnDash cursus-activatie | _tbd_ | _tbd_ |
 | Platform-plumbing (next.config redirects) | _tbd (BE Digital)_ | _tbd_ |
 
-## 1. Content-publicatievenster & sync (branch ↔ CMS)
+## 1. Content-publicatievenster & sync (branch ↔ CMS) — BLOCKED_ACCESS
 De redactionele content in `content/**/*.json` wordt door de Content Editor als **hele bestanden** weggeschreven en bij publicatie naar de repo gecommit (auteurs `IZZI AI Agent` / `BE Digital Platform`). Risico: een CMS-publish tijdens/na deze PR **overschrijft** de branch-wijzigingen of geeft een merge-conflict.
 
-Procedure (kort publicatievenster):
-1. **Vergelijk vóór merge** de branch-versies van `content/nl/site.json`, `content/nl/home.json`, `content/forms.json` met de actuele `main`/CMS-content (`git fetch origin main && git diff origin/main -- content/`). Los verschillen editorieel op.
-2. Kies een venster waarin de klant **niet** publiceert.
-3. Merge de PR (na akkoord) en laat Vercel bouwen; controleer de preview.
-4. Direct daarna: laat het CMS één keer publiceren/synchroniseren zodat CMS-state = repo-state. **Schakel het CMS niet zelf uit.**
-5. Verifieer dat de gepubliceerde nav/footer/e-mail overeenkomen (`pnpm test` als snelle regressiecheck).
+> ⚠️ **Niet als uitvoerbare procedure aanbieden zonder bewijs.** De eerdere stap "laat het CMS na merge één keer publiceren zodat CMS-state = repo-state" is **verwijderd**: die is ongeverifieerd en kan **oude CMS-content juist over de nieuwe Git-content heen schrijven**. De synchronisatierichting (Git → editor of editor → Git), de aanwezigheid van concepten/caches los van Git, en de versie-/conflictcontrole van het CMS zijn in deze runtime **niet te verifiëren** (CMS onbereikbaar, referentierepo `Be-digital-cms` niet leesbaar — zie §7). Behandel dit onderdeel als **BLOCKED_ACCESS**.
 
-Rollback: `git revert <merge-commit>` (of Vercel "Instant Rollback" naar de vorige deploy). Content-only rollback: herstel de vorige `content/**`-bestanden en laat het CMS opnieuw publiceren.
+Eerst te verifiëren (met een geautoriseerde CMS/testomgeving) vóór er een venster wordt gepland:
+1. Waar leest de Content Editor de inhoud vandaan (Git-revisie, database, of cache)?
+2. Bestaan er concepten/caches onafhankelijk van Git die publiceren zou terugschrijven?
+3. Hoe wordt de nieuwe Git-versie veilig **in** de editor geladen (import/refresh) vóór publiceren?
+4. Wat overschrijft "publiceren" precies, en in welke richting?
+5. Welke versie-/conflictdetectie is aanwezig?
+
+Pas ná die verificatie kan een expliciete synchronisatierichting + publicatievenster worden vastgelegd. **Schakel het CMS niet zelf uit.**
+
+Vergelijk in elk geval vóór merge de branch-content met actuele `main` (`git fetch origin main && git diff origin/main -- content/`) en los verschillen editorieel op.
+
+### Rollback — twee verschillende dingen, niet inwisselbaar
+- **Deployment-rollback:** Vercel "Instant Rollback" naar de vorige deploy, of `git revert <merge-commit>`. Herstelt de *gepubliceerde code/site*, **niet** de CMS-/databasestaat.
+- **Content/CMS/data-herstel:** het terugdraaien van content of tenant-/DB-wijzigingen gebeurt in het CMS/de database volgens hun eigen versiebeheer/back-up. Een deployment-rollback herstelt dit **niet** automatisch, en een content-herstel herstelt geen code. Bepaal en test beide paden apart met de eigenaren uit §0.
 
 ## 2. Tenant-config (NIET redactioneel — via geautoriseerde config-route)
 Niet in de repo bewerken (CMS/tenant overschrijft). Uitvoeren in het CMS:
@@ -49,8 +57,12 @@ if (!enabled) {
 
 Pas hierna de §3-redirectvoorstellen uit [mapping-doc](./izzi-migration-inventory-and-mapping.md) toe in `content/redirects.json` (prefix-vrije `source`/`destination`), en test `/nl`-vorm, kale vorm, trailing slash en querystring.
 
-## 4. Media (P0) — egress naar CMS
-`cms.bedigital.ai` weigert TLS vanaf deze runtime (bewijs in mapping-doc §5). Remediatie-opties (platform):
+## 4. Media (P0) — mediaketen nog niet te valideren vanaf deze runtime
+**Vastgesteld:** een *verbindingsfout vanuit deze onderzochte runtime* — `cms.bedigital.ai` weigert de TLS-handshake (`SSL_ERROR_SYSCALL`; DNS→216.150.16.1 en TCP:443 ok), in de browser `net::ERR_CONNECTION_CLOSED`, `img.naturalWidth===0`.
+**Niet vastgesteld:** de *uiteindelijke oorzaak van ontbrekende beelden bij echte bezoekers*. De TLS-reset bewijst NIET dat opslag, CMS-records, tenantmapping of media-import fout zijn; het bewijst alleen dat déze runtime het CMS-endpoint niet bereikt.
+**Nog te testen (waar geautoriseerd):** de volledige keten op een omgeving die het CMS wél bereikt — lokale site-media-URL, dezelfde URL op de **echte PR-preview** (Vercel; niet geverifieerd — geen bewijs dat Vercel de bytes wél haalt), direct CMS-media-endpoint, en de uiteindelijke opslagrespons. Rapporteer per stap: statuscode, redirectketen, `Content-Type`, en of het bestand echt als afbeelding **decodeert** (`naturalWidth>0`). Verifieer ook de huidige opslagimplementatie (Supabase Storage vs oude R2) in `Be-digital-cms` — niet aannemen.
+
+Remediatie-opties (platform):
 - Sta egress naar `cms.bedigital.ai` toe vanaf de agent-/buildomgeving, **of** valideer media op de Vercel-preview (die het CMS wél bereikt).
 - Verifieer de huidige opslagimplementatie (Supabase Storage vs oude R2) in `Be-digital-cms`.
 - Herstel/import ontbrekende beelden via de ondersteunde tenant-veilige media-import (bytes + DB-record; MEDIA.md), met bronmapping + checksums. Geen stockbeelden, geen hotlinks, geen versoepelde publieke rechten.

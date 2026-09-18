@@ -24,23 +24,38 @@ Dekking-eerlijkheid: pagina/post-URL's zijn OPGEHAALD en op slug-niveau vergelek
 
 ## 3. Legacy-URL → nieuwe-URL redirect-mapping (voorstel)
 
-> ⚠️ **Blokkerende voorwaarde (P1):** de redirect-expansie in `next.config.ts` emit bij één actieve taal alléén de kale regel (`/oud → /nieuw`). De echte geïndexeerde oude URL's zijn `/nl/<slug>/`. Getest: `/nl/wenkbrauwen-haarlem` → **404**, terwijl `/wenkbrauwen-haarlem` → **308** `/haarlem`. Zolang de plumbing-fix (zie [runbook](./izzi-deployment-runbook.md)) niet is toegepast, **werken onderstaande regels niet voor de daadwerkelijke `/nl/`-URL's**. Daarom hier als voorstel vastgelegd en (nog) niet in `redirects.json` gezet, om geen vals vertrouwen te wekken.
+> ✅ **Opgelost (P1):** de redirect-expansie in `next.config.ts` emit nu bij één actieve taal óók de geprefixte regel. Getest: `/nl/wenkbrauwen-haarlem` → **308** `/nl/haarlem` (was 404); trailing slash + querystring behouden; kale vorm in één hop; bestaande pagina's 200; geen loop/dubbele prefix. Onderstaande content-equivalenten zijn hierdoor **toegevoegd aan `content/redirects.json`** en werken voor de echte `/nl/`-URL's.
 
-Statuscode: bestaande + voorgestelde regels gebruiken `permanent: true` = **HTTP 308** (Next-native), niet 301.
+Statuscode: alle regels gebruiken `permanent: true` = **HTTP 308** (Next-native), niet 301.
 
-### 3a. Heldere content-equivalenten (voorstel toe te voegen na plumbing-fix + bevestiging)
-| Oude slug (`/nl/…`) | Nieuwe bestemming | Zekerheid |
+### 3a. Toegevoegd — inhoudelijk geverifieerde content-equivalenten (onderwerp op oude site gecontroleerd)
+| Oude slug (`/nl/…`) | Oud onderwerp (titel/h1) | Nieuwe bestemming | Toegevoegd |
+| --- | --- | --- | --- |
+| `over-izzi-beauty` | Over IZZI Beauty | `/over-izzi` | ✅ |
+| `permanente-make-up-portfolio` | Portfolio | `/portfolio` | ✅ |
+| `permanente-make-up-prijzen` | Prijzen | `/prijzen` | ✅ |
+| `permanente-make-up-veelgestelde-vragen` | Veelgestelde Vragen | `/veelgestelde-vragen` | ✅ |
+| `vacature-pmu-artist-bij-izzi-beauty` | Vacature | `/werken-bij-izzi-beauty` | ✅ |
+| `permanente-eyeliner` | PMU Eyeliner (behandeling) | `/permanente-make-up-eyeliner` | ✅ |
+| `permanente-make-up-opleiding` | Opleiding | `/opleidingen` | ✅ |
+| `online-permanente-make-up-opleiding` | Online opleiding | `/online-trainingen` | ✅ |
+| `permanente-make-up-behandeling` | Behandeling | `/behandelingen` | ✅ |
+| `prive-opleiding` | Privé opleiding | `/prive-opleiding-permanente-make-up` | ✅ |
+| `lippigmentatie` | Lippigmentatie / PMU Lippen (behandeling) | `/lip-blush` | ✅ |
+| `pmu-lippen` | PMU Lippen (behandeling) | `/lip-blush` | ✅ |
+| `ombre-powder-brows` | Ombre Powder Brows behandeling | `/powder-brows` | ✅ |
+| `permanente-make-up-wenkbrauwen` | PMU Wenkbrauwen (behandeling) | `/powder-brows` | ✅ |
+| `brow-lift` | Brow Lift Behandeling | `/brow-lamination-behandeling` | ✅ |
+
+### 3a-conflict. Bewust NIET geredirect (bronconflict/beslissing)
+| Oude slug | Oud onderwerp | Waarom niet | 
 | --- | --- | --- |
-| `over-izzi-beauty` | `/over-izzi` | hoog |
-| `permanente-make-up-portfolio` | `/portfolio` | hoog |
-| `permanente-make-up-prijzen` | `/prijzen` | hoog |
-| `permanente-make-up-veelgestelde-vragen` | `/veelgestelde-vragen` | hoog |
-| `vacature-pmu-artist-bij-izzi-beauty` | `/werken-bij-izzi-beauty` | hoog |
-| `permanente-eyeliner` | `/permanente-make-up-eyeliner` | hoog |
-| `permanente-make-up-opleiding` | `/opleidingen` | hoog |
-| `online-permanente-make-up-opleiding` | `/online-trainingen` | hoog |
-| `permanente-make-up-behandeling` | `/behandelingen` | hoog |
-| `prive-opleiding` | `/prive-opleiding-permanente-make-up` | hoog |
+| `lash-lift` | Lash Lift **behandeling** | Nieuwe site heeft alleen de `lash-lift-training` **opleiding**; een behandeling niet naar een opleiding sturen. Bied de behandeling aan óf beslis 404/hub |
+| `isabella-levels` | Persoonspagina (specialist) | Geen team-detailroute; `/ons-team` verliest de persoonsdetail — beslissing nodig |
+
+### 3b. Overige nog te mappen (midden/laag — bevestiging nodig, nog niet toegevoegd)
+| Oude slug (`/nl/…`) | Kandidaat | Zekerheid |
+| --- | --- | --- |
 | `faux-freckles-opleiding` | `/faux-freckles-beginners` | midden |
 | `fineline-tattoo-opleiding` | `/fineline-training` | midden |
 | `infralash-beginnersopleiding` | `/infralash-beginners` | midden |
@@ -74,11 +89,13 @@ Oude `pmu-opleiding-*/…-veelgestelde-vragen` paden ↔ de twee bewust-geneste 
 | Webshop (retail/machines) | `https://laliqa.com` (extern) | Laliqa | **FIXED** |
 | Laserontharen | `https://izziclinic.nl` (extern) | IZZI Clinic | **FIXED** |
 
-## 5. Media-keten (§5) — hoofdoorzaakbewijs
+## 5. Media-keten (§5) — wat is wél en niet vastgesteld
 
-`/media/<file>` (route `app/media/[filename]/route.ts`) → **302** → `https://cms.bedigital.ai/media/<file>?tenant=izzi-beauty` → **TLS reset** (`OpenSSL SSL_ERROR_SYSCALL`; DNS ok → 216.150.16.1, TCP:443 ok, TLS handshake geweigerd). In de browser: `net::ERR_CONNECTION_CLOSED`, `img.naturalWidth === 0` voor logo én alle content-beelden.
+Meetresultaat vanaf deze runtime: `/media/<file>` (route `app/media/[filename]/route.ts`) → **302** → `https://cms.bedigital.ai/media/<file>?tenant=izzi-beauty` → **TLS reset** (`OpenSSL SSL_ERROR_SYSCALL`; DNS ok → 216.150.16.1, TCP:443 ok, TLS-handshake geweigerd). In de browser: `net::ERR_CONNECTION_CLOSED`, `img.naturalWidth === 0` voor logo én alle content-beelden.
 
-Conclusie: de faaloorzaak is **niet** de oude R2/gitignored `_import` (MEDIA.md, historisch) maar **egress/host-weigering naar `cms.bedigital.ai` vanaf deze runtime**. Media-QA (naturalWidth>0, crop/topic) kan pas op een omgeving die het CMS wél bereikt (Vercel-preview) of nadat egress is toegestaan. Huidige CMS-opslag (Supabase Storage vs oude R2) niet verifieerbaar zonder CMS/reference-repo-toegang.
+- **Vastgesteld:** een *verbindingsfout vanuit deze onderzochte runtime* naar het CMS-endpoint.
+- **Niet vastgesteld:** de *uiteindelijke oorzaak van ontbrekende beelden bij echte bezoekers*. De TLS-reset zegt niets over de juistheid van opslag, CMS-records, tenantmapping of media-import — die zijn **niet** fout bewezen. Het is dus **geen** bewijs dat het aan de oude R2/gitignored `_import` (MEDIA.md, historisch) ligt.
+- **Nog te testen (geautoriseerd, op een omgeving die het CMS bereikt):** vergelijk (a) lokale site-media-URL, (b) dezelfde URL op de **echte PR-preview** (Vercel — niet geverifieerd; géén bewijs dat Vercel de bytes wél haalt), (c) direct CMS-media-endpoint, (d) de uiteindelijke opslagrespons. Rapporteer per stap statuscode, redirectketen, `Content-Type` en of het bestand echt als afbeelding **decodeert**. Verifieer de huidige opslag (Supabase Storage vs oude R2) in `Be-digital-cms` (nu 404 voor dit token).
 
 ## 6. Conflictenlog (oude site bevat fouten — niet blind overnemen)
 | Conflict | Waarneming | Actie |
@@ -97,4 +114,21 @@ Voor elk van: Ombre Powder Brows, Combi Brows, Powder Brows Touch-up, Powder Bro
 
 `oud product-URL/SKU  →  nieuwe product/variant-handle  →  LearnDash-cursus-id  →  content-pagina`
 
-Status: **BLOCKED_ACCESS** — handles/cursus-id's staan in de CMS-DB/LearnDash (niet zichtbaar; commerce uit). Geen fictieve ID's ingevuld. 128 product-URL's in `product-sitemap.xml` zijn de databron voor de oude kant.
+Status: **BLOCKED_ACCESS** — handles/cursus-id's staan in de CMS-DB/LearnDash (niet zichtbaar; commerce uit). Geen fictieve ID's ingevuld. 128 product-URL's in `product-sitemap.xml` zijn de databron voor de oude kant. Bevestigd: de oude online-cursuspagina's draaien op **LearnDash** (`ldVars`/postID in de HTML).
+
+### 7a. Online-cursussen — status per cursus (A: broninhoud · B: pagina · C: product · D: betaling · E: toegang)
+Legenda per kolom: ✅ gedaan · ◐ deels · ✗ geblokkeerd/ontbreekt.
+
+| Cursus | A bron | B pagina | C product | D betaling | E toegang |
+| --- | --- | --- | --- | --- | --- |
+| Online Airbrush Brows | ✅ | ✅ `/airbrush-brows-online-training` (bestaat, gelinkt) | ✗ (handle onbekend) | ✗ | ✗ |
+| Online Ombré Powder Brows | ◐ (oude hub/product) | ✗ | ✗ | ✗ | ✗ |
+| Online Combi Brows | ◐ | ✗ | ✗ | ✗ | ✗ |
+| Online Powder Brows Masterclass | ◐ | ✗ | ✗ | ✗ | ✗ |
+| Online Lip Blush | ◐ | ✗ | ✗ | ✗ | ✗ |
+| Online Lip Blush Masterclass | ◐ | ✗ | ✗ | ✗ | ✗ |
+| Online Faux Freckles | ◐ | ✗ | ✗ | ✗ | ✗ |
+| Online Kleurcorrectie | ◐ | ✗ | ✗ | ✗ | ✗ |
+| Online Naaldentraining | ◐ | ✗ | ✗ | ✗ | ✗ |
+
+Toelichting: per-cursus detailinhoud (lesonderdelen, FAQ, beelden, toegangstermijn) staat grotendeels in de **WooCommerce-productpagina's** (128 stuks) — die zijn hier niet leesbaar (commerce uit, CMS onbereikbaar), dus B kan niet zonder fabricage worden ingevuld voor 8/9 cursussen. De hubkaarten wijzen daarom nog naar `/contact` (regressietest markeert dit als OPEN, geen schijnoplossing). Zodra de productpagina's leesbaar zijn: redactionele cursuspagina's als `trainings-detail`-keys (zonder `productHandle` → eerlijke "informatie/contact"-CTA tot commerce aanstaat), daarna handle + LearnDash koppelen. **Toegangstermijn-conflict** (nieuwe hub "levenslang" vs oude 90 dagen) is niet uit de hubs te bevestigen → klantbesluit.
