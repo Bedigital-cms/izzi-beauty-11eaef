@@ -399,7 +399,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Klaar voor de volgende stap?",
@@ -1466,7 +1470,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         },
         {
           "k": "UWV-subsidie",
@@ -1567,7 +1575,7 @@
       {
         "heading": "Algemene informatie",
         "paragraphs": [
-          "Duur: 8 dagen — 4 online lesdagen en 4 praktijkdagen op locatie (inclusief terugkomdag), met daarnaast een huiswerkopdracht (vijf modellen in je eigen salon). Totale studietijd circa 100 uur.",
+          "De opleiding combineert online voorbereiding, praktijkdagen op locatie, een terugkommoment en praktijkopdrachten (modellen in je eigen salon). De totale studietijd bedraagt volgens de bron circa 100 uur; het exacte dagenmodel en de planning worden bij inschrijving bevestigd.",
           "Vooropleiding: geen vooropleiding of diploma vereist; de opleiding is toegankelijk voor iedereen.",
           "CRKBO-erkend en daardoor btw-vrij. Bij WW-, WIA- of Wajong-uitkering is UWV-subsidie mogelijk — wij begeleiden je graag door het aanvraagtraject.",
           "Na de opleiding behoud je toegang tot het online leerplatform en de community (WhatsApp/Facebook) voor vragen en verdere ontwikkeling.",
@@ -1638,7 +1646,7 @@
         },
         {
           "k": "Duur",
-          "v": "8 dagen (4 online + 4 op locatie) · ±100 uur"
+          "v": "Circa 100 uur studietijd; planning bij inschrijving"
         },
         {
           "k": "Groepsgrootte",
@@ -1646,7 +1654,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         },
         {
           "k": "UWV-subsidie",
@@ -1843,7 +1855,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         },
         {
           "k": "Techniek",
@@ -2028,7 +2044,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         },
         {
           "k": "Locaties",
@@ -2236,7 +2256,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Start met fineline tattoos",
@@ -2414,7 +2438,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Til je fineline naar masterniveau",
@@ -2631,7 +2659,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Word Stretch Mark & Scar Removal specialist",
@@ -2845,7 +2877,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Word Saline Removal specialist",
@@ -3036,7 +3072,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Start met Lash Lift",
@@ -3226,7 +3266,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Start met Brow Lamination",
@@ -3418,7 +3462,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Word laserontharingsspecialist",

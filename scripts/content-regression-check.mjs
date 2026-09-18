@@ -187,15 +187,67 @@ const mc = fs.readFileSync(path.join(ROOT, 'docs/izzi-finalization-mastercheckli
 if (/platform-plumbing fix nodig/i.test(mc)) fail('masterchecklist noemt prefix-redirect nog als openstaande platform-fix');
 else pass('masterchecklist: prefix-redirect niet meer als open platform-fix');
 
+// ---------- 15. Online-hub: geen kale /contact; prefill-CTA of eigen cursuspagina ----------
+const online = rd('content/nl/online-trainingen.json');
+const onlineItems = (online.groups || []).flatMap((g) => g.items || []);
+const bareContact = onlineItems.filter((i) => i.url === '/contact' || i.url === '/online-trainingen');
+if (bareContact.length) fail(`${bareContact.length} online-hubkaart(en) staan nog op kale /contact of /online-trainingen`);
+else pass('geen online-hubkaart op kale /contact');
+// Kaarten die naar de info-aanvraag (interesseformulier) wijzen, moeten de cursus meenemen.
+const infoCards = onlineItems.filter((i) => (i.url || '').includes('#informatie-aanvragen') || (i.url || '').startsWith('/online-trainingen?'));
+const missingPrefill = infoCards.filter((i) => !/opleiding_specifiek=/.test(i.url));
+if (missingPrefill.length) fail(`online info-CTA zonder opleiding_specifiek-prefill: ${missingPrefill.map((i) => i.title).join(', ')}`);
+else pass('online info-CTA\'s dragen de cursus mee (opleiding_specifiek)');
+// Kaart met een EIGEN cursuspagina moet daarheen linken (niet naar de info-aanvraag).
+const airbrush = onlineItems.find((i) => /airbrush/i.test(i.title));
+if (airbrush && !trainings.has((airbrush.url || '').replace(/^\//, '').split(/[?#]/)[0])) {
+  fail('Airbrush-online kaart linkt niet naar de bestaande cursuspagina');
+} else pass('online kaart met eigen pagina linkt naar die pagina');
+
+// ---------- 16. Geen blanket "levenslang toegang"-claim in de online hub ----------
+if (/levenslang/i.test(fs.readFileSync(path.join(ROOT, 'content/nl/online-trainingen.json'), 'utf8'))) {
+  fail('online-trainingen.json bevat nog een "levenslang toegang"-claim');
+} else pass('geen blanket levenslang-toegang-claim in online hub');
+
+// ---------- 17. Geen "CRKBO-erkend certificaat" (semantische fout) ----------
+const crkboCertBug = Object.entries(rd('content/nl/trainings-detail.json'))
+  .filter(([, d]) => ((d.aside && d.aside.facts) || []).some((f) => /^certificaat$/i.test(f.k) && /crkbo/i.test(f.v)))
+  .map(([k]) => k);
+if (crkboCertBug.length) fail(`Certificaat-fact met CRKBO-erkend (semantisch onjuist): ${crkboCertBug.join(', ')}`);
+else pass('geen "CRKBO-erkend certificaat"-fact');
+
+// ---------- 18. Geen fictieve productHandle (conventie opleiding-*) ----------
+const badHandles = Object.entries(rd('content/nl/trainings-detail.json'))
+  .filter(([, d]) => d.productHandle && !/^opleiding-[a-z0-9-]+$/.test(d.productHandle))
+  .map(([k, d]) => `${k}:${d.productHandle}`);
+if (badHandles.length) fail(`verdachte/fictieve productHandle: ${badHandles.join(', ')}`);
+else pass('alle productHandles volgen de opleiding-*-conventie');
+
+// ---------- 19. Behandeling-CTA wijst niet naar opleiding-content ----------
+const svc = rd('content/nl/services.json');
+const behToOpl = Object.entries(svc).filter(([, d]) => {
+  const urls = [d.aside && d.aside.ctaUrl, d.cta && d.cta.primaryUrl].filter(Boolean).map((u) => u.replace(/^\//, '').split(/[?#]/)[0]);
+  return urls.some((u) => trainings.has(u));
+}).map(([k]) => k);
+if (behToOpl.length) fail(`behandeling-CTA wijst naar opleiding-content: ${behToOpl.join(', ')}`);
+else pass('geen behandeling-CTA naar opleiding-content');
+
+// ---------- 20. Geen "Nog niet bekend"-placeholderdata in publieke content ----------
+const nogNietBekend = contentFiles.filter((f) => /nog niet bekend/i.test(fs.readFileSync(f, 'utf8')));
+if (nogNietBekend.length) fail(`placeholder "Nog niet bekend" in: ${nogNietBekend.map((f) => path.relative(ROOT, f)).join(', ')}`);
+else pass('geen "Nog niet bekend"-placeholder in content');
+
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];
 // Juridische voorbeeldteksten (BLOCKED_CUSTOMER — geen goedgekeurde tekst).
 const legalRaw = fs.readFileSync(path.join(ROOT, 'content/nl/legal.json'), 'utf8');
 if (/voorbeeldtekst|vervang deze/i.test(legalRaw)) warnings.push('legal.json bevat nog voorbeeld-/placeholdertekst (BLOCKED_CUSTOMER: goedgekeurde juridische tekst nodig)');
-// Online-hub CTA's naar generieke bestemming (BLOCKED: product/LearnDash-koppeling).
-const online = rd('content/nl/online-trainingen.json');
-const genericOnline = (online.groups || []).flatMap((g) => g.items || []).filter((i) => i.url === '/contact' || i.url === '/online-trainingen');
-if (genericOnline.length) warnings.push(`${genericOnline.length} online-hubkaart(en) wijzen nog naar /contact of /online-trainingen (BLOCKED: echte cursuspagina + product/LearnDash-koppeling nodig)`);
+// Online cursussen zonder eigen contentpagina (broncontent in geblokkeerde WooCommerce-producten).
+const onlineWithoutPage = infoCards.length;
+if (onlineWithoutPage) warnings.push(`${onlineWithoutPage} online cursus(sen) hebben nog geen eigen contentpagina (broncontent zit in geblokkeerde WooCommerce/LearnDash) — interim: prefilled info-aanvraag`);
+// Absolute claims in behandelingen (bestaande goedgekeurde copy — markeren voor review).
+const painless = Object.entries(svc).filter(([, d]) => JSON.stringify(d).match(/pijnloos/i)).map(([k]) => k);
+if (painless.length) warnings.push(`absolute claim "pijnloos" in behandelingen (${painless.length}) — bestaande copy, markeren voor klant-/medische review, niet zelfstandig herschreven`);
 
 // ---------- Rapport ----------
 console.log(`\nIZZI content-regressietests: ${ok.length} checks OK, ${failures.length} fout(en), ${warnings.length} open (geblokkeerd).`);

@@ -318,9 +318,10 @@ export function HubPage({ data }: { data: HubContent }) {
           </div>
         </div>
       </section>
-      {/* Optioneel interesseformulier onderaan de hub (bv. opleidingsinteresse). */}
+      {/* Optioneel interesseformulier onderaan de hub (bv. opleidingsinteresse). Het id maakt een
+          anchor mogelijk zodat een kaart-CTA er direct naartoe scrollt (met prefill via de query). */}
       {data.formSlug && (
-        <section className="section" style={{ paddingTop: 0 }}>
+        <section id="informatie-aanvragen" className="section" style={{ paddingTop: 0 }}>
           <div className="container" style={{ maxWidth: 820 }}>
             <Form slug={data.formSlug} />
           </div>
