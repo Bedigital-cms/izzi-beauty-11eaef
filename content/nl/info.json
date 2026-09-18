@@ -481,13 +481,20 @@
         "paragraphs": [
           "Een fijne werkomgeving, ruimte voor ontwikkeling via onze academy en de kans om te werken met de nieuwste technieken en producten."
         ]
+      },
+      {
+        "heading": "Zo solliciteer je",
+        "paragraphs": [
+          "Laat hieronder je gegevens en motivatie achter via het formulier. Mail daarna je CV én een foto naar info@izzi-beauty.com — zo maken we je sollicitatie compleet.",
+          "Je kunt ons ook direct bereiken via e-mail (info@izzi-beauty.com) of telefonisch/WhatsApp op +31 6 11 76 88 81."
+        ]
       }
     ],
     "cta": {
       "title": "Interesse?",
-      "text": "Stuur je motivatie en cv via het contactformulier. We nemen snel contact met je op.",
-      "primaryLabel": "Solliciteer nu",
-      "primaryUrl": "/contact"
+      "text": "Laat je gegevens en motivatie achter via het formulier hieronder en mail je CV + foto naar info@izzi-beauty.com.",
+      "primaryLabel": "Mail je CV naar IZZI",
+      "primaryUrl": "mailto:info@izzi-beauty.com"
     },
     "formSlug": "vacature"
   },

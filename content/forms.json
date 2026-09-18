@@ -38,9 +38,9 @@
       ]
     },
     "uwv": {
-      "name": "UWV-subsidie aanvraag",
-      "submitLabel": "Vraag UWV-subsidie aan",
-      "successMessage": "Bedankt! We nemen contact met je op over de UWV-subsidiemogelijkheden.",
+      "name": "UWV-subsidie offerte aanvragen",
+      "submitLabel": "Vraag vrijblijvend een offerte aan",
+      "successMessage": "Bedankt! We stellen een offerte op maat op en nemen contact met je op over het UWV-traject.",
       "notificationEmail": "info@izzi-beauty.com",
       "isActive": true,
       "fields": [
@@ -67,7 +67,7 @@
         },
         {
           "name": "opleiding",
-          "label": "Welke opleiding",
+          "label": "Welke opleiding(en)",
           "fieldType": "select",
           "required": false,
           "placeholder": "Kies een opleiding",
@@ -77,32 +77,84 @@
               "value": "all-round"
             },
             {
-              "label": "Wenkbrauwen",
-              "value": "wenkbrauwen"
+              "label": "Ombré Powder Brows",
+              "value": "ombre-powder-brows"
             },
             {
-              "label": "Lippen",
-              "value": "lippen"
+              "label": "Combi Brows",
+              "value": "combi-brows"
             },
             {
-              "label": "Nog niet zeker",
+              "label": "Lip Blush",
+              "value": "lip-blush"
+            },
+            {
+              "label": "Infralash",
+              "value": "infralash"
+            },
+            {
+              "label": "Faux Freckles",
+              "value": "faux-freckles"
+            },
+            {
+              "label": "Online PMU-opleiding",
+              "value": "online"
+            },
+            {
+              "label": "Combinatie / nog niet zeker",
+              "value": "combi-onbekend"
+            }
+          ]
+        },
+        {
+          "name": "uitkering",
+          "label": "Type uitkering",
+          "fieldType": "select",
+          "required": false,
+          "placeholder": "Kies (optioneel)",
+          "options": [
+            {
+              "label": "WW",
+              "value": "ww"
+            },
+            {
+              "label": "WIA",
+              "value": "wia"
+            },
+            {
+              "label": "Wajong",
+              "value": "wajong"
+            },
+            {
+              "label": "Anders",
+              "value": "anders"
+            },
+            {
+              "label": "Weet ik nog niet",
               "value": "onbekend"
             }
           ]
         },
         {
+          "name": "uwv_contact",
+          "label": "Heb je al een UWV-contactpersoon?",
+          "fieldType": "text",
+          "required": false,
+          "placeholder": "Naam of e-mail van je UWV-contactpersoon (optioneel)"
+        },
+        {
           "name": "query",
-          "label": "Je vraag",
+          "label": "Je motivatie of vraag",
           "fieldType": "textarea",
           "required": false,
-          "placeholder": "Waar kunnen we je mee helpen rond UWV-subsidie?"
+          "placeholder": "Vertel kort je leerdoelen of stel je vraag over het aanvraagtraject."
         }
       ]
     },
     "opleiding-interesse": {
       "name": "Interesse opleiding",
       "submitLabel": "Verstuur interesse",
-      "successMessage": "Bedankt voor je interesse — we sturen je snel meer informatie.",
+      "successMessage": "Bedankt voor je interesse — we sturen je snel meer informatie over de opleiding.",
       "notificationEmail": "info@izzi-beauty.com",
       "isActive": true,
       "fields": [
@@ -129,15 +181,11 @@
         },
         {
           "name": "opleiding",
-          "label": "Opleiding",
+          "label": "Categorie",
           "fieldType": "select",
-          "required": true,
-          "placeholder": "Kies een opleiding",
+          "required": false,
+          "placeholder": "Kies een categorie",
           "options": [
-            {
-              "label": "All Round PMU",
-              "value": "all-round"
-            },
             {
               "label": "Wenkbrauwen (Powder/Combi Brows)",
               "value": "wenkbrauwen"
@@ -145,6 +193,10 @@
             {
               "label": "Lippen (Lip Blush)",
               "value": "lippen"
+            },
+            {
+              "label": "All Round PMU",
+              "value": "all-round"
             },
             {
               "label": "Online training",
@@ -157,6 +209,13 @@
           ]
         },
         {
+          "name": "opleiding_specifiek",
+          "label": "Welke opleiding specifiek?",
+          "fieldType": "text",
+          "required": false,
+          "placeholder": "Bijv. Lip Blush Beginnersopleiding"
+        },
+        {
           "name": "query",
           "label": "Je vraag",
           "fieldType": "textarea",
@@ -166,9 +225,9 @@
       ]
     },
     "vacature": {
-      "name": "Sollicitatie",
-      "submitLabel": "Solliciteer",
-      "successMessage": "Bedankt voor je sollicitatie — we nemen zo snel mogelijk contact met je op.",
+      "name": "Sollicitatie (eerste contact)",
+      "submitLabel": "Verstuur bericht",
+      "successMessage": "Bedankt voor je bericht! Mail je CV én foto naar info@izzi-beauty.com om je sollicitatie compleet te maken — we nemen snel contact met je op.",
       "notificationEmail": "info@izzi-beauty.com",
       "isActive": true,
       "fields": [
@@ -205,7 +264,7 @@
           "label": "Motivatie",
           "fieldType": "textarea",
           "required": true,
-          "placeholder": "Vertel kort iets over jezelf en waarom je bij IZZI wilt werken."
+          "placeholder": "Vertel kort iets over jezelf en waarom je bij IZZI wilt werken. (CV + foto stuur je per e-mail.)"
         }
       ]
     }

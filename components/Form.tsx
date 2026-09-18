@@ -58,6 +58,30 @@ export default function Form({ slug, def: defProp }: { slug: string; def?: FormD
     return ''
   }
 
+  // Prefill vanuit de URL-query: een bezoeker die vanaf een cursuspagina komt met bv.
+  // `?opleiding_specifiek=Lip%20Blush%20Beginnersopleiding` krijgt dat veld vast ingevuld, zodat
+  // hij niet opnieuw hoeft uit te leggen welke opleiding hij bedoelt. Werkt voor tekst/textarea en
+  // selecteert een select-optie als de waarde overeenkomt. Alleen bekende veldnamen worden gezet.
+  React.useEffect(() => {
+    if (!def || typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    const el = formRef.current
+    if (!el) return
+    for (const f of def.fields) {
+      const val = params.get(f.name)
+      if (val == null || val === '') continue
+      const input = el.elements.namedItem(f.name) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null
+      if (!input) continue
+      if (input instanceof HTMLSelectElement) {
+        if ([...input.options].some((o) => o.value === val)) input.value = val
+      } else {
+        input.value = val
+      }
+    }
+  // def is stabiel voor de levensduur van de pagina; één keer prefillen bij mount volstaat.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   // After a successful submit, show the confirmation for a few seconds, then reset the form so the
   // visitor can send another message (and the section doesn't sit on a stale "thanks" state).
   React.useEffect(() => {
