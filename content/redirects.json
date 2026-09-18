@@ -225,6 +225,76 @@
       "source": "/brow-lift",
       "destination": "/brow-lamination-behandeling",
       "permanent": true
+    },
+    {
+      "source": "/faux-freckles-opleiding",
+      "destination": "/faux-freckles-beginners",
+      "permanent": true
+    },
+    {
+      "source": "/fineline-tattoo-opleiding",
+      "destination": "/fineline-training",
+      "permanent": true
+    },
+    {
+      "source": "/fineline-tattoo-masterclass",
+      "destination": "/fineline-masterclass",
+      "permanent": true
+    },
+    {
+      "source": "/infralash-beginnersopleiding",
+      "destination": "/infralash-beginners",
+      "permanent": true
+    },
+    {
+      "source": "/tattoo-verwijderen",
+      "destination": "/tattoo-verwijderen-rotterdam-amsterdam",
+      "permanent": true
+    },
+    {
+      "source": "/airbrush-brows-opleiding",
+      "destination": "/airbrush-brows-online-training",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-lippen",
+      "destination": "/lip-blush",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-sproeten",
+      "destination": "/faux-freckles-behandeling",
+      "permanent": true
+    },
+    {
+      "source": "/online-pmu-opleiding-wenkbrauwen",
+      "destination": "/online-trainingen",
+      "permanent": true
+    },
+    {
+      "source": "/online-pmu-opleiding-lippen",
+      "destination": "/online-trainingen",
+      "permanent": true
+    },
+    {
+      "source": "/online-pmu-opleiding-divers",
+      "destination": "/online-trainingen",
+      "permanent": true
+    },
+    {
+      "source": "/pmu-opleiding-wenkbrauwen",
+      "destination": "/opleidingen",
+      "permanent": true
+    },
+    {
+      "source": "/pmu-opleiding-lippen",
+      "destination": "/opleidingen",
+      "permanent": true
+    },
+    {
+      "source": "/pmu-opleiding-sproeten",
+      "destination": "/faux-freckles-beginners",
+      "permanent": true
     }
   ]
 }
