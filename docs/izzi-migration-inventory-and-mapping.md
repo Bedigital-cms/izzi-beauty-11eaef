@@ -122,8 +122,14 @@ Methode: oude pagina opgehaald (passieve GET), sectie/feit-vergelijking met de h
 | `lip-blush-beginnersopleiding` | opleiding | ✅ | ✅ | Al rijk gemigreerd — geen gap; prijs bevestigen |
 | `powder-brows` | behandeling | ✅ | ✅ | Correct (behandeling, geen opleiding-mixup), video + FAQ, geen `productHandle` (boekt via Salonized/contact) — OK |
 | `lip-blush` | behandeling | ✅ | ✅ | Correct (behandeling), video + 5 FAQ — OK |
-| Overige opleidingen (Combi, Infralash, Faux Freckles, masterclasses, Fineline, Saline, Inkless, Lash Lift, Brow Lamination, Laser Ontharing) | opleiding | ⏳ | ⏳ | Zelfde methode; nog te doen (bevestig prijs/data/plaatsen via CMS) |
-| Overige behandelingen (Combi, Infralash, Faux Freckles, Kleurcorrectie, Brow Lamination, removal) | behandeling | ⏳ | ⏳ | Nog te doen; prijs/nazorg/medisch → bron behouden of klantreview |
+| Overige opleidingen (Combi, Infralash, Faux Freckles, Fineline (2), masterclasses, Ombré+Lip Blush, Privé, Saline, Inkless, Lash Lift, Brow Lamination, Laser Ontharing) | opleiding | ✅ | ✅ | **Al rijk gemigreerd** (body 6–10 secties, 6–10 FAQ, volledige facts). Deze PR: CRKBO/certificaat-fact semantisch gesplitst (12×). Prijs/data/plaatsen = CMS/klant |
+| Behandelingen (Combi, Infralash/eyeliner, Faux Freckles, Kleurcorrectie, Brow Lamination, removal/correctie, nazorg, stads-/vergelijkpagina's) | behandeling | ✅ | ✅ | **Al rijk gemigreerd**; geen behandeling/opleiding-mixup; booking-CTA correct. `powder-brows` was dun (nog te verrijken). Absolute claims ("pijnloos" 16×) = bestaande copy → klant-/medische review, niet zelfstandig herschreven |
+
+**Kennisbank interne links (§8):** al systematisch geïmplementeerd via `getCategoryLinks`/`CATEGORY_LINKS` — elk van de 50 artikelen krijgt via zijn categorie relevante interne links (behandelingen, opleidingen, online trainingen, UWV, FAQ) in de sidebar. Alle 13 gebruikte categorieën zijn gemapt (0 artikelen zonder links). Slugs/metadata/inhoud ongewijzigd; `/blog` + `/blog/page/N` blijven operationeel; geen blanket redirect.
+
+**Online trainingen (§5/§6):** 8 hubkaarten zonder eigen pagina gaan nu naar een prefilbaar interesseformulier op de online hub (`/online-trainingen?opleiding_specifiek=<cursus>#informatie-aanvragen`), eerlijke CTA "Beschikbaarheid opvragen", geen kale `/contact`. Airbrush heeft een eigen pagina. Per-cursus detailpagina's vergen de geblokkeerde WooCommerce/LearnDash-broncontent (geen fabricage). Blanket "levenslang toegang" verwijderd.
+
+**Redirects:** totaal **59** regels (30 origineel + 29 in deze PR), alle `permanent:true` = **308**, prefix + kale + trailing slash + querystring getest. `/lash-lift` en `/isabella-levels` bewust open (conflict).
 
 Belangrijk: **actuele prijs, aanbieding, opleidingsdatum, aantal plaatsen en betaaltermijnen** blijven server-/CMS-/klantbevestigde data — niet als tweede catalogus in editorial JSON. Medische/nazorgteksten van de oude site zijn **niet** zelfstandig als medische waarheid gemoderniseerd (bron behouden / klantreview).
 

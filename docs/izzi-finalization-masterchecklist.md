@@ -62,7 +62,9 @@ Legenda: **OPEN** · **IMPLEMENTED_IN_PR** (code/content op de branch) · **VERI
 ## §7 Behandelingen, opleidingen, portfolio, reviews
 | Item | Status |
 | --- | --- |
-| Volledige broncontent per pagina herstellen | OPEN (inventaris gemaakt; inhoudelijke vergelijking deels — zie mapping-doc) |
+| Volledige broncontent per pagina | **VERIFIED_CONTENT / IMPLEMENTED_IN_PR**: opleidingen + behandelingen al rijk gemigreerd en tegen de bron geverifieerd. Deze PR: All Round verrijkt, CRKBO/certificaat-fact gesplitst (12×), All Round duur neutraal. Alleen `powder-brows` (behandeling) nog te verrijken. Prijs/data/plaatsen blijven CMS/klant |
+| Kennisbank interne links | **IMPLEMENTED**: category-driven via `getCategoryLinks` — alle 50 artikelen linken naar relevante behandelingen/opleidingen/UWV/FAQ (0 zonder links) |
+| Online-hub CTA's | **IMPLEMENTED**: 8 kaarten → prefilbaar interesseformulier (`opleiding_specifiek`), geen kale `/contact`; blanket "levenslang" verwijderd; eigen pagina's blijven BLOCKED (WooCommerce/LearnDash-broncontent) |
 | YouTube-video's/Shorts 16:9 / 9:16 | OPEN (bron-inventaris; `VideoEmbed` ondersteunt het al) |
 | Portfolio ontbrekende resultaten | BLOCKED_ACCESS (beelden/CMS) |
 | Ombre Lips/Lipliner behandeling vs online opleiding | BLOCKED_CUSTOMER (bevestigen welke diensten echt worden aangeboden) |
@@ -100,6 +102,8 @@ Legenda: **OPEN** · **IMPLEMENTED_IN_PR** (code/content op de branch) · **VERI
 - **P0** Commerce/checkout/online-cursus-toegang niet getest (commerce uit, geen sandbox/LearnDash) — onderdeel van deze release, runtime-aftekening later in deze PR zodra toegang er is.
 - ~~**P1** `/nl/`-geprefixte legacy-redirects → 404~~ → **OPGELOST + geverifieerd** (fix in `next.config.ts`, in deze PR).
 - **P1** Contrastbesluit CTA-groen (klant).
-- **P1** Juridische teksten, geverifieerde reviews, Rotterdam-openingstijden, prijzen, WhatsApp-nummer (klant).
+- **P1** Juridische teksten, geverifieerde reviews, Rotterdam-openingstijden, prijzen/data/plaatsen, WhatsApp-nummer (klant).
+- **P1** All Round bronconflicten (startpakket €4.000/€4.500, machine €1.000/€470, exact dagenmodel) — CUSTOMER_CONFIRMATION_REQUIRED; niet stil gekozen.
+- **P2** Absolute claims "pijnloos" (16 behandelingen) — bestaande copy, klant-/medische review.
 
 PR blijft **draft** zolang deze P0/P1's open zijn.
