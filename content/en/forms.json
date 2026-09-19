@@ -1,0 +1,104 @@
+{
+  "forms": {
+    "contact": {
+      "name": "Contact",
+      "submitLabel": "Send message",
+      "successMessage": "Thanks for your message — we'll get back to you shortly.",
+      "notificationEmail": "info@izzi-beauty.com",
+      "isActive": true,
+      "fields": [
+        { "name": "full_name", "label": "Name", "fieldType": "text", "required": false, "placeholder": "Your name" },
+        { "name": "email", "label": "Email", "fieldType": "email", "required": true, "placeholder": "you@email.com" },
+        { "name": "telephone", "label": "Phone", "fieldType": "tel", "required": false, "placeholder": "+31 6 ..." },
+        { "name": "query", "label": "Your message", "fieldType": "textarea", "required": false, "placeholder": "How can we help you?" }
+      ]
+    },
+    "uwv": {
+      "name": "Request UWV subsidy quote",
+      "submitLabel": "Request a free quote",
+      "successMessage": "Thank you! We'll prepare a tailored quote and contact you about the UWV process.",
+      "notificationEmail": "info@izzi-beauty.com",
+      "isActive": true,
+      "fields": [
+        { "name": "full_name", "label": "Name", "fieldType": "text", "required": true, "placeholder": "Your name" },
+        { "name": "email", "label": "Email", "fieldType": "email", "required": true, "placeholder": "you@email.com" },
+        { "name": "telephone", "label": "Phone", "fieldType": "tel", "required": true, "placeholder": "+31 6 ..." },
+        {
+          "name": "opleiding",
+          "label": "Which course(s)",
+          "fieldType": "select",
+          "required": false,
+          "placeholder": "Choose a course",
+          "options": [
+            { "label": "All Round PMU", "value": "all-round" },
+            { "label": "Ombré Powder Brows", "value": "ombre-powder-brows" },
+            { "label": "Combi Brows", "value": "combi-brows" },
+            { "label": "Lip Blush", "value": "lip-blush" },
+            { "label": "Infralash", "value": "infralash" },
+            { "label": "Faux Freckles", "value": "faux-freckles" },
+            { "label": "Online PMU course", "value": "online" },
+            { "label": "Combination / not sure yet", "value": "combi-onbekend" }
+          ]
+        },
+        {
+          "name": "uitkering",
+          "label": "Type of benefit",
+          "fieldType": "select",
+          "required": false,
+          "placeholder": "Choose (optional)",
+          "options": [
+            { "label": "WW (unemployment)", "value": "ww" },
+            { "label": "WIA (work & income)", "value": "wia" },
+            { "label": "Wajong", "value": "wajong" },
+            { "label": "Other", "value": "anders" },
+            { "label": "Not sure yet", "value": "onbekend" }
+          ]
+        },
+        { "name": "uwv_contact", "label": "Do you already have a UWV contact person?", "fieldType": "text", "required": false, "placeholder": "Name or email of your UWV contact (optional)" },
+        { "name": "query", "label": "Your motivation or question", "fieldType": "textarea", "required": false, "placeholder": "Tell us briefly about your goals, or ask a question about the application process." }
+      ]
+    },
+    "opleiding-interesse": {
+      "name": "Course interest",
+      "submitLabel": "Send enquiry",
+      "successMessage": "Thanks for your interest — we'll send you more information about the course shortly.",
+      "notificationEmail": "info@izzi-beauty.com",
+      "isActive": true,
+      "fields": [
+        { "name": "full_name", "label": "Name", "fieldType": "text", "required": true, "placeholder": "Your name" },
+        { "name": "email", "label": "Email", "fieldType": "email", "required": true, "placeholder": "you@email.com" },
+        { "name": "telephone", "label": "Phone", "fieldType": "tel", "required": false, "placeholder": "+31 6 ..." },
+        {
+          "name": "opleiding",
+          "label": "Category",
+          "fieldType": "select",
+          "required": false,
+          "placeholder": "Choose a category",
+          "options": [
+            { "label": "Brows (Powder/Combi Brows)", "value": "wenkbrauwen" },
+            { "label": "Lips (Lip Blush)", "value": "lippen" },
+            { "label": "All Round PMU", "value": "all-round" },
+            { "label": "Online training", "value": "online" },
+            { "label": "Other / not sure yet", "value": "anders" }
+          ]
+        },
+        { "name": "opleiding_specifiek", "label": "Which course specifically?", "fieldType": "text", "required": false, "placeholder": "E.g. Lip Blush Beginner Course" },
+        { "name": "query", "label": "Your question", "fieldType": "textarea", "required": false, "placeholder": "Do you have a question about the course?" }
+      ]
+    },
+    "vacature": {
+      "name": "Application (first contact)",
+      "submitLabel": "Send message",
+      "successMessage": "Thanks for your message! Email your CV and a photo to info@izzi-beauty.com to complete your application — we'll be in touch soon.",
+      "notificationEmail": "info@izzi-beauty.com",
+      "isActive": true,
+      "fields": [
+        { "name": "full_name", "label": "Name", "fieldType": "text", "required": true, "placeholder": "Your name" },
+        { "name": "email", "label": "Email", "fieldType": "email", "required": true, "placeholder": "you@email.com" },
+        { "name": "telephone", "label": "Phone", "fieldType": "tel", "required": true, "placeholder": "+31 6 ..." },
+        { "name": "position", "label": "Role", "fieldType": "text", "required": false, "placeholder": "Which role are you applying for?" },
+        { "name": "query", "label": "Motivation", "fieldType": "textarea", "required": true, "placeholder": "Tell us briefly about yourself and why you'd like to work at IZZI. (Send your CV + photo by email.)" }
+      ]
+    }
+  }
+}

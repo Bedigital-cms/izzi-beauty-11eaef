@@ -7,6 +7,7 @@ import { getSite } from '@/content/site'
 import { activeLocales, defaultLocale, domainLocaleMode, domainLocaleMap, hideDefaultPrefix } from '@/lib/i18n'
 import { isActiveLocale } from '@/lib/i18n'
 import { localeDir } from '@/lib/locales'
+import { SITE_URL } from '@/lib/seo'
 
 const FONTS =
   'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Marcellus&family=Inter:wght@300;400;500;600;700&display=swap'
@@ -41,6 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     }
   }
   return {
+    metadataBase: new URL(SITE_URL),
     title: `${site.brandName} — ${site.tagline}`,
     description: site.footer.about,
     ...(languages ? { alternates: { languages } } : {}),

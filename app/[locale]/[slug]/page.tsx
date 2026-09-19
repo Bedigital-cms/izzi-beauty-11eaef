@@ -9,6 +9,7 @@ import { getServices, getServiceSlugs } from '@/content/services'
 import { getTrainingsDetail, getTrainingSlugs } from '@/content/trainings-detail'
 import { commerceRouteSegments } from '@/lib/commerce/config'
 import { activeLocales } from '@/lib/i18n'
+import { pageAlternates } from '@/lib/seo'
 
 /**
  * Flat, content-driven detail route: /<locale>/<slug>.
@@ -137,6 +138,8 @@ export async function generateMetadata({
   const { locale, slug } = await params
   const page = resolvePage(locale, slug)
   if (!page) return { title: 'Niet gevonden — IZZI Beauty' }
+  // Per-page self-canonical + reciprocal hreflang (EN→EN, NL→NL) for this exact detail page.
+  const alternates = pageAlternates(`/${slug}`, locale)
   if (page.kind === 'post') {
     // Blogposts dragen de SEO-titel/description van de oorspronkelijke WordPress-post mee, zodat de
     // gemigreerde URLs hun bestaande posities houden. `seoTitle` is een volledige titel — daar zetten
@@ -146,9 +149,10 @@ export async function generateMetadata({
     return {
       title: seoTitle || `${title} — IZZI Beauty`,
       description: seoDescription || excerpt,
+      alternates,
     }
   }
-  return { title: `${page.data.hero.title} — IZZI Beauty`, description: page.data.hero.text }
+  return { title: `${page.data.hero.title} — IZZI Beauty`, description: page.data.hero.text, alternates }
 }
 
 export default async function FlatDetailPage({

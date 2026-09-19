@@ -237,8 +237,46 @@ const nogNietBekend = contentFiles.filter((f) => /nog niet bekend/i.test(fs.read
 if (nogNietBekend.length) fail(`placeholder "Nog niet bekend" in: ${nogNietBekend.map((f) => path.relative(ROOT, f)).join(', ')}`);
 else pass('geen "Nog niet bekend"-placeholder in content');
 
+// ---------- 21. Actueel team = exact Isabella + Carla (geen Leoni) ----------
+const onsTeam = rd('content/nl/info.json')['ons-team'] || {};
+const teamNames = (onsTeam.team || []).map((m) => m.name);
+if (JSON.stringify(teamNames) !== JSON.stringify(['Isabella', 'Carla'])) {
+  fail(`actueel team is ${JSON.stringify(teamNames)}, verwacht ["Isabella","Carla"]`);
+} else pass('actueel team = Isabella + Carla');
+if ((onsTeam.body || []).some((b) => /^leoni\b/i.test(b.heading || ''))) fail('Leoni staat nog als teambio in ons-team.body');
+else pass('geen Leoni-teambio meer in ons-team');
+if (JSON.stringify(onsTeam).match(/leoni/i)) fail('Leoni nog aanwezig in de ons-team-content');
+else pass('geen "Leoni" meer in ons-team-content');
+
+// ---------- 22. EN/NL forms-parity (field names identiek → backendcontract intact) ----------
+const enFormsPath = path.join(ROOT, 'content/en/forms.json');
+if (fs.existsSync(enFormsPath)) {
+  const nlForms = rd('content/forms.json').forms || {};
+  const enForms = JSON.parse(fs.readFileSync(enFormsPath, 'utf8')).forms || {};
+  const nlSlugs = Object.keys(nlForms).sort();
+  const enSlugs = Object.keys(enForms).sort();
+  if (JSON.stringify(nlSlugs) !== JSON.stringify(enSlugs)) {
+    fail(`EN forms-slugs wijken af: nl=${nlSlugs} en=${enSlugs}`);
+  } else {
+    const mismatched = nlSlugs.filter((s) => JSON.stringify((nlForms[s].fields || []).map((f) => f.name)) !== JSON.stringify((enForms[s].fields || []).map((f) => f.name)));
+    if (mismatched.length) fail(`EN form field-names wijken af (backendcontract!): ${mismatched.join(', ')}`);
+    else pass('EN/NL forms: identieke slugs + veldnamen (backendcontract intact)');
+  }
+} else pass('EN forms nog niet aangemaakt (staged)');
+
+// ---------- 23. i18n-activatiegate: EN mag pas actief met complete content/en ----------
+const i18n = rd('content/i18n.json');
+if (Array.isArray(i18n.locales) && i18n.locales.includes('en')) {
+  const nlFiles = fs.readdirSync(path.join(ROOT, 'content/nl')).filter((f) => f.endsWith('.json'));
+  const missingEn = nlFiles.filter((f) => !fs.existsSync(path.join(ROOT, 'content/en', f)));
+  if (missingEn.length) fail(`i18n activeert 'en' maar content/en mist: ${missingEn.join(', ')} (half-Engelse site)`);
+  else pass('EN geactiveerd met complete content/en-pariteit');
+} else pass('EN nog niet geactiveerd in i18n.json (activatie is de gedocumenteerde slotstap)');
+
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];
+// Team-media (Isabella/Carla) nog te uploaden via CMS (cloud agent kan dat niet).
+warnings.push('teamfoto\'s Isabella + Carla nog uploaden via CMS Media (tenant izzi-beauty) — cloud agent heeft geen CMS-write/Mac-toegang');
 // Juridische voorbeeldteksten (BLOCKED_CUSTOMER — geen goedgekeurde tekst).
 const legalRaw = fs.readFileSync(path.join(ROOT, 'content/nl/legal.json'), 'utf8');
 if (/voorbeeldtekst|vervang deze/i.test(legalRaw)) warnings.push('legal.json bevat nog voorbeeld-/placeholdertekst (BLOCKED_CUSTOMER: goedgekeurde juridische tekst nodig)');
