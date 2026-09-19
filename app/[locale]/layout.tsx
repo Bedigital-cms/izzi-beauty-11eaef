@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 
 import Integrations from '@/components/Integrations'
 import { getSite } from '@/content/site'
+import { setActiveLocale } from '@/content/ui'
 import { activeLocales } from '@/lib/i18n'
 import { isActiveLocale } from '@/lib/i18n'
 import { localeDir } from '@/lib/locales'
@@ -42,6 +43,11 @@ export default async function LocaleLayout({
   const { locale } = await params
   // Unknown / inactive locale in the URL → 404 (keeps /xx/... from rendering the default silently).
   if (!isActiveLocale(locale)) notFound()
+
+  // Record the active locale for this render so shared server components deep in the tree
+  // (location card, blog/knowledge-base chrome, pagination) can read their labels via ui() without
+  // prop-drilling. Set again in Shell + the home page so the nearest wrapper always wins.
+  setActiveLocale(locale)
 
   // data-scroll-behavior tells Next that the `scroll-behavior: smooth` in globals.css is
   // intentional, so it disables it for route transitions — otherwise every navigation animates the

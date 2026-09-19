@@ -377,6 +377,62 @@ if (fs.existsSync(enShopPath)) {
   else pass('EN shop.json bevat geen productcatalogus (products leeg)');
 } else pass('content/en/shop.json nog niet aangemaakt (staged)');
 
+// ---------- 27. Batch 2.5 — gedeelde UI locale-aware (i18n plumbing) ----------
+const sectionsSrc = fs.readFileSync(path.join(ROOT, 'components/sections.tsx'), 'utf8');
+// 27a. Geen zichtbare hardcoded Nederlandse UI meer in de generieke renderer: letterlijke
+//      JSX-tekst (>...<) of string-literals ('...'/"...") van bekende NL labels/aria-labels.
+const literalDutch = ['Bekijk op de kaart', 'Alle artikelen', 'Lees artikel', 'min lezen', 'Meer over dit onderwerp', 'Terug naar de blog', 'Vorig artikel', 'Volgend artikel', 'In dit artikel', 'Inhoudsopgave', 'Klantbeoordelingen', 'Vorige pagina', 'Volgende pagina', 'Paginering']
+  .filter((s) => new RegExp(`(>\\s*${s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*<|["']${s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["'])`).test(sectionsSrc));
+if (literalDutch.length) fail(`hardcoded Nederlandse UI in components/sections.tsx: ${literalDutch.join(' | ')}`);
+else pass('geen hardcoded Nederlandse UI-strings in components/sections.tsx');
+
+// 27b. Geen NL_MONTHS-only datumimplementatie; locale-aware via Intl.
+if (/NL_MONTHS/.test(sectionsSrc)) fail('sections.tsx bevat nog NL_MONTHS (moet locale-aware Intl-datum zijn)');
+else if (!/Intl\.DateTimeFormat/.test(sectionsSrc)) fail('sections.tsx datumformattering is niet Intl-based');
+else pass('datumformattering is locale-aware (Intl.DateTimeFormat, geen NL_MONTHS)');
+
+// 27c. UI-labelbestanden bestaan voor NL + EN met identieke structuur.
+const uiNlPath = path.join(ROOT, 'content/nl/ui.json');
+const uiEnPath = path.join(ROOT, 'content/en/ui.json');
+if (!fs.existsSync(uiNlPath) || !fs.existsSync(uiEnPath)) {
+  fail('content/<locale>/ui.json ontbreekt voor nl en/of en');
+} else {
+  const uiNl = JSON.parse(fs.readFileSync(uiNlPath, 'utf8'));
+  const uiEn = JSON.parse(fs.readFileSync(uiEnPath, 'utf8'));
+  const shape = (o) => Object.entries(o)
+    .filter(([k]) => !k.startsWith('$'))
+    .map(([k, v]) => (v && typeof v === 'object' && !Array.isArray(v) && k !== 'categories' && k !== 'relatedLabels'
+      ? `${k}:{${Object.keys(v).sort().join(',')}}`
+      : k))
+    .sort();
+  if (JSON.stringify(shape(uiNl)) !== JSON.stringify(shape(uiEn))) fail('ui.json NL/EN structuur wijkt af');
+  else pass('ui.json NL/EN: identieke labelstructuur');
+  // 27d. Engelse UI-labels zijn echt Engels (steekproef), NL blijft Nederlands.
+  if (uiEn.blog.readArticle === uiNl.blog.readArticle || /lezen|artikel|Bekijk|Vorige|Volgende/.test(JSON.stringify(uiEn.blog) + JSON.stringify(uiEn.pagination) + JSON.stringify(uiEn.common))) {
+    fail('content/en/ui.json bevat nog Nederlandse UI-labels');
+  } else pass('EN UI-labels zijn Engels; NL blijft Nederlands');
+  // 27e. Stabiele categoriesleutels: EN categories-map dekt elke gebruikte NL-categorie.
+  const blogCats = new Set(Object.values(rd('content/nl/blog.json').posts || {}).map((p) => (p.category || '').trim()).filter(Boolean));
+  const missingCat = [...blogCats].filter((c) => !(c in uiEn.categories));
+  if (missingCat.length) fail(`EN categories-labels ontbreken voor: ${missingCat.join(', ')}`);
+  else pass('EN categories-map dekt alle gebruikte kennisbank-categorieën');
+  // 27f. Related-link labels: elke NL related-URL heeft een EN label.
+  const relUrls = new Set([...fs.readFileSync(path.join(ROOT, 'content/blog.ts'), 'utf8').matchAll(/url: '([^']+)'/g)].map((m) => m[1]));
+  const missingRel = [...relUrls].filter((u) => !(u in uiEn.relatedLabels));
+  if (missingRel.length) fail(`EN relatedLabels ontbreken voor: ${missingRel.join(', ')}`);
+  else pass('EN relatedLabels dekken alle category-related URLs');
+}
+
+// 27g. Stabiele category-slug staat los van het (vertaalbare) label.
+const blogSrc = fs.readFileSync(path.join(ROOT, 'content/blog.ts'), 'utf8');
+if (!/function categorySlug/.test(blogSrc)) fail('categorySlug ontbreekt in content/blog.ts');
+else pass('categorySlug bestaat (stabiele slug losgekoppeld van display-label via ui.categories)');
+
+// 27h. Ambient locale wordt in de locale-layout gezet (geen client-side detectie).
+const layoutSrc = fs.readFileSync(path.join(ROOT, 'app/[locale]/layout.tsx'), 'utf8');
+if (!/setActiveLocale\(/.test(layoutSrc)) fail('app/[locale]/layout.tsx zet de actieve locale niet (setActiveLocale)');
+else pass('locale-layout zet de actieve locale server-side (geen client-detectie)');
+
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];
 warnings.push('legal EN+NL = BLOCKED_CUSTOMER_LEGAL (placeholdertekst; noindex + uit sitemap tot goedgekeurde teksten)');

@@ -4,6 +4,7 @@ import { LocaleLink } from '@/components/LocaleLink'
 import { Shell } from '@/components/Shell'
 import { BlogGrid, CtaBand, PageHero } from '@/components/sections'
 import { getBlogCards, getBlogCategories, getBlogIndex } from '@/content/blog'
+import { categoryLabel, fill, getUI } from '@/content/ui'
 import { pageAlternates } from '@/lib/seo'
 
 /**
@@ -17,9 +18,10 @@ import { pageAlternates } from '@/lib/seo'
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const categories = getBlogCategories(locale)
+  const t = getUI(locale).kennisbank
   return {
-    title: 'Kennisbank — IZZI Beauty',
-    description: `Alles over permanente make-up, verdeeld over ${categories.length} onderwerpen: van behandelingen en nazorg tot opleidingen.`,
+    title: `${t.title} — IZZI Beauty`,
+    description: fill(t.metaDescription, { n: categories.length }),
     alternates: pageAlternates('/kennisbank', locale),
   }
 }
@@ -28,14 +30,15 @@ export default async function KennisbankPage({ params }: { params: Promise<{ loc
   const { locale } = await params
   const blogIndex = getBlogIndex(locale)
   const categories = getBlogCategories(locale)
+  const t = getUI(locale).kennisbank
 
   return (
     <Shell locale={locale}>
       <PageHero
-        breadcrumb="Kennisbank"
-        eyebrow="Kennisbank"
-        text="Alles wat je wilt weten over permanente make-up, verdeeld over onderwerpen."
-        title="Kennisbank"
+        breadcrumb={t.title}
+        eyebrow={t.eyebrow}
+        text={t.heroText}
+        title={t.title}
       />
       <section className="section">
         <div className="container">
@@ -45,7 +48,7 @@ export default async function KennisbankPage({ params }: { params: Promise<{ loc
             <div className="kb-categories">
               {categories.map((c) => (
                 <LocaleLink className="kb-category" href={`/kennisbank/${c.slug}`} key={c.slug}>
-                  {c.name} <span className="kb-count">{c.count}</span>
+                  {categoryLabel(locale, c.name)} <span className="kb-count">{c.count}</span>
                 </LocaleLink>
               ))}
             </div>

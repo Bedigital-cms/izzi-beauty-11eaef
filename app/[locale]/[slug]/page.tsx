@@ -7,6 +7,7 @@ import { getBlogIndex, getPosts, getPostSlugs, getPublishedPosts } from '@/conte
 import { getLocaties, getLocatieSlugs } from '@/content/locaties'
 import { getServices, getServiceSlugs } from '@/content/services'
 import { getTrainingsDetail, getTrainingSlugs } from '@/content/trainings-detail'
+import { getUI } from '@/content/ui'
 import { commerceRouteSegments } from '@/lib/commerce/config'
 import { activeLocales } from '@/lib/i18n'
 import { pageAlternates } from '@/lib/seo'
@@ -193,10 +194,12 @@ export default async function FlatDetailPage({
 
   // Reuse the blog index's CTA copy so the booking prompt stays consistent across the section.
   const { cta } = getBlogIndex(locale)
+  // Localized category display for the eyebrow (URL/slug stays stable; only the label localizes).
+  const eyebrow = post.category ? getUI(locale).categories[post.category] ?? post.category : 'Blog'
 
   return (
     <Shell locale={locale}>
-      <PageHero eyebrow={post.category || 'Blog'} title={post.title} text={post.excerpt} breadcrumb={post.title} />
+      <PageHero eyebrow={eyebrow} title={post.title} text={post.excerpt} breadcrumb={post.title} />
       <BlogPostPage
         post={post}
         prev={at > 0 ? neighbour(at - 1) : undefined}

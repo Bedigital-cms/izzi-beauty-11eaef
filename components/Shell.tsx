@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 
 import { getShopUI } from '@/content/shop'
 import { getSite } from '@/content/site'
+import { setActiveLocale } from '@/content/ui'
 import { defaultLocale, hideDefaultPrefix } from '@/lib/i18n'
 
 import { CommerceBoundary } from './commerce/CommerceBoundary'
@@ -18,6 +19,7 @@ import { LocaleProvider } from './LocaleLink'
  *  CommerceBoundary voegt de winkelwagen-context toe — maar alleen bij tenants met een webshop, zodat
  *  een gewone contentsite er niets van merkt. */
 export function Shell({ locale, children }: { locale: string; children: ReactNode }) {
+  setActiveLocale(locale)
   const site = getSite(locale)
   return (
     <LocaleProvider locale={locale} defaultLocale={defaultLocale()} hideDefaultPrefix={hideDefaultPrefix()}>
