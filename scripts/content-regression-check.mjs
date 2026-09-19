@@ -555,6 +555,35 @@ if (fs.existsSync(enBlogPath)) {
   else pass('blog EN: geen Nederlandse leftovers in vertaalde velden');
 } else pass('content/en/blog.json nog niet aangemaakt (staged)');
 
+// ---------- 31. Pre-live technical guards ----------
+const checkoutSrc = fs.readFileSync(path.join(ROOT, 'app/api/commerce/checkout/route.ts'), 'utf8');
+if (!/ZERO_PAYMENT/.test(checkoutSrc) || !/totalCents <= 0/.test(checkoutSrc)) {
+  fail('checkout mist ZERO_PAYMENT_GUARD (totalCents <= 0 moet checkout blokkeren)');
+} else pass('ZERO_PAYMENT_GUARD aanwezig in checkout-API');
+if (!/localePathname\(locale, '\/afrekenen\/bedankt'/.test(checkoutSrc)) {
+  fail('checkout returnUrl gebruikt geen localePathname (breekt hideDefaultPrefix EN-root)');
+} else pass('checkout thank-you URL respecteert hideDefaultPrefix');
+
+const checkoutFormSrc = fs.readFileSync(path.join(ROOT, 'components/commerce/CheckoutForm.tsx'), 'utf8');
+if (!/cart\.totalCents <= 0/.test(checkoutFormSrc) || !/saved\.totalCents <= 0/.test(checkoutFormSrc)) {
+  fail('CheckoutForm blokkeert €0-checkout niet client-side');
+} else pass('CheckoutForm blokkeert €0-checkout client-side');
+
+const robotsSrc = fs.readFileSync(path.join(ROOT, 'app/robots.ts'), 'utf8');
+if (!/['"]\/account['"]/.test(robotsSrc) || !/['"]\/preview\//.test(robotsSrc)) {
+  fail('robots.ts mist unprefixed functional disallows voor hideDefaultPrefix EN-root');
+} else pass('robots.ts disallows zowel /nl/… als clean EN functional paths');
+
+const ervaringenSrc = fs.readFileSync(path.join(ROOT, 'app/[locale]/ervaringen/page.tsx'), 'utf8');
+if (!/pageAlternates\(\s*'\/ervaringen'/.test(ervaringenSrc)) {
+  fail('ervaringen-pagina mist pageAlternates (hreflang/canonical)');
+} else pass('ervaringen generateMetadata gebruikt pageAlternates');
+
+const notFoundSrc = fs.readFileSync(path.join(ROOT, 'app/not-found.tsx'), 'utf8');
+if (!/getUI\(locale\)\.notFound/.test(notFoundSrc) || /<h1>Pagina niet gevonden<\/h1>/.test(notFoundSrc)) {
+  fail('globale 404 is nog hardcoded Nederlands');
+} else pass('globale 404 gebruikt locale-aware ui.notFound');
+
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];
 warnings.push('legal EN+NL = BLOCKED_CUSTOMER_LEGAL (placeholdertekst; noindex + uit sitemap tot goedgekeurde teksten)');

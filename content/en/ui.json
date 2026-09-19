@@ -79,6 +79,12 @@
     "locationsHeading": "Our locations",
     "locationsSubheading": "Visit one of our studios"
   },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for no longer exists. Go back to the homepage or view our treatments.",
+    "home": "To the homepage",
+    "treatments": "View treatments"
+  },
   "categories": {
     "Behandelingen": "Treatments",
     "Correctie": "Correction",

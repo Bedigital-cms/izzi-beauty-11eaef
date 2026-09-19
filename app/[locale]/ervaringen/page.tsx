@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { Shell } from '@/components/Shell'
 import { InfoPage } from '@/components/sections'
 import { getInfo } from '@/content/info'
+import { pageAlternates } from '@/lib/seo'
 
 /**
  * Ervaringen — klantreviews, als los te vinden pagina onder Over IZZI.
@@ -23,7 +24,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params
   const data = getInfo(locale)[KEY]
   if (!data) return {}
-  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text }
+  return {
+    title: `${data.hero.title} — IZZI Beauty`,
+    description: data.hero.text,
+    alternates: pageAlternates('/ervaringen', locale),
+  }
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

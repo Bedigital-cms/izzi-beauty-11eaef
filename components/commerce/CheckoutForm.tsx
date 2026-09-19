@@ -394,6 +394,12 @@ export function CheckoutForm({
       await storeAddressInAccount()
     }
 
+    if (!Number.isFinite(saved.totalCents) || saved.totalCents <= 0) {
+      setStatus('error')
+      setMessage('Het totaalbedrag is ongeldig. Checkout is geblokkeerd tot de prijs bekend is.')
+      return
+    }
+
     // Dan afrekenen, met het bedrag dat de bezoeker NU ziet als controle.
     const res = await fetch('/api/commerce/checkout', {
       method: 'POST',
@@ -964,7 +970,7 @@ export function CheckoutForm({
               knop voor altijd uit blijven staan. */}
           <button
             className="btn btn-gold summary-cta"
-            disabled={busy || (!coursesOnly && !selectedMethod)}
+            disabled={busy || (!coursesOnly && !selectedMethod) || cart.totalCents <= 0}
             type="submit"
           >
             {/*

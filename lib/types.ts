@@ -623,6 +623,13 @@ export type Ui = {
     locationsHeading: string
     locationsSubheading: string
   }
+  /** Global 404 page (app/not-found.tsx). Uses the default locale until a locale-aware 404 exists. */
+  notFound: {
+    title: string
+    text: string
+    home: string
+    treatments: string
+  }
   /** Stable knowledge-base category KEY (the raw NL category value) → localized display label. */
   categories: Record<string, string>
   /** Related-link URL → localized label (URLs stay stable, labels localize). */
