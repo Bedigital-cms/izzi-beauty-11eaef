@@ -317,6 +317,66 @@ if (fs.existsSync(enDir)) {
   else pass('EN-bestanden hebben dezelfde top-level keys als NL');
 } else pass('geen content/en (nog niet gestart)');
 
+// ---------- 26. Batch 2 EN-content: info + locaties + shop parity/inhoud ----------
+const enInfoPath = path.join(ROOT, 'content/en/info.json');
+if (fs.existsSync(enInfoPath)) {
+  const nlInfo = rd('content/nl/info.json');
+  const enInfo = JSON.parse(fs.readFileSync(enInfoPath, 'utf8'));
+  const nlIK = Object.keys(nlInfo).sort();
+  const enIK = Object.keys(enInfo).sort();
+  if (JSON.stringify(nlIK) !== JSON.stringify(enIK)) fail(`info.json NL/EN top-level keys wijken af: nl=${nlIK.length} en=${enIK.length}`);
+  else pass(`info.json NL/EN key-pariteit (${nlIK.length} keys)`);
+  // FAQ-lengtes per key gelijk (geen verdwenen FAQ door vertaling).
+  const faqMismatch = nlIK.filter((k) => ((nlInfo[k].faq && nlInfo[k].faq.items) || []).length !== ((enInfo[k] && enInfo[k].faq && enInfo[k].faq.items) || []).length);
+  if (faqMismatch.length) fail(`info EN mist FAQ-items t.o.v. NL bij: ${faqMismatch.join(', ')}`);
+  else pass('info EN: geen verdwenen FAQ-items');
+  // EN-team = exact Isabella + Carla (geen Leoni).
+  const enTeam = ((enInfo['ons-team'] || {}).team || []).map((m) => m.name);
+  if (JSON.stringify(enTeam) !== JSON.stringify(['Isabella', 'Carla'])) fail(`EN team is ${JSON.stringify(enTeam)}, verwacht ["Isabella","Carla"]`);
+  else pass('EN team = Isabella + Carla');
+  if (JSON.stringify(enInfo['ons-team'] || {}).match(/leoni/i)) fail('Leoni nog aanwezig in EN ons-team');
+  else pass('geen Leoni in EN ons-team');
+  // EN-teamfoto's = dezelfde mediarefs als NL (geen vervangende/verzonnen foto's).
+  const nlImgs = ((nlInfo['ons-team'] || {}).team || []).map((m) => m.image);
+  const enImgs = ((enInfo['ons-team'] || {}).team || []).map((m) => m.image);
+  if (JSON.stringify(nlImgs) !== JSON.stringify(enImgs)) fail('EN team-mediarefs wijken af van NL');
+  else pass('EN team gebruikt dezelfde mediarefs als NL');
+  // Info-CTA-bestemmingen blijven gelijkwaardig (zelfde primaryUrl per key).
+  const ctaMismatch = nlIK.filter((k) => (nlInfo[k].cta && nlInfo[k].cta.primaryUrl) !== (enInfo[k] && enInfo[k].cta && enInfo[k].cta.primaryUrl));
+  if (ctaMismatch.length) fail(`info EN CTA-url wijkt af bij: ${ctaMismatch.join(', ')}`);
+  else pass('info EN CTA-bestemmingen identiek aan NL');
+} else pass('content/en/info.json nog niet aangemaakt (staged)');
+
+const enLocPath = path.join(ROOT, 'content/en/locaties.json');
+if (fs.existsSync(enLocPath)) {
+  const nlLoc = rd('content/nl/locaties.json');
+  const enLoc = JSON.parse(fs.readFileSync(enLocPath, 'utf8'));
+  const nlLK = Object.keys(nlLoc).sort();
+  const enLK = Object.keys(enLoc).sort();
+  if (JSON.stringify(nlLK) !== JSON.stringify(enLK)) fail(`locaties.json NL/EN city-keys wijken af: nl=${nlLK.length} en=${enLK.length}`);
+  else pass(`locaties.json NL/EN key-pariteit (${nlLK.length} steden)`);
+  // Adressen NIET vertaald + geen extra/verzonnen fysieke vestigingen.
+  const addrChanged = nlLK.filter((k) => (nlLoc[k].location || {}).address !== (enLoc[k] && enLoc[k].location && enLoc[k].location.address) || (nlLoc[k].location || {}).postcode !== (enLoc[k] && enLoc[k].location && enLoc[k].location.postcode));
+  if (addrChanged.length) fail(`locatie-adres vertaald/gewijzigd bij: ${addrChanged.join(', ')}`);
+  else pass('locatie-adressen ongewijzigd (niet vertaald)');
+  const enAddresses = new Set(enLK.map((k) => (enLoc[k].location || {}).address));
+  const nlAddresses = new Set(nlLK.map((k) => (nlLoc[k].location || {}).address));
+  if (enAddresses.size > nlAddresses.size) fail('EN introduceert extra fysieke vestiging(en) t.o.v. NL');
+  else pass('geen extra fysieke vestigingen in EN locaties');
+  // Geen verzonnen "our studio in <stad>" service-area-fout.
+  const locRaw = fs.readFileSync(enLocPath, 'utf8');
+  const fakeStudio = enLK.filter((k) => k !== 'amsterdam' && new RegExp(`our studio in ${enLoc[k].city}\\b`, 'i').test(locRaw));
+  if (fakeStudio.length) fail(`service-area-pagina claimt eigen studio: ${fakeStudio.join(', ')}`);
+  else pass('service-area-steden claimen geen eigen fysieke studio');
+} else pass('content/en/locaties.json nog niet aangemaakt (staged)');
+
+const enShopPath = path.join(ROOT, 'content/en/shop.json');
+if (fs.existsSync(enShopPath)) {
+  const enShop = JSON.parse(fs.readFileSync(enShopPath, 'utf8'));
+  if (Array.isArray(enShop.products) && enShop.products.length > 0) fail('EN shop.json bevat een productcatalogus (producten horen live uit de CMS)');
+  else pass('EN shop.json bevat geen productcatalogus (products leeg)');
+} else pass('content/en/shop.json nog niet aangemaakt (staged)');
+
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];
 warnings.push('legal EN+NL = BLOCKED_CUSTOMER_LEGAL (placeholdertekst; noindex + uit sitemap tot goedgekeurde teksten)');

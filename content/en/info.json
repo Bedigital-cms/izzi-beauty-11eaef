@@ -1,0 +1,492 @@
+{
+  "veelgesteldevragen-lippen": {
+    "hero": {
+      "eyebrow": "FAQ",
+      "title": "Frequently asked questions — lip courses",
+      "text": "Do you have questions about a permanent makeup lip course? Below you'll find all the questions and answers about the courses IZZI Beauty offers.",
+      "breadcrumb": "FAQ — lip courses"
+    },
+    "image": "/media/izzi-beauty-20250729-b60f2a-lip-pigmentatie.webp",
+    "body": [
+      {
+        "heading": "PMU Lip Courses – Frequently Asked Questions",
+        "paragraphs": [
+          "Do you have questions about a permanent makeup lip course? Below you'll find all the questions and answers about the courses IZZI Beauty offers.",
+          "Can't find the answer to your question? Don't hesitate to get in touch with us!"
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Frequently asked questions about the lip courses",
+      "items": [
+        { "q": "What can I expect during a Lip Pigmentation course?", "a": "The Lip Blush course prepares you to understand everything about performing Lip Blush permanent makeup and its theoretical side." },
+        { "q": "Do I need prior training to start a PMU course?", "a": "You don't need prior training for a beginner course. For a Masterclass you do need experience with PMU." },
+        { "q": "Is the certificate recognised?", "a": "The certificate you receive after the course is an internationally recognised certificate and can be issued in Dutch or English." },
+        { "q": "How many students are taught at the same time?", "a": "We only teach in groups of 2, because we want to give everyone optimal attention." },
+        { "q": "How can I sign up for the course?", "a": "At the bottom of the course pages you'll find the 'sign up' section. There you can select a date and book it with a deposit or by paying the full amount." },
+        { "q": "Is a starter kit included in the price?", "a": "All starter kits are included with our courses. We provide an extensive starter kit so you can perform enough treatments (around 50)." },
+        { "q": "Why do you offer 4 different PMU machines?", "a": "We offer 4 brands because we feel many trainers require you to buy one particular brand straight away, while that machine may be financially too expensive or simply may not work well for you." },
+        { "q": "Am I obliged to buy a PMU machine from you?", "a": "No. You are not obliged to buy a PMU machine through us. During the course you can try out 4 different machines." },
+        { "q": "Can I pay for the PMU machine in instalments?", "a": "Unfortunately not all machines can be paid in instalments. Payment for the Labina and Artyst machines does not go through us. You do receive a discount code to purchase the machine from Artyst." },
+        { "q": "How do I use the 30 days before the in-person course to train at home on latex?", "a": "After the deposit you automatically receive access to our online learning platform. It contains all the theoretical information for the course, including the explanation of the 4 different PMU machines." },
+        { "q": "Does it help a lot to use the 30 days before the course to train at home?", "a": "It helps enormously. You get to know your machine right away and experience what it's like to create pixels and outlines on latex." },
+        { "q": "What if I fail my exam?", "a": "So far we have trained all 100+ students without anyone failing. We take plenty of time to give everyone extra help." },
+        { "q": "When can I take a Masterclass?", "a": "You take a Lip Blush Masterclass only once you have enough experience with the Lip Blush treatment. Enough experience means: having completed a beginner course with a certificate as proof, and having already treated around 30 clients or models." },
+        { "q": "Do I receive an exam with a Masterclass?", "a": "Yes, every in-person course with us includes an exam. This is a practical exam only." }
+      ]
+    },
+    "cta": {
+      "title": "Book an in-person course",
+      "text": "Can't find the answer to your question? Don't hesitate to get in touch.",
+      "primaryLabel": "View all courses",
+      "primaryUrl": "/opleidingen",
+      "secondaryLabel": "Contact us",
+      "secondaryUrl": "/contact"
+    }
+  },
+  "online-trainingen-veelgestelde-vragen": {
+    "hero": {
+      "eyebrow": "FAQ",
+      "title": "Online PMU Course — Frequently asked questions",
+      "text": "Do you have questions about an online permanent makeup course? Below you'll find all the questions and answers about the online courses IZZI Beauty offers in the IZZI Beauty Academy.",
+      "breadcrumb": "Online Training FAQ"
+    },
+    "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp",
+    "body": [
+      {
+        "heading": "PMU FAQ – Online Courses",
+        "paragraphs": [
+          "Do you have questions about an online permanent makeup course? Below you'll find all the questions and answers about the online courses IZZI Beauty offers in the IZZI Beauty Academy."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Frequently asked questions about online courses",
+      "items": [
+        { "q": "What can I expect during an Online Ombré Powder Brows course?", "a": "The online Ombré Powder Brows course prepares you to understand everything about performing Ombré Powder Brows permanent makeup and its theoretical side." },
+        { "q": "Do I need prior training to start a PMU course?", "a": "You don't need prior training for a beginner course. For a Masterclass you do need experience with PMU." },
+        { "q": "How can I sign up for the online course?", "a": "For online courses you can choose from several courses; you add this 'product' to your cart and pay. You receive a login code and password to start the course online." },
+        { "q": "Is a starter kit included in the price?", "a": "No starter kit is included in the course price. You can, however, buy a range of products in our webshop." },
+        { "q": "Why do you offer 4 different PMU machines?", "a": "We provide information on 4 machine brands because every machine has different advantages and everyone may have a different preference. Prices also vary." },
+        { "q": "Am I obliged to buy a PMU machine from you?", "a": "No. You are not obliged to buy a PMU machine through us. During the course you receive information about 4 different machines." },
+        { "q": "Can I pay for the PMU machine in instalments?", "a": "Unfortunately not all machines can be paid in instalments. Payment for the Labina and Artyst machines does not go through us. You do receive a discount code to purchase the machine from Artyst." },
+        { "q": "Can I pay for the online course in instalments?", "a": "Unfortunately there are no instalment options for an online course yet." },
+        { "q": "What if I fail my exam?", "a": "An exam for an online course means you submit homework on latex and before-and-after photos of work on a model. If you fail your exam, you can always retake it an unlimited number of times. You can also choose the in-person option instead for more guidance." },
+        { "q": "When can I take a Masterclass?", "a": "You take an Ombré Powder Brows Masterclass only once you have enough experience with the Powder Brows treatment. Enough experience means: having completed a beginner course with a certificate as proof, and having already treated around 30 clients/models." },
+        { "q": "Do I receive an exam with a Masterclass?", "a": "Yes, every in-person course with us includes an exam. This is a practical exam only. We're there to guide and help you." }
+      ]
+    },
+    "cta": {
+      "title": "Book an online course",
+      "text": "Can't find your question? Feel free to contact us — we're happy to help.",
+      "primaryLabel": "View online training",
+      "primaryUrl": "/online-trainingen",
+      "secondaryLabel": "Contact us",
+      "secondaryUrl": "/contact"
+    }
+  },
+  "veelgestelde-vragen": {
+    "hero": {
+      "eyebrow": "FAQ",
+      "title": "Frequently asked questions",
+      "text": "Answers to the most common questions about our treatments and courses. Can't find your question? Feel free to contact us.",
+      "breadcrumb": "Frequently asked questions"
+    },
+    "faq": {
+      "title": "",
+      "items": [
+        { "q": "How long does permanent makeup last?", "a": "Depending on the treatment and your skin type, on average 1 to 3 years. An annual touch-up keeps the result fresh." },
+        { "q": "Does a treatment hurt?", "a": "We work with a numbing cream, so most clients find the treatment well tolerable." },
+        { "q": "What is the healing process like?", "a": "The skin heals in about 4 to 6 weeks. During that period the colour softens slightly to the final, natural result." },
+        { "q": "Can I qualify for UWV funding for a course?", "a": "In some cases, yes. Ask us during your consultation and we'll look at the options together. (UWV is the Dutch Employee Insurance Agency.)" },
+        { "q": "Are you GGD-certified?", "a": "Yes, we work to the highest hygiene standards and hold the required GGD permit (Dutch municipal health service)." }
+      ]
+    },
+    "cta": {
+      "title": "Another question?",
+      "text": "We're happy to help. Feel free to get in touch.",
+      "primaryLabel": "Contact us",
+      "primaryUrl": "/contact"
+    }
+  },
+  "permanente-make-up-lippen-veelgestelde-vragen": {
+    "hero": {
+      "eyebrow": "FAQ · Lips",
+      "title": "PMU Lips — Frequently asked questions",
+      "text": "Do you have questions about a lip PMU treatment? Here you'll find all the frequently asked questions about PMU treatments such as Lip Blush.",
+      "breadcrumb": "Frequently Asked Questions Permanent Makeup – Lips"
+    },
+    "body": [
+      {
+        "heading": "PMU FAQ – Lips",
+        "paragraphs": [
+          "Do you have questions about a permanent makeup treatment? Below you'll find all the questions and answers about the treatments IZZI Beauty offers. Can't find the answer to your question? Don't hesitate to get in touch with us!",
+          "Looking for frequently asked questions about permanent makeup courses? Then see our general FAQ.",
+          "Click a treatment below to jump straight to its questions & answers: Lips, Brows, Freckles or Eyeliner."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Permanent Makeup FAQ – Lips",
+      "items": [
+        { "q": "What is a Lip Blush?", "a": "Lip Blush is a semi-permanent makeup for the lips, applied through micropigmentation. Pigment is applied using pixels, which gives the lips a natural effect. You can choose a Lip Blush that is fully coloured in, or one with an ombré effect fading inwards. We discuss all your wishes and advise you on the options before the treatment starts." },
+        { "q": "Who is permanent makeup suitable for?", "a": "PMU is suitable for all skin types and all kinds of lips — oily, dry, large pores or small pores. For anyone who wants anything from natural lips to a bolder, stronger makeup look. IZZI Beauty looks at and discusses all your wishes before we start a treatment. Everyone is unique, and we like to honour that by placing the personal, perfect Lip Blush for each individual." },
+        { "q": "What is the minimum age for PMU?", "a": "The minimum age for permanent makeup is 17, in which case one parent must accompany you to the treatment. Over 18 you may decide about the treatment yourself." },
+        { "q": "Is a Lip Blush treatment painful?", "a": "The Lip Blush treatment is experienced as very mild discomfort. A few people find the first layer sensitive. A numbing cream is used, so you feel virtually nothing." },
+        { "q": "What is the aftercare for Lip Blush?", "a": "Aftercare is always discussed with you right at the treatment and sent by email afterwards. For the first 7 days you should avoid sun, sauna and swimming pools. For the first 4 hours after the treatment you should not eat spicy or salty food. Do not scratch the flaking skin during the healing process. Keep the lips moisturised throughout the day with the aftercare cream we provide." },
+        { "q": "When should I come back for a touch-up?", "a": "You return after 6–8 weeks for a touch-up. During a touch-up we can make the shape a little crisper and the colour darker, more intense or warmer. We can also add more powder effect with extra pixels. The touch-up is always included in the price of the first treatment. The touch-up must be done within 9 weeks at the latest; otherwise we may charge from € 50.00, because after 8–9 weeks the pigment fades more and the touch-up takes more time." },
+        { "q": "How is the pigment colour determined?", "a": "We have a very wide range of pigments. We provide advice on the final pigment choice, and IZZI Brows does not deviate far from that advice, because a lot of knowledge goes into pigment selection. If the advised pigment does not match your wish as a client, we may not be able to carry out the treatment. We only work in an extremely safe and correct way for an optimal long-term result. We ourselves know how each pigment colour heals. We ask you to keep and show a few photos to give us an impression of what you like." },
+        { "q": "Is IZZI Beauty GGD-approved?", "a": "Of course! IZZI Beauty is officially GGD-approved (Dutch municipal health service)." },
+        { "q": "Can you have PMU done while pregnant?", "a": "You may not undergo a permanent makeup treatment while pregnant. This is because hormones make pigment retain less well in the skin, and — the main reason — if an infection occurs you cannot take antibiotics due to the pregnancy." },
+        { "q": "I have fillers, can I still have PMU done?", "a": "This is possible, but there must be 2 weeks between the last filler treatment and placing permanent makeup." },
+        { "q": "What if I have ever had a cold sore?", "a": "We strongly recommend starting with 1 tablet (not liquid form) of L-Lysine the day before your Lip Blush treatment starts. You should continue these tablets until 4 days after the Lip Blush treatment. L-Lysine helps strongly suppress the chance of a cold sore. A cold sore / active infection simply prevents the Lip Blush from healing optimally. The major risk is that the Lip Blush colour becomes patchy at the cold-sore site or severely damages the lip skin. If you have had a cold sore / herpes virus on the lips in the past and do not take L-Lysine before and after the treatment, we unfortunately cannot carry out the treatment. L-Lysine can only be used in tablet form, because applying a liquid form to the open wound of the lips after placing Lip Blush is not an option. Only the aftercare may be used on the lips for 7–9 days, and nothing else." },
+        { "q": "What is an intake form?", "a": "IZZI Brows works with an intake form to safeguard all safety requirements. This means IZZI Brows does not treat under certain circumstances. This is reviewed with you before the treatment via the intake form. All the details you provide are and always remain private." },
+        { "q": "What about a guarantee on the treatment?", "a": "After the Lip Blush treatment you are always entitled to a touch-up after 6–8 weeks. We do not treat earlier than that, because otherwise the healing process is still ongoing. After the touch-up you still have a guarantee for up to 2 weeks. If something is not to your liking, or has faded too quickly, you can come by in consultation." },
+        { "q": "What's the difference between a Lip Blush treatment now and an old lip tattoo?", "a": "Lip Blush is a name for pigmenting your lips. Pigmenting is comparable to tattooing, except with pigmenting the ink is applied with a needle into the top skin layer, whereas tattooing goes into the 3rd skin layer (much deeper). The old tattoo technique for lips was often experienced as very painful and caused a lot of scar tissue or damage to the lip skin. With today's Lip Blush treatment this is no longer the case, and you can enjoy beautiful lips worry-free." },
+        { "q": "How does Lip Blush fade?", "a": "Lip Blush fades fairly evenly after a few years. You keep the nicest result between the first treatment and around 2.5 to 3 years. When the Lip Blush has been placed correctly and evenly everywhere, it will also lighten evenly everywhere — so you won't be left with patches of colour and areas where the Lip Blush has already gone completely." }
+      ]
+    },
+    "cta": {
+      "title": "Book a treatment",
+      "text": "Can't find the answer to your question? Feel free to contact us, or book an appointment for your Lip Blush treatment right away.",
+      "primaryLabel": "Book a treatment",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "View Lip Blush",
+      "secondaryUrl": "/lip-blush"
+    }
+  },
+  "permanente-make-up-sproetjes-veelgestelde-vragen": {
+    "hero": {
+      "eyebrow": "FAQ · Freckles",
+      "title": "PMU – Freckles — Frequently asked questions",
+      "text": "Do you have questions about a permanent makeup freckles treatment? Here you'll find all the questions and answers about our faux freckles and beauty spot treatments.",
+      "breadcrumb": "Frequently Asked Questions Permanent Makeup Freckles"
+    },
+    "body": [
+      {
+        "heading": "PMU FAQ – Freckles",
+        "paragraphs": [
+          "Do you have questions about a permanent makeup treatment? Below you'll find all the questions and answers about the treatments IZZI Beauty offers. Can't find the answer to your question? Don't hesitate to get in touch with us!",
+          "Looking for frequently asked questions about permanent makeup courses? Then see our general FAQ.",
+          "Click a treatment below to jump straight to its questions & answers: Freckles, Lips, Brows or Eyeliner."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Permanent Makeup Freckles – Frequently Asked Questions",
+      "items": [
+        { "q": "How are sunkissed faux freckles placed?", "a": "Sunkissed freckles are the softest freckles there are. Real sunkissed freckles literally appear in summer from the sun. The ones we place are indistinguishable from real once they've healed." },
+        { "q": "How is the pigment for the freckles chosen?", "a": "We have a very broad range of pigments. We test a number of pigment colours on your own skin so we can choose the best undertone for the freckles. We determine the right colour with our advice and your opinion." },
+        { "q": "What is the recovery process for freckles?", "a": "Freckles generally heal the fastest of all PMU treatments. You need about 4–6 days at most to judge the colour well. On day 1 after the treatment day the freckles may be darker in colour. On days 2 and 3 this dark colour is almost gone. On days 4–6 the freckles may lighten in colour — a natural reaction of the skin. After day 6 the correct colour returns and the true freckle colour is clearly visible." },
+        { "q": "Can anything go wrong while placing faux freckles?", "a": "Not much can go wrong with the treatment itself. We are the only ones in the Netherlands highly specialised in this treatment, and everyone currently placing freckles in the Netherlands was trained by us. The only thing that can 'go wrong' is not making the right decision yourself. That means: too much doubt? Then first try wearing makeup freckles for a while to see whether you can get used to them, or try a faux-freckles filter on Instagram to see how it looks. We always advise: rather too few and too soft than too many and too dark. Once you're used to them, you can always choose to intensify the existing ones with pigment or add more freckles." },
+        { "q": "How is the colour of a beauty spot determined?", "a": "We always test the pigment we work with on your skin first. A beauty spot is always more intense in colour and a bit larger than a normal freckle. After testing the pigments we can form a proper picture of which pigment best suits your skin." },
+        { "q": "Why is there no touch-up with a single beauty spot treatment?", "a": "A beauty spot treatment does not include a standard touch-up because the beauty spots are already placed with darker pigment. This means you lose less pigment during healing, simply because the colour is already darker." },
+        { "q": "Why is there a touch-up with a Faux Freckles treatment?", "a": "Freckles do include a touch-up, but we don't treat as standard. This is because once the freckles have healed correctly and as desired, we don't place pigment again. The chance of the freckles ending up much darker is greater, because after the second treatment you only lose about 20% of the pigment after healing." },
+        { "q": "What guarantee is there on the PMU freckles treatment?", "a": "Up to 2 weeks after the treatment you can let us know if something isn't right or needs adjusting. This is mainly done when the freckles don't take well (after the touch-up) or when too much pigment has disappeared." },
+        { "q": "What may I not do during the first week after the freckles treatment?", "a": "The healing process is explained clearly right after the treatment, and you also receive a form about it by email. What matters most is realising that you have and must care for 'open wounds' where the freckles are. They're very small and don't really feel like open wounds, but they must be treated as such. Both the top (visible) layer of the freckles and the inner skin layer need the rest and space to heal properly. This mainly means: follow the aftercare well, wear no makeup on the freckles for 7 days, and avoid sun, swimming pools and saunas — and certainly no peels / micro-needling at all." },
+        { "q": "After 1–3 years, do the freckles fade so much that you see nothing, or does a strange pigment colour appear?", "a": "We mainly do not work with red undertones in the pigment when placing freckles, because that can cause red to be the only colour left at the end of fading — red being the largest molecule of all the colours in pigments. Because we don't work with that and only with soft undertones that suit your skin, you'll truly end up with ever-fainter freckles and no odd pigment colours left individually in the skin." },
+        { "q": "How is the position of the freckles determined on my face?", "a": "We do everything in consultation; we only treat once there's agreement. We cleanse the skin before drawing the freckles in the right place with a pencil. Then we determine the pigment together with you. Only once all freckles are drawn in the right place and the right pigment has been chosen and discussed do we start the treatment." },
+        { "q": "Is the freckles treatment painful?", "a": "The freckles are placed in the first skin layer of the face; this treatment is in no way experienced as painful. We also work as standard with a soothing cream that keeps the skin from becoming irritated during the treatment, so the treatment itself is not felt." },
+        { "q": "I'd like more freckles added after the first treatment — is that possible?", "a": "This is always possible. It must be indicated well before the treatment appointment. During the first treatment the number of freckles is determined; if next time, during the touch-up, you want more than 5 extra freckles, additional costs will apply." },
+        { "q": "I'd like PMU freckles, but not on my face — on my arms / legs / back / foot. Is that possible too?", "a": "Freckles occur everywhere on the body, so we can also treat areas other than your face. That's entirely up to you. Not all body parts can be treated; for more information it's best to call, WhatsApp or email us." }
+      ]
+    },
+    "cta": {
+      "title": "Book a treatment",
+      "text": "Can't find the answer to your question? Feel free to contact us, or book an appointment for your Faux Freckles treatment right away.",
+      "primaryLabel": "Book a treatment",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "View Faux Freckles",
+      "secondaryUrl": "/faux-freckles-behandeling"
+    }
+  },
+  "permanente-make-up-eyeliner-veelgestelde-vragen": {
+    "hero": {
+      "eyebrow": "FAQ · Eyeliner",
+      "title": "PMU Eyeliner — Frequently asked questions",
+      "text": "Do you have questions about a permanent makeup eyeliner treatment? Below you'll find all the questions and answers! Still have questions? Give us a call!",
+      "breadcrumb": "Frequently Asked Questions Permanent Makeup Eyeliner"
+    },
+    "body": [
+      {
+        "heading": "PMU FAQ – Eyeliner",
+        "paragraphs": [
+          "Do you have questions about a permanent makeup treatment? Below you'll find all the questions and answers about the treatments IZZI Beauty offers. Can't find the answer to your question? Don't hesitate to get in touch with us!",
+          "Looking for frequently asked questions about permanent makeup courses? Then see our general FAQ.",
+          "Click a treatment below to jump straight to its questions & answers: Eyeliner, Freckles, Lips or Brows."
+        ]
+      }
+    ],
+    "faq": {
+      "title": "Permanent Makeup Eyeliner – Frequently Asked Questions",
+      "items": [
+        { "q": "What is a Permanent Makeup Eyeliner?", "a": "A PMU eyeliner, also called Infralash, is a thin line placed between the lashes and just above them. The line gives you an open, fresh gaze." },
+        { "q": "Who is Permanent Makeup suitable for?", "a": "PMU is suitable for all skin types — oily, dry, large pores or small pores. For anyone who wants anything from natural makeup to a bolder, stronger makeup look. IZZI Beauty looks at and discusses all your wishes before we start a treatment. Everyone is unique, and we like to honour that by placing the personal, perfect Infralash for each individual." },
+        { "q": "What is the minimum age for Permanent Makeup?", "a": "The minimum age for permanent makeup is 17, in which case one parent must accompany you to the treatment. Over 18 you may decide about the treatment yourself." },
+        { "q": "Is the treatment painful?", "a": "The Infralash / Eyeliner treatment is experienced as very mild discomfort. A numbing cream is used, so you feel virtually nothing." },
+        { "q": "What is the aftercare for Infralash/Eyeliner?", "a": "Aftercare is always discussed with you right at the treatment and sent by email afterwards. For the first 7 days you should avoid the sun and not scratch the little scabs during the healing process. You should moisturise the Infralash almost every hour with Bepanthen ointment. You can use: baby ointment, a caring cream, or one specifically for tattoos." },
+        { "q": "When should I come back for a touch-up?", "a": "You return after 6–8 weeks for a touch-up. During a touch-up we can make the shape a little crisper and the colour darker, more intense or warmer. The touch-up is always included in the price of the first treatment. The touch-up must be done within 9 weeks at the latest; otherwise we may charge from € 50.00, because after 8 weeks the pigment fades more and the touch-up takes more time." },
+        { "q": "How is the pigment colour determined?", "a": "We have a wide range of pigments. We provide advice on the final pigment choice, and IZZI Brows does not deviate far from that advice, because a lot of knowledge goes into pigment selection. If the chosen pigment does not match your wish as a client, we cannot carry out the treatment. We only work in an extremely safe and correct way for an optimal long-term result. An Infralash / eyeliner does not necessarily have to be placed in black — deep dark brown or softer colours are also often requested." },
+        { "q": "Is IZZI Beauty GGD-approved?", "a": "Of course! IZZI Beauty is officially GGD-approved (Dutch municipal health service)." },
+        { "q": "Can you have permanent makeup done while pregnant?", "a": "You may not undergo a permanent makeup treatment while pregnant. This is because hormones make pigment retain less well in the skin, and — the main reason — if an infection occurs you cannot take antibiotics due to the pregnancy." },
+        { "q": "What is an intake form?", "a": "IZZI Beauty works with an intake form to safeguard all safety requirements. This means IZZI Beauty does not treat under certain circumstances. This is reviewed with you before the treatment via the intake form. All the details you provide are and always remain private." },
+        { "q": "What about a guarantee on the treatment?", "a": "After the Infralash/Eyeliner treatment you are always entitled to a touch-up after 6–8 weeks. We do not treat earlier than that, because otherwise the healing process is still ongoing. After the touch-up you still have a guarantee for up to 2 weeks. If something is not to your liking, or has faded too quickly, you can come by in consultation." },
+        { "q": "What's the difference between Infralash and Eyeliner?", "a": "Infralash is a PMU treatment in which only a thin line is placed between the lashes and just above them. An eyeliner PMU treatment is different because an optional wing can be added, or a thicker line above the lashes." }
+      ]
+    },
+    "cta": {
+      "title": "Book a treatment",
+      "text": "Can't find the answer to your question? Feel free to contact us, or book an appointment for your Infralash / Eyeliner treatment right away.",
+      "primaryLabel": "Book a treatment",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "View Permanent Eyeliner",
+      "secondaryUrl": "/permanente-make-up-eyeliner"
+    }
+  },
+  "werken-bij-izzi-beauty": {
+    "hero": {
+      "eyebrow": "Careers",
+      "title": "Careers at IZZI Beauty",
+      "text": "Become part of our team of passionate specialists. Explore our opportunities and apply.",
+      "breadcrumb": "Careers"
+    },
+    "image": "/media/izzi-beauty-20250729-f2269d-izzi-beauty-amsterdam.webp",
+    "body": [
+      {
+        "heading": "Who are we looking for?",
+        "paragraphs": [
+          "We are regularly looking for enthusiastic, driven PMU artists and beauty specialists to strengthen our team."
+        ],
+        "checklist": [
+          "Certified or in training",
+          "An eye for detail and a natural result",
+          "Client-focused and presentable"
+        ]
+      },
+      {
+        "heading": "What do we offer?",
+        "paragraphs": [
+          "A pleasant working environment, room to develop through our academy, and the chance to work with the latest techniques and products."
+        ]
+      },
+      {
+        "heading": "How to apply",
+        "paragraphs": [
+          "Leave your details and motivation below using the form. Then email your CV and a photo to info@izzi-beauty.com — that's how we complete your application. (Attachments are not sent via the form.)",
+          "You can also reach us directly by email (info@izzi-beauty.com) or by phone/WhatsApp on +31 6 11 76 88 81."
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Interested?",
+      "text": "Leave your details and motivation using the form below, and email your CV + photo to info@izzi-beauty.com.",
+      "primaryLabel": "Email your CV to IZZI",
+      "primaryUrl": "mailto:info@izzi-beauty.com"
+    },
+    "formSlug": "vacature"
+  },
+  "uwv-subsidie": {
+    "hero": {
+      "eyebrow": "Funding",
+      "title": "UWV Funding for PMU & Beauty Courses",
+      "text": "Under certain conditions you may qualify for UWV funding for our courses. UWV is the Dutch Employee Insurance Agency. Discover the options.",
+      "breadcrumb": "UWV Funding"
+    },
+    "image": "/media/izzi-beauty-20250729-adde3f-uwv-subsidie.png",
+    "body": [
+      {
+        "heading": "What is UWV funding?",
+        "paragraphs": [
+          "Through the UWV (the Dutch Employee Insurance Agency) there are, in some cases, options to have (part of) the course costs reimbursed — for example as part of a re-integration programme. Whether this applies depends on your personal situation and is assessed by the UWV, not by IZZI Beauty."
+        ]
+      },
+      {
+        "heading": "Do I qualify?",
+        "paragraphs": [
+          "Whether you qualify depends on your personal situation and is decided by the UWV. Get in touch with us and we'll look at the options together and help you with the application. We cannot guarantee funding."
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Ask about the options",
+      "text": "We're happy to help with the application and answer all your questions.",
+      "primaryLabel": "Contact us",
+      "primaryUrl": "/contact"
+    },
+    "formSlug": "uwv"
+  },
+  "ggd-gecertificeerd": {
+    "hero": {
+      "eyebrow": "Safety",
+      "title": "GGD Permit & Certification",
+      "text": "IZZI Beauty works to the highest hygiene standards and holds the required GGD permit. The GGD is the Dutch municipal health service.",
+      "breadcrumb": "GGD Permit"
+    },
+    "image": "/media/izzi-beauty-20250729-c7cc4d-crkbo-erkend.webp",
+    "body": [
+      {
+        "heading": "Safe and hygienic work",
+        "paragraphs": [
+          "At IZZI Beauty you are assured of safe and hygienic permanent makeup (PMU) treatments.",
+          "At IZZI Beauty your health and safety always come first with every permanent makeup (PMU) treatment. The Netherlands has strict rules for cosmetic tattoos and permanent makeup."
+        ]
+      },
+      {
+        "heading": "The Hygiene Guideline for Permanent Makeup",
+        "paragraphs": [
+          "These rules are based on the Hygiene Guideline for Permanent Makeup, drawn up by the Dutch National Centre for Hygiene and Safety on behalf of the Ministry of Health, Welfare and Sport. PMU specialists are legally required to comply with these guidelines, so that every treatment is carried out safely and hygienically."
+        ]
+      },
+      {
+        "heading": "Why a GGD permit is required",
+        "paragraphs": [
+          "To perform PMU treatments, specialists must hold a GGD permit. This permit is only issued after a thorough inspection by the GGD (the Dutch municipal health service) to confirm that hygiene and safety requirements are met. Without this permit it is prohibited to apply permanent makeup."
+        ]
+      },
+      {
+        "heading": "Checking a studio yourself",
+        "paragraphs": [
+          "At IZZI Beauty we work according to all hygiene guidelines and are proud of our GGD permit. This means you are in safe and professional hands with us. You can check the GGD certification of PMU studios via the official GGD database, which lists all certified businesses, including how long their permit is valid.",
+          "Is a business not on that list? Then it does not have a valid permit. Always check this database before booking an appointment, because it is very important to visit only certified professionals."
+        ]
+      },
+      {
+        "heading": "Your safety first",
+        "paragraphs": [
+          "Choose IZZI Beauty for high-quality PMU treatments in a certified, hygienic and professional environment. Your safety and satisfaction are our highest priority."
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Questions about how we work?",
+      "text": "Feel free to get in touch for more information.",
+      "primaryLabel": "Contact us",
+      "primaryUrl": "/contact"
+    }
+  },
+  "ons-team": {
+    "hero": {
+      "eyebrow": "About IZZI",
+      "title": "Our team",
+      "text": "The specialists behind IZZI Beauty. With years of experience and a boundless passion for the craft, we're ready for you every day.",
+      "breadcrumb": "Our team"
+    },
+    "image": "/media/izzi-beauty-20250729-973431-over-izzi-beauty.jpg",
+    "body": [
+      {
+        "heading": "The people behind IZZI",
+        "paragraphs": [
+          "With years of experience and a boundless passion for the craft, our team is ready every day to give you the best possible result."
+        ]
+      },
+      {
+        "heading": "Isabella — Owner and PMU expert",
+        "paragraphs": [
+          "I've been an expert in PMU for more than 10 years. I started IZZI to delight people with beautiful PMU in a healthy way. Alongside performing treatments, I also teach beginner and experienced PMU stylists almost daily."
+        ]
+      },
+      {
+        "heading": "Carla — PMU and laser treatment expert",
+        "paragraphs": [
+          "I've now worked full time at IZZI for three years. Alongside treatments I also teach courses and support Isabella during exams. I maintain client contact at IZZI and contribute to innovations within the team and our offering."
+        ]
+      }
+    ],
+    "team": [
+      {
+        "name": "Isabella",
+        "role": "Owner and PMU expert",
+        "image": "/media/izzi-beauty-20250729-58e555-isabella-izzi-beauty.jpg"
+      },
+      {
+        "name": "Carla",
+        "role": "PMU and laser treatment expert",
+        "image": "/media/izzi-beauty-20250729-a8b5f2-carla-izzi-beauty.png"
+      }
+    ],
+    "cta": {
+      "script": "Ready for the next step?",
+      "title": "Book a no-obligation appointment",
+      "text": "During a personal consultation we discuss your wishes and advise the best treatment.",
+      "primaryLabel": "Book an appointment",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Explore treatments",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "werkwijze": {
+    "hero": {
+      "eyebrow": "About IZZI",
+      "title": "Our approach",
+      "text": "From consultation to aftercare: how a treatment works at IZZI Beauty.",
+      "breadcrumb": "Our approach"
+    },
+    "image": "",
+    "body": [
+      {
+        "heading": "Personal consultation",
+        "paragraphs": [
+          "Every treatment starts with a thorough, personal consultation. We discuss your wishes, look at your skin and face shape, and advise which technique and colour suit you best."
+        ]
+      },
+      {
+        "heading": "The treatment",
+        "paragraphs": [
+          "We work subtly and to measure, so the result always looks natural. Before the treatment we use a numbing cream, so you notice little of it."
+        ]
+      },
+      {
+        "heading": "Aftercare and touch-up",
+        "paragraphs": [
+          "After the treatment you receive clear aftercare instructions. The more carefully you follow them, the more beautiful and longer-lasting the result. After about six weeks the touch-up follows, in which we perfect the final result."
+        ]
+      },
+      {
+        "heading": "Why we always start with a consultation",
+        "paragraphs": [
+          "Permanent makeup is bespoke: skin type, face shape and what you find beautiful together determine the result. That's why we take the time beforehand, rather than starting straight away."
+        ]
+      }
+    ],
+    "cta": {
+      "script": "Ready for the next step?",
+      "title": "Book a no-obligation appointment",
+      "text": "During a personal consultation we discuss your wishes and advise the best treatment.",
+      "primaryLabel": "Book an appointment",
+      "primaryUrl": "/contact",
+      "secondaryLabel": "Explore treatments",
+      "secondaryUrl": "/behandelingen"
+    }
+  },
+  "videos": {
+    "hero": {
+      "eyebrow": "About IZZI",
+      "title": "Videos",
+      "text": "See our treatments and courses in action.",
+      "breadcrumb": "Videos"
+    },
+    "image": "",
+    "body": [
+      {
+        "heading": "IZZI Beauty on video",
+        "paragraphs": [
+          "On our YouTube channel we share treatments, techniques and a behind-the-scenes look at the academy. You'll see how a treatment goes from start to finish — handy if you want to know what to expect."
+        ]
+      }
+    ],
+    "videos": [
+      { "url": "https://www.youtube.com/watch?v=0ICi4wXGTLA", "title": "Ombré Powder Brows — treatment and course", "description": "From consultation to final result: how an Ombré Powder Brows treatment works." },
+      { "url": "https://www.youtube.com/watch?v=qH4HNvkwOL8", "title": "Powder Brows treatment — IZZI Beauty Amsterdam", "description": "A complete Powder Brows treatment in our Amsterdam studio." },
+      { "url": "https://www.youtube.com/watch?v=4rpPdFZRhFA", "title": "Lip Blush — the complete treatment", "description": "Lips with more colour and definition, step by step." },
+      { "url": "https://www.youtube.com/watch?v=cHSkrlx_PE0", "title": "Combi Brows treatment", "description": "Hairstroke technique and powder brows combined in one treatment." }
+    ],
+    "cta": {
+      "title": "Watch our YouTube channel",
+      "text": "Treatments, techniques and a behind-the-scenes look at the academy.",
+      "primaryLabel": "Go to YouTube",
+      "primaryUrl": "https://www.youtube.com/channel/UCwiq7tGj8OxDpj7Hq9hYypw",
+      "secondaryLabel": "View the portfolio",
+      "secondaryUrl": "/portfolio"
+    }
+  }
+}
