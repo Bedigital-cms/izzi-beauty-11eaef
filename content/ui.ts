@@ -103,6 +103,12 @@ const DEFAULT_UI: Ui = {
     locationsHeading: 'Onze locaties',
     locationsSubheading: 'Bezoek een van onze studio\u2019s',
   },
+  notFound: {
+    title: 'Pagina niet gevonden',
+    text: 'De pagina die je zoekt bestaat niet (meer). Ga terug naar de homepage of bekijk onze behandelingen.',
+    home: 'Naar de homepage',
+    treatments: 'Bekijk behandelingen',
+  },
   categories: {},
   relatedLabels: {},
 }

@@ -21,7 +21,20 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
         // Functional/private areas that must never be indexed (also mostly 404 while commerce is off).
-        disallow: ['/*/preview/', '/*/account', '/*/winkelwagen', '/*/afrekenen', '/*/order/', '/api/'],
+        // Prefixed (NL /nl/…) and clean default-locale paths (EN /account when hideDefaultPrefix).
+        disallow: [
+          '/preview/',
+          '/account',
+          '/winkelwagen',
+          '/afrekenen',
+          '/order/',
+          '/*/preview/',
+          '/*/account',
+          '/*/winkelwagen',
+          '/*/afrekenen',
+          '/*/order/',
+          '/api/',
+        ],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

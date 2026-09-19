@@ -190,6 +190,13 @@ const DEFAULT_UI: ShopUIStrings = {
   checkoutLoginText: 'Log in, dan vullen we je gegevens automatisch in.',
   continueAsGuest: 'Doorgaan als gast',
 
+  zeroPaymentBlocked:
+    'Het totaalbedrag is ongeldig. Checkout is geblokkeerd tot de prijs bekend is.',
+  priceChanged: 'Het totaalbedrag is gewijzigd. Controleer je bestelling en probeer het opnieuw.',
+  checkoutOutOfStock: 'Niet alles is nog op voorraad. Pas je winkelwagen aan.',
+  paymentStatusUnknown:
+    'We konden je vorige betaling even niet controleren. Probeer het over een paar seconden opnieuw.',
+
   genericError: 'Er ging iets mis. Probeer het opnieuw.',
   loading: 'Laden…',
 }

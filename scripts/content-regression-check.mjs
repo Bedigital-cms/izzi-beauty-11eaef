@@ -555,6 +555,98 @@ if (fs.existsSync(enBlogPath)) {
   else pass('blog EN: geen Nederlandse leftovers in vertaalde velden');
 } else pass('content/en/blog.json nog niet aangemaakt (staged)');
 
+// ---------- 31. Pre-live technical guards ----------
+const checkoutSrc = fs.readFileSync(path.join(ROOT, 'app/api/commerce/checkout/route.ts'), 'utf8');
+if (!/ZERO_PAYMENT/.test(checkoutSrc) || !/totalCents <= 0/.test(checkoutSrc)) {
+  fail('checkout mist ZERO_PAYMENT_GUARD (totalCents <= 0 moet checkout blokkeren)');
+} else pass('ZERO_PAYMENT_GUARD aanwezig in checkout-API');
+if (!/localePathname\(locale, '\/afrekenen\/bedankt'/.test(checkoutSrc)) {
+  fail('checkout returnUrl gebruikt geen localePathname (breekt hideDefaultPrefix EN-root)');
+} else pass('checkout thank-you URL respecteert hideDefaultPrefix');
+
+const checkoutFormSrc = fs.readFileSync(path.join(ROOT, 'components/commerce/CheckoutForm.tsx'), 'utf8');
+if (!/cart\.totalCents <= 0/.test(checkoutFormSrc) || !/saved\.totalCents <= 0/.test(checkoutFormSrc)) {
+  fail('CheckoutForm blokkeert €0-checkout niet client-side');
+} else pass('CheckoutForm blokkeert €0-checkout client-side');
+
+// ---------- 32. Checkout error i18n ----------
+const checkoutErrorKeys = ['zeroPaymentBlocked', 'priceChanged', 'checkoutOutOfStock', 'paymentStatusUnknown'];
+const nlShopUi = (rd('content/nl/shop.json').ui || {});
+const enShopUi = (rd('content/en/shop.json').ui || {});
+const missingNl = checkoutErrorKeys.filter((k) => !nlShopUi[k]);
+const missingEn = checkoutErrorKeys.filter((k) => !enShopUi[k]);
+if (missingNl.length) fail(`NL shop UI mist checkout-error keys: ${missingNl.join(', ')}`);
+else pass('NL checkout error labels bestaan');
+if (missingEn.length) fail(`EN shop UI mist checkout-error keys: ${missingEn.join(', ')}`);
+else pass('EN checkout error labels bestaan');
+
+const shopUiShape = (ui) => Object.keys(ui || {}).sort();
+if (JSON.stringify(shopUiShape(nlShopUi)) !== JSON.stringify(shopUiShape(enShopUi))) {
+  fail('shop UI NL/EN structuur wijkt af');
+} else pass('shop UI NL/EN: identieke labelstructuur');
+
+const hardcodedCheckoutNl = [
+  'Het totaalbedrag is ongeldig. Checkout is geblokkeerd tot de prijs bekend is.',
+  'Het totaalbedrag is gewijzigd. Controleer je bestelling en probeer het opnieuw.',
+  'Niet alles is nog op voorraad. Pas je winkelwagen aan.',
+].filter((s) => checkoutFormSrc.includes(s));
+if (hardcodedCheckoutNl.length) fail(`CheckoutForm bevat nog hardcoded NL checkout-errors: ${hardcodedCheckoutNl.join(' | ')}`);
+else pass('CheckoutForm bevat geen bekende hardcoded Nederlandse checkout-errors');
+
+if (!/checkoutErrorLabel\(/.test(checkoutFormSrc) || /body\?\.error/.test(checkoutFormSrc)) {
+  fail('CheckoutForm mapt errors niet via checkoutErrorLabel (of toont nog body.error)');
+} else pass('CheckoutForm mapt API-codes via checkoutErrorLabel, niet via body.error');
+
+const checkoutErrorSrc = fs.readFileSync(path.join(ROOT, 'lib/commerce/checkout-errors.ts'), 'utf8');
+if (!/ZERO_PAYMENT/.test(checkoutErrorSrc) || !/PRICE_CHANGED/.test(checkoutErrorSrc) || !/OUT_OF_STOCK/.test(checkoutErrorSrc) || !/PAYMENT_STATUS_UNKNOWN/.test(checkoutErrorSrc)) {
+  fail('checkout-errors.ts mist een of meer stabiele API-codes');
+} else pass('checkout-errors.ts kent ZERO_PAYMENT / PRICE_CHANGED / OUT_OF_STOCK / PAYMENT_STATUS_UNKNOWN');
+
+const checkoutCodeToKey = {
+  ZERO_PAYMENT: 'zeroPaymentBlocked',
+  PRICE_CHANGED: 'priceChanged',
+  OUT_OF_STOCK: 'checkoutOutOfStock',
+  PAYMENT_STATUS_UNKNOWN: 'paymentStatusUnknown',
+};
+const mapCheckoutError = (code, ui) => ui[checkoutCodeToKey[code]] || ui.genericError;
+const expectedEn = {
+  ZERO_PAYMENT: 'The total amount is invalid. Checkout is blocked until the price is available.',
+  PRICE_CHANGED: 'The total amount has changed. Review your order and try again.',
+  OUT_OF_STOCK: 'Some items are no longer available. Please update your cart.',
+  PAYMENT_STATUS_UNKNOWN: "We couldn't verify your previous payment. Please try again in a few seconds.",
+};
+const expectedNl = {
+  ZERO_PAYMENT: 'Het totaalbedrag is ongeldig. Checkout is geblokkeerd tot de prijs bekend is.',
+  PRICE_CHANGED: 'Het totaalbedrag is gewijzigd. Controleer je bestelling en probeer het opnieuw.',
+  OUT_OF_STOCK: 'Niet alles is nog op voorraad. Pas je winkelwagen aan.',
+  PAYMENT_STATUS_UNKNOWN: 'We konden je vorige betaling even niet controleren. Probeer het over een paar seconden opnieuw.',
+};
+const dutchResidue = /Het totaalbedrag|Niet alles is nog op voorraad|winkelwagen|ongeldig|We konden je vorige betaling|Er ging iets mis/;
+const enWrong = Object.entries(expectedEn).filter(([code, expected]) => mapCheckoutError(code, enShopUi) !== expected || dutchResidue.test(mapCheckoutError(code, enShopUi)));
+const nlWrong = Object.entries(expectedNl).filter(([code, expected]) => mapCheckoutError(code, nlShopUi) !== expected);
+if (enWrong.length) fail(`EN checkout-error mapping gebruikt geen Engelse UI: ${enWrong.map(([c]) => c).join(', ')}`);
+else pass('EN mapping gebruikt Engelse UI');
+if (nlWrong.length) fail(`NL checkout-error mapping gebruikt geen Nederlandse UI: ${nlWrong.map(([c]) => c).join(', ')}`);
+else pass('NL mapping gebruikt Nederlandse UI');
+if (mapCheckoutError('UNKNOWN', nlShopUi) !== nlShopUi.genericError || mapCheckoutError('UNKNOWN', enShopUi) !== enShopUi.genericError) {
+  fail('onbekende checkout-error valt niet terug op genericError');
+} else pass('onbekende checkout-error valt terug op ui.genericError');
+
+const robotsSrc = fs.readFileSync(path.join(ROOT, 'app/robots.ts'), 'utf8');
+if (!/['"]\/account['"]/.test(robotsSrc) || !/['"]\/preview\//.test(robotsSrc)) {
+  fail('robots.ts mist unprefixed functional disallows voor hideDefaultPrefix EN-root');
+} else pass('robots.ts disallows zowel /nl/… als clean EN functional paths');
+
+const ervaringenSrc = fs.readFileSync(path.join(ROOT, 'app/[locale]/ervaringen/page.tsx'), 'utf8');
+if (!/pageAlternates\(\s*'\/ervaringen'/.test(ervaringenSrc)) {
+  fail('ervaringen-pagina mist pageAlternates (hreflang/canonical)');
+} else pass('ervaringen generateMetadata gebruikt pageAlternates');
+
+const notFoundSrc = fs.readFileSync(path.join(ROOT, 'app/not-found.tsx'), 'utf8');
+if (!/getUI\(locale\)\.notFound/.test(notFoundSrc) || /<h1>Pagina niet gevonden<\/h1>/.test(notFoundSrc)) {
+  fail('globale 404 is nog hardcoded Nederlands');
+} else pass('globale 404 gebruikt locale-aware ui.notFound');
+
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];
 warnings.push('legal EN+NL = BLOCKED_CUSTOMER_LEGAL (placeholdertekst; noindex + uit sitemap tot goedgekeurde teksten)');

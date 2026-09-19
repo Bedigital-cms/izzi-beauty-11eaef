@@ -37,6 +37,7 @@
 import * as React from 'react'
 import { useRouter } from 'next/navigation'
 
+import { checkoutErrorLabel } from '@/lib/commerce/checkout-errors'
 import { formatMoneySafe, deliveryEstimate, taxIsIncluded } from '@/lib/commerce/format'
 import { in3Allowed, in3UnavailableReason, type In3Limits } from '@/lib/commerce/in3'
 import type { Address, Cart, Customer, CustomerAddress, ShippingMethod } from '@/lib/commerce/types'
@@ -394,6 +395,12 @@ export function CheckoutForm({
       await storeAddressInAccount()
     }
 
+    if (!Number.isFinite(saved.totalCents) || saved.totalCents <= 0) {
+      setStatus('error')
+      setMessage(checkoutErrorLabel('ZERO_PAYMENT', ui))
+      return
+    }
+
     // Dan afrekenen, met het bedrag dat de bezoeker NU ziet als controle.
     const res = await fetch('/api/commerce/checkout', {
       method: 'POST',
@@ -425,21 +432,9 @@ export function CheckoutForm({
 
     if (!body?.ok) {
       setStatus('error')
-      if (body?.code === 'PRICE_CHANGED') {
-        setMessage('Het totaalbedrag is gewijzigd. Controleer je bestelling en probeer het opnieuw.')
+      setMessage(checkoutErrorLabel(body?.code, ui))
+      if (body?.code === 'PRICE_CHANGED' || body?.code === 'OUT_OF_STOCK') {
         router.refresh()
-      } else if (body?.code === 'OUT_OF_STOCK') {
-        setMessage('Niet alles is nog op voorraad. Pas je winkelwagen aan.')
-        router.refresh()
-      } else if (body?.code === 'PAYMENT_STATUS_UNKNOWN') {
-        /*
-         * De betaalprovider was even niet te bereiken om een eerdere poging na te gaan. Het CMS opent
-         * dan bewust geen tweede betaling — die zou dubbel kunnen afrekenen. Zijn eigen boodschap
-         * doorgeven: die zegt dat opnieuw proberen helpt, en dat is hier het juiste advies.
-         */
-        setMessage(body?.error ?? ui.genericError)
-      } else {
-        setMessage(body?.error ?? ui.genericError)
       }
       return
     }
@@ -964,7 +959,7 @@ export function CheckoutForm({
               knop voor altijd uit blijven staan. */}
           <button
             className="btn btn-gold summary-cta"
-            disabled={busy || (!coursesOnly && !selectedMethod)}
+            disabled={busy || (!coursesOnly && !selectedMethod) || cart.totalCents <= 0}
             type="submit"
           >
             {/*

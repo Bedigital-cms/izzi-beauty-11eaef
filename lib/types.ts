@@ -404,6 +404,13 @@ export type ShopUIStrings = {
   checkoutLoginText: string
   continueAsGuest: string
 
+  /* afrekenen — foutmeldingen (client mapt API-codes, toont nooit ruwe servertekst) */
+  zeroPaymentBlocked: string
+  priceChanged: string
+  /** Checkout-voorraadmelding. Niet het productkaart-label `outOfStock`. */
+  checkoutOutOfStock: string
+  paymentStatusUnknown: string
+
   /* algemeen */
   genericError: string
   loading: string
@@ -622,6 +629,13 @@ export type Ui = {
   contactPage: {
     locationsHeading: string
     locationsSubheading: string
+  }
+  /** Global 404 page (app/not-found.tsx). Uses the default locale until a locale-aware 404 exists. */
+  notFound: {
+    title: string
+    text: string
+    home: string
+    treatments: string
   }
   /** Stable knowledge-base category KEY (the raw NL category value) → localized display label. */
   categories: Record<string, string>

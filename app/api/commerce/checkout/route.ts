@@ -13,7 +13,8 @@ import { randomUUID } from 'node:crypto'
 import { getCart, startCheckout } from '@/lib/commerce/client'
 import { commerceEnabled } from '@/lib/commerce/config'
 import { readCartToken } from '@/lib/commerce/session'
-import { defaultLocale, isActiveLocale } from '@/lib/i18n'
+import { defaultLocale, hideDefaultPrefix, isActiveLocale } from '@/lib/i18n'
+import { localePathname } from '@/lib/seo'
 
 export const dynamic = 'force-dynamic'
 
@@ -53,6 +54,19 @@ export async function POST(request: Request): Promise<Response> {
   const cart = await getCart(token)
   if (!cart.ok) return json({ ok: false, error: 'Je winkelwagen is niet meer beschikbaar.' }, 400)
   if (cart.data.cart.itemCount === 0) return json({ ok: false, error: 'Je winkelwagen is leeg.' }, 400)
+  // ZERO_PAYMENT_GUARD: never start Mollie (or a deposit) on a €0 / missing total.
+  // The old WooCommerce storefront could check out at €0 when deposit data was missing.
+  const totalCents = Number(cart.data.cart.totalCents ?? 0)
+  if (!Number.isFinite(totalCents) || totalCents <= 0) {
+    return json(
+      {
+        ok: false,
+        code: 'ZERO_PAYMENT',
+        error: 'Het totaalbedrag is ongeldig. Checkout is geblokkeerd tot de prijs bekend is.',
+      },
+      400,
+    )
+  }
 
   /*
    * Waar Mollie de klant naartoe terugstuurt. Het CMS controleert dat deze host bij de tenant hoort
@@ -78,7 +92,11 @@ export async function POST(request: Request): Promise<Response> {
     }
   })()
   const locale = localeFromReferer ?? defaultLocale()
-  const returnUrl = `${siteOrigin}/${locale}/afrekenen/bedankt`
+  const thankYouPath = localePathname(locale, '/afrekenen/bedankt', {
+    defaultLocale: defaultLocale(),
+    hideDefaultPrefix: hideDefaultPrefix(),
+  })
+  const returnUrl = `${siteOrigin}${thankYouPath}`
 
   const result = await startCheckout({
     cartToken: token,

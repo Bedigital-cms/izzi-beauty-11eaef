@@ -180,6 +180,10 @@
     "checkoutLoginPrompt": "Already have an account?",
     "checkoutLoginText": "Sign in and we'll fill in your details automatically.",
     "continueAsGuest": "Continue as guest",
+    "zeroPaymentBlocked": "The total amount is invalid. Checkout is blocked until the price is available.",
+    "priceChanged": "The total amount has changed. Review your order and try again.",
+    "checkoutOutOfStock": "Some items are no longer available. Please update your cart.",
+    "paymentStatusUnknown": "We couldn't verify your previous payment. Please try again in a few seconds.",
     "genericError": "Something went wrong. Please try again.",
     "loading": "Loading…"
   }
