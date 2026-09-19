@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "eyebrow": "Treatments",
+    "title": "Permanent makeup treatments",
+    "text": "From natural Powder Brows and Combi Brows to Lip Blush, Permanent Eyeliner and Faux Freckles — explore all our PMU treatments, performed by certified specialists.",
+    "breadcrumb": "Treatments"
+  },
+  "intro": {
+    "title": "Which treatment suits you?",
+    "text": "Every treatment starts with a personal consultation, so we can define together the shape, colour and technique that best suit your wishes and features."
+  },
+  "groups": [
+    {
+      "heading": "Brows",
+      "text": "Fuller, defined brows that look natural — for years.",
+      "items": [
+        { "title": "Ombré Powder Brows", "text": "Softly faded, powdery brows with a natural makeup effect.", "image": "/media/izzi-beauty-20250729-53836b-powder-brows.jpg", "url": "/powder-brows", "linkLabel": "Learn more" },
+        { "title": "Touch-up Powder Brows", "text": "Refresh your existing Powder Brows and keep the colour smooth and even.", "image": "/media/izzi-beauty-20250729-785ac5-online-powder-brows-masterclass.webp", "url": "/touch-up-powder-brows", "linkLabel": "Learn more" },
+        { "title": "Combi Brows", "text": "The combination of hairstrokes and shading for the most realistic result.", "image": "/media/izzi-beauty-20250729-1dea00-combi-brows-behandeling.jpg", "url": "/combi-brows-behandeling", "linkLabel": "Learn more" },
+        { "title": "Brow Lamination", "text": "Groomed, brushed-up brows without pigment — for a fuller look.", "image": "/media/izzi-beauty-20250729-299c83-pmu-kleurcorrectie.webp", "url": "/brow-lamination-behandeling", "linkLabel": "Learn more" }
+      ]
+    },
+    {
+      "heading": "Lips",
+      "text": "More colour, definition and volume for a fresh, natural look.",
+      "items": [
+        { "title": "Lip Blush", "text": "Subtle colour and definition for fuller, fresher lips.", "image": "/media/izzi-beauty-20250729-b60f2a-lip-pigmentatie.webp", "url": "/lip-blush", "linkLabel": "Learn more" },
+        { "title": "Lip Enlightenment", "text": "Brighten and even out lip colour for a natural result.", "image": "/media/izzi-beauty-20250729-abf9e8-lip-blush-pigmentatie.webp", "url": "/lip-enlightenment", "linkLabel": "Learn more" }
+      ]
+    },
+    {
+      "heading": "Freckles & more",
+      "text": "From playful faux freckles to permanent eyeliner.",
+      "items": [
+        { "title": "Faux Freckles", "text": "Natural, bespoke freckles, perfectly placed for a playful look.", "image": "/media/izzi-beauty-20250729-11138b-permanente-eyeliner.jpg", "url": "/faux-freckles-behandeling", "linkLabel": "Learn more" },
+        { "title": "Permanent Beauty Spot", "text": "A subtle, natural beauty mark exactly where you want it.", "image": "/media/izzi-beauty-20250729-16d157-faux-freckles-resultaat.webp", "url": "/permanente-make-up-moedervlek", "linkLabel": "Learn more" },
+        { "title": "Permanent Eyeliner", "text": "Define your eyes with a crisp, long-lasting eyeliner.", "image": "/media/izzi-beauty-20250729-11138b-permanente-eyeliner.jpg", "url": "/permanente-make-up-eyeliner", "linkLabel": "Learn more" },
+        { "title": "Infralash Eyeliner", "text": "A soft, natural lash enhancement between the lash line.", "image": "/media/izzi-beauty-20250729-16d157-faux-freckles-resultaat.webp", "url": "/infralash-eyeliner", "linkLabel": "Learn more" }
+      ]
+    },
+    {
+      "heading": "Correction & removal",
+      "text": "Correct or remove old or unsuccessful PMU.",
+      "items": [
+        { "title": "Colour correction PMU", "text": "Correct a discoloured or wrong pigment colour from earlier PMU.", "image": "/media/izzi-beauty-20250729-f38728-kleurcorrectie-pmu.webp", "url": "/kleurcorrectie", "linkLabel": "Learn more" },
+        { "title": "Cover old PMU", "text": "Blend old permanent makeup into a fresh, natural new result.", "image": "/media/izzi-beauty-20250729-98c909-cover-oude-permanente-make-up.webp", "url": "/cover-oude-permanente-make-up", "linkLabel": "Learn more" },
+        { "title": "Micro Scalp Pigmentation", "text": "Create the illusion of fuller hair or a fuller hairline.", "image": "/media/izzi-beauty-20250729-3a0267-micro-haar-pigmentatie.jpg", "url": "/micro-haar-pigmentatie", "linkLabel": "Learn more" },
+        { "title": "Permanent Makeup Removal (laser)", "text": "Have old or unwanted PMU safely and effectively removed with our YAG laser.", "image": "/media/izzi-beauty-20250729-f462e2-permanente-make-up-laseren.jpg", "url": "/permanente-make-up-laseren", "linkLabel": "Learn more" },
+        { "title": "Tattoo Removal", "text": "Have old or unwanted tattoos removed quickly and effectively with our YAG laser in Rotterdam and Amsterdam.", "image": "/media/izzi-beauty-20250729-0a64be-tattoo-verwijderen-sessies.webp", "url": "/tattoo-verwijderen-rotterdam-amsterdam", "linkLabel": "Learn more" },
+        { "title": "Laser Hair Removal", "text": "Get lasting freedom from unwanted hair growth with professional laser technology.", "image": "/media/izzi-beauty-20250729-eb6241-laser-ontharing-behandeling.webp", "url": "/laser-ontharing", "linkLabel": "Learn more" }
+      ]
+    }
+  ],
+  "cta": {
+    "script": "Ready for the next step?",
+    "title": "Book a no-obligation appointment",
+    "text": "During a personal consultation we discuss your wishes and advise the best treatment.",
+    "primaryLabel": "Book an appointment",
+    "primaryUrl": "/contact",
+    "secondaryLabel": "View prices",
+    "secondaryUrl": "/prijzen"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "eyebrow": "Academy",
+    "title": "PMU Training Courses",
+    "text": "Become a certified permanent makeup artist. Our courses combine theory, live demonstrations and plenty of hands-on practice under the guidance of experienced trainers.",
+    "breadcrumb": "Training Courses"
+  },
+  "intro": {
+    "title": "Learn from certified specialists",
+    "text": "From beginner course to masterclass — at IZZI Academy you learn everything you need to work independently and professionally. Might you qualify for UWV subsidy (a Dutch reskilling scheme)? Ask us during your consultation."
+  },
+  "groups": [
+    {
+      "heading": "Brow courses",
+      "text": "The most in-demand techniques, from Powder Brows to Combi Brows.",
+      "items": [
+        { "title": "All Round PMU Course", "meta": "Popular", "text": "The complete beginner course covering all the core brow techniques.", "image": "/media/izzi-beauty-20250729-9f85fc-all-round-pmu-opleiding-amsterdam-en-rotterdam.webp", "url": "/allround-pmu-opleiding", "linkLabel": "Learn more" },
+        { "title": "Ombré Powder Brows", "text": "Learn the powder technique for natural, defined brows.", "image": "/media/izzi-beauty-20250729-53836b-powder-brows.jpg", "url": "/ombre-powder-brows-opleiding", "linkLabel": "Learn more" },
+        { "title": "Combi Brows", "text": "Combine hairstrokes and shading for the most realistic result.", "image": "/media/izzi-beauty-20250729-1dea00-combi-brows-behandeling.jpg", "url": "/combi-brows-beginnersopleiding", "linkLabel": "Learn more" },
+        { "title": "Powder Brows Masterclass", "text": "Deepen your technique and take your work to a professional level.", "image": "/media/izzi-beauty-20250729-af300e-ombre-powder-brows-masterclass.webp", "url": "/masterclass-ombre-powder-brows", "linkLabel": "Learn more" },
+        { "title": "Powder Brows + Lip Blush", "text": "Two sought-after techniques in one complete beginner course.", "image": "/media/izzi-beauty-20250729-abf9e8-lip-blush-pigmentatie.webp", "url": "/ombre-powder-brows-lip-blush-opleiding", "linkLabel": "Learn more" }
+      ]
+    },
+    {
+      "heading": "Lip courses",
+      "text": "Master the Lip Blush technique from beginner to masterclass.",
+      "items": [
+        { "title": "Lip Blush Beginner Course", "text": "Learn the fundamentals of Lip Blush for fuller, fresher lips.", "image": "/media/izzi-beauty-20250729-4e6b92-online-lip-blush-opleiding.webp", "url": "/lip-blush", "linkLabel": "Learn more" },
+        { "title": "Lip Blush Masterclass", "text": "Perfect your technique and learn advanced colour theory.", "image": "/media/izzi-beauty-20250729-b60f2a-lip-pigmentatie.webp", "url": "/lip-blush-masterclass", "linkLabel": "Learn more" }
+      ]
+    },
+    {
+      "heading": "Additional courses",
+      "text": "Expand your skills with additional techniques.",
+      "items": [
+        { "title": "Faux Freckles", "text": "Learn to place natural freckles for a playful look.", "image": "/media/izzi-beauty-20250729-6fc19c-faux-freckles-opleiding.webp", "url": "/faux-freckles-beginners", "linkLabel": "Learn more" },
+        { "title": "Infralash Eyeliner", "text": "Master the soft lash-enhancement technique.", "image": "/media/izzi-beauty-20250729-a2a783-infralash-opleiding.webp", "url": "/infralash-beginners", "linkLabel": "Learn more" },
+        { "title": "Fineline Training", "text": "Learn to apply refined fineline techniques.", "image": "/media/izzi-beauty-20250729-a4793d-fineline-tattoo-opleiding.jpg", "url": "/fineline-training", "linkLabel": "Learn more" },
+        { "title": "Brow Lamination Training", "text": "Add brow lamination to your treatment menu.", "image": "/media/izzi-beauty-20250729-e83d90-brow-lamination-training.webp", "url": "/brow-lamination-training", "linkLabel": "Learn more" },
+        { "title": "Lash Lift Training", "text": "Learn to perform the popular lash lift treatment.", "image": "/media/izzi-beauty-20250729-f0e632-lash-lift-training.webp", "url": "/lash-lift-training", "linkLabel": "Learn more" },
+        { "title": "Laser Hair Removal Course", "text": "Become a specialist in professional laser hair removal.", "image": "/media/izzi-beauty-20250729-d7a1c1-laser-ontharing-opleiding.webp", "url": "/laser-ontharing-opleiding", "linkLabel": "Learn more" }
+      ]
+    }
+  ],
+  "cta": {
+    "script": "Start your career",
+    "title": "Request the course brochure",
+    "text": "Curious about dates, prices and whether you qualify for UWV subsidy? Get in touch with us.",
+    "primaryLabel": "Contact us",
+    "primaryUrl": "/contact",
+    "secondaryLabel": "Online training",
+    "secondaryUrl": "/online-trainingen"
+  },
+  "formSlug": "opleiding-interesse"
+}

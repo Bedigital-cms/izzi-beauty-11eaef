@@ -282,9 +282,47 @@ const sitemapSrc = fs.readFileSync(path.join(ROOT, 'app/sitemap.ts'), 'utf8');
 if (/getLegalSlugs/.test(sitemapSrc)) fail('sitemap bevat nog legal-pagina\'s (placeholder-legal moet eruit)');
 else pass('sitemap sluit placeholder-legal uit');
 
+// ---------- 25. EN-content: geen Nederlandse UI-leftovers + structurele pariteit ----------
+const enDir = path.join(ROOT, 'content/en');
+if (fs.existsSync(enDir)) {
+  const enJson = fs.readdirSync(enDir).filter((f) => f.endsWith('.json'));
+  // Gecurate Nederlandse UI-frases die NOOIT in Engelse display-tekst horen (geen losse woorden).
+  const dutchPhrases = /(Afspraak maken|Meer info|Beschikbaarheid opvragen|Veelgestelde [Vv]ragen|Bekijk behandelingen|Neem contact op|Boek een|Alle behandelingen|Klaar voor jouw|Onze behandelingen)/;
+  const leftovers = [];
+  for (const f of enJson) {
+    if (f === 'site.json' || f === 'forms.json') { /* labels-only files: scan values below */ }
+    const obj = JSON.parse(fs.readFileSync(path.join(enDir, f), 'utf8'));
+    // Verzamel alleen display-tekst (sla url/image/logo/mapUrl/formSlug over).
+    const texts = [];
+    const skipKeys = new Set(['url', 'image', 'logo', 'mapUrl', 'formSlug', 'icon', 'primaryUrl', 'secondaryUrl', 'buttonUrl', 'linkUrl', 'bookingUrl', 'notificationEmail', 'email']);
+    (function walk(v, key) {
+      if (typeof v === 'string') { if (!skipKeys.has(key)) texts.push(v); }
+      else if (Array.isArray(v)) v.forEach((x) => walk(x, key));
+      else if (v && typeof v === 'object') for (const [k, val] of Object.entries(v)) walk(val, k);
+    })(obj, '');
+    const hit = texts.find((t) => dutchPhrases.test(t));
+    if (hit) leftovers.push(`${f}: "${hit.slice(0, 50)}"`);
+  }
+  if (leftovers.length) fail(`Nederlandse UI-leftover in EN-content: ${leftovers.join(' | ')}`);
+  else pass(`geen Nederlandse UI-leftovers in ${enJson.length} EN-bestanden`);
+  // Structurele pariteit: elk en-bestand met een nl-tegenhanger heeft dezelfde top-level keys.
+  const parityMismatch = enJson.filter((f) => {
+    const nlp = f === 'forms.json' ? path.join(ROOT, 'content/forms.json') : path.join(ROOT, 'content/nl', f);
+    if (!fs.existsSync(nlp)) return false;
+    const a = Object.keys(JSON.parse(fs.readFileSync(nlp, 'utf8'))).sort();
+    const b = Object.keys(JSON.parse(fs.readFileSync(path.join(enDir, f), 'utf8'))).sort();
+    return JSON.stringify(a) !== JSON.stringify(b);
+  });
+  if (parityMismatch.length) fail(`EN/NL top-level key-mismatch: ${parityMismatch.join(', ')}`);
+  else pass('EN-bestanden hebben dezelfde top-level keys als NL');
+} else pass('geen content/en (nog niet gestart)');
+
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];
 warnings.push('legal EN+NL = BLOCKED_CUSTOMER_LEGAL (placeholdertekst; noindex + uit sitemap tot goedgekeurde teksten)');
+// EN-content nog niet compleet: collecties + locaties + info + legal ontbreken → EN blijft inactief (gate).
+const enMissing = fs.existsSync(enDir) ? fs.readdirSync(path.join(ROOT, 'content/nl')).filter((f) => f.endsWith('.json') && !fs.existsSync(path.join(enDir, f))) : [];
+if (enMissing.length) warnings.push(`content/en nog onvolledig (${enMissing.length} bestanden te vertalen: ${enMissing.join(', ')}) — EN blijft inactief tot compleet`);
 // Team-media (Isabella/Carla) nog te uploaden via CMS (cloud agent kan dat niet).
 warnings.push('teamfoto\'s Isabella + Carla nog uploaden via CMS Media (tenant izzi-beauty) — cloud agent heeft geen CMS-write/Mac-toegang');
 // Juridische voorbeeldteksten (BLOCKED_CUSTOMER — geen goedgekeurde tekst).

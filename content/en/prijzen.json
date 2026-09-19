@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "eyebrow": "Prices",
+    "title": "Treatment & training rates",
+    "text": "An overview of our rates. Every treatment starts with a personal consultation; touch-ups within the stated period are included.",
+    "breadcrumb": "Prices"
+  },
+  "groups": [
+    {
+      "heading": "Brows",
+      "items": [
+        { "name": "Ombré Powder Brows", "desc": "Including touch-up after 6–8 weeks", "amount": "€ 395" },
+        { "name": "Combi Brows", "desc": "Including touch-up after 6–8 weeks", "amount": "€ 425" },
+        { "name": "Touch-up (within 12 months)", "desc": "Colour refresh", "amount": "€ 150" },
+        { "name": "Brow Lamination", "desc": "", "amount": "€ 65" }
+      ]
+    },
+    {
+      "heading": "Lips",
+      "items": [
+        { "name": "Lip Blush", "desc": "Including touch-up after 6–8 weeks", "amount": "€ 425" },
+        { "name": "Lip Enlightenment", "desc": "", "amount": "€ 375" }
+      ]
+    },
+    {
+      "heading": "Other treatments",
+      "items": [
+        { "name": "Faux Freckles", "desc": "", "amount": "€ 195" },
+        { "name": "Permanent Eyeliner", "desc": "", "amount": "€ 325" },
+        { "name": "Colour correction PMU", "desc": "On request, after consultation", "amount": "from € 150" }
+      ]
+    }
+  ],
+  "note": "All prices include VAT. Training course prices are available on request — contact us for personal advice and the options for UWV subsidy (a Dutch government reskilling scheme).",
+  "cta": {
+    "script": "Curious about the options?",
+    "title": "Book an appointment",
+    "text": "During your consultation we discuss your wishes and give personal advice and a quote.",
+    "primaryLabel": "Book an appointment",
+    "primaryUrl": "/contact",
+    "secondaryLabel": "Explore treatments",
+    "secondaryUrl": "/behandelingen"
+  }
+}
