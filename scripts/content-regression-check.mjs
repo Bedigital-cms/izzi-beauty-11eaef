@@ -479,6 +479,40 @@ if (fs.existsSync(enSvcPath)) {
   else pass('services EN productHandles identiek aan NL (niets verzonnen)');
 } else pass('content/en/services.json nog niet aangemaakt (staged)');
 
+// ---------- 29. Batch 4 EN-content: trainings-detail.json parity/inhoud ----------
+const enTrnPath = path.join(ROOT, 'content/en/trainings-detail.json');
+if (fs.existsSync(enTrnPath)) {
+  const nlTrn = rd('content/nl/trainings-detail.json');
+  const enTrn = JSON.parse(fs.readFileSync(enTrnPath, 'utf8'));
+  const nkeys = Object.keys(nlTrn);
+  const ekeys = Object.keys(enTrn);
+  if (JSON.stringify(nkeys) !== JSON.stringify(ekeys)) fail(`trainings-detail.json NL/EN keys/volgorde wijken af: nl=${nkeys.length} en=${ekeys.length}`);
+  else pass(`trainings-detail.json NL/EN key-pariteit + volgorde (${nkeys.length} opleidingen)`);
+  const diffs = [];
+  for (const k of nkeys) {
+    const a = nlTrn[k] || {}; const b = enTrn[k] || {};
+    const eq = (x, y) => JSON.stringify(x) === JSON.stringify(y);
+    if (a.image !== b.image) diffs.push(`${k}:image`);
+    if ((a.videoUrl ?? null) !== (b.videoUrl ?? null)) diffs.push(`${k}:videoUrl`);
+    if ((a.productHandle ?? null) !== (b.productHandle ?? null)) diffs.push(`${k}:productHandle`);
+    if (((a.highlights ?? null) && a.highlights.length) !== ((b.highlights ?? null) && b.highlights.length)) diffs.push(`${k}:highlights`);
+    if ((a.body || []).length !== (b.body || []).length) diffs.push(`${k}:bodyLen`);
+    if (!eq((a.body || []).map((x) => (x.checklist || []).length), (b.body || []).map((x) => (x.checklist || []).length))) diffs.push(`${k}:checklists`);
+    if ((a.steps ? a.steps.items.length : -1) !== (b.steps ? b.steps.items.length : -1)) diffs.push(`${k}:steps`);
+    if ((a.faq ? a.faq.items.length : -1) !== (b.faq ? b.faq.items.length : -1)) diffs.push(`${k}:faq`);
+    if (((a.aside && a.aside.facts) || []).length !== ((b.aside && b.aside.facts) || []).length) diffs.push(`${k}:facts`);
+    if ((a.aside && a.aside.ctaUrl) !== (b.aside && b.aside.ctaUrl)) diffs.push(`${k}:ctaUrl`);
+    if ((a.cta && a.cta.primaryUrl) !== (b.cta && b.cta.primaryUrl)) diffs.push(`${k}:primaryUrl`);
+    if ((a.cta && a.cta.secondaryUrl) !== (b.cta && b.cta.secondaryUrl)) diffs.push(`${k}:secondaryUrl`);
+    if (!(b.hero && b.hero.title && b.hero.text)) diffs.push(`${k}:emptyHero`);
+  }
+  if (diffs.length) fail(`trainings EN structuur/URL/media-afwijking: ${diffs.slice(0, 12).join(', ')}${diffs.length > 12 ? ' …' : ''}`);
+  else pass('trainings EN: image/videoUrl/CTA-URL/productHandle/highlights/body/steps/faq/facts pariteit + geen lege hero');
+  const fakeHandles = nkeys.filter((k) => (enTrn[k].productHandle ?? null) !== (nlTrn[k].productHandle ?? null));
+  if (fakeHandles.length) fail(`trainings EN productHandle wijkt af/verzonnen: ${fakeHandles.join(', ')}`);
+  else pass('trainings EN productHandles identiek aan NL (niets verzonnen)');
+} else pass('content/en/trainings-detail.json nog niet aangemaakt (staged)');
+
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];
 warnings.push('legal EN+NL = BLOCKED_CUSTOMER_LEGAL (placeholdertekst; noindex + uit sitemap tot goedgekeurde teksten)');
