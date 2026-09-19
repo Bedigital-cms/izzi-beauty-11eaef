@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "text": "Have a question or want to book an appointment? Fill in the form or visit one of our studios — we're happy to help.",
+    "breadcrumb": "Contact"
+  },
+  "intro": {
+    "title": "We'd love to hear from you",
+    "text": "Fill in the contact form and we'll get back to you as soon as possible. To book an appointment, you're also welcome to visit one of our locations."
+  },
+  "locations": [
+    {
+      "name": "IZZI Beauty Amsterdam",
+      "city": "Amsterdam",
+      "address": "Koningin Wilhelminaplein 13",
+      "postcode": "1062 HH Amsterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "Mon–Sat · 09:00 – 18:00",
+      "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
+    },
+    {
+      "name": "IZZI Beauty Rotterdam",
+      "city": "Rotterdam",
+      "address": "Weena 95",
+      "postcode": "3013 CH Rotterdam",
+      "phone": "+31 6 11 76 88 81",
+      "hours": "",
+      "mapUrl": "https://maps.google.com/?q=Weena+95+Rotterdam"
+    }
+  ],
+  "bookingLabel": "Book an appointment",
+  "bookingUrl": "/contact",
+  "cta": {
+    "title": "Prefer to drop by?",
+    "text": "Our studios are open Monday to Saturday. Feel free to walk in for a no-obligation chat.",
+    "primaryLabel": "Call us",
+    "primaryUrl": "tel:+31611768881"
+  }
+}

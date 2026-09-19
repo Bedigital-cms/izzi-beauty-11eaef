@@ -5,7 +5,9 @@ import { LocaleLink } from '@/components/LocaleLink'
 import { Shell } from '@/components/Shell'
 import { BlogGrid, CtaBand, PageHero } from '@/components/sections'
 import { categorySlug, getBlogCards, getBlogCategories, getBlogIndex } from '@/content/blog'
+import { categoryLabel, fill, getUI } from '@/content/ui'
 import { activeLocales } from '@/lib/i18n'
+import { pageAlternates } from '@/lib/seo'
 
 /** Eén onderwerp uit de kennisbank. */
 
@@ -23,11 +25,15 @@ export async function generateMetadata({
   params: Promise<{ locale: string; category: string }>
 }): Promise<Metadata> {
   const { locale, category } = await params
+  const t = getUI(locale).kennisbank
   const found = getBlogCategories(locale).find((c) => c.slug === category)
-  if (!found) return { title: 'Kennisbank — IZZI Beauty' }
+  if (!found) return { title: `${t.title} — IZZI Beauty` }
+  const label = categoryLabel(locale, found.name)
+  const articles = found.count === 1 ? t.article : t.articles
   return {
-    title: `${found.name} — Kennisbank — IZZI Beauty`,
-    description: `${found.count} ${found.count === 1 ? 'artikel' : 'artikelen'} over ${found.name.toLowerCase()}.`,
+    title: `${label} — ${t.title} — IZZI Beauty`,
+    description: fill(t.categoryMetaDescription, { count: found.count, articles, name: label.toLowerCase() }),
+    alternates: pageAlternates(`/kennisbank/${category}`, locale),
   }
 }
 
@@ -41,6 +47,9 @@ export default async function CategoryPage({
   const found = categories.find((c) => c.slug === category)
   if (!found) notFound()
 
+  const t = getUI(locale).kennisbank
+  const label = categoryLabel(locale, found.name)
+  const articles = found.count === 1 ? t.article : t.articles
   const blogIndex = getBlogIndex(locale)
   // Filteren op de categorienaam via dezelfde `categorySlug`, zodat link en route niet uiteenlopen.
   const posts = getBlogCards(locale).filter((p) => categorySlug(p.category ?? '') === category)
@@ -48,16 +57,16 @@ export default async function CategoryPage({
   return (
     <Shell locale={locale}>
       <PageHero
-        breadcrumb={found.name}
-        eyebrow="Kennisbank"
-        text={`${found.count} ${found.count === 1 ? 'artikel' : 'artikelen'} over dit onderwerp.`}
-        title={found.name}
+        breadcrumb={label}
+        eyebrow={t.eyebrow}
+        text={fill(t.categoryHeroText, { count: found.count, articles })}
+        title={label}
       />
       <section className="section">
         <div className="container">
           <div className="kb-categories">
             <LocaleLink className="kb-category" href="/kennisbank">
-              Alle onderwerpen
+              {t.allTopics}
             </LocaleLink>
             {categories.map((c) => (
               <LocaleLink
@@ -65,7 +74,7 @@ export default async function CategoryPage({
                 href={`/kennisbank/${c.slug}`}
                 key={c.slug}
               >
-                {c.name} <span className="kb-count">{c.count}</span>
+                {categoryLabel(locale, c.name)} <span className="kb-count">{c.count}</span>
               </LocaleLink>
             ))}
           </div>

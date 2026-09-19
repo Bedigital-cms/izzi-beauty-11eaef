@@ -150,6 +150,151 @@
       "source": "/permanente-make-up-rotterdam",
       "destination": "/rotterdam",
       "permanent": true
+    },
+    {
+      "source": "/over-izzi-beauty",
+      "destination": "/over-izzi",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-portfolio",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-prijzen",
+      "destination": "/prijzen",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-veelgestelde-vragen",
+      "destination": "/veelgestelde-vragen",
+      "permanent": true
+    },
+    {
+      "source": "/vacature-pmu-artist-bij-izzi-beauty",
+      "destination": "/werken-bij-izzi-beauty",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-eyeliner",
+      "destination": "/permanente-make-up-eyeliner",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-opleiding",
+      "destination": "/opleidingen",
+      "permanent": true
+    },
+    {
+      "source": "/online-permanente-make-up-opleiding",
+      "destination": "/online-trainingen",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-behandeling",
+      "destination": "/behandelingen",
+      "permanent": true
+    },
+    {
+      "source": "/prive-opleiding",
+      "destination": "/prive-opleiding-permanente-make-up",
+      "permanent": true
+    },
+    {
+      "source": "/lippigmentatie",
+      "destination": "/lip-blush",
+      "permanent": true
+    },
+    {
+      "source": "/pmu-lippen",
+      "destination": "/lip-blush",
+      "permanent": true
+    },
+    {
+      "source": "/ombre-powder-brows",
+      "destination": "/powder-brows",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-wenkbrauwen",
+      "destination": "/powder-brows",
+      "permanent": true
+    },
+    {
+      "source": "/brow-lift",
+      "destination": "/brow-lamination-behandeling",
+      "permanent": true
+    },
+    {
+      "source": "/faux-freckles-opleiding",
+      "destination": "/faux-freckles-beginners",
+      "permanent": true
+    },
+    {
+      "source": "/fineline-tattoo-opleiding",
+      "destination": "/fineline-training",
+      "permanent": true
+    },
+    {
+      "source": "/fineline-tattoo-masterclass",
+      "destination": "/fineline-masterclass",
+      "permanent": true
+    },
+    {
+      "source": "/infralash-beginnersopleiding",
+      "destination": "/infralash-beginners",
+      "permanent": true
+    },
+    {
+      "source": "/tattoo-verwijderen",
+      "destination": "/tattoo-verwijderen-rotterdam-amsterdam",
+      "permanent": true
+    },
+    {
+      "source": "/airbrush-brows-opleiding",
+      "destination": "/airbrush-brows-online-training",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-lippen",
+      "destination": "/lip-blush",
+      "permanent": true
+    },
+    {
+      "source": "/permanente-make-up-sproeten",
+      "destination": "/faux-freckles-behandeling",
+      "permanent": true
+    },
+    {
+      "source": "/online-pmu-opleiding-wenkbrauwen",
+      "destination": "/online-trainingen",
+      "permanent": true
+    },
+    {
+      "source": "/online-pmu-opleiding-lippen",
+      "destination": "/online-trainingen",
+      "permanent": true
+    },
+    {
+      "source": "/online-pmu-opleiding-divers",
+      "destination": "/online-trainingen",
+      "permanent": true
+    },
+    {
+      "source": "/pmu-opleiding-wenkbrauwen",
+      "destination": "/opleidingen",
+      "permanent": true
+    },
+    {
+      "source": "/pmu-opleiding-lippen",
+      "destination": "/opleidingen",
+      "permanent": true
+    },
+    {
+      "source": "/pmu-opleiding-sproeten",
+      "destination": "/faux-freckles-beginners",
+      "permanent": true
     }
   ]
 }

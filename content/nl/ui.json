@@ -1,0 +1,84 @@
+{
+  "$comment": "Gedeelde systeemlabels voor de generieke renderers/routes (locatiekaart, blog/kennisbank-chrome, paginering, gegenereerde 'onze-locaties'-hub). GEEN productdata en GEEN per-pagina content. Nieuwe taal = een content/<code>/ui.json toevoegen; geen componentwijziging. 'categories' en 'relatedLabels' houden de URL/slug stabiel en vertalen alleen het zichtbare label (leeg = val terug op de Nederlandse bron).",
+  "common": {
+    "home": "Home",
+    "readMore": "Lees meer",
+    "moreInfo": "Meer info",
+    "enroll": "Inschrijven",
+    "starsLabel": "{n} van 5 sterren",
+    "reviewsLabel": "Klantbeoordelingen",
+    "viewOnMap": "Bekijk op de kaart",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Telefoon"
+  },
+  "location": {
+    "address": "Adres",
+    "city": "Plaats",
+    "phone": "Telefoon",
+    "hours": "Openingstijden"
+  },
+  "blog": {
+    "allArticles": "Alle artikelen",
+    "articlesCount": "{n} artikelen",
+    "pageXofY": "pagina {x} van {y}",
+    "readArticle": "Lees artikel",
+    "minRead": "min lezen",
+    "moreOnTopic": "Meer over dit onderwerp",
+    "backToBlog": "Terug naar de blog",
+    "moreArticles": "Meer artikelen",
+    "prevArticle": "Vorig artikel",
+    "nextArticle": "Volgend artikel",
+    "inThisArticle": "In dit artikel",
+    "tableOfContents": "Inhoudsopgave"
+  },
+  "pagination": {
+    "label": "Paginering",
+    "prev": "Vorige",
+    "next": "Volgende",
+    "prevPage": "Vorige pagina",
+    "nextPage": "Volgende pagina"
+  },
+  "menu": {
+    "title": "Menu",
+    "mainNav": "Hoofdmenu",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "allPrefix": "Alle",
+    "language": "Taal / Language"
+  },
+  "kennisbank": {
+    "title": "Kennisbank",
+    "metaDescription": "Alles over permanente make-up, verdeeld over {n} onderwerpen: van behandelingen en nazorg tot opleidingen.",
+    "eyebrow": "Kennisbank",
+    "heroText": "Alles wat je wilt weten over permanente make-up, verdeeld over onderwerpen.",
+    "allTopics": "Alle onderwerpen",
+    "article": "artikel",
+    "articles": "artikelen",
+    "categoryHeroText": "{count} {articles} over dit onderwerp.",
+    "categoryMetaDescription": "{count} {articles} over {name}."
+  },
+  "onzeLocaties": {
+    "eyebrow": "Over IZZI",
+    "title": "Onze locaties",
+    "text": "Bezoek ons in de salon of bekijk in welke plaatsen we actief zijn.",
+    "breadcrumb": "Onze locaties",
+    "introTitle": "Waar kun je ons vinden?",
+    "introText": "Onze salons zijn gemakkelijk bereikbaar. Daarnaast komen klanten uit de hele regio naar ons toe.",
+    "salonsHeading": "Onze salons",
+    "areaHeading": "Ons verzorgingsgebied",
+    "areaText": "Ook uit deze plaatsen komen klanten naar onze salons.",
+    "ctaScript": "Klaar voor de volgende stap?",
+    "ctaTitle": "Maak vrijblijvend een afspraak",
+    "ctaText": "Tijdens een persoonlijk intakegesprek bespreken we jouw wensen en adviseren we de beste behandeling.",
+    "ctaPrimary": "Afspraak maken",
+    "ctaSecondary": "Neem contact op",
+    "viewLocation": "Bekijk locatie",
+    "viewPage": "Bekijk pagina"
+  },
+  "contactPage": {
+    "locationsHeading": "Onze locaties",
+    "locationsSubheading": "Bezoek een van onze studio\u2019s"
+  },
+  "categories": {},
+  "relatedLabels": {}
+}

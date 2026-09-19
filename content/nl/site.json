@@ -106,16 +106,16 @@
                 "url": "/tattoo-verwijderen-rotterdam-amsterdam"
               },
               {
-                "label": "Carbon Laser Peeling",
-                "url": "/carbon-laser-peeling"
-              },
-              {
                 "label": "Veelgestelde Vragen",
                 "url": "/veelgestelde-vragen"
               }
             ]
           }
         ]
+      },
+      {
+        "label": "Prijzen",
+        "url": "/prijzen"
       },
       {
         "label": "Opleidingen",
@@ -224,23 +224,7 @@
               {
                 "label": "Veelgestelde Vragen",
                 "url": "/veelgestelde-vragen"
-              }
-            ]
-          },
-          {
-            "heading": "All Round PMU",
-            "url": "/opleidingen",
-            "links": [
-              {
-                "label": "All Round Opleiding",
-                "url": "/allround-pmu-opleiding"
-              }
-            ]
-          },
-          {
-            "heading": "Extra",
-            "url": "/opleidingen",
-            "links": [
+              },
               {
                 "label": "Inkless Stretch Mark & Scar Removal",
                 "url": "/inkless-stretch-mark-removal"
@@ -260,6 +244,16 @@
               {
                 "label": "Laser Ontharing Opleiding",
                 "url": "/laser-ontharing-opleiding"
+              }
+            ]
+          },
+          {
+            "heading": "All Round PMU",
+            "url": "/opleidingen",
+            "links": [
+              {
+                "label": "All Round Opleiding",
+                "url": "/allround-pmu-opleiding"
               }
             ]
           }
@@ -384,34 +378,62 @@
         ]
       },
       {
-        "label": "Laserontharen",
-        "url": "/laser-ontharing"
-      },
-      {
-        "label": "Prijzen",
-        "url": "/prijzen"
-      },
-      {
-        "label": "Over IZZI",
-        "url": "/over-izzi"
-      },
-      {
-        "label": "Portfolio",
-        "url": "/portfolio"
+        "label": "Kennisbank",
+        "url": "/kennisbank"
       },
       {
         "label": "Webshop",
-        "url": "/winkel"
+        "url": "https://laliqa.com"
       },
       {
-        "label": "Contact",
-        "url": "/contact"
+        "label": "Over IZZI",
+        "url": "/over-izzi",
+        "columns": [
+          {
+            "heading": "Over IZZI",
+            "url": "/over-izzi",
+            "links": [
+              {
+                "label": "Contact",
+                "url": "/contact"
+              },
+              {
+                "label": "Portfolio",
+                "url": "/portfolio"
+              },
+              {
+                "label": "Onze locaties",
+                "url": "/onze-locaties"
+              },
+              {
+                "label": "Ons team",
+                "url": "/ons-team"
+              },
+              {
+                "label": "Onze werkwijze",
+                "url": "/werkwijze"
+              },
+              {
+                "label": "Video's",
+                "url": "/videos"
+              },
+              {
+                "label": "Veelgestelde vragen",
+                "url": "/veelgestelde-vragen"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Laserontharen",
+        "url": "https://izziclinic.nl"
       }
     ],
     "footer": {
       "logo": "/media/20260901-opn5nv-izzi-logo-light.png",
       "about": "IZZI Beauty is dé specialist in permanente make-up: van natuurlijke, volle Powder Brows tot Lip Blush en Infralash Eyeliner. Daarnaast leiden wij in onze academy nieuwe PMU-artiesten op tot echte professionals.",
-      "email": "info@example.com",
+      "email": "info@izzi-beauty.com",
       "phone": "+31 6 11 76 88 81",
       "locations": [
         {
@@ -424,13 +446,13 @@
           "mapUrl": "https://maps.google.com/?q=Koningin+Wilhelminaplein+13+Amsterdam"
         },
         {
-          "name": "IZZI Beauty Den Bosch",
-          "city": "'s-Hertogenbosch",
-          "address": "Zilverenberg 37a",
-          "postcode": "5234 GL 's-Hertogenbosch",
+          "name": "IZZI Beauty Rotterdam",
+          "city": "Rotterdam",
+          "address": "Weena 95",
+          "postcode": "3013 CH Rotterdam",
           "phone": "+31 6 11 76 88 81",
-          "hours": "Ma–Za · 09:00 – 18:00",
-          "mapUrl": "https://maps.google.com/?q=Zilverenberg+37a+Den+Bosch"
+          "hours": "",
+          "mapUrl": "https://maps.google.com/?q=Weena+95+Rotterdam"
         }
       ],
       "columns": [
@@ -515,8 +537,8 @@
           "heading": "Informatie",
           "links": [
             {
-              "label": "Blogs",
-              "url": "/blog"
+              "label": "Kennisbank",
+              "url": "/kennisbank"
             },
             {
               "label": "Prijzen",

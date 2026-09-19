@@ -5,17 +5,20 @@ import { Shell } from '@/components/Shell'
 import { CtaBand, LocationCards, PageHero } from '@/components/sections'
 import { getContact } from '@/content/contact'
 import { loadForm } from '@/content/load'
+import { getUI } from '@/content/ui'
+import { pageAlternates } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const data = getContact(locale)
-  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text }
+  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text, alternates: pageAlternates('/contact', locale) }
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const contact = getContact(locale)
   const contactForm = loadForm<FormDef>('contact', locale)
+  const t = getUI(locale).contactPage
   return (
     <Shell locale={locale}>
       <PageHero {...contact.hero} />
@@ -38,8 +41,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       <section className="section" style={{ background: 'var(--champagne)' }}>
         <div className="container">
           <div className="section-head center">
-            <span className="eyebrow center">Onze locaties</span>
-            <h2>Bezoek een van onze studio&rsquo;s</h2>
+            <span className="eyebrow center">{t.locationsHeading}</span>
+            <h2>{t.locationsSubheading}</h2>
           </div>
           <LocationCards items={contact.locations} />
         </div>

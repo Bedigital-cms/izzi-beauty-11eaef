@@ -14,8 +14,10 @@ import type {
 } from '@/lib/types'
 
 import { getCategoryLinks } from '@/content/blog'
+import { fill, getActiveLocale, ui } from '@/content/ui'
 import { commerceEnabled } from '@/lib/commerce/config'
 
+import Form from './Form'
 import { Icon } from './icons'
 import { LocaleLink } from './LocaleLink'
 import { Media } from './Media'
@@ -23,14 +25,15 @@ import { VideoEmbed } from './VideoEmbed'
 
 /** Star row (filled ★ up to `n`). */
 export function Stars({ n = 5 }: { n?: number }) {
-  return <div className="stars" aria-label={`${n} van 5 sterren`}>{'★★★★★'.slice(0, n)}</div>
+  return <div className="stars" aria-label={fill(ui().common.starsLabel, { n })}>{'★★★★★'.slice(0, n)}</div>
 }
 
 /** Internal-vs-external link that always renders a small "read more" arrow link. */
-export function ArrowLink({ url, label = 'Lees meer' }: { url: string; label?: string }) {
+export function ArrowLink({ url, label }: { url: string; label?: string }) {
+  const text = label ?? ui().common.readMore
   const inner = (
     <>
-      {label}
+      {text}
       <Icon name="arrow" size={16} />
     </>
   )
@@ -60,7 +63,7 @@ export function CardGrid({ items }: { items: LinkCard[] }) {
             <h3>{c.title}</h3>
             {c.meta && <div className="card-meta"><span>{c.meta}</span></div>}
             <p>{c.text}</p>
-            <ArrowLink url={c.url} label={c.linkLabel || 'Meer info'} />
+            <ArrowLink url={c.url} label={c.linkLabel || ui().common.moreInfo} />
           </div>
         </article>
       ))}
@@ -101,7 +104,7 @@ export function ReviewMarquee({ items }: { items: Review[] }) {
   if (items.length === 0) return null
   const loop = [...items, ...items]
   return (
-    <div className="review-marquee" aria-label="Klantbeoordelingen">
+    <div className="review-marquee" aria-label={ui().common.reviewsLabel}>
       <div className="review-marquee-track">
         {loop.map((r, i) => (
           <div className="review-marquee-item" key={`${r.who}-${i}`} aria-hidden={i >= items.length}>
@@ -115,6 +118,7 @@ export function ReviewMarquee({ items }: { items: Review[] }) {
 
 /** Location cards. */
 export function LocationCards({ items }: { items: Location[] }) {
+  const t = ui()
   return (
     <div className="grid-2">
       {items.map((l) => (
@@ -123,12 +127,14 @@ export function LocationCards({ items }: { items: Location[] }) {
           <h3>{l.name}</h3>
           <ul>
             <li><Icon name="pin" size={18} /><span>{l.address}, {l.postcode}</span></li>
-            <li><Icon name="phone" size={18} /><span>{l.phone}</span></li>
-            <li><Icon name="clock" size={18} /><span>{l.hours}</span></li>
+            {l.phone && <li><Icon name="phone" size={18} /><span>{l.phone}</span></li>}
+            {/* Openingstijden alleen tonen als ze bekend zijn — geen lege klok-regel bij een
+                vestiging waarvan de tijden nog niet bevestigd zijn (geen verzonnen tijden). */}
+            {l.hours && <li><Icon name="clock" size={18} /><span>{l.hours}</span></li>}
           </ul>
           <div style={{ marginTop: 22 }}>
             <a className="link-arrow" href={l.mapUrl} target="_blank" rel="noreferrer">
-              Bekijk op de kaart <Icon name="arrow" size={16} />
+              {t.common.viewOnMap} <Icon name="arrow" size={16} />
             </a>
           </div>
         </article>
@@ -159,12 +165,37 @@ export function CtaBand({ cta }: { cta: CtaBlock }) {
 }
 
 /** Interior-page hero (breadcrumb + title + intro), dark band. */
-export function PageHero({ eyebrow, title, text, breadcrumb }: { eyebrow: string; title: string; text: string; breadcrumb: string }) {
+export function PageHero({
+  eyebrow,
+  title,
+  text,
+  breadcrumb,
+  /**
+   * Optionele foto ACHTER de kop (opdracht §7). Er ligt een gradient overheen; die is berekend op
+   * het slechtste geval — een spierwitte foto — zodat de tekst er nooit op wegvalt. Zie
+   * `.pagehero--image` in globals.css.
+   *
+   * De foto is decoratief: hij staat leeg in `alt` en is verborgen voor schermlezers, want de
+   * <h1> eronder zegt al waar de pagina over gaat. Een tweede omschrijving zou alleen ruis zijn.
+   */
+  image,
+}: {
+  eyebrow: string
+  title: string
+  text: string
+  breadcrumb: string
+  image?: string
+}) {
+  const heeftFoto = !!(image ?? '').trim()
   return (
-    <section className="pagehero">
+    <section className={`pagehero${heeftFoto ? ' pagehero--image' : ''}`}>
+      {heeftFoto && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img className="pagehero-bg" src={image} alt="" aria-hidden="true" />
+      )}
       <div className="container">
         <div className="pagehero-inner">
-          <div className="breadcrumb"><LocaleLink href="/">Home</LocaleLink><span>/</span><span>{breadcrumb}</span></div>
+          <div className="breadcrumb"><LocaleLink href="/">{ui().common.home}</LocaleLink><span>/</span><span>{breadcrumb}</span></div>
           <span className="eyebrow" style={{ marginTop: 14 }}>{eyebrow}</span>
           <h1>{title}</h1>
           <p>{text}</p>
@@ -194,16 +225,28 @@ export function Steps({ title, items }: { title: string; items: Step[] }) {
   )
 }
 
-/** FAQ accordion-style list (rendered open — no JS needed, SEO-friendly). */
+/**
+ * FAQ-accordeon: dicht bij het openen, alleen de vraag zichtbaar (opdracht §11).
+ *
+ * Native <details>/<summary>, geen JS en geen client-component: de site moet statisch blijven
+ * (zie CLAUDE.md), en de antwoorden staan zo nog steeds volledig in de HTML — Google leest ze,
+ * ctrl-F vindt ze, en toetsenbordbediening krijg je gratis van de browser.
+ *
+ * De <h3> blijft binnen de <summary> staan: de spec staat heading content daar toe, en het houdt
+ * de koppenstructuur voor SEO intact.
+ */
 export function FaqList({ title, items }: { title: string; items: Faq[] }) {
   return (
     <div>
       {title && <h2 style={{ marginBottom: 12 }}>{title}</h2>}
       {items.map((f) => (
-        <div className="faq-item" key={f.q}>
-          <h3>{f.q}</h3>
+        <details className="faq-item" key={f.q}>
+          <summary className="faq-q">
+            <h3>{f.q}</h3>
+            <span className="faq-caret" aria-hidden="true" />
+          </summary>
           <p>{f.a}</p>
-        </div>
+        </details>
       ))}
     </div>
   )
@@ -278,6 +321,15 @@ export function HubPage({ data }: { data: HubContent }) {
           </div>
         </div>
       </section>
+      {/* Optioneel interesseformulier onderaan de hub (bv. opleidingsinteresse). Het id maakt een
+          anchor mogelijk zodat een kaart-CTA er direct naartoe scrollt (met prefill via de query). */}
+      {data.formSlug && (
+        <section id="informatie-aanvragen" className="section" style={{ paddingTop: 0 }}>
+          <div className="container" style={{ maxWidth: 820 }}>
+            <Form slug={data.formSlug} />
+          </div>
+        </section>
+      )}
       <CtaBand cta={data.cta} />
     </>
   )
@@ -287,14 +339,25 @@ export function HubPage({ data }: { data: HubContent }) {
  * Generic treatment/training detail page. Driven by DetailContent: hero, lead image, prose
  * body sections, optional steps + FAQ, and a sticky aside with facts + a booking CTA.
  */
-export function DetailPage({ data }: { data: DetailContent }) {
+export function DetailPage({
+  data,
+  /**
+   * Bij een behandeling staat de foto ACHTER de kop in de hero; opleidingen houden de volle foto
+   * boven de tekst. Op /lip-blush begon de lopende tekst anders pas op 993px (gemeten op
+   * 1280x800) — ruim onder de vouw, precies de klacht uit de opdracht (§7). Opleidingen blijven
+   * zoals ze zijn, want dat ontwerp is goedgekeurd (§6).
+   */
+  variant = 'opleiding',
+}: { data: DetailContent; variant?: 'behandeling' | 'opleiding' }) {
   // Inschrijven kan alleen als er een product aan hangt ÉN de webshop van deze tenant aan staat —
   // anders wijst de knop naar /product/<handle>, en dat is een 404 zolang de shop uit is.
   const bookable = !!data.productHandle && commerceEnabled()
   const highlights = data.highlights ?? []
   return (
     <>
-      <PageHero {...data.hero} />
+      {/* Bij een behandeling staat de foto ACHTER de kop (§7: "de afbeelding mag in de header worden
+          verwerkt"). Opleidingen houden hun goedgekeurde opmaak met de foto boven de tekst (§6). */}
+      <PageHero {...data.hero} image={variant === 'behandeling' ? data.image : undefined} />
       {/* Direct onder de hero, vóór de lopende tekst: UWV-subsidie en gespreid betalen zijn voor
           een cursist vaak de reden dát de opleiding haalbaar is. In de zijbalk of pas bij het
           afrekenen komen ze te laat — zie de opdracht, punt 6 en 14. */}
@@ -317,10 +380,18 @@ export function DetailPage({ data }: { data: DetailContent }) {
         <div className="container">
           <div className="detail-grid">
             <div className="prose">
-              <div className="detail-figure">
-                <Media src={data.image} alt={data.hero.title} shape="wide" label={data.hero.title} />
-              </div>
-              {data.intro && <p className="lead" style={{ marginBottom: 8 }}>{data.intro}</p>}
+              {variant === 'behandeling' ? (
+                /* Geen losse foto meer hier: die staat nu in de hero. De intro is daarmee het
+                   eerste wat de bezoeker leest, wat §7 juist vraagt. */
+                data.intro && <p className="lead" style={{ marginBottom: 30 }}>{data.intro}</p>
+              ) : (
+                <>
+                  <div className="detail-figure">
+                    <Media src={data.image} alt={data.hero.title} shape="wide" label={data.hero.title} />
+                  </div>
+                  {data.intro && <p className="lead" style={{ marginBottom: 8 }}>{data.intro}</p>}
+                </>
+              )}
               {data.body.map((b) => (
                 <div key={b.heading}>
                   <h2>{b.heading}</h2>
@@ -380,7 +451,7 @@ export function DetailPage({ data }: { data: DetailContent }) {
                 {bookable ? (
                   <>
                     <LocaleLink className="btn btn-gold" href={`/product/${data.productHandle}`}>
-                      Inschrijven
+                      {ui().common.enroll}
                     </LocaleLink>
                     <LocaleLink className="btn btn-light aside-cta-secondary" href={data.aside.ctaUrl}>
                       {data.aside.ctaLabel}
@@ -500,6 +571,12 @@ export function InfoPage({ data }: { data: InfoContent }) {
               <FaqList title={data.faq.title} items={data.faq.items} />
             </div>
           )}
+          {/* Optioneel formulier onderaan de pagina (bv. UWV-aanvraag of sollicitatie). */}
+          {data.formSlug && (
+            <div style={{ marginTop: 44 }}>
+              <Form slug={data.formSlug} />
+            </div>
+          )}
         </div>
       </section>
       <CtaBand cta={data.cta} />
@@ -510,6 +587,7 @@ export function InfoPage({ data }: { data: InfoContent }) {
 /** SEO location page (Wenkbrauwen <stad>, Permanente Make-up <stad>). Locale-specific hero +
  *  prose + a single location card + FAQ + CTA. */
 export function LocationPage({ data }: { data: LocationPageContent }) {
+  const t = ui()
   return (
     <>
       <PageHero {...data.hero} />
@@ -549,14 +627,14 @@ export function LocationPage({ data }: { data: LocationPageContent }) {
               <div className="aside-card">
                 <h4>{data.location.name}</h4>
                 <ul className="aside-facts">
-                  <li><span className="k">Adres</span><span className="v">{data.location.address}</span></li>
-                  <li><span className="k">Plaats</span><span className="v">{data.location.postcode}</span></li>
-                  <li><span className="k">Telefoon</span><span className="v">{data.location.phone}</span></li>
-                  <li><span className="k">Openingstijden</span><span className="v">{data.location.hours}</span></li>
+                  <li><span className="k">{t.location.address}</span><span className="v">{data.location.address}</span></li>
+                  <li><span className="k">{t.location.city}</span><span className="v">{data.location.postcode}</span></li>
+                  <li><span className="k">{t.location.phone}</span><span className="v">{data.location.phone}</span></li>
+                  <li><span className="k">{t.location.hours}</span><span className="v">{data.location.hours}</span></li>
                 </ul>
                 <div style={{ marginTop: 18 }}>
                   <a className="link-arrow" href={data.location.mapUrl} target="_blank" rel="noreferrer">
-                    Bekijk op de kaart <Icon name="arrow" size={16} />
+                    {t.common.viewOnMap} <Icon name="arrow" size={16} />
                   </a>
                 </div>
               </div>
@@ -577,27 +655,43 @@ function headingId(heading: string, i: number): string {
   return base ? `sectie-${base}` : `sectie-${i + 1}`
 }
 
-/** Dutch long-form date ("26 november 2025") from an ISO `YYYY-MM-DD` string.
- *  Falls back to the raw value if the date isn't parseable, so odd CMS input never renders "Invalid Date". */
-const NL_MONTHS = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december']
-function formatDate(iso: string): string {
+/** App-locale → BCP-47 tag for Intl date formatting. Unknown codes pass through as-is. */
+const DATE_LOCALES: Record<string, string> = { nl: 'nl-NL', en: 'en-GB' }
+
+/**
+ * Long-form date ("26 november 2025" / "26 November 2025") from an ISO `YYYY-MM-DD` string,
+ * formatted for the active locale via `Intl.DateTimeFormat`. The value is parsed as a date-ONLY
+ * value in UTC (never `new Date(iso)`, which is timezone-dependent and can shift a day). Falls back
+ * to the raw value if the date isn't parseable, so odd CMS input never renders "Invalid Date".
+ */
+function formatDate(iso: string, locale: string): string {
   const m = /^(\d{4})-(\d{2})-(\d{2})/.exec((iso ?? '').trim())
   if (!m) return iso
-  const month = NL_MONTHS[Number(m[2]) - 1]
-  return month ? `${Number(m[3])} ${month} ${m[1]}` : iso
+  const d = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])))
+  if (Number.isNaN(d.getTime())) return iso
+  try {
+    return new Intl.DateTimeFormat(DATE_LOCALES[locale] ?? locale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'UTC',
+    }).format(d)
+  } catch {
+    return iso
+  }
 }
 
 /** Rough read time from the excerpt length — enough to set expectations, never shown as exact. */
 function readTime(text: string): string {
   const words = (text ?? '').trim().split(/\s+/).filter(Boolean).length
-  return `${Math.max(2, Math.round((words * 8) / 200))} min lezen`
+  return `${Math.max(2, Math.round((words * 8) / 200))} ${ui().blog.minRead}`
 }
 
 /** Meta row: date, then any extra items separated by a small gold dot. */
 function BlogMeta({ date, extra }: { date: string; extra?: string }) {
   return (
     <div className="blog-meta">
-      <time dateTime={date}>{formatDate(date)}</time>
+      <time dateTime={date}>{formatDate(date, getActiveLocale())}</time>
       {extra && (
         <>
           <span className="dot" aria-hidden="true" />
@@ -623,7 +717,7 @@ function BlogCard({ p }: { p: BlogCard }) {
         <p>{p.excerpt}</p>
       </div>
       <div className="blog-card-foot">
-        <ArrowLink url={`/${p.slug}`} label="Lees artikel" />
+        <ArrowLink url={`/${p.slug}`} label={ui().blog.readArticle} />
         <span className="blog-readtime">{readTime(p.excerpt)}</span>
       </div>
     </article>
@@ -662,17 +756,18 @@ function pageHref(n: number): string {
 /** Numbered pagination control (prev / pages / next). Plain links — no JS. */
 function Pagination({ current, total }: { current: number; total: number }) {
   if (total <= 1) return null
+  const t = ui().pagination
   return (
-    <nav className="pagination" aria-label="Paginering">
+    <nav className="pagination" aria-label={t.label}>
       {current > 1 ? (
-        <LocaleLink className="page-arrow" href={pageHref(current - 1)} rel="prev" aria-label="Vorige pagina">
+        <LocaleLink className="page-arrow" href={pageHref(current - 1)} rel="prev" aria-label={t.prevPage}>
           <Icon name="arrow" size={16} style={{ transform: 'rotate(180deg)' }} />
-          <span>Vorige</span>
+          <span>{t.prev}</span>
         </LocaleLink>
       ) : (
         <span className="page-arrow is-disabled" aria-hidden="true">
           <Icon name="arrow" size={16} style={{ transform: 'rotate(180deg)' }} />
-          <span>Vorige</span>
+          <span>{t.prev}</span>
         </span>
       )}
 
@@ -693,13 +788,13 @@ function Pagination({ current, total }: { current: number; total: number }) {
       </ol>
 
       {current < total ? (
-        <LocaleLink className="page-arrow" href={pageHref(current + 1)} rel="next" aria-label="Volgende pagina">
-          <span>Volgende</span>
+        <LocaleLink className="page-arrow" href={pageHref(current + 1)} rel="next" aria-label={t.nextPage}>
+          <span>{t.next}</span>
           <Icon name="arrow" size={16} />
         </LocaleLink>
       ) : (
         <span className="page-arrow is-disabled" aria-hidden="true">
-          <span>Volgende</span>
+          <span>{t.next}</span>
           <Icon name="arrow" size={16} />
         </span>
       )}
@@ -722,14 +817,15 @@ export function BlogGrid({ posts, page = 1 }: { posts: BlogCard[]; page?: number
   const current = Math.min(Math.max(1, page), totalPages)
   const start = (current - 1) * POSTS_PER_PAGE
   const slice = sorted.slice(start, start + POSTS_PER_PAGE)
+  const t = ui().blog
 
   return (
     <div className="blog-index">
       <div className="blog-toolbar">
-        <div className="blog-toolbar-title">Alle artikelen</div>
+        <div className="blog-toolbar-title">{t.allArticles}</div>
         <div className="blog-count">
-          {sorted.length} artikelen
-          {totalPages > 1 && <> · pagina {current} van {totalPages}</>}
+          {fill(t.articlesCount, { n: sorted.length })}
+          {totalPages > 1 && <> · {fill(t.pageXofY, { x: current, y: totalPages })}</>}
         </div>
       </div>
 
@@ -784,7 +880,11 @@ export function BlogPostPage({
   const words = post.body.reduce((a, b) => a + b.paragraphs.join(' ').split(/\s+/).length, 0)
   const mins = Math.max(1, Math.round(words / 200))
 
-  const related = getCategoryLinks(post.category ?? '')
+  const t = ui()
+  const locale = getActiveLocale()
+  // URLs stay stable (checked in content/blog.ts); only the VISIBLE label is localized via ui data.
+  const related = getCategoryLinks(post.category ?? '').map((r) => ({ url: r.url, label: t.relatedLabels[r.url] ?? r.label }))
+  const categoryLabel = post.category ? t.categories[post.category] ?? post.category : ''
 
   return (
     <>
@@ -797,14 +897,14 @@ export function BlogPostPage({
               </div>
 
               <div className="post-meta">
-                {post.category && <span className="post-meta-chip">{post.category}</span>}
+                {categoryLabel && <span className="post-meta-chip">{categoryLabel}</span>}
                 <span className="post-meta-item">
-                  <time dateTime={post.date}>{formatDate(post.date)}</time>
+                  <time dateTime={post.date}>{formatDate(post.date, locale)}</time>
                 </span>
                 <span className="dot" aria-hidden="true" />
                 <span className="post-meta-item">{post.author}</span>
                 <span className="dot" aria-hidden="true" />
-                <span className="post-meta-item">{mins} min lezen</span>
+                <span className="post-meta-item">{mins} {t.blog.minRead}</span>
               </div>
 
               <div className="prose post-body">
@@ -823,7 +923,7 @@ export function BlogPostPage({
                   Zie CATEGORY_LINKS in content/blog.ts — elke URL daar is gecontroleerd. */}
               {related.length > 0 && (
                 <div className="kb-related">
-                  <h3>Meer over dit onderwerp</h3>
+                  <h3>{t.blog.moreOnTopic}</h3>
                   <div className="kb-related-links">
                     {related.map((r) => (
                       <LocaleLink className="kb-related-link" href={r.url} key={r.url}>
@@ -835,21 +935,21 @@ export function BlogPostPage({
               )}
 
               <div className="post-actions">
-                <LocaleLink className="btn btn-ghost" href="/blog">Terug naar de blog</LocaleLink>
+                <LocaleLink className="btn btn-ghost" href="/blog">{t.blog.backToBlog}</LocaleLink>
                 <LocaleLink className="btn btn-gold" href={cta.url}>{cta.label}</LocaleLink>
               </div>
 
               {(prev || next) && (
-                <nav className="post-nav" aria-label="Meer artikelen">
+                <nav className="post-nav" aria-label={t.blog.moreArticles}>
                   {prev && (
                     <LocaleLink className="post-nav-card" href={`/${prev.slug}`}>
-                      <span className="dir">Vorig artikel</span>
+                      <span className="dir">{t.blog.prevArticle}</span>
                       <span className="t">{prev.title}</span>
                     </LocaleLink>
                   )}
                   {next && (
                     <LocaleLink className="post-nav-card is-next" href={`/${next.slug}`}>
-                      <span className="dir">Volgend artikel</span>
+                      <span className="dir">{t.blog.nextArticle}</span>
                       <span className="t">{next.title}</span>
                     </LocaleLink>
                   )}
@@ -859,8 +959,8 @@ export function BlogPostPage({
 
             <aside className="post-aside">
               {showToc && (
-                <nav className="post-toc" aria-label="Inhoudsopgave">
-                  <h4>In dit artikel</h4>
+                <nav className="post-toc" aria-label={t.blog.tableOfContents}>
+                  <h4>{t.blog.inThisArticle}</h4>
                   <ol>
                     {sections.map((s) => (
                       <li key={s.id}>

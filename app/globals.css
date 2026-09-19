@@ -22,9 +22,19 @@
      Bewust een eigen token en niet `--gold`: het goud blijft de sfeer van de site, dit is de
      actiekleur. */
   --brand: #21D19F;
+  /* Leesbaar groen voor tekst en randen op een lichte ondergrond. #21D19F haalt als tekstkleur
+     maar 1.86:1 op --cream; dit haalt 5.66:1 en blijft herkenbaar hetzelfde groen. */
+  --brand-deep: #16705a;
   /* Tekstkleur ÓP een groen vlak. Niet wit: #21D19F draagt witte tekst op 1,97:1 en zakt daarmee
      ver onder de WCAG AA-grens van 4,5:1. Met de donkere inkt is het 8,83:1. */
   --brand-ink: #1c1a17;
+  /* Tekstkleur op een groen knopvlak. Wit op #21D19F haalt 1.97:1 waar de norm 4.5:1 is — dit is
+     een uitdrukkelijke keuze van de klant, gemaakt nadat het contrast was voorgelegd. Niet
+     "stilletjes herstellen": overleg het eerst. Voor leesbaar wit op groen moet het vlak naar
+     ongeveer #147d5f (5.09:1).
+     De donkere --brand-ink blijft gelden voor de kleine groene elementen (het vinkje in de
+     voordeelband, de kennisbank-chips); die zijn te klein om wit op groen nog te kunnen lezen. */
+  --btn-on-brand: #ffffff;
   /* Aanbiedingsgroen — bewust BUITEN het goud/champagne-palet. Een korting moet uit de huisstijl
      springen; een gouden badge op een gouden site leest als decoratie in plaats van als actie.
      Overgenomen van de oude webshop, waar klanten deze kleur al met "aanbieding" associëren. */
@@ -103,17 +113,21 @@ p { color: var(--ink-soft); }
   transition: transform .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease, border-color .3s ease;
   cursor: pointer; border: 1px solid transparent;
 }
-.btn-primary { background: var(--ink); color: var(--champagne); }
-.btn-primary:hover { background: var(--gold-deep); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--gold-deep); }
-/* De primaire call-to-action draagt het merkgroen (#21D19F), zoals de klant vroeg. De klassenaam
-   blijft `.btn-gold`: hij staat op tientallen plaatsen in de content en in de componenten, en
-   hernoemen zou een grote diff opleveren zonder dat er iets aan verandert. */
-.btn-gold { background: var(--brand); color: var(--brand-ink); }
+/* ---------- Knoppen: allemaal in het merkgroen (opdracht §8) ----------
+   Drie situaties, drie tinten van hetzelfde groen:
+   - gevuld  : vlak in --brand met donkere tekst (8.83:1). Wit op groen haalt 1.97:1 en kan dus niet.
+   - rand op licht : tekst en rand in --brand-deep, want --brand als tekstkleur haalt 1.86:1 op cream.
+   - rand op donker: tekst en rand in --brand zelf; op --ink is dat 8.83:1.
+   De klassenamen blijven zoals ze zijn — `.btn-gold` staat op tientallen plaatsen in de
+   componenten, en hernoemen geeft een grote diff zonder dat er iets aan verandert. */
+.btn-primary { background: var(--brand); color: var(--btn-on-brand); }
+.btn-primary:hover { background: color-mix(in srgb, var(--brand) 86%, #000); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--brand); }
+.btn-gold { background: var(--brand); color: var(--btn-on-brand); }
 .btn-gold:hover { background: color-mix(in srgb, var(--brand) 86%, #000); transform: translateY(-2px); box-shadow: 0 16px 30px -16px var(--brand); }
-.btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
-.btn-ghost:hover { background: var(--ink); color: var(--champagne); transform: translateY(-2px); }
-.btn-light { background: transparent; color: var(--champagne); border-color: rgba(245,239,230,0.4); }
-.btn-light:hover { background: var(--champagne); color: var(--ink); }
+.btn-ghost { background: transparent; color: var(--brand-deep); border-color: var(--brand-deep); }
+.btn-ghost:hover { background: var(--brand); color: var(--btn-on-brand); border-color: var(--brand); transform: translateY(-2px); }
+.btn-light { background: transparent; color: var(--brand); border-color: color-mix(in srgb, var(--brand) 55%, transparent); }
+.btn-light:hover { background: var(--brand); color: var(--btn-on-brand); border-color: var(--brand); }
 
 /* link with arrow */
 .link-arrow { display: inline-flex; align-items: center; gap: 8px; color: var(--gold-deep); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em; }
@@ -608,6 +622,41 @@ p { color: var(--ink-soft); }
 .breadcrumb { display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.78rem; color: rgba(245,239,230,0.6); letter-spacing: 0.04em; }
 .breadcrumb a:hover { color: var(--gold); }
 
+/* ---------- Behandelpagina: de foto achter de kop (opdracht §7) ----------
+   De foto stond op volle breedte bóven de intro, waardoor de lopende tekst op 1280x800 pas op
+   993px begon — ruim onder de vouw. Nu staat hij achter de kop, met een sluier eroverheen.
+
+   De sluier is berekend op het slechtste geval, een spierwitte foto. Champagne tekst op --ink
+   met 80% dekking over wit geeft 8.0:1; onder 65% zakt het door de norm van 4.5:1 heen. Vandaar
+   dat de dekking pas ná 68% van de breedte afneemt: het tekstblok is 46rem breed binnen een
+   container van 1200px, dus het reikt op het krapste desktopformaat tot ongeveer 65%. Rechts
+   daarvan mag de foto ademen.
+
+   Onder 900px loopt de tekst over de volle breedte, dus daar is de sluier overal even sterk. */
+.pagehero--image .pagehero-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0;
+}
+.pagehero--image::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    100deg,
+    rgba(28, 26, 23, 0.94) 0%,
+    rgba(28, 26, 23, 0.88) 45%,
+    rgba(28, 26, 23, 0.80) 68%,
+    rgba(28, 26, 23, 0.34) 100%
+  );
+}
+/* De gouden gloed van de gewone hero eronderuit: over een foto wordt dat troebel in plaats van
+   sfeervol. */
+.pagehero--image::after { display: none; }
+.pagehero--image .pagehero-inner { z-index: 2; }
+@media (max-width: 900px) {
+  .pagehero--image::before {
+    background: linear-gradient(to bottom, rgba(28, 26, 23, 0.90), rgba(28, 26, 23, 0.84));
+  }
+}
+
 /* ============================================================================
    Treatment / training detail layout
    ============================================================================ */
@@ -623,6 +672,7 @@ p { color: var(--ink-soft); }
 .detail-figure img { border-radius: var(--radius-lg); width: 100%; max-height: 340px; object-fit: cover; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
 @media (max-width: 720px) { .detail-figure img { max-height: 260px; } }
 .detail-figure .media-ph { margin-bottom: 30px; }
+
 
 .aside { position: sticky; top: 100px; display: grid; gap: 20px; }
 .aside-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px; }
@@ -644,9 +694,28 @@ p { color: var(--ink-soft); }
 .step h3 { font-size: 1.2rem; margin-bottom: 6px; }
 .step p { color: var(--muted); font-size: 0.94rem; }
 
-.faq-item { border-bottom: 1px solid var(--line); padding: 24px 0; }
-.faq-item h3 { font-size: 1.2rem; margin-bottom: 8px; }
-.faq-item p { color: var(--muted); }
+.faq-item { border-bottom: 1px solid var(--line); }
+/* De <summary> is de klikbare vraagregel. list-style/::-webkit-details-marker weg: we tekenen
+   het chevron zelf, gelijk aan .drawer-acc-caret in het mobiele menu. */
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  cursor: pointer; list-style: none; padding: 24px 0;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q:hover h3 { color: var(--gold-deep); }
+.faq-q:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 2px; border-radius: var(--radius); }
+.faq-item h3 { font-size: 1.2rem; margin-bottom: 0; transition: color .2s ease; }
+.faq-caret {
+  width: 9px; height: 9px; flex: none; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg); transition: transform .2s ease; opacity: 0.6; margin-right: 4px;
+}
+.faq-item[open] .faq-caret { transform: rotate(-135deg); }
+.faq-item[open] h3 { color: var(--gold-deep); }
+/* Padding onderaan hoort bij het antwoord, niet bij de vraagregel: dicht blijft de rij zo strak. */
+.faq-item p { color: var(--muted); padding-bottom: 24px; margin-top: -4px; }
+@media (prefers-reduced-motion: reduce) {
+  .faq-caret, .faq-item h3 { transition: none; }
+}
 
 /* price table */
 .pricelist { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
@@ -1031,17 +1100,26 @@ p { color: var(--ink-soft); }
 .password-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: var(--radius); }
 .password-toggle svg { width: 20px; height: 20px; display: block; }
 .form textarea { min-height: 130px; resize: vertical; line-height: 1.6; }
+/* Formulier-submit draagt hetzelfde merkgroen als de andere CTA's (opdracht §8): de gouden
+   gradient was hier blijven staan na de eerdere knoppenwijziging. Zelfde vulling/tekst als
+   .btn-gold zodat er geen losse gouden CTA meer op de site staat.
+   LET OP (contrast): wit op #21D19F haalt 1.97:1 (WCAG AA vraagt 4.5:1). Dit is dezelfde
+   openstaande keuze als bij .btn-gold — zie --btn-on-brand — en moet site-breed beslist worden
+   (donkere tekst OF donkerder groen met wit). Bewust NIET hier stil afwijkend opgelost. */
 .form button[type="submit"] {
   align-self: flex-start; margin-top: 8px;
-  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
-  color: var(--white); border: none; padding: 15px 40px; border-radius: 999px;
+  background: var(--brand);
+  color: var(--btn-on-brand); border: none; padding: 15px 40px; border-radius: 999px;
   font-weight: 700; font-size: 0.9rem; letter-spacing: 0.03em; font-family: var(--sans);
-  cursor: pointer; box-shadow: 0 10px 24px -12px var(--gold-deep);
+  cursor: pointer; box-shadow: 0 10px 24px -12px var(--brand);
   transition: transform 0.18s, box-shadow 0.18s, filter 0.18s;
 }
-.form button[type="submit"]:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -12px var(--gold-deep); filter: brightness(1.04); }
+.form button[type="submit"]:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -12px var(--brand); background: color-mix(in srgb, var(--brand) 86%, #000); }
 .form button[type="submit"]:active { transform: translateY(0); }
 .form button[type="submit"]:disabled { opacity: 0.55; cursor: default; transform: none; box-shadow: none; }
+/* Toegankelijke veldfout: rode rand op het foute veld + inline melding (role="alert"). */
+.form-field--error input, .form-field--error textarea, .form-field--error select { border-color: #c0392b; }
+.form-field-error { display: block; margin-top: 6px; color: #c0392b; font-size: 0.82rem; }
 /* Confirmation shown after a successful submit — a soft, centered card with a gold check badge.
    Auto-clears after a few seconds (see Form.tsx), so it reads as a graceful acknowledgement. */
 .form-success {
@@ -1261,7 +1339,9 @@ p { color: var(--ink-soft); }
 .product-card-error {
   margin: 8px 0 0; text-align: center; line-height: 1.35;
 }
-.product-card-btn--added { background: var(--gold-deep); }
+/* Bevestiging na toevoegen: het diepe groen met lichte tekst (5.25:1). Dieper dan de knop zelf,
+   zodat "toegevoegd" zichtbaar iets anders is dan "toevoegen" — maar wel hetzelfde groen. */
+.product-card-btn--added { background: var(--brand-deep); color: var(--champagne); }
 /* De prijs duwt de knop naar de onderrand. Bewust de prijs en niet de omschrijving: die is nu op
    twee regels afgekapt (`flex: none`), dus zonder dit zouden kaarten met een korte omschrijving een
    hoger geplaatste knop krijgen dan hun buren. De prijs staat er altijd — ook als "—". */
@@ -1713,10 +1793,13 @@ p { color: var(--ink-soft); }
 /* ---------- knop met alleen een rand ----------
    Naast .btn-gold voor secundaire acties (annuleren, uitloggen, "inloggen" naast een gastformulier):
    die mogen niet even zwaar wegen als de hoofdactie op dezelfde pagina. */
+/* Secundaire actie naast een hoofdknop (annuleren, uitloggen, filter wissen). Groen als accent,
+   maar bewust niet gevuld: een gevulde groene annuleerknop zou net zo hard roepen als de knop
+   ernaast waar hij het alternatief van is. */
 .btn-outline {
-  background: transparent; color: var(--ink); border: 1px solid var(--line);
+  background: transparent; color: var(--brand-deep); border: 1px solid var(--line);
 }
-.btn-outline:hover { border-color: var(--gold); color: var(--gold-deep); background: var(--white); }
+.btn-outline:hover { border-color: var(--brand); color: var(--brand-deep); background: var(--white); }
 
 /* Tekstknop in een lijst (wijzigen/verwijderen bij een adres). Een knop en geen link, want het is een
    actie op deze pagina — maar hij hoort er niet als knop uit te zien tussen de adresgegevens. */

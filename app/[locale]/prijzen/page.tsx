@@ -3,11 +3,12 @@ import type { Metadata } from 'next'
 import { Shell } from '@/components/Shell'
 import { CtaBand, PageHero, PriceList } from '@/components/sections'
 import { getPrijzen } from '@/content/prijzen'
+import { pageAlternates } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const data = getPrijzen(locale)
-  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text }
+  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text, alternates: pageAlternates('/prijzen', locale) }
 }
 
 export default async function PrijzenPage({ params }: { params: Promise<{ locale: string }> }) {

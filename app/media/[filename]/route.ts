@@ -1,16 +1,21 @@
 /**
  * Site-side media serving. Content references images as `/media/<filename>` (a stable, same-origin,
- * portable path). The actual bytes live in the CMS media library (admin-managed; local disk in dev,
- * Cloudflare R2 in prod) — the site never stores media, so an admin can upload/replace/delete from
- * the CMS Media section and the site reflects it without a redeploy.
+ * portable path). The actual bytes live in the CMS media library (admin-managed) — the site never
+ * stores media, so an admin can upload/replace/delete from the CMS Media section and the site
+ * reflects it without a redeploy.
  *
- * This route 302-redirects to the CMS's PUBLIC, tenant-scoped media endpoint
- * (`(frontend)/media/[filename]`), passing the tenant slug so the CMS scopes the lookup to THIS
- * client (the site's own host doesn't match a CMS domain). The CMS endpoint streams the file
- * (local) or redirects on to R2 (prod) — env-driven there, no change needed here.
+ * This route 302-redirects to the CMS's PUBLIC, tenant-scoped media endpoint, passing the tenant
+ * slug so the CMS scopes the lookup to THIS client (the site's own host doesn't match a CMS domain).
+ *
+ * Verified current architecture (2026-09, proven against the live endpoint):
+ *   /media/<file>?tenant=<slug>  →  CMS  →  302  →  Supabase Storage public object
+ *   (bucket `cms-media`, object `media/<file>`). Wrong/absent tenant → 404. The site NEVER sees
+ *   Supabase; the storage backend is replaceable behind the CMS contract.
+ * HISTORICAL: earlier docs mentioned local-disk (dev) / Cloudflare R2 (prod). That is no longer the
+ *   production flow — storage is Supabase behind the same CMS contract. No change needed here.
  *
  * Env (set per tenant, e.g. in .env.local / hosting env):
- *   MEDIA_PUBLIC_BASE   CMS public media base, e.g. http://localhost:3000/media  (prod: https://cms…/media)
+ *   MEDIA_PUBLIC_BASE   CMS public media base — prod: https://cms.bedigital.ai/media (dev: http://localhost:3000/media)
  *   MEDIA_TENANT_SLUG   this tenant's slug, e.g. izzi-beauty  (so the CMS scopes the lookup)
  */
 export const dynamic = 'force-dynamic'

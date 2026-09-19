@@ -1,0 +1,116 @@
+{
+  "hero": {
+    "eyebrow": "Permanent Makeup · Amsterdam & Rotterdam",
+    "titleLead": "Wake up with",
+    "titleEm": "perfect",
+    "titleTail": "brows",
+    "text": "IZZI Beauty is the #1 permanent makeup salon in the Netherlands. Natural Powder Brows, Lip Blush and Infralash Eyeliner — craftsmanship that subtly enhances your beauty.",
+    "primaryLabel": "Book a treatment",
+    "primaryUrl": "/contact",
+    "secondaryLabel": "Explore treatments",
+    "secondaryUrl": "/behandelingen",
+    "image": "/media/izzi-beauty-20250729-1b1be5-izzi-pmu-machine.jpg",
+    "videoUrl": "",
+    "meta": [
+      { "num": "7,000+", "lbl": "Treatments" },
+      { "num": "350+", "lbl": "5-star reviews" },
+      { "num": "2", "lbl": "Locations" }
+    ]
+  },
+  "reviewStrip": {
+    "text": "Rated 5.0 by more than 350 clients on Google & Trustpilot",
+    "linkLabel": "Read reviews",
+    "linkUrl": "/over-izzi"
+  },
+  "intro": {
+    "eyebrow": "Welcome to IZZI Beauty",
+    "title": "The specialist in natural permanent makeup",
+    "text": "At IZZI Beauty it's all about you. We take our time, listen to your wishes and create a result that perfectly suits your face — never harsh or unnatural, always refined. All our specialists are GGD-certified and work with safe, high-quality pigments.",
+    "checklist": [
+      "GGD-certified and qualified specialists",
+      "Safe, dermatologically tested pigments",
+      "Natural result, tailored to your face",
+      "Two modern salons: Amsterdam & Rotterdam"
+    ],
+    "image": "/media/izzi-beauty-20250729-9b97be-izzi-beauty-isabella-levels-pmu-expert.webp",
+    "badgeNum": "12+",
+    "badgeLabel": "Years of experience",
+    "buttonLabel": "Get to know IZZI",
+    "buttonUrl": "/over-izzi"
+  },
+  "treatments": {
+    "eyebrow": "Our treatments",
+    "title": "Permanent makeup that actually looks real",
+    "text": "From fuller brows to a fresh lip colour — every treatment is fully bespoke, performed by our specialists.",
+    "buttonLabel": "All treatments",
+    "buttonUrl": "/behandelingen",
+    "items": [
+      { "title": "Ombré Powder Brows", "meta": "from €395 · 2.5 hrs", "text": "Soft, powdery brows with a makeup look that stays perfect for days.", "image": "/media/izzi-beauty-20250729-11fee8-permanente-make-up-wenkbrauwen.jpg", "url": "/powder-brows" },
+      { "title": "Lip Blush", "meta": "from €395 · 2.5 hrs", "text": "A natural lip colour that makes your lips look fuller and fresher — the alternative to lip fillers.", "image": "/media/izzi-beauty-20250729-25080b-pmu-resultaat-na-de-behandeling.webp", "url": "/lip-blush" },
+      { "title": "Infralash Eyeliner", "meta": "from €275 · 1 hr", "text": "Subtle definition between the lashes for a bright, open gaze — morning after morning.", "image": "/media/izzi-beauty-20250729-118930-faux-freckles.webp", "url": "/infralash-eyeliner" }
+    ]
+  },
+  "trainings": {
+    "eyebrow": "IZZI Beauty Academy",
+    "title": "Become a permanent makeup specialist yourself",
+    "text": "Learn the craft from the best. Our courses combine theory, hands-on training and personal guidance — with UWV subsidy options.",
+    "buttonLabel": "All courses",
+    "buttonUrl": "/opleidingen",
+    "items": [
+      { "title": "All Round PMU Course", "meta": "Beginner course", "text": "The complete course covering all IZZI techniques: brows, lips and eyeliner.", "image": "/media/izzi-beauty-20250729-53836b-powder-brows.jpg", "url": "/allround-pmu-opleiding" },
+      { "title": "Ombré Powder Brows", "meta": "Beginner course", "text": "Become a specialist in our most requested treatment with intensive hands-on training.", "image": "/media/izzi-beauty-20250729-af300e-ombre-powder-brows-masterclass.webp", "url": "/ombre-powder-brows-opleiding" },
+      { "title": "Lip Blush Course", "meta": "Beginner course", "text": "Learn the art of natural lip pigmentation from A to Z, including colour theory.", "image": "/media/izzi-beauty-20250729-abf9e8-lip-blush-pigmentatie.webp", "url": "/lip-blush-beginnersopleiding" }
+    ]
+  },
+  "usps": {
+    "eyebrow": "Why IZZI Beauty",
+    "title": "Craftsmanship you can rely on",
+    "text": "Thousands of clients chose IZZI Beauty. Here's why.",
+    "items": [
+      { "icon": "award", "title": "Qualified specialists", "text": "Our team is fully trained and GGD-recognised for permanent makeup." },
+      { "icon": "shield", "title": "Safe pigments", "text": "We work exclusively with REACH-compliant, dermatologically tested pigments." },
+      { "icon": "hands", "title": "7,000+ treatments", "text": "Years of experience and thousands of satisfied clients across the Netherlands." },
+      { "icon": "star", "title": "5.0 average review", "text": "Over 350 five-star ratings on Google and Trustpilot." }
+    ]
+  },
+  "stats": [
+    { "num": "7,000+", "lbl": "Treatments" },
+    { "num": "350+", "lbl": "5-star reviews" },
+    { "num": "12+", "lbl": "Years of experience" },
+    { "num": "100%", "lbl": "Natural result" }
+  ],
+  "reviewsSection": {
+    "eyebrow": "PMU experiences",
+    "title": "Loved by our clients",
+    "items": [
+      { "stars": 5, "quote": "My Powder Brows look so natural that no one realises it's PMU. I wake up every morning with perfect brows.", "who": "Sanne V.", "what": "Ombré Powder Brows" },
+      { "stars": 5, "quote": "The loveliest salon I've ever been to. Professional, hygienic and the result is beautiful. My Lip Blush is subtle and just right.", "who": "Fatima E.", "what": "Lip Blush" },
+      { "stars": 5, "quote": "I did the course at IZZI and now work as a self-employed PMU artist. The guidance was excellent — I felt genuinely ready.", "who": "Laura B.", "what": "All Round PMU Course" }
+    ]
+  },
+  "locationsSection": {
+    "eyebrow": "Our locations",
+    "title": "Visit IZZI Beauty",
+    "text": "You're welcome at our modern salons in Amsterdam and Rotterdam — both fully equipped and GGD-certified."
+  },
+  "cta": {
+    "script": "Ready for your transformation?",
+    "title": "Book your appointment today",
+    "text": "Choose natural permanent makeup at the #1 salon in the Netherlands. Our specialists are ready for you in Amsterdam and Rotterdam.",
+    "primaryLabel": "Book an appointment",
+    "primaryUrl": "/contact",
+    "secondaryLabel": "View prices",
+    "secondaryUrl": "/prijzen"
+  },
+  "contactSection": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "text": "Have a question or want to book an appointment? Leave a message — we'll reply as soon as possible.",
+    "email": "info@izzi-beauty.com",
+    "phone": "+31 6 11 76 88 81",
+    "locations": [
+      { "name": "IZZI Beauty Amsterdam", "address": "Koningin Wilhelminaplein 13", "hours": "Mon–Sat · 09:00 – 18:00" },
+      { "name": "IZZI Beauty Rotterdam", "address": "Weena 95, 3013 CH", "hours": "" }
+    ]
+  }
+}

@@ -3,11 +3,12 @@ import type { Metadata } from 'next'
 import { Shell } from '@/components/Shell'
 import { CtaBand, Gallery, PageHero } from '@/components/sections'
 import { getPortfolio } from '@/content/portfolio'
+import { pageAlternates } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const data = getPortfolio(locale)
-  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text }
+  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text, alternates: pageAlternates('/portfolio', locale) }
 }
 
 export default async function PortfolioPage({ params }: { params: Promise<{ locale: string }> }) {

@@ -103,7 +103,7 @@
         "meta": "Beginnersopleiding",
         "text": "Leer de kunst van natuurlijke lippigmentatie van A tot Z, inclusief kleurtheorie.",
         "image": "/media/izzi-beauty-20250729-abf9e8-lip-blush-pigmentatie.webp",
-        "url": "/lip-blush"
+        "url": "/lip-blush-beginnersopleiding"
       }
     ]
   },
@@ -194,7 +194,7 @@
     "eyebrow": "Contact",
     "title": "Neem contact op",
     "text": "Heb je een vraag of wil je een afspraak maken? Laat een bericht achter — we reageren zo snel mogelijk.",
-    "email": "info@example.com",
+    "email": "info@izzi-beauty.com",
     "phone": "+31 6 11 76 88 81",
     "locations": [
       {
@@ -204,8 +204,8 @@
       },
       {
         "name": "IZZI Beauty Rotterdam",
-        "address": "Nog niet bekend",
-        "hours": "Ma–Za · 09:00 – 18:00"
+        "address": "Weena 95, 3013 CH",
+        "hours": ""
       }
     ]
   }

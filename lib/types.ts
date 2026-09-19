@@ -92,6 +92,8 @@ export type HubContent = {
   hero: { eyebrow: string; title: string; text: string; breadcrumb: string }
   intro?: { title: string; text: string }
   groups: { heading: string; text?: string; items: LinkCard[] }[]
+  /** Optioneel formulier onderaan de hub (slug uit content/forms.json), bv. "opleiding-interesse". */
+  formSlug?: string
   cta: CtaBlock
 }
 
@@ -468,6 +470,9 @@ export type InfoContent = {
    */
   reviews?: { title?: string; items: Review[] }
   faq?: { title: string; items: Faq[] }
+  /** Optioneel formulier onderaan de pagina (slug uit content/forms.json), bv. "uwv" of "vacature".
+   *  Afwezig → geen formulier. */
+  formSlug?: string
   cta: CtaBlock
 }
 export type InfoCollection = Record<string, InfoContent>
@@ -512,6 +517,116 @@ export type BlogCollection = Record<string, BlogPost>
 export type BlogIndexContent = {
   hero: { eyebrow: string; title: string; text: string; breadcrumb: string }
   cta: CtaBlock
+}
+
+/* ---------- shared UI labels (content/<locale>/ui.json) ----------
+ * System micro-copy for the SHARED renderers (location card, blog/knowledge-base chrome,
+ * pagination, generated hub/route copy). NOT product content and NOT per-page content: these are
+ * the strings baked into components/routes. Adding a language = adding content/<code>/ui.json — no
+ * component rewrite. `categories`/`relatedLabels` keep the URL/slug stable and only localize the
+ * visible label. Missing keys fall back to the default-locale UI (see content/ui.ts). */
+export type Ui = {
+  common: {
+    home: string
+    readMore: string
+    moreInfo: string
+    enroll: string
+    /** aria-label for the star row; `{n}` = number of stars. */
+    starsLabel: string
+    /** aria-label for the reviews marquee. */
+    reviewsLabel: string
+    viewOnMap: string
+    emailLabel: string
+    phoneLabel: string
+  }
+  location: {
+    address: string
+    city: string
+    phone: string
+    hours: string
+  }
+  blog: {
+    allArticles: string
+    /** `{n}` = article count. */
+    articlesCount: string
+    /** `{x}` = current page, `{y}` = total pages. */
+    pageXofY: string
+    readArticle: string
+    /** Suffix after the estimated minutes, e.g. "min read". */
+    minRead: string
+    moreOnTopic: string
+    backToBlog: string
+    /** aria-label for the prev/next article nav. */
+    moreArticles: string
+    prevArticle: string
+    nextArticle: string
+    inThisArticle: string
+    /** aria-label for the table-of-contents nav. */
+    tableOfContents: string
+  }
+  pagination: {
+    /** aria-label for the pagination nav. */
+    label: string
+    prev: string
+    next: string
+    prevPage: string
+    nextPage: string
+  }
+  menu: {
+    /** Mobile drawer title. */
+    title: string
+    /** aria-label for the desktop main nav. */
+    mainNav: string
+    /** aria-label for the hamburger when the drawer is closed. */
+    openMenu: string
+    /** aria-label for the hamburger / close button when the drawer is open. */
+    closeMenu: string
+    /** Prefix for the drawer's "all <section>" overview link (e.g. "Alle" / "All"). */
+    allPrefix: string
+    /** Heading above the in-drawer language switcher (kept bilingual). */
+    language: string
+  }
+  kennisbank: {
+    title: string
+    /** Meta description; `{n}` = topic count. */
+    metaDescription: string
+    eyebrow: string
+    heroText: string
+    allTopics: string
+    /** Singular/plural of "article" for count grammar. */
+    article: string
+    articles: string
+    /** Category page hero; `{count}` + `{articles}`. */
+    categoryHeroText: string
+    /** Category meta description; `{count}` + `{articles}` + `{name}`. */
+    categoryMetaDescription: string
+  }
+  onzeLocaties: {
+    eyebrow: string
+    title: string
+    text: string
+    breadcrumb: string
+    introTitle: string
+    introText: string
+    salonsHeading: string
+    areaHeading: string
+    areaText: string
+    ctaScript: string
+    ctaTitle: string
+    ctaText: string
+    ctaPrimary: string
+    ctaSecondary: string
+    viewLocation: string
+    viewPage: string
+  }
+  contactPage: {
+    locationsHeading: string
+    locationsSubheading: string
+  }
+  /** Stable knowledge-base category KEY (the raw NL category value) → localized display label. */
+  categories: Record<string, string>
+  /** Related-link URL → localized label (URLs stay stable, labels localize). */
+  relatedLabels: Record<string, string>
 }
 
 /* ---------- integrations (content/integrations.json) ---------- */

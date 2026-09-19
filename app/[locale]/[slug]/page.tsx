@@ -7,8 +7,10 @@ import { getBlogIndex, getPosts, getPostSlugs, getPublishedPosts } from '@/conte
 import { getLocaties, getLocatieSlugs } from '@/content/locaties'
 import { getServices, getServiceSlugs } from '@/content/services'
 import { getTrainingsDetail, getTrainingSlugs } from '@/content/trainings-detail'
+import { getUI } from '@/content/ui'
 import { commerceRouteSegments } from '@/lib/commerce/config'
 import { activeLocales } from '@/lib/i18n'
+import { pageAlternates } from '@/lib/seo'
 
 /**
  * Flat, content-driven detail route: /<locale>/<slug>.
@@ -71,16 +73,18 @@ const RESERVED = new Set([
 ])
 
 type Resolved =
-  | { kind: 'detail'; data: ReturnType<typeof getServices>[string] }
+  /** `variant` bepaalt alleen de opmaak van de detailpagina: een behandeling zet de intro naast
+   *  een kleinere foto (§7), een opleiding houdt de goedgekeurde volgorde (§6). */
+  | { kind: 'detail'; variant: 'behandeling' | 'opleiding'; data: ReturnType<typeof getServices>[string] }
   | { kind: 'location'; data: ReturnType<typeof getLocaties>[string] }
   | { kind: 'post'; data: ReturnType<typeof getPosts>[string] }
 
 /** Find which collection owns `slug` (first match wins; slugs are guaranteed unique by the guard). */
 function resolvePage(locale: string, slug: string): Resolved | null {
   const svc = getServices(locale)[slug]
-  if (svc) return { kind: 'detail', data: svc }
+  if (svc) return { kind: 'detail', variant: 'behandeling', data: svc }
   const trn = getTrainingsDetail(locale)[slug]
-  if (trn) return { kind: 'detail', data: trn }
+  if (trn) return { kind: 'detail', variant: 'opleiding', data: trn }
   const loc = getLocaties(locale)[slug]
   if (loc) return { kind: 'location', data: loc }
   /*
@@ -135,6 +139,8 @@ export async function generateMetadata({
   const { locale, slug } = await params
   const page = resolvePage(locale, slug)
   if (!page) return { title: 'Niet gevonden — IZZI Beauty' }
+  // Per-page self-canonical + reciprocal hreflang (EN→EN, NL→NL) for this exact detail page.
+  const alternates = pageAlternates(`/${slug}`, locale)
   if (page.kind === 'post') {
     // Blogposts dragen de SEO-titel/description van de oorspronkelijke WordPress-post mee, zodat de
     // gemigreerde URLs hun bestaande posities houden. `seoTitle` is een volledige titel — daar zetten
@@ -144,9 +150,10 @@ export async function generateMetadata({
     return {
       title: seoTitle || `${title} — IZZI Beauty`,
       description: seoDescription || excerpt,
+      alternates,
     }
   }
-  return { title: `${page.data.hero.title} — IZZI Beauty`, description: page.data.hero.text }
+  return { title: `${page.data.hero.title} — IZZI Beauty`, description: page.data.hero.text, alternates }
 }
 
 export default async function FlatDetailPage({
@@ -161,7 +168,7 @@ export default async function FlatDetailPage({
   if (page.kind === 'detail') {
     return (
       <Shell locale={locale}>
-        <DetailPage data={page.data} />
+        <DetailPage data={page.data} variant={page.variant} />
       </Shell>
     )
   }
@@ -187,10 +194,12 @@ export default async function FlatDetailPage({
 
   // Reuse the blog index's CTA copy so the booking prompt stays consistent across the section.
   const { cta } = getBlogIndex(locale)
+  // Localized category display for the eyebrow (URL/slug stays stable; only the label localizes).
+  const eyebrow = post.category ? getUI(locale).categories[post.category] ?? post.category : 'Blog'
 
   return (
     <Shell locale={locale}>
-      <PageHero eyebrow={post.category || 'Blog'} title={post.title} text={post.excerpt} breadcrumb={post.title} />
+      <PageHero eyebrow={eyebrow} title={post.title} text={post.excerpt} breadcrumb={post.title} />
       <BlogPostPage
         post={post}
         prev={at > 0 ? neighbour(at - 1) : undefined}

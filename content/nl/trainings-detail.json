@@ -399,7 +399,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Klaar voor de volgende stap?",
@@ -1466,7 +1470,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         },
         {
           "k": "UWV-subsidie",
@@ -1496,33 +1504,82 @@
       "breadcrumb": "All Round PMU Opleiding"
     },
     "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp",
-    "intro": "Tijdens de All Round PMU Opleiding leg je een brede basis in permanente make-up. Je leert werken met verschillende technieken, huidtypes en kleuren, zodat je na afronding zelfstandig en professioneel aan de slag kunt.",
+    "intro": "Tijdens de All Round PMU Opleiding word je opgeleid tot veelzijdig specialist: je leert Ombré Powder Brows, Lip Blush, Faux Freckles én Infralash. De opleiding combineert online voorbereiding met intensieve praktijkdagen op locatie, in kleine groepen met persoonlijke begeleiding.",
     "productHandle": "opleiding-allround-pmu",
     "highlights": [
       {
         "label": "UWV-subsidie",
-        "text": "Mogelijk voor deze opleiding"
+        "text": "Mogelijk bij een WW-, WIA- of Wajong-uitkering"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaling in termijnen mogelijk, zonder rente"
+      },
+      {
+        "label": "CRKBO-erkend",
+        "text": "Erkende opleiding, daardoor btw-vrij"
       }
     ],
     "body": [
       {
-        "heading": "Wat leer je?",
+        "heading": "Wat leer je in de All Round PMU Opleiding?",
         "paragraphs": [
-          "Deze opleiding behandelt zowel de theorie als de praktijk van permanente make-up. Je oefent uitgebreid op oefenhuid en, onder begeleiding, op modellen.",
-          "Na afronding ontvang je een certificaat en ben je klaar om je eigen klanten te behandelen."
+          "In één opleiding beheers je de vier meest gevraagde PMU-technieken. Je leert de theorie én past die onder begeleiding toe op oefenhuid en modellen.",
+          "Naast techniek krijg je praktische ondersteuning om zelfstandig te starten: het opzetten van je werkplek volgens de GGD-richtlijnen, en tips over het starten van een salon en marketing."
         ],
         "checklist": [
-          "Theorie: huid, pigment, kleurleer & hygiëne",
-          "Vormbepaling en intakegesprek",
-          "Powder Brows & hairstroke technieken",
-          "Werken op modellen onder begeleiding",
-          "Certificaat na afronding"
+          "Ombré Powder Brows, Lip Blush, Faux Freckles & Infralash",
+          "Kleurenleer, naaldenleer, brow- en lip-mapping",
+          "Oefenen op latex en werken op modellen",
+          "Hygiëne & GGD-stappenplan",
+          "Salon starten & marketing",
+          "Certificaat na afronding (CRKBO-erkend)"
         ]
       },
       {
-        "heading": "Voor wie is deze opleiding?",
+        "heading": "Online voorbereiding (4 online lesdagen)",
         "paragraphs": [
-          "De opleiding is geschikt voor beginners zonder ervaring én voor schoonheidsspecialisten die hun aanbod willen uitbreiden met permanente make-up. Mogelijk kom je in aanmerking voor UWV-subsidie."
+          "Je start met de online modules in de Online Academy, zodat je met een stevige theoretische basis aan de praktijkdagen begint. Je volgt de lessen op je eigen tempo — starten, pauzeren en hervatten wanneer het jou uitkomt. Na je aanbetaling krijg je direct toegang."
+        ],
+        "checklist": [
+          "Dag 1 — theorie Powder Brows",
+          "Dag 2 — theorie Lip Blush",
+          "Dag 3 — theorie Faux Freckles",
+          "Dag 4 — theorie Infralash",
+          "Bonus — extra videotrainingen voor touch-ups (brows & lippen)"
+        ]
+      },
+      {
+        "heading": "Programma praktijkdagen op locatie",
+        "paragraphs": [
+          "Dag 1 — Introductie & vertaling theorie naar praktijk: verdieping van de online modules, GGD-keuring, brow- en lip-mapping, kleurenleer en naaldkeuze.",
+          "Dag 2 — Praktijkvoorbereiding: live demonstratie door de trainer, oefenen op latex (Powder Brows en Lip Blush), nazorg en hygiëne.",
+          "Dag 3 — Modellen behandelen: intakegesprek en contra-indicaties, een volledige behandeling op model onder begeleiding, met directe feedback.",
+          "Dag 4 — Geavanceerde technieken & examen: Faux Freckles en Infralash, een zelfstandig privé-examen op model, evaluatie en certificaatuitreiking."
+        ]
+      },
+      {
+        "heading": "Startpakket & IZZI Beauty Wireless PMU-machine",
+        "paragraphs": [
+          "De opleiding is inclusief een uitgebreid startpakket én de draadloze IZZI Beauty Wireless PMU-machine, zodat je direct professioneel kunt starten.",
+          "De exacte waarde van het startpakket en de machine bevestigen we in de offerte (de bronvermeldingen hierover lopen uiteen)."
+        ],
+        "checklist": [
+          "Theorieboek (100+ pagina's) + toegang tot de Online Academy",
+          "9 pigmenten, 80 naalden, 8 latexbladen, mapping strings",
+          "Voortekenpotlood & pen, ruler stickers, grip tapes, lip brushes, nazorgcrème",
+          "IZZI Beauty Wireless PMU-machine (draadloos, geschikt voor alle technieken)",
+          "Voldoende materiaal voor circa 400 behandelingen (excl. extra naalden)"
+        ]
+      },
+      {
+        "heading": "Algemene informatie",
+        "paragraphs": [
+          "De opleiding combineert online voorbereiding, praktijkdagen op locatie, een terugkommoment en praktijkopdrachten (modellen in je eigen salon). De totale studietijd bedraagt volgens de bron circa 100 uur; het exacte dagenmodel en de planning worden bij inschrijving bevestigd.",
+          "Vooropleiding: geen vooropleiding of diploma vereist; de opleiding is toegankelijk voor iedereen.",
+          "CRKBO-erkend en daardoor btw-vrij. Bij WW-, WIA- of Wajong-uitkering is UWV-subsidie mogelijk — wij begeleiden je graag door het aanvraagtraject.",
+          "Na de opleiding behoud je toegang tot het online leerplatform en de community (WhatsApp/Facebook) voor vragen en verdere ontwikkeling.",
+          "Actuele prijs, betaaltermijnen, beschikbare data en locaties bespreken we in een offerte op maat."
         ]
       }
     ],
@@ -1551,16 +1608,32 @@
       "title": "Veelgestelde vragen",
       "items": [
         {
-          "q": "Heb ik ervaring nodig?",
-          "a": "Nee, deze opleiding is geschikt voor beginners. We beginnen bij de basis."
+          "q": "Wat houdt de Allround PMU Opleiding precies in?",
+          "a": "Je leert in één opleiding de meest gevraagde PMU-technieken: Powder Brows, Lip Blush, Faux Freckles en Infralash. Je wordt in korte tijd voorbereid op een carrière als PMU-professional voor wenkbrauwen, lippen en eyeliner."
         },
         {
-          "q": "Kom ik in aanmerking voor UWV-subsidie?",
-          "a": "In sommige gevallen wel. Vraag ernaar tijdens je intake, dan bekijken we de mogelijkheden."
+          "q": "Kan ik de online trainingen op mijn eigen tempo volgen?",
+          "a": "Ja. De online trainingen zijn flexibel: je kunt de lessen starten, pauzeren en hervatten wanneer het jou uitkomt. Na de aanbetaling krijg je direct toegang tot de volledige Online Academy."
         },
         {
-          "q": "Krijg ik een certificaat?",
-          "a": "Ja, na een succesvolle afronding ontvang je een erkend certificaat."
+          "q": "Is er begeleiding na de opleiding?",
+          "a": "Ja. Je behoudt toegang tot het online leerplatform en kunt lid worden van onze community. Via WhatsApp en de Facebookgroep kun je vragen stellen en ervaringen delen; wij blijven beschikbaar voor begeleiding en advies."
+        },
+        {
+          "q": "Kan ik de opleiding ook privé volgen?",
+          "a": "Ja, wij bieden privé-opleidingen voor wie 1-op-1 begeleiding wenst. Neem contact op om de mogelijkheden en data te bespreken."
+        },
+        {
+          "q": "Voor wie is de opleiding geschikt?",
+          "a": "Voor iedereen met interesse in permanente make-up, ongeacht eerdere ervaring of vooropleiding. Je hebt geen diploma nodig om te starten."
+        },
+        {
+          "q": "Hoe verschilt de Allround opleiding van andere PMU-opleidingen?",
+          "a": "De Allround opleiding combineert de meest gevraagde technieken in één training en werkt met een kleine groep voor extra persoonlijke aandacht. Je krijgt daarnaast informatie over het starten van een salon, klanten werven en marketing."
+        },
+        {
+          "q": "Is er een examen aan het einde van de opleiding?",
+          "a": "Ja. De opleiding wordt afgesloten met een examen waarbij je zelfstandig een volledige behandeling op een model uitvoert. Na succesvolle afronding ontvang je een certificaat."
         }
       ]
     },
@@ -1569,19 +1642,31 @@
       "facts": [
         {
           "k": "Niveau",
-          "v": "Beginner"
+          "v": "Beginner — geen vooropleiding"
         },
         {
           "k": "Duur",
-          "v": "In overleg"
+          "v": "Circa 100 uur studietijd; planning bij inschrijving"
+        },
+        {
+          "k": "Groepsgrootte",
+          "v": "Max. 2 studenten"
         },
         {
           "k": "Certificaat",
-          "v": "Ja"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         },
         {
           "k": "UWV-subsidie",
           "v": "Mogelijk"
+        },
+        {
+          "k": "Prijs",
+          "v": "Op aanvraag (incl. startpakket & machine)"
         }
       ],
       "ctaTitle": "Interesse in deze opleiding?",
@@ -1770,7 +1855,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         },
         {
           "k": "Techniek",
@@ -1955,7 +2044,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         },
         {
           "k": "Locaties",
@@ -2163,7 +2256,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Start met fineline tattoos",
@@ -2341,7 +2438,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Til je fineline naar masterniveau",
@@ -2558,7 +2659,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Word Stretch Mark & Scar Removal specialist",
@@ -2772,7 +2877,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Word Saline Removal specialist",
@@ -2963,7 +3072,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Start met Lash Lift",
@@ -3153,7 +3266,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Start met Brow Lamination",
@@ -3345,7 +3462,11 @@
         },
         {
           "k": "Certificaat",
-          "v": "CRKBO-erkend"
+          "v": "Ja, na succesvolle afronding"
+        },
+        {
+          "k": "CRKBO",
+          "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
       "ctaTitle": "Word laserontharingsspecialist",

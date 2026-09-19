@@ -22,11 +22,11 @@
     {
       "name": "IZZI Beauty Rotterdam",
       "city": "Rotterdam",
-      "address": "Nog niet bekend",
-      "postcode": "Rotterdam",
+      "address": "Weena 95",
+      "postcode": "3013 CH Rotterdam",
       "phone": "+31 6 11 76 88 81",
-      "hours": "Ma–Za · 09:00 – 18:00",
-      "mapUrl": "https://maps.google.com/?q=Rotterdam"
+      "hours": "",
+      "mapUrl": "https://maps.google.com/?q=Weena+95+Rotterdam"
     }
   ],
   "bookingLabel": "Afspraak maken",

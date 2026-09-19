@@ -4,7 +4,9 @@ import { Shell } from '@/components/Shell'
 import { HubPage } from '@/components/sections'
 import { getLocaties } from '@/content/locaties'
 import { getSite } from '@/content/site'
+import { getUI } from '@/content/ui'
 import type { HubContent, LinkCard } from '@/lib/types'
+import { pageAlternates } from '@/lib/seo'
 
 /**
  * Onze locaties — de salons plus het verzorgingsgebied.
@@ -18,9 +20,11 @@ import type { HubContent, LinkCard } from '@/lib/types'
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const site = getSite(locale)
+  const t = getUI(locale).onzeLocaties
   return {
-    title: `Onze locaties — ${site.brandName}`,
-    description: `Bekijk alle locaties en het verzorgingsgebied van ${site.brandName}.`,
+    title: `${t.title} — ${site.brandName}`,
+    description: t.text,
+    alternates: pageAlternates('/onze-locaties', locale),
   }
 }
 
@@ -28,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const { locale } = await params
   const site = getSite(locale)
   const locaties = getLocaties(locale)
+  const t = getUI(locale).onzeLocaties
 
   const salonCities = new Set((site.footer.locations ?? []).map((l) => l.city.toLowerCase()))
 
@@ -56,7 +61,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     text: isSalon(page) ? (page.location?.address ?? page.hero.text) : page.hero.text,
     image: page.image || '',
     url: `/${slug}`,
-    linkLabel: isSalon(page) ? 'Bekijk locatie' : 'Bekijk pagina',
+    linkLabel: isSalon(page) ? t.viewLocation : t.viewPage,
   })
 
   const entries = Object.entries(locaties)
@@ -65,34 +70,34 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
   const data: HubContent = {
     hero: {
-      eyebrow: 'Over IZZI',
-      title: 'Onze locaties',
-      text: 'Bezoek ons in de salon of bekijk in welke plaatsen we actief zijn.',
-      breadcrumb: 'Onze locaties',
+      eyebrow: t.eyebrow,
+      title: t.title,
+      text: t.text,
+      breadcrumb: t.breadcrumb,
     },
     intro: {
-      title: 'Waar kun je ons vinden?',
-      text: 'Onze salons zijn gemakkelijk bereikbaar. Daarnaast komen klanten uit de hele regio naar ons toe.',
+      title: t.introTitle,
+      text: t.introText,
     },
     groups: [
-      ...(salons.length ? [{ heading: 'Onze salons', items: salons.map(toCard) }] : []),
+      ...(salons.length ? [{ heading: t.salonsHeading, items: salons.map(toCard) }] : []),
       ...(area.length
         ? [
             {
-              heading: 'Ons verzorgingsgebied',
-              text: 'Ook uit deze plaatsen komen klanten naar onze salons.',
+              heading: t.areaHeading,
+              text: t.areaText,
               items: area.map(toCard),
             },
           ]
         : []),
     ],
     cta: {
-      script: 'Klaar voor de volgende stap?',
-      title: 'Maak vrijblijvend een afspraak',
-      text: 'Tijdens een persoonlijk intakegesprek bespreken we jouw wensen en adviseren we de beste behandeling.',
-      primaryLabel: 'Afspraak maken',
+      script: t.ctaScript,
+      title: t.ctaTitle,
+      text: t.ctaText,
+      primaryLabel: t.ctaPrimary,
       primaryUrl: '/contact',
-      secondaryLabel: 'Neem contact op',
+      secondaryLabel: t.ctaSecondary,
       secondaryUrl: '/contact',
     },
   }

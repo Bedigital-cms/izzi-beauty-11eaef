@@ -10,12 +10,29 @@ import { getHome } from '@/content/home'
 import { loadForm } from '@/content/load'
 import { getShopUI } from '@/content/shop'
 import { getSite } from '@/content/site'
+import { getUI, setActiveLocale } from '@/content/ui'
 import { defaultLocale, hideDefaultPrefix } from '@/lib/i18n'
+import { pageAlternates } from '@/lib/seo'
+
+import type { Metadata } from 'next'
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const site = getSite(locale)
+  // Homepage self-canonical + reciprocal hreflang (EN "/" ↔ NL "/nl"). Title/description from site.
+  return {
+    title: `${site.brandName} — ${site.tagline}`,
+    description: site.footer.about,
+    alternates: pageAlternates('/', locale),
+  }
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
+  setActiveLocale(locale)
   const home = getHome(locale)
   const site = getSite(locale)
+  const t = getUI(locale)
   // Localized contact-form definition (translated labels/placeholders/button for this language).
   const contactForm = loadForm<FormDef>('contact', locale)
   const { hero, reviewStrip, intro, treatments, trainings, usps, stats, reviewsSection, locationsSection, contactSection, cta } = home
@@ -197,10 +214,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <p>{contactSection.text}</p>
               <ul className="contact-list">
                 {contactSection.email && (
-                  <li><span className="contact-list-label">E-mail</span><a href={`mailto:${contactSection.email}`}>{contactSection.email}</a></li>
+                  <li><span className="contact-list-label">{t.common.emailLabel}</span><a href={`mailto:${contactSection.email}`}>{contactSection.email}</a></li>
                 )}
                 {contactSection.phone && (
-                  <li><span className="contact-list-label">Telefoon</span><a href={`tel:${String(contactSection.phone).replace(/\s/g, '')}`}>{contactSection.phone}</a></li>
+                  <li><span className="contact-list-label">{t.common.phoneLabel}</span><a href={`tel:${String(contactSection.phone).replace(/\s/g, '')}`}>{contactSection.phone}</a></li>
                 )}
                 {(contactSection.locations ?? []).map((loc) => (
                   <li key={loc.name}>

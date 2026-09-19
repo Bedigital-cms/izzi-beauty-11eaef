@@ -1,0 +1,72 @@
+{
+  "hero": {
+    "eyebrow": "About us",
+    "title": "About IZZI Beauty",
+    "text": "IZZI Beauty is the specialist in permanent makeup and training. With an eye for detail, natural results and personal attention, we help you shine.",
+    "breadcrumb": "About IZZI"
+  },
+  "story": {
+    "eyebrow": "Our story",
+    "title": "A passion for natural beauty",
+    "paragraphs": [
+      "What began as a passion for natural beauty grew into a renowned studio and academy for permanent makeup.",
+      "At IZZI Beauty, everything revolves around quality, hygiene and a natural result that suits you. Our specialists are certified and continually keep up with the latest developments in the field."
+    ],
+    "image": "/media/izzi-beauty-20250729-a4adb9-over-izzi-beauty-salon.jpg",
+    "badgeNum": "10+",
+    "badgeLabel": "Years of experience"
+  },
+  "values": {
+    "eyebrow": "Our values",
+    "title": "What we stand for",
+    "text": "These principles are at the heart of everything we do.",
+    "items": [
+      {
+        "icon": "sparkle",
+        "title": "Natural result",
+        "text": "We work subtly and to measure, so the result always looks natural."
+      },
+      {
+        "icon": "shield",
+        "title": "Hygiene & safety",
+        "text": "We work to the highest hygiene standards and are GGD-certified (Dutch public health authority)."
+      },
+      {
+        "icon": "award",
+        "title": "Craftsmanship",
+        "text": "Our specialists are certified and keep developing their skills."
+      },
+      {
+        "icon": "hands",
+        "title": "Personal attention",
+        "text": "Every treatment starts with a thorough, personal consultation."
+      }
+    ]
+  },
+  "stats": [
+    { "num": "10+", "lbl": "Years of experience" },
+    { "num": "5000+", "lbl": "Happy clients" },
+    { "num": "500+", "lbl": "Artists trained" },
+    { "num": "4.9", "lbl": "Average rating" }
+  ],
+  "founder": {
+    "eyebrow": "The founder",
+    "title": "Meet the team behind IZZI",
+    "paragraphs": [
+      "With years of experience and a boundless passion for the craft, our team is ready every day to give you the best possible result.",
+      "Alongside treatments, we love sharing our knowledge with a new generation of PMU artists through our academy."
+    ],
+    "image": "/media/izzi-beauty-20250729-973431-over-izzi-beauty.jpg",
+    "name": "IZZI Beauty Team",
+    "role": "Permanent makeup specialists"
+  },
+  "cta": {
+    "script": "Get to know us",
+    "title": "Visit us for a consultation",
+    "text": "Curious what we can do for you? Book a no-obligation appointment.",
+    "primaryLabel": "Book an appointment",
+    "primaryUrl": "/contact",
+    "secondaryLabel": "Explore treatments",
+    "secondaryUrl": "/behandelingen"
+  }
+}

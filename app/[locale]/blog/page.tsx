@@ -3,11 +3,12 @@ import type { Metadata } from 'next'
 import { Shell } from '@/components/Shell'
 import { BlogGrid, CtaBand, PageHero } from '@/components/sections'
 import { getBlogCards, getBlogIndex } from '@/content/blog'
+import { pageAlternates } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const data = getBlogIndex(locale)
-  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text }
+  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text, alternates: pageAlternates('/blog', locale) }
 }
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {

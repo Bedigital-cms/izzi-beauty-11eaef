@@ -73,7 +73,19 @@ function buildRedirects(): RedirectRule[] {
   for (const r of rules) {
     const permanent = r.permanent !== false
     if (!enabled) {
-      out.push({ source: r.source, destination: r.destination, permanent }) // single-language: flat
+      // Eén actieve taal. De site serveert die taal nog steeds ONDER de prefix zolang
+      // hideDefaultPrefix uit staat (mode A: canonical = /<default>/new — de oude WordPress-site
+      // stond óók op /nl/<slug>). Alleen de kale regel emitten liet de ECHTE geïndexeerde
+      // /<default>/oud-URL's 404'en. We emitten daarom:
+      //   - de geprefixte regel  /<default>/oud -> /<default>/new   (voor de legacy /nl/-URL's)
+      //   - de kale regel        /oud           -> canonical         (in één hop)
+      // Staat hideDefaultPrefix AAN (default op schone URL's), dan is de kale vorm canoniek en is
+      // er geen prefix-variant nodig.
+      const dest = hideDefaultPrefix ? r.destination : withLocale(r.destination, defaultLocale)
+      if (!hideDefaultPrefix) {
+        out.push({ source: prefixPath(defaultLocale, r.source), destination: dest, permanent })
+      }
+      out.push({ source: r.source, destination: dest, permanent })
       continue
     }
     // A prefixed old URL in each active language → the same-language new URL. In clean-URL mode the

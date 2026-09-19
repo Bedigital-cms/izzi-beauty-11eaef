@@ -129,5 +129,6 @@
     "primaryUrl": "/contact",
     "secondaryLabel": "Online trainingen",
     "secondaryUrl": "/online-trainingen"
-  }
+  },
+  "formSlug": "opleiding-interesse"
 }
