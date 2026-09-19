@@ -38,6 +38,14 @@
     "prevPage": "Vorige pagina",
     "nextPage": "Volgende pagina"
   },
+  "menu": {
+    "title": "Menu",
+    "mainNav": "Hoofdmenu",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "allPrefix": "Alle",
+    "language": "Taal / Language"
+  },
   "kennisbank": {
     "title": "Kennisbank",
     "metaDescription": "Alles over permanente make-up, verdeeld over {n} onderwerpen: van behandelingen en nazorg tot opleidingen.",

@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 
+import { getUI } from '@/content/ui'
 import { switcherLocales } from '@/lib/i18n'
 import type { NavItem as NavItemType, SiteContent } from '@/lib/types'
 
@@ -109,6 +110,7 @@ export function Header({
   accountLabel?: string
 }) {
   const nav = site.nav ?? []
+  const menu = getUI(locale).menu
   // On-row items + an overflow bucket. When it all fits (≤ MAX), show everything as-is.
   const overflowing = nav.length > MAX_TOP_NAV
   const visible = overflowing ? nav.slice(0, MAX_TOP_NAV - 1) : nav
@@ -127,7 +129,7 @@ export function Header({
           )}
         </LocaleLink>
 
-        <nav className="mainnav" aria-label="Hoofdmenu">
+        <nav className="mainnav" aria-label={menu.mainNav}>
           {visible.map((item) => (
             <NavItem key={item.label} item={item} />
           ))}
@@ -195,6 +197,7 @@ export function Header({
           nav={site.nav}
           ctaLabel={site.ctaLabel}
           ctaUrl={site.ctaUrl}
+          labels={menu}
           locales={switcherLocales()}
           /* De header-CTA's (account, winkelwagen) staan onder 1240px niet in de rij maar in de
              lade — zonder dit is het account op een telefoon onbereikbaar. */

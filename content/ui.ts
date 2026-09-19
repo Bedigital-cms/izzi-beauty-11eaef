@@ -59,6 +59,14 @@ const DEFAULT_UI: Ui = {
     prevPage: 'Vorige pagina',
     nextPage: 'Volgende pagina',
   },
+  menu: {
+    title: 'Menu',
+    mainNav: 'Hoofdmenu',
+    openMenu: 'Menu openen',
+    closeMenu: 'Menu sluiten',
+    allPrefix: 'Alle',
+    language: 'Taal / Language',
+  },
   kennisbank: {
     title: 'Kennisbank',
     metaDescription:

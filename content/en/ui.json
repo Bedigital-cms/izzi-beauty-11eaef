@@ -38,6 +38,14 @@
     "prevPage": "Previous page",
     "nextPage": "Next page"
   },
+  "menu": {
+    "title": "Menu",
+    "mainNav": "Main menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "allPrefix": "All",
+    "language": "Taal / Language"
+  },
   "kennisbank": {
     "title": "Knowledge Base",
     "metaDescription": "Everything about permanent makeup, across {n} topics: from treatments and aftercare to training courses.",

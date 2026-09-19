@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-import type { NavItem } from '@/lib/types'
+import type { NavItem, Ui } from '@/lib/types'
 
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { LocaleLink } from './LocaleLink'
@@ -26,6 +26,7 @@ export function MobileMenu({
   nav,
   ctaLabel,
   ctaUrl,
+  labels,
   locales,
   accountLabel,
   cartLabel,
@@ -33,6 +34,8 @@ export function MobileMenu({
   nav: NavItem[]
   ctaLabel: string
   ctaUrl: string
+  /** Localized nav/drawer labels (from content/<locale>/ui.json via the server Header). */
+  labels: Ui['menu']
   locales?: string[]
   /** Alleen bij een tenant met webshop: link naar het klantaccount. */
   accountLabel?: string
@@ -102,8 +105,8 @@ export function MobileMenu({
           accessibility tree — aria-hidden alone left them focusable. */}
       <aside className={`drawer${open ? ' is-open' : ''}`} aria-hidden={!open} inert={!open}>
         <div className="drawer-head">
-          <span className="drawer-title">Menu</span>
-          <button className="drawer-close" aria-label="Sluiten" onClick={close}>&times;</button>
+          <span className="drawer-title">{labels.title}</span>
+          <button className="drawer-close" aria-label={labels.closeMenu} onClick={close}>&times;</button>
         </div>
         <nav className="drawer-nav">
           {nav.map((item) => {
@@ -133,7 +136,7 @@ export function MobileMenu({
                   <div className="drawer-acc-body">
                     {/* Direct link to the section's own overview page. */}
                     <LocaleLink className="drawer-sublink drawer-sublink--all" href={item.url} onClick={close}>
-                      Alle {item.label.toLowerCase()}
+                      {labels.allPrefix} {item.label.toLowerCase()}
                     </LocaleLink>
                     {item.columns!.map((col) => (
                       <div className="drawer-sub" key={col.heading}>
@@ -167,7 +170,7 @@ export function MobileMenu({
         )}
         {locales && locales.length > 1 && (
           <div className="drawer-lang">
-            <span className="drawer-sub-head">Taal / Language</span>
+            <span className="drawer-sub-head">{labels.language}</span>
             <LanguageSwitcher locales={locales} variant="mobile" />
           </div>
         )}
@@ -180,7 +183,7 @@ export function MobileMenu({
     <div className="mobilenav">
       <button
         className="hamburger"
-        aria-label={open ? 'Menu sluiten' : 'Menu openen'}
+        aria-label={open ? labels.closeMenu : labels.openMenu}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
       >

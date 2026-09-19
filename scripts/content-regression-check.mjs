@@ -428,6 +428,18 @@ const blogSrc = fs.readFileSync(path.join(ROOT, 'content/blog.ts'), 'utf8');
 if (!/function categorySlug/.test(blogSrc)) fail('categorySlug ontbreekt in content/blog.ts');
 else pass('categorySlug bestaat (stabiele slug losgekoppeld van display-label via ui.categories)');
 
+// 27i. Header/MobileMenu: geen hardcoded Nederlandse nav-/aria-labels meer.
+const headerSrc = fs.readFileSync(path.join(ROOT, 'components/Header.tsx'), 'utf8');
+const mobileSrc = fs.readFileSync(path.join(ROOT, 'components/MobileMenu.tsx'), 'utf8');
+const navDutch = [];
+if (/aria-label="Hoofdmenu"/.test(headerSrc)) navDutch.push('Header: Hoofdmenu');
+if (/aria-label=\{?['"]?Menu (openen|sluiten)/.test(mobileSrc) || /['"]Menu openen['"]|['"]Menu sluiten['"]/.test(mobileSrc)) navDutch.push('MobileMenu: Menu openen/sluiten');
+if (/aria-label="Sluiten"/.test(mobileSrc)) navDutch.push('MobileMenu: Sluiten');
+if (/>\s*Alle \{item\.label/.test(mobileSrc) || /Alle \{item\.label\.toLowerCase/.test(mobileSrc)) navDutch.push('MobileMenu: hardcoded "Alle"-prefix');
+if (/<span className="drawer-title">Menu<\/span>/.test(mobileSrc)) navDutch.push('MobileMenu: hardcoded "Menu"-titel');
+if (navDutch.length) fail(`hardcoded Nederlandse nav-/aria-labels: ${navDutch.join(' | ')}`);
+else pass('Header/MobileMenu nav-/aria-labels zijn locale-aware (via ui.menu)');
+
 // 27h. Ambient locale wordt in de locale-layout gezet (geen client-side detectie).
 const layoutSrc = fs.readFileSync(path.join(ROOT, 'app/[locale]/layout.tsx'), 'utf8');
 if (!/setActiveLocale\(/.test(layoutSrc)) fail('app/[locale]/layout.tsx zet de actieve locale niet (setActiveLocale)');

@@ -572,6 +572,20 @@ export type Ui = {
     prevPage: string
     nextPage: string
   }
+  menu: {
+    /** Mobile drawer title. */
+    title: string
+    /** aria-label for the desktop main nav. */
+    mainNav: string
+    /** aria-label for the hamburger when the drawer is closed. */
+    openMenu: string
+    /** aria-label for the hamburger / close button when the drawer is open. */
+    closeMenu: string
+    /** Prefix for the drawer's "all <section>" overview link (e.g. "Alle" / "All"). */
+    allPrefix: string
+    /** Heading above the in-drawer language switcher (kept bilingual). */
+    language: string
+  }
   kennisbank: {
     title: string
     /** Meta description; `{n}` = topic count. */
