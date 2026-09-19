@@ -513,6 +513,48 @@ if (fs.existsSync(enTrnPath)) {
   else pass('trainings EN productHandles identiek aan NL (niets verzonnen)');
 } else pass('content/en/trainings-detail.json nog niet aangemaakt (staged)');
 
+// ---------- 30. Batch 5 EN-content: blog.json parity/inhoud ----------
+const enBlogPath = path.join(ROOT, 'content/en/blog.json');
+if (fs.existsSync(enBlogPath)) {
+  const nlBlog = rd('content/nl/blog.json');
+  const enBlog = JSON.parse(fs.readFileSync(enBlogPath, 'utf8'));
+  const nkeys = Object.keys(nlBlog.posts || {});
+  const ekeys = Object.keys(enBlog.posts || {});
+  if (JSON.stringify(nkeys) !== JSON.stringify(ekeys)) fail(`blog.json NL/EN post-keys/volgorde wijken af: nl=${nkeys.length} en=${ekeys.length}`);
+  else pass(`blog.json NL/EN key-pariteit + volgorde (${nkeys.length} artikelen)`);
+  const diffs = [];
+  for (const k of nkeys) {
+    const a = (nlBlog.posts || {})[k] || {};
+    const b = (enBlog.posts || {})[k] || {};
+    if (a.image !== b.image) diffs.push(`${k}:image`);
+    if (a.author !== b.author) diffs.push(`${k}:author`);
+    if (a.date !== b.date) diffs.push(`${k}:date`);
+    if (a.category !== b.category) diffs.push(`${k}:category`);
+    if ((a.status ?? null) !== (b.status ?? null)) diffs.push(`${k}:status`);
+    if ((a.body || []).length !== (b.body || []).length) diffs.push(`${k}:bodyLen`);
+    if (JSON.stringify((a.body || []).map((x) => (x.paragraphs || []).length)) !== JSON.stringify((b.body || []).map((x) => (x.paragraphs || []).length))) diffs.push(`${k}:paras`);
+    if (JSON.stringify((a.body || []).map((x) => !!x.heading)) !== JSON.stringify((b.body || []).map((x) => !!x.heading))) diffs.push(`${k}:headings`);
+    if (!(b.title && b.excerpt && (b.body || []).length)) diffs.push(`${k}:empty`);
+  }
+  if (diffs.length) fail(`blog EN structuur/media/categorie-afwijking: ${diffs.slice(0, 12).join(', ')}${diffs.length > 12 ? ' …' : ''}`);
+  else pass('blog EN: image/author/date/category/body-pariteit + geen lege posts');
+  const catChanged = nkeys.filter((k) => (nlBlog.posts[k] || {}).category !== (enBlog.posts[k] || {}).category);
+  if (catChanged.length) fail(`blog EN category-keys vertaald (moeten NL blijven voor slug-pariteit): ${catChanged.join(', ')}`);
+  else pass('blog EN category-keys blijven Nederlands (stabiele /kennisbank/<categorie>-slugs)');
+  if ((enBlog.index && enBlog.index.cta && enBlog.index.cta.primaryUrl) !== (nlBlog.index && nlBlog.index.cta && nlBlog.index.cta.primaryUrl)
+    || (enBlog.index && enBlog.index.cta && enBlog.index.cta.secondaryUrl) !== (nlBlog.index && nlBlog.index.cta && nlBlog.index.cta.secondaryUrl)) {
+    fail('blog EN index CTA-URLs wijken af van NL');
+  } else pass('blog EN index CTA-bestemmingen identiek aan NL');
+  const leftoverRe = /\b(behandeling|opleiding|wenkbrauwen|nazorg|genezing|verwijderen|wanneer kies je|wat zijn de voordelen)\b/i;
+  const leftover = nkeys.filter((k) => {
+    const b = enBlog.posts[k] || {};
+    const text = JSON.stringify({ title: b.title, excerpt: b.excerpt, seoTitle: b.seoTitle, seoDescription: b.seoDescription, body: b.body });
+    return leftoverRe.test(text);
+  });
+  if (leftover.length) fail(`blog EN bevat Nederlandse leftovers in: ${leftover.slice(0, 8).join(', ')}`);
+  else pass('blog EN: geen Nederlandse leftovers in vertaalde velden');
+} else pass('content/en/blog.json nog niet aangemaakt (staged)');
+
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];
 warnings.push('legal EN+NL = BLOCKED_CUSTOMER_LEGAL (placeholdertekst; noindex + uit sitemap tot goedgekeurde teksten)');
