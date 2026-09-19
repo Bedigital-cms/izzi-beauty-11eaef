@@ -1,0 +1,305 @@
+# IZZI Beauty — EN treatment content: medical/cosmetic claim review
+
+Status: **CUSTOMER_MEDICAL_REVIEW_REQUIRED**
+
+These claims were **translated faithfully** from the existing Dutch source — none were strengthened, softened, added, or removed. They are flagged only so the customer / a medical reviewer can confirm the underlying claims before English indexation. The Dutch source carries the same claims (same review applies to NL).
+
+Scope: `content/en/services.json` (Batch 3, 26 treatment pages). 92 distinct flagged claim sentences.
+
+## painless (absolute) (39)
+
+- **permanente-make-up-eyeliner** · `body.checklist`
+  - NL: Pijnloze behandeling
+  - EN: Painless treatment
+- **permanente-make-up-eyeliner** · `steps.items.text`
+  - NL: Met een verfijnde techniek wordt een subtiel, strak lijntje net boven de wimperrand geplaatst. De behandeling is pijnloos en oogt volledig natuurlijk.
+  - EN: Using a refined technique, a subtle, crisp line is placed just above the lash line. The treatment is painless and looks completely natural.
+- **permanente-make-up-eyeliner** · `faq.items.a`
+  - NL: Nee, de behandeling is pijnloos. Het pigment wordt oppervlakkig en subtiel net boven de wimperrand geplaatst, waardoor je hooguit een lichte prikkeling voelt.
+  - EN: No, the treatment is painless. The pigment is placed superficially and subtly just above the lash line, so you feel at most a slight tingling.
+- **permanente-make-up-eyeliner** · `aside.facts.v`
+  - NL: Pijnloos
+  - EN: Painless
+- **infralash-eyeliner** · `body.paragraphs`
+  - NL: Om de perfecte permanente make up eyeliner te creëren wordt door middel van (semi-)permanente make up een subtiel dun lijntje vlak boven de wimperrand aangebracht. Dit geeft een natuurlijk effect waardoor uw wimpers voller lijken. De behandeling is volledig pijnloos, doordat er gebruik wordt gemaakt van verdovingsgel. Deze wordt aangebracht voor de behandeling en zodra de gel is ingetrokken wordt de behandeling pas gestart.
+  - EN: To create the perfect permanent make-up eyeliner, a subtle, thin line is applied just above the lash line using (semi-)permanent make-up. This gives a natural effect that makes your lashes appear fuller. The treatment is completely painless thanks to the use of numbing gel. This is applied before the treatment, and only once the gel has absorbed does the treatment begin.
+- **infralash-eyeliner** · `steps.items.text`
+  - NL: We bespreken uitgebreid uw wensen, bepalen samen het pigment en de vorm, en brengen de verdovingsgel aan zodat de behandeling pijnloos verloopt.
+  - EN: We discuss your wishes in detail, determine the pigment and shape together, and apply the numbing gel so that the treatment is painless.
+- **infralash-eyeliner** · `faq.items.a`
+  - NL: Nee, de behandeling is volledig pijnloos. Er wordt gebruikgemaakt van verdovingsgel die voor de behandeling wordt aangebracht. Pas zodra de gel is ingetrokken, wordt de behandeling gestart.
+  - EN: No, the treatment is completely painless. We use numbing gel that is applied before the treatment. Only once the gel has absorbed does the treatment begin.
+- **permanente-make-up-moedervlek** · `hero.text`
+  - NL: Het plaatsen van een permanente make-up moedervlek — ook wel faux freckle of beauty spot genoemd — is momenteel een van de meest populaire behandelingen. De behandeling is pijnloos en je hebt zo'n 1 tot 3 jaar plezier van je nieuwe schoonheidsvlek.
+  - EN: Placing a permanent make-up beauty spot — also known as a faux freckle or beauty mark — is currently one of the most popular treatments. The treatment is painless and you enjoy your new beauty spot for around 1 to 3 years.
+- **permanente-make-up-moedervlek** · `intro`
+  - NL: Het plaatsen van een permanente make-up moedervlek, ook wel faux freckle of sproet genoemd, is momenteel een van de meest populaire behandelingen. Een moedervlek is een van de zeven schoonheden. Helaas zijn we er niet allemaal mee gezegend, en dus kunnen we dit gelukkig ook cosmetisch aanbrengen! De behandeling is pijnloos en je hebt zo'n 1 tot 3 jaar plezier van de freckles. Daarna vervagen ze volledig weg. Neem contact met ons op om de mogelijkheden te bespreken!
+  - EN: Placing a permanent make-up beauty spot, also known as a faux freckle, is currently one of the most popular treatments. A beauty spot is one of the seven beauties. Unfortunately, not all of us are blessed with one, and so we can luckily apply it cosmetically! The treatment is painless and you enjoy the freckles for around 1 to 3 years. After that, they fade away completely. Contact us to discuss the options!
+- **permanente-make-up-moedervlek** · `body.paragraphs`
+  - NL: Voordat de behandeling start, bespreken we goed wat we gaan doen, met welke kleuren we kunnen werken en bepalen we samen waar de sproet komt. De behandeling is pijnloos en vrij snel gedaan. Naast een enkele moedervlek plaatst IZZI Beauty ook faux freckles in het gezicht — altijd na het bespreken en voortekenen van jouw wensen.
+  - EN: Before the treatment starts, we discuss carefully what we are going to do, which colours we can work with, and together we determine where the freckle will go. The treatment is painless and done fairly quickly. In addition to a single beauty spot, IZZI Beauty also places faux freckles on the face — always after discussing and pre-drawing your wishes.
+- **permanente-make-up-moedervlek** · `steps.items.text`
+  - NL: Met micropigmentatie brengen we het pigment voorzichtig in de eerste huidlaag aan. De behandeling is pijnloos en duurt voor een enkele moedervlek zo'n 15 minuten.
+  - EN: With micropigmentation we carefully apply the pigment into the first layer of skin. The treatment is painless and takes about 15 minutes for a single beauty spot.
+- **permanente-make-up-moedervlek** · `faq.items.a`
+  - NL: Nee, de behandeling is pijnloos. Het pigment wordt oppervlakkig in de eerste huidlaag aangebracht, waardoor je hooguit een lichte prikkeling voelt.
+  - EN: No, the treatment is painless. The pigment is applied superficially into the first layer of skin, so you feel at most a slight tingling.
+- **permanente-make-up-moedervlek** · `cta.text`
+  - NL: Maak vrijblijvend een afspraak en wij bespreken samen de mogelijkheden voor een pijnloze, natuurlijke PMU moedervlek.
+  - EN: Make an appointment without obligation and we will discuss the options for a painless, natural PMU beauty spot together.
+- **faux-freckles-behandeling** · `body.checklist`
+  - NL: Vrijwel pijnloze behandeling
+  - EN: Virtually painless treatment
+- **faux-freckles-behandeling** · `body.paragraphs`
+  - NL: Deze semi-permanente sproetjes worden aangebracht met een speciale micropigmentatietechniek. Hierbij wordt het pigment voorzichtig in de bovenste huidlaag geplaatst, wat zorgt voor een subtiele en natuurlijke uitstraling. De behandeling zelf is vrijwel pijnloos.
+  - EN: These semi-permanent freckles are applied using a special micropigmentation technique. The pigment is carefully placed into the upper layer of skin, which creates a subtle and natural appearance. The treatment itself is virtually painless.
+- **faux-freckles-behandeling** · `aside.facts.v`
+  - NL: Vrijwel pijnloos
+  - EN: Virtually painless
+- **touch-up-powder-brows** · `body.checklist`
+  - NL: De behandeling is vrijwel pijnloos
+  - EN: The treatment is virtually painless
+- **touch-up-powder-brows** · `faq.items.a`
+  - NL: Nee, de behandeling is vrijwel pijnloos. De naald dringt slechts oppervlakkig in de huid, waardoor je alleen een lichte prikkeling voelt.
+  - EN: No, the treatment is virtually painless. The needle only penetrates the skin superficially, so you only feel a slight tingling.
+- **combi-brows-behandeling** · `body.paragraphs`
+  - NL: Deze semi-permanente make-up behandeling is ideaal voor mensen die elke dag tijd willen besparen, kale plekken of asymmetrie willen corrigeren, of simpelweg altijd perfecte wenkbrauwen willen hebben. Met een levensduur tot wel 3 à 4 jaar — afhankelijk van je huidtype, nazorg en een touch-up na ongeveer 2 jaar — is dit een investering in langdurige schoonheid. De behandeling is vrijwel pijnloos en wordt volledig afgestemd op jouw wensen.
+  - EN: This semi-permanent make-up treatment is ideal for people who want to save time every day, correct bald spots or asymmetry, or simply always want perfect eyebrows. With a lifespan of up to 3 to 4 years — depending on your skin type, aftercare and a touch-up after about 2 years — this is an investment in long-lasting beauty. The treatment is virtually painless and is fully tailored to your wishes.
+- **combi-brows-behandeling** · `faq.items.a`
+  - NL: De behandeling is vrijwel pijnloos. De meeste klanten ervaren een lichte krassende sensatie. Indien nodig kan een verdovende crème worden gebruikt voor extra comfort.
+  - EN: The treatment is virtually painless. Most customers experience a slight scratching sensation. If necessary, a numbing cream can be used for extra comfort.
+- **kleurcorrectie** · `intro`
+  - NL: Een kleurcorrectie PMU behandeling is een behandeling waarbij oude permanente make up die verkleurd is naar een ongewenste kleur — denk aan grijs, rood, paars of blauw — gecorrigeerd wordt. Deze pmu behandeling is eenzelfde soort behandeling als pigmentatie in de eerste huidlaag, zoals bij Powder Brows, alleen worden er doorgaans andere type kleuren gebruikt. Het is een pijnloze behandeling waarbij het helingsproces zo'n 30 dagen duurt. De bedoeling is dat de oude kleur en de nieuwe kleur in de huid met elkaar vermengen, zodat er na de heling een mooie, zachte bruine kleur ontstaat.
+  - EN: A PMU colour correction treatment is a treatment in which old permanent make-up that has discoloured into an unwanted colour — think grey, red, purple or blue — is corrected. This PMU treatment is the same kind of treatment as pigmentation in the first layer of skin, as with Powder Brows, only different types of colours are usually used. It is a painless treatment in which the healing process takes about 30 days. The aim is for the old colour and the new colour to blend together in the skin, so that a beautiful, soft brown colour emerges after healing.
+- **kleurcorrectie** · `body.checklist`
+  - NL: Pijnloze behandeling met een snelle heling
+  - EN: Painless treatment with fast healing
+- **kleurcorrectie** · `steps.items.text`
+  - NL: Met micropigmentatie in de eerste huidlaag corrigeren we de bestaande kleur binnen de huidige vorm — pijnloos en meestal binnen 45 tot 60 minuten.
+  - EN: With micropigmentation in the first layer of skin, we correct the existing colour within the current shape — painless and usually within 45 to 60 minutes.
+- **kleurcorrectie** · `aside.facts.v`
+  - NL: Pijnloos ervaren
+  - EN: Experienced as painless
+- **cover-oude-permanente-make-up** · `body.paragraphs`
+  - NL: Een cover permanente make-up wordt geplaatst door middel van dezelfde techniek als Ombré Powder Brows. Door middel van kleine pixels pigment die in de eerste huidlaag worden geplaatst ontstaat er een natuurlijke en mooie look voor de wenkbrauwen. De behandeling wordt als pijnloos ervaren en is vaak een opfrissing van jouw oude permanente make-up.
+  - EN: A cover permanent make-up is placed using the same technique as Ombré Powder Brows. By means of small pixels of pigment placed in the first layer of skin, a natural and beautiful look for the eyebrows is created. The treatment is experienced as painless and is often a refresh of your old permanent make-up.
+- **cover-oude-permanente-make-up** · `steps.items.text`
+  - NL: Met dezelfde pixeltechniek als Ombré Powder Brows brengen we het nieuwe pigment in de eerste huidlaag aan — pijnloos ervaren en vaak in één behandeling optimaal.
+  - EN: Using the same pixel technique as Ombré Powder Brows, we apply the new pigment into the first layer of skin — experienced as painless and often optimal in one treatment.
+- **cover-oude-permanente-make-up** · `faq.items.a`
+  - NL: De behandeling wordt als pijnloos ervaren. Het pigment wordt met kleine pixels in de eerste huidlaag geplaatst, net als bij Ombré Powder Brows, met een snelle heling.
+  - EN: The treatment is experienced as painless. The pigment is placed with small pixels in the first layer of skin, just as with Ombré Powder Brows, with fast healing.
+- **brow-lamination-behandeling** · `body.checklist`
+  - NL: Pijnloos en huidvriendelijk: de behandeling beschadigt je huid of wenkbrauwhaartjes niet
+  - EN: Painless and skin-friendly: the treatment does not damage your skin or brow hairs
+- **brow-lamination-behandeling** · `faq.items.a`
+  - NL: Nee, Brow Lamination is een volledig pijnloze behandeling. We gebruiken zachte lotions en voedende serums die je wenkbrauwen stylen zonder ongemak te veroorzaken.
+  - EN: No, Brow Lamination is a completely painless treatment. We use gentle lotions and nourishing serums that style your eyebrows without causing discomfort.
+- **brow-lamination-behandeling** · `aside.facts.v`
+  - NL: Volledig pijnloos
+  - EN: Completely painless
+- **lip-blush** · `body.checklist`
+  - NL: Pijnloze en comfortabele behandeling
+  - EN: Painless and comfortable treatment
+- **micro-haar-pigmentatie** · `body.checklist`
+  - NL: Pijnloze behandeling én snelle heling
+  - EN: Painless treatment and fast healing
+- **micro-haar-pigmentatie** · `body.paragraphs`
+  - NL: De pixels worden geplaatst met semi-permanente make-up pigmenten die in de eerste huidlaag worden aangebracht. Deze techniek zorgt ervoor dat er, anders dan bij een tattoo, nooit littekenweefsel in de huid ontstaat. Scalp pigmentatie is een vrijwel pijnloze en vlotte behandeling.
+  - EN: The pixels are placed with semi-permanent make-up pigments that are applied into the first layer of skin. This technique ensures that, unlike with a tattoo, no scar tissue ever forms in the skin. Scalp pigmentation is a virtually painless and swift treatment.
+- **micro-haar-pigmentatie** · `faq.items.a`
+  - NL: Nee, de pigmenten worden ondiep in de eerste huidlaag geplaatst waardoor de behandeling erg mild aanvoelt en vrijwel pijnloos is.
+  - EN: No, the pigments are placed shallowly in the first layer of skin, which makes the treatment feel very mild and virtually painless.
+- **microblading** · `body.checklist`
+  - NL: Comfortabel & Pijnloos — Microblading kan pijnlijk zijn doordat er met een mesje in de huid wordt gesneden. Ombré Powder Brows gebruiken een modern apparaat dat pijnloos pigment aanbrengt, waardoor je ontspannen kunt genieten van de behandeling.
+  - EN: Comfortable & Painless — Microblading can be painful because a blade cuts into the skin. Ombré Powder Brows use a modern device that applies pigment painlessly, so you can relax and enjoy the treatment.
+- **powder-brows-genezing** · `body.paragraphs`
+  - NL: Met behulp van de nieuwste technieken en apparatuur is de behandeling volledig pijnloos. Geniet van een ontspannen ervaring terwijl wij zorgen voor een resultaat dat aan al jouw verwachtingen voldoet.
+  - EN: Using the latest techniques and equipment, the treatment is completely painless. Enjoy a relaxed experience while we ensure a result that meets all your expectations.
+- **wenkbrauwen-laten-doen** · `body.paragraphs`
+  - NL: Brow LaminationBij brow lamination worden jouw natuurlijke wenkbrauwhaartjes gefixeerd in een perfecte vorm. Dit geeft een gelift en voller effect, ideaal voor warrige of moeilijk te stylen wenkbrauwen. De behandeling is volledig pijnloos en het resultaat blijft 6-8 weken zichtbaar.
+  - EN: Brow Lamination With brow lamination, your natural brow hairs are set into a perfect shape. This gives a lifted and fuller effect, ideal for messy or difficult-to-style eyebrows. The treatment is completely painless and the result remains visible for 6-8 weeks.
+- **powder-brows-pijn** · `intro`
+  - NL: Bij IZZI Beauty is een permanente make up behandeling nagenoeg pijnloos!
+  - EN: At IZZI Beauty, a permanent make-up treatment is virtually painless!
+- **powder-brows-pijn** · `body.heading`
+  - NL: Een Pijnloze Behandeling: Onze Werkwijze
+  - EN: A Painless Treatment: Our Method
+
+## all skin types (14)
+
+- **tattoo-verwijderen-rotterdam-amsterdam** · `body.checklist`
+  - NL: Geschikt voor ieder huidtype
+  - EN: Suitable for every skin type
+- **tattoo-verwijderen-rotterdam-amsterdam** · `aside.facts.v`
+  - NL: Alle huidtypes
+  - EN: All skin types
+- **powder-brows** · `body.paragraphs`
+  - NL: De behandeling is geschikt voor vrijwel elk huidtype en geeft een langhoudend, natuurlijk resultaat.
+  - EN: The treatment is suitable for virtually every skin type and gives a long-lasting, natural result.
+- **combi-brows-behandeling** · `faq.items.a`
+  - NL: Ja, combi brows zijn geschikt voor bijna alle huidtypes, zoals een droge en gecombineerde huid. Bij een extreem vette huid kan het poedereffect mogelijk minder goed hechten, waardoor het resultaat sneller vervaagt.
+  - EN: Yes, combi brows are suitable for almost all skin types, such as dry and combination skin. With extremely oily skin, the powder effect may adhere less well, causing the result to fade more quickly.
+- **laser-ontharing** · `hero.text`
+  - NL: Langdurig af van ongewenste haargroei. Met professionele lasertechniek behandelen wij veilig en effectief — geschikt voor vrijwel elk huidtype.
+  - EN: Get rid of unwanted hair growth for a long time. Using professional laser technology, we treat safely and effectively — suitable for virtually every skin type.
+- **microblading** · `body.checklist`
+  - NL: Geschikt is voor alle huidtypen, inclusief vette, rijpere en gevoelige huiden.
+  - EN: Is suitable for all skin types, including oily, mature and sensitive skin.
+- **microblading** · `body.checklist`
+  - NL: Geschikt voor alle huidtypes — Waar microblading beperkt is tot normale of droge huidtypes, zijn Ombré Powder Brows geschikt voor alle huidtypes – van vet tot rijp, en zelfs huiden met grove poriën of pigmentproblemen. Het resultaat blijft egaal en prachtig, ongeacht jouw huidtype.
+  - EN: Suitable for all skin types — Where microblading is limited to normal or dry skin types, Ombré Powder Brows are suitable for all skin types – from oily to mature, and even skin with coarse pores or pigment problems. The result stays even and beautiful, regardless of your skin type.
+- **powder-brows-genezing** · `faq.items.a`
+  - NL: Bij IZZI Beauty geloven we dat elk detail telt. Hier zijn enkele redenen waarom klanten ons als dé PMU-salon verkiezen: Gratis intakegesprek: Bespreek jouw wensen in een vrijblijvend consult en maak met vertrouwen de beste keuze. Gecertificeerde PMU-artiesten: Onze specialisten hebben jarenlange ervaring en volgen regelmatig trainingen om op de hoogte te blijven van de nieuwste technieken. Honderden 5-sterren reviews: Klanten waarderen onze persoonlijke aanpak, expertise en de verbluffende resultaten. Hoogwaardige producten en pigmenten: Wij werken uitsluitend met veilige en kwalitatieve producten die geschikt zijn voor alle huidtypes. Uitgebreide nazorg: We begeleiden je niet alleen tijdens de behandeling, maar ook daarna, zodat je zeker weet dat je wenkbrauwen perfect herstellen.
+  - EN: At IZZI Beauty, we believe that every detail counts. Here are some reasons why customers prefer us as the PMU salon: Free consultation: Discuss your wishes in a consultation without obligation and make the best choice with confidence. Certified PMU artists: Our specialists have years of experience and regularly attend training to stay up to date with the latest techniques. Hundreds of 5-star reviews: Customers appreciate our personal approach, expertise and the stunning results. High-quality products and pigments: We work exclusively with safe and quality products that are suitable for all skin types. Extensive aftercare: We guide you not only during the treatment, but also afterwards, so you can be sure that your eyebrows recover perfectly.
+- **wenkbrauwen-laten-doen** · `body.checklist`
+  - NL: Geschikt voor alle huidtypes — PMU Brows werken op droge, vette, gecombineerde en rijpere huid. Zelfs grove poriën vormen geen belemmering voor een prachtig resultaat.
+  - EN: Suitable for all skin types — PMU Brows work on dry, oily, combination and mature skin. Even coarse pores are no obstacle to a beautiful result.
+- **natuurlijke-wenkbrauwen** · `body.paragraphs`
+  - NL: Powder brows zijn een huidvriendelijke techniek waarbij pigment met een zacht, poederachtig effect wordt aangebracht. Het resultaat is een natuurlijke, volle look die geschikt is voor alle huidtypes, inclusief gevoelige en rijpere huid. Powder brows blijven gemiddeld 2 tot 3 jaar mooi, met touch-ups kun je dit verlengen tot 4 jaar. Bovendien wordt de huid niet beschadigd, waardoor littekens of irritatie worden voorkomen.
+  - EN: Powder brows are a skin-friendly technique in which pigment is applied with a soft, powdery effect. The result is a natural, full look that is suitable for all skin types, including sensitive and mature skin. Powder brows stay beautiful for an average of 2 to 3 years; with touch-ups you can extend this to 4 years. In addition, the skin is not damaged, which prevents scars or irritation.
+- **natuurlijke-wenkbrauwen** · `body.paragraphs`
+  - NL: Powder brows zijn geschikt voor bijna alle huidtypes. Droge huid houdt pigment langer vast, terwijl de poedertechniek bij een vette huid zorgt voor gelijkmatige vervaging. Voor gevoelige huidtypes is het ideaal dankzij de zachte, littekenvrije aanpak.
+  - EN: Powder brows are suitable for almost all skin types. Dry skin holds pigment longer, while the powder technique ensures even fading on oily skin. For sensitive skin types, it is ideal thanks to the soft, scar-free approach.
+- **powder-brows-vs-microblading** · `body.paragraphs`
+  - NL: Bij IZZI Beauty kiezen wij bewust voor Powder Brows. Waarom? Omdat deze techniek huidvriendelijker is, langer meegaat en geschikt is voor elk huidtype – van droge tot vette huid. Onze klanten vertrouwen ons vanwege onze expertise en de meer dan 350 5-sterren reviews op Google en Trustpilot.
+  - EN: At IZZI Beauty, we deliberately choose Powder Brows. Why? Because this technique is more skin-friendly, lasts longer and is suitable for every skin type – from dry to oily skin. Our customers trust us because of our expertise and the more than 350 5-star reviews on Google and Trustpilot.
+- **powder-brows-vs-microblading** · `faq.items.a`
+  - NL: Powder Brows, ook bekend als Ombré Powder Brows of Soft Powder Brows, zijn een semi-permanente make-up techniek waarbij pigment met een machinale tool in de huid wordt aangebracht. In plaats van krasjes, zoals bij microblading, worden er kleine stipjes pigment geplaatst om een zachte, gepoederde look te creëren die lijkt op het effect van natuurlijke wenkbrauw make-up. Hoe werkt het?Met behulp van een ultrafijne naald wordt pigment oppervlakkig in de huid getatoeëerd. Het ombre-effect – waarbij de voorkant van de wenkbrauw lichter is en de kleur naar de staart toe intenser wordt – zorgt voor een natuurlijk en gedefinieerd resultaat. Waarom wij kiezen voor Powder Brows: Huidvriendelijk: Omdat er geen sneden worden gemaakt, blijft de huid volledig intact. Dit minimaliseert het risico op littekens. Daarnaast worden Powder Brows in de eerste huidlaag geplaatst en microblading in de derde huidlaag, zoals een tattoo. Geschikt voor alle huidtypes: Of je nu een droge, vette, gevoelige of rijpere huid hebt, Powder Brows geven een consistent en langdurig resultaat. Langdurig resultaat: Powder Brows blijven 1,5 jaar mooi. Met een touch up kan je dit verlengen tot gemiddeld 3 tot 4 jaar, afhankelijk van je huidtype en nazorg. Natuurlijke uitstraling: Het ombre-effect zorgt voor een zachte schaduw die je natuurlijke wenkbrauwen versterkt.
+  - EN: Powder Brows, also known as Ombré Powder Brows or Soft Powder Brows, are a semi-permanent make-up technique in which pigment is applied into the skin with a machine tool. Instead of scratches, as with microblading, small dots of pigment are placed to create a soft, powdered look that resembles the effect of natural eyebrow make-up. How does it work? Using an ultra-fine needle, pigment is tattooed superficially into the skin. The ombré effect – in which the front of the eyebrow is lighter and the colour becomes more intense towards the tail – creates a natural and defined result. Why we choose Powder Brows: Skin-friendly: Because no cuts are made, the skin remains completely intact. This minimises the risk of scars. In addition, Powder Brows are placed in the first layer of skin and microblading in the third layer of skin, like a tattoo. Suitable for all skin types: Whether you have dry, oily, sensitive or mature skin, Powder Brows give a consistent and long-lasting result. Long-lasting result: Powder Brows stay beautiful for 1.5 years. With a touch-up, you can extend this to an average of 3 to 4 years, depending on your skin type and aftercare. Natural appearance: The ombré effect creates a soft shadow that enhances your natural eyebrows.
+- **powder-brows-pijn** · `faq.items.a`
+  - NL: De pigmenten die tijdens een Powder Brows-behandeling worden gebruikt, zijn cruciaal voor de veiligheid en het resultaat. Let op de volgende punten: REACH-conform: Pigmenten die voldoen aan de Europese REACH-regelgeving zijn vrij van schadelijke stoffen zoals zware metalen, PAA’s en PAK’s. Vegan en hypoallergeen: Zorg ervoor dat de pigmenten veilig zijn voor alle huidtypes, inclusief gevoelige huiden. Bij IZZI Beauty gebruiken we uitsluitend hoogwaardige, REACH-conforme pigmenten die zorgvuldig worden afgestemd op jouw huidtype en wensen.
+  - EN: The pigments used during a Powder Brows treatment are crucial for safety and the result. Pay attention to the following points: REACH-compliant: Pigments that comply with the European REACH regulations are free of harmful substances such as heavy metals, PAAs and PAHs. Vegan and hypoallergenic: Make sure the pigments are safe for all skin types, including sensitive skin. At IZZI Beauty, we use only high-quality, REACH-compliant pigments that are carefully matched to your skin type and wishes.
+
+## no-skin-damage (11)
+
+- **permanente-make-up-eyeliner** · `body.paragraphs`
+  - NL: Een Infralash eyeliner geeft je een frisse, wakkere blik zonder dat je huid beschadigd raakt. De belangrijkste voordelen op een rij:
+  - EN: An Infralash eyeliner gives you a fresh, wide-awake look without damaging your skin. The main benefits at a glance:
+- **permanente-make-up-moedervlek** · `body.paragraphs`
+  - NL: Een permanente make-up moedervlek geeft je een natuurlijke, speelse uitstraling zonder dat je huid beschadigd raakt. De belangrijkste voordelen op een rij:
+  - EN: A permanent make-up beauty spot gives you a natural, playful appearance without damaging your skin. The main benefits at a glance:
+- **permanente-make-up-moedervlek** · `body.checklist`
+  - NL: Geen schade aan de huid
+  - EN: No damage to the skin
+- **permanente-make-up-moedervlek** · `body.paragraphs`
+  - NL: Een 'faux freckle' wordt geplaatst door middel van semi-permanente make-up. Dit gebeurt met micropigmentatie: kleine naaldjes zorgen ervoor dat het pigment in de eerste huidlaag wordt aangebracht. Hierdoor wordt er geen schade toegebracht aan de huid en heb je tot zo'n 3 jaar plezier van de behandeling.
+  - EN: A 'faux freckle' is placed using semi-permanent make-up. This is done with micropigmentation: small needles apply the pigment into the first layer of skin. This causes no damage to the skin and lets you enjoy the treatment for up to about 3 years.
+- **faux-freckles-behandeling** · `body.paragraphs`
+  - NL: Faux Freckles geven je een speelse, zomerse uitstraling zonder dat je huid beschadigd raakt. De belangrijkste voordelen op een rij:
+  - EN: Faux Freckles give you a playful, summery appearance without damaging your skin. The main benefits at a glance:
+- **cover-oude-permanente-make-up** · `body.checklist`
+  - NL: Brengt geen schade aan in de huid
+  - EN: Causes no damage to the skin
+- **lip-blush** · `body.checklist`
+  - NL: Geen beschadiging van de liphuid
+  - EN: No damage to the lip skin
+- **wenkbrauwen-tatoeeren** · `body.paragraphs`
+  - NL: Wenkbrauwen tatoeëren is een vorm van permanente make up, echter wordt het niet in dezelfde huidlaag geplaatst. Zo wordt echt tatoeëren in de derde huidlaag geplaatst en wordt pmu in de eerste huidlaag geplaatst. Het verschil hierin is dat de wenkbrauwen natuurlijker eruit zien en er geen schade in de huid wordt gemaakt.
+  - EN: Eyebrow tattooing is a form of permanent make-up, however it is not placed in the same layer of skin. Real tattooing is placed in the third layer of skin, whereas PMU is placed in the first layer of skin. The difference here is that the eyebrows look more natural and no damage is done to the skin.
+- **natuurlijke-wenkbrauwen** · `body.paragraphs`
+  - NL: Huidvriendelijke behandelingen: Geen sneetjes, littekens of schade aan de huid, zoals bij microblading – alleen veilige en innovatieve permanente make-up technieken die afgestemd zijn op jouw behoeften.
+  - EN: Skin-friendly treatments: No cuts, scars or damage to the skin, as with microblading – only safe and innovative permanent make-up techniques tailored to your needs.
+- **powder-brows-vs-microblading** · `faq.items.a`
+  - NL: Microblading is een handmatige semi-permanente make-uptechniek waarbij met een klein mesje krasjes in de huid worden gemaakt. Deze krasjes worden gevuld met pigment, waardoor het lijkt alsof er fijne haartjes in je wenkbrauwen zitten. Hoe werkt het?Bij Microblading wordt pigment diep in de bovenste huidlaag aangebracht door middel van oppervlakkige sneden. Het resultaat ziet eruit als haarstrokes. Waarom wij geen Microblading aanbieden:Hoewel Microblading er aantrekkelijk uit kan zien, brengt deze techniek ook risico’s en nadelen met zich mee: Schade aan de huid: Door de herhaaldelijke krasjes kan littekenvorming optreden, vooral na meerdere touch-ups. Dit maakt de huid stugger en taaier, wat het resultaat beïnvloedt. Snelle vervaging: Microblading vervaagt vaak binnen 6 tot 12 maanden, waardoor frequente touch-ups nodig zijn. Onnatuurlijke vervaging: Bij vette of rijpere huidtypes kunnen de haarstrokes uitlopen of dof worden, wat leidt tot een minder strakke uitstraling.
+  - EN: Microblading is a manual semi-permanent make-up technique in which scratches are made in the skin with a small blade. These scratches are filled with pigment, making it look as if there are fine hairs in your eyebrows. How does it work? With Microblading, pigment is applied deep into the upper layer of skin by means of superficial cuts. The result looks like hairstrokes. Why we do not offer Microblading: Although Microblading can look attractive, this technique also comes with risks and disadvantages: Damage to the skin: Due to the repeated scratches, scar formation can occur, especially after several touch-ups. This makes the skin stiffer and tougher, which affects the result. Rapid fading: Microblading often fades within 6 to 12 months, so frequent touch-ups are needed. Unnatural fading: On oily or mature skin types, the hairstrokes can blur or become dull, leading to a less crisp appearance.
+- **powder-brows-vs-microblading** · `faq.items.a`
+  - NL: Bij IZZI Beauty draait alles om jouw wenkbrauwen – maar op een manier die ook vriendelijk is voor je huid. Wij geloven in behandelingen die niet alleen prachtige resultaten opleveren, maar ook de gezondheid van jouw huid respecteren. Powder Brows zijn voor ons dé ideale techniek: zachter, minder invasief en perfect afgestemd op elk huidtype. Met Powder Brows geniet je van een verfijnde, natuurlijke uitstraling die je dagelijks routine drastisch vereenvoudigt. Geen risico op beschadiging of littekens, maar wél langdurig mooie wenkbrauwen die er stralend uitzien. Veilige pigmenten: Wij gebruiken REACH-conforme pigmenten die volledig veganistisch zijn en vrij van schadelijke stoffen zoals zware metalen en PAA’s. Expertise en ervaring: Onze specialisten zijn hoogopgeleid en volgen regelmatig trainingen in de nieuwste technieken. Persoonlijk advies: We luisteren naar jouw wensen en creëren natuurlijke wenkbrauwen die perfect bij jouw gezichtsvorm en stijl passen. Klaar voor wenkbrauwen die je elke dag laten stralen? Plan vandaag nog een gratis intakegesprek en kies ook voor langdurige wenkbrauwen zonder schade aan de huid!
+  - EN: At IZZI Beauty, it is all about your eyebrows – but in a way that is also friendly to your skin. We believe in treatments that not only produce beautiful results, but also respect the health of your skin. For us, Powder Brows are the ideal technique: gentler, less invasive and perfectly suited to every skin type. With Powder Brows, you enjoy a refined, natural appearance that drastically simplifies your daily routine. No risk of damage or scars, but long-lasting beautiful eyebrows that look radiant. Safe pigments: We use REACH-compliant pigments that are fully vegan and free of harmful substances such as heavy metals and PAAs. Expertise and experience: Our specialists are highly trained and regularly attend training in the latest techniques. Personal advice: We listen to your wishes and create natural eyebrows that perfectly suit your face shape and style. Ready for eyebrows that make you shine every day? Schedule a free consultation today and also choose long-lasting eyebrows without damage to the skin!
+
+## scarring claim (10)
+
+- **tattoo-verwijderen-rotterdam-amsterdam** · `body.checklist`
+  - NL: Geen littekenweefsel
+  - EN: No scar tissue
+- **tattoo-verwijderen-rotterdam-amsterdam** · `body.checklist`
+  - NL: Er ontstaat geen littekenweefsel door onze laser
+  - EN: Our laser does not create scar tissue
+- **tattoo-verwijderen-rotterdam-amsterdam** · `faq.items.a`
+  - NL: Nee. Onze Q-Switched ND:YAG laser laat geen littekenweefsel achter, veroorzaakt geen kale plekken en de huid is na het laseren amper rood. Bovendien is het herstelproces tussen de sessies kort.
+  - EN: No. Our Q-Switched ND:YAG laser leaves no scar tissue, causes no bald spots, and the skin is barely red after lasering. Moreover, the healing process between sessions is short.
+- **permanente-make-up-eyeliner** · `body.checklist`
+  - NL: Geen littekenweefsel of beschadigde huid
+  - EN: No scar tissue or damaged skin
+- **kleurcorrectie** · `body.paragraphs`
+  - NL: Een kleurcorrectie van oude permanente make up kan uitgevoerd worden wanneer de wenkbrauwen naar een ongewenste kleur zijn verkleurd. Dit komt vaak doordat er te diep is gepigmenteerd en er littekenweefsel in de huid is ontstaan. Vaak zien we dit na een Microblading behandeling, omdat daarbij in de derde huidlaag wordt gepigmenteerd in plaats van in de eerste huidlaag zoals bij powder brows.
+  - EN: A colour correction of old permanent make-up can be carried out when the eyebrows have discoloured into an unwanted colour. This is often because pigment was placed too deeply and scar tissue has formed in the skin. We often see this after a Microblading treatment, because there pigment is placed in the third layer of skin instead of the first layer as with powder brows.
+- **micro-haar-pigmentatie** · `body.paragraphs`
+  - NL: Micro Haar Pigmentatie geeft je een vollere, natuurlijke haarlook zonder ingreep en zonder littekenweefsel. De belangrijkste voordelen op een rij:
+  - EN: Micro Scalp Pigmentation gives you a fuller, natural hair look without surgery and without scar tissue. The main benefits at a glance:
+- **micro-haar-pigmentatie** · `body.checklist`
+  - NL: Geen littekenweefsel zoals bij een tattoo
+  - EN: No scar tissue as with a tattoo
+- **wenkbrauwen-tatoeeren** · `body.checklist`
+  - NL: Geen littekenweefsel in de huid
+  - EN: No scar tissue in the skin
+- **microblading** · `body.checklist`
+  - NL: Geen littekens of huidbeschadiging — Microblading maakt kleine sneetjes in de huid, wat kan leiden tot littekens en huidirritatie, vooral bij herhaalde behandelingen. Ombré Powder Brows werken met een zachte pigmenttechniek die de huid niet beschadigt en geen littekens achterlaat.
+  - EN: No scars or skin damage — Microblading makes small cuts in the skin, which can lead to scars and skin irritation, especially with repeated treatments. Ombré Powder Brows work with a gentle pigment technique that does not damage the skin and leaves no scars.
+- **wenkbrauwen-laten-doen** · `body.checklist`
+  - NL: Veilig voor de huid — Onze geavanceerde apparatuur en hoogwaardige pigmenten garanderen een huidvriendelijke behandeling zonder littekens of irritatie.
+  - EN: Safe for the skin — Our advanced equipment and high-quality pigments guarantee a skin-friendly treatment without scars or irritation.
+
+## no bald patches (3)
+
+- **tattoo-verwijderen-rotterdam-amsterdam** · `body.checklist`
+  - NL: Geen kale plekken of littekens
+  - EN: No bald spots or scars
+- **micro-haar-pigmentatie** · `body.checklist`
+  - NL: Geen kale plekken
+  - EN: No bald spots
+- **micro-haar-pigmentatie** · `body.paragraphs`
+  - NL: De houdbaarheid is tevens afhankelijk van zonschade en het gebruik van scrubs op uw huid. Voornamelijk zonschade leidt tot een sterk pigmentverlies van de micro haar pigmentatie. Wel is het zo dat de pixels geleidelijk vervagen, waardoor er geen kale stukken ineens zichtbaar worden bij pigmentverlies.
+  - EN: The longevity also depends on sun damage and the use of scrubs on your skin. Sun damage in particular leads to a strong loss of pigment in the micro scalp pigmentation. However, the pixels fade gradually, so no bald patches suddenly become visible when pigment is lost.
+
+## guarantee (9)
+
+- **lip-enlightenment** · `body.paragraphs`
+  - NL: Bij IZZI Beauty begrijpen we hoe belangrijk het is om een natuurlijk en egaal resultaat te bereiken. Om een behandeling op maat te garanderen, kun je vooraf contact met ons opnemen, bijvoorbeeld via WhatsApp.
+  - EN: At IZZI Beauty we understand how important it is to achieve a natural and even result. To guarantee a tailored treatment, you can contact us beforehand, for example via WhatsApp.
+- **microblading** · `body.paragraphs`
+  - NL: Onze specialisatie in Ombré powder brows garandeert een natuurlijk en langdurig resultaat zonder de risico’s van microblading.
+  - EN: Our specialisation in Ombré powder brows guarantees a natural and long-lasting result without the risks of microblading.
+- **powder-brows-genezing** · `faq.items.a`
+  - NL: Als je merkt dat de bijwerkingen langer aanhouden dan normaal of verergeren, neem dan contact op met je specialist voor advies. Bij IZZI Beauty werken alleen gecertificeerde PMU artiesten met jarenlange ervaring die alleen werken met de hoogste kwaliteit producten om de beste resultaten te garanderen. Al met al moet je er iets voor over hebben om lang plezier te hebben van prachtige wenkbrauwen. Either way, vinden wij dat bij IZZI Beauty meer dan waard!
+  - EN: If you notice that the side effects last longer than normal or worsen, contact your specialist for advice. At IZZI Beauty, only certified PMU artists with years of experience work, who work only with the highest quality products to guarantee the best results. All in all, you have to be willing to put in some effort to enjoy beautiful eyebrows for a long time. Either way, we think that is more than worth it at IZZI Beauty!
+- **powder-brows-pijn** · `faq.items.a`
+  - NL: Hygiëne is een absolute prioriteit bij semi permanente make up. Een goede salon werkt volgens de hygiënerichtlijnen van het RIVM en hanteert strikte protocollen, waaronder: Steriele materialen: Gebruik van per stuk verpakte, steriele naalden en pigmenten om besmettingen te voorkomen. Schone werkomgeving: De behandelruimte wordt na elke klant grondig gereinigd. Desinfectie: Voor de behandeling wordt de huid altijd gedesinfecteerd om infecties te voorkomen. Bij IZZI Beauty werken we met medisch goedgekeurde apparatuur en steriele naaldmodules, zodat jouw veiligheid gegarandeerd is.
+  - EN: Hygiene is an absolute priority in semi-permanent make-up. A good salon works according to the RIVM hygiene guidelines and applies strict protocols, including: Sterile materials: Use of individually packaged, sterile needles and pigments to prevent contamination. Clean working environment: The treatment room is thoroughly cleaned after each customer. Disinfection: Before the treatment, the skin is always disinfected to prevent infections. At IZZI Beauty, we work with medically approved equipment and sterile needle modules, so your safety is guaranteed.
+- **powder-brows-pijn** · `faq.items.a`
+  - NL: Bij permanente make-up is het cruciaal om te kiezen voor een veilige en professionele PMU-studio. Het beroep van PMU-specialist is niet beschermd, wat betekent dat iedereen na een korte cursus kan starten. Bij IZZI Beauty garanderen wij echter kwaliteit door uitsluitend te werken met specialisten die zijn opgeleid aan officiële CRKBO-geregistreerde instituten. Als lid van de NEN normcommissie waarborgen wij de naleving van Europese richtlijnen voor veilige PMU-behandelingen. Bovendien blijven onze specialisten up-to-date door het volgen van de nieuwste trainingen en masterclasses. Zo ben je bij ons verzekerd van hoogwaardige, veilige en nauwkeurige resultaten.
+  - EN: With permanent make-up, it is crucial to choose a safe and professional PMU studio. The profession of PMU specialist is not protected, which means that anyone can start after a short course. At IZZI Beauty, however, we guarantee quality by working exclusively with specialists who are trained at official CRKBO-registered institutes. As a member of the NEN standards committee, we safeguard compliance with European guidelines for safe PMU treatments. In addition, our specialists stay up to date by attending the latest training and masterclasses. This way, you are assured of high-quality, safe and precise results with us.
+- **powder-brows-pijn** · `faq.items.a`
+  - NL: Bij IZZI Beauty werken we uitsluitend met Laliqa-pigmenten, een van de meest betrouwbare en hoogwaardige merken in de branche. Deze pigmenten voldoen aan de strengste veiligheidseisen en zijn volledig REACH-conform, wat betekent dat ze veilig zijn voor mens en milieu. Met Laliqa-pigmenten garanderen we prachtige, langdurige resultaten zonder risico’s voor jouw gezondheid. REACH-conform: Veilig en milieuvriendelijk. Veganistisch: Vrij van dierlijke producten. Hypoallergeen: Geen bekende allergenen, geschikt voor gevoelige huidtypes. Vrij van schadelijke stoffen: Bevat geen PAA’s, PAK’s, zware metalen, ijzeroxides of geurstoffen. Met Laliqa-pigmenten zorgen wij niet alleen voor een veilig proces, maar ook voor een prachtig en natuurlijk resultaat dat langdurig mooi blijft.
+  - EN: At IZZI Beauty, we work exclusively with Laliqa pigments, one of the most reliable and high-quality brands in the industry. These pigments meet the strictest safety requirements and are fully REACH-compliant, which means they are safe for people and the environment. With Laliqa pigments, we guarantee beautiful, long-lasting results without risks to your health. REACH-compliant: Safe and environmentally friendly. Vegan: Free of animal products. Hypoallergenic: No known allergens, suitable for sensitive skin types. Free of harmful substances: Contains no PAAs, PAHs, heavy metals, iron oxides or fragrances. With Laliqa pigments, we ensure not only a safe process, but also a beautiful and natural result that stays beautiful for a long time.
+- **powder-brows-pijn** · `faq.items.a`
+  - NL: IZZI Beauty werkt strikt volgens de hygiënerichtlijnen van het RIVM om een veilige en hygiënische behandeling te garanderen en het risico op infecties te voorkomen.
+  - EN: IZZI Beauty works strictly according to the RIVM hygiene guidelines to guarantee a safe and hygienic treatment and to prevent the risk of infections.
+- **powder-brows-pijn** · `faq.items.a`
+  - NL: IZZI Beauty behoort tot de best beoordeelde brow salons in Nederland. Wij zijn dan ook rots op het feit dat onze klanten ons waarderen met 5 sterren voor uitstekende service, persoonlijke aandacht en het leveren van resultaten die volledig zijn afgestemd op hun wensen. Met jarenlange ervaring en duizenden succesvolle behandelingen garanderen onze gediplomeerde experts veilige en hoogwaardige resultaten met NVW-goedgekeurde pigmenten van de hoogste kwaliteit.
+  - EN: IZZI Beauty is among the best-rated brow salons in the Netherlands. We are therefore proud of the fact that our customers rate us 5 stars for excellent service, personal attention and delivering results that are fully tailored to their wishes. With years of experience and thousands of successful treatments, our qualified experts guarantee safe and high-quality results with NVW-approved pigments of the highest quality.
+- **powder-brows-pijn** · `faq.items.a`
+  - NL: Bij IZZI Beauty draait alles om jouw comfort en tevredenheid. We beginnen met een uitgebreide intake om jouw wensen en huidtype te bespreken, zodat we een wenkbrauwlook creëren die perfect bij jou past. Tijdens de behandeling zorgen we voor een ontspannen en rustgevende omgeving, zodat je je volledig op je gemak voelt. Na afloop ontvang je duidelijke nazorginstructies om een optimaal herstel en langdurig resultaat te garanderen.
+  - EN: At IZZI Beauty, it is all about your comfort and satisfaction. We start with an extensive consultation to discuss your wishes and skin type, so we create an eyebrow look that perfectly suits you. During the treatment, we ensure a relaxed and calming environment, so you feel completely at ease. Afterwards, you receive clear aftercare instructions to guarantee optimal recovery and a long-lasting result.
+
+## blood thinners (6)
+
+- **tattoo-verwijderen-rotterdam-amsterdam** · `body.paragraphs`
+  - NL: 1 week voor de behandeling mag u niet meer naar de zonnebank. Ook is het beter om geen peelings of microneedling te doen, indien de tattoo op het gezicht zit. Binnen 24 uur voor de behandeling is het zeer belangrijk dat u geen alcohol, pijnstilling, drugs of bloedverdunnende medicatie inneemt. Cafeïne mag tot 4 uur voor de behandeling niet ingenomen worden; onder cafeïne valt koffie, thee (theïne), energiedranken en frisdranken zoals cola.
+  - EN: 1 week before the treatment you may no longer use a tanning bed. It is also better not to have peels or microneedling if the tattoo is on the face. Within 24 hours before the treatment it is very important that you do not take any alcohol, painkillers, drugs or blood-thinning medication. Caffeine may not be consumed up to 4 hours before the treatment; caffeine includes coffee, tea (theine), energy drinks and soft drinks such as cola.
+- **tattoo-verwijderen-rotterdam-amsterdam** · `body.checklist`
+  - NL: 24 uur vooraf: geen alcohol, pijnstilling, drugs of bloedverdunnende medicatie
+  - EN: 24 hours beforehand: no alcohol, painkillers, drugs or blood-thinning medication
+- **tattoo-verwijderen-rotterdam-amsterdam** · `faq.items.a`
+  - NL: Ga 1 week vooraf niet naar de zonnebank en doe geen peelings of microneedling. Neem binnen 24 uur geen alcohol, pijnstilling, drugs of bloedverdunnende medicatie en tot 4 uur vooraf geen cafeïne. Deze regels beïnvloeden de werking van de laser.
+  - EN: Do not use a tanning bed for 1 week beforehand and do not have peels or microneedling. Within 24 hours do not take any alcohol, painkillers, drugs or blood-thinning medication, and no caffeine up to 4 hours beforehand. These rules affect how the laser works.
+- **permanente-make-up-laseren** · `body.paragraphs`
+  - NL: 1 week voor de behandeling mag u niet meer naar de zonnebank of uw wenkbrauwhaartjes laten verven. Ook is het beter om geen peelings of microneedling te doen. Binnen 24 uur voor de behandeling is het zeer belangrijk dat u geen alcohol, pijnstilling, drugs of bloedverdunnende medicatie inneemt. Cafeïne mag tot 4 uur voor de behandeling niet ingenomen worden; onder cafeïne valt koffie, thee (theïne), energiedranken en frisdranken zoals cola.
+  - EN: 1 week before the treatment you may no longer use a tanning bed or have your brow hairs tinted. It is also better not to have peels or microneedling. Within 24 hours before the treatment it is very important that you do not take any alcohol, painkillers, drugs or blood-thinning medication. Caffeine may not be consumed up to 4 hours before the treatment; caffeine includes coffee, tea (theine), energy drinks and soft drinks such as cola.
+- **combi-brows-behandeling** · `body.checklist`
+  - NL: Vermijd bloedverdunners, alcohol en cafeïne op de dag van de behandeling
+  - EN: Avoid blood thinners, alcohol and caffeine on the day of the treatment
+- **lip-enlightenment** · `body.checklist`
+  - NL: Vermijd bloedverdunners zoals aspirine of ibuprofen in de 48 uur voorafgaand aan de behandeling
+  - EN: Avoid blood thinners such as aspirin or ibuprofen in the 48 hours before the treatment
+
