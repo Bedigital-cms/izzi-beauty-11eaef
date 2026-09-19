@@ -6,6 +6,7 @@ import { Shell } from '@/components/Shell'
 import { BlogGrid, CtaBand, PageHero } from '@/components/sections'
 import { categorySlug, getBlogCards, getBlogCategories, getBlogIndex } from '@/content/blog'
 import { activeLocales } from '@/lib/i18n'
+import { pageAlternates } from '@/lib/seo'
 
 /** Eén onderwerp uit de kennisbank. */
 
@@ -28,6 +29,7 @@ export async function generateMetadata({
   return {
     title: `${found.name} — Kennisbank — IZZI Beauty`,
     description: `${found.count} ${found.count === 1 ? 'artikel' : 'artikelen'} over ${found.name.toLowerCase()}.`,
+    alternates: pageAlternates(`/kennisbank/${category}`, locale),
   }
 }
 

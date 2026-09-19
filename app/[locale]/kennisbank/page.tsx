@@ -4,6 +4,7 @@ import { LocaleLink } from '@/components/LocaleLink'
 import { Shell } from '@/components/Shell'
 import { BlogGrid, CtaBand, PageHero } from '@/components/sections'
 import { getBlogCards, getBlogCategories, getBlogIndex } from '@/content/blog'
+import { pageAlternates } from '@/lib/seo'
 
 /**
  * Kennisbank — de blogartikelen, geordend per onderwerp.
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: 'Kennisbank — IZZI Beauty',
     description: `Alles over permanente make-up, verdeeld over ${categories.length} onderwerpen: van behandelingen en nazorg tot opleidingen.`,
+    alternates: pageAlternates('/kennisbank', locale),
   }
 }
 

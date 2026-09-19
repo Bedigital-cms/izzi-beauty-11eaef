@@ -5,6 +5,7 @@ import { Shell } from '@/components/Shell'
 import { BlogGrid, CtaBand, PageHero, POSTS_PER_PAGE } from '@/components/sections'
 import { getBlogCards, getBlogIndex } from '@/content/blog'
 import { activeLocales } from '@/lib/i18n'
+import { pageAlternates } from '@/lib/seo'
 
 /**
  * Paged blog index: /<locale>/blog/page/<n> (WordPress-style, matching the migrated URLs).
@@ -46,6 +47,7 @@ export async function generateMetadata({
   return {
     title: `${data.hero.title} — pagina ${n} van ${total} — IZZI Beauty`,
     description: data.hero.text,
+    alternates: pageAlternates(`/blog/page/${n}`, locale),
   }
 }
 

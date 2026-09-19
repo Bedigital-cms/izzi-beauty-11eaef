@@ -5,11 +5,12 @@ import { Shell } from '@/components/Shell'
 import { CtaBand, LocationCards, PageHero } from '@/components/sections'
 import { getContact } from '@/content/contact'
 import { loadForm } from '@/content/load'
+import { pageAlternates } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const data = getContact(locale)
-  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text }
+  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text, alternates: pageAlternates('/contact', locale) }
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {

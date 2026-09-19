@@ -9,7 +9,7 @@ const KEY = 'algemene-voorwaarden'
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const data = getLegal(locale)[KEY]
-  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text }
+  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text, robots: { index: false, follow: false } }
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

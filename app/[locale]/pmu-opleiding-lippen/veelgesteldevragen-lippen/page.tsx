@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Shell } from '@/components/Shell'
 import { InfoPage } from '@/components/sections'
 import { getInfo } from '@/content/info'
+import { pageAlternates } from '@/lib/seo'
 
 /**
  * FAQ van de PMU-opleiding Lippen, genest onder het opleidingssegment — dezelfde URL-structuur als
@@ -14,7 +15,7 @@ const KEY = 'veelgesteldevragen-lippen'
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const data = getInfo(locale)[KEY]
-  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text }
+  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text, alternates: pageAlternates('/pmu-opleiding-lippen/veelgesteldevragen-lippen', locale) }
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

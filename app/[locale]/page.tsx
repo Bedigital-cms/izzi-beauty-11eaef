@@ -11,6 +11,20 @@ import { loadForm } from '@/content/load'
 import { getShopUI } from '@/content/shop'
 import { getSite } from '@/content/site'
 import { defaultLocale, hideDefaultPrefix } from '@/lib/i18n'
+import { pageAlternates } from '@/lib/seo'
+
+import type { Metadata } from 'next'
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const site = getSite(locale)
+  // Homepage self-canonical + reciprocal hreflang (EN "/" ↔ NL "/nl"). Title/description from site.
+  return {
+    title: `${site.brandName} — ${site.tagline}`,
+    description: site.footer.about,
+    alternates: pageAlternates('/', locale),
+  }
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params

@@ -273,8 +273,18 @@ if (Array.isArray(i18n.locales) && i18n.locales.includes('en')) {
   else pass('EN geactiveerd met complete content/en-pariteit');
 } else pass('EN nog niet geactiveerd in i18n.json (activatie is de gedocumenteerde slotstap)');
 
+// ---------- 24. Placeholder-legal: noindex + niet in sitemap ----------
+const legalRoutes = ['algemene-voorwaarden', 'privacy-verklaring', 'opleidingen-voorwaarden'];
+const legalNoindexMissing = legalRoutes.filter((r) => !/robots:\s*\{\s*index:\s*false/.test(fs.readFileSync(path.join(ROOT, `app/[locale]/${r}/page.tsx`), 'utf8')));
+if (legalNoindexMissing.length) fail(`legal-routes zonder robots noindex: ${legalNoindexMissing.join(', ')}`);
+else pass('placeholder-legal routes: robots index:false');
+const sitemapSrc = fs.readFileSync(path.join(ROOT, 'app/sitemap.ts'), 'utf8');
+if (/getLegalSlugs/.test(sitemapSrc)) fail('sitemap bevat nog legal-pagina\'s (placeholder-legal moet eruit)');
+else pass('sitemap sluit placeholder-legal uit');
+
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];
+warnings.push('legal EN+NL = BLOCKED_CUSTOMER_LEGAL (placeholdertekst; noindex + uit sitemap tot goedgekeurde teksten)');
 // Team-media (Isabella/Carla) nog te uploaden via CMS (cloud agent kan dat niet).
 warnings.push('teamfoto\'s Isabella + Carla nog uploaden via CMS Media (tenant izzi-beauty) — cloud agent heeft geen CMS-write/Mac-toegang');
 // Juridische voorbeeldteksten (BLOCKED_CUSTOMER — geen goedgekeurde tekst).

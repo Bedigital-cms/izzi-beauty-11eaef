@@ -5,11 +5,12 @@ import { Media } from '@/components/Media'
 import { Shell } from '@/components/Shell'
 import { CtaBand, PageHero } from '@/components/sections'
 import { getOver } from '@/content/over'
+import { pageAlternates } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const data = getOver(locale)
-  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text }
+  return { title: `${data.hero.title} — IZZI Beauty`, description: data.hero.text, alternates: pageAlternates('/over-izzi', locale) }
 }
 
 export default async function OverPage({ params }: { params: Promise<{ locale: string }> }) {

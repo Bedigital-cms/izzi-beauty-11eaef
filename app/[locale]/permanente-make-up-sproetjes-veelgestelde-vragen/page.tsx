@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Shell } from '@/components/Shell'
 import { InfoPage } from '@/components/sections'
 import { getInfo } from '@/content/info'
+import { pageAlternates } from '@/lib/seo'
 
 const KEY = 'permanente-make-up-sproetjes-veelgestelde-vragen'
 
@@ -14,6 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description: data.hero.text,
     openGraph: { title, description: data.hero.text },
+    alternates: pageAlternates('/permanente-make-up-sproetjes-veelgestelde-vragen', locale),
   }
 }
 

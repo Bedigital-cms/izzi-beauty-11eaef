@@ -2,7 +2,6 @@ import type { MetadataRoute } from 'next'
 
 import { getPublishedPosts } from '@/content/blog'
 import { getInfo } from '@/content/info'
-import { getLegalSlugs } from '@/content/legal'
 import { getLocatieSlugs } from '@/content/locaties'
 import { getServiceSlugs } from '@/content/services'
 import { getTrainingSlugs } from '@/content/trainings-detail'
@@ -45,7 +44,8 @@ function prefixFreePaths(locale: string): string[] {
   for (const s of getTrainingSlugs(locale)) paths.add(`/${s}`)
   for (const s of getLocatieSlugs(locale)) paths.add(`/${s}`)
   for (const s of Object.keys(getPublishedPosts(locale))) paths.add(`/${s}`)
-  for (const s of getLegalSlugs(locale)) paths.add(`/${s}`)
+  // Legal pages are intentionally EXCLUDED from the sitemap until the customer supplies approved
+  // final texts (they still carry placeholder copy and are set to robots noindex). See BLOCKED_CUSTOMER_LEGAL.
   // Info pages: fixed route per key, with two nested exceptions. /ervaringen only when it has content.
   for (const key of Object.keys(getInfo(locale))) paths.add(NESTED_INFO[key] ?? `/${key}`)
   return [...paths]

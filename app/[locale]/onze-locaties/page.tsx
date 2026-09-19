@@ -5,6 +5,7 @@ import { HubPage } from '@/components/sections'
 import { getLocaties } from '@/content/locaties'
 import { getSite } from '@/content/site'
 import type { HubContent, LinkCard } from '@/lib/types'
+import { pageAlternates } from '@/lib/seo'
 
 /**
  * Onze locaties — de salons plus het verzorgingsgebied.
@@ -21,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: `Onze locaties — ${site.brandName}`,
     description: `Bekijk alle locaties en het verzorgingsgebied van ${site.brandName}.`,
+    alternates: pageAlternates('/onze-locaties', locale),
   }
 }
 
