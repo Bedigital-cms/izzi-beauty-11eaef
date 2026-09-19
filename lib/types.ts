@@ -404,6 +404,13 @@ export type ShopUIStrings = {
   checkoutLoginText: string
   continueAsGuest: string
 
+  /* afrekenen — foutmeldingen (client mapt API-codes, toont nooit ruwe servertekst) */
+  zeroPaymentBlocked: string
+  priceChanged: string
+  /** Checkout-voorraadmelding. Niet het productkaart-label `outOfStock`. */
+  checkoutOutOfStock: string
+  paymentStatusUnknown: string
+
   /* algemeen */
   genericError: string
   loading: string

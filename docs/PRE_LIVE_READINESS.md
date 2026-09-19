@@ -150,6 +150,7 @@ Endpoint: `NEXT_PUBLIC_FORMS_ENDPOINT=https://cms.bedigital.ai` → `POST /forms
 | Item | Status | Notes |
 |---|---|---|
 | `ZERO_PAYMENT_GUARD` | **PASS** | Storefront now rejects `totalCents <= 0` in `app/api/commerce/checkout/route.ts` (`code: ZERO_PAYMENT`) and disables the CheckoutForm submit. Prevents the old WooCommerce €0/deposit checkout. |
+| `CHECKOUT_ERROR_I18N` | **PASS** | CheckoutForm maps `ZERO_PAYMENT` / `PRICE_CHANGED` / `OUT_OF_STOCK` / `PAYMENT_STATUS_UNKNOWN` to `ShopUIStrings` (`zeroPaymentBlocked`, `priceChanged`, `checkoutOutOfStock`, `paymentStatusUnknown`). Unknown codes use `ui.genericError`. API still returns the same stable codes. |
 | 17 `productHandle`s `opleiding-*` + 1 contact-only (`prive-opleiding-permanente-make-up`) | PASS | NL/EN handles identical. Existence in CMS catalogue **not** proven here. |
 | Mollie sandbox / deposit / full-pay / in3 / order-state E2E | BLOCKED_ACCESS | `NEXT_PUBLIC_COMMERCE_ENABLED=0` locally; `COMMERCE_API_KEY` only on Vercel. No production payment. |
 | in3 presentation bounds | PASS | Client filter in `lib/commerce/in3.ts` (CMS still authoritative). |
@@ -284,5 +285,6 @@ Owner: IZZI. No redesign until that choice.
 4. `/ervaringen` `pageAlternates`.
 5. Locale-aware global 404 via `ui.notFound`.
 6. This matrix + route inventory.
+7. `CHECKOUT_ERROR_I18N` — locale-aware checkout error labels via shop UI (codes unchanged).
 
 Not changed: legal copy, prices, hours, WhatsApp number, medical/training/blog claims, CTA contrast, i18n activation, DNS, Mollie live.
