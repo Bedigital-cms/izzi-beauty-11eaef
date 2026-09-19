@@ -8,12 +8,29 @@ hardcoded in een component.
 
 De site slaat zelf geen bestanden op. Content verwijst altijd naar `/media/<bestandsnaam>`; de route
 `app/media/[filename]/route.ts` stuurt dat door (302) naar het publieke, tenant-scoped media-endpoint
-van het CMS, dat het bestand streamt (lokaal) of doorstuurt naar R2 (productie).
+van het CMS.
+
+**Geverifieerde actuele architectuur (2026-09, bewezen tegen het live endpoint):**
+
+```
+content "/media/<file>"
+  → site /media/[filename]            (302)
+  → https://cms.bedigital.ai/media/<file>?tenant=izzi-beauty   (CMS, tenant-scoped DB-lookup)
+  → 302 → Supabase Storage public object   (bucket: cms-media, object: media/<file>)
+```
+
+De site kent Supabase **niet**; de opslag is vervangbaar achter het CMS-contract. Een verkeerde of
+ontbrekende tenant geeft **404**. Dit is exact hetzelfde contract als de referentietenant
+*Ameland Residence*.
+
+> **HISTORISCH:** oudere versies van dit document beschreven *lokale filesystem-opslag (dev) /
+> Cloudflare R2 (productie)* en de host `cms.bedigital.nl`. Dat is **niet** meer de productieflow —
+> de opslag is Supabase Storage achter hetzelfde CMS-contract, op host `cms.bedigital.ai`.
 
 Twee omgevingsvariabelen zijn verplicht, anders krijg je 404's en dus gebroken afbeeldingen:
 
 ```
-MEDIA_PUBLIC_BASE=http://localhost:3000/media   # prod: https://cms.bedigital.nl/media
+MEDIA_PUBLIC_BASE=https://cms.bedigital.ai/media   # dev: http://localhost:3000/media
 MEDIA_TENANT_SLUG=izzi-beauty
 ```
 
