@@ -44,8 +44,8 @@ function prefixFreePaths(locale: string): string[] {
   for (const s of getTrainingSlugs(locale)) paths.add(`/${s}`)
   for (const s of getLocatieSlugs(locale)) paths.add(`/${s}`)
   for (const s of Object.keys(getPublishedPosts(locale))) paths.add(`/${s}`)
-  // Legal pages are intentionally EXCLUDED from the sitemap until the customer supplies approved
-  // final texts (they still carry placeholder copy and are set to robots noindex). See BLOCKED_CUSTOMER_LEGAL.
+  // Legal pages are intentionally EXCLUDED from the sitemap and remain noindex until a lawyer
+  // review of the migrated old-site texts. See BLOCKED_CUSTOMER_LEGAL.
   // Info pages: fixed route per key, with two nested exceptions. /ervaringen only when it has content.
   for (const key of Object.keys(getInfo(locale))) paths.add(NESTED_INFO[key] ?? `/${key}`)
   return [...paths]
