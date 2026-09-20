@@ -649,7 +649,7 @@ if (!/getUI\(locale\)\.notFound/.test(notFoundSrc) || /<h1>Pagina niet gevonden<
 
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];
-warnings.push('legal EN+NL = BLOCKED_CUSTOMER_LEGAL (placeholdertekst; noindex + uit sitemap tot goedgekeurde teksten)');
+warnings.push('legal blijft noindex + uit sitemap tot jurist-review (NL gemigreerd van oude site, locaties opgeschoond; geen EN-legal.json)');
 // EN-content nog niet compleet: collecties + locaties + info + legal ontbreken → EN blijft inactief (gate).
 const enMissing = fs.existsSync(enDir) ? fs.readdirSync(path.join(ROOT, 'content/nl')).filter((f) => f.endsWith('.json') && !fs.existsSync(path.join(enDir, f))) : [];
 if (enMissing.length) warnings.push(`content/en nog onvolledig (${enMissing.length} bestanden te vertalen: ${enMissing.join(', ')}) — EN blijft inactief tot compleet`);

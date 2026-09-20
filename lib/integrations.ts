@@ -201,7 +201,7 @@ export const PROVIDERS: ProviderDef[] = [
         label: 'Telefoonnummer',
         type: 'text',
         required: true,
-        help: 'In internationaal formaat zonder + of spaties, bijvoorbeeld 31612345678.',
+        help: 'In internationaal formaat zonder + of spaties, bijvoorbeeld 31611768881.',
       },
       { name: 'message', label: 'Vooringevuld bericht (optioneel)', type: 'text' },
       {
