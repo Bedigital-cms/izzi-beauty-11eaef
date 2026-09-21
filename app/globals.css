@@ -2145,3 +2145,31 @@ p { color: var(--ink-soft); }
 }
 .kb-related-link:hover { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
 @media (prefers-reduced-motion: reduce) { .kb-related-link { transition: none; } }
+
+/* Training detail v2 — optionele blokken (galerij, trainers, data, formulier).
+   Zonder die velden in de JSON rendert er niets; bestaande pagina's blijven gelijk. */
+#beschikbare-data,
+#opleiding-interesse { scroll-margin-top: 96px; }
+.training-gallery-block,
+.training-trainers,
+.training-form,
+.training-dates { margin-top: 44px; }
+.training-dates-note,
+.training-dates-empty p { font-family: var(--sans); color: var(--muted); }
+.training-dates-empty { display: grid; gap: 16px; justify-items: start; }
+.training-date-list { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 12px; }
+.training-date-card {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px;
+  padding: 16px 18px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg);
+}
+.training-date-card strong { display: block; font-size: 1.02rem; }
+.training-date-card span { display: block; font-family: var(--sans); font-size: .86rem; color: var(--muted); }
+.training-date-meta { margin-top: 4px; }
+.training-date-full { font-family: var(--sans); font-size: .86rem; color: var(--muted); }
+.trainer-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.trainer-bio { margin-top: 10px !important; color: var(--ink) !important; font-size: .9rem !important; line-height: 1.45; }
+.training-form { padding-top: 8px; }
+@media (max-width: 640px) {
+  .training-date-card { align-items: flex-start; }
+}
+

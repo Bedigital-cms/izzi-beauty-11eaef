@@ -129,7 +129,35 @@ export type DetailContent = {
    * Leeg of afwezig → geen band, zodat een pagina zonder deze voordelen er niet leeg op staat.
    */
   highlights?: { label: string; text: string }[]
-  body: { heading: string; paragraphs: string[]; checklist?: string[] }[]
+  body: { heading: string; paragraphs: string[]; checklist?: string[]; image?: string; images?: string[] }[]
+  /**
+   * Extra beelden onder de tekst (opleiding-pilot). Leeg of afwezig → geen galerij, bestaande
+   * behandel- en opleidingspagina's blijven ongewijzigd.
+   */
+  gallery?: string[]
+  /**
+   * Trainer-/persoonskaarten. Optioneel: zonder dit veld blijft de bestaande body-tekst de bron.
+   */
+  trainers?: { name: string; role: string; text?: string; image: string }[]
+  /**
+   * Inline interesseformulier (slug uit content/forms.json), bv. "opleiding-interesse".
+   * `formPrefill` vult bekende veldnamen (zoals opleiding_specifiek) zodat de bezoeker niet
+   * opnieuw hoeft te kiezen welke opleiding hij bekijkt.
+   */
+  formSlug?: string
+  formTitle?: string
+  formText?: string
+  formPrefill?: Record<string, string>
+  /**
+   * Beschikbare data / inschrijven. Prijzen, datums en plekken komen NOOIT uit deze JSON — die
+   * horen in het CMS-product (`productHandle` → varianten). Dit object is alleen kopij + lege staat.
+   */
+  availability?: {
+    title?: string
+    text?: string
+    emptyText?: string
+    disabledText?: string
+  }
   steps?: { title: string; items: Step[] }
   faq?: { title: string; items: Faq[] }
   aside: { factsTitle: string; facts: DetailFact[]; ctaTitle: string; ctaText: string; ctaLabel: string; ctaUrl: string }
@@ -629,6 +657,16 @@ export type Ui = {
   contactPage: {
     locationsHeading: string
     locationsSubheading: string
+  }
+  training: {
+    galleryTitle: string
+    trainersTitle: string
+    seats: string
+    seatsOne: string
+    enrolDate: string
+    viewDates: string
+    requestInfo: string
+    loading: string
   }
   /** Global 404 page (app/not-found.tsx). Uses the default locale until a locale-aware 404 exists. */
   notFound: {

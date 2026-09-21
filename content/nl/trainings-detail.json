@@ -1254,9 +1254,41 @@
       "text": "Wil jij een succesvolle PMU-professional worden? Onze intensieve 6-daagse beginnersopleiding biedt alles wat je nodig hebt om je eigen salon te starten en klanten met vertrouwen te behandelen. Er zijn géén diploma's of voorkennis vereist voor het volgen van deze opleiding.",
       "breadcrumb": "Ombré Powder Brows Opleiding"
     },
-    "image": "/media/izzi-beauty-20250729-53836b-powder-brows.jpg",
+    "image": "/media/izzi-beauty-20251110-2aed27-powder-brows-opleiding-izzi-beauty.webp",
     "intro": "IZZI Beauty is een erkend opleidingsinstituut, CRKBO geregistreerd en wij werken samen met het UWV. In zes dagen — van online voorbereiding tot een intensieve terugkomdag — leer je alles van kleurtheorie en wenkbrauw mapping tot pigmenttechnieken op latex én echte modellen.",
     "productHandle": "opleiding-ombre-powder-brows",
+    "gallery": [
+      "/media/izzi-beauty-20251110-f2652d-ombre-powder-brows-cursus.webp",
+      "/media/izzi-beauty-20250729-af300e-ombre-powder-brows-masterclass.webp",
+      "/media/izzi-beauty-20251110-956210-ombre-powder-brows-treatment-cou-3.jpg"
+    ],
+    "trainers": [
+      {
+        "name": "Isabella",
+        "role": "Eigenaar en expert in PMU",
+        "text": "Met een passie voor permanente make-up richt ik mij niet alleen op behandelingen in onze salon, maar ook op het opleiden van zowel beginnende als ervaren PMU-stylisten. Mijn doel is om onze studenten met vertrouwen en expertise de PMU-wereld in te laten stappen!",
+        "image": "/media/izzi-beauty-20250729-58e555-isabella-izzi-beauty.jpg"
+      },
+      {
+        "name": "Carla",
+        "role": "Expert PMU en laserbehandelingen",
+        "text": "Als fulltime PMU-specialist bij IZZI begeleid ik cursisten tijdens opleidingen en ondersteun ik Isabella bij examens. Met twee jaar ervaring in zowel behandelingen als trainingen, zorg ik ervoor dat onze studenten altijd de begeleiding krijgen die ze nodig hebben.",
+        "image": "/media/izzi-beauty-20250729-a8b5f2-carla-izzi-beauty.png"
+      }
+    ],
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "wenkbrauwen",
+      "opleiding_specifiek": "Ombré Powder Brows Opleiding"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Kies een datum en locatie om je in te schrijven. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
     "highlights": [
       {
         "label": "UWV-subsidie",
@@ -1289,6 +1321,7 @@
       },
       {
         "heading": "Programma Ombré Powder Brows Opleiding met Certificaat",
+        "image": "/media/izzi-beauty-20251110-f2652d-ombre-powder-brows-cursus.webp",
         "paragraphs": [
           "Dag 1 — Online Voorbereiding (10 uur): kennismaking met Isabella, PMU en Ombré Powder Brows; anatomie van de huid en hoe PMU werkt; kleur- en pigmentleer begrijpen en toepassen; brow mapping en shaping inclusief praktische video's; GGD keuring en hygiënerichtlijnen; en marketingtips voor een vliegende start.",
           "Dag 2 — Theorie & Basisvaardigheden op Locatie (6 uur). Ochtend (9:30 – 12:00): bespreken van de online theorie en verdieping in hygiëne (GGD), kleurenleer en pigmenten — hoe kies je de perfecte combinatie — en een introductie van de PMU-machine met uitleg van het startpakket. Middag (12:30 – 15:30): praktische oefeningen met brow mapping op drie manieren op elkaar oefenen, en tips om je eigen salon professioneel op te starten.",
@@ -1298,6 +1331,7 @@
       },
       {
         "heading": "Permanente Make Up Startpakket",
+        "image": "/media/izzi-beauty-20250729-53836b-powder-brows.jpg",
         "paragraphs": [
           "Bij de Ombré Powder Brows Opleiding ontvang je een uitgebreid startpakket ter waarde van €1400,-, waarmee je direct als professional kan starten. Dit pakket bevat alles wat je nodig hebt om tot wel 50 behandelingen uit te voeren en te oefenen op latex."
         ],
@@ -1315,6 +1349,7 @@
       },
       {
         "heading": "Inclusief IZZI PMU Machine",
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp",
         "paragraphs": [
           "IZZI Beauty heeft haar expertise en jarenlange ervaring in permanente make-up vertaald naar de ultieme PMU-machine. Sinds 2021 bieden wij een draadloze machine die precisie, gebruiksgemak en veelzijdigheid combineert.",
           "Deze machine is speciaal ontworpen om te voldoen aan de hoogste eisen van PMU-specialisten. Doordat je gemakkelijk slaglengtes kunt wijzigen kun je met deze machine alle type behandelingen uitvoeren voor PMU Powder Brows en Lip Blush, inclusief Freckles, Striae en zelfs Fineline tattoos.",
@@ -1480,19 +1515,19 @@
           "v": "Mogelijk"
         }
       ],
-      "ctaTitle": "Interesse in deze opleiding?",
-      "ctaText": "Benieuwd of een PMU-opleiding bij je past of heb je vragen? Neem contact op voor de actuele data en beschikbare plekken.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Start jouw carrière in PMU",
       "title": "Meld je aan voor de Ombré Powder Brows Opleiding",
-      "text": "Laat je gegevens & vragen achter en we nemen zo spoedig mogelijk contact met je op om de mogelijkheden met jou te bespreken.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
     }
   },
   "allround-pmu-opleiding": {

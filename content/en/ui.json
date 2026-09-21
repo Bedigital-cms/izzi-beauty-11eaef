@@ -79,6 +79,16 @@
     "locationsHeading": "Our locations",
     "locationsSubheading": "Visit one of our studios"
   },
+  "training": {
+    "galleryTitle": "Gallery",
+    "trainersTitle": "Your trainers",
+    "seats": "seats available",
+    "seatsOne": "seat available",
+    "enrolDate": "Enrol",
+    "viewDates": "View available dates",
+    "requestInfo": "Request information",
+    "loading": "Loading dates…"
+  },
   "notFound": {
     "title": "Page not found",
     "text": "The page you are looking for no longer exists. Go back to the homepage or view our treatments.",

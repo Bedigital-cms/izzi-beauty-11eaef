@@ -42,7 +42,16 @@ const FORMS = (formsData as { forms?: Record<string, FormDef> }).forms || {}
  *  CMS-kant valideert definitief. Geen zware regex die geldige adressen afwijst. */
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-export default function Form({ slug, def: defProp }: { slug: string; def?: FormDef | null }) {
+export default function Form({
+  slug,
+  def: defProp,
+  values,
+}: {
+  slug: string
+  def?: FormDef | null
+  /** Vaste prefill (bv. opleiding_specifiek op een detailpagina). Query-params winnen hiervan. */
+  values?: Record<string, string>
+}) {
   const def = defProp ?? FORMS[slug]
   const formRef = React.useRef<HTMLFormElement>(null)
   const [status, setStatus] = React.useState<'idle' | 'sending' | 'ok' | 'error'>('idle')
@@ -58,27 +67,31 @@ export default function Form({ slug, def: defProp }: { slug: string; def?: FormD
     return ''
   }
 
-  // Prefill vanuit de URL-query: een bezoeker die vanaf een cursuspagina komt met bv.
-  // `?opleiding_specifiek=Lip%20Blush%20Beginnersopleiding` krijgt dat veld vast ingevuld, zodat
-  // hij niet opnieuw hoeft uit te leggen welke opleiding hij bedoelt. Werkt voor tekst/textarea en
-  // selecteert een select-optie als de waarde overeenkomt. Alleen bekende veldnamen worden gezet.
-  React.useEffect(() => {
+  function applyPrefill() {
     if (!def || typeof window === 'undefined') return
     const params = new URLSearchParams(window.location.search)
     const el = formRef.current
     if (!el) return
     for (const f of def.fields) {
-      const val = params.get(f.name)
+      const val = params.get(f.name) || values?.[f.name]
       if (val == null || val === '') continue
       const input = el.elements.namedItem(f.name) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null
       if (!input) continue
       if (input instanceof HTMLSelectElement) {
         if ([...input.options].some((o) => o.value === val)) input.value = val
+      } else if (input instanceof HTMLInputElement && input.type === 'checkbox') {
+        input.checked = val === '1' || val === 'true'
       } else {
         input.value = val
       }
     }
-  // def is stabiel voor de levensduur van de pagina; één keer prefillen bij mount volstaat.
+  }
+
+  // Prefill vanuit de URL-query of `values`. Query wint, zodat een hub-link met
+  // `?opleiding_specifiek=…` blijft werken. Alleen bekende veldnamen worden gezet.
+  React.useEffect(() => {
+    applyPrefill()
+  // def/values zijn stabiel voor de levensduur van de pagina; één keer prefillen bij mount volstaat.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -88,10 +101,13 @@ export default function Form({ slug, def: defProp }: { slug: string; def?: FormD
     if (status !== 'ok') return
     const t = setTimeout(() => {
       formRef.current?.reset()
+      applyPrefill()
       setStatus('idle')
       setMessage('')
     }, 6000)
     return () => clearTimeout(t)
+  // applyPrefill is stabiel genoeg voor deze reset; we willen niet herstarten bij elke render.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status])
 
   if (!def || def.isActive === false) return null
@@ -160,10 +176,11 @@ export default function Form({ slug, def: defProp }: { slug: string; def?: FormD
     <form ref={formRef} onSubmit={onSubmit} className="form" noValidate>
       {def.fields.map((f) => {
         if (f.fieldType === 'hidden') {
-          return <input key={f.name} type="hidden" name={f.name} defaultValue={f.placeholder || ''} />
+          return <input key={f.name} type="hidden" name={f.name} defaultValue={values?.[f.name] || f.placeholder || ''} />
         }
         const err = fieldErrors[f.name]
         const errId = err ? `${slug}-${f.name}-error` : undefined
+        const preset = values?.[f.name] || ''
         // Fout wissen zodra de bezoeker het veld corrigeert.
         const clear = () => { if (fieldErrors[f.name]) setFieldErrors((p) => { const n = { ...p }; delete n[f.name]; return n }) }
         const common = {
@@ -176,16 +193,16 @@ export default function Form({ slug, def: defProp }: { slug: string; def?: FormD
           <label key={f.name} className={`form-field${err ? ' form-field--error' : ''}`}>
             <span className="form-label">{f.label}{f.required ? ' *' : ''}</span>
             {f.fieldType === 'textarea' ? (
-              <textarea {...common} placeholder={f.placeholder || ''} onInput={clear} />
+              <textarea {...common} placeholder={f.placeholder || ''} defaultValue={preset} onInput={clear} />
             ) : f.fieldType === 'select' ? (
-              <select {...common} defaultValue="" onChange={clear}>
+              <select {...common} defaultValue={preset} onChange={clear}>
                 <option value="" disabled>{f.placeholder || 'Kies…'}</option>
                 {(f.options || []).map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
               </select>
             ) : f.fieldType === 'checkbox' ? (
-              <input type="checkbox" {...common} onChange={clear} />
+              <input type="checkbox" {...common} defaultChecked={preset === '1' || preset === 'true'} onChange={clear} />
             ) : (
-              <input type={f.fieldType} {...common} placeholder={f.placeholder || ''} onInput={clear} />
+              <input type={f.fieldType} {...common} placeholder={f.placeholder || ''} defaultValue={preset} onInput={clear} />
             )}
             {err && <span className="form-field-error" id={errId} role="alert">{err}</span>}
           </label>

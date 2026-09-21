@@ -83,6 +83,30 @@
           ]
         },
         { "name": "opleiding_specifiek", "label": "Which course specifically?", "fieldType": "text", "required": false, "placeholder": "E.g. Lip Blush Beginner Course" },
+        {
+          "name": "gewenste_locatie",
+          "label": "Preferred location",
+          "fieldType": "select",
+          "required": false,
+          "placeholder": "Choose a location",
+          "options": [
+            { "label": "Amsterdam", "value": "amsterdam" },
+            { "label": "Rotterdam", "value": "rotterdam" },
+            { "label": "Other / not sure yet", "value": "anders" }
+          ]
+        },
+        { "name": "gewenste_periode", "label": "Preferred date or period", "fieldType": "text", "required": false, "placeholder": "E.g. March 2026 or 12–14 May" },
+        {
+          "name": "prive_opleiding",
+          "label": "Private course",
+          "fieldType": "select",
+          "required": false,
+          "placeholder": "No, group course",
+          "options": [
+            { "label": "No, group course", "value": "nee" },
+            { "label": "Yes, private course", "value": "ja" }
+          ]
+        },
         { "name": "query", "label": "Your question", "fieldType": "textarea", "required": false, "placeholder": "Do you have a question about the course?" }
       ]
     },
