@@ -2057,6 +2057,9 @@ p { color: var(--ink-soft); }
 .team-card img, .team-card .media-ph {
   border-radius: var(--radius-lg); width: 100%; aspect-ratio: 3/4;
   object-fit: cover; object-position: top; margin-bottom: 14px;
+  /* `.media-ph` defaults to height:100%. In a stretched grid cell that fills the
+     whole card and overlaps the naam/bio — en daarna het formulier eronder. */
+  height: auto;
 }
 .team-card h3 { font-size: 1.05rem; margin: 0 0 2px; }
 .team-card p { font-family: var(--sans); font-size: .84rem; color: var(--muted); margin: 0; }
@@ -2166,9 +2169,9 @@ p { color: var(--ink-soft); }
 .training-date-card span { display: block; font-family: var(--sans); font-size: .86rem; color: var(--muted); }
 .training-date-meta { margin-top: 4px; }
 .training-date-full { font-family: var(--sans); font-size: .86rem; color: var(--muted); }
-.trainer-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.trainer-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); align-items: start; }
 .trainer-bio { margin-top: 10px !important; color: var(--ink) !important; font-size: .9rem !important; line-height: 1.45; }
-.training-form { padding-top: 8px; }
+.training-form { padding-top: 8px; position: relative; z-index: 1; }
 @media (max-width: 640px) {
   .training-date-card { align-items: flex-start; }
 }
