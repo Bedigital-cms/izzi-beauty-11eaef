@@ -732,6 +732,91 @@ else {
   } else pass('Ombré NL formPrefill zet categorie + opleiding');
 }
 
+// ---------- Training Detail v2 rollout (alle opleidingen, Ombré blijft de referentie) ----------
+const trnNl = rd('content/nl/trainings-detail.json');
+const trnEn = rd('content/en/trainings-detail.json');
+const trnKeys = Object.keys(trnNl);
+const CONTACT_ONLY = new Set(['prive-opleiding-permanente-make-up']);
+const formCatValues = new Set(
+  ((rd('content/forms.json').forms?.['opleiding-interesse']?.fields || []).find((f) => f.name === 'opleiding')?.options || [])
+    .map((o) => o.value),
+);
+if (trnKeys.length < 18) fail(`trainings-detail heeft ${trnKeys.length} keys, verwacht minstens 18`);
+else pass(`trainings-detail bevat ${trnKeys.length} opleidingen`);
+
+const handles = [];
+const stalePriceRe = /€\s*1[.\u00a0,]?500|€\s*2[.\u00a0,]?500|€\s*3[.\u00a0,]?000|€\s*3[.\u00a0,]?400|€\s*599\b|€\s*1[.\u00a0,]?000|€\s*1[.\u00a0,]?250|€\s*1[.\u00a0,]?400|t\.w\.v\.|worth €|valued at|Temporarily from €|Nu 40%|Now with 40%/i;
+const amsterdamOnlyRe = /IZZI Beauty in Amsterdam|wordt gegeven op onze locatie in Amsterdam|offered almost every month in Amsterdam|taught at our location in Amsterdam/i;
+const emptyFacts = [];
+const missingV2 = [];
+const deadCtas = [];
+const mediaIssues = [];
+const prefillIssues = [];
+for (const k of trnKeys) {
+  const a = trnNl[k]; const b = trnEn[k];
+  const blob = `${JSON.stringify(a)}\n${JSON.stringify(b)}`;
+  if (/Den Bosch/i.test(blob)) fail(`${k} bevat nog Den Bosch`);
+  if (stalePriceRe.test(blob)) fail(`${k} bevat nog een stale cursusprijsclaim`);
+  if (k !== 'prive-opleiding-permanente-make-up' && amsterdamOnlyRe.test(blob)) fail(`${k} heeft nog Amsterdam-only locatiecopy`);
+  if (/aanbetaling binnen 3 dagen|deposit within 3 days/i.test(blob)) fail(`${k} hardcodet nog een aanbetalingstermijn`);
+  for (const f of a.aside?.facts || []) if (!String(f.v || '').trim()) emptyFacts.push(`${k}:${f.k}`);
+  for (const f of b.aside?.facts || []) if (!String(f.v || '').trim()) emptyFacts.push(`${k}:en:${f.k}`);
+  const walk = (obj, acc = []) => {
+    if (typeof obj === 'string') {
+      if (/^https?:\/\/.*(wordpress|wp-content)/i.test(obj)) acc.push(obj);
+      else if (obj.startsWith('/media/') && !/^\/media\/[A-Za-z0-9._-]+$/.test(obj)) acc.push(obj);
+    } else if (Array.isArray(obj)) obj.forEach((x) => walk(x, acc));
+    else if (obj && typeof obj === 'object') Object.values(obj).forEach((x) => walk(x, acc));
+    return acc;
+  };
+  mediaIssues.push(...walk(a).map((m) => `${k}:${m}`));
+  if (a.formSlug !== 'opleiding-interesse' || b.formSlug !== 'opleiding-interesse') missingV2.push(`${k}:formSlug`);
+  if (!a.formPrefill?.opleiding_specifiek || !b.formPrefill?.opleiding_specifiek) prefillIssues.push(`${k}:opleiding_specifiek`);
+  if (a.formPrefill?.opleiding && !formCatValues.has(a.formPrefill.opleiding)) prefillIssues.push(`${k}:cat:${a.formPrefill.opleiding}`);
+  if ((a.formSlug && JSON.stringify(Object.keys(a.formPrefill || {}))) !== (b.formSlug && JSON.stringify(Object.keys(b.formPrefill || {})))) {
+    prefillIssues.push(`${k}:prefillKeys`);
+  }
+  if (!!a.availability !== !!b.availability) missingV2.push(`${k}:availabilityParity`);
+  if (JSON.stringify(a.gallery || []) !== JSON.stringify(b.gallery || [])) missingV2.push(`${k}:galleryParity`);
+  if ((a.trainers || []).length !== (b.trainers || []).length) missingV2.push(`${k}:trainersParity`);
+  if (CONTACT_ONLY.has(k)) {
+    if (a.productHandle || b.productHandle || a.availability || b.availability) missingV2.push(`${k}:contact-only-lekte-commerce`);
+    if (a.formPrefill?.prive_opleiding !== 'ja') prefillIssues.push(`${k}:prive_opleiding`);
+    if (a.cta?.primaryUrl !== '#opleiding-interesse') deadCtas.push(`${k}:prive-primary`);
+  } else {
+    if (!a.productHandle || a.productHandle !== b.productHandle) missingV2.push(`${k}:productHandle`);
+    else handles.push(a.productHandle);
+    if (!a.availability || !b.availability) missingV2.push(`${k}:availability`);
+    if (a.cta?.primaryUrl !== '#beschikbare-data' || a.cta?.secondaryUrl !== '#opleiding-interesse') deadCtas.push(`${k}:cta`);
+    if (b.cta?.primaryUrl !== '#beschikbare-data' || b.cta?.secondaryUrl !== '#opleiding-interesse') deadCtas.push(`${k}:cta-en`);
+  }
+}
+const dupHandles = handles.filter((h, i) => handles.indexOf(h) !== i);
+if (dupHandles.length) fail(`dubbele productHandle: ${[...new Set(dupHandles)].join(', ')}`);
+else pass(`${handles.length} unieke productHandles`);
+const danglingFacts = [];
+for (const k of trnKeys) {
+  for (const loc of [trnNl[k], trnEn[k]]) {
+    for (const f of loc.aside?.facts || []) {
+      if (/\s[·—-]\s*$/.test(String(f.v || ''))) danglingFacts.push(`${k}:${f.k}=${f.v}`);
+    }
+  }
+}
+if (emptyFacts.length) fail(`lege aside-facts: ${emptyFacts.join(', ')}`);
+else pass('geen lege aside-facts na prijsnormalisatie');
+if (danglingFacts.length) fail(`afgekapte aside-facts: ${danglingFacts.join(', ')}`);
+else pass('geen afgekapte euro-restanten in aside-facts');
+if (missingV2.length) fail(`v2-pariteit/velden ontbreken: ${missingV2.slice(0, 12).join(', ')}`);
+else pass('alle boekbare opleidingen hebben availability + productHandle; NL/EN gallery/trainers/availability-pariteit');
+if (prefillIssues.length) fail(`form prefill: ${prefillIssues.join(', ')}`);
+else pass('elke opleiding prefillt categorie + opleiding_specifiek (privé ook prive_opleiding=ja)');
+if (deadCtas.length) fail(`dode/verkeerde CTA: ${deadCtas.join(', ')}`);
+else pass('boekbare opleidingen: primary #beschikbare-data, secondary #opleiding-interesse');
+if (mediaIssues.length) fail(`verdachte media-refs: ${mediaIssues.slice(0, 8).join(', ')}`);
+else pass('geen WordPress-hotlinks of ongeldige /media/-paden in trainings-detail');
+if (!CONTACT_ONLY.has('prive-opleiding-permanente-make-up') || handles.includes(undefined)) fail('contact-only set klopt niet');
+else pass('privé-opleiding blijft contact-only');
+
 const formDef = rd('content/forms.json').forms?.['opleiding-interesse'];
 const formNames = (formDef?.fields || []).map((f) => f.name);
 for (const name of ['opleiding', 'opleiding_specifiek', 'gewenste_locatie', 'gewenste_periode', 'prive_opleiding']) {

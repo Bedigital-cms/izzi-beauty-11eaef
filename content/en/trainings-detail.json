@@ -17,6 +17,10 @@
       {
         "label": "Pay in instalments",
         "text": "Pay in instalments or with iDEAL in3"
+      },
+      {
+        "label": "CRKBO-recognised",
+        "text": "VAT-exempt and officially recognised"
       }
     ],
     "body": [
@@ -53,7 +57,7 @@
         ],
         "checklist": [
           "Theory book: your comprehensive guide to lip pigmentation, techniques and marketing tips",
-          "Access to the Online Academy (worth €1,250) with more than 50 modules and videos",
+          "Access to the Online Academy with more than 50 modules and videos",
           "3 high-quality Lip Blush pigments for different skin types",
           "25 ink rings to use pigment easily and efficiently",
           "20 Laliqa needles",
@@ -66,7 +70,7 @@
         ]
       },
       {
-        "heading": "Includes the IZZI PMU Machine",
+        "heading": "The IZZI PMU Machine",
         "paragraphs": [
           "IZZI Beauty has translated its expertise and years of experience in permanent makeup into the ultimate PMU machine. Since 2021 we have offered a wireless machine that combines precision, ease of use and versatility. Because you can easily change stroke lengths, this machine lets you perform all types of treatments for PMU Powder Brows and Lip Blush, including Freckles, Stretch marks and even Fineline tattoos."
         ],
@@ -75,30 +79,33 @@
           "Comfortable treatment: gentle vibrations and quiet operation",
           "Multifunctional: from Faux Freckles and freckles to lip pigmentation and ombré brows",
           "Ergonomic wireless design prevents fatigue"
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prices & payment terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "Payment in instalments: the full amount is €3,400 (VAT-exempt), including the IZZI PMU Machine. The deposit on enrolment is €1,000, followed by 2 instalments of €1,200, 4 instalments of €600 or 6 instalments of €400.",
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy.",
           "Do you receive a WW, WIA or Wajong benefit? Contact us to apply for UWV funding for this course."
         ],
         "checklist": [
           "No interest: pay in instalments without extra costs or BKR registration",
           "VAT-exempt thanks to our CRKBO recognition",
-          "UWV funding potentially available"
+          "UWV funding potentially available",
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration"
         ]
       },
       {
         "heading": "The Lip Blush Beginner Course includes",
         "paragraphs": [
-          "Everything you need to get to work professionally straight away."
+          "This course includes, among other things, the following. The current price is shown with the available dates."
         ],
         "checklist": [
           "Max. 3 students per course",
           "CRKBO-recognised course",
-          "Includes PMU machine worth €550",
-          "Includes starter kit worth €1,250",
+          "Includes PMU machine",
+          "Includes starter kit",
           "Complete colour theory and pigment theory",
           "Extra return day after 6 months at our location",
           "Lip mapping & lip shaping",
@@ -114,14 +121,7 @@
           "Course duration: 10 hours of online lessons via the IZZI Online Academy, 3 consecutive days of practical training on location amounting to 12 hours of intensive guidance, and a homework assignment in which you treat 5 models in your own salon (20 hours). The total study time comes to 46 hours.",
           "Prior experience: no prior training or diploma is needed to start. The Lip Blush Beginner Course is accessible to anyone who wants to become a PMU specialist.",
           "Conditions: PMU stylist is a self-employed profession, and there are no special government requirements to take part. All our courses are subject to the General Terms and Conditions of Opleiding IZZI Beauty BV, including our Privacy Statement and Complaints Procedure.",
-          "Availability: the Lip Blush Beginner Course is offered almost every month."
-        ]
-      },
-      {
-        "heading": "Your trainers",
-        "paragraphs": [
-          "Isabella — owner and expert in PMU: \"Besides still enjoying carrying out treatments in the salon, I mainly teach courses to beginner and experienced PMU stylists.\"",
-          "Carla — expert in PMU and laser treatments: \"I have now worked full time at IZZI for two years, where, alongside the treatments, I also teach courses and support Isabella during the exams.\""
+          "Available locations differ per course date. See the current dates and locations below."
         ]
       }
     ],
@@ -196,35 +196,66 @@
         },
         {
           "k": "Price",
-          "v": "€3,000 in one payment or €3,400 in instalments"
+          "v": "See available dates"
         },
         {
           "k": "Starter kit",
-          "v": "Worth €1,250"
+          "v": "Included"
         },
         {
           "k": "PMU machine",
-          "v": "Gift worth €550"
+          "v": "Gift"
         },
         {
           "k": "UWV funding",
           "v": "Potentially available"
         }
       ],
-      "ctaTitle": "Interested in this course?",
-      "ctaText": "Wondering whether a PMU course is right for you or do you have questions? Contact us for the current dates.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Start your career in PMU",
       "title": "Enrol in the Lip Blush Beginner Course",
-      "text": "Start today and take the first step towards a successful career in permanent makeup.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "lippen",
+      "opleiding_specifiek": "Lip Blush Course"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
+    "trainers": [
+      {
+        "name": "Isabella",
+        "role": "Owner and PMU expert",
+        "text": "With a passion for permanent makeup I focus not only on treatments in our salon, but also on training both beginner and experienced PMU stylists. My goal is to send our students into the PMU world with confidence and expertise!",
+        "image": "/media/izzi-beauty-20250729-9b97be-izzi-beauty-isabella-levels-pmu-expert.webp"
+      },
+      {
+        "name": "Carla",
+        "role": "PMU and laser treatment expert",
+        "text": "As a full-time PMU specialist at IZZI I guide students during courses and support Isabella at exams. With two years of experience in treatments and training, I make sure our students always get the guidance they need.",
+        "image": ""
+      }
+    ],
+    "gallery": [
+      "/media/izzi-beauty-20250729-b60f2a-lip-pigmentatie.webp",
+      "/media/izzi-beauty-20250729-abf9e8-lip-blush-pigmentatie.webp"
+    ]
   },
   "lip-blush-masterclass": {
     "hero": {
@@ -234,12 +265,16 @@
       "breadcrumb": "Lip Blush Masterclass"
     },
     "image": "/media/izzi-beauty-20250729-b60f2a-lip-pigmentatie.webp",
-    "intro": "Lip pigmentation is currently one of the fastest-growing and most in-demand treatments in the world of permanent makeup. Temporarily from €3,000 for only €1,500. Our Lip Blush Masterclass is specially designed to help experienced PMU professionals refine their skills further.",
+    "intro": "Lip pigmentation is currently one of the fastest-growing and most in-demand treatments in the world of permanent makeup. Our Lip Blush Masterclass is specially designed to help experienced PMU professionals refine their skills further.",
     "productHandle": "opleiding-lip-blush-masterclass",
     "highlights": [
       {
         "label": "CRKBO-recognised",
         "text": "VAT-exempt and officially recognised"
+      },
+      {
+        "label": "Pay in instalments",
+        "text": "Pay in instalments or with iDEAL in3"
       }
     ],
     "body": [
@@ -254,7 +289,7 @@
         "heading": "Lip Blush Masterclass programme",
         "paragraphs": [
           "Day 1 — Online preparation (8 hours): our masterclass begins with an intensive online learning session in the IZZI Online Academy. You cover the theoretical foundation of Lip Blush with in-depth knowledge of lip pigmentation and techniques; everything about needles — types, use and optimal results; colour theory and how to choose the perfect pigments for different skin types; innovative Lip Blush techniques that take your work to a higher level; identifying personal areas for improvement in your current work; an introduction to advanced PMU machines; and social media tips and marketing strategies to grow your PMU business.",
-          "Day 2 — Practical day on location (6 hours, 10:00 – 16:00): the practical day takes place on location at IZZI Beauty in Amsterdam and is entirely dedicated to hands-on training and personal guidance. You review the online material and delve into blushing techniques, analyse pitfalls and challenges when working with lips, work on lip mapping with detailed design of lip contours, apply new Lip Blush techniques on latex, carry out a lip pigmentation treatment on a model, and have time for all your questions and personal feedback on your work. The day ends with the certificate presentation."
+          "Day 2 — Practical day on location (6 hours, 10:00 – 16:00): the practical day takes place on location at IZZI Beauty and is entirely dedicated to hands-on training and personal guidance. You review the online material and delve into blushing techniques, analyse pitfalls and challenges when working with lips, work on lip mapping with detailed design of lip contours, apply new Lip Blush techniques on latex, carry out a lip pigmentation treatment on a model, and have time for all your questions and personal feedback on your work. The day ends with the certificate presentation."
         ]
       },
       {
@@ -276,7 +311,7 @@
       {
         "heading": "The course includes",
         "paragraphs": [
-          "A complete package with a maximum of 2 students per course for optimal personal attention."
+          "This course includes, among other things, the following. The current price is shown with the available dates."
         ],
         "checklist": [
           "Max. 2 students per course",
@@ -293,24 +328,28 @@
         ]
       },
       {
-        "heading": "Prices and payment terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "The masterclass temporarily costs €1,500 instead of €3,000. For this you get two days of intensive training (1 online, 1 on location), two premium pigments, personal guidance in a small group of a maximum of 2 students, and a CRKBO-recognised certificate with access to aftercare and support.",
-          "You can pay in one go (€1,500 in advance) or in two instalments: a deposit of €1,000 on enrolment and the remaining amount of €500 on location on the practical day. Our courses are CRKBO-recognised, which means they are fully VAT-exempt."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy."
+        ],
+        "checklist": [
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
+          "VAT-exempt thanks to our CRKBO recognition"
         ]
       },
       {
         "heading": "PMU Machine",
         "paragraphs": [
-          "Our wireless machine is designed with the highest precision and ease of use in mind. The technology delivers consistent pigmentation with minimal skin irritation, is suitable for various PMU treatments including all types of lip pigmentation, and the wireless design offers ultimate freedom of movement.",
-          "During the course you can try out all the devices on latex. Available machines: the IZZI Beauty Wireless machine for €826 excl. VAT, the Kwadron machine for €950 excl. VAT and the Labina machine for €2,195 excl. VAT."
-        ]
+          "Our wireless machine is designed with the highest precision and ease of use in mind. The technology delivers consistent pigmentation with minimal skin irritation, is suitable for various PMU treatments including all types of lip pigmentation, and the wireless design offers ultimate freedom of movement."
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
         "heading": "General information",
         "paragraphs": [
           "Course duration: 8 hours of online preparation with detailed material, a practical day on location of 6 hours of intensive training from 10:00 to 16:00, and additional homework in which you treat 5 models in your own salon (20 hours extra practical experience). The total study time comes to 34 hours.",
-          "Availability: the Lip Blush Masterclass is organised almost every month at our locations in Amsterdam and Rotterdam. Optionally, you can also book a private course at a location of your choice.",
+          "Available locations differ per course date. See the current dates and locations below.",
           "Conditions: our courses fall under the General Terms and Conditions of IZZI Beauty BV. CRKBO-recognised means that our course meets the highest quality standards and is exempt from VAT."
         ]
       }
@@ -356,8 +395,8 @@
           "a": "Yes, you can test our wireless PMU machines during the course and, if you wish, purchase one directly."
         },
         {
-          "q": "How long is the discount valid?",
-          "a": "The discount is a limited-time offer and applies as long as there are places available in the course."
+          "q": "Where can I see the current price?",
+          "a": "The current course price, date, location and available seats are shown with the available dates on this page. They come from the shop, not from this copy."
         },
         {
           "q": "What if I have questions after the training?",
@@ -369,7 +408,7 @@
         },
         {
           "q": "Where are the trainings held?",
-          "a": "The practical days are organised at our locations in Amsterdam and Rotterdam. Optionally, you can also book a private course at a location of your choice."
+          "a": "Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         }
       ]
     },
@@ -394,7 +433,7 @@
         },
         {
           "k": "Price",
-          "v": "€1,500 VAT-exempt (from €3,000)"
+          "v": "See available dates"
         },
         {
           "k": "Certificate",
@@ -405,26 +444,42 @@
           "v": "Registered training provider — VAT-exempt"
         }
       ],
-      "ctaTitle": "Ready for the next step?",
-      "ctaText": "The discount applies as long as there are places available. Contact us for the current dates.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Become an expert in lip pigmentation",
       "title": "Sign up for the Lip Blush Masterclass",
-      "text": "Take your existing expertise to a higher level and set yourself apart in the fastest-growing PMU treatment.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "lippen",
+      "opleiding_specifiek": "Lip Blush Masterclass"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20250729-4e6b92-online-lip-blush-opleiding.webp"
+    ]
   },
   "combi-brows-beginnersopleiding": {
     "hero": {
       "eyebrow": "Beginner course",
       "title": "Combi Brows Beginner Course",
-      "text": "A 6-day Combi Brows course in which theory, practice and personal guidance come together. No prior training or diploma required — including a starter kit worth €1,500 and the wireless IZZI PMU machine.",
+      "text": "A 6-day Combi Brows course in which theory, practice and personal guidance come together. No prior training or diploma required — including a starter kit and the wireless IZZI PMU machine.",
       "breadcrumb": "Combi Brows Beginner Course"
     },
     "image": "/media/izzi-beauty-20250729-1dea00-combi-brows-behandeling.jpg",
@@ -434,6 +489,14 @@
       {
         "label": "UWV funding",
         "text": "Potentially available for this course"
+      },
+      {
+        "label": "CRKBO-recognised",
+        "text": "VAT-exempt and officially recognised"
+      },
+      {
+        "label": "Pay in instalments",
+        "text": "Pay in instalments or with iDEAL in3"
       }
     ],
     "body": [
@@ -462,13 +525,13 @@
         ]
       },
       {
-        "heading": "Starter kit worth €1,500",
+        "heading": "Starter kit",
         "paragraphs": [
           "With the course you receive a complete starter kit that lets you get to work professionally straight away."
         ],
         "checklist": [
           "Workbook: your complete guide to a successful start",
-          "Access to the Online Academy (worth €1,250)",
+          "Access to the Online Academy",
           "25 ink rings",
           "3 Laliqa pigments (for all skin types)",
           "40 Kwadron needles (with the purchase of the IZZI machine)",
@@ -479,7 +542,7 @@
         ]
       },
       {
-        "heading": "Includes the wireless IZZI PMU machine",
+        "heading": "The IZZI PMU Machine",
         "paragraphs": [
           "IZZI Beauty has translated its expertise and years of experience in permanent makeup into the ultimate PMU machine. Because you can easily change stroke lengths, this machine lets you perform all types of treatments.",
           "During the course you test the machine during your practice sessions and the exam on a live model. You receive advice from the trainers on optimal use for combi brows, and if you decide to purchase the machine, we help you with a seamless transition to professional use."
@@ -490,35 +553,37 @@
           "Versatile: powder brows, lip blush, freckles and fineline",
           "Ergonomic wireless design prevents fatigue",
           "Adjustable stroke lengths for all treatment types"
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prices & payment terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "The full amount is €4,000 (VAT-exempt), including the starter kit worth €1,500. A discount of €1,000 currently applies to this course.",
-          "Would you rather pay in instalments? With a deposit of €1,250 to confirm your place, you then choose from 2 instalments of €1,375, 4 instalments of €687.50 or 6 instalments of €458.35.",
-          "Are you entitled to a WW, WIA or Wajong benefit? Contact us about the options for UWV funding."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy.",
+          "Do you receive a WW, WIA or Wajong benefit? Contact us to apply for UWV funding for this course."
         ],
         "checklist": [
           "No interest: payment in instalments without extra costs",
           "VAT-exempt thanks to our CRKBO recognition",
-          "UWV funding potentially available"
+          "UWV funding potentially available",
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration"
         ]
       },
       {
         "heading": "This course includes",
         "paragraphs": [
-          "Learn hairstrokes and powder brows in one technique, with everything you need to start right away."
+          "This course includes, among other things, the following. The current price is shown with the available dates."
         ],
         "checklist": [
           "CRKBO-recognised and VAT-exempt",
           "A maximum of 3 students per group",
-          "Starter kit worth €1,500",
+          "Starter kit",
           "Theory and practice: colour theory, needle theory, brow mapping",
           "Access to the Online Academy by email after enrolment and payment",
           "Online support and community",
           "Hygiene guidelines and GGD inspection requirements",
-          "Includes the wireless IZZI PMU machine worth €550",
+          "Includes the wireless IZZI PMU machine",
           "Guidance in starting up your salon and marketing",
           "Flexible payment terms available",
           "UWV funding potentially available"
@@ -531,13 +596,6 @@
           "Prior experience: no prior training or diploma is required for this course. PMU specialist is a self-employed profession in the Netherlands.",
           "Conditions: all courses and trainings are subject to the General Terms and Conditions of Opleiding IZZI Beauty BV, including our Privacy Statement and Complaints Procedure.",
           "Availability: the Combi Brows Beginner Course is offered several times a year. Is the date you want no longer available? Then get in touch to see which options remain. A private course is also possible."
-        ]
-      },
-      {
-        "heading": "Your trainers",
-        "paragraphs": [
-          "Isabella — owner and expert in PMU: \"With a passion for permanent makeup, I focus not only on treatments in our salon, but also on training both beginner and experienced PMU stylists. My goal is to let our students step into the PMU world with confidence and expertise!\"",
-          "Carla — expert in PMU and laser treatments: \"As a full-time PMU specialist at IZZI, I guide students during courses and support Isabella at exams. With two years of experience in both treatments and training, I make sure our students always get the guidance they need.\""
         ]
       }
     ],
@@ -583,11 +641,11 @@
         },
         {
           "q": "Is the IZZI PMU machine included?",
-          "a": "Yes, the wireless IZZI PMU machine worth €550 is included with this course. You test it during your practice sessions and the exam on a model."
+          "a": "Yes, the wireless IZZI PMU machine is included with this course. You test it during your practice sessions and the exam on a model."
         },
         {
           "q": "Can I pay in instalments?",
-          "a": "Yes. With a deposit of €1,250 you then choose from 2 instalments of €1,375, 4 instalments of €687.50 or 6 instalments of €458.35. No interest is charged and there is no BKR registration."
+          "a": "The current price, date, location and available seats are shown with the available dates on this page. They come from the shop, not from this copy."
         },
         {
           "q": "Am I eligible for UWV funding?",
@@ -616,11 +674,11 @@
         },
         {
           "k": "Price",
-          "v": "€4,000 VAT-exempt"
+          "v": "See available dates"
         },
         {
           "k": "Starter kit",
-          "v": "Worth €1,500"
+          "v": "Included"
         },
         {
           "k": "PMU machine",
@@ -631,20 +689,47 @@
           "v": "Potentially available"
         }
       ],
-      "ctaTitle": "Interested in this course?",
-      "ctaText": "Curious about the current dates and available places? Get in touch with us by email or WhatsApp.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Start your career in PMU",
       "title": "Enrol in the Combi Brows Beginner Course",
-      "text": "After enrolment and payment you receive access to the IZZI Online Academy by email, so you can start learning.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "wenkbrauwen",
+      "opleiding_specifiek": "Combi Brows Beginner Course"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
+    "trainers": [
+      {
+        "name": "Isabella",
+        "role": "Owner and PMU expert",
+        "text": "With a passion for permanent makeup I focus not only on treatments in our salon, but also on training both beginner and experienced PMU stylists. My goal is to send our students into the PMU world with confidence and expertise!",
+        "image": "/media/izzi-beauty-20250729-9b97be-izzi-beauty-isabella-levels-pmu-expert.webp"
+      },
+      {
+        "name": "Carla",
+        "role": "PMU and laser treatment expert",
+        "text": "As a full-time PMU specialist at IZZI I guide students during courses and support Isabella at exams. With two years of experience in treatments and training, I make sure our students always get the guidance they need.",
+        "image": ""
+      }
+    ]
   },
   "masterclass-ombre-powder-brows": {
     "hero": {
@@ -654,7 +739,7 @@
       "breadcrumb": "Ombré Powder Brows Masterclass"
     },
     "image": "/media/izzi-beauty-20250729-af300e-ombre-powder-brows-masterclass.webp",
-    "intro": "Do you want to give your career as a PMU artist a boost and excel in the latest techniques? With the exclusive Ombré Powder Brows Masterclass from IZZI Beauty, you learn everything you need to create the perfect soft ombré brows. Temporarily for only €1,500 (VAT-exempt) — you save €1,000 on the original price of €2,500.",
+    "intro": "Do you want to give your career as a PMU artist a boost and excel in the latest techniques? With the exclusive Ombré Powder Brows Masterclass from IZZI Beauty, you learn everything you need to create the perfect soft ombré brows.",
     "productHandle": "opleiding-masterclass-ombre-powder-brows",
     "body": [
       {
@@ -706,7 +791,7 @@
       {
         "heading": "The course includes",
         "paragraphs": [
-          "Including 2 pigments, online preparation, a practical day on location, lunch and a certificate."
+          "This course includes, among other things, the following. The current price is shown with the available dates."
         ],
         "checklist": [
           "Small group training: max. 4 students",
@@ -726,13 +811,20 @@
         "paragraphs": [
           "The IZZI Beauty Wireless PMU machine ensures perfect pixels — accurate, even results, essential for natural ombré brows. Gentle vibrations and minimal noise make the experience comfortable for both the artist and the client. The machine is versatile for ombré brows, eyeliner and lip pigmentation, and is built with high-quality materials for consistent use.",
           "Why this machine improves your work: maximum control thanks to the wireless functionality, efficiency and speed with consistent performance, and a professional appearance that gives clients confidence in your expertise."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prices and payment terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "The masterclass temporarily costs €1,500 (VAT-exempt) instead of €2,500. Payment in instalments is possible with 2 instalments: €1,000 deposit and €500 remaining payment on location.",
-          "No interest: pay in instalments without extra costs or BKR registration. VAT-exempt: our courses are CRKBO-recognised, so you benefit from VAT exemption. Would you like to pay in instalments? Let us know your preference by email or WhatsApp after registering, and we will arrange it for you."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy.",
+          "Do you receive a WW, WIA or Wajong benefit? Contact us to apply for UWV funding for this course."
+        ],
+        "checklist": [
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
+          "VAT-exempt thanks to our CRKBO recognition",
+          "UWV funding potentially available"
         ]
       },
       {
@@ -741,7 +833,7 @@
           "Course duration: 8 hours of online preparation via the IZZI Online Academy, 1 intensive practical day on location from 10:00 to 16:00 with personal guidance, and a homework assignment in which you treat 5 models in your own salon (20 hours). The total study time comes to 34 hours.",
           "Prior experience: to take part in this training, a beginner course in PMU is required. You must present a valid certificate from a recognised course. Don't have one? Then first consider our beginner course to strengthen your foundation.",
           "Conditions: PMU stylist is a self-employed profession; there are no legal requirements. All our courses fall under the General Terms and Conditions of IZZI Beauty BV.",
-          "Availability: the Ombré Powder Brows Masterclass is offered almost every month at one of our locations. Be quick, as places are limited."
+          "Available locations differ per course date. See the current dates and locations below."
         ]
       },
       {
@@ -779,7 +871,7 @@
       "items": [
         {
           "q": "Where and when are the practical days?",
-          "a": "We offer a practical day for this masterclass in our salon in Amsterdam almost every month. Enrol in good time, as places are limited. In addition, IZZI Beauty also offers the option to book a private course."
+          "a": "Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         },
         {
           "q": "How can I prepare for the practical day?",
@@ -791,7 +883,7 @@
         },
         {
           "q": "How often is the powder brows masterclass offered?",
-          "a": "Almost every month. Because of the limited number of places per training, we recommend reserving your place early. You can also always send us a WhatsApp on +31 6 11 76 88 81 or email us at info@izzi-beauty.com."
+          "a": "Available locations differ per course date. See the current dates and locations below. Because of the limited number of places per training, we recommend reserving your place early. You can also always send us a WhatsApp on +31 6 11 76 88 81 or email us at info@izzi-beauty.com."
         },
         {
           "q": "Can I use my own PMU Machine?",
@@ -832,27 +924,58 @@
         },
         {
           "k": "Price",
-          "v": "€1,500 VAT-exempt (from €2,500)"
+          "v": "See available dates"
         },
         {
           "k": "Certificate",
           "v": "Yes"
         }
       ],
-      "ctaTitle": "Ready for the next step?",
-      "ctaText": "Places are limited. Contact us for the current dates and reserve your place in good time.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Perfect your technique",
       "title": "Sign up for the Ombré Powder Brows Masterclass",
-      "text": "Start your specialisation today and set yourself apart as a PMU specialist in the world of permanent makeup.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "wenkbrauwen",
+      "opleiding_specifiek": "Ombré Powder Brows Masterclass"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
+    "highlights": [
+      {
+        "label": "UWV funding",
+        "text": "Potentially available for this course"
+      },
+      {
+        "label": "CRKBO-recognised",
+        "text": "VAT-exempt and officially recognised"
+      },
+      {
+        "label": "Pay in instalments",
+        "text": "Pay in instalments or with iDEAL in3"
+      }
+    ],
+    "gallery": [
+      "/media/izzi-beauty-20251110-225de0-ombre-powder-brows-masterclass.webp",
+      "/media/izzi-beauty-20251110-f2652d-ombre-powder-brows-cursus.webp"
+    ]
   },
   "ombre-powder-brows-lip-blush-opleiding": {
     "hero": {
@@ -868,6 +991,10 @@
       {
         "label": "Pay in instalments",
         "text": "Pay in instalments or with iDEAL in3"
+      },
+      {
+        "label": "CRKBO-recognised",
+        "text": "VAT-exempt and officially recognised"
       }
     ],
     "body": [
@@ -897,14 +1024,14 @@
         ]
       },
       {
-        "heading": "Starter kit worth €2,000",
+        "heading": "Starter kit",
         "paragraphs": [
           "On enrolment you receive an extensive starter kit. With it you can treat around 100 clients, needles aside."
         ],
         "checklist": [
           "Extensive workbook with techniques and tips",
           "Lifetime access to the Online Academy with all videos and modules",
-          "Wireless PMU machine (worth €550)",
+          "Wireless PMU machine",
           "6 premium Laliqa pigments for different skin types",
           "40 Laliqa needles for precision work",
           "2 double-sided latex practice sheets",
@@ -918,23 +1045,26 @@
         ]
       },
       {
-        "heading": "Prices & payment terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "The standard price is €7,000, including the wireless IZZI PMU machine worth €550. Limited-time offer: if you pay in one go, the course costs €6,000 — you save €1,000 compared to payment in instalments.",
-          "Payment in instalments is possible with a deposit of €2,500 to reserve your place. You then choose from 2 instalments of €2,250, 4 instalments of €1,125, 6 instalments of €750 or 8 instalments of €562.50. No BKR registration is needed.",
-          "Thanks to our CRKBO recognition, all courses are exempt from VAT."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy."
+        ],
+        "checklist": [
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
+          "VAT-exempt thanks to our CRKBO recognition"
         ]
       },
       {
         "heading": "This course includes",
         "paragraphs": [
-          "Everything you need to get to work professionally with both techniques straight after completion."
+          "This course includes, among other things, the following. The current price is shown with the available dates."
         ],
         "checklist": [
           "CRKBO-certified and VAT-exempt",
           "A maximum of 2 students per session with a private exam",
-          "Free IZZI PMU machine (worth €550)",
-          "Complete starter kit (worth €2,000)",
+          "Free IZZI PMU machine",
+          "Complete starter kit",
           "Colour theory, mapping, needle theory and latex",
           "Lifetime access to the private Online PMU Community",
           "Includes touch-up training for brows",
@@ -951,7 +1081,7 @@
           "Duration: 20 hours of online preparation and 24 hours on location (4 days, 09:30 – 15:30), plus 20 hours of homework with remote guidance. The total study time comes to 64 hours.",
           "Prior experience: no prior training is needed for this course and no diplomas are required to take part. The course is designed for complete beginners.",
           "Certification: upon successful completion and passing the exam you receive an official certificate.",
-          "Locations: the course is taught in Amsterdam and Rotterdam."
+          "Locations: Available locations differ per course date. See the current dates and locations below."
         ]
       }
     ],
@@ -1001,7 +1131,7 @@
         },
         {
           "q": "Where does the course take place?",
-          "a": "The course is taught at our locations in Amsterdam and Rotterdam. Contact us for the available dates."
+          "a": "Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         },
         {
           "q": "How does this course help me start up a salon?",
@@ -1034,11 +1164,11 @@
         },
         {
           "k": "Price",
-          "v": "€6,000 in one payment or €7,000 in instalments"
+          "v": "See available dates"
         },
         {
           "k": "Starter kit",
-          "v": "Worth €2,000"
+          "v": "Included"
         },
         {
           "k": "PMU machine",
@@ -1049,20 +1179,37 @@
           "v": "Yes"
         }
       ],
-      "ctaTitle": "Interested in this combi course?",
-      "ctaText": "Contact us for the available dates and the options.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Two techniques, one course",
       "title": "Enrol in the Powder Brows & Lip Blush Course",
-      "text": "Start your career in permanent makeup and master two of the most in-demand techniques.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "all-round",
+      "opleiding_specifiek": "Combi Powder Brows and Lip Blush Course"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20250729-53836b-powder-brows.jpg",
+      "/media/izzi-beauty-20250729-4e6b92-online-lip-blush-opleiding.webp"
+    ]
   },
   "prive-opleiding-permanente-make-up": {
     "hero": {
@@ -1139,18 +1286,14 @@
         ]
       },
       {
-        "heading": "Prices for a personal permanent makeup course",
+        "heading": "Payment options",
         "paragraphs": [
-          "Prices are drawn up personally for individual PMU trainings. The basic rate for a 1-on-1 PMU course is €895. All prices are VAT-exempt because of our CRKBO registration as a registered training provider. In addition, we offer flexible payment options to pay in instalments.",
-          "We also offer the option to come and give a tailor-made PMU training at your salon, both for yourself and for your staff if desired. This option is available worldwide."
+          "Prices for a private course are drawn up personally. We confirm the current price via the form — not from outdated page copy."
         ],
         "checklist": [
-          "For starters and advanced PMU specialists",
-          "Private lessons from trainer Isabella with 1-on-1 attention",
-          "Personal guidance and learning at your own pace",
-          "Flexible scheduling",
           "VAT-exempt — CRKBO-registered training provider",
-          "Lessons at the academy in Amsterdam or in your own salon"
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration"
         ]
       }
     ],
@@ -1180,7 +1323,7 @@
         },
         {
           "q": "What does a private course cost?",
-          "a": "The cost for a 1-on-1 course starts at €895. All courses are VAT-exempt thanks to our CRKBO registration. For trainings in your salon or on location, an adjusted price is drawn up."
+          "a": "Prices are set individually. Request the current price via the form on this page."
         },
         {
           "q": "Where does the course take place?",
@@ -1217,7 +1360,7 @@
         },
         {
           "k": "From",
-          "v": "€895 VAT-exempt"
+          "v": "On request"
         },
         {
           "k": "Scheduling",
@@ -1232,20 +1375,46 @@
           "v": "Isabella Levels"
         }
       ],
-      "ctaTitle": "Discuss the options",
-      "ctaText": "Contact Isabella to discuss the options for a private PMU course.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Request information",
+      "ctaText": "Leave your details via the form — we will get back to you as soon as possible.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Fully tailor-made",
       "title": "Start your 1:1 training today",
-      "text": "Start your PMU career today! Contact Isabella to discuss the options for a private PMU course.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
+      "text": "Leave your details — we will get back to you as soon as possible. Prices for a private course are drawn up personally.",
+      "primaryLabel": "Request information",
+      "primaryUrl": "#opleiding-interesse",
       "secondaryLabel": "View all courses",
       "secondaryUrl": "/opleidingen"
-    }
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Leave your details — we will get back to you as soon as possible. We confirm prices for a private course personally via the form.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Private Permanent Makeup Course",
+      "prive_opleiding": "ja"
+    },
+    "highlights": [
+      {
+        "label": "CRKBO-recognised",
+        "text": "VAT-exempt and officially recognised"
+      },
+      {
+        "label": "Pay in instalments",
+        "text": "Pay in instalments or with iDEAL in3"
+      }
+    ],
+    "trainers": [
+      {
+        "name": "Isabella",
+        "role": "Owner and PMU expert",
+        "text": "With a passion for permanent makeup I focus not only on treatments in our salon, but also on training both beginner and experienced PMU stylists. My goal is to send our students into the PMU world with confidence and expertise!",
+        "image": "/media/izzi-beauty-20250729-9b97be-izzi-beauty-isabella-levels-pmu-expert.webp"
+      }
+    ]
   },
   "ombre-powder-brows-opleiding": {
     "hero": {
@@ -1531,7 +1700,7 @@
       "text": "The complete beginner course in which you learn all the basic techniques of permanent makeup — from intake and shape determination to carrying out treatments independently.",
       "breadcrumb": "All Round PMU Course"
     },
-    "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp",
+    "image": "/media/izzi-beauty-20250729-9f85fc-all-round-pmu-opleiding-amsterdam-en-rotterdam.webp",
     "intro": "During the All Round PMU Course you are trained to become a versatile specialist: you learn Ombré Powder Brows, Lip Blush, Faux Freckles and Infralash. The course combines online preparation with intensive practical days on location, in small groups with personal guidance.",
     "productHandle": "opleiding-allround-pmu",
     "highlights": [
@@ -1588,17 +1757,15 @@
       },
       {
         "heading": "Starter kit & IZZI Beauty Wireless PMU machine",
-        "paragraphs": [
-          "The course includes an extensive starter kit valued at €4,500 and the wireless IZZI Beauty Wireless PMU machine valued at €1,000, so you can start professionally.",
-          "The starter kit is valued at €4,500. The IZZI PMU machine is valued at €1,000."
-        ],
+        "paragraphs": [],
         "checklist": [
           "Theory book (100+ pages) + access to the Online Academy",
           "9 pigments, 80 needles, 8 latex sheets, mapping strings",
           "Pre-drawing pencil & pen, ruler stickers, grip tapes, lip brushes, aftercare cream",
-          "IZZI Beauty Wireless PMU machine valued at €1,000 (wireless, suitable for all techniques)",
+          "IZZI Beauty Wireless PMU machine (wireless, suitable for all techniques)",
           "Enough material for around 400 treatments (excl. extra needles)"
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
         "heading": "General information",
@@ -1694,23 +1861,40 @@
         },
         {
           "k": "Price",
-          "v": "On request (incl. starter kit & machine)"
+          "v": "See available dates"
         }
       ],
-      "ctaTitle": "Interested in this course?",
-      "ctaText": "Request the brochure or schedule a no-obligation intake conversation.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Start your career in PMU",
       "title": "Enrol in the All Round Course",
-      "text": "Contact us for available dates and the options.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "all-round",
+      "opleiding_specifiek": "All Round PMU Course"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20251110-5af3c4-all-round-pmu-opleiding.webp",
+      "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
+    ]
   },
   "faux-freckles-beginners": {
     "hero": {
@@ -1726,6 +1910,10 @@
       {
         "label": "CRKBO-recognised",
         "text": "VAT-exempt and officially recognised"
+      },
+      {
+        "label": "Pay in instalments",
+        "text": "Pay in instalments or with iDEAL in3"
       }
     ],
     "body": [
@@ -1785,14 +1973,18 @@
           "IZZI Beauty developed the ultimate PMU machine based on years of expertise in permanent makeup. Since 2021 we have offered a wireless machine that combines precision, ease of use and versatility. You easily adjust the needle length for every type of treatment: PMU Powder Brows, Lip Blush, Freckles, Stretch marks and Fineline tattoos.",
           "Perfect results through consistent, natural pigmentation with fine pixels; comfortable treatment thanks to gentle vibrations and quiet operation; multifunctional use for all PMU treatments; and an ergonomic wireless design that offers maximum flexibility and prevents fatigue during longer treatments.",
           "During the course you test the wireless Laliqa Flow PMU Machine during the practice sessions and the exam on a model. You receive advice from the trainer on optimal use for Faux Freckles and beauty marks, and can then decide whether to purchase the machine."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prices and payment terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "The total price of the course is €1,495. This includes access to the Online Academy, the practical training on location, premium pigments and an internationally recognised certificate.",
-          "You can pay in one go (€1,495 in advance, everything arranged straight away) or in two instalments: a deposit of €700 on enrolment and the remaining amount of €795 on day 1 of the course, to be paid on location. This lowers the financial pressure and lets you start straight away without paying the full amount in advance.",
-          "Our courses are recognised by the CRKBO and therefore fully exempt from VAT. This provides a cost advantage as well as the assurance of the highest quality standards."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy."
+        ],
+        "checklist": [
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
+          "VAT-exempt thanks to our CRKBO recognition"
         ]
       },
       {
@@ -1800,7 +1992,7 @@
         "paragraphs": [
           "Time investment: 5 hours of online training with interactive videos and theory modules, 4 hours of intensive practical training on location, and 6 hours of self-study and homework in which you treat 3 models in your own salon. The total study time comes to 15 hours of structured learning and practice.",
           "For whom: the Faux Freckles Course is accessible regardless of your level of experience. Both beginners and PMU professionals who want to expand their treatment range can enrol. No prior training is required. Ideal for aspiring PMU specialists who want to start in a niche market and for professionals who want to add Faux Freckles and freckles.",
-          "Conditions: there are no mandatory conditions to take part, because PMU is a self-employed profession. All courses fall under the General Terms and Conditions, the Privacy Statement and the complaints procedure of IZZI Beauty. The Faux Freckles Beginner Course is organised several times a year; the practical days take place at IZZI Beauty in Amsterdam. A private course at a location of your choice is also possible."
+          "Conditions: there are no mandatory conditions to take part, because PMU is a self-employed profession. All courses fall under the General Terms and Conditions, the Privacy Statement and the complaints procedure of IZZI Beauty. Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         ]
       }
     ],
@@ -1850,7 +2042,7 @@
         },
         {
           "q": "Where is the PMU course taught?",
-          "a": "The practical days take place on location at IZZI Beauty in Amsterdam. A private course at a location of your choice is also possible."
+          "a": "Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         },
         {
           "q": "How do I enrol?",
@@ -1879,7 +2071,7 @@
         },
         {
           "k": "Price",
-          "v": "€1,495 VAT-exempt"
+          "v": "See available dates"
         },
         {
           "k": "Certificate",
@@ -1894,20 +2086,37 @@
           "v": "Handpoke & machine"
         }
       ],
-      "ctaTitle": "Start with Faux Freckles",
-      "ctaText": "The course is organised several times a year. Contact us for the current dates and availability.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Trendy, natural freckles",
       "title": "Sign up for the Faux Freckles Course",
-      "text": "Become a specialist in a growing niche market and expand your treatment range with handpoke and machine Faux Freckles.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "PMU Faux Freckles Course"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20250729-16d157-faux-freckles-resultaat.webp",
+      "/media/izzi-beauty-20251110-4fcd78-faux-freckles-pmu-resultaat-na-een-week.webp"
+    ]
   },
   "infralash-beginners": {
     "hero": {
@@ -1923,6 +2132,10 @@
       {
         "label": "CRKBO-recognised",
         "text": "VAT-exempt and officially recognised"
+      },
+      {
+        "label": "Pay in instalments",
+        "text": "Pay in instalments or with iDEAL in3"
       }
     ],
     "body": [
@@ -1978,14 +2191,18 @@
         "paragraphs": [
           "The IZZI Wireless PMU Machine offers maximum precision for fine eyeliner and infralash lines, with gentle vibrations and quiet operation for a comfortable treatment. The machine is versatile for infralash, eyeliner, lip pigmentation and eyebrow treatments, and the ergonomic wireless design prevents fatigue during longer sessions.",
           "The innovative wireless design gives you complete freedom of movement and works effectively on all skin types without irritation. During the practical day you can try out the machine on latex and on a live model, so you make a well-considered choice before purchasing it."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prices and payment terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "The total price of the course is €1,295, including access to the Online Academy, the practical training, premium pigments and a CRKBO-recognised certificate.",
-          "You can pay in one go (€1,295 in advance to secure your place) or in two instalments: €500 deposit on enrolment and €795 on the practical day. There are no hidden costs and you pay no interest on the instalment payment.",
-          "Our courses are fully VAT-exempt, because we are CRKBO-accredited."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy."
+        ],
+        "checklist": [
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
+          "VAT-exempt thanks to our CRKBO recognition"
         ]
       },
       {
@@ -1993,7 +2210,7 @@
         "paragraphs": [
           "Time investment: 5 hours of online preparation, a 6-hour practical day on location and 3 hours of independent practice in which you treat 3 models in your own salon. The total study time comes to 14 hours.",
           "Admission requirements: you need no prior training or diploma to start. This course is suitable for both beginners and professionals who want to expand their skills. PMU stylist is a self-employed profession in the Netherlands with no legal requirements.",
-          "Conditions and dates: the course falls under the General Terms and Conditions of IZZI Beauty BV, including the Privacy Statement and complaints procedure. The Infralash Beginner Course is organised roughly monthly at our locations in Amsterdam and Rotterdam. Is the date you want full? Then get in touch for an alternative."
+          "Conditions: the course falls under the General Terms and Conditions of IZZI Beauty BV, including the Privacy Statement and complaints procedure. Available locations differ per course date. See the current dates and locations below."
         ]
       }
     ],
@@ -2068,7 +2285,7 @@
         },
         {
           "k": "Price",
-          "v": "€1,295 VAT-exempt"
+          "v": "See available dates"
         },
         {
           "k": "Certificate",
@@ -2080,22 +2297,35 @@
         },
         {
           "k": "Locations",
-          "v": "Amsterdam & Rotterdam"
+          "v": "Differs per course date"
         }
       ],
-      "ctaTitle": "Start with Infralash",
-      "ctaText": "The course is organised roughly monthly. Contact us for the current dates and availability.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Subtle, natural eyeliner",
       "title": "Sign up for the Infralash Course",
-      "text": "Offer the popular infralash and deepliner treatment in your own salon, with a solid foundation and ongoing guidance.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "PMU Infralash Course"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
     }
   },
   "fineline-training": {
@@ -2112,6 +2342,10 @@
       {
         "label": "CRKBO-recognised",
         "text": "VAT-exempt and officially recognised"
+      },
+      {
+        "label": "Pay in instalments",
+        "text": "Pay in instalments or with iDEAL in3"
       }
     ],
     "body": [
@@ -2171,21 +2405,25 @@
       {
         "heading": "Optional Fineline Tattoo starter kit",
         "paragraphs": [
-          "The course includes standard tattoo ink. In addition, a complete starter kit with professional equipment is available: professional tattoo ink, 20 Laliqa needles for precision work, the IZZI Beauty PMU Machine (worth €470) — wireless and designed for perfection with gentle vibrations, a latex practice sheet, 2x Laliqa Aftercare cream, Stencil Stuff, ready-made stencils, white tape and a black pen.",
-          "The starter kit costs €699 (VAT-exempt). The total course including the starter kit therefore comes to €2,265 (VAT-exempt). The cost of the starter kit can be included in the instalment payment of the course."
+          "The course includes standard tattoo ink. In addition, a complete starter kit with professional equipment is available: professional tattoo ink, 20 Laliqa needles for precision work, the IZZI Beauty PMU Machine — wireless and designed for perfection with gentle vibrations, a latex practice sheet, 2x Laliqa Aftercare cream, Stencil Stuff, ready-made stencils, white tape and a black pen."
         ]
       },
       {
         "heading": "IZZI PMU Machine",
         "paragraphs": [
           "The IZZI Beauty Wireless PMU Machine delivers perfect pixels for sharp, consistent results. Thanks to the gentle vibrations and quiet operation, the treatment is comfortable for you and your client, and the machine is versatile for all treatments, including fineline tattoos."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prices and payment terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "The full course costs €1,595 (VAT-exempt). You can pay in one go (€1,595) or in instalments: you pay a deposit of €550 and pay the remaining amount on location before the first practical day.",
-          "Our CRKBO recognition means that the course is fully VAT-exempt and meets the highest quality and professionalism standards."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy."
+        ],
+        "checklist": [
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
+          "VAT-exempt thanks to our CRKBO recognition"
         ]
       },
       {
@@ -2193,7 +2431,7 @@
         "paragraphs": [
           "Time investment: 5 hours of online preparation, two consecutive practical days on location from 09:30 to 15:30 (12 hours in total), and homework in which you treat 5 models in your own salon (10 hours). You submit photos for feedback from the trainer and get support via WhatsApp. The total study time comes to 46 hours.",
           "Prior experience: no prior training is required. The course is suitable for everyone, from beginner to experienced PMU specialist.",
-          "Conditions: participants review the General Terms and Conditions, the Privacy Statement and the complaints procedure of IZZI Beauty. PMU is a self-employed profession with no legal requirements. The course is organised several times a year at our locations in Amsterdam and Rotterdam."
+          "Conditions: participants review the General Terms and Conditions, the Privacy Statement and the complaints procedure of IZZI Beauty. PMU is a self-employed profession with no legal requirements. Available locations differ per course date. See the current dates and locations below."
         ]
       }
     ],
@@ -2243,7 +2481,7 @@
         },
         {
           "q": "What makes this course unique compared to other fineline courses?",
-          "a": "The unique combination of online preparation worth €1,250, personal guidance in small groups, WhatsApp support after the course and the fact that no prior knowledge is required."
+          "a": "The unique combination of online preparation personal guidance in small groups, WhatsApp support after the course and the fact that no prior knowledge is required."
         },
         {
           "q": "Which marketing strategies are covered?",
@@ -2276,11 +2514,11 @@
         },
         {
           "k": "Price",
-          "v": "€1,595 VAT-exempt"
+          "v": "See available dates"
         },
         {
           "k": "Starter kit",
-          "v": "Optional — €699"
+          "v": "Optional"
         },
         {
           "k": "Certificate",
@@ -2291,20 +2529,36 @@
           "v": "Registered training provider — VAT-exempt"
         }
       ],
-      "ctaTitle": "Start with fineline tattoos",
-      "ctaText": "The course is organised several times a year. Contact us for the current dates and availability.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Refined and minimalist",
       "title": "Sign up for the Fineline Tattoo Course",
-      "text": "Learn everything about designs, lines and shading in three days, and add a profitable treatment to your salon.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Fineline Tattoo Course"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20250729-f3999d-fineline-masterclass.webp"
+    ]
   },
   "fineline-masterclass": {
     "hero": {
@@ -2318,8 +2572,16 @@
     "productHandle": "opleiding-fineline-masterclass",
     "highlights": [
       {
+        "label": "UWV funding",
+        "text": "Potentially available for this course"
+      },
+      {
         "label": "CRKBO-recognised",
         "text": "VAT-exempt and officially recognised"
+      },
+      {
+        "label": "Pay in instalments",
+        "text": "Pay in instalments or with iDEAL in3"
       }
     ],
     "body": [
@@ -2333,7 +2595,7 @@
       {
         "heading": "Day 1 — Online preparation (5 hours)",
         "paragraphs": [
-          "You follow the online preparation via the IZZI Online Academy (worth €1,250). You learn the design principles of master fineline and what sets it apart from basic work, creating designs and printing stencils, advanced colour theory and pigment application, needle choice for specific techniques, and professional tips from the masters themselves."
+          "You follow the online preparation via the IZZI Online Academy. You learn the design principles of master fineline and what sets it apart from basic work, creating designs and printing stencils, advanced colour theory and pigment application, needle choice for specific techniques, and professional tips from the masters themselves."
         ]
       },
       {
@@ -2365,21 +2627,27 @@
       {
         "heading": "Optional Fineline Masterclass starter kit",
         "paragraphs": [
-          "The optional starter kit contains professional tattoo pigment, 2 boxes of Kwadron needles (40 pieces), a Fineline PMU Machine (worth €250), a latex practice sheet and Laliqa aftercare cream.",
-          "During the masterclass a reduced price of €350 applies instead of the standard price of €400."
+          "The optional starter kit contains professional tattoo pigment, 2 boxes of Kwadron needles (40 pieces), a Fineline PMU Machine, a latex practice sheet and Laliqa aftercare cream."
         ]
       },
       {
         "heading": "IZZI Beauty Wireless PMU Machine",
         "paragraphs": [
           "The wireless machine operates quietly and gives you complete freedom of movement, so you can deliver precise fineline work without distraction. The machine is versatile for various PMU techniques and makes both sharp lines and subtle shadows possible. During the masterclass you can try out the machine exclusively."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prices and payment terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "The masterclass costs €1,250 in total. You pay a deposit of €500 on enrolment and the remaining amount of €750 on location, before the start of the lesson day.",
-          "Our CRKBO recognition ensures that the masterclass is fully VAT-exempt. In addition, the course is eligible for UWV funding for beauty and PMU courses."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy.",
+          "Do you receive a WW, WIA or Wajong benefit? Contact us to apply for UWV funding for this course."
+        ],
+        "checklist": [
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
+          "VAT-exempt thanks to our CRKBO recognition",
+          "UWV funding potentially available"
         ]
       },
       {
@@ -2387,7 +2655,7 @@
         "paragraphs": [
           "Time investment: 5 hours of online preparation, one practical day on location of 6 hours, and homework in which you treat 5 models (10 hours). The total study time comes to 21 hours.",
           "Prior experience: you need a completed basic fineline course, taken internally or externally. Before the masterclass you send a photo of your certificate for confirmation.",
-          "Conditions: all courses fall under the General Terms and Conditions, the Privacy Statement and the complaints procedure of IZZI Beauty BV. PMU stylist is a self-employed profession with no legal licensing requirements. The masterclass takes place at our locations in Amsterdam and Rotterdam."
+          "Conditions: all courses fall under the General Terms and Conditions, the Privacy Statement and the complaints procedure of IZZI Beauty BV. PMU stylist is a self-employed profession with no legal licensing requirements. Available locations differ per course date. See the current dates and locations below."
         ]
       }
     ],
@@ -2458,11 +2726,11 @@
         },
         {
           "k": "Price",
-          "v": "€1,250 VAT-exempt"
+          "v": "See available dates"
         },
         {
           "k": "Starter kit",
-          "v": "Optional — €350 (instead of €400)"
+          "v": "Optional"
         },
         {
           "k": "Certificate",
@@ -2473,20 +2741,50 @@
           "v": "Registered training provider — VAT-exempt"
         }
       ],
-      "ctaTitle": "Take your fineline to master level",
-      "ctaText": "Places are limited to a small group. Contact us for the current dates and availability.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Learn from two masters",
       "title": "Sign up for the Fineline Tattoo Masterclass",
-      "text": "Refine your precision, master shadow and shading techniques and develop your own artistic signature.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Fineline Tattoo Masterclass"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
+    "trainers": [
+      {
+        "name": "Linda Goldman",
+        "role": "Fineline master",
+        "text": "",
+        "image": ""
+      },
+      {
+        "name": "Isabella",
+        "role": "Owner and PMU expert",
+        "text": "With a passion for permanent makeup I focus not only on treatments in our salon, but also on training both beginner and experienced PMU stylists. My goal is to send our students into the PMU world with confidence and expertise!",
+        "image": "/media/izzi-beauty-20250729-9b97be-izzi-beauty-isabella-levels-pmu-expert.webp"
+      }
+    ],
+    "gallery": [
+      "/media/izzi-beauty-20250729-a4793d-fineline-tattoo-opleiding.jpg"
+    ]
   },
   "inkless-stretch-mark-removal": {
     "hero": {
@@ -2500,8 +2798,16 @@
     "productHandle": "opleiding-inkless-stretch-mark-removal",
     "highlights": [
       {
+        "label": "UWV funding",
+        "text": "Potentially available for this course"
+      },
+      {
         "label": "CRKBO-recognised",
         "text": "VAT-exempt and officially recognised"
+      },
+      {
+        "label": "Pay in instalments",
+        "text": "Pay in instalments or with iDEAL in3"
       }
     ],
     "body": [
@@ -2511,21 +2817,21 @@
           "Become a Stretch Mark & Scar Removal Expert: in 2 intensive days you learn everything — from anatomy and basic theory to actually treating stretch mark and scar areas on models. After completion you are 100% prepared to treat your own clients professionally and successfully and you can start right away in your own salon.",
           "Expand your client base and revenue: this popular treatment responds perfectly to the growing demand from clients. Add value to your range and increase your revenue with this much-requested technique.",
           "Exam in small groups for maximum guidance: as the only provider in the Netherlands, we offer personal guidance in groups of a maximum of 2. You receive all the attention and guidance needed to start with confidence. We teach in groups of a maximum of 4, with 2 trainers present.",
-          "After enrolment and payment you receive access to the IZZI Online Academy by email. Start learning as early as 30 days before the course through extensive videos and informative modules. This unique online training, worth €1,250, prepares you optimally and is available via your phone, tablet or laptop. Access lasts forever.",
-          "Includes a starter kit and machine: work straight away with high-quality products, enough to treat 20 clients and including a machine worth €470.00. IZZI Beauty is a recognised training institute, CRKBO-registered, and we work together with the UWV."
+          "After enrolment and payment you receive access to the IZZI Online Academy by email. Start learning as early as 30 days before the course through extensive videos and informative modules. This unique online training, prepares you optimally and is available via your phone, tablet or laptop. Access lasts forever.",
+          "Includes a starter kit and machine: work straight away with high-quality products, enough to treat 20 clients and including a machine IZZI Beauty is a recognised training institute, CRKBO-registered, and we work together with the UWV."
         ]
       },
       {
         "heading": "This PMU Beginner Course includes",
         "paragraphs": [
-          "A complete package with personal guidance, lifetime access to the Online Academy and a CRKBO-recognised certificate."
+          "This course includes, among other things, the following. The current price is shown with the available dates."
         ],
         "checklist": [
-          "Incl. starter kit worth €1,250",
+          "Incl. starter kit",
           "Online Academy: lifetime access",
           "Personal attention: a maximum of 4 students per course",
           "UWV funding potentially available",
-          "Includes: PMU machine worth €470",
+          "Includes: PMU machine",
           "Product theory, needle theory, all about scars & practising on latex",
           "CRKBO-recognised: VAT-exempt",
           "Includes online guidance and WhatsApp support",
@@ -2560,12 +2866,12 @@
       {
         "heading": "Inkless Stretch Mark starter kit",
         "paragraphs": [
-          "With the Inkless Stretch Mark Course you receive an extensive starter kit including a PMU Machine worth €470, with which you can start as a professional straight away. This kit contains everything you need to carry out up to 20 treatments and practise on latex. Ideal for perfecting your new skills, at home and during the course."
+          "With the Inkless Stretch Mark Course you receive an extensive starter kit including a PMU Machine with which you can start as a professional straight away. This kit contains everything you need to carry out up to 20 treatments and practise on latex. Ideal for perfecting your new skills, at home and during the course."
         ],
         "checklist": [
           "Workbook: your complete guide to a successful start",
-          "Access to the Online Academy (worth €1,250)",
-          "Flow PMU Machine worth €470",
+          "Access to the Online Academy",
+          "Flow PMU Machine",
           "25 ink rings",
           "1 serum",
           "20 required Laliqa needles",
@@ -2580,14 +2886,20 @@
         "paragraphs": [
           "Our PMU machine is specially designed for precision and ease of use. This wireless permanent makeup machine produces perfect pixels and gentle vibrations, is suitable for stretch marks, ombré brows, eyeliner and lip treatments, and is used daily by our experienced PMU specialists.",
           "With this starter kit and the high-end machine you are fully prepared to start professionally straight away, both during the course and afterwards."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prices & payment terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "At IZZI Beauty we offer flexible payment options so you can take your course without financial worries. You can pay in instalments for this PMU course.",
-          "Rates: the full amount is €2,500 (VAT-exempt), including the Flow PMU Machine worth €470 and a starter kit with a full value of €1,250. The standard deposit is €750, followed by the 1st instalment of €750 thirty days after registration and the 2nd instalment of €1,000 on the first day on location. Please note: if your course date falls within 30 days of registration, the full amount must be paid on day 1 of the course, before the start.",
-          "Benefits: no interest — pay in instalments without extra costs or BKR registration. VAT-exempt thanks to our CRKBO recognition. Do you receive a WW, WIA or Wajong benefit? Contact us to apply for UWV funding for this course. Would you like to pay in instalments? Let us know your choice by email or WhatsApp after registering."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy.",
+          "Do you receive a WW, WIA or Wajong benefit? Contact us to apply for UWV funding for this course."
+        ],
+        "checklist": [
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
+          "VAT-exempt thanks to our CRKBO recognition",
+          "UWV funding potentially available"
         ]
       },
       {
@@ -2596,7 +2908,7 @@
           "Course duration: 10 hours of online preparation with course material in the IZZI Online Academy, 2 days of intensive training on location (09:30 – 15:30), and additional homework in which you treat 5 models in your own salon with a total time investment of 20 hours. The total study time comes to 52 hours.",
           "Prior experience: no prior training is needed to take part. The beginner course is accessible to anyone who wants to become a PMU specialist.",
           "Conditions: there are no special requirements; PMU stylist is a self-employed profession with no mandatory government requirements. The General Terms and Conditions of Opleiding IZZI Beauty BV apply to all courses and treatments, including our Privacy Statement and complaints procedure.",
-          "Availability: the Inkless Stretch Mark beginner course is offered almost every month in Amsterdam and periodically in Rotterdam. Contact us for the current dates and available places."
+          "Available locations differ per course date. See the current dates and locations below."
         ]
       }
     ],
@@ -2630,7 +2942,7 @@
         },
         {
           "q": "Where does the course take place?",
-          "a": "The course is taught at our location in Amsterdam and periodically in Rotterdam. Contact us if you prefer a different location — it is possible to book a private course on location."
+          "a": "Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         },
         {
           "q": "How much practical experience do I get during the course?",
@@ -2679,11 +2991,11 @@
         },
         {
           "k": "Price",
-          "v": "€2,500 VAT-exempt"
+          "v": "See available dates"
         },
         {
           "k": "Starter kit",
-          "v": "Included · incl. machine worth €470"
+          "v": "Included · incl. machine"
         },
         {
           "k": "Certificate",
@@ -2694,19 +3006,32 @@
           "v": "Registered training provider — VAT-exempt"
         }
       ],
-      "ctaTitle": "Become a Stretch Mark & Scar Removal specialist",
-      "ctaText": "The course is offered almost every month in Amsterdam. Contact us for the current dates and availability.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "The fast-growing trend",
       "title": "Sign up for the Inkless Stretch Mark Course",
-      "text": "Learn to reduce stretch marks and scars naturally in two days and add a much-requested treatment to your salon.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Inkless Stretch Mark Removal Course"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
     }
   },
   "saline-removal": {
@@ -2721,8 +3046,16 @@
     "productHandle": "opleiding-saline-removal",
     "highlights": [
       {
+        "label": "UWV funding",
+        "text": "Potentially available for this course"
+      },
+      {
         "label": "CRKBO-recognised",
         "text": "VAT-exempt and officially recognised"
+      },
+      {
+        "label": "Pay in instalments",
+        "text": "Pay in instalments or with iDEAL in3"
       }
     ],
     "body": [
@@ -2732,21 +3065,20 @@
           "Become a Saline Removal Expert: in 2 intensive days you learn everything — from theory about skin and pigment to carrying out the treatment professionally on models. After completion you are fully prepared to treat clients independently and with confidence in your own salon.",
           "Expand your client base and revenue: more and more clients are looking for a safe and effective method to have old permanent makeup or fineline tattoos removed. By adding this technique you respond to a growing demand and immediately increase your revenue.",
           "Exam in small groups for maximum guidance: we offer personal guidance in small groups of a maximum of 4 students, with 2 trainers present. This way you get all the attention you need to start with certainty.",
-          "After enrolment and payment you receive access to the IZZI Online Academy by email. Start learning as early as 30 days before the course through extensive videos and informative modules. This unique online training, worth €1,250, prepares you optimally and is available via your phone, tablet or laptop. You keep lifetime access.",
-          "Optional starter kit and machine: you optionally receive a professional starter kit with high-quality products, including a PMU machine worth €470.00. With it you can get to work straight away and have enough material to carry out your first treatments successfully. The total price of this kit is €599.00 and can be booked as an optional extra; on request you receive the starter kit on location. IZZI Beauty is a recognised training institute, CRKBO-registered, and we work together with the UWV."
+          "After enrolment and payment you receive access to the IZZI Online Academy by email. Start learning as early as 30 days before the course through extensive videos and informative modules. This unique online training, prepares you optimally and is available via your phone, tablet or laptop. You keep lifetime access."
         ]
       },
       {
         "heading": "This PMU Beginner Course includes",
         "paragraphs": [
-          "Personal guidance in a small group, lifetime access to the Online Academy and a CRKBO-recognised certificate."
+          "This course includes, among other things, the following. The current price is shown with the available dates."
         ],
         "checklist": [
-          "Incl. online training worth €1,250",
+          "Incl. online training",
           "Online Academy: lifetime access",
           "Personal attention: a maximum of 4 students per course",
           "UWV funding potentially available",
-          "Optional: PMU machine worth €470",
+          "Optional: PMU machine",
           "Product theory, needle theory, all about scars & practising on latex",
           "CRKBO-recognised: VAT-exempt",
           "Includes online guidance and WhatsApp support",
@@ -2780,13 +3112,11 @@
       },
       {
         "heading": "Saline Removal starter kit",
-        "paragraphs": [
-          "With the Saline Removal Course you optionally choose an extensive starter kit including a PMU Machine worth €470, with which you can start as a professional straight away. This kit contains everything you need to carry out up to 20 treatments. Ideal for perfecting your new skills, at home and during the course. The cost of the starter kit is €599.00."
-        ],
+        "paragraphs": [],
         "checklist": [
           "Workbook: your complete guide to a successful start",
-          "Access to the Online Academy (worth €1,250)",
-          "Flow PMU Machine worth €470",
+          "Access to the Online Academy",
+          "Flow PMU Machine",
           "1 Saline Removal",
           "20 required Laliqa needles",
           "Grip tape",
@@ -2798,14 +3128,20 @@
         "paragraphs": [
           "Our PMU machine is specially designed for precision and ease of use. This wireless permanent makeup machine produces perfect pixels and gentle vibrations, is suitable for stretch marks, ombré brows, eyeliner and lip treatments, and is used daily by our experienced PMU specialists.",
           "With this starter kit and the high-end machine you are fully prepared to start professionally straight away, both during the course and afterwards."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prices & payment terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "At IZZI Beauty we offer flexible payment options so you can take your course without financial worries. You can pay in instalments for this PMU course.",
-          "Rates: the full amount is €995 (VAT-exempt). The standard deposit is €650, followed by the 1st instalment of €345 on location before the course.",
-          "Benefits: no interest — pay in instalments without extra costs or BKR registration. VAT-exempt thanks to our CRKBO recognition. Do you receive a WW, WIA or Wajong benefit? Contact us to apply for UWV funding for this course. Would you like to pay in instalments? Let us know your choice by email or WhatsApp after registering."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy.",
+          "Do you receive a WW, WIA or Wajong benefit? Contact us to apply for UWV funding for this course."
+        ],
+        "checklist": [
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
+          "VAT-exempt thanks to our CRKBO recognition",
+          "UWV funding potentially available"
         ]
       },
       {
@@ -2814,7 +3150,7 @@
           "Course duration: 5 hours of online preparation with course material in the IZZI Online Academy, 1 day of intensive training on location (09:30 – 15:30, 6 hours), and additional homework in which you treat 5 models in your own salon with a total time investment of 20 hours. The total study time comes to 31 hours.",
           "Prior experience: no prior training is needed to take part. The beginner course is accessible to anyone who wants to become a PMU specialist.",
           "Conditions: there are no special requirements; PMU stylist is a self-employed profession with no mandatory government requirements. The General Terms and Conditions of Opleiding IZZI Beauty BV apply to all courses and treatments, including our Privacy Statement and complaints procedure.",
-          "Availability: this course is currently only taught privately, both in Amsterdam and in Rotterdam. Sign up via the enrolment form or get in touch, and we will contact you as soon as possible for a preferred date."
+          "Available locations differ per course date. See the current dates and locations below."
         ]
       }
     ],
@@ -2848,7 +3184,7 @@
         },
         {
           "q": "Where does the course take place?",
-          "a": "This course is currently only taught privately, at our locations in Amsterdam and Rotterdam. Sign up via the form or get in touch for a preferred date."
+          "a": "Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         },
         {
           "q": "How much practical experience do I get during the course?",
@@ -2864,7 +3200,7 @@
         },
         {
           "q": "Is the starter kit mandatory?",
-          "a": "No, the starter kit is optional. For €599.00 you receive a complete package including the Flow PMU Machine worth €470, enough material for 20 treatments. On request you receive the starter kit on location."
+          "a": "No, the starter kit is optional. The kit includes the Flow PMU Machine and enough material for 20 treatments. On request you receive the starter kit on location. The current kit price is shown with the available dates."
         },
         {
           "q": "What if I need extra help after the course?",
@@ -2897,11 +3233,11 @@
         },
         {
           "k": "Price",
-          "v": "€995 VAT-exempt"
+          "v": "See available dates"
         },
         {
           "k": "Starter kit",
-          "v": "Optional · €599"
+          "v": "Optional"
         },
         {
           "k": "Certificate",
@@ -2912,19 +3248,32 @@
           "v": "Registered training provider — VAT-exempt"
         }
       ],
-      "ctaTitle": "Become a Saline Removal specialist",
-      "ctaText": "This course is currently only taught privately. Contact us to plan a suitable date together.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Safe removal",
       "title": "Sign up for the Saline Removal Course",
-      "text": "Learn to safely remove old permanent makeup and fineline tattoos and respond to a strongly growing demand.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Saline Removal Course"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
     }
   },
   "lash-lift-training": {
@@ -2954,13 +3303,13 @@
       {
         "heading": "The course includes",
         "paragraphs": [
-          "A complete training with a starter kit, lifetime access to the online learning platform and personal guidance in a small group."
+          "This course includes, among other things, the following. The current price is shown with the available dates."
         ],
         "checklist": [
           "Learning the Lash Lift technique",
           "CRKBO-recognised course",
           "Max. 4 students per course",
-          "Starter kit worth €299",
+          "Starter kit",
           "Product theory",
           "Access to the Online Academy by email after enrolment and payment",
           "Unlimited access to the online learning platform",
@@ -2983,7 +3332,7 @@
       {
         "heading": "Lash Lift starter kit",
         "paragraphs": [
-          "The Lash Lift training includes a starter kit worth €299."
+          "The Lash Lift training includes a starter kit"
         ],
         "checklist": [
           "Access to the Online Academy with online lessons for preparation",
@@ -3001,10 +3350,14 @@
         ]
       },
       {
-        "heading": "Prices",
+        "heading": "Payment options",
         "paragraphs": [
-          "The Lash Lift training costs €495 VAT-exempt in total, including a starter kit worth €299. Our courses are recognised by the CRKBO and therefore exempt from VAT.",
-          "Would you rather only take the online training? That is possible — check out the range of online trainings for that."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy."
+        ],
+        "checklist": [
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
+          "VAT-exempt thanks to our CRKBO recognition"
         ]
       },
       {
@@ -3013,7 +3366,7 @@
           "Duration: 3 hours of online material for preparation, 1 day on location from 10:00 – 12:00 (2 hours of learning on location), and an additional homework assignment in which you treat 5 models in your own salon (5 hours). The total study time comes to 10 hours.",
           "Prior experience: no prior training is needed to take this course.",
           "Conditions: the General Terms and Conditions of Opleiding IZZI Beauty BV apply to all our courses and trainings, which also include our Privacy Statement and complaints procedure. There are no special conditions; beauty stylist is a self-employed profession and there are no special government conditions to take part either.",
-          "Dates and enrolment: the Lash Lift training can be taken a few times a year and private options are possible. You can enrol by email or WhatsApp: let us know your preferred dates and pay the deposit within 3 days of registration to confirm your place."
+          "Dates and enrolment: Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         ]
       }
     ],
@@ -3051,11 +3404,11 @@
         },
         {
           "q": "Is the starter kit included?",
-          "a": "Yes, the Lash Lift training includes a starter kit worth €299 with, among other things, a starter kit, lifting pads, a lifting tool, 3 lotions and the Lash Lift Kit."
+          "a": "Yes, the Lash Lift training includes a starter kit with, among other things, a starter kit, lifting pads, a lifting tool, 3 lotions and the Lash Lift Kit."
         },
         {
           "q": "What does the training cost?",
-          "a": "The total price is €495 VAT-exempt, including the starter kit worth €299. Our courses are CRKBO-recognised and therefore exempt from VAT."
+          "a": "The current price, date, location and available seats are shown with the available dates on this page. They come from the shop, not from this copy."
         },
         {
           "q": "Can I also only take the online training?",
@@ -3063,11 +3416,11 @@
         },
         {
           "q": "Can I take the training privately?",
-          "a": "Yes, the Lash Lift training can be taken a few times a year and private options are possible. Contact us for more information."
+          "a": "Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         },
         {
           "q": "How do I enrol?",
-          "a": "You can enrol by email or WhatsApp. Let us know your preferred dates and pay the deposit within 3 days of registration to confirm your place."
+          "a": "View the available dates on this page to enrol. Unsure? Request information via the form."
         }
       ]
     },
@@ -3092,11 +3445,11 @@
         },
         {
           "k": "Price",
-          "v": "€495 VAT-exempt"
+          "v": "See available dates"
         },
         {
           "k": "Starter kit",
-          "v": "Included · worth €299"
+          "v": "Included"
         },
         {
           "k": "Certificate",
@@ -3107,19 +3460,32 @@
           "v": "Registered training provider — VAT-exempt"
         }
       ],
-      "ctaTitle": "Start with Lash Lift",
-      "ctaText": "The training is given a few times a year and can also be taken privately. Contact us for the current dates.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Open and voluminous",
       "title": "Sign up for the Lash Lift Training",
-      "text": "Learn the complete Lash Lift technique in one half-day and get to work in your own salon straight away.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Lash Lift Training"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
     }
   },
   "brow-lamination-training": {
@@ -3149,13 +3515,13 @@
       {
         "heading": "The course includes",
         "paragraphs": [
-          "A complete training with a starter kit, lifetime access to the online learning platform and personal guidance in a small group."
+          "This course includes, among other things, the following. The current price is shown with the available dates."
         ],
         "checklist": [
           "Learning the Brow Lamination technique",
           "CRKBO-recognised course",
           "Max. 4 students per course",
-          "Includes a starter kit worth €299",
+          "Includes a starter kit",
           "Product theory",
           "Access to the Online Academy by email after enrolment and payment",
           "Unlimited access to the online learning platform",
@@ -3178,7 +3544,7 @@
       {
         "heading": "Brow Lamination starter kit",
         "paragraphs": [
-          "The Brow Lamination training includes a starter kit worth €299."
+          "The Brow Lamination training includes a starter kit"
         ],
         "checklist": [
           "Access to the Online Academy with online lessons for preparation",
@@ -3195,10 +3561,14 @@
         ]
       },
       {
-        "heading": "Prices",
+        "heading": "Payment options",
         "paragraphs": [
-          "The Brow Lamination course costs €495 VAT-exempt in total, including a starter kit worth €299. Our courses are recognised by the CRKBO and therefore exempt from VAT.",
-          "Would you rather only take the online training? That is possible — check out the range of online trainings for that."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy."
+        ],
+        "checklist": [
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
+          "VAT-exempt thanks to our CRKBO recognition"
         ]
       },
       {
@@ -3207,7 +3577,7 @@
           "Duration: 3 hours of online material for preparation, 1 day on location from 10:00 – 12:00 (2 hours of learning on location), and an additional homework assignment in which you treat 5 models in your own salon (5 hours). The total study time comes to 10 hours.",
           "Prior experience: no prior training is needed to take this course.",
           "Conditions: the General Terms and Conditions of Opleiding IZZI Beauty BV apply to all our courses and trainings, which also include our Privacy Statement and complaints procedure. There are no special conditions; beauty stylist is a self-employed profession and there are no special government conditions to take part either.",
-          "Dates and enrolment: the Brow Lamination training can be taken a few times a year and private options are possible. You can enrol by email or WhatsApp: let us know your preferred dates and pay the deposit within 3 days of registration to confirm your place."
+          "Dates and enrolment: Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         ]
       }
     ],
@@ -3245,11 +3615,11 @@
         },
         {
           "q": "Is the starter kit included?",
-          "a": "Yes, the Brow Lamination training includes a starter kit worth €299 with, among other things, a starter kit, a lifting tool, 3 lotions and the Brow Lamination Kit."
+          "a": "Yes, the Brow Lamination training includes a starter kit with, among other things, a starter kit, a lifting tool, 3 lotions and the Brow Lamination Kit."
         },
         {
           "q": "What does the training cost?",
-          "a": "The total price is €495 VAT-exempt, including the starter kit worth €299. Our courses are CRKBO-recognised and therefore exempt from VAT."
+          "a": "The current price, date, location and available seats are shown with the available dates on this page. They come from the shop, not from this copy."
         },
         {
           "q": "Can I also only take the online training?",
@@ -3257,11 +3627,11 @@
         },
         {
           "q": "Can I take the training privately?",
-          "a": "Yes, the Brow Lamination training can be taken a few times a year and private options are possible. Contact us for more information."
+          "a": "Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         },
         {
           "q": "How do I enrol?",
-          "a": "You can enrol by email or WhatsApp. Let us know your preferred dates and pay the deposit within 3 days of registration to confirm your place."
+          "a": "View the available dates on this page to enrol. Unsure? Request information via the form."
         }
       ]
     },
@@ -3286,11 +3656,11 @@
         },
         {
           "k": "Price",
-          "v": "€495 VAT-exempt"
+          "v": "See available dates"
         },
         {
           "k": "Starter kit",
-          "v": "Included · worth €299"
+          "v": "Included"
         },
         {
           "k": "Certificate",
@@ -3301,20 +3671,37 @@
           "v": "Registered training provider — VAT-exempt"
         }
       ],
-      "ctaTitle": "Start with Brow Lamination",
-      "ctaText": "The training is given a few times a year and can also be taken privately. Contact us for the current dates.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Full and lifted",
       "title": "Sign up for the Brow Lamination Training",
-      "text": "Learn the complete Brow Lamination technique in one half-day and get to work in your own salon straight away.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "wenkbrauwen",
+      "opleiding_specifiek": "Brow Lamination Training"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20250729-41f099-brow-lamination-behandeling.jpg",
+      "/media/izzi-beauty-20251110-ed7eb7-brow-lamination-opleiding.webp"
+    ]
   },
   "laser-ontharing-opleiding": {
     "hero": {
@@ -3328,8 +3715,16 @@
     "productHandle": "opleiding-laser-ontharing",
     "highlights": [
       {
+        "label": "UWV funding",
+        "text": "Potentially available for this course"
+      },
+      {
         "label": "CRKBO-recognised",
         "text": "VAT-exempt and officially recognised"
+      },
+      {
+        "label": "Pay in instalments",
+        "text": "Pay in instalments or with iDEAL in3"
       }
     ],
     "body": [
@@ -3339,17 +3734,17 @@
           "Become a Laser Hair Removal Expert: in 2 intensive days you learn everything — from the theory about hair growth, skin types and laser technology to carrying out laser treatments professionally on models. After completion you are fully prepared to treat clients independently and start straight away in your own salon.",
           "Expand your client base and revenue: laser hair removal is one of the most in-demand treatments in the beauty world. By offering this technique you respond to a growing need and create a stable source of returning clients and revenue.",
           "Exam in small groups for maximum guidance: we offer personal guidance in small groups of a maximum of 2 students, with 1 trainer present. This gives you the attention and guidance you need to start with confidence.",
-          "After enrolment and payment you receive access to the IZZI Online Academy by email. Start learning as early as 30 days before the course through extensive videos and informative modules. This online training, worth €1,500, prepares you optimally and is available via your phone, tablet or laptop. You keep lifetime access.",
+          "After enrolment and payment you receive access to the IZZI Online Academy by email. Start learning as early as 30 days before the course through extensive videos and informative modules. This online training, prepares you optimally and is available via your phone, tablet or laptop. You keep lifetime access.",
           "Optional machine purchase: request more information about purchasing a laser device — we offer several options. IZZI Beauty is a recognised training institute, CRKBO-registered, and we work together with the UWV."
         ]
       },
       {
         "heading": "This beginner course includes",
         "paragraphs": [
-          "Personal guidance in a small group, lifetime access to the Online Academy and a recognised certificate for laser hair removal."
+          "This course includes, among other things, the following. The current price is shown with the available dates."
         ],
         "checklist": [
-          "Incl. online training worth €1,500",
+          "Incl. online training",
           "Online Academy: lifetime access",
           "Personal attention: a maximum of 4 students per course",
           "UWV funding potentially available",
@@ -3386,11 +3781,16 @@
         ]
       },
       {
-        "heading": "Prices & payment terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "At IZZI Beauty we offer flexible payment options so you can take your course without financial worries. You can pay in instalments for this course.",
-          "Rates: the full amount is €1,500 (VAT-exempt). The standard deposit is €1,200, followed by the 1st instalment of €300 on location before the course.",
-          "Benefits: no interest — pay in instalments without extra costs or BKR registration. VAT-exempt thanks to our CRKBO recognition. Do you receive a WW, WIA or Wajong benefit? Contact us to apply for UWV funding for this course. Would you like to pay in instalments? Let us know your choice by email or WhatsApp after registering."
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy.",
+          "Do you receive a WW, WIA or Wajong benefit? Contact us to apply for UWV funding for this course."
+        ],
+        "checklist": [
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
+          "VAT-exempt thanks to our CRKBO recognition",
+          "UWV funding potentially available"
         ]
       },
       {
@@ -3399,7 +3799,7 @@
           "Course duration: 3 hours of online preparation with course material in the IZZI Online Academy, 1 day of intensive training on location (09:30 – 15:30, 6 hours), and additional homework in which you treat 5 models in your own salon with a total time investment of 20 hours. The total study time comes to 29 hours.",
           "Prior experience: no prior training is needed to take part. The beginner course is accessible to anyone who wants to become a specialist.",
           "Conditions: there are no special requirements; it is a self-employed profession with no mandatory government requirements. The General Terms and Conditions of Opleiding IZZI Beauty BV apply to all courses and treatments, including our Privacy Statement and complaints procedure.",
-          "Availability: this course is currently only taught privately, both in Amsterdam and in Rotterdam. Sign up via the enrolment form or get in touch, and we will contact you as soon as possible for a preferred date."
+          "Available locations differ per course date. See the current dates and locations below."
         ]
       }
     ],
@@ -3433,7 +3833,7 @@
         },
         {
           "q": "Where does the course take place?",
-          "a": "This course is currently only taught privately, at our locations in Amsterdam and Rotterdam. Sign up via the form or get in touch for a preferred date."
+          "a": "Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         },
         {
           "q": "How large are the groups?",
@@ -3482,7 +3882,7 @@
         },
         {
           "k": "Price",
-          "v": "€1,500 VAT-exempt"
+          "v": "See available dates"
         },
         {
           "k": "Laser machine",
@@ -3497,26 +3897,42 @@
           "v": "Registered training provider — VAT-exempt"
         }
       ],
-      "ctaTitle": "Become a laser hair removal specialist",
-      "ctaText": "This course is currently only taught privately. Contact us to plan a suitable date together.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Growing rapidly",
       "title": "Sign up for the Laser Hair Removal Training",
-      "text": "Learn to safely and effectively remove unwanted hair growth and add one of the most in-demand treatments to your salon.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Laser Hair Removal Training"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20250729-eb6241-laser-ontharing-behandeling.webp"
+    ]
   },
   "airbrush-brows-online-training": {
     "hero": {
       "eyebrow": "Online training",
       "title": "Airbrush Brows Online Training",
-      "text": "Learn the new Airbrush Brows technique fully online — step by step, including a certificate. Now with 40% discount.",
+      "text": "Learn the new Airbrush Brows technique fully online — step by step, including a certificate.",
       "breadcrumb": "Airbrush Brows Online Training"
     },
     "image": "/media/izzi-beauty-20250729-4dd5a7-airbrush-brows-online-training.png",
@@ -3548,10 +3964,13 @@
         ]
       },
       {
-        "heading": "Price and payment",
+        "heading": "Payment options",
         "paragraphs": [
-          "The training normally costs €395 and is now available with a 40% discount for €237. In dollars that is from $428.15 for $256.89.",
-          "You can pay with PayPal, iDEAL or credit card."
+          "You can pay via iDEAL, PayPal or credit card. The current price comes from the shop, not from this copy."
+        ],
+        "checklist": [
+          "PayPal, iDEAL or credit card",
+          "Certificate of participation"
         ]
       },
       {
@@ -3593,7 +4012,7 @@
         },
         {
           "q": "What does the training cost?",
-          "a": "The training normally costs €395 and is now available with a 40% discount for €237. In dollars that is from $428.15 for $256.89."
+          "a": "The current price comes from the shop, not from this copy. See the available dates on this page."
         },
         {
           "q": "How can I pay?",
@@ -3634,11 +4053,11 @@
         },
         {
           "k": "Price",
-          "v": "€237 (from €395)"
+          "v": "See available dates"
         },
         {
-          "k": "Discount",
-          "v": "40%"
+          "k": "Pace",
+          "v": "At your own pace"
         },
         {
           "k": "Payment",
@@ -3653,19 +4072,38 @@
           "v": "Included"
         }
       ],
-      "ctaTitle": "Start with Airbrush Brows",
-      "ctaText": "Now with 40% discount, including a certificate. Contact us for the available languages and the Dutch version.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
-      "script": "Now 40% discount",
+      "script": "Fully online",
       "title": "Follow the Airbrush Brows Online Training",
-      "text": "Learn the complete Airbrush Brows technique online, at your own pace, with step-by-step videos and a certificate of participation.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all online trainings",
-      "secondaryUrl": "/online-trainingen"
-    }
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "online",
+      "opleiding_specifiek": "Airbrush Brows Online Training"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Price and availability come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
+    "highlights": [
+      {
+        "label": "Pay in instalments",
+        "text": "Pay in instalments or with iDEAL in3"
+      }
+    ]
   }
 }
