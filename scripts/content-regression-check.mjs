@@ -35,6 +35,7 @@ const expectedNav = [
   ['Prijzen', '/prijzen'],
   ['Opleidingen', '/opleidingen'],
   ['Online Trainingen', '/online-trainingen'],
+  ['Blog', '/blog'],
   ['Kennisbank', '/kennisbank'],
   ['Webshop', 'https://laliqa.com'],
   ['Over IZZI', '/over-izzi'],
@@ -44,6 +45,29 @@ const actualNav = site.nav.map((i) => [i.label, i.url]);
 if (JSON.stringify(actualNav) !== JSON.stringify(expectedNav)) {
   fail(`nav-volgorde/bestemmingen wijken af:\n  verwacht: ${JSON.stringify(expectedNav)}\n  gevonden: ${JSON.stringify(actualNav)}`);
 } else pass('nav-volgorde + externe Webshop/Laserontharen correct');
+
+// ---------- 2b. EN-nav: dezelfde URL-structuur, Blog + Knowledge Base als aparte ingangen ----------
+const enSite = rd('content/en/site.json').site;
+const expectedEnNav = [
+  ['Treatments', '/behandelingen'],
+  ['Prices', '/prijzen'],
+  ['Training Courses', '/opleidingen'],
+  ['Online Training', '/online-trainingen'],
+  ['Blog', '/blog'],
+  ['Knowledge Base', '/kennisbank'],
+  ['Shop', 'https://laliqa.com'],
+  ['About IZZI', '/over-izzi'],
+  ['Laser Hair Removal', 'https://izziclinic.nl'],
+];
+const actualEnNav = enSite.nav.map((i) => [i.label, i.url]);
+if (JSON.stringify(actualEnNav) !== JSON.stringify(expectedEnNav)) {
+  fail(`EN nav-volgorde/bestemmingen wijken af:\n  verwacht: ${JSON.stringify(expectedEnNav)}\n  gevonden: ${JSON.stringify(actualEnNav)}`);
+} else pass('EN nav-pariteit: Blog + Knowledge Base als aparte ingangen');
+const nlNavUrls = site.nav.map((i) => i.url);
+const enNavUrls = enSite.nav.map((i) => i.url);
+if (JSON.stringify(nlNavUrls) !== JSON.stringify(enNavUrls)) {
+  fail(`NL/EN nav-URL-volgorde wijkt af:\n  nl: ${JSON.stringify(nlNavUrls)}\n  en: ${JSON.stringify(enNavUrls)}`);
+} else pass('NL/EN nav-URL-volgorde identiek');
 
 // ---------- 3. Over IZZI is een dropdown; Ervaringen pas als de content bestaat ----------
 const overIzzi = site.nav.find((i) => i.label === 'Over IZZI');
@@ -61,14 +85,21 @@ if (oplCols.includes('Extra')) fail('losse Opleidingen-kolom "Extra" bestaat nog
 if (!oplCols.includes('Extra Opleidingen')) fail('Opleidingen-kolom "Extra Opleidingen" ontbreekt');
 if (!oplCols.includes('Extra') && oplCols.includes('Extra Opleidingen')) pass('Opleidingen: Extra samengevoegd in Extra Opleidingen');
 
-// ---------- 5. Footer: e-mail, geen Den Bosch, Blogs -> Kennisbank ----------
+// ---------- 5. Footer: e-mail, geen Den Bosch, Blog én Kennisbank als aparte ingangen ----------
 const footer = site.footer;
 if (footer.email !== 'info@izzi-beauty.com') fail(`footer e-mail is ${footer.email}, verwacht info@izzi-beauty.com`);
 if ((footer.locations || []).some((l) => /den bosch|hertogenbosch/i.test(`${l.name} ${l.city}`))) fail('Den Bosch staat nog als actieve footer-locatie');
 const infoCol = (footer.columns || []).find((c) => c.heading === 'Informatie');
-if ((infoCol?.links || []).some((l) => l.label === 'Blogs' || l.url === '/blog')) fail('footer heeft nog "Blogs"/"/blog" i.p.v. Kennisbank');
+if ((infoCol?.links || []).some((l) => l.label === 'Blogs')) fail('footer heeft nog het oude label "Blogs" i.p.v. "Blog"');
+if (!(infoCol?.links || []).some((l) => l.label === 'Blog' && l.url === '/blog')) fail('footer mist Blog -> /blog');
 if (!(infoCol?.links || []).some((l) => l.label === 'Kennisbank' && l.url === '/kennisbank')) fail('footer mist Kennisbank -> /kennisbank');
-if (!failures.some((m) => m.startsWith('footer'))) pass('footer e-mail/locaties/Kennisbank correct');
+if (!failures.some((m) => m.startsWith('footer'))) pass('footer e-mail/locaties/Blog+Kennisbank correct');
+
+const enInfoCol = (enSite.footer.columns || []).find((c) => c.heading === 'Information');
+if ((enInfoCol?.links || []).some((l) => l.label === 'Blogs')) fail('EN footer heeft nog het oude label "Blogs" i.p.v. "Blog"');
+if (!(enInfoCol?.links || []).some((l) => l.label === 'Blog' && l.url === '/blog')) fail('EN footer mist Blog -> /blog');
+if (!(enInfoCol?.links || []).some((l) => l.label === 'Knowledge Base' && l.url === '/kennisbank')) fail('EN footer mist Knowledge Base -> /kennisbank');
+if (!failures.some((m) => m.startsWith('EN footer'))) pass('EN footer Information: Blog + Knowledge Base aanwezig');
 
 // ---------- 6. CTA-intentie: geen kapotte / verkeerde links ----------
 const services = new Set(keys(rd('content/nl/services.json')));
@@ -101,6 +132,16 @@ for (const c of footer.columns || []) for (const l of c.links || []) internalUrl
 const broken = internalUrls.filter((u) => u && u.startsWith('/') && u !== '/' && !routable.has(u.slice(1)) && !nested.includes(u.slice(1)));
 if (broken.length) fail(`kapotte interne nav/footer-links (geen route/content): ${[...new Set(broken)].join(', ')}`);
 else pass('alle interne nav/footer-links resolven naar een route/content');
+
+if (!fs.existsSync(path.join(ROOT, 'app/[locale]/blog/page.tsx'))) fail('/blog-route ontbreekt (app/[locale]/blog/page.tsx)');
+if (!fs.existsSync(path.join(ROOT, 'app/[locale]/kennisbank/page.tsx'))) fail('/kennisbank-route ontbreekt (app/[locale]/kennisbank/page.tsx)');
+const redirects = rd('content/redirects.json').redirects || [];
+const blogKbRedirect = redirects.find((r) =>
+  (r.source === '/blog' && r.destination === '/kennisbank') ||
+  (r.source === '/kennisbank' && r.destination === '/blog'),
+);
+if (blogKbRedirect) fail(`redirect tussen Blog en Kennisbank: ${blogKbRedirect.source} -> ${blogKbRedirect.destination}`);
+else pass('/blog en /kennisbank blijven aparte routes zonder onderlinge redirect');
 
 // ---------- 7. Formulier-submit knop niet meer in de gouden gradient ----------
 const css = fs.readFileSync(path.join(ROOT, 'app/globals.css'), 'utf8');

@@ -378,6 +378,10 @@
         ]
       },
       {
+        "label": "Blog",
+        "url": "/blog"
+      },
+      {
         "label": "Kennisbank",
         "url": "/kennisbank"
       },
@@ -536,6 +540,10 @@
         {
           "heading": "Informatie",
           "links": [
+            {
+              "label": "Blog",
+              "url": "/blog"
+            },
             {
               "label": "Kennisbank",
               "url": "/kennisbank"

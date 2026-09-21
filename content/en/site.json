@@ -378,6 +378,10 @@
         ]
       },
       {
+        "label": "Blog",
+        "url": "/blog"
+      },
+      {
         "label": "Knowledge Base",
         "url": "/kennisbank"
       },
@@ -536,6 +540,10 @@
         {
           "heading": "Information",
           "links": [
+            {
+              "label": "Blog",
+              "url": "/blog"
+            },
             {
               "label": "Knowledge Base",
               "url": "/kennisbank"
