@@ -794,8 +794,18 @@ for (const k of trnKeys) {
 const dupHandles = handles.filter((h, i) => handles.indexOf(h) !== i);
 if (dupHandles.length) fail(`dubbele productHandle: ${[...new Set(dupHandles)].join(', ')}`);
 else pass(`${handles.length} unieke productHandles`);
+const danglingFacts = [];
+for (const k of trnKeys) {
+  for (const loc of [trnNl[k], trnEn[k]]) {
+    for (const f of loc.aside?.facts || []) {
+      if (/\s[·—-]\s*$/.test(String(f.v || ''))) danglingFacts.push(`${k}:${f.k}=${f.v}`);
+    }
+  }
+}
 if (emptyFacts.length) fail(`lege aside-facts: ${emptyFacts.join(', ')}`);
 else pass('geen lege aside-facts na prijsnormalisatie');
+if (danglingFacts.length) fail(`afgekapte aside-facts: ${danglingFacts.join(', ')}`);
+else pass('geen afgekapte euro-restanten in aside-facts');
 if (missingV2.length) fail(`v2-pariteit/velden ontbreken: ${missingV2.slice(0, 12).join(', ')}`);
 else pass('alle boekbare opleidingen hebben availability + productHandle; NL/EN gallery/trainers/availability-pariteit');
 if (prefillIssues.length) fail(`form prefill: ${prefillIssues.join(', ')}`);
