@@ -1256,6 +1256,7 @@
     },
     "image": "/media/izzi-beauty-20251110-2aed27-powder-brows-opleiding-izzi-beauty.webp",
     "intro": "IZZI Beauty is a recognised training institute, CRKBO-registered, and we work together with the UWV. In six days — from online preparation to an intensive return day — you learn everything from colour theory and eyebrow mapping to pigment techniques on latex and real models.",
+    "videoUrl": "https://www.youtube.com/watch?v=RiPeVrqzUy4",
     "productHandle": "opleiding-ombre-powder-brows",
     "gallery": [
       "/media/izzi-beauty-20251110-f2652d-ombre-powder-brows-cursus.webp",
@@ -1267,13 +1268,13 @@
         "name": "Isabella",
         "role": "Owner and PMU expert",
         "text": "With a passion for permanent makeup I focus not only on treatments in our salon, but also on training both beginner and experienced PMU stylists. My goal is to send our students into the PMU world with confidence and expertise!",
-        "image": "/media/izzi-beauty-20250729-58e555-isabella-izzi-beauty.jpg"
+        "image": "/media/izzi-beauty-20250729-9b97be-izzi-beauty-isabella-levels-pmu-expert.webp"
       },
       {
         "name": "Carla",
         "role": "PMU and laser treatment expert",
         "text": "As a full-time PMU specialist at IZZI I guide students during courses and support Isabella at exams. With two years of experience in treatments and training, I make sure our students always get the guidance they need.",
-        "image": "/media/izzi-beauty-20250729-a8b5f2-carla-izzi-beauty.png"
+        "image": ""
       }
     ],
     "formSlug": "opleiding-interesse",
@@ -1403,13 +1404,6 @@
           "Prior experience: no prior training is needed to take part in the course. The beginner course is accessible to anyone who wants to become a PMU specialist. There are no special requirements; PMU stylist is a self-employed profession with no mandatory government requirements.",
           "The general terms and conditions of Opleiding IZZI Beauty BV apply to all courses and treatments, including our privacy statement and complaints procedure.",
           "Availability: the Ombré Powder Brows beginner course is offered almost every month in Amsterdam. Contact us for the most current dates and available places."
-        ]
-      },
-      {
-        "heading": "Your trainers",
-        "paragraphs": [
-          "Isabella — owner and expert in PMU: \"With a passion for permanent makeup, I focus not only on treatments in our salon, but also on training both beginner and experienced PMU stylists. My goal is to let our students step into the PMU world with confidence and expertise!\"",
-          "Carla — expert in PMU and laser treatments: \"As a full-time PMU specialist at IZZI, I guide students during courses and support Isabella at exams. With two years of experience in both treatments and training, I make sure our students always get the guidance they need.\""
         ]
       }
     ],
