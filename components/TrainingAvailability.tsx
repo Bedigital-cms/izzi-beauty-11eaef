@@ -5,11 +5,13 @@
  *
  * Client-island: de opleidingspagina zelf blijft statisch. Prijzen/datums/plekken komen NOOIT uit
  * git. Webshop uit of geen varianten → nette lege staat, nooit een 404-knop.
+ * Aanmelden dieplink: /product/<handle>?variant=<id> — alleen het id, nooit een prijs.
  */
 import { useEffect, useState } from 'react'
 
 import { formatMoney } from '@/lib/commerce/format'
 import { commerceEnabled } from '@/lib/commerce/config'
+import { productVariantHref, trainingOptionValues } from '@/lib/commerce/variant-query'
 
 import { LocaleLink } from './LocaleLink'
 
@@ -26,6 +28,7 @@ export type AvailabilityLabels = {
   enrolDate: string
   requestInfo: string
   loading: string
+  full: string
 }
 
 type PublicVariant = {
@@ -101,24 +104,29 @@ export function TrainingAvailability({
           {variants.map((v) => {
             const seats = Math.max(0, v.available)
             const seatLabel = seats === 1 ? labels.seatsOne : labels.seats
-            const optionLine = v.options.map((o) => o.value).filter(Boolean).join(' · ')
+            const { date, location } = trainingOptionValues(v.options)
+            const fallbackLine = v.options.map((o) => o.value).filter(Boolean).join(' · ')
+            const heading = date || v.title
+            const showFallback = !date && !location && fallbackLine && fallbackLine !== heading
+            const open = v.inStock && handle
             return (
-              <li className="training-date-card" key={String(v.id)}>
+              <li className={`training-date-card${open ? '' : ' training-date-card--full'}`} key={String(v.id)}>
                 <div>
-                  <strong>{v.title}</strong>
-                  {optionLine && optionLine !== v.title && <span>{optionLine}</span>}
+                  <strong>{heading}</strong>
+                  {location && <span>{location}</span>}
+                  {showFallback && <span>{fallbackLine}</span>}
                   <span className="training-date-meta">
                     {formatMoney(v.priceCents, currency)}
                     {' · '}
-                    {v.inStock ? `${seats} ${seatLabel}` : `0 ${labels.seats}`}
+                    {open ? `${seats} ${seatLabel}` : labels.full}
                   </span>
                 </div>
-                {v.inStock && handle ? (
-                  <LocaleLink className="btn btn-gold" href={`/product/${handle}`}>
+                {open ? (
+                  <LocaleLink className="btn btn-gold" href={productVariantHref(handle, v.id)}>
                     {labels.enrolDate}
                   </LocaleLink>
                 ) : (
-                  <span className="training-date-full">{labels.requestInfo}</span>
+                  <span className="training-date-full">{labels.full}</span>
                 )}
               </li>
             )

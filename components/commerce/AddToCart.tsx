@@ -12,6 +12,7 @@ import { useRouter } from 'next/navigation'
 import { LocaleLink } from '@/components/LocaleLink'
 import { formatMoney } from '@/lib/commerce/format'
 import type { Product, Variant } from '@/lib/commerce/types'
+import { pickInStockVariantId } from '@/lib/commerce/variant-query'
 import type { ShopUIStrings } from '@/lib/types'
 
 import { useCart } from './CartProvider'
@@ -19,20 +20,32 @@ import { useCart } from './CartProvider'
 export function AddToCart({
   product,
   ui,
+  initialVariantId,
 }: {
   product: Product
   ui: ShopUIStrings
+  /** Alleen een variant-id uit de URL. Prijs/voorraad komen altijd uit `product`, nooit uit de query. */
+  initialVariantId?: string | null
 }) {
   const router = useRouter()
   const { add, error, clearError } = useCart()
 
   // Bij één variant is er niets te kiezen; bij meerdere begint de keuze leeg zodat de bezoeker
-  // bewust kiest in plaats van per ongeluk de eerste variant af te rekenen.
+  // bewust kiest in plaats van per ongeluk de eerste variant af te rekenen. Een geldige in-stock
+  // `?variant=` uit de URL mag die keuze wél vooraf zetten.
   const single = product.variants.length === 1 ? product.variants[0] : null
-  const [selectedId, setSelectedId] = React.useState<string | null>(single ? String(single.id) : null)
+  const fromQuery = pickInStockVariantId(product.variants, initialVariantId)
+  const [selectedId, setSelectedId] = React.useState<string | null>(
+    fromQuery ?? (single ? String(single.id) : null),
+  )
   const [quantity, setQuantity] = React.useState(1)
   const [busy, setBusy] = React.useState(false)
   const [added, setAdded] = React.useState(false)
+
+  React.useEffect(() => {
+    const next = pickInStockVariantId(product.variants, initialVariantId)
+    if (next) setSelectedId(next)
+  }, [initialVariantId, product.variants])
 
   const selected: Variant | null =
     product.variants.find((v) => String(v.id) === selectedId) ?? single ?? null

@@ -667,6 +667,7 @@ export type Ui = {
     viewDates: string
     requestInfo: string
     loading: string
+    full: string
   }
   /** Global 404 page (app/not-found.tsx). Uses the default locale until a locale-aware 404 exists. */
   notFound: {

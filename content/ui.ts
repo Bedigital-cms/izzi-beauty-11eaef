@@ -112,6 +112,7 @@ const DEFAULT_UI: Ui = {
     viewDates: 'Bekijk beschikbare data',
     requestInfo: 'Informatie opvragen',
     loading: 'Data worden geladen…',
+    full: 'Vol',
   },
   notFound: {
     title: 'Pagina niet gevonden',

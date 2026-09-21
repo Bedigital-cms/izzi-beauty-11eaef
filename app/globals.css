@@ -2167,8 +2167,12 @@ p { color: var(--ink-soft); }
 }
 .training-date-card strong { display: block; font-size: 1.02rem; }
 .training-date-card span { display: block; font-family: var(--sans); font-size: .86rem; color: var(--muted); }
+.training-date-card--full { background: var(--cream); border-style: dashed; }
 .training-date-meta { margin-top: 4px; }
-.training-date-full { font-family: var(--sans); font-size: .86rem; color: var(--muted); }
+.training-date-full {
+  font-family: var(--sans); font-size: .78rem; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted);
+}
 .trainer-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); align-items: start; }
 .trainer-bio { margin-top: 10px !important; color: var(--ink) !important; font-size: .9rem !important; line-height: 1.45; }
 .training-form { padding-top: 8px; position: relative; z-index: 1; }

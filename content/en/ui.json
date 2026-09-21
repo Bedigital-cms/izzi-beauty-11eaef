@@ -87,7 +87,8 @@
     "enrolDate": "Enrol",
     "viewDates": "View available dates",
     "requestInfo": "Request information",
-    "loading": "Loading dates…"
+    "loading": "Loading dates…",
+    "full": "Full"
   },
   "notFound": {
     "title": "Page not found",

@@ -369,6 +369,7 @@ export function DetailPage({
         enrolDate: labels.enrolDate,
         requestInfo: labels.requestInfo,
         loading: labels.loading,
+        full: labels.full,
       }}
     />
   ) : null

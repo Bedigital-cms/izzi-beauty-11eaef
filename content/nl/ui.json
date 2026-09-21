@@ -87,7 +87,8 @@
     "enrolDate": "Aanmelden",
     "viewDates": "Bekijk beschikbare data",
     "requestInfo": "Informatie opvragen",
-    "loading": "Data worden geladen…"
+    "loading": "Data worden geladen…",
+    "full": "Vol"
   },
   "notFound": {
     "title": "Pagina niet gevonden",
