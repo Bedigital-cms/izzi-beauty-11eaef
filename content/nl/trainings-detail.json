@@ -17,6 +17,10 @@
       {
         "label": "Gespreid betalen",
         "text": "Betaal in termijnen of met iDEAL in3"
+      },
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
       }
     ],
     "body": [
@@ -53,7 +57,7 @@
         ],
         "checklist": [
           "Theorieboek: je uitgebreide gids voor lip pigmentatie, technieken en marketingtips",
-          "Toegang tot de Online Academy (t.w.v. €1.250,-) met meer dan 50 modules en video's",
+          "Toegang tot de Online Academy met meer dan 50 modules en video's",
           "3 hoogwaardige Lip Blush pigmenten voor verschillende huidtypes",
           "25 inkt ringen om pigment eenvoudig en efficiënt te gebruiken",
           "20 Laliqa naalden",
@@ -66,7 +70,7 @@
         ]
       },
       {
-        "heading": "Inclusief IZZI PMU Machine",
+        "heading": "IZZI PMU Machine",
         "paragraphs": [
           "IZZI Beauty heeft haar expertise en jarenlange ervaring in permanente make-up vertaald naar de ultieme PMU-machine. Sinds 2021 bieden wij een draadloze machine die precisie, gebruiksgemak en veelzijdigheid combineert. Doordat je gemakkelijk slaglengtes kunt wijzigen kun je met deze machine alle type behandelingen uitvoeren voor PMU Powder Brows en Lip Blush, inclusief Freckles, Striae en zelfs Fineline tattoos."
         ],
@@ -75,30 +79,33 @@
           "Comfortabele behandeling: zachte trillingen en stil geluid",
           "Multifunctioneel: van Faux Freckles en sproetjes tot lip pigmentatie en ombré brows",
           "Ergonomisch draadloos ontwerp voorkomt vermoeidheid"
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prijzen & betaaltermijnen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "Betaling in termijnen: het volledige bedrag is €3.400 (btw-vrij), inclusief de IZZI PMU Machine. De aanbetaling bij inschrijving is €1.000, daarna 2 termijnen van €1.200, 4 termijnen van €600 of 6 termijnen van €400.",
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst.",
           "Heb je een WW-, WIA- of Wajong uitkering? Neem contact met ons op om een UWV-subsidie aan te vragen voor deze opleiding."
         ],
         "checklist": [
           "Geen rente: betaal in termijnen zonder extra kosten of BKR-registratie",
           "Btw-vrij dankzij onze CRKBO-erkenning",
-          "UWV-subsidie mogelijk"
+          "UWV-subsidie mogelijk",
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie"
         ]
       },
       {
         "heading": "De Lip Blush Beginnersopleiding is inclusief",
         "paragraphs": [
-          "Alles wat je nodig hebt om direct professioneel aan de slag te gaan."
+          "Bij deze opleiding hoort onder meer het volgende. De actuele prijs zie je bij de beschikbare data."
         ],
         "checklist": [
           "Max. 3 studenten per opleiding",
           "CRKBO erkende opleiding",
-          "Inclusief PMU-machine t.w.v. €550",
-          "Inclusief startpakket t.w.v. €1.250",
+          "Inclusief PMU-machine",
+          "Inclusief startpakket",
           "Volledige kleurenleer en pigmentenleer",
           "Extra terugkomdag na 6 maanden bij ons op locatie",
           "Lip mapping & lip shaping",
@@ -114,14 +121,7 @@
           "Duur van de opleiding: 10 uur online lessen via de IZZI Online Academy, 3 opeenvolgende dagen praktijktraining op locatie goed voor 12 uur intensieve begeleiding, en een huiswerkopdracht waarbij je 5 modellen behandelt in je eigen salon (20 uur). De totale studietijd komt op 46 uur.",
           "Vooropleiding: er is geen vooropleiding of diploma nodig om te kunnen starten. De Beginnersopleiding Lip Blush is toegankelijk voor iedereen die PMU-specialist wil worden.",
           "Voorwaarden: PMU-styliste is een vrij beroep, en er zijn geen speciale overheidseisen om deel te nemen. Voor al onze opleidingen gelden de Algemene Voorwaarden van Opleiding IZZI Beauty BV, inclusief onze Privacy Verklaring en Klachtenprocedure.",
-          "Beschikbaarheid: de Beginnersopleiding Lip Blush wordt vrijwel iedere maand aangeboden."
-        ]
-      },
-      {
-        "heading": "Je trainers",
-        "paragraphs": [
-          "Isabella — eigenaar en expert in PMU: \"Naast dat ik nog behandelingen graag in de salon uitvoer, ben ik voornamelijk opleidingen aan het geven aan beginnende en ervaren PMU stylisten.\"",
-          "Carla — expert PMU en laserbehandelingen: \"Ik werk nu twee jaar full time bij IZZI, waarbij ik naast de behandelingen ook opleidingen geef en Isabella ondersteun tijdens de examens.\""
+          "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties."
         ]
       }
     ],
@@ -196,35 +196,66 @@
         },
         {
           "k": "Prijs",
-          "v": "€3.000 ineens of €3.400 in termijnen"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Startpakket",
-          "v": "T.w.v. €1.250"
+          "v": "Inbegrepen"
         },
         {
           "k": "PMU-machine",
-          "v": "Cadeau t.w.v. €550"
+          "v": "Cadeau"
         },
         {
           "k": "UWV-subsidie",
           "v": "Mogelijk"
         }
       ],
-      "ctaTitle": "Interesse in deze opleiding?",
-      "ctaText": "Benieuwd of een PMU-opleiding bij je past of heb je vragen? Neem contact op voor de actuele data.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Start jouw carrière in PMU",
       "title": "Schrijf je in voor de Lip Blush Beginnersopleiding",
-      "text": "Start vandaag nog en zet de eerste stap naar een succesvolle carrière in permanente make-up.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "lippen",
+      "opleiding_specifiek": "Lip Blush Opleiding"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
+    "trainers": [
+      {
+        "name": "Isabella",
+        "role": "Eigenaar en expert in PMU",
+        "text": "Met een passie voor permanente make-up richt ik mij niet alleen op behandelingen in onze salon, maar ook op het opleiden van zowel beginnende als ervaren PMU-stylisten. Mijn doel is om onze studenten met vertrouwen en expertise de PMU-wereld in te laten stappen!",
+        "image": "/media/izzi-beauty-20250729-9b97be-izzi-beauty-isabella-levels-pmu-expert.webp"
+      },
+      {
+        "name": "Carla",
+        "role": "Expert PMU en laserbehandelingen",
+        "text": "Als fulltime PMU-specialist bij IZZI begeleid ik cursisten tijdens opleidingen en ondersteun ik Isabella bij examens. Met twee jaar ervaring in zowel behandelingen als trainingen, zorg ik ervoor dat onze studenten altijd de begeleiding krijgen die ze nodig hebben.",
+        "image": ""
+      }
+    ],
+    "gallery": [
+      "/media/izzi-beauty-20250729-b60f2a-lip-pigmentatie.webp",
+      "/media/izzi-beauty-20250729-abf9e8-lip-blush-pigmentatie.webp"
+    ]
   },
   "lip-blush-masterclass": {
     "hero": {
@@ -234,12 +265,16 @@
       "breadcrumb": "Lip Blush Masterclass"
     },
     "image": "/media/izzi-beauty-20250729-b60f2a-lip-pigmentatie.webp",
-    "intro": "Lip pigmentatie is momenteel een van de snelst groeiende en meest gevraagde behandelingen in de wereld van permanente make-up. Tijdelijk van €3.000 voor slechts €1.500. Onze Lip Blush Masterclass is speciaal ontworpen om ervaren PMU professionals te helpen hun vaardigheden verder te verfijnen.",
+    "intro": "Lip pigmentatie is momenteel een van de snelst groeiende en meest gevraagde behandelingen in de wereld van permanente make-up. Onze Lip Blush Masterclass is speciaal ontworpen om ervaren PMU professionals te helpen hun vaardigheden verder te verfijnen.",
     "productHandle": "opleiding-lip-blush-masterclass",
     "highlights": [
       {
         "label": "CRKBO-erkend",
         "text": "Btw-vrij en officieel erkend"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
       }
     ],
     "body": [
@@ -254,7 +289,7 @@
         "heading": "Programma Lip Blush Masterclass",
         "paragraphs": [
           "Dag 1 — Online voorbereiding (8 uur): onze masterclass begint met een intensieve online leersessie in de IZZI Online Academy. Je behandelt de theoretische basis van Lip Blush met diepgaande kennis over lip pigmentatie en technieken; alles over naalden — soorten, gebruik en optimale resultaten; kleurenleer en hoe je de perfecte pigmenten kiest voor verschillende huidtypes; innovatieve Lip Blush-technieken die je werk naar een hoger niveau tillen; het identificeren van persoonlijke verbeterpunten in jouw huidige werk; een kennismaking met geavanceerde PMU-machines; en social media tips en marketingstrategieën om jouw PMU-business te laten groeien.",
-          "Dag 2 — Praktijkdag op locatie (6 uur, 10:00 – 16:00): de praktijkdag vindt plaats op locatie bij IZZI Beauty in Amsterdam en staat volledig in het teken van hands-on training en persoonlijke begeleiding. Je bespreekt de online lesstof na en gaat in op blushing technieken, analyseert valkuilen en uitdagingen bij het werken met lippen, werkt aan lip mapping met het gedetailleerd ontwerpen van lipcontouren, past nieuwe Lip Blush-technieken toe op latex, voert een lip pigmentatiebehandeling uit op een model, en krijgt tijd voor al jouw vragen en persoonlijke feedback op je werk. De dag sluit af met de certificaatuitreiking."
+          "Dag 2 — Praktijkdag op locatie (6 uur, 10:00 – 16:00): de praktijkdag vindt plaats op locatie bij IZZI Beauty en staat volledig in het teken van hands-on training en persoonlijke begeleiding. Je bespreekt de online lesstof na en gaat in op blushing technieken, analyseert valkuilen en uitdagingen bij het werken met lippen, werkt aan lip mapping met het gedetailleerd ontwerpen van lipcontouren, past nieuwe Lip Blush-technieken toe op latex, voert een lip pigmentatiebehandeling uit op een model, en krijgt tijd voor al jouw vragen en persoonlijke feedback op je werk. De dag sluit af met de certificaatuitreiking."
         ]
       },
       {
@@ -276,7 +311,7 @@
       {
         "heading": "De opleiding is inclusief",
         "paragraphs": [
-          "Een compleet pakket met maximaal 2 studenten per opleiding voor optimale persoonlijke aandacht."
+          "Bij deze opleiding hoort onder meer het volgende. De actuele prijs zie je bij de beschikbare data."
         ],
         "checklist": [
           "Max. 2 studenten per opleiding",
@@ -293,24 +328,28 @@
         ]
       },
       {
-        "heading": "Prijzen en betaaltermijnen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "De masterclass kost tijdelijk €1.500 in plaats van €3.000. Daarvoor krijg je twee dagen intensieve training (1 online, 1 op locatie), twee premium pigmenten, persoonlijke begeleiding in een kleine groep van maximaal 2 studenten, en een CRKBO-erkend certificaat met toegang tot nazorg en ondersteuning.",
-          "Betalen kan in één keer (€1.500 vooraf) of in twee termijnen: een aanbetaling van €1.000 bij inschrijving en het restbedrag van €500 op locatie op de praktijkdag. Onze opleidingen zijn CRKBO-erkend, wat betekent dat ze volledig btw-vrij zijn."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst."
+        ],
+        "checklist": [
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie",
+          "Btw-vrij dankzij onze CRKBO-erkenning"
         ]
       },
       {
         "heading": "PMU Machine",
         "paragraphs": [
-          "Onze draadloze machine is ontworpen met de hoogste precisie en gebruiksvriendelijkheid in gedachten. De technologie levert consistente pigmentatie met minimale huidirritatie, is geschikt voor diverse PMU-behandelingen waaronder alle soorten lip pigmentatie, en het draadloze ontwerp biedt ultieme bewegingsvrijheid.",
-          "Tijdens de opleiding kun je alle apparaten uitproberen op latex. Beschikbare machines: de IZZI Beauty Wireless machine voor €826 excl. btw, de Kwadron machine voor €950 excl. btw en de Labina machine voor €2.195 excl. btw."
-        ]
+          "Onze draadloze machine is ontworpen met de hoogste precisie en gebruiksvriendelijkheid in gedachten. De technologie levert consistente pigmentatie met minimale huidirritatie, is geschikt voor diverse PMU-behandelingen waaronder alle soorten lip pigmentatie, en het draadloze ontwerp biedt ultieme bewegingsvrijheid."
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
         "heading": "Algemene informatie",
         "paragraphs": [
           "Duur van de opleiding: 8 uur online voorbereiding met gedetailleerde lesstof, een praktijkdag op locatie van 6 uur intensieve training van 10:00 tot 16:00, en extra huiswerk waarbij je 5 modellen behandelt in je eigen salon (20 uur extra praktijkervaring). De totale studietijd komt op 34 uur.",
-          "Beschikbaarheid: de Lip Blush Masterclass wordt bijna elke maand georganiseerd op onze locaties in Amsterdam en Rotterdam. Optioneel kun je ook een privéopleiding boeken op een locatie naar keuze.",
+          "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties.",
           "Voorwaarden: onze opleidingen vallen onder de Algemene Voorwaarden van IZZI Beauty BV. CRKBO-erkend betekent dat onze opleiding voldoet aan de hoogste kwaliteitsnormen en vrijgesteld is van btw."
         ]
       }
@@ -356,8 +395,8 @@
           "a": "Ja, je kunt onze draadloze PMU-machines tijdens de opleiding testen en desgewenst direct aanschaffen."
         },
         {
-          "q": "Hoe lang is de korting geldig?",
-          "a": "De korting is een tijdelijke actie en geldt zolang er plekken beschikbaar zijn in de opleiding."
+          "q": "Waar zie ik de actuele prijs?",
+          "a": "De actuele prijs, datum, locatie en beschikbare plekken staan bij de beschikbare data op deze pagina. Die komen uit de webshop, niet uit deze tekst."
         },
         {
           "q": "Wat als ik na de training vragen heb?",
@@ -369,7 +408,7 @@
         },
         {
           "q": "Waar worden de trainingen gehouden?",
-          "a": "De praktijkdagen worden georganiseerd op onze locaties in Amsterdam en Rotterdam. Optioneel kun je ook een privéopleiding boeken op een locatie naar keuze."
+          "a": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Een privé opleiding op locatie is ook mogelijk."
         }
       ]
     },
@@ -394,7 +433,7 @@
         },
         {
           "k": "Prijs",
-          "v": "€1.500 btw-vrij (van €3.000)"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Certificaat",
@@ -405,26 +444,42 @@
           "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
-      "ctaTitle": "Klaar voor de volgende stap?",
-      "ctaText": "De korting geldt zolang er plekken beschikbaar zijn. Neem contact op voor de actuele data.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Word expert in lip pigmentatie",
       "title": "Meld je aan voor de Lip Blush Masterclass",
-      "text": "Til je bestaande expertise naar een hoger niveau en onderscheid jezelf in de snelst groeiende PMU-behandeling.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "lippen",
+      "opleiding_specifiek": "Lip Blush Masterclass"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20250729-4e6b92-online-lip-blush-opleiding.webp"
+    ]
   },
   "combi-brows-beginnersopleiding": {
     "hero": {
       "eyebrow": "Beginnersopleiding",
       "title": "Combi Brows Beginnersopleiding",
-      "text": "Een 6-daagse Combi Brows opleiding waarin theorie, praktijk en persoonlijke begeleiding samenkomen. Geen vooropleiding of diploma vereist — inclusief starterspakket t.w.v. €1.500 en de draadloze IZZI PMU-machine.",
+      "text": "Een 6-daagse Combi Brows opleiding waarin theorie, praktijk en persoonlijke begeleiding samenkomen. Geen vooropleiding of diploma vereist — inclusief starterspakket en de draadloze IZZI PMU-machine.",
       "breadcrumb": "Combi Brows Beginnersopleiding"
     },
     "image": "/media/izzi-beauty-20250729-1dea00-combi-brows-behandeling.jpg",
@@ -434,6 +489,14 @@
       {
         "label": "UWV-subsidie",
         "text": "Mogelijk voor deze opleiding"
+      },
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
       }
     ],
     "body": [
@@ -462,13 +525,13 @@
         ]
       },
       {
-        "heading": "Starterspakket t.w.v. €1.500",
+        "heading": "Starterspakket",
         "paragraphs": [
           "Bij de opleiding ontvang je een compleet starterspakket waarmee je direct professioneel aan de slag kunt."
         ],
         "checklist": [
           "Werkboek: je complete gids voor een succesvolle start",
-          "Toegang tot de Online Academy (t.w.v. €1.250)",
+          "Toegang tot de Online Academy",
           "25 inkt ringen",
           "3 Laliqa pigmenten (voor alle huidtypes)",
           "40 Kwadron naalden (bij aanschaf van de IZZI machine)",
@@ -479,7 +542,7 @@
         ]
       },
       {
-        "heading": "Inclusief draadloze IZZI PMU-machine",
+        "heading": "IZZI PMU Machine",
         "paragraphs": [
           "IZZI Beauty heeft haar expertise en jarenlange ervaring in permanente make-up vertaald naar de ultieme PMU-machine. Doordat je gemakkelijk slaglengtes kunt wijzigen voer je met deze machine alle typen behandelingen uit.",
           "Tijdens de opleiding test je de machine tijdens je oefensessies en het examen op een live model. Je ontvangt advies van de trainers over optimaal gebruik voor combi brows, en besluit je de machine aan te schaffen dan helpen wij je met een naadloze overgang naar professioneel gebruik."
@@ -490,35 +553,37 @@
           "Veelzijdig: powder brows, lip blush, freckles en fineline",
           "Ergonomisch draadloos ontwerp voorkomt vermoeidheid",
           "Instelbare slaglengtes voor alle behandeltypes"
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prijzen & betaaltermijnen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "Het volledige bedrag is €4.000 (btw-vrij), inclusief het starterspakket t.w.v. €1.500. Momenteel geldt een korting van €1.000 op deze opleiding.",
-          "Betaal je liever in termijnen? Met een aanbetaling van €1.250 om je plek te bevestigen kies je daarna uit 2 termijnen van €1.375, 4 termijnen van €687,50 of 6 termijnen van €458,35.",
-          "Heb je recht op een WW-, WIA- of Wajong-uitkering? Neem contact met ons op voor de mogelijkheden rondom een UWV-subsidie."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst.",
+          "Heb je een WW-, WIA- of Wajong uitkering? Neem contact met ons op om een UWV-subsidie aan te vragen voor deze opleiding."
         ],
         "checklist": [
           "Geen rente: betaling in termijnen zonder extra kosten",
           "Btw-vrij dankzij onze CRKBO-erkenning",
-          "UWV-subsidie mogelijk"
+          "UWV-subsidie mogelijk",
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie"
         ]
       },
       {
         "heading": "Deze opleiding is inclusief",
         "paragraphs": [
-          "Leer hairstrokes en powder brows in één techniek, met alles wat je nodig hebt om direct te starten."
+          "Bij deze opleiding hoort onder meer het volgende. De actuele prijs zie je bij de beschikbare data."
         ],
         "checklist": [
           "CRKBO-erkend en btw-vrij",
           "Maximaal 3 studenten per groep",
-          "Starterspakket t.w.v. €1.500",
+          "Starterspakket",
           "Theorie en praktijk: kleurenleer, naaldenleer, brow mapping",
           "Toegang tot de Online Academy via e-mail na inschrijving en betaling",
           "Online ondersteuning en community",
           "Hygiënerichtlijnen en GGD-keuringseisen",
-          "Inclusief draadloze IZZI PMU-machine t.w.v. €550",
+          "Inclusief draadloze IZZI PMU-machine",
           "Begeleiding bij het opstarten van je salon en marketing",
           "Flexibele betaaltermijnen beschikbaar",
           "UWV-subsidie mogelijk"
@@ -531,13 +596,6 @@
           "Vooropleiding: voor deze opleiding is geen vooropleiding of diploma vereist. PMU-specialist is een vrij beroep in Nederland.",
           "Voorwaarden: voor alle opleidingen en cursussen gelden de Algemene Voorwaarden van Opleiding IZZI Beauty BV, inclusief onze Privacy Verklaring en Klachtenprocedure.",
           "Beschikbaarheid: de Combi Brows Beginnersopleiding wordt meerdere keren per jaar aangeboden. Staat de gewenste datum niet meer beschikbaar? Neem dan contact op om te zien welke mogelijkheden er nog zijn. Een privé opleiding behoort ook tot de mogelijkheden."
-        ]
-      },
-      {
-        "heading": "Je trainers",
-        "paragraphs": [
-          "Isabella — eigenaar en expert in PMU: \"Met een passie voor permanente make-up richt ik mij niet alleen op behandelingen in onze salon, maar ook op het opleiden van zowel beginnende als ervaren PMU-stylisten. Mijn doel is om onze studenten met vertrouwen en expertise de PMU-wereld in te laten stappen!\"",
-          "Carla — expert PMU en laserbehandelingen: \"Als fulltime PMU-specialist bij IZZI begeleid ik cursisten tijdens opleidingen en ondersteun ik Isabella bij examens. Met twee jaar ervaring in zowel behandelingen als trainingen, zorg ik ervoor dat onze studenten altijd de begeleiding krijgen die ze nodig hebben.\""
         ]
       }
     ],
@@ -583,11 +641,11 @@
         },
         {
           "q": "Is de IZZI PMU-machine inbegrepen?",
-          "a": "Ja, de draadloze IZZI PMU-machine t.w.v. €550 is bij deze opleiding inbegrepen. Je test hem tijdens je oefensessies en het examen op een model."
+          "a": "Ja, de draadloze IZZI PMU-machine is bij deze opleiding inbegrepen. Je test hem tijdens je oefensessies en het examen op een model."
         },
         {
           "q": "Kan ik in termijnen betalen?",
-          "a": "Ja. Met een aanbetaling van €1.250 kies je daarna uit 2 termijnen van €1.375, 4 termijnen van €687,50 of 6 termijnen van €458,35. Er wordt geen rente gerekend en er is geen BKR-registratie."
+          "a": "De actuele prijs, datum, locatie en beschikbare plekken staan bij de beschikbare data op deze pagina. Die komen uit de webshop, niet uit deze tekst."
         },
         {
           "q": "Kom ik in aanmerking voor UWV-subsidie?",
@@ -616,11 +674,11 @@
         },
         {
           "k": "Prijs",
-          "v": "€4.000 btw-vrij"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Starterspakket",
-          "v": "T.w.v. €1.500"
+          "v": "Inbegrepen"
         },
         {
           "k": "PMU-machine",
@@ -631,20 +689,47 @@
           "v": "Mogelijk"
         }
       ],
-      "ctaTitle": "Interesse in deze opleiding?",
-      "ctaText": "Benieuwd naar de actuele data en beschikbare plekken? Neem contact met ons op via mail of WhatsApp.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Start jouw carrière in PMU",
       "title": "Schrijf je in voor de Combi Brows Beginnersopleiding",
-      "text": "Na je inschrijving en betaling ontvang je per e-mail toegang tot de IZZI Online Academy, zodat je kunt beginnen met leren.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "wenkbrauwen",
+      "opleiding_specifiek": "Combi Brows Beginnersopleiding"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
+    "trainers": [
+      {
+        "name": "Isabella",
+        "role": "Eigenaar en expert in PMU",
+        "text": "Met een passie voor permanente make-up richt ik mij niet alleen op behandelingen in onze salon, maar ook op het opleiden van zowel beginnende als ervaren PMU-stylisten. Mijn doel is om onze studenten met vertrouwen en expertise de PMU-wereld in te laten stappen!",
+        "image": "/media/izzi-beauty-20250729-9b97be-izzi-beauty-isabella-levels-pmu-expert.webp"
+      },
+      {
+        "name": "Carla",
+        "role": "Expert PMU en laserbehandelingen",
+        "text": "Als fulltime PMU-specialist bij IZZI begeleid ik cursisten tijdens opleidingen en ondersteun ik Isabella bij examens. Met twee jaar ervaring in zowel behandelingen als trainingen, zorg ik ervoor dat onze studenten altijd de begeleiding krijgen die ze nodig hebben.",
+        "image": ""
+      }
+    ]
   },
   "masterclass-ombre-powder-brows": {
     "hero": {
@@ -654,7 +739,7 @@
       "breadcrumb": "Masterclass Ombré Powder Brows"
     },
     "image": "/media/izzi-beauty-20250729-af300e-ombre-powder-brows-masterclass.webp",
-    "intro": "Wil jij jouw carrière als PMU-artiest een boost geven en uitblinken in de nieuwste technieken? Met de exclusieve Masterclass Ombré Powder Brows van IZZI Beauty leer je alles wat je nodig hebt om de perfecte soft ombré brows te creëren. Tijdelijk voor slechts €1.500,- (btw-vrij) — je bespaart €1.000,- op de originele prijs van €2.500,-.",
+    "intro": "Wil jij jouw carrière als PMU-artiest een boost geven en uitblinken in de nieuwste technieken? Met de exclusieve Masterclass Ombré Powder Brows van IZZI Beauty leer je alles wat je nodig hebt om de perfecte soft ombré brows te creëren.",
     "productHandle": "opleiding-masterclass-ombre-powder-brows",
     "body": [
       {
@@ -706,7 +791,7 @@
       {
         "heading": "De opleiding is inclusief",
         "paragraphs": [
-          "Inclusief 2 pigmenten, online voorbereiding, praktijkdag op locatie, lunch en een certificaat."
+          "Bij deze opleiding hoort onder meer het volgende. De actuele prijs zie je bij de beschikbare data."
         ],
         "checklist": [
           "Kleine groepstraining: max. 4 studenten",
@@ -726,13 +811,20 @@
         "paragraphs": [
           "De IZZI Beauty Wireless PMU-machine zorgt voor perfecte pixels — nauwkeurige en gelijkmatige resultaten, essentieel voor natuurlijke ombré brows. Zachte trillingen en minimaal geluid maken de ervaring comfortabel voor zowel de artiest als de klant. De machine is veelzijdig inzetbaar voor ombré brows, eyeliner en lip pigmentatie, en is gebouwd met hoogwaardige materialen voor consistent gebruik.",
           "Waarom deze machine jouw werk verbetert: maximale controle dankzij de draadloze functionaliteit, efficiëntie en snelheid met consistente prestaties, en een professionele uitstraling die klanten vertrouwen geeft in jouw expertise."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prijzen en betaaltermijnen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "De masterclass kost tijdelijk €1.500 (btw-vrij) in plaats van €2.500. Betalen in termijnen kan met 2 termijnen: €1.000 aanbetaling en €500 restantbetaling op locatie.",
-          "Geen rente: betaal in termijnen zonder extra kosten of BKR-registratie. Btw-vrij: onze opleidingen zijn CRKBO-erkend, waardoor je profiteert van btw-vrijstelling. Wil je in termijnen betalen? Geef je voorkeur door via e-mail of WhatsApp na je aanmelding, en wij regelen het voor je."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst.",
+          "Heb je een WW-, WIA- of Wajong uitkering? Neem contact met ons op om een UWV-subsidie aan te vragen voor deze opleiding."
+        ],
+        "checklist": [
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie",
+          "Btw-vrij dankzij onze CRKBO-erkenning",
+          "UWV-subsidie mogelijk"
         ]
       },
       {
@@ -741,7 +833,7 @@
           "Duur van de opleiding: 8 uur online voorbereiding via de IZZI Online Academy, 1 intensieve praktijkdag op locatie van 10:00 tot 16:00 met persoonlijke begeleiding, en een huiswerkopdracht waarbij je 5 modellen behandelt in je eigen salon (20 uur). De totale studietijd komt op 34 uur.",
           "Vooropleiding: om deel te nemen aan deze training is een beginnersopleiding in PMU vereist. Je dient een geldig certificaat van een erkende opleiding te overleggen. Heb je dit niet? Overweeg dan eerst onze beginnersopleiding om jouw fundament te versterken.",
           "Voorwaarden: PMU-stylist is een vrij beroep; er zijn geen wettelijke eisen. Al onze opleidingen vallen onder de Algemene Voorwaarden van IZZI Beauty BV.",
-          "Beschikbaarheid: de Masterclass Ombré Powder Brows wordt bijna elke maand aangeboden op een van onze locaties. Wees er snel bij, want plekken zijn beperkt."
+          "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties."
         ]
       },
       {
@@ -779,11 +871,11 @@
       "items": [
         {
           "q": "Waar en wanneer zijn de praktijkdagen?",
-          "a": "Wij bieden bijna elke maand een praktijkdag aan in onze salon in Amsterdam voor deze masterclass. Schrijf je tijdig in, want plekken zijn beperkt. Daarnaast biedt IZZI Beauty ook de mogelijkheid om een privé opleiding te boeken."
+          "a": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Een privé opleiding op locatie is ook mogelijk."
         },
         {
           "q": "Hoe kan ik me voorbereiden op de praktijkdag?",
-          "a": "Direct na het inschrijven krijg je toegang tot de IZZI Online Academy. Deze modules zijn ontworpen om je volledig voor te bereiden op de praktijkdag. We raden het ten zeerste aan de online trainingen te volgen vóór de praktijkdag. Je krijgt tevens levenslang toegang tot deze content, zodat je altijd nog een keer je kennis kunt opfrissen."
+          "a": "Na je inschrijving en betaling ontvang je per e-mail toegang tot de IZZI Online Academy. Deze modules zijn ontworpen om je volledig voor te bereiden op de praktijkdag. We raden het ten zeerste aan de online trainingen te volgen vóór de praktijkdag. Je krijgt tevens levenslang toegang tot deze content, zodat je altijd nog een keer je kennis kunt opfrissen."
         },
         {
           "q": "Kan ik de opleiding volgen zonder eerdere ervaring in PMU?",
@@ -791,7 +883,7 @@
         },
         {
           "q": "Hoe vaak wordt de masterclass powder brows aangeboden?",
-          "a": "Bijna elke maand. Door het beperkte aantal plekken per training raden wij je aan om vroegtijdig je plek te reserveren. Je kunt ons ook altijd een WhatsApp sturen op +31 6 11 76 88 81 of mailen op info@izzi-beauty.com."
+          "a": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Door het beperkte aantal plekken per training raden wij je aan om vroegtijdig je plek te reserveren. Je kunt ons ook altijd een WhatsApp sturen op +31 6 11 76 88 81 of mailen op info@izzi-beauty.com."
         },
         {
           "q": "Kan ik gebruik maken van mijn eigen PMU Machine?",
@@ -832,27 +924,58 @@
         },
         {
           "k": "Prijs",
-          "v": "€1.500 btw-vrij (van €2.500)"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Certificaat",
           "v": "Ja"
         }
       ],
-      "ctaTitle": "Klaar voor de volgende stap?",
-      "ctaText": "Plekken zijn beperkt. Neem contact op voor de actuele data en reserveer tijdig je plek.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Perfectioneer jouw techniek",
       "title": "Meld je aan voor de Masterclass Ombré Powder Brows",
-      "text": "Begin vandaag nog aan jouw specialisatie en onderscheid jezelf als PMU specialist in de wereld van permanente make-up.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "wenkbrauwen",
+      "opleiding_specifiek": "Masterclass Ombré Powder Brows"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
+    "highlights": [
+      {
+        "label": "UWV-subsidie",
+        "text": "Mogelijk voor deze opleiding"
+      },
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
+      }
+    ],
+    "gallery": [
+      "/media/izzi-beauty-20251110-225de0-ombre-powder-brows-masterclass.webp",
+      "/media/izzi-beauty-20251110-f2652d-ombre-powder-brows-cursus.webp"
+    ]
   },
   "ombre-powder-brows-lip-blush-opleiding": {
     "hero": {
@@ -868,6 +991,10 @@
       {
         "label": "Gespreid betalen",
         "text": "Betaal in termijnen of met iDEAL in3"
+      },
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
       }
     ],
     "body": [
@@ -897,14 +1024,14 @@
         ]
       },
       {
-        "heading": "Starterspakket t.w.v. €2.000",
+        "heading": "Starterspakket",
         "paragraphs": [
           "Bij inschrijving ontvang je een uitgebreid starterspakket. Hiermee kun je ongeveer 100 klanten behandelen, naalden buiten beschouwing gelaten."
         ],
         "checklist": [
           "Uitgebreid werkboek met technieken en tips",
           "Levenslang toegang tot de Online Academy met alle video's en modules",
-          "Draadloze PMU-machine (t.w.v. €550)",
+          "Draadloze PMU-machine",
           "6 premium Laliqa pigmenten voor verschillende huidtypes",
           "40 Laliqa naalden voor precisiewerk",
           "2 dubbelzijdige latex oefenbladen",
@@ -918,23 +1045,26 @@
         ]
       },
       {
-        "heading": "Prijzen & betaaltermijnen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "De standaardprijs is €7.000, inclusief de draadloze IZZI PMU-machine t.w.v. €550. Tijdelijke actie: betaal je in één keer, dan kost de opleiding €6.000 — je bespaart €1.000 ten opzichte van betaling in termijnen.",
-          "Betalen in termijnen kan met een aanbetaling van €2.500 om je plek te reserveren. Daarna kies je uit 2 termijnen van €2.250, 4 termijnen van €1.125, 6 termijnen van €750 of 8 termijnen van €562,50. Er is geen BKR-registratie nodig.",
-          "Dankzij onze CRKBO-erkenning zijn alle opleidingen vrijgesteld van btw."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst."
+        ],
+        "checklist": [
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie",
+          "Btw-vrij dankzij onze CRKBO-erkenning"
         ]
       },
       {
         "heading": "Deze opleiding is inclusief",
         "paragraphs": [
-          "Alles wat je nodig hebt om na afronding direct professioneel aan de slag te gaan met beide technieken."
+          "Bij deze opleiding hoort onder meer het volgende. De actuele prijs zie je bij de beschikbare data."
         ],
         "checklist": [
           "CRKBO-gecertificeerd en btw-vrij",
           "Maximaal 2 studenten per sessie met privé examen",
-          "Gratis IZZI PMU-machine (t.w.v. €550)",
-          "Compleet starterspakket (t.w.v. €2.000)",
+          "Gratis IZZI PMU-machine",
+          "Compleet starterspakket",
           "Kleurenleer, mapping, naaldenleer en latex",
           "Levenslang toegang tot de besloten Online PMU Community",
           "Inclusief touch-up training voor brows",
@@ -951,7 +1081,7 @@
           "Duur: 20 uur online voorbereiding en 24 uur op locatie (4 dagen, 09:30 – 15:30), plus 20 uur huiswerk met begeleiding op afstand. De totale studietijd komt op 64 uur.",
           "Vooropleiding: er is geen vooropleiding nodig voor deze cursus en er zijn ook geen diploma's vereist voor het volgen. De opleiding is ontworpen voor complete beginners.",
           "Certificering: na succesvolle afronding en het behalen van het examen ontvang je een officieel certificaat.",
-          "Locaties: de opleiding wordt gegeven in Amsterdam en Rotterdam."
+          "Locaties: Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties."
         ]
       }
     ],
@@ -1001,7 +1131,7 @@
         },
         {
           "q": "Waar vindt de opleiding plaats?",
-          "a": "De opleiding wordt gegeven op onze locaties in Amsterdam en Rotterdam. Neem contact op voor de beschikbare data."
+          "a": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties."
         },
         {
           "q": "Hoe helpt deze opleiding mij bij het opstarten van een salon?",
@@ -1034,11 +1164,11 @@
         },
         {
           "k": "Prijs",
-          "v": "€6.000 ineens of €7.000 in termijnen"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Starterspakket",
-          "v": "T.w.v. €2.000"
+          "v": "Inbegrepen"
         },
         {
           "k": "PMU-machine",
@@ -1049,20 +1179,37 @@
           "v": "Ja"
         }
       ],
-      "ctaTitle": "Interesse in deze combi opleiding?",
-      "ctaText": "Neem contact met ons op voor de beschikbare data en de mogelijkheden.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Twee technieken, één opleiding",
       "title": "Schrijf je in voor de Powder Brows & Lip Blush Opleiding",
-      "text": "Start je carrière in permanente make-up en beheers twee van de meest gevraagde technieken.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "all-round",
+      "opleiding_specifiek": "Combi Powder Brows en Lip Blush Opleiding"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20250729-53836b-powder-brows.jpg",
+      "/media/izzi-beauty-20250729-4e6b92-online-lip-blush-opleiding.webp"
+    ]
   },
   "prive-opleiding-permanente-make-up": {
     "hero": {
@@ -1139,18 +1286,14 @@
         ]
       },
       {
-        "heading": "Prijzen persoonlijke permanente make up cursus",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "Prijzen worden persoonlijk opgesteld voor individuele PMU trainingen. Het basistarief voor een 1-op-1 PMU opleiding is €895. Alle prijzen zijn btw-vrij vanwege onze CRKBO registratie als geregistreerde opleider. Daarnaast bieden wij flexibele betalingsmogelijkheden om in termijnen te betalen.",
-          "Daarnaast bieden wij ook de mogelijkheid om bij jou in de salon een maatwerk PMU training te komen geven voor jouzelf, maar ook voor je personeel indien gewenst. Deze optie is wereldwijd mogelijk."
+          "Prijzen voor een privé opleiding worden persoonlijk opgesteld. De actuele prijs bevestigen we via het formulier — niet uit verouderde paginatekst."
         ],
         "checklist": [
-          "Voor starters en gevorderde PMU specialisten",
-          "Privé les van trainster Isabella met 1-op-1 aandacht",
-          "Persoonlijke begeleiding en leren in jouw tempo",
-          "Flexibele planning",
           "Btw-vrij — CRKBO geregistreerde opleider",
-          "Les in de academy te Amsterdam of in jouw eigen salon"
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie"
         ]
       }
     ],
@@ -1180,7 +1323,7 @@
         },
         {
           "q": "Wat kost een privé opleiding?",
-          "a": "De kosten voor een 1-op-1 cursus beginnen bij €895,-. Alle opleidingen zijn btw-vrij dankzij onze CRKBO-registratie. Voor trainingen in jouw salon of op locatie wordt een aangepaste prijs opgesteld."
+          "a": "Prijzen worden persoonlijk opgesteld. Vraag de actuele prijs via het formulier op deze pagina."
         },
         {
           "q": "Waar vindt de opleiding plaats?",
@@ -1217,7 +1360,7 @@
         },
         {
           "k": "Vanaf",
-          "v": "€895 btw-vrij"
+          "v": "Op aanvraag"
         },
         {
           "k": "Planning",
@@ -1232,20 +1375,46 @@
           "v": "Isabella Levels"
         }
       ],
-      "ctaTitle": "Bespreek de mogelijkheden",
-      "ctaText": "Neem contact op met Isabella om de mogelijkheden van een privé PMU opleiding te bespreken.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Informatie opvragen",
+      "ctaText": "Laat je gegevens achter via het formulier — we nemen zo spoedig mogelijk contact op.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Volledig op maat",
       "title": "Start vandaag nog met jouw 1:1 training",
-      "text": "Begin vandaag nog aan je PMU carrière! Neem contact op met Isabella om de mogelijkheden van een privé PMU opleiding te bespreken.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
+      "text": "Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen voor een privé opleiding stellen we persoonlijk op.",
+      "primaryLabel": "Informatie opvragen",
+      "primaryUrl": "#opleiding-interesse",
       "secondaryLabel": "Bekijk alle opleidingen",
       "secondaryUrl": "/opleidingen"
-    }
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen voor een privé opleiding stellen we persoonlijk op via het formulier.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Privé Opleiding Permanente Make Up",
+      "prive_opleiding": "ja"
+    },
+    "highlights": [
+      {
+        "label": "CRKBO-erkend",
+        "text": "Btw-vrij en officieel erkend"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
+      }
+    ],
+    "trainers": [
+      {
+        "name": "Isabella",
+        "role": "Eigenaar en expert in PMU",
+        "text": "Met een passie voor permanente make-up richt ik mij niet alleen op behandelingen in onze salon, maar ook op het opleiden van zowel beginnende als ervaren PMU-stylisten. Mijn doel is om onze studenten met vertrouwen en expertise de PMU-wereld in te laten stappen!",
+        "image": "/media/izzi-beauty-20250729-9b97be-izzi-beauty-isabella-levels-pmu-expert.webp"
+      }
+    ]
   },
   "ombre-powder-brows-opleiding": {
     "hero": {
@@ -1531,7 +1700,7 @@
       "text": "De complete beginnersopleiding waarin je alle basistechnieken van permanente make-up leert — van intake en vormbepaling tot het zelfstandig uitvoeren van behandelingen.",
       "breadcrumb": "All Round PMU Opleiding"
     },
-    "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp",
+    "image": "/media/izzi-beauty-20250729-9f85fc-all-round-pmu-opleiding-amsterdam-en-rotterdam.webp",
     "intro": "Tijdens de All Round PMU Opleiding word je opgeleid tot veelzijdig specialist: je leert Ombré Powder Brows, Lip Blush, Faux Freckles én Infralash. De opleiding combineert online voorbereiding met intensieve praktijkdagen op locatie, in kleine groepen met persoonlijke begeleiding.",
     "productHandle": "opleiding-allround-pmu",
     "highlights": [
@@ -1589,16 +1758,16 @@
       {
         "heading": "Startpakket & IZZI Beauty Wireless PMU-machine",
         "paragraphs": [
-          "De opleiding is inclusief een uitgebreid startpakket ter waarde van €4.500 én de draadloze IZZI Beauty Wireless PMU-machine ter waarde van €1.000, zodat je professioneel kunt starten.",
-          "Het startpakket heeft een waarde van €4.500. De IZZI PMU-machine heeft een waarde van €1.000."
+          "De opleiding is inclusief een uitgebreid startpakket én de draadloze IZZI Beauty Wireless PMU-machine zodat je professioneel kunt starten."
         ],
         "checklist": [
           "Theorieboek (100+ pagina's) + toegang tot de Online Academy",
           "9 pigmenten, 80 naalden, 8 latexbladen, mapping strings",
           "Voortekenpotlood & pen, ruler stickers, grip tapes, lip brushes, nazorgcrème",
-          "IZZI Beauty Wireless PMU-machine ter waarde van €1.000 (draadloos, geschikt voor alle technieken)",
+          "IZZI Beauty Wireless PMU-machine (draadloos, geschikt voor alle technieken)",
           "Voldoende materiaal voor circa 400 behandelingen (excl. extra naalden)"
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
         "heading": "Algemene informatie",
@@ -1694,23 +1863,40 @@
         },
         {
           "k": "Prijs",
-          "v": "Op aanvraag (incl. startpakket & machine)"
+          "v": "Zie beschikbare data"
         }
       ],
-      "ctaTitle": "Interesse in deze opleiding?",
-      "ctaText": "Vraag de brochure aan of plan een vrijblijvend intakegesprek.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Start jouw carrière in PMU",
       "title": "Schrijf je in voor de All Round Opleiding",
-      "text": "Neem contact met ons op voor beschikbare data en de mogelijkheden.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "all-round",
+      "opleiding_specifiek": "All Round PMU Opleiding"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20251110-5af3c4-all-round-pmu-opleiding.webp",
+      "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
+    ]
   },
   "faux-freckles-beginners": {
     "hero": {
@@ -1726,6 +1912,10 @@
       {
         "label": "CRKBO-erkend",
         "text": "Btw-vrij en officieel erkend"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
       }
     ],
     "body": [
@@ -1785,14 +1975,18 @@
           "IZZI Beauty ontwikkelde de ultieme PMU-machine op basis van jarenlange expertise in permanente make-up. Sinds 2021 bieden we een draadloze machine die precisie, gebruiksgemak en veelzijdigheid combineert. Je past de naaldlengte eenvoudig aan voor elk type behandeling: PMU Powder Brows, Lip Blush, Freckles, Striae en Fineline tattoos.",
           "Perfecte resultaten door consistente en natuurlijke pigmentatie met fijne pixels; comfortabele behandeling dankzij zachte vibraties en een stil geluid; multifunctioneel inzetbaar voor alle PMU-behandelingen; en een ergonomisch draadloos ontwerp dat maximale flexibiliteit biedt en vermoeidheid voorkomt tijdens langere behandelingen.",
           "Tijdens de opleiding test je de draadloze Laliqa Flow PMU Machine tijdens de oefensessies en het examen op model. Je krijgt advies van de trainer over optimaal gebruik voor Faux Freckles en beautymarks, en kunt daarna beslissen of je de machine aanschaft."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prijzen en betaaltermijnen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "De totale prijs van de opleiding is €1.495. Daarin zit toegang tot de Online Academy, de praktijktraining op locatie, premium pigmenten en een internationaal erkend certificaat.",
-          "Betalen kan in één keer (€1.495 vooraf, alles direct geregeld) of in twee termijnen: een aanbetaling van €700 bij inschrijving en het restbedrag van €795 op dag 1 van de opleiding, te voldoen op locatie. Zo verlaag je de financiële druk en kun je direct starten zonder het volledige bedrag vooraf te betalen.",
-          "Onze opleidingen zijn door het CRKBO erkend en daardoor volledig vrijgesteld van btw. Dat levert een kostenvoordeel op én de zekerheid van de hoogste kwaliteitsnormen."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst."
+        ],
+        "checklist": [
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie",
+          "Btw-vrij dankzij onze CRKBO-erkenning"
         ]
       },
       {
@@ -1800,7 +1994,7 @@
         "paragraphs": [
           "Tijdsinvestering: 5 uur online training met interactieve video's en theoriemodules, 4 uur intensieve praktijktraining op locatie, en 6 uur zelfstudie en huiswerk waarbij je 3 modellen behandelt in je eigen salon. De totale studietijd komt op 15 uur gestructureerd leren en oefenen.",
           "Voor wie: de Faux Freckles Opleiding is toegankelijk ongeacht je ervaringsniveau. Zowel beginners als PMU-professionals die hun behandelaanbod willen uitbreiden kunnen zich inschrijven. Er is geen vooropleiding vereist. Ideaal voor aspirant-PMU-specialisten die willen starten in een nichemarkt en voor professionals die Faux Freckles en sproetjes willen toevoegen.",
-          "Voorwaarden: er zijn geen verplichte voorwaarden om deel te nemen, omdat PMU een vrij beroep is. Alle opleidingen vallen onder de Algemene Voorwaarden, de Privacyverklaring en de klachtenprocedure van IZZI Beauty. De Faux Freckles Beginnersopleiding wordt meerdere keren per jaar georganiseerd; de praktijkdagen vinden plaats bij IZZI Beauty in Amsterdam. Een privéopleiding op een locatie naar keuze is ook mogelijk."
+          "Voorwaarden: er zijn geen verplichte voorwaarden om deel te nemen, omdat PMU een vrij beroep is. Alle opleidingen vallen onder de Algemene Voorwaarden, de Privacyverklaring en de klachtenprocedure van IZZI Beauty. Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Een privé opleiding op locatie is ook mogelijk."
         ]
       }
     ],
@@ -1850,7 +2044,7 @@
         },
         {
           "q": "Waar wordt de PMU-opleiding gegeven?",
-          "a": "De praktijkdagen vinden plaats op locatie bij IZZI Beauty in Amsterdam. Een privéopleiding op een locatie naar keuze is ook mogelijk."
+          "a": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Een privé opleiding op locatie is ook mogelijk."
         },
         {
           "q": "Hoe schrijf ik me in?",
@@ -1879,7 +2073,7 @@
         },
         {
           "k": "Prijs",
-          "v": "€1.495 btw-vrij"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Certificaat",
@@ -1894,20 +2088,37 @@
           "v": "Handpoke & machinaal"
         }
       ],
-      "ctaTitle": "Start met Faux Freckles",
-      "ctaText": "De opleiding wordt meerdere keren per jaar georganiseerd. Neem contact op voor de actuele data en beschikbaarheid.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Trendy, natuurlijke sproetjes",
       "title": "Meld je aan voor de Faux Freckles Opleiding",
-      "text": "Word specialist in een groeiende nichemarkt en breid je behandelaanbod uit met handpoke en machinale Faux Freckles.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "PMU Faux Freckles Opleiding"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20250729-16d157-faux-freckles-resultaat.webp",
+      "/media/izzi-beauty-20251110-4fcd78-faux-freckles-pmu-resultaat-na-een-week.webp"
+    ]
   },
   "infralash-beginners": {
     "hero": {
@@ -1923,6 +2134,10 @@
       {
         "label": "CRKBO-erkend",
         "text": "Btw-vrij en officieel erkend"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
       }
     ],
     "body": [
@@ -1978,14 +2193,18 @@
         "paragraphs": [
           "De IZZI Wireless PMU Machine biedt maximale precisie voor fijne eyeliner- en infralashlijnen, met zachte vibraties en een stille werking voor een comfortabele behandeling. De machine is veelzijdig inzetbaar voor infralash, eyeliner, lippigmentatie en wenkbrauwbehandelingen, en het ergonomische draadloze ontwerp voorkomt vermoeidheid tijdens langere sessies.",
           "Het innovatieve draadloze ontwerp geeft je volledige bewegingsvrijheid en werkt effectief op alle huidtypes zonder irritatie. Tijdens de praktijkdag kun je de machine uitproberen op latex en op een live model, zodat je een weloverwogen keuze maakt voordat je hem aanschaft."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prijzen en betaaltermijnen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "De totale prijs van de opleiding is €1.295, inclusief toegang tot de Online Academy, de praktijktraining, premium pigmenten en een CRKBO-erkend certificaat.",
-          "Betalen kan in één keer (€1.295 vooraf om je plek vast te leggen) of in twee termijnen: €500 aanbetaling bij inschrijving en €795 op de praktijkdag. Er zijn geen verborgen kosten en je betaalt geen rente over de termijnbetaling.",
-          "Onze opleidingen zijn volledig btw-vrij, omdat wij CRKBO-geaccrediteerd zijn."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst."
+        ],
+        "checklist": [
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie",
+          "Btw-vrij dankzij onze CRKBO-erkenning"
         ]
       },
       {
@@ -1993,7 +2212,7 @@
         "paragraphs": [
           "Tijdsinvestering: 5 uur online voorbereiding, 6 uur praktijkdag op locatie en 3 uur zelfstandig oefenen waarbij je 3 modellen behandelt in je eigen salon. De totale studietijd komt op 14 uur.",
           "Toelatingseisen: je hebt géén vooropleiding of diploma nodig om te starten. Deze opleiding is geschikt voor zowel beginners als professionals die hun vaardigheden willen uitbreiden. PMU-styliste is in Nederland een vrij beroep zonder wettelijke vereisten.",
-          "Voorwaarden en data: de opleiding valt onder de Algemene Voorwaarden van IZZI Beauty BV, inclusief de Privacyverklaring en klachtenprocedure. De Infralash Beginnersopleiding wordt ongeveer maandelijks georganiseerd op onze locaties in Amsterdam en Rotterdam. Is je gewenste datum vol? Neem dan contact op voor een alternatief."
+          "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties."
         ]
       }
     ],
@@ -2068,7 +2287,7 @@
         },
         {
           "k": "Prijs",
-          "v": "€1.295 btw-vrij"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Certificaat",
@@ -2080,22 +2299,35 @@
         },
         {
           "k": "Locaties",
-          "v": "Amsterdam & Rotterdam"
+          "v": "Verschilt per opleidingsdatum"
         }
       ],
-      "ctaTitle": "Start met Infralash",
-      "ctaText": "De opleiding wordt ongeveer maandelijks georganiseerd. Neem contact op voor de actuele data en beschikbaarheid.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Subtiele, natuurlijke eyeliner",
       "title": "Meld je aan voor de Infralash Opleiding",
-      "text": "Bied de populaire infralash- en deeplinerbehandeling aan in jouw eigen salon, met een solide basis en blijvende begeleiding.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "PMU Infralash Opleiding"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
     }
   },
   "fineline-training": {
@@ -2112,6 +2344,10 @@
       {
         "label": "CRKBO-erkend",
         "text": "Btw-vrij en officieel erkend"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
       }
     ],
     "body": [
@@ -2171,21 +2407,25 @@
       {
         "heading": "Optioneel Fineline Tattoo starterspakket",
         "paragraphs": [
-          "De opleiding is inclusief standaard tattoo-inkt. Daarnaast is een compleet starterspakket met professionele apparatuur beschikbaar: professionele tattoo-inkt, 20 Laliqa naalden voor precisiewerk, de IZZI Beauty PMU Machine (t.w.v. €470) — draadloos en ontworpen voor perfectie met zachte vibraties, een latex oefenvel, 2x Laliqa Aftercare crème, Stencil Stuff, kant-en-klare stencils, witte tape en een zwarte pen.",
-          "Het starterspakket kost €699 (btw-vrij). De totale opleiding inclusief starterspakket komt daarmee op €2.265 (btw-vrij). De kosten van het starterspakket kunnen worden meegenomen in de termijnbetaling van de opleiding."
+          "De opleiding is inclusief standaard tattoo-inkt. Daarnaast is een compleet starterspakket met professionele apparatuur beschikbaar: professionele tattoo-inkt, 20 Laliqa naalden voor precisiewerk, de IZZI Beauty PMU Machine — draadloos en ontworpen voor perfectie met zachte vibraties, een latex oefenvel, 2x Laliqa Aftercare crème, Stencil Stuff, kant-en-klare stencils, witte tape en een zwarte pen."
         ]
       },
       {
         "heading": "IZZI PMU Machine",
         "paragraphs": [
           "De IZZI Beauty Wireless PMU Machine levert perfecte pixels voor scherpe, consistente resultaten. Dankzij de zachte vibraties en stille werking is de behandeling comfortabel voor jou en je klant, en de machine is veelzijdig inzetbaar voor alle behandelingen, inclusief fineline tattoos."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prijzen en betaaltermijnen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "De volledige opleiding kost €1.595 (btw-vrij). Betalen kan in één keer (€1.595) of in termijnen: je betaalt een aanbetaling van €550 en het restbedrag voldoe je op locatie vóór de eerste praktijkdag.",
-          "Onze CRKBO-erkenning betekent dat de opleiding volledig btw-vrij is en voldoet aan de hoogste kwaliteits- en professionaliteitsnormen."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst."
+        ],
+        "checklist": [
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie",
+          "Btw-vrij dankzij onze CRKBO-erkenning"
         ]
       },
       {
@@ -2193,7 +2433,7 @@
         "paragraphs": [
           "Tijdsinvestering: 5 uur online voorbereiding, twee aaneengesloten praktijkdagen op locatie van 09:30 tot 15:30 (12 uur in totaal), en huiswerk waarbij je 5 modellen behandelt in je eigen salon (10 uur). Je stuurt foto's in voor feedback van de trainer en krijgt ondersteuning via WhatsApp. De totale studietijd komt op 46 uur.",
           "Vooropleiding: er is geen vooropleiding vereist. De opleiding is geschikt voor iedereen, van beginner tot ervaren PMU-specialist.",
-          "Voorwaarden: deelnemers nemen de Algemene Voorwaarden, de Privacyverklaring en de klachtenprocedure van IZZI Beauty door. PMU is een vrij beroep zonder wettelijke vereisten. De opleiding wordt meerdere keren per jaar georganiseerd op onze locaties in Amsterdam en Rotterdam."
+          "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties."
         ]
       }
     ],
@@ -2243,7 +2483,7 @@
         },
         {
           "q": "Wat maakt deze opleiding uniek ten opzichte van andere fineline-cursussen?",
-          "a": "De unieke combinatie van online voorbereiding ter waarde van €1.250, persoonlijke begeleiding in kleine groepen, WhatsApp-ondersteuning na de opleiding en het feit dat er geen voorkennis vereist is."
+          "a": "De unieke combinatie van online voorbereiding persoonlijke begeleiding in kleine groepen, WhatsApp-ondersteuning na de opleiding en het feit dat er geen voorkennis vereist is."
         },
         {
           "q": "Welke marketingstrategieën worden behandeld?",
@@ -2276,11 +2516,11 @@
         },
         {
           "k": "Prijs",
-          "v": "€1.595 btw-vrij"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Starterspakket",
-          "v": "Optioneel — €699"
+          "v": "Optioneel"
         },
         {
           "k": "Certificaat",
@@ -2291,20 +2531,36 @@
           "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
-      "ctaTitle": "Start met fineline tattoos",
-      "ctaText": "De opleiding wordt meerdere keren per jaar georganiseerd. Neem contact op voor de actuele data en beschikbaarheid.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Verfijnd en minimalistisch",
       "title": "Meld je aan voor de Fineline Tattoo Opleiding",
-      "text": "Leer in drie dagen alles over ontwerpen, lijnen en shading, en voeg een winstgevende behandeling toe aan je salon.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Fineline Tattoo Opleiding"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20250729-f3999d-fineline-masterclass.webp"
+    ]
   },
   "fineline-masterclass": {
     "hero": {
@@ -2318,8 +2574,16 @@
     "productHandle": "opleiding-fineline-masterclass",
     "highlights": [
       {
+        "label": "UWV-subsidie",
+        "text": "Mogelijk voor deze opleiding"
+      },
+      {
         "label": "CRKBO-erkend",
         "text": "Btw-vrij en officieel erkend"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
       }
     ],
     "body": [
@@ -2333,7 +2597,7 @@
       {
         "heading": "Dag 1 — Online voorbereiding (5 uur)",
         "paragraphs": [
-          "De online voorbereiding volg je via de IZZI Online Academy (ter waarde van €1.250). Je leert de ontwerpprincipes van master fineline en wat het onderscheidt van basiswerk, het maken van ontwerpen en het printen van stencils, geavanceerde kleurenleer en pigmenttoepassing, naaldkeuze voor specifieke technieken, en professionele tips van de masters zelf."
+          "De online voorbereiding volg je via de IZZI Online Academy (). Je leert de ontwerpprincipes van master fineline en wat het onderscheidt van basiswerk, het maken van ontwerpen en het printen van stencils, geavanceerde kleurenleer en pigmenttoepassing, naaldkeuze voor specifieke technieken, en professionele tips van de masters zelf."
         ]
       },
       {
@@ -2365,21 +2629,27 @@
       {
         "heading": "Optioneel Fineline Masterclass starterspakket",
         "paragraphs": [
-          "Het optionele starterspakket bevat professioneel tattoopigment, 2 dozen Kwadron naalden (40 stuks), een Fineline PMU Machine (t.w.v. €250), een latex oefenvel en Laliqa nazorgcrème.",
-          "Tijdens de masterclass geldt een gereduceerde prijs van €350 in plaats van de standaardprijs van €400."
+          "Het optionele starterspakket bevat professioneel tattoopigment, 2 dozen Kwadron naalden (40 stuks), een Fineline PMU Machine, een latex oefenvel en Laliqa nazorgcrème."
         ]
       },
       {
         "heading": "IZZI Beauty Wireless PMU Machine",
         "paragraphs": [
           "De draadloze machine werkt stil en geeft je volledige bewegingsvrijheid, zodat je zonder afleiding precies fineline-werk kunt leveren. De machine is veelzijdig inzetbaar voor verschillende PMU-technieken en maakt zowel scherpe lijnen als subtiele schaduwen mogelijk. Tijdens de masterclass kun je de machine exclusief uitproberen."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prijzen en betaaltermijnen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "De masterclass kost €1.250 in totaal. Je betaalt een aanbetaling van €500 bij inschrijving en het restbedrag van €750 op locatie, vóór aanvang van de lesdag.",
-          "Onze CRKBO-erkenning zorgt ervoor dat de masterclass volledig btw-vrij is. Daarnaast komt de opleiding in aanmerking voor UWV-subsidie voor beauty- en PMU-opleidingen."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst.",
+          "Heb je een WW-, WIA- of Wajong uitkering? Neem contact met ons op om een UWV-subsidie aan te vragen voor deze opleiding."
+        ],
+        "checklist": [
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie",
+          "Btw-vrij dankzij onze CRKBO-erkenning",
+          "UWV-subsidie mogelijk"
         ]
       },
       {
@@ -2387,7 +2657,7 @@
         "paragraphs": [
           "Tijdsinvestering: 5 uur online voorbereiding, één praktijkdag op locatie van 6 uur, en huiswerk waarbij je 5 modellen behandelt (10 uur). De totale studietijd komt op 21 uur.",
           "Vooropleiding: je hebt een afgeronde basisopleiding fineline nodig, intern of extern gevolgd. Je stuurt vóór de masterclass een foto van je certificaat ter bevestiging.",
-          "Voorwaarden: alle opleidingen vallen onder de Algemene Voorwaarden, de Privacyverklaring en de klachtenprocedure van IZZI Beauty BV. PMU-styliste is een vrij beroep zonder wettelijke licentievereisten. De masterclass vindt plaats op onze locaties in Amsterdam en Rotterdam."
+          "Voorwaarden: alle opleidingen vallen onder de Algemene Voorwaarden, de Privacyverklaring en de klachtenprocedure van IZZI Beauty BV. PMU-styliste is een vrij beroep zonder wettelijke licentievereisten. Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties."
         ]
       }
     ],
@@ -2458,11 +2728,11 @@
         },
         {
           "k": "Prijs",
-          "v": "€1.250 btw-vrij"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Starterspakket",
-          "v": "Optioneel — €350 (i.p.v. €400)"
+          "v": "Optioneel"
         },
         {
           "k": "Certificaat",
@@ -2473,20 +2743,50 @@
           "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
-      "ctaTitle": "Til je fineline naar masterniveau",
-      "ctaText": "Plaatsen zijn beperkt tot een kleine groep. Neem contact op voor de actuele data en beschikbaarheid.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Leer van twee masters",
       "title": "Meld je aan voor de Fineline Tattoo Masterclass",
-      "text": "Verfijn je precisie, beheers schaduw- en shadingtechnieken en ontwikkel je eigen artistieke signatuur.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Fineline Tattoo Masterclass"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
+    "trainers": [
+      {
+        "name": "Linda Goldman",
+        "role": "Fineline master",
+        "text": "",
+        "image": ""
+      },
+      {
+        "name": "Isabella",
+        "role": "Eigenaar en expert in PMU",
+        "text": "Met een passie voor permanente make-up richt ik mij niet alleen op behandelingen in onze salon, maar ook op het opleiden van zowel beginnende als ervaren PMU-stylisten. Mijn doel is om onze studenten met vertrouwen en expertise de PMU-wereld in te laten stappen!",
+        "image": "/media/izzi-beauty-20250729-9b97be-izzi-beauty-isabella-levels-pmu-expert.webp"
+      }
+    ],
+    "gallery": [
+      "/media/izzi-beauty-20250729-a4793d-fineline-tattoo-opleiding.jpg"
+    ]
   },
   "inkless-stretch-mark-removal": {
     "hero": {
@@ -2500,8 +2800,16 @@
     "productHandle": "opleiding-inkless-stretch-mark-removal",
     "highlights": [
       {
+        "label": "UWV-subsidie",
+        "text": "Mogelijk voor deze opleiding"
+      },
+      {
         "label": "CRKBO-erkend",
         "text": "Btw-vrij en officieel erkend"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
       }
     ],
     "body": [
@@ -2511,21 +2819,21 @@
           "Word een Stretch Mark & Scar Removal Expert: in 2 intensieve dagen leer je alles — van anatomie en basistheorie tot het daadwerkelijk behandelen van striae en littekengebieden op modellen. Na afronding ben je 100% voorbereid om jouw eigen klanten professioneel en succesvol te behandelen en kun je direct starten in jouw eigen salon.",
           "Vergroot je klantenbestand én omzet: deze populaire behandeling speelt perfect in op de groeiende vraag van klanten. Voeg waarde toe aan je aanbod en verhoog je omzet met deze veelgevraagde techniek.",
           "Examen in kleine groepjes voor maximale begeleiding: als enige in Nederland bieden wij persoonlijke begeleiding in groepjes van maximaal 2. Je ontvangt alle aandacht en begeleiding die nodig is om met vertrouwen te starten. Wij geven les in groepen van maximaal 4, waarbij 2 trainsters aanwezig zijn.",
-          "Na je inschrijving en betaling ontvang je per e-mail toegang tot de IZZI Online Academy. Begin al 30 dagen voor de opleiding met leren via uitgebreide video's en informatieve modules. Deze unieke online training, t.w.v. €1.250,-, bereidt je optimaal voor en is beschikbaar via je telefoon, tablet of laptop. Toegang is voor altijd.",
-          "Inclusief startpakket én machine: werk direct met hoogwaardige producten, genoeg om 20 klanten te behandelen en inclusief machine t.w.v. €470,00. IZZI Beauty is een erkend opleidingsinstituut, CRKBO geregistreerd en wij werken samen met het UWV."
+          "Na je inschrijving en betaling ontvang je per e-mail toegang tot de IZZI Online Academy. Begin al 30 dagen voor de opleiding met leren via uitgebreide video's en informatieve modules. Deze unieke online training, bereidt je optimaal voor en is beschikbaar via je telefoon, tablet of laptop. Toegang is voor altijd.",
+          "Inclusief startpakket én machine: werk direct met hoogwaardige producten, genoeg om 20 klanten te behandelen en inclusief machine IZZI Beauty is een erkend opleidingsinstituut, CRKBO geregistreerd en wij werken samen met het UWV."
         ]
       },
       {
         "heading": "Deze PMU Beginnersopleiding is inclusief",
         "paragraphs": [
-          "Een compleet pakket met persoonlijke begeleiding, lifetime toegang tot de Online Academy en een CRKBO-erkend certificaat."
+          "Bij deze opleiding hoort onder meer het volgende. De actuele prijs zie je bij de beschikbare data."
         ],
         "checklist": [
-          "Incl. startpakket t.w.v. €1.250",
+          "Incl. startpakket",
           "Online Academy: levenslange toegang",
           "Persoonlijke aandacht: maximaal 4 studenten per opleiding",
           "UWV Subsidie mogelijk",
-          "Inclusief: PMU-machine t.w.v. €470",
+          "Inclusief: PMU-machine",
           "Productenleer, naaldenleer, alles over littekens & oefenen op latex",
           "CRKBO erkend: btw-vrij",
           "Inclusief online begeleiding en WhatsApp-ondersteuning",
@@ -2560,12 +2868,12 @@
       {
         "heading": "Inkless Stretch Mark startpakket",
         "paragraphs": [
-          "Bij de Inkless Stretch Mark Opleiding ontvang je een uitgebreid startpakket inclusief PMU Machine t.w.v. €470, waarmee je direct als professional kunt starten. Dit pakket bevat alles wat je nodig hebt om tot wel 20 behandelingen uit te voeren en te oefenen op latex. Ideaal om je nieuwe vaardigheden te perfectioneren, thuis en tijdens de opleiding."
+          "Bij de Inkless Stretch Mark Opleiding ontvang je een uitgebreid startpakket inclusief PMU Machine waarmee je direct als professional kunt starten. Dit pakket bevat alles wat je nodig hebt om tot wel 20 behandelingen uit te voeren en te oefenen op latex. Ideaal om je nieuwe vaardigheden te perfectioneren, thuis en tijdens de opleiding."
         ],
         "checklist": [
           "Werkboek: je complete gids voor een succesvolle start",
-          "Toegang tot de Online Academy (t.w.v. €1.250)",
-          "Flow PMU Machine t.w.v. €470",
+          "Toegang tot de Online Academy",
+          "Flow PMU Machine",
           "25 inktringen",
           "1 serum",
           "20 benodigde Laliqa naalden",
@@ -2576,18 +2884,24 @@
         ]
       },
       {
-        "heading": "Inclusief: PMU Machine",
+        "heading": "IZZI PMU Machine",
         "paragraphs": [
           "Onze PMU machine is speciaal ontworpen voor precisie en gebruiksgemak. Deze draadloze permanente make up machine produceert perfecte pixels en zachte trillingen, is geschikt voor striae, ombré brows, eyeliner en lipbehandelingen, en wordt dagelijks gebruikt door onze ervaren PMU-specialisten.",
           "Met dit startpakket en de high-end machine ben je volledig voorbereid om direct professioneel te starten, zowel tijdens de opleiding als daarna."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prijzen & betaaltermijnen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "Bij IZZI Beauty bieden we flexibele betaalmogelijkheden zodat je jouw opleiding kunt volgen zonder financiële zorgen. Je kunt gespreid betalen voor deze PMU opleiding.",
-          "Tarieven: het volledige bedrag is €2.500 (btw-vrij), inclusief de Flow PMU Machine t.w.v. €470 en een startpakket met een volledige waarde van €1.250. De standaard aanbetaling is €750, daarna volgt de 1e termijn van €750 dertig dagen na aanmelding en de 2e termijn van €1.000 op de eerste dag op locatie. Let op: valt jouw opleidingsdatum binnen 30 dagen na aanmelding, dan dient het volledige bedrag te worden voldaan op dag 1 van de opleiding, voorafgaand aan de start.",
-          "Voordelen: geen rente — betaal in termijnen zonder extra kosten of BKR-registratie. Btw-vrij dankzij onze CRKBO-erkenning. Heb je een WW-, WIA- of Wajong-uitkering? Neem contact met ons op om een UWV-subsidie aan te vragen voor deze opleiding. Wil je in termijnen betalen? Geef je keuze door via mail of WhatsApp na je aanmelding."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst.",
+          "Heb je een WW-, WIA- of Wajong uitkering? Neem contact met ons op om een UWV-subsidie aan te vragen voor deze opleiding."
+        ],
+        "checklist": [
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie",
+          "Btw-vrij dankzij onze CRKBO-erkenning",
+          "UWV-subsidie mogelijk"
         ]
       },
       {
@@ -2596,7 +2910,7 @@
           "Duur van de opleiding: 10 uur online voorbereiding met lesmateriaal in de IZZI Online Academy, 2 dagen intensieve training op locatie (09:30 – 15:30), en extra huiswerk waarbij je 5 modellen behandelt in je eigen salon met een totale tijdsbesteding van 20 uur. De totale studietijd komt op 52 uur.",
           "Vooropleiding: voor deelname is geen vooropleiding nodig. De beginnersopleiding is toegankelijk voor iedereen die PMU-specialist wil worden.",
           "Voorwaarden: er zijn geen speciale vereisten; PMU-styliste is een vrij beroep zonder verplichte overheidseisen. Voor alle opleidingen en behandelingen gelden de Algemene Voorwaarden van Opleiding IZZI Beauty BV, inclusief onze Privacy Verklaring en klachtenprocedure.",
-          "Beschikbaarheid: de beginnersopleiding Inkless Stretch Mark wordt bijna elke maand aangeboden in Amsterdam en periodiek in Rotterdam. Neem contact op voor de actuele data en beschikbare plekken."
+          "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties."
         ]
       }
     ],
@@ -2630,7 +2944,7 @@
         },
         {
           "q": "Waar vindt de opleiding plaats?",
-          "a": "De opleiding wordt gegeven op onze locatie in Amsterdam en periodiek in Rotterdam. Neem contact met ons op als je voorkeur hebt voor een andere locatie — het is mogelijk een privé opleiding op locatie te boeken."
+          "a": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Een privé opleiding op locatie is ook mogelijk."
         },
         {
           "q": "Hoeveel praktijkervaring krijg ik tijdens de opleiding?",
@@ -2679,11 +2993,11 @@
         },
         {
           "k": "Prijs",
-          "v": "€2.500 btw-vrij"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Startpakket",
-          "v": "Inbegrepen · incl. machine t.w.v. €470"
+          "v": "Inbegrepen · incl. machine"
         },
         {
           "k": "Certificaat",
@@ -2694,19 +3008,32 @@
           "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
-      "ctaTitle": "Word Stretch Mark & Scar Removal specialist",
-      "ctaText": "De opleiding wordt bijna elke maand aangeboden in Amsterdam. Neem contact op voor de actuele data en beschikbaarheid.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "De snelgroeiende trend",
       "title": "Meld je aan voor de Inkless Stretch Mark Opleiding",
-      "text": "Leer in twee dagen striae en littekens op natuurlijke wijze te verminderen en voeg een veelgevraagde behandeling toe aan je salon.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Inkless Stretch Mark Removal Opleiding"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
     }
   },
   "saline-removal": {
@@ -2721,8 +3048,16 @@
     "productHandle": "opleiding-saline-removal",
     "highlights": [
       {
+        "label": "UWV-subsidie",
+        "text": "Mogelijk voor deze opleiding"
+      },
+      {
         "label": "CRKBO-erkend",
         "text": "Btw-vrij en officieel erkend"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
       }
     ],
     "body": [
@@ -2732,21 +3067,20 @@
           "Word een Saline Removal Expert: in 2 intensieve dagen leer je alles — van theorie over huid en pigment tot het professioneel uitvoeren van de behandeling op modellen. Na afronding ben je volledig voorbereid om zelfstandig en met vertrouwen klanten te behandelen in jouw eigen salon.",
           "Vergroot je klantenbestand én omzet: steeds meer klanten zoeken een veilige en effectieve methode om oude permanente make-up of fineline tattoos te laten verwijderen. Door deze techniek toe te voegen speel je in op een groeiende vraag en verhoog je direct jouw omzet.",
           "Examen in kleine groepjes voor maximale begeleiding: wij bieden persoonlijke begeleiding in kleine groepen van maximaal 4 cursisten, waarbij 2 trainsters aanwezig zijn. Zo krijg jij alle aandacht die je nodig hebt om met zekerheid te starten.",
-          "Na je inschrijving en betaling ontvang je per e-mail toegang tot de IZZI Online Academy. Begin al 30 dagen vóór de opleiding met leren via uitgebreide video's en informatieve modules. Deze unieke online training, t.w.v. €1.250,-, bereidt je optimaal voor en is beschikbaar via je telefoon, tablet of laptop. Je behoudt levenslange toegang.",
-          "Optioneel startpakket én machine: je ontvangt optioneel een professioneel startpakket met hoogwaardige producten, inclusief een PMU machine t.w.v. €470,00. Hiermee kun je direct aan de slag en heb je genoeg materiaal om je eerste behandelingen succesvol uit te voeren. De totaalprijs van dit pakket is €599,00 en is als keuze extra te boeken; bij aanvraag ontvang je het startpakket op locatie. IZZI Beauty is een erkend opleidingsinstituut, CRKBO geregistreerd en wij werken samen met het UWV."
+          "Na je inschrijving en betaling ontvang je per e-mail toegang tot de IZZI Online Academy. Begin al 30 dagen vóór de opleiding met leren via uitgebreide video's en informatieve modules. Deze unieke online training, bereidt je optimaal voor en is beschikbaar via je telefoon, tablet of laptop. Je behoudt levenslange toegang."
         ]
       },
       {
         "heading": "Deze PMU Beginnersopleiding is inclusief",
         "paragraphs": [
-          "Persoonlijke begeleiding in een kleine groep, lifetime toegang tot de Online Academy en een CRKBO-erkend certificaat."
+          "Bij deze opleiding hoort onder meer het volgende. De actuele prijs zie je bij de beschikbare data."
         ],
         "checklist": [
-          "Incl. online training t.w.v. €1.250",
+          "Incl. online training",
           "Online Academy: levenslange toegang",
           "Persoonlijke aandacht: maximaal 4 studenten per opleiding",
           "UWV Subsidie mogelijk",
-          "Optioneel: PMU-machine t.w.v. €470",
+          "Optioneel: PMU-machine",
           "Productenleer, naaldenleer, alles over littekens & oefenen op latex",
           "CRKBO erkend: btw-vrij",
           "Inclusief online begeleiding en WhatsApp-ondersteuning",
@@ -2780,13 +3114,11 @@
       },
       {
         "heading": "Saline Removal startpakket",
-        "paragraphs": [
-          "Bij de Saline Removal Opleiding kies je optioneel voor een uitgebreid startpakket inclusief PMU Machine t.w.v. €470, waarmee je direct als professional kunt starten. Dit pakket bevat alles wat je nodig hebt om tot wel 20 behandelingen uit te voeren. Ideaal om je nieuwe vaardigheden te perfectioneren, thuis en tijdens de opleiding. De kosten van het startpakket bedragen €599,00."
-        ],
+        "paragraphs": [],
         "checklist": [
           "Werkboek: je complete gids voor een succesvolle start",
-          "Toegang tot de Online Academy (t.w.v. €1.250)",
-          "Flow PMU Machine t.w.v. €470",
+          "Toegang tot de Online Academy",
+          "Flow PMU Machine",
           "1 Saline Removal",
           "20 benodigde Laliqa naalden",
           "Grip tape",
@@ -2798,14 +3130,20 @@
         "paragraphs": [
           "Onze PMU machine is speciaal ontworpen voor precisie en gebruiksgemak. Deze draadloze permanente make up machine produceert perfecte pixels en zachte trillingen, is geschikt voor striae, ombré brows, eyeliner en lipbehandelingen, en wordt dagelijks gebruikt door onze ervaren PMU-specialisten.",
           "Met dit startpakket en de high-end machine ben je volledig voorbereid om direct professioneel te starten, zowel tijdens de opleiding als daarna."
-        ]
+        ],
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp"
       },
       {
-        "heading": "Prijzen & betaaltermijnen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "Bij IZZI Beauty bieden we flexibele betaalmogelijkheden zodat je jouw opleiding kunt volgen zonder financiële zorgen. Je kunt gespreid betalen voor deze PMU opleiding.",
-          "Tarieven: het volledige bedrag is €995 (btw-vrij). De standaard aanbetaling is €650, daarna volgt de 1e termijn van €345 op locatie voorafgaand aan de opleiding.",
-          "Voordelen: geen rente — betaal in termijnen zonder extra kosten of BKR-registratie. Btw-vrij dankzij onze CRKBO-erkenning. Heb je een WW-, WIA- of Wajong-uitkering? Neem contact met ons op om een UWV-subsidie aan te vragen voor deze opleiding. Wil je in termijnen betalen? Geef je keuze door via mail of WhatsApp na je aanmelding."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst.",
+          "Heb je een WW-, WIA- of Wajong uitkering? Neem contact met ons op om een UWV-subsidie aan te vragen voor deze opleiding."
+        ],
+        "checklist": [
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie",
+          "Btw-vrij dankzij onze CRKBO-erkenning",
+          "UWV-subsidie mogelijk"
         ]
       },
       {
@@ -2814,7 +3152,7 @@
           "Duur van de opleiding: 5 uur online voorbereiding met lesmateriaal in de IZZI Online Academy, 1 dag intensieve training op locatie (09:30 – 15:30, 6 uur), en extra huiswerk waarbij je 5 modellen behandelt in je eigen salon met een totale tijdsbesteding van 20 uur. De totale studietijd komt op 31 uur.",
           "Vooropleiding: voor deelname is geen vooropleiding nodig. De beginnersopleiding is toegankelijk voor iedereen die PMU-specialist wil worden.",
           "Voorwaarden: er zijn geen speciale vereisten; PMU-styliste is een vrij beroep zonder verplichte overheidseisen. Voor alle opleidingen en behandelingen gelden de Algemene Voorwaarden van Opleiding IZZI Beauty BV, inclusief onze Privacy Verklaring en klachtenprocedure.",
-          "Beschikbaarheid: deze opleiding wordt momenteel enkel privé gegeven, zowel in Amsterdam als in Rotterdam. Meld je aan via het aanmeldformulier of neem contact op, dan nemen wij zo spoedig mogelijk contact met je op voor een gewenste datum."
+          "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties."
         ]
       }
     ],
@@ -2848,7 +3186,7 @@
         },
         {
           "q": "Waar vindt de opleiding plaats?",
-          "a": "Deze opleiding wordt momenteel enkel privé gegeven, op onze locaties in Amsterdam en Rotterdam. Meld je aan via het formulier of neem contact op voor een gewenste datum."
+          "a": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Een privé opleiding op locatie is ook mogelijk."
         },
         {
           "q": "Hoeveel praktijkervaring krijg ik tijdens de opleiding?",
@@ -2864,7 +3202,7 @@
         },
         {
           "q": "Is het startpakket verplicht?",
-          "a": "Nee, het startpakket is optioneel. Voor €599,00 ontvang je een compleet pakket inclusief de Flow PMU Machine t.w.v. €470, genoeg materiaal voor 20 behandelingen. Bij aanvraag ontvang je het startpakket op locatie."
+          "a": "De actuele prijs, datum, locatie en beschikbare plekken staan bij de beschikbare data op deze pagina. Die komen uit de webshop, niet uit deze tekst."
         },
         {
           "q": "Wat als ik extra hulp nodig heb na de opleiding?",
@@ -2897,11 +3235,11 @@
         },
         {
           "k": "Prijs",
-          "v": "€995 btw-vrij"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Startpakket",
-          "v": "Optioneel · €599"
+          "v": "Optioneel"
         },
         {
           "k": "Certificaat",
@@ -2912,19 +3250,32 @@
           "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
-      "ctaTitle": "Word Saline Removal specialist",
-      "ctaText": "Deze opleiding wordt momenteel enkel privé gegeven. Neem contact op om samen een geschikte datum te plannen.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Veilig verwijderen",
       "title": "Meld je aan voor de Saline Removal Opleiding",
-      "text": "Leer oude permanente make-up en fineline tattoos veilig verwijderen en speel in op een sterk groeiende vraag.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Saline Removal Opleiding"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
     }
   },
   "lash-lift-training": {
@@ -2954,13 +3305,13 @@
       {
         "heading": "De opleiding is inclusief",
         "paragraphs": [
-          "Een complete training met startpakket, lifetime toegang tot het online leerplatform en persoonlijke begeleiding in een kleine groep."
+          "Bij deze opleiding hoort onder meer het volgende. De actuele prijs zie je bij de beschikbare data."
         ],
         "checklist": [
           "Leren van de Lash Lift techniek",
           "CRKBO erkende opleiding",
           "Max. 4 studenten per opleiding",
-          "Startpakket t.w.v. €299",
+          "Startpakket",
           "Productenleer",
           "Toegang tot de Online Academy via e-mail na inschrijving en betaling",
           "Oneindig toegang tot het online leerplatform",
@@ -2982,9 +3333,7 @@
       },
       {
         "heading": "Lash Lift startpakket",
-        "paragraphs": [
-          "De Lash Lift training is inclusief startpakket met een waarde van €299."
-        ],
+        "paragraphs": [],
         "checklist": [
           "Toegang tot de Online Academy met online lessen ter voorbereiding",
           "Starterskit",
@@ -3001,10 +3350,14 @@
         ]
       },
       {
-        "heading": "Prijzen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "De Lash Lift training kost in totaal €495 btw-vrij, inclusief startpakket t.w.v. €299. Onze opleidingen zijn door het CRKBO erkend en daarom vrijgesteld van btw.",
-          "Wil je liever alleen de online training volgen? Dat kan — bekijk daarvoor het aanbod aan online trainingen."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst."
+        ],
+        "checklist": [
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie",
+          "Btw-vrij dankzij onze CRKBO-erkenning"
         ]
       },
       {
@@ -3013,7 +3366,7 @@
           "Duur: 3 uur lesstof online ter voorbereiding, 1 dag op locatie van 10:00 – 12:00 (2 uur leren op locatie), en een extra huiswerkopdracht waarbij je 5 modellen behandelt in je eigen salon (5 uur). De totale studietijd komt op 10 uur.",
           "Vooropleiding: voor het volgen van deze opleiding is geen vooropleiding nodig.",
           "Voorwaarden: voor al onze opleidingen en cursussen gelden de Algemene Voorwaarden van Opleiding IZZI Beauty BV, waarin ook onze Privacy Verklaring en klachtenprocedure is opgenomen. Er zijn geen speciale voorwaarden; beautystyliste is een vrij beroep en ook vanuit de overheid zijn er geen speciale voorwaarden om te kunnen deelnemen.",
-          "Data en aanmelden: de Lash Lift training kan een aantal keer per jaar gevolgd worden en er zijn privé opties mogelijk. Inschrijven kan per mail of WhatsApp: geef de gewenste data door en betaal de aanbetaling binnen 3 dagen na aanmelding om jouw plek te bevestigen."
+          "Data en aanmelden: Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Een privé opleiding op locatie is ook mogelijk."
         ]
       }
     ],
@@ -3051,11 +3404,11 @@
         },
         {
           "q": "Is het startpakket inbegrepen?",
-          "a": "Ja, de Lash Lift training is inclusief een startpakket t.w.v. €299 met onder andere een starterskit, lifting pads, lifting tool, 3 lotions en de Lash Lift Kit."
+          "a": "Ja, de Lash Lift training is inclusief een startpakket met onder andere een starterskit, lifting pads, lifting tool, 3 lotions en de Lash Lift Kit."
         },
         {
           "q": "Wat kost de training?",
-          "a": "De totaalprijs is €495 btw-vrij, inclusief het startpakket t.w.v. €299. Onze opleidingen zijn CRKBO-erkend en daarom vrijgesteld van btw."
+          "a": "De actuele prijs, datum, locatie en beschikbare plekken staan bij de beschikbare data op deze pagina. Die komen uit de webshop, niet uit deze tekst."
         },
         {
           "q": "Kan ik ook alleen de online training volgen?",
@@ -3063,11 +3416,11 @@
         },
         {
           "q": "Kan ik de training privé volgen?",
-          "a": "Ja, de Lash Lift training kan een aantal keer per jaar gevolgd worden en er zijn privé opties mogelijk. Neem contact op voor meer informatie."
+          "a": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Een privé opleiding op locatie is ook mogelijk."
         },
         {
           "q": "Hoe meld ik mij aan?",
-          "a": "Inschrijven kan per mail of WhatsApp. Geef de gewenste data door en betaal de aanbetaling binnen 3 dagen na aanmelding om jouw plek te bevestigen."
+          "a": "Bekijk de beschikbare data op deze pagina om in te schrijven. Twijfel je? Vraag informatie aan via het formulier."
         }
       ]
     },
@@ -3092,11 +3445,11 @@
         },
         {
           "k": "Prijs",
-          "v": "€495 btw-vrij"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Startpakket",
-          "v": "Inbegrepen · t.w.v. €299"
+          "v": "Inbegrepen ·"
         },
         {
           "k": "Certificaat",
@@ -3107,19 +3460,32 @@
           "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
-      "ctaTitle": "Start met Lash Lift",
-      "ctaText": "De training wordt een aantal keer per jaar gegeven en is ook privé te volgen. Neem contact op voor de actuele data.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Open en volumineus",
       "title": "Meld je aan voor de Lash Lift Training",
-      "text": "Leer in één dagdeel de complete Lash Lift techniek en ga direct in jouw eigen salon aan de slag.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Lash Lift Training"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
     }
   },
   "brow-lamination-training": {
@@ -3149,13 +3515,13 @@
       {
         "heading": "De opleiding is inclusief",
         "paragraphs": [
-          "Een complete training met startpakket, lifetime toegang tot het online leerplatform en persoonlijke begeleiding in een kleine groep."
+          "Bij deze opleiding hoort onder meer het volgende. De actuele prijs zie je bij de beschikbare data."
         ],
         "checklist": [
           "Leren van de Brow Lamination techniek",
           "CRKBO erkende opleiding",
           "Max. 4 studenten per opleiding",
-          "Inclusief startpakket t.w.v. €299",
+          "Inclusief startpakket",
           "Productenleer",
           "Toegang tot de Online Academy via e-mail na inschrijving en betaling",
           "Oneindig toegang tot het online leerplatform",
@@ -3177,9 +3543,7 @@
       },
       {
         "heading": "Brow Lamination startpakket",
-        "paragraphs": [
-          "De Brow Lamination training is inclusief startpakket met een waarde van €299."
-        ],
+        "paragraphs": [],
         "checklist": [
           "Toegang tot de Online Academy met online lessen ter voorbereiding",
           "Starterskit",
@@ -3195,10 +3559,14 @@
         ]
       },
       {
-        "heading": "Prijzen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "De Brow Lamination opleiding kost in totaal €495 btw-vrij, inclusief startpakket t.w.v. €299. Onze opleidingen zijn door het CRKBO erkend en daarom vrijgesteld van btw.",
-          "Wil je liever alleen de online training volgen? Dat kan — bekijk daarvoor het aanbod aan online trainingen."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst."
+        ],
+        "checklist": [
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie",
+          "Btw-vrij dankzij onze CRKBO-erkenning"
         ]
       },
       {
@@ -3207,7 +3575,7 @@
           "Duur: 3 uur lesstof online ter voorbereiding, 1 dag op locatie van 10:00 – 12:00 (2 uur leren op locatie), en een extra huiswerkopdracht waarbij je 5 modellen behandelt in je eigen salon (5 uur). De totale studietijd komt op 10 uur.",
           "Vooropleiding: voor het volgen van deze opleiding is geen vooropleiding nodig.",
           "Voorwaarden: voor al onze opleidingen en cursussen gelden de Algemene Voorwaarden van Opleiding IZZI Beauty BV, waarin ook onze Privacy Verklaring en klachtenprocedure is opgenomen. Er zijn geen speciale voorwaarden; beautystyliste is een vrij beroep en ook vanuit de overheid zijn er geen speciale voorwaarden om te kunnen deelnemen.",
-          "Data en aanmelden: de Brow Lamination training kan een aantal keer per jaar gevolgd worden en er zijn privé opties mogelijk. Inschrijven kan per mail of WhatsApp: geef de gewenste data door en betaal de aanbetaling binnen 3 dagen na aanmelding om jouw plek te bevestigen."
+          "Data en aanmelden: Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Een privé opleiding op locatie is ook mogelijk."
         ]
       }
     ],
@@ -3245,11 +3613,11 @@
         },
         {
           "q": "Is het startpakket inbegrepen?",
-          "a": "Ja, de Brow Lamination training is inclusief een startpakket t.w.v. €299 met onder andere een starterskit, lifting tool, 3 lotions en de Brow Lamination Kit."
+          "a": "Ja, de Brow Lamination training is inclusief een startpakket met onder andere een starterskit, lifting tool, 3 lotions en de Brow Lamination Kit."
         },
         {
           "q": "Wat kost de training?",
-          "a": "De totaalprijs is €495 btw-vrij, inclusief het startpakket t.w.v. €299. Onze opleidingen zijn CRKBO-erkend en daarom vrijgesteld van btw."
+          "a": "De actuele prijs, datum, locatie en beschikbare plekken staan bij de beschikbare data op deze pagina. Die komen uit de webshop, niet uit deze tekst."
         },
         {
           "q": "Kan ik ook alleen de online training volgen?",
@@ -3257,11 +3625,11 @@
         },
         {
           "q": "Kan ik de training privé volgen?",
-          "a": "Ja, de Brow Lamination training kan een aantal keer per jaar gevolgd worden en er zijn privé opties mogelijk. Neem contact op voor meer informatie."
+          "a": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Een privé opleiding op locatie is ook mogelijk."
         },
         {
           "q": "Hoe meld ik mij aan?",
-          "a": "Inschrijven kan per mail of WhatsApp. Geef de gewenste data door en betaal de aanbetaling binnen 3 dagen na aanmelding om jouw plek te bevestigen."
+          "a": "Bekijk de beschikbare data op deze pagina om in te schrijven. Twijfel je? Vraag informatie aan via het formulier."
         }
       ]
     },
@@ -3286,11 +3654,11 @@
         },
         {
           "k": "Prijs",
-          "v": "€495 btw-vrij"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Startpakket",
-          "v": "Inbegrepen · t.w.v. €299"
+          "v": "Inbegrepen ·"
         },
         {
           "k": "Certificaat",
@@ -3301,20 +3669,37 @@
           "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
-      "ctaTitle": "Start met Brow Lamination",
-      "ctaText": "De training wordt een aantal keer per jaar gegeven en is ook privé te volgen. Neem contact op voor de actuele data.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Vol en opgelicht",
       "title": "Meld je aan voor de Brow Lamination Training",
-      "text": "Leer in één dagdeel de complete Brow Lamination techniek en ga direct in jouw eigen salon aan de slag.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "wenkbrauwen",
+      "opleiding_specifiek": "Brow Lamination Training"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20250729-41f099-brow-lamination-behandeling.jpg",
+      "/media/izzi-beauty-20251110-ed7eb7-brow-lamination-opleiding.webp"
+    ]
   },
   "laser-ontharing-opleiding": {
     "hero": {
@@ -3328,8 +3713,16 @@
     "productHandle": "opleiding-laser-ontharing",
     "highlights": [
       {
+        "label": "UWV-subsidie",
+        "text": "Mogelijk voor deze opleiding"
+      },
+      {
         "label": "CRKBO-erkend",
         "text": "Btw-vrij en officieel erkend"
+      },
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
       }
     ],
     "body": [
@@ -3339,17 +3732,17 @@
           "Word een Laser Ontharing Expert: in 2 intensieve dagen leer je alles — van de theorie over haargroei, huidtypes en lasertechnologie tot het professioneel uitvoeren van laserbehandelingen op modellen. Na afronding ben je volledig voorbereid om zelfstandig klanten te behandelen en direct in je eigen salon te starten.",
           "Vergroot je klantenbestand én omzet: laserontharing is één van de meest gevraagde behandelingen in de beautywereld. Door deze techniek aan te bieden speel je in op een groeiende behoefte en creëer je een stabiele bron van terugkerende klanten en omzet.",
           "Examen in kleine groepjes voor maximale begeleiding: wij bieden persoonlijke begeleiding in kleine groepen van maximaal 2 cursisten, waarbij 1 trainster aanwezig is. Hierdoor krijg je de aandacht en begeleiding die je nodig hebt om met vertrouwen te starten.",
-          "Na je inschrijving en betaling ontvang je per e-mail toegang tot de IZZI Online Academy. Begin al 30 dagen vóór de opleiding met leren via uitgebreide video's en informatieve modules. Deze online training, t.w.v. €1.500,-, bereidt je optimaal voor en is beschikbaar via je telefoon, tablet of laptop. Je behoudt levenslange toegang.",
+          "Na je inschrijving en betaling ontvang je per e-mail toegang tot de IZZI Online Academy. Begin al 30 dagen vóór de opleiding met leren via uitgebreide video's en informatieve modules. Deze online training, bereidt je optimaal voor en is beschikbaar via je telefoon, tablet of laptop. Je behoudt levenslange toegang.",
           "Optioneel machine-aanschaf: vraag meer informatie op voor de aanschaf van een laserapparaat — wij bieden meerdere opties aan. IZZI Beauty is een erkend opleidingsinstituut, CRKBO geregistreerd en wij werken samen met het UWV."
         ]
       },
       {
         "heading": "Deze beginnersopleiding is inclusief",
         "paragraphs": [
-          "Persoonlijke begeleiding in een kleine groep, lifetime toegang tot de Online Academy en een erkend certificaat voor laserontharing."
+          "Bij deze opleiding hoort onder meer het volgende. De actuele prijs zie je bij de beschikbare data."
         ],
         "checklist": [
-          "Incl. online training t.w.v. €1.500",
+          "Incl. online training",
           "Online Academy: levenslange toegang",
           "Persoonlijke aandacht: maximaal 4 studenten per opleiding",
           "UWV Subsidie mogelijk",
@@ -3386,11 +3779,16 @@
         ]
       },
       {
-        "heading": "Prijzen & betaaltermijnen",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "Bij IZZI Beauty bieden we flexibele betaalmogelijkheden zodat je jouw opleiding kunt volgen zonder financiële zorgen. Je kunt gespreid betalen voor deze opleiding.",
-          "Tarieven: het volledige bedrag is €1.500 (btw-vrij). De standaard aanbetaling is €1.200, daarna volgt de 1e termijn van €300 op locatie voorafgaand aan de opleiding.",
-          "Voordelen: geen rente — betaal in termijnen zonder extra kosten of BKR-registratie. Btw-vrij dankzij onze CRKBO-erkenning. Heb je een WW-, WIA- of Wajong-uitkering? Neem contact met ons op om een UWV-subsidie aan te vragen voor deze opleiding. Wil je in termijnen betalen? Geef je keuze door via mail of WhatsApp na je aanmelding."
+          "Je kunt de opleiding betalen via iDEAL, iDEAL in3 of in termijnen. De actuele cursusprijs, datum, locatie en beschikbare plekken staan bij de beschikbare data hierboven — die komen uit de webshop, niet uit deze tekst.",
+          "Heb je een WW-, WIA- of Wajong uitkering? Neem contact met ons op om een UWV-subsidie aan te vragen voor deze opleiding."
+        ],
+        "checklist": [
+          "iDEAL en iDEAL in3",
+          "Betalen in termijnen zonder extra kosten of BKR-registratie",
+          "Btw-vrij dankzij onze CRKBO-erkenning",
+          "UWV-subsidie mogelijk"
         ]
       },
       {
@@ -3399,7 +3797,7 @@
           "Duur van de opleiding: 3 uur online voorbereiding met lesmateriaal in de IZZI Online Academy, 1 dag intensieve training op locatie (09:30 – 15:30, 6 uur), en extra huiswerk waarbij je 5 modellen behandelt in je eigen salon met een totale tijdsbesteding van 20 uur. De totale studietijd komt op 29 uur.",
           "Vooropleiding: voor deelname is geen vooropleiding nodig. De beginnersopleiding is toegankelijk voor iedereen die specialist wil worden.",
           "Voorwaarden: er zijn geen speciale vereisten; het is een vrij beroep zonder verplichte overheidseisen. Voor alle opleidingen en behandelingen gelden de Algemene Voorwaarden van Opleiding IZZI Beauty BV, inclusief onze Privacy Verklaring en klachtenprocedure.",
-          "Beschikbaarheid: deze opleiding wordt momenteel enkel privé gegeven, zowel in Amsterdam als in Rotterdam. Meld je aan via het aanmeldformulier of neem contact op, dan nemen wij zo spoedig mogelijk contact met je op voor een gewenste datum."
+          "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties."
         ]
       }
     ],
@@ -3433,7 +3831,7 @@
         },
         {
           "q": "Waar vindt de opleiding plaats?",
-          "a": "Deze opleiding wordt momenteel enkel privé gegeven, op onze locaties in Amsterdam en Rotterdam. Meld je aan via het formulier of neem contact op voor een gewenste datum."
+          "a": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Een privé opleiding op locatie is ook mogelijk."
         },
         {
           "q": "Hoe groot zijn de groepen?",
@@ -3482,7 +3880,7 @@
         },
         {
           "k": "Prijs",
-          "v": "€1.500 btw-vrij"
+          "v": "Zie beschikbare data"
         },
         {
           "k": "Lasermachine",
@@ -3497,26 +3895,42 @@
           "v": "Geregistreerd opleider — btw-vrij"
         }
       ],
-      "ctaTitle": "Word laserontharingsspecialist",
-      "ctaText": "Deze opleiding wordt momenteel enkel privé gegeven. Neem contact op om samen een geschikte datum te plannen.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Razendsnel groeiend",
       "title": "Meld je aan voor de Laser Ontharing Training",
-      "text": "Leer veilig en effectief ongewenste haargroei verwijderen en voeg één van de meest gevraagde behandelingen toe aan je salon.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle opleidingen",
-      "secondaryUrl": "/opleidingen"
-    }
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "anders",
+      "opleiding_specifiek": "Laser Ontharing Training"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Beschikbare locaties verschillen per opleidingsdatum. Bekijk hieronder de actuele data en locaties. Prijs en beschikbare plekken komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
+    "gallery": [
+      "/media/izzi-beauty-20250729-eb6241-laser-ontharing-behandeling.webp"
+    ]
   },
   "airbrush-brows-online-training": {
     "hero": {
       "eyebrow": "Online training",
       "title": "Airbrush Brows Online Training",
-      "text": "Leer de nieuwe Airbrush Brows techniek volledig online — stap voor stap, inclusief certificaat. Nu met 40% korting.",
+      "text": "Leer de nieuwe Airbrush Brows techniek volledig online — stap voor stap, inclusief certificaat.",
       "breadcrumb": "Airbrush Brows Online Training"
     },
     "image": "/media/izzi-beauty-20250729-4dd5a7-airbrush-brows-online-training.png",
@@ -3548,10 +3962,13 @@
         ]
       },
       {
-        "heading": "Prijs en betaling",
+        "heading": "Betaalmogelijkheden",
         "paragraphs": [
-          "De training kost normaal €395 en is nu met 40% korting verkrijgbaar voor €237. In dollars is dat van $428,15 voor $256,89.",
-          "Betalen kan met PayPal, iDEAL of creditcard."
+          "Betalen kan via iDEAL, PayPal of creditcard. De actuele prijs komt uit de webshop, niet uit deze tekst."
+        ],
+        "checklist": [
+          "PayPal, iDEAL of creditcard",
+          "Certificaat van deelname"
         ]
       },
       {
@@ -3593,7 +4010,7 @@
         },
         {
           "q": "Wat kost de training?",
-          "a": "De training kost normaal €395 en is nu met 40% korting verkrijgbaar voor €237. In dollars is dat van $428,15 voor $256,89."
+          "a": "De actuele prijs komt uit de webshop, niet uit deze tekst. Bekijk de beschikbare data op deze pagina."
         },
         {
           "q": "Hoe kan ik betalen?",
@@ -3634,11 +4051,11 @@
         },
         {
           "k": "Prijs",
-          "v": "€237 (van €395)"
+          "v": "Zie beschikbare data"
         },
         {
-          "k": "Korting",
-          "v": "40%"
+          "k": "Tempo",
+          "v": "In je eigen tempo"
         },
         {
           "k": "Betaling",
@@ -3653,19 +4070,38 @@
           "v": "Inbegrepen"
         }
       ],
-      "ctaTitle": "Start met Airbrush Brows",
-      "ctaText": "Nu met 40% korting, inclusief certificaat. Neem contact op voor de beschikbare talen en de Nederlandse versie.",
-      "ctaLabel": "Neem contact op",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Inschrijven of informatie?",
+      "ctaText": "Bekijk de beschikbare data om in te schrijven, of vraag eerst extra informatie aan via het formulier op deze pagina.",
+      "ctaLabel": "Informatie opvragen",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
-      "script": "Nu 40% korting",
+      "script": "Volledig online",
       "title": "Volg de Airbrush Brows Online Training",
-      "text": "Leer de complete Airbrush Brows techniek online, in je eigen tempo, met stap-voor-stap video's en een certificaat van deelname.",
-      "primaryLabel": "Neem contact op",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "Bekijk alle online trainingen",
-      "secondaryUrl": "/online-trainingen"
-    }
+      "text": "Bekijk de actuele data of laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en plekken komen uit de webshop, niet uit verouderde paginatekst.",
+      "primaryLabel": "Bekijk beschikbare data",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Informatie opvragen",
+      "secondaryUrl": "#opleiding-interesse"
+    },
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Informatie opvragen",
+    "formText": "Twijfel je over de datum, locatie of een privé opleiding? Laat je gegevens achter — we nemen zo spoedig mogelijk contact op. Prijzen en beschikbare plekken bevestigen we altijd op basis van de actuele webshopdata.",
+    "formPrefill": {
+      "opleiding": "online",
+      "opleiding_specifiek": "Airbrush Brows Online Training"
+    },
+    "availability": {
+      "title": "Beschikbare data",
+      "text": "Prijs en beschikbaarheid komen uit de webshop, niet uit deze pagina.",
+      "emptyText": "Er staan op dit moment geen openbare data klaar in de webshop. Vraag de actuele mogelijkheden aan via het formulier.",
+      "disabledText": "Online inschrijven via de webshop is op deze site nog niet actief. Vraag de actuele data, locatie en prijs aan via het formulier — we bevestigen die nooit uit verouderde paginatekst."
+    },
+    "highlights": [
+      {
+        "label": "Gespreid betalen",
+        "text": "Betaal in termijnen of met iDEAL in3"
+      }
+    ]
   }
 }
