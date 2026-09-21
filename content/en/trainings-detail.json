@@ -1254,9 +1254,42 @@
       "text": "Do you want to become a successful PMU professional? Our intensive 6-day beginner course offers everything you need to start your own salon and treat clients with confidence. No diplomas or prior knowledge are required to take this course.",
       "breadcrumb": "Ombré Powder Brows Course"
     },
-    "image": "/media/izzi-beauty-20250729-53836b-powder-brows.jpg",
+    "image": "/media/izzi-beauty-20251110-2aed27-powder-brows-opleiding-izzi-beauty.webp",
     "intro": "IZZI Beauty is a recognised training institute, CRKBO-registered, and we work together with the UWV. In six days — from online preparation to an intensive return day — you learn everything from colour theory and eyebrow mapping to pigment techniques on latex and real models.",
+    "videoUrl": "https://www.youtube.com/watch?v=RiPeVrqzUy4",
     "productHandle": "opleiding-ombre-powder-brows",
+    "gallery": [
+      "/media/izzi-beauty-20251110-f2652d-ombre-powder-brows-cursus.webp",
+      "/media/izzi-beauty-20250729-af300e-ombre-powder-brows-masterclass.webp",
+      "/media/izzi-beauty-20251110-956210-ombre-powder-brows-treatment-cou-3.jpg"
+    ],
+    "trainers": [
+      {
+        "name": "Isabella",
+        "role": "Owner and PMU expert",
+        "text": "With a passion for permanent makeup I focus not only on treatments in our salon, but also on training both beginner and experienced PMU stylists. My goal is to send our students into the PMU world with confidence and expertise!",
+        "image": "/media/izzi-beauty-20250729-9b97be-izzi-beauty-isabella-levels-pmu-expert.webp"
+      },
+      {
+        "name": "Carla",
+        "role": "PMU and laser treatment expert",
+        "text": "As a full-time PMU specialist at IZZI I guide students during courses and support Isabella at exams. With two years of experience in treatments and training, I make sure our students always get the guidance they need.",
+        "image": ""
+      }
+    ],
+    "formSlug": "opleiding-interesse",
+    "formTitle": "Request information",
+    "formText": "Unsure about the date, location or a private course? Leave your details — we will get back to you as soon as possible. We always confirm prices and available seats from live shop data.",
+    "formPrefill": {
+      "opleiding": "wenkbrauwen",
+      "opleiding_specifiek": "Ombré Powder Brows Course"
+    },
+    "availability": {
+      "title": "Available dates",
+      "text": "Available locations differ per course date. See the current dates and locations below. Price and available seats come from the shop, not from this page.",
+      "emptyText": "There are currently no public dates in the shop. Request the latest options via the form.",
+      "disabledText": "Online enrolment via the shop is not active on this site yet. Request the current dates, location and price via the form — we never confirm those from outdated page copy."
+    },
     "highlights": [
       {
         "label": "UWV funding",
@@ -1275,20 +1308,21 @@
       {
         "heading": "Why choose the Powder Brows Course at IZZI Beauty?",
         "paragraphs": [
-          "Become a PMU professional: in 4 intensive days you learn everything; from colour theory and eyebrow mapping to pigment techniques on latex and real models. After completion you are 100% prepared to treat your own clients professionally and successfully.",
+          "Become a PMU professional: in this course you learn everything; from colour theory and eyebrow mapping to pigment techniques on latex and real models. After completion you are 100% prepared to treat your own clients professionally and successfully.",
           "As the only provider in the Netherlands, we offer personal private exams. You receive all the attention and guidance needed to start with confidence.",
-          "After enrolment and payment you receive access to the IZZI Online Academy by email. Start learning as early as 30 days before the course through extensive videos and informative modules. This unique online training, worth €1,250, prepares you optimally and access lasts forever."
+          "After enrolment and payment you receive access to the IZZI Online Academy by email. Start learning as early as 30 days before the course through extensive videos and informative modules. This unique online training prepares you optimally and access lasts forever."
         ],
         "checklist": [
-          "Become a PMU professional in 4 intensive days",
+          "Become a PMU professional — from online preparation to the return day",
           "Personal private exam — the only provider in the Netherlands",
-          "Lifetime access to the IZZI Online Academy (worth €1,250)",
-          "Includes a valuable starter kit worth €1,250 — enough to treat 50 clients",
+          "Lifetime access to the IZZI Online Academy",
+          "Includes a starter kit — enough to treat 50 clients",
           "Recognised training institute, CRKBO-registered and cooperation with the UWV"
         ]
       },
       {
         "heading": "Ombré Powder Brows Course programme with Certificate",
+        "image": "/media/izzi-beauty-20251110-f2652d-ombre-powder-brows-cursus.webp",
         "paragraphs": [
           "Day 1 — Online Preparation (10 hours): getting to know Isabella, PMU and Ombré Powder Brows; anatomy of the skin and how PMU works; understanding and applying colour and pigment theory; brow mapping and shaping including practical videos; GGD inspection and hygiene guidelines; and marketing tips for a flying start.",
           "Day 2 — Theory & Basic Skills on Location (6 hours). Morning (9:30 – 12:00): discussing the online theory and deeper study of hygiene (GGD), colour theory and pigments — how to choose the perfect combination — and an introduction to the PMU machine with an explanation of the starter kit. Afternoon (12:30 – 15:30): practical exercises with brow mapping in three ways, practising on each other, and tips to start up your own salon professionally.",
@@ -1298,12 +1332,13 @@
       },
       {
         "heading": "Permanent Makeup Starter Kit",
+        "image": "/media/izzi-beauty-20250729-53836b-powder-brows.jpg",
         "paragraphs": [
-          "With the Ombré Powder Brows Course you receive an extensive starter kit worth €1400, with which you can start as a professional straight away. This kit contains everything you need to carry out up to 50 treatments and practise on latex."
+          "With the Ombré Powder Brows Course you receive an extensive starter kit, with which you can start as a professional straight away. This kit contains everything you need to carry out up to 50 treatments and practise on latex."
         ],
         "checklist": [
           "Workbook: your complete guide to a successful start",
-          "Access to the Online Academy (worth €1,250)",
+          "Access to the Online Academy",
           "25 ink rings",
           "3 Laliqa pigments (for all skin types)",
           "20 Laliqa needles (with the purchase of the IZZI Beauty PMU Machine)",
@@ -1314,7 +1349,8 @@
         ]
       },
       {
-        "heading": "Includes the IZZI PMU Machine",
+        "heading": "The IZZI PMU Machine",
+        "image": "/media/izzi-beauty-20250729-30c328-draadloze-pmu-machine.webp",
         "paragraphs": [
           "IZZI Beauty has translated its expertise and years of experience in permanent makeup into the ultimate PMU machine. Since 2021 we have offered a wireless machine that combines precision, ease of use and versatility.",
           "This machine is specially designed to meet the highest demands of PMU specialists. Because you can easily change stroke lengths, this machine lets you perform all types of treatments for PMU Powder Brows and Lip Blush, including Freckles, Stretch marks and even Fineline tattoos.",
@@ -1328,14 +1364,14 @@
         ]
       },
       {
-        "heading": "Prices & Payment Terms",
+        "heading": "Payment options",
         "paragraphs": [
-          "Limited-time offer: pay the full amount in one go for €3,000 and receive the IZZI PMU Machine worth €550 as a gift. Please note: if you pay with iDeal in 3 at checkout, we treat this as a single payment and you also receive the PMU machine as a gift.",
-          "Payment in instalments: the full amount is €3,400 (VAT-exempt), including the IZZI PMU Machine. The deposit on enrolment is €1,000, followed by 2 instalments of €1,200, 4 instalments of €600 or 6 instalments of €400.",
+          "You can pay for the course via iDEAL, iDEAL in3 or in instalments. The current course price, date, location and available seats are shown with the available dates above — they come from the shop, not from this copy.",
           "Do you receive a WW, WIA or Wajong benefit? Contact us to apply for UWV funding for this course."
         ],
         "checklist": [
-          "No interest: pay in instalments without extra costs or BKR registration",
+          "iDEAL and iDEAL in3",
+          "Pay in instalments without extra costs or BKR registration",
           "VAT-exempt thanks to our CRKBO recognition",
           "UWV funding potentially available"
         ]
@@ -1343,10 +1379,10 @@
       {
         "heading": "This PMU Beginner Course includes",
         "paragraphs": [
-          "Offer: pay €3,000 in one go or €3,400 in instalments and receive a free PMU machine worth €550."
+          "This course includes, among other things, the following. The current price is shown with the available dates."
         ],
         "checklist": [
-          "Starter kit worth €1,250",
+          "Starter kit",
           "Online Academy: lifetime access",
           "Personal attention: a maximum of 3 students per course",
           "UWV funding potentially available",
@@ -1367,14 +1403,7 @@
           "Course duration: 10 hours of online course material in the IZZI Online Academy, 3 days of intensive training on location (09:30 – 15:30) amounting to 18 hours of practice-oriented guidance, and additional homework in which you treat 5 models in your own salon with a time investment of 20 hours. The total study time therefore comes to 52 hours.",
           "Prior experience: no prior training is needed to take part in the course. The beginner course is accessible to anyone who wants to become a PMU specialist. There are no special requirements; PMU stylist is a self-employed profession with no mandatory government requirements.",
           "The general terms and conditions of Opleiding IZZI Beauty BV apply to all courses and treatments, including our privacy statement and complaints procedure.",
-          "Availability: the Ombré Powder Brows beginner course is offered almost every month in Amsterdam. Contact us for the most current dates and available places."
-        ]
-      },
-      {
-        "heading": "Your trainers",
-        "paragraphs": [
-          "Isabella — owner and expert in PMU: \"With a passion for permanent makeup, I focus not only on treatments in our salon, but also on training both beginner and experienced PMU stylists. My goal is to let our students step into the PMU world with confidence and expertise!\"",
-          "Carla — expert in PMU and laser treatments: \"As a full-time PMU specialist at IZZI, I guide students during courses and support Isabella at exams. With two years of experience in both treatments and training, I make sure our students always get the guidance they need.\""
+          "Available locations differ per course date. See the current dates and locations below."
         ]
       }
     ],
@@ -1408,7 +1437,7 @@
         },
         {
           "q": "Where does the course take place?",
-          "a": "Our course is taught at our location in Amsterdam. Contact us if you prefer a different location. It is possible to book a private course on location."
+          "a": "Available locations differ per course date. See the current dates and locations below. A private course on location is also possible."
         },
         {
           "q": "How much practical experience do I get during the course?",
@@ -1424,7 +1453,7 @@
         },
         {
           "q": "Can I combine my course with the IZZI PMU machine?",
-          "a": "Yes, we offer an optional wireless PMU machine for €1,000. This machine is designed for precision and is used daily by our specialists in our salon. You can test the machine yourself during the course and experience how well it works."
+          "a": "Yes, we offer an optional wireless PMU machine. This machine is designed for precision and is used daily by our specialists in our salon. You can test the machine yourself during the course and experience how well it works."
         },
         {
           "q": "How can I apply for a GGD inspection?",
@@ -1461,11 +1490,11 @@
         },
         {
           "k": "Location",
-          "v": "Amsterdam"
+          "v": "Differs per course date"
         },
         {
           "k": "Price",
-          "v": "€3,000 in one payment or €3,400 in instalments"
+          "v": "See available dates"
         },
         {
           "k": "Certificate",
@@ -1480,19 +1509,19 @@
           "v": "Potentially available"
         }
       ],
-      "ctaTitle": "Interested in this course?",
-      "ctaText": "Wondering whether a PMU course is right for you or do you have questions? Contact us for the current dates and available places.",
-      "ctaLabel": "Contact us",
-      "ctaUrl": "/contact"
+      "ctaTitle": "Enrol or request information?",
+      "ctaText": "View available dates to enrol, or request extra information first via the form on this page.",
+      "ctaLabel": "Request information",
+      "ctaUrl": "#opleiding-interesse"
     },
     "cta": {
       "script": "Start your career in PMU",
       "title": "Sign up for the Ombré Powder Brows Course",
-      "text": "Leave your details & questions and we will contact you as soon as possible to discuss the options with you.",
-      "primaryLabel": "Contact us",
-      "primaryUrl": "/contact",
-      "secondaryLabel": "View all courses",
-      "secondaryUrl": "/opleidingen"
+      "text": "View the current dates or leave your details — we will get back to you as soon as possible. Prices and seats come from the shop, not from outdated page copy.",
+      "primaryLabel": "View available dates",
+      "primaryUrl": "#beschikbare-data",
+      "secondaryLabel": "Request information",
+      "secondaryUrl": "#opleiding-interesse"
     }
   },
   "allround-pmu-opleiding": {

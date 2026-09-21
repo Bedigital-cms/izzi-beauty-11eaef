@@ -14,13 +14,15 @@ import type {
 } from '@/lib/types'
 
 import { getCategoryLinks } from '@/content/blog'
+import { loadForm } from '@/content/load'
 import { fill, getActiveLocale, ui } from '@/content/ui'
 import { commerceEnabled } from '@/lib/commerce/config'
 
-import Form from './Form'
+import Form, { type FormDef } from './Form'
 import { Icon } from './icons'
 import { LocaleLink } from './LocaleLink'
 import { Media } from './Media'
+import { TrainingAvailability } from './TrainingAvailability'
 import { VideoEmbed } from './VideoEmbed'
 
 /** Star row (filled ★ up to `n`). */
@@ -353,6 +355,24 @@ export function DetailPage({
   // anders wijst de knop naar /product/<handle>, en dat is een 404 zolang de shop uit is.
   const bookable = !!data.productHandle && commerceEnabled()
   const highlights = data.highlights ?? []
+  const labels = ui().training
+  const formDef = data.formSlug ? loadForm<FormDef>(data.formSlug, getActiveLocale()) : null
+  const enrollHref = data.availability ? '#beschikbare-data' : (bookable ? `/product/${data.productHandle}` : data.aside.ctaUrl)
+  const infoHref = data.formSlug ? '#opleiding-interesse' : data.aside.ctaUrl
+  const availabilityBlock = data.availability ? (
+    <TrainingAvailability
+      handle={data.productHandle}
+      copy={data.availability}
+      labels={{
+        seats: labels.seats,
+        seatsOne: labels.seatsOne,
+        enrolDate: labels.enrolDate,
+        requestInfo: labels.requestInfo,
+        loading: labels.loading,
+        full: labels.full,
+      }}
+    />
+  ) : null
   return (
     <>
       {/* Bij een behandeling staat de foto ACHTER de kop (§7: "de afbeelding mag in de header worden
@@ -392,11 +412,17 @@ export function DetailPage({
                   {data.intro && <p className="lead" style={{ marginBottom: 8 }}>{data.intro}</p>}
                 </>
               )}
-              {data.body.map((b) => (
+              {data.body.map((b, i) => (
                 <div key={b.heading}>
                   <h2>{b.heading}</h2>
-                  {b.paragraphs.map((p, i) => (
-                    <p key={i}>{p}</p>
+                  {b.image && (
+                    <div className="detail-figure">
+                      <Media src={b.image} alt={b.heading} shape="wide" label={b.heading} />
+                    </div>
+                  )}
+                  {b.images && b.images.length > 0 && <Gallery images={b.images} />}
+                  {b.paragraphs.map((p, pi) => (
+                    <p key={pi}>{p}</p>
                   ))}
                   {b.checklist && b.checklist.length > 0 && (
                     <ul className="checklist">
@@ -408,8 +434,38 @@ export function DetailPage({
                       ))}
                     </ul>
                   )}
+                  {i === 0 && availabilityBlock}
                 </div>
               ))}
+              {data.body.length === 0 && availabilityBlock}
+              {data.gallery && data.gallery.length > 0 && (
+                <div className="training-gallery-block">
+                  <h2>{labels.galleryTitle}</h2>
+                  <Gallery images={data.gallery} />
+                </div>
+              )}
+              {data.trainers && data.trainers.length > 0 && (
+                <div className="training-trainers">
+                  <h2>{labels.trainersTitle}</h2>
+                  <div className="team-grid trainer-grid">
+                    {data.trainers.map((m) => (
+                      <div className="team-card trainer-card" key={m.name}>
+                        <Media src={m.image} alt={m.name} shape="portrait" label={m.name} />
+                        <h3>{m.name}</h3>
+                        <p>{m.role}</p>
+                        {m.text && <p className="trainer-bio">{m.text}</p>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {data.formSlug && (
+                <div className="training-form" id="opleiding-interesse">
+                  {data.formTitle && <h2>{data.formTitle}</h2>}
+                  {data.formText && <p>{data.formText}</p>}
+                  <Form slug={data.formSlug} def={formDef} values={data.formPrefill} />
+                </div>
+              )}
               {data.steps && data.steps.items.length > 0 && (
                 <div style={{ marginTop: 44 }}>
                   <Steps title={data.steps.title} items={data.steps.items} />
@@ -448,13 +504,13 @@ export function DetailPage({
                     productpagina: daar kiest de bezoeker cursusdatum en locatie (de varianten) en
                     rekent hij af. Zonder koppeling — of met de webshop uit — blijft het de
                     contactknop, zodat er nooit een dode inschrijflink op de pagina staat. */}
-                {bookable ? (
+                {bookable || data.availability ? (
                   <>
-                    <LocaleLink className="btn btn-gold" href={`/product/${data.productHandle}`}>
-                      {ui().common.enroll}
+                    <LocaleLink className="btn btn-gold" href={enrollHref}>
+                      {data.availability ? labels.viewDates : ui().common.enroll}
                     </LocaleLink>
-                    <LocaleLink className="btn btn-light aside-cta-secondary" href={data.aside.ctaUrl}>
-                      {data.aside.ctaLabel}
+                    <LocaleLink className="btn btn-light aside-cta-secondary" href={infoHref}>
+                      {data.formSlug ? labels.requestInfo : data.aside.ctaLabel}
                     </LocaleLink>
                   </>
                 ) : (

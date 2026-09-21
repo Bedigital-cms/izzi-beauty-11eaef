@@ -216,6 +216,36 @@
           "placeholder": "Bijv. Lip Blush Beginnersopleiding"
         },
         {
+          "name": "gewenste_locatie",
+          "label": "Gewenste locatie",
+          "fieldType": "select",
+          "required": false,
+          "placeholder": "Kies een locatie",
+          "options": [
+            { "label": "Amsterdam", "value": "amsterdam" },
+            { "label": "Rotterdam", "value": "rotterdam" },
+            { "label": "Anders / weet ik nog niet", "value": "anders" }
+          ]
+        },
+        {
+          "name": "gewenste_periode",
+          "label": "Gewenste datum of periode",
+          "fieldType": "text",
+          "required": false,
+          "placeholder": "Bijv. maart 2026 of 12–14 mei"
+        },
+        {
+          "name": "prive_opleiding",
+          "label": "Privé opleiding",
+          "fieldType": "select",
+          "required": false,
+          "placeholder": "Nee, groepsopleiding",
+          "options": [
+            { "label": "Nee, groepsopleiding", "value": "nee" },
+            { "label": "Ja, privé opleiding", "value": "ja" }
+          ]
+        },
+        {
           "name": "query",
           "label": "Je vraag",
           "fieldType": "textarea",

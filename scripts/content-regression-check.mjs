@@ -11,6 +11,8 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { pathToFileURL } from 'node:url';
 
 const ROOT = process.cwd();
 const rd = (p) => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
@@ -687,6 +689,148 @@ const notFoundSrc = fs.readFileSync(path.join(ROOT, 'app/not-found.tsx'), 'utf8'
 if (!/getUI\(locale\)\.notFound/.test(notFoundSrc) || /<h1>Pagina niet gevonden<\/h1>/.test(notFoundSrc)) {
   fail('globale 404 is nog hardcoded Nederlands');
 } else pass('globale 404 gebruikt locale-aware ui.notFound');
+
+// ---------- Ombré training-detail v2: geen stale prijs-/locatieclaims; variant-deeplink ----------
+const ombreNl = rd('content/nl/trainings-detail.json')['ombre-powder-brows-opleiding'];
+const ombreEn = rd('content/en/trainings-detail.json')['ombre-powder-brows-opleiding'];
+if (!ombreNl || !ombreEn) fail('ombre-powder-brows-opleiding ontbreekt in NL of EN trainings-detail');
+else {
+  const ombreText = JSON.stringify(ombreNl) + '\n' + JSON.stringify(ombreEn);
+  const stalePrice = [
+    /€\s*3[.\u00a0,]?000/,
+    /€\s*3[.\u00a0,]?400/,
+    /€\s*1[.\u00a0,]?400/,
+    /€\s*1400/,
+    /€\s*1[.\u00a0,]?250/,
+    /€\s*550\b/,
+    /€\s*1[.\u00a0,]?000/,
+  ].filter((re) => re.test(ombreText));
+  if (stalePrice.length) fail(`Ombré-pagina bevat nog stale prijsclaims: ${stalePrice.map((r) => r.source).join(', ')}`);
+  else pass('Ombré NL+EN bevatten geen bekende stale cursusprijsclaims');
+
+  const amsterdamOnly = /alleen in Amsterdam|uitsluitend in Amsterdam|wordt gegeven op onze locatie in Amsterdam|offered almost every month in Amsterdam|taught at our location in Amsterdam/i;
+  if (amsterdamOnly.test(ombreText)) fail('Ombré-locatiecopy is nog Amsterdam-only');
+  else pass('Ombré-locatiecopy is niet meer Amsterdam-only');
+
+  const locLineNl = /Beschikbare locaties verschillen per opleidingsdatum\. Bekijk hieronder de actuele data en locaties\./;
+  const locLineEn = /Available locations differ per course date\. See the current dates and locations below\./;
+  const faqLocNl = (ombreNl.faq?.items || []).some((i) => locLineNl.test(i.a || ''));
+  const faqLocEn = (ombreEn.faq?.items || []).some((i) => locLineEn.test(i.a || ''));
+  if (!locLineNl.test(JSON.stringify(ombreNl)) || !faqLocNl) fail('Ombré NL mist canonieke locatiecopy in body/FAQ');
+  else pass('Ombré NL locatiecopy staat in beschikbaarheid/FAQ');
+  if (!locLineEn.test(JSON.stringify(ombreEn)) || !faqLocEn) fail('Ombré EN mist canonieke locatiecopy in body/FAQ');
+  else pass('Ombré EN locatiecopy staat in beschikbaarheid/FAQ');
+
+  if (/4 intensieve dagen|4 intensive days/i.test(ombreText)) fail('Ombré-copy noemt nog 4 dagen naast het 6-daagse programma');
+  else pass('Ombré-copy is consistent over 6 dagen (geen 4-dagen-claim)');
+
+  if (ombreNl.formSlug !== 'opleiding-interesse' || ombreEn.formSlug !== 'opleiding-interesse') {
+    fail('Ombré-pilot mist inline formulier opleiding-interesse');
+  } else pass('Ombré behoudt inline formulier opleiding-interesse');
+  if (ombreNl.formPrefill?.opleiding !== 'wenkbrauwen' || !/ombr[eé] powder brows/i.test(ombreNl.formPrefill?.opleiding_specifiek || '')) {
+    fail('Ombré NL formPrefill mist categorie/opleiding');
+  } else pass('Ombré NL formPrefill zet categorie + opleiding');
+}
+
+const formDef = rd('content/forms.json').forms?.['opleiding-interesse'];
+const formNames = (formDef?.fields || []).map((f) => f.name);
+for (const name of ['opleiding', 'opleiding_specifiek', 'gewenste_locatie', 'gewenste_periode', 'prive_opleiding']) {
+  if (!formNames.includes(name)) fail(`opleiding-interesse mist veld ${name}`);
+}
+if (formNames.includes('gewenste_locatie') && formNames.includes('prive_opleiding')) {
+  pass('opleiding-interesse heeft locatie, periode en privé-velden');
+}
+
+const formSrc = fs.readFileSync(path.join(ROOT, 'components/Form.tsx'), 'utf8');
+if (!/params\.get\(f\.name\)\s*\|\|\s*values\?\.\[f\.name\]/.test(formSrc)) {
+  fail('Form prefill laat query params niet winnen van values');
+} else pass('Form: query params overrulen values-prefill');
+if (!/formRef\.current\?\.reset\(\)/.test(formSrc) || !/applyPrefill\(\)/.test(formSrc)) {
+  fail('Form reset herstelt prefill niet');
+} else pass('Form reset roept applyPrefill opnieuw aan');
+
+const variantSrc = fs.readFileSync(path.join(ROOT, 'lib/commerce/variant-query.ts'), 'utf8');
+const availSrc = fs.readFileSync(path.join(ROOT, 'components/TrainingAvailability.tsx'), 'utf8');
+const atcSrc = fs.readFileSync(path.join(ROOT, 'components/commerce/AddToCart.tsx'), 'utf8');
+const productPageSrc = fs.readFileSync(path.join(ROOT, 'app/[locale]/product/[handle]/page.tsx'), 'utf8');
+
+if (!/export const VARIANT_QUERY = 'variant'/.test(variantSrc) || !/`\/product\/\$\{handle\}\?\$\{VARIANT_QUERY\}=/.test(variantSrc)) {
+  fail('productVariantHref bouwt geen /product/<handle>?variant=<id>');
+} else pass('availability-CTA-helper zet variant-ID in de query');
+if (!/productVariantHref\(handle,\s*v\.id\)/.test(availSrc)) {
+  fail('TrainingAvailability Aanmelden-CTA bevat geen variant-ID');
+} else pass('TrainingAvailability Aanmelden-CTA bevat variant-ID');
+if (/href=\{`\/product\/\$\{handle\}`\}/.test(availSrc) || /href=\{['"`]\/product\/\$\{/.test(availSrc)) {
+  fail('TrainingAvailability linkt nog naar /product/<handle> zonder variant');
+} else pass('TrainingAvailability deeplinkt niet meer zonder variant');
+if (!/training-date-card--full/.test(availSrc) || !/labels\.full/.test(availSrc)) {
+  fail('uitverkochte availability-kaart toont geen Vol-status');
+} else pass('uitverkochte availability-kaart toont Vol zonder Aanmelden-knop');
+if (!/pickInStockVariantId/.test(atcSrc) || !/initialVariantId/.test(atcSrc)) {
+  fail('AddToCart leest geen URL-variant voor auto-select');
+} else pass('AddToCart kan een geldige in-stock URL-variant auto-selecteren');
+if (!/variant-option--active/.test(atcSrc) || !/aria-pressed=\{active\}/.test(atcSrc)) {
+  fail('AddToCart markeert de gekozen variant niet zichtbaar');
+} else pass('AddToCart markeert de gekozen variant (aria-pressed + active class)');
+if (!/searchParams/.test(productPageSrc) || !/firstQueryValue\(query\.variant\)/.test(productPageSrc) || !/initialVariantId=\{requestedVariantId\}/.test(productPageSrc)) {
+  fail('productpagina geeft ?variant= niet door aan AddToCart');
+} else pass('productpagina leest ?variant= en geeft alleen het id door');
+if (/priceCents.*searchParams|searchParams.*price/i.test(productPageSrc)) {
+  fail('productpagina vertrouwt prijs uit queryparams');
+} else pass('productpagina vertrouwt geen prijs/voorraad uit de query');
+
+// Zuivere helper-tests tegen lib/commerce/variant-query.ts (echte module, strip-types).
+const variantProbe = spawnSync(
+  process.execPath,
+  [
+    '--experimental-strip-types',
+    '--no-warnings',
+    '--input-type=module',
+    '-e',
+    `
+      import { productVariantHref, firstQueryValue, pickInStockVariantId, trainingOptionValues } from ${JSON.stringify(pathToFileURL(path.join(ROOT, 'lib/commerce/variant-query.ts')).href)};
+      const variants = [
+        { id: 11, inStock: true },
+        { id: '22', inStock: false },
+        { id: '33', inStock: true },
+      ];
+      const parsed = trainingOptionValues([
+        { name: 'Datum', value: '12 okt 2026' },
+        { name: 'Locatie', value: 'Rotterdam' },
+      ]);
+      const parsedEn = trainingOptionValues([
+        { name: 'Date', value: '12 Oct 2026' },
+        { name: 'Location', value: 'Amsterdam' },
+      ]);
+      const parsedFallback = trainingOptionValues([{ name: 'Groep', value: 'Ochtend' }]);
+      const checks = {
+        href: productVariantHref('opleiding-ombre-powder-brows', 33) === '/product/opleiding-ombre-powder-brows?variant=33',
+        first: firstQueryValue(['33', 'x']) === '33' && firstQueryValue(undefined) === null && firstQueryValue('  ') === null,
+        invalid: pickInStockVariantId(variants, 'nope') === null && pickInStockVariantId(variants, '22') === null,
+        valid: pickInStockVariantId(variants, '33') === '33' && pickInStockVariantId(variants, '11') === '11',
+        options: parsed.date === '12 okt 2026' && parsed.location === 'Rotterdam' && parsedEn.date === '12 Oct 2026' && parsedEn.location === 'Amsterdam' && parsedFallback.date === '' && parsedFallback.location === '',
+      };
+      console.log(JSON.stringify(checks));
+    `,
+  ],
+  { encoding: 'utf8', cwd: ROOT },
+);
+if (variantProbe.status !== 0) {
+  fail(`variant-query helper-test faalde: ${(variantProbe.stderr || variantProbe.stdout || '').trim()}`);
+} else {
+  let checks = {};
+  try { checks = JSON.parse((variantProbe.stdout || '').trim()); } catch { checks = {}; }
+  if (!checks.href) fail('productVariantHref serialiseert variant-ID niet in de query');
+  else pass('productVariantHref bevat variant-ID');
+  if (!checks.first) fail('firstQueryValue behandelt lege/ongeldige query niet als null');
+  else pass('ongeldige/lege variantquery wordt genegeerd');
+  if (!checks.invalid) fail('ongeldige of uitverkochte variantquery mag de kiezer niet forceren');
+  else pass('ongeldige variantquery breekt de productkiezer niet');
+  if (!checks.valid) fail('geldige in-stock variant wordt niet auto-geselecteerd');
+  else pass('geldige in-stock variant kan automatisch geselecteerd worden');
+  if (!checks.options) fail('trainingOptionValues herkent Datum/Date en Locatie/Location niet (of verzint data)');
+  else pass('availability-kaarten herkennen Datum/Locatie via options[], anders leeg');
+}
 
 // ---------- OPEN (bekend geblokkeerd; GEEN pass, wel gerapporteerd) ----------
 const warnings = [];

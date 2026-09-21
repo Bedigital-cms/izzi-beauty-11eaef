@@ -335,6 +335,9 @@ Alle content-types staan in `lib/types.ts` (o.a. `HomeContent`, `SiteContent`, `
 `DetailContent`, `DetailCollection`, `LocationPageContent`, `BlogPost`, `PrijzenContent`,
 `OverContent`, `PortfolioContent`, `ContactContent`, `InfoContent`, `LegalContent`, `TeamMember`).
 `DetailContent` heeft er sinds de cursusmodus `productHandle`, `highlights` en `videoUrl` bij;
+opleidingspagina's mogen daarnaast optioneel `gallery`, `trainers`, `formSlug`/`formPrefill`,
+`availability` en per body-sectie `image`/`images` hebben. Zonder die velden blijft de pagina
+identiek. Prijzen, datums en plekken horen in het CMS-product (varianten), nooit in git.
 `InfoContent` heeft `team` en `videos`; `BlogPost` heeft `status`. Types zijn
 taal-neutraal (elke taal heeft dezelfde vorm). Kopieer de vorm; verzin geen nieuwe velden tenzij nodig.
 

@@ -10,6 +10,7 @@ import { getShop } from '@/content/shop'
 import { getProduct } from '@/lib/commerce/client'
 import { commerceEnabled } from '@/lib/commerce/config'
 import { formatTaxRate, schemaAvailability, schemaPrice } from '@/lib/commerce/format'
+import { firstQueryValue } from '@/lib/commerce/variant-query'
 
 /**
  * /product/[handle] — productdetailpagina.
@@ -70,10 +71,14 @@ export async function generateMetadata({
 
 export default async function ProductPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string; handle: string }>
+  searchParams: Promise<{ variant?: string | string[] }>
 }) {
   const { locale, handle } = await params
+  const query = await searchParams
+  const requestedVariantId = firstQueryValue(query.variant)
   if (!commerceEnabled()) notFound()
 
   const shop = getShop(locale)
@@ -105,7 +110,7 @@ export default async function ProductPage({
               <h1>{product.title}</h1>
               {product.shortDescription && <p className="product-lead">{product.shortDescription}</p>}
 
-              <AddToCart product={product} ui={ui} />
+              <AddToCart product={product} ui={ui} initialVariantId={requestedVariantId} />
 
               <p className="product-tax-note">
                 {pricesIncludeTax ? ui.taxIncluded : ui.tax}

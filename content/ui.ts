@@ -103,6 +103,17 @@ const DEFAULT_UI: Ui = {
     locationsHeading: 'Onze locaties',
     locationsSubheading: 'Bezoek een van onze studio\u2019s',
   },
+  training: {
+    galleryTitle: 'Beelden',
+    trainersTitle: 'Je trainers',
+    seats: 'plekken beschikbaar',
+    seatsOne: 'plek beschikbaar',
+    enrolDate: 'Aanmelden',
+    viewDates: 'Bekijk beschikbare data',
+    requestInfo: 'Informatie opvragen',
+    loading: 'Data worden geladen…',
+    full: 'Vol',
+  },
   notFound: {
     title: 'Pagina niet gevonden',
     text: 'De pagina die je zoekt bestaat niet (meer). Ga terug naar de homepage of bekijk onze behandelingen.',
